@@ -4,14 +4,29 @@
 // o kadar çok aranıyordur. "off" yazınca "offline games" çıkıyorsa bu çok
 // güçlü bir taleptir; ancak tamamını yazınca çıkıyorsa zayıftır.
 // Ön ek uzunluğu üzerinde ikili arama yaparak en kısa tetikleyici ön eki buluruz.
+//
+// Not: Otomatik tamamlama en fazla 5 öneri döndürür. "block puzzle" gibi çok
+// popüler baş terimlerde 5 yuva da uzun varyantlarla dolar ve kelimenin kendisi
+// listede görünmez. Bu yüzden iki eşleşme modu vardır:
+//   exact: kelimenin kendisi öneriliyor
+//   ext:   kelimeyle (kelime sınırında) başlayan bir öneri var ("block puzzle games")
 
 import { clamp, normalize } from './util.js';
+
+/** Öneri listesinde kelimeyi (veya uzantısını) arar. */
+export function matchIn(list, k) {
+  if (!Array.isArray(list)) return null;
+  const exact = list.indexOf(k);
+  if (exact >= 0) return { mode: 'exact', pos: exact + 1, via: k };
+  const i = list.findIndex((s) => s.startsWith(`${k} `));
+  return i >= 0 ? { mode: 'ext', pos: i + 1, via: list[i] } : null;
+}
 
 /**
  * @param {string} keyword normalize edilmiş anahtar kelime
  * @param {(prefix:string)=>Promise<string[]>} getSuggest ön ek → öneri listesi (normalize)
  * @param {{knownPrefix?:number}} opts daha önce bu kelimeyi tetiklediği bilinen ön ek uzunluğu
- * @returns {Promise<{status:'ok'|'ok-partial'|'none'|'budget', minPrefix?:number, pos?:number, len:number, variants:string[], variantsPrefixLen?:number}>}
+ * @returns {Promise<{status:'ok'|'ok-partial'|'none'|'budget', minPrefix?:number, pos?:number, mode?:string, via?:string, len:number, variants:string[], variantsPrefixLen?:number}>}
  */
 export async function measureDemand(keyword, getSuggest, opts = {}) {
   const k = normalize(keyword);
@@ -34,7 +49,7 @@ export async function measureDemand(keyword, getSuggest, opts = {}) {
 
   const hits = async (L) => {
     const list = await suggestAt(L);
-    return list === null ? null : list.includes(k);
+    return list === null ? null : matchIn(list, k) !== null;
   };
 
   // 1) Tam metin bile öneri listesinde değilse: ölçülebilir talep yok.
@@ -50,7 +65,7 @@ export async function measureDemand(keyword, getSuggest, opts = {}) {
     const full = await suggestAt(len);
     if (full === null) return { status: 'budget', len, variants: [] };
     variants = full.filter((s) => s !== k);
-    if (!full.includes(k)) return { status: 'none', len, variants, variantsPrefixLen: len };
+    if (!matchIn(full, k)) return { status: 'none', len, variants, variantsPrefixLen: len };
     hi = len;
   }
 
@@ -63,23 +78,26 @@ export async function measureDemand(keyword, getSuggest, opts = {}) {
     if (h) hi = mid; else lo = mid + 1;
   }
   const list = cache.get(k.slice(0, hi)) || [];
-  const pos = Math.max(1, list.indexOf(k) + 1);
+  const m = matchIn(list, k) || { mode: 'exact', pos: 1, via: k };
   const useFull = variants.length > 0;
   return {
     status: budgetHit ? 'ok-partial' : 'ok',
     minPrefix: hi,
-    pos,
+    pos: m.pos,
+    mode: m.mode,
+    via: m.via,
     len,
     variants: useFull ? variants : list.filter((s) => s !== k),
     variantsPrefixLen: useFull ? len : hi
   };
 }
 
-/** Ön ek ölçümünden 0-100 arası talep puanı. */
-export function demandScore({ minPrefix, len, pos }) {
+/** Ön ek ölçümünden 0-100 arası talep puanı. Uzantı modu (kelimenin kendisi önerilmiyor) %10 iskontolu. */
+export function demandScore({ minPrefix, len, pos, mode }) {
   if (!minPrefix || !len) return 0;
   const popAbs = clamp(1 - (minPrefix - 1) / 12, 0, 1); // 1 harfte çıkıyorsa 1, 13+ harf gerekiyorsa 0
   const popRel = len > 1 ? clamp(1 - (minPrefix - 1) / (len - 1), 0, 1) : 1;
   const posScore = clamp(1 - ((pos || 1) - 1) / 4, 0, 1); // öneri listesindeki sıra (1-5)
-  return Math.round(100 * (0.55 * popAbs + 0.25 * popRel + 0.20 * posScore));
+  const raw = 0.55 * popAbs + 0.25 * popRel + 0.20 * posScore;
+  return Math.round(100 * raw * (mode === 'ext' ? 0.9 : 1));
 }

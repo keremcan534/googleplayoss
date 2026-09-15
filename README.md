@@ -30,7 +30,7 @@ flowchart LR
 
 | Puan | Ne ölçer | Nasıl |
 |---|---|---|
-| **Talep** (0-100) | Kelimenin ne kadar arandığı | Kelime, otomatik tamamlamada ne kadar kısa bir ön ekle çıkıyor? `off` → "offline games" çıkıyorsa talep çok yüksek; tamamını yazınca çıkıyorsa düşük. Listedeki sıra da katkı verir. Hiç önerilmiyorsa "talep yok". |
+| **Talep** (0-100) | Kelimenin ne kadar arandığı | Kelime, otomatik tamamlamada ne kadar kısa bir ön ekle çıkıyor? `off` → "offline games" çıkıyorsa talep çok yüksek; tamamını yazınca çıkıyorsa düşük. Listedeki sıra da katkı verir. Otomatik tamamlama 5 öneriyle sınırlı olduğundan "block puzzle" gibi baş terimlerde kelimenin kendisi görünmeyebilir; kelimeyle başlayan bir öneri ("block puzzle games") varsa **uzantı modu** ile %10 iskontolu puanlanır. Ne kendisi ne uzantısı önerilmiyorsa "talep yok". |
 | **Zorluk** (0-100) | Rakiplerin gücü | İlk 10 uygulamanın gerçek yükleme sayıları (medyan + ilk 3'ün en güçlüsü), değerlendirme sayısı, ortalama puan, başlığında kelimeyi geçiren uygulama oranı, güncellik. |
 | **Pazar** (0-100) | Pastanın büyüklüğü | İlk 10 uygulamanın toplam yüklemesi (logaritmik). |
 | **Fırsat** (0-100) | Sana düşebilecek pay | `√(talep × (100 − zorluk))`; ilk 10'da zayıf (<100K), düşük puanlı (<4.0) ve 1+ yıldır güncellenmemiş uygulamalar küçük bonus verir. **60+ güçlü · 45+ iyi · 30+ orta · altı zor**. |

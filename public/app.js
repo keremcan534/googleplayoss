@@ -180,7 +180,9 @@
     const apps = appsList || (r.top || []).map((id) => appsMap[id]).filter(Boolean);
     const kwt = toks(r.k).map(stem);
     const pop = r.pop;
-    const popText = pop ? `"<code>${esc(r.k.slice(0, pop.minPrefix))}</code>" yazınca ${pop.pos}. sırada öneriliyor (${pop.minPrefix}/${pop.len} harf).` : 'Otomatik tamamlamada görünmüyor.';
+    const popText = pop
+      ? `<code>${esc(r.k.slice(0, pop.minPrefix))}</code> yazınca ${pop.mode === 'ext' ? `<em>${esc(pop.via)}</em> öneriliyor (kelimenin kendisi değil, uzantısı)` : 'kelimenin kendisi öneriliyor'} — ${pop.pos}. sırada, ${pop.minPrefix}/${pop.len} harf.`
+      : 'Otomatik tamamlamada ne kendisi ne de uzantısı görünüyor.';
     const related = state.data ? state.data.keywords.filter((x) => x.k !== r.k && x.seed && (x.seed === r.seed || x.seed === r.k) && x.demand > 0).sort((a, b) => (b.opportunity ?? 0) - (a.opportunity ?? 0)).slice(0, 12) : [];
     return `<div class="detail">
       <div>

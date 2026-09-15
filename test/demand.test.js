@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { measureDemand, demandScore } from '../src/demand.js';
+import { measureDemand, demandScore, matchIn } from '../src/demand.js';
 import { BudgetError } from '../src/store.js';
 
 function fakeSuggest(triggerAt, keyword, extra = []) {
@@ -15,14 +15,14 @@ function fakeSuggest(triggerAt, keyword, extra = []) {
 
 test('measureDemand: en kısa ön eki ikili arama ile bulur', async () => {
   const kw = 'offline games';
-  const s = fakeSuggest(3, kw, ['offline games free']);
+  const s = fakeSuggest(3, kw, ['offline rpg']);
   const m = await measureDemand(kw, s);
   assert.equal(m.status, 'ok');
   assert.equal(m.minPrefix, 3);
   assert.equal(m.pos, 1);
   assert.equal(m.len, kw.length);
   assert.ok(s.calls.length <= 6, `çok fazla çağrı: ${s.calls.length}`);
-  assert.deepEqual(m.variants, ['offline games free']);
+  assert.deepEqual(m.variants, ['offline rpg']);
 });
 
 test('measureDemand: bilinen ön ek arama aralığını daraltır', async () => {
@@ -33,7 +33,19 @@ test('measureDemand: bilinen ön ek arama aralığını daraltır', async () => 
   assert.ok(s.calls.length <= 4);
 });
 
-test('measureDemand: tam metin önerilmiyorsa talep yok, öneriler variant olur', async () => {
+test('measureDemand: baş terim sadece uzantılarıyla öneriliyorsa ext modu', async () => {
+  const s = async (p) => (p.length >= 3 && 'block puzzle'.startsWith(p) ? ['block blast', 'block puzzle games', 'block puzzle jewel'] : ['bingo']);
+  const m = await measureDemand('block puzzle', s);
+  assert.equal(m.status, 'ok');
+  assert.equal(m.mode, 'ext');
+  assert.equal(m.via, 'block puzzle games');
+  assert.equal(m.pos, 2);
+  assert.equal(m.minPrefix, 3);
+  assert.equal(matchIn(['block puzzle games'], 'block puzzl'), null, 'kısmi kelime uzantı sayılmaz');
+  assert.deepEqual(matchIn(['x', 'block puzzle'], 'block puzzle'), { mode: 'exact', pos: 2, via: 'block puzzle' });
+});
+
+test('measureDemand: ne kendisi ne uzantısı önerilmiyorsa talep yok, öneriler variant olur', async () => {
   const s = async () => ['offline games', 'offline rpg'];
   const m = await measureDemand('offline zzz', s);
   assert.equal(m.status, 'none');
@@ -55,4 +67,5 @@ test('demandScore: kısa ön ek → yüksek puan, tam metin → düşük', () =>
   assert.ok(high > mid && mid > low, `${high} > ${mid} > ${low}`);
   assert.equal(low, 0);
   assert.equal(demandScore({ minPrefix: null, len: 5 }), 0);
+  assert.equal(demandScore({ minPrefix: 1, len: 13, pos: 1, mode: 'ext' }), 90);
 });

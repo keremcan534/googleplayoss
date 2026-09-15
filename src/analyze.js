@@ -32,7 +32,7 @@ export async function analyzeKeyword(keyword, deps) {
     if (m.status === 'none') {
       return { ...out, status: 'no-demand', demand: 0, pop: null };
     }
-    pop = { minPrefix: m.minPrefix, pos: m.pos, len: m.len };
+    pop = { minPrefix: m.minPrefix, pos: m.pos, len: m.len, mode: m.mode, via: m.via };
     if (m.status === 'ok-partial') out.demandPartial = true;
   }
   out.pop = pop;
