@@ -1,0 +1,66 @@
+{
+  "$comment": "Tarayıcı ayarları. markets: hangi ülke/dil için tarama yapılacağı. seeds: keşfin başladığı tohum kelimeler. budget: her çalıştırmada yapılacak en fazla istek sayısı (Google'ı yormamak için). Tüm sayılar sağduyulu varsayılanlardır; istediğin gibi değiştir.",
+  "markets": [
+    { "country": "us", "lang": "en" }
+  ],
+  "letters": "abcdefghijklmnopqrstuvwxyz",
+  "marketLetters": {
+    "tr": "abcçdefgğhıijklmnoöprsştuüvyz"
+  },
+  "categories": [
+    "GAME_PUZZLE", "GAME_CASUAL", "GAME_SIMULATION", "GAME_ARCADE", "GAME_WORD", "GAME_BOARD",
+    "GAME_STRATEGY", "GAME_ROLE_PLAYING", "GAME_ADVENTURE", "GAME_TRIVIA", "GAME_EDUCATIONAL",
+    "TOOLS", "PRODUCTIVITY", "HEALTH_AND_FITNESS", "LIFESTYLE", "EDUCATION", "PERSONALIZATION",
+    "PHOTOGRAPHY", "MUSIC_AND_AUDIO", "FINANCE", "FOOD_AND_DRINK", "PARENTING"
+  ],
+  "budget": {
+    "suggestCalls": 1500,
+    "searchCalls": 250,
+    "appCalls": 1500,
+    "listCalls": 12,
+    "maxKeywordsTotal": 8000,
+    "maxRunMinutes": 40
+  },
+  "discoveryShare": 0.35,
+  "refreshDays": 10,
+  "demandRefreshDays": 21,
+  "noDemandRecheckDays": 30,
+  "suggestTtlDays": 7,
+  "appTtlDays": 21,
+  "topN": 10,
+  "throttleMs": 350,
+  "concurrency": 2,
+  "seeds": [
+    "offline games", "no wifi games", "puzzle games", "idle games", "casual games", "word games",
+    "brain games", "car games", "shooting games", "horror games", "2 player games", "kids games",
+    "tycoon games", "simulator games", "clicker games", "merge games", "match 3 games", "solitaire",
+    "sudoku", "trivia games", "strategy games", "tower defense", "racing games", "fishing games",
+    "cooking games", "farm games", "zombie games", "rpg games", "survival games", "sniper games",
+    "parking games", "truck simulator", "bike games", "football games", "card games", "board games",
+    "chess", "hidden object games", "escape room games", "color by number", "drawing games",
+    "rhythm games", "pixel art", "sandbox games", "roguelike", "text adventure", "dress up games",
+    "pet games", "dinosaur games", "space games", "airplane games", "train games", "bus simulator",
+    "golf games", "pool games", "block puzzle", "jigsaw puzzles", "crossword", "word search",
+    "mahjong", "nonogram", "logic puzzles", "physics games", "stickman games", "water sort",
+    "bubble shooter", "spot the difference", "quiz games", "math games", "geography games",
+    "habit tracker", "budget app", "expense tracker", "water reminder", "sleep sounds", "white noise",
+    "qr code scanner", "pdf reader", "notes app", "calculator", "wallpapers", "prayer times",
+    "step counter", "period tracker", "flashcards", "language learning", "meditation", "workout app",
+    "calorie counter", "fasting app", "recipe app", "grocery list", "todo list", "pomodoro timer",
+    "alarm clock", "screen recorder", "video editor", "photo editor", "voice recorder", "translator",
+    "unit converter", "file manager", "password manager", "authenticator", "wifi analyzer",
+    "weather app", "plant identifier", "baby tracker", "kids learning", "coloring book", "guitar tuner",
+    "metronome", "music player", "ringtone maker", "invoice maker", "resume builder", "logo maker",
+    "keyboard app", "gif maker", "countdown app", "journal app", "mood tracker", "bible app", "quran",
+    "affirmations", "horoscope", "bmi calculator", "blood pressure", "medication reminder",
+    "car maintenance", "fuel calculator", "gps tracker", "family locator", "tip calculator",
+    "loan calculator", "currency converter", "crypto tracker", "subscription tracker",
+    "document scanner", "text to speech", "voice changer", "decibel meter", "heart rate",
+    "sleep tracker", "breathing exercises", "anxiety relief", "sign language", "tally counter",
+    "wheel spinner", "dice roller", "name generator", "ai chat", "background remover",
+    "photo enhancer", "outfit planner", "shopping list", "price tracker", "barcode scanner",
+    "meal planner", "plant care", "hiking app", "bird sounds", "rain sounds", "binaural beats",
+    "yoga app", "stretching", "posture", "home workout", "running app", "interval timer", "gym log",
+    "weight tracker", "pedometer"
+  ]
+}

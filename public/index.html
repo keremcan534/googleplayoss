@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Play Kelime Radarı</title>
+<meta name="description" content="Google Play'de reklamsız (organik) trafik potansiyeli olan anahtar kelimeleri ve nişleri bulan, 7/24 çalışan açık kaynak radar.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📡%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="logo" aria-hidden="true">📡</span>
+    <div>
+      <h1>Play Kelime Radarı</h1>
+      <p class="sub">Google Play'de reklamsız (organik) trafik getirebilecek anahtar kelimeler ve nişler — otomatik tamamlama talebi × rakip gücü</p>
+    </div>
+  </div>
+  <div class="top-right">
+    <label class="field">Pazar <select id="market"></select></label>
+    <span id="updated" class="muted"></span>
+  </div>
+</header>
+
+<section class="stats" id="stats" aria-live="polite"></section>
+
+<nav class="tabs" role="tablist">
+  <button class="tab-btn active" data-tab="keywords" role="tab">Kelimeler</button>
+  <button class="tab-btn" data-tab="niches" role="tab">Nişler</button>
+  <button class="tab-btn" data-tab="live" role="tab">Canlı analiz</button>
+  <button class="tab-btn" data-tab="help" role="tab">Nasıl çalışır?</button>
+</nav>
+
+<main>
+  <div id="notice" class="notice hidden"></div>
+
+  <section id="tab-keywords" class="tab">
+    <div class="toolbar">
+      <input id="q" type="search" placeholder="Kelime ara… (ör. offline, tracker)" autocomplete="off">
+      <label class="field range">Min. fırsat <input type="range" id="minOpp" min="0" max="100" value="0"><output id="minOppV">0</output></label>
+      <label class="field range">Min. talep <input type="range" id="minDemand" min="0" max="100" value="0"><output id="minDemandV">0</output></label>
+      <label class="field range">Maks. zorluk <input type="range" id="maxDiff" min="0" max="100" value="100"><output id="maxDiffV">100</output></label>
+      <select id="statusFilter" title="Durum">
+        <option value="analyzed">Analiz edilenler</option>
+        <option value="demand">Sadece talebi olanlar</option>
+        <option value="all">Hepsi (bekleyenler dahil)</option>
+        <option value="no-demand">Talep yok</option>
+      </select>
+      <select id="srcFilter" title="Kaynak">
+        <option value="">Tüm kaynaklar</option>
+        <option value="seed">Tohum</option>
+        <option value="suggest">Otomatik tamamlama</option>
+        <option value="letter">Otomatik tamamlama (harf)</option>
+        <option value="variant">Varyant</option>
+        <option value="chart">Liste başlıkları</option>
+        <option value="title">Arama başlıkları</option>
+      </select>
+      <label class="chk"><input type="checkbox" id="onlyNew"> Son 7 günde bulunanlar</label>
+      <label class="chk"><input type="checkbox" id="onlyStars"> ★ Yıldızlılar</label>
+      <button id="clearNiche" class="ghost hidden">Niş filtresini kaldır ✕</button>
+      <button id="exportCsv" class="ghost">CSV indir</button>
+    </div>
+    <div class="table-wrap">
+      <table id="kwTable">
+        <thead>
+          <tr>
+            <th class="star-col"></th>
+            <th data-sort="k">Kelime</th>
+            <th data-sort="opportunity" class="num">Fırsat</th>
+            <th data-sort="demand" class="num">Talep</th>
+            <th data-sort="difficulty" class="num">Zorluk</th>
+            <th data-sort="market" class="num" title="İlk 10 uygulamanın toplam yüklemesine göre pazar büyüklüğü">Pazar</th>
+            <th data-sort="titleMatches" class="num" title="İlk 10'da başlığında kelimeyi geçiren uygulama sayısı">Başlıkta</th>
+            <th data-sort="weak" class="num" title="İlk 10'da 100K'dan az yüklemesi olan uygulama sayısı">Zayıf</th>
+            <th data-sort="avgScore" class="num">Ort. puan</th>
+            <th data-sort="trend" class="num" title="Fırsat puanının 7+ gün önceki değere göre değişimi">Trend</th>
+            <th data-sort="first" class="num">Bulundu</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="pager">
+      <button id="more" class="ghost">Daha fazla göster</button>
+      <span id="countInfo" class="muted"></span>
+    </div>
+  </section>
+
+  <section id="tab-niches" class="tab hidden">
+    <div class="toolbar">
+      <input id="nicheQ" type="search" placeholder="Niş ara…" autocomplete="off">
+      <select id="nicheType">
+        <option value="">Tüm gruplar</option>
+        <option value="token">Ortak kelime</option>
+        <option value="seed">Tohum kelime</option>
+      </select>
+      <span class="muted">Skor = grubun en iyi 5 kelimesinin ortalama fırsatı × grup büyüklüğü. Bir kartın kelimelerine tıklayınca kelime tablosuna gidersin.</span>
+    </div>
+    <div id="niches" class="cards"></div>
+  </section>
+
+  <section id="tab-live" class="tab hidden">
+    <div class="live-box">
+      <p id="liveStatus" class="muted">Kontrol ediliyor…</p>
+      <form id="liveForm" class="toolbar">
+        <input id="liveQ" type="search" placeholder="ör. offline rpg games" autocomplete="off" required minlength="2" maxlength="60">
+        <select id="liveMarket">
+          <option value="us:en">US / en</option>
+          <option value="gb:en">GB / en</option>
+          <option value="tr:tr">TR / tr</option>
+          <option value="de:de">DE / de</option>
+          <option value="br:pt">BR / pt</option>
+          <option value="in:en">IN / en</option>
+          <option value="id:id">ID / id</option>
+          <option value="mx:es">MX / es</option>
+          <option value="jp:ja">JP / ja</option>
+          <option value="kr:ko">KR / ko</option>
+        </select>
+        <button id="liveBtn" type="submit">Analiz et</button>
+      </form>
+      <details class="api-settings">
+        <summary>API adresi ayarı (GitHub Pages'te canlı analiz için Vercel dağıtımının adresi)</summary>
+        <div class="toolbar">
+          <input id="apiBase" type="url" placeholder="https://projen.vercel.app">
+          <button id="saveApi" class="ghost" type="button">Kaydet</button>
+        </div>
+      </details>
+      <div id="liveResult"></div>
+    </div>
+  </section>
+
+  <section id="tab-help" class="tab hidden">
+    <article class="help">
+      <h2>Bu araç ne yapar?</h2>
+      <p>Google Play'de bir uygulama/oyun yayınladığında reklam vermeden, mağaza aramasından (organik) yükleme alabileceğin anahtar kelimeleri bulur. Bunun için resmi olmayan ama herkese açık Play Store uç noktalarını kullanır: <strong>otomatik tamamlama</strong> (talep), <strong>arama sonuçları</strong> ve <strong>uygulama detayları</strong> (rekabet).</p>
+      <h3>Puanlar</h3>
+      <ul>
+        <li><strong>Talep (0-100)</strong> — Kelime, otomatik tamamlamada ne kadar kısa bir ön ekle çıkıyor? "off" yazınca "offline games" öneriliyorsa talep çok yüksektir; ancak kelimenin tamamını yazınca öneriliyorsa düşüktür. Öneri listesindeki sıra da hesaba katılır. Kelime hiç önerilmiyorsa "talep yok" sayılır.</li>
+        <li><strong>Zorluk (0-100)</strong> — Aramadaki ilk 10 uygulamanın gücü: gerçek yükleme sayıları (medyan ve ilk 3'ün en güçlüsü), değerlendirme sayısı, ortalama puan, başlığında kelimeyi geçiren uygulama oranı ve güncellik.</li>
+        <li><strong>Pazar (0-100)</strong> — İlk 10 uygulamanın toplam yüklemesi (logaritmik). Talep varken pazar küçükse yeni bir alan olabilir.</li>
+        <li><strong>Fırsat (0-100)</strong> — <code>√(talep × (100 − zorluk))</code>; ilk 10'da zayıf (100K altı), düşük puanlı (4.0 altı) ve bir yıldır güncellenmemiş uygulamalar küçük bonus verir. 60+ güçlü, 45+ iyi, 30+ orta, altı zor.</li>
+      </ul>
+      <h3>Kelimeler nereden geliyor?</h3>
+      <p>Konfigürasyondaki tohum kelimelerden başlar; her tohum için otomatik tamamlama sorgulanır ("tohum", "tohum " ve "tohum a".."tohum z"). Umut vadeden kelimeler de aynı şekilde derinleştirilir. Ayrıca arama sonuçlarındaki ve kategori listelerindeki uygulama başlıklarından tekrar eden kelime öbekleri aday olarak eklenir; adaylar otomatik tamamlama doğrulamasından geçmeden puan almaz.</p>
+      <h3>7/24 nasıl çalışıyor?</h3>
+      <p>GitHub Actions her gün (istersen daha sık) tarayıcıyı çalıştırır, her koşuda sınırlı sayıda istek yapar (Google'ı yormamak için), sonuçları depoya commit eder ve GitHub Pages'e yayınlar. Vercel'e bağlıysa aynı commit Vercel'i de günceller; Vercel'de ayrıca "Canlı analiz" sekmesi çalışır. Kelime evreni her koşuda büyür, eski analizler periyodik olarak yenilenir.</p>
+      <h3>Uyarılar</h3>
+      <ul>
+        <li>Talep puanı gerçek arama hacmi değildir; otomatik tamamlamadan türetilmiş bir <em>tahmindir</em>. Kendi içinde karşılaştırma için kullan.</li>
+        <li>Play Store uç noktaları resmi değildir, Google değiştirirse tarayıcı güncelleme ister (<code>google-play-scraper</code> paketi).</li>
+        <li>Sonuçlar seçilen pazara (ülke/dil) özeldir.</li>
+      </ul>
+    </article>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>Play Kelime Radarı · açık kaynak · veriler Google Play'in herkese açık sayfalarından türetilmiştir, Google ile bağlantısı yoktur.</span>
+</footer>
+
+<template id="rowTpl"></template>
+<script src="./app.js"></script>
+</body>
+</html>

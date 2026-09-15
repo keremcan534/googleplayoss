@@ -1,0 +1,112 @@
+# 7/24 tarayıcı: her gün çalışır, sınırlı bütçeyle Play Store'u tarar, sonuçları depoya commit eder
+# ve GitHub Pages'e yayınlar. Elle de tetiklenebilir (Actions → crawl → Run workflow).
+name: crawl
+
+on:
+  schedule:
+    - cron: '17 3 * * *' # her gün 03:17 UTC (06:17 TR). Daha sık için ör. '17 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      market:
+        description: 'Pazar, ör. tr:tr (boş = config/seeds.json)'
+        required: false
+        default: ''
+      search_calls:
+        description: 'Arama çağrısı bütçesi (boş = config)'
+        required: false
+        default: ''
+      app_calls:
+        description: 'Uygulama detayı bütçesi (boş = config)'
+        required: false
+        default: ''
+      suggest_calls:
+        description: 'Otomatik tamamlama bütçesi (boş = config)'
+        required: false
+        default: ''
+      max_minutes:
+        description: 'En fazla süre (dakika, boş = config)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: crawl
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Tarama
+        env:
+          CRAWL_MARKET: ${{ inputs.market }}
+          CRAWL_SEARCH_CALLS: ${{ inputs.search_calls }}
+          CRAWL_APP_CALLS: ${{ inputs.app_calls }}
+          CRAWL_SUGGEST_CALLS: ${{ inputs.suggest_calls }}
+          CRAWL_MAX_MINUTES: ${{ inputs.max_minutes }}
+        run: npm run crawl
+
+      - name: Sonuçları commit et
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data public/data
+          if git diff --cached --quiet; then
+            echo "Değişiklik yok."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "data: tarama $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase origin "$GITHUB_REF_NAME" || true
+          git push origin "HEAD:$GITHUB_REF_NAME"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Pages paketi
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    needs: crawl
+    if: needs.crawl.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: GitHub Pages etkin mi?
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api "repos/$GITHUB_REPOSITORY/pages" >/dev/null 2>&1 || gh api -X POST "repos/$GITHUB_REPOSITORY/pages" -f build_type=workflow >/dev/null 2>&1; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::GitHub Pages etkin değil. Depo ayarlarında Settings → Pages → Source: 'GitHub Actions' seçin. (Sadece Vercel kullanıyorsanız bu uyarıyı yok sayabilirsiniz.)"
+          fi
+
+      - name: Yayınla
+        if: steps.check.outputs.enabled == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4
