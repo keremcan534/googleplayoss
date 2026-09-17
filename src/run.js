@@ -166,8 +166,15 @@ async function runMarket(cfg, market, args) {
     return true;
   }
 
-  log(`[${id}] keşif: ${seeds.length} tohum, keşfe ayrılan öneri çağrısı: ${discoveryCap}`);
+  // Kelime evreni tavana vurduysa keşif yeni aday ekleyemez; bütçeyi boşa harcamak
+  // yerine tamamını analiz kuyruğuna (talep ölçümüne) bırakırız.
+  const atCap = kw.size >= (budget.maxKeywordsTotal || 8000);
+  if (atCap) {
+    log(`[${id}] keşif atlandı: kelime evreni tavanda (${kw.size}/${budget.maxKeywordsTotal}), tüm bütçe analize gidiyor`);
+  }
+  log(atCap ? `[${id}] bekleyen kelimeler işleniyor` : `[${id}] keşif: ${seeds.length} tohum, keşfe ayrılan öneri çağrısı: ${discoveryCap}`);
   try {
+    if (atCap) throw new BudgetError('discovery-skipped');
     for (const s of seeds) {
       if (timeUp()) break;
       await expand(s, { src: 'suggest', seed: s });
@@ -212,7 +219,7 @@ async function runMarket(cfg, market, args) {
   } catch (err) {
     if (!(err && err.budget)) throw err;
   }
-  log(`[${id}] keşif bitti: +${added} yeni aday, toplam ${kw.size} kelime, öneri çağrısı ${store.state.used.suggest}`);
+  if (!atCap) log(`[${id}] keşif bitti: +${added} yeni aday, toplam ${kw.size} kelime, öneri çağrısı ${store.state.used.suggest}`);
 
   // ---- 3) analiz kuyruğu
   const refreshMs = (cfg.refreshDays || 10) * DAY_MS;

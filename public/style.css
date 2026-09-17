@@ -211,10 +211,16 @@ button.sum:hover { border-color: var(--line2); }
 .opp-score i { font-style: normal; font-size: 11px; color: var(--muted); }
 
 .opp-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-.m { background: var(--bg3); border-radius: var(--r-sm); padding: 6px 9px; min-width: 0; }
-.m > span { display: block; font-size: 10.5px; color: var(--muted); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
-.m > b { font-size: 16px; font-variant-numeric: tabular-nums; }
-.m > i { display: block; font-style: normal; font-size: 10.5px; font-weight: 700; letter-spacing: .04em; color: var(--muted); }
+.m { background: var(--bg3); border-radius: var(--r-sm); padding: 6px 8px; min-width: 0; }
+.m > span {
+  display: flex; align-items: center; gap: 4px; font-size: 10px; color: var(--muted);
+  font-weight: 600; letter-spacing: .03em; text-transform: uppercase; white-space: nowrap;
+}
+.m > b { font-size: 16px; font-variant-numeric: tabular-nums; line-height: 1.25; }
+.m > i {
+  display: block; font-style: normal; font-size: 9.5px; font-weight: 700;
+  letter-spacing: .02em; color: var(--muted); white-space: nowrap;
+}
 .m.l-vlow > i, .m.l-low > i { color: var(--weak); }
 .m.l-mid > i { color: var(--watch); }
 .m.l-high > i, .m.l-vhigh > i { color: var(--build); }
@@ -446,7 +452,8 @@ details.raw > summary { cursor: pointer; color: var(--accent); font-weight: 600;
 .sum.s-real b { color: var(--build); }
 .opp-metrics { grid-template-columns: repeat(4, 1fr); }
 .niche .opp-metrics { grid-template-columns: repeat(3, 1fr); }
-@media (max-width: 1400px) { .opp { grid-template-columns: 112px minmax(0, 1fr) 80px 380px 96px; } }
+@media (min-width: 1401px) { .opp { grid-template-columns: 112px minmax(0, 1fr) 80px 420px 96px; } }
+@media (max-width: 1400px) { .opp { grid-template-columns: 108px minmax(0, 1fr) 76px 384px 92px; } }
 @media (max-width: 1240px) { .opp { grid-template-columns: 108px minmax(0, 1fr) 76px 330px 88px; } }
 @media (max-width: 1100px) {
   .opp { grid-template-columns: 104px minmax(0, 1fr) 72px 84px; }
