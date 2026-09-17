@@ -18,8 +18,9 @@ Panel tek bir soruya cevap verecek şekilde tasarlandı: **bu kelime için uygul
 | Bölüm | Ne için |
 |---|---|
 | **Genel Bakış** | Pazarın o anki durumu: karar sayaçları, en iyi skor, yeni fırsat sayısı, son tarama zamanı; ardından *şu andaki en iyi fırsatlar*, *yeni bulunanlar* ve *yükselenler*. Sayaç kutularına tıklayınca ilgili liste açılır. |
-| **Fırsatlar** (varsayılan çalışma ekranı) | Karar odaklı kartlar: karar etiketi, kelime, fırsat puanı, tek cümlelik gerekçe ve üç kritik metrik (talep, rekabet, trend). Hızlı filtre çipleri: Tümü / GOLD / BUILD / WATCH / Yeni / Yükselen / Kayıtlı. Sayısal filtreler *Gelişmiş filtreler* altında saklı. |
+| **Fırsatlar** (varsayılan çalışma ekranı) | Karar odaklı kartlar: karar etiketi, kelime, fırsat puanı, tek cümlelik gerekçe ve üç kritik metrik (talep, rekabet, trend). Hızlı filtre çipleri: **Gerçekçi** (kararı BUILD+ *ve* erişimi 65+ olanlar) / Tümü / GOLD / BUILD / WATCH / Yeni / Yükselen / Kayıtlı. Aynı ilk 10'a düşen kelimeler ("tip calculator", "tip calculator free", "tip calculator free android") tek kartta katlanır; varyantlar detayda listelenir. Sayısal filtreler *Gelişmiş filtreler* altında saklı. |
 | **Nişler** | Aynı karar dili nişlerde: niş kararı, niş skoru, işe yarar kelime sayısı, en iyi kelime, talep/rekabet/trend. *Nişi aç* o nişin tüm kelimelerini karara göre sıralı listeler. |
+| **Sıralama** | Nişleri ya da kelimeleri seçtiğin ölçüye göre sıralayan yatay çubuk grafik; ikinci kolonda ikinci bir ölçü (gelir modeli, kullanıcı ilgisi, talep…). Altında medyan, P75 eşiği ve yayılım. |
 | **Canlı Analiz** | Kelimeyi yaz, önce büyük karar ve gerekçe gelir; metrikler, "neden iyi", "riskler", rakip özeti ve ham veri altında. |
 | **Kaydedilenler** | ★ ile işaretlediklerin. Tarayıcında saklanır (`localStorage`). |
 | **Analist Modu** | Eski yoğun tablo olduğu gibi duruyor: tüm kolonlar, sıralama, sayısal filtreler ve CSV çıktısı. Artık varsayılan değil, derin araştırma için. |
@@ -43,6 +44,24 @@ Karar **sunum katmanıdır**; puan formüllerini değiştirmez. Ham skorun üst�
 - Rekabet 80'in üstünde → karar WATCH'a çekilir; talep 85'in üstündeyse en fazla BUILD.
 - Rakip verisi 5'ten az (eksik tarama) → karar en fazla WATCH.
 - Trend için yeterli geçmiş yoksa **YENİ** yazar; trend asla uydurulmaz.
+
+### "0 indirme" koruması
+
+Bir kelime iki ayrı şekilde seni boş bırakır ve araç ikisini ayırır:
+
+| Başarısızlık | Nasıl anlaşılır | Sonuç |
+|---|---|---|
+| **Giriş duvarı** — sıralamaya hiç giremezsin | İlk 10'un *en zayıf* uygulaması bile 1M+ yükleme | Karar en fazla **WEAK** |
+| Giriş zor | En zayıf rakip 100K+ | Karar en fazla **WATCH** |
+| **Ölü gölet** — girersin ama kimse aramıyor | Orta sıra (3-10) medyanı 1.000'in altında | Karar en fazla **WEAK** |
+| İnce pazar | Orta sıra medyanı 5.000'in altında | Karar en fazla **WATCH** |
+| Erişim getirisi zayıf | Erişim puanı 50'nin altında | GOLD verilmez |
+
+Örnek: `quran` kelimesinde ilk 10'un en zayıfı 998 bin yükleme → yeni bir uygulama giremez, garanti 0 indirme. `tip calculator` kelimesinde ilk 10'un son sırası 43 yükleme → girmek bedava ama orta sıra 11 bin, yani girmek kolay, kazanmak ayrı konu. Araç ikisini farklı söyler.
+
+### Panelde olmayan şeyler (ve nedeni)
+
+**Conversion rate ve CPA yok.** Mağaza sayfası görüntüleri sadece uygulamanın sahibine, Play Console'da görünür; CPA ise reklam harcaması verisidir. İkisi de Play'in herkese açık sayfalarında yoktur, dolayısıyla kazıyıcıyla üretilemez. Bu araç onların yerine aynı kararı veren ve **gerçekten ölçülebilen** karşılıklarını kullanır: *erişim puanı* (sıralama indirmeye dönüşür mü) ve *gelir modeli* (bu alanda para kazanan var mı). Uydurma tahmin üretilmez.
 
 Tüm eşikler, koruma kuralları, metrik etiketleri ve tek cümlelik gerekçe üreteci tek dosyada: [`public/js/verdict.js`](public/js/verdict.js). Eşiği değiştirmek istersen `THRESHOLDS` ve `GUARDS` sabitlerine dokunman yeter; `test/verdict.test.js` sınır değerleri ve kuralları doğrular.
 
@@ -82,6 +101,9 @@ flowchart LR
 | **Zorluk** (0-100) | Rakiplerin gücü | İlk 10 uygulamanın gerçek yükleme sayıları (medyan + ilk 3'ün en güçlüsü), değerlendirme sayısı, ortalama puan, başlığında kelimeyi geçiren uygulama oranı, güncellik. |
 | **Pazar** (0-100) | Pastanın büyüklüğü | İlk 10 uygulamanın toplam yüklemesi (logaritmik). |
 | **Fırsat** (0-100) | Sana düşebilecek pay | `√(talep × (100 − zorluk))`; ilk 10'da zayıf (<100K), düşük puanlı (<4.0) ve 1+ yıldır güncellenmemiş uygulamalar küçük bonus verir. **60+ güçlü · 45+ iyi · 30+ orta · altı zor**. |
+| **Erişim** (0-100) | Sıralarsan indirme gelir mi | Üç gerçek ölçüden: ilk 10'un en zayıf uygulamasının yüklemesi (girmek kolay mı), 3. sıradan sonuncuya kadarki medyan yükleme (girince komşuların durumu), son 2 yılda ilk 10'a girebilmiş uygulama sayısı (pazar yeniye açık mı). |
+| **Gelir modeli** (0-10) | Bu alanda para var mı | İlk 10 uygulamanın kaçında uygulama içi satın alma, reklam ya da ücretli sürüm var. |
+| **Kullanıcı ilgisi** | Yükleyen kullanıyor mu | 1000 yüklemeye düşen değerlendirme sayısı (ilk 10 medyanı). |
 
 ### Nişler
 
@@ -128,6 +150,7 @@ npm run analyze -- "çevrimdışı oyunlar" --market tr:tr
 npm run serve                      # http://localhost:3000 — panel + canlı analiz
 npm test                           # karar katmanı + tarayıcı birim testleri
 npm run build                      # yayın kontrolü: JS sözdizimi, JSON'lar, public/ referansları
+npm run rescore                    # puanlama mantığı değişince: ağa gitmeden yeniden hesapla
 ```
 
 ---
@@ -158,7 +181,8 @@ config/seeds.json        tohumlar, pazarlar, bütçeler
 src/run.js               7/24 tarayıcı (keşif → talep → rekabet → skor → JSON)
 src/analyze.js           tek kelime analizi (tarayıcı ve API ortak)
 src/demand.js            otomatik tamamlama ile talep ölçümü (ikili arama)
-src/score.js             zorluk / pazar / fırsat formülleri
+src/score.js             zorluk / pazar / fırsat formülleri + erişim ölçüleri (giriş, orta sıra, yeni giren)
+src/rescore.js           npm run rescore — önbellekten yeniden puanlama (ağ yok)
 src/niches.js            niş gruplama
 src/discover.js          başlık n-gram adayları
 src/store.js             google-play-scraper sarmalayıcı: hız sınırı, retry, bütçe
@@ -212,4 +236,4 @@ MIT
 
 Self-running (GitHub Actions cron) keyword & niche finder for Google Play ASO. It expands seed keywords via Play autocomplete, estimates demand from the shortest prefix that triggers a suggestion, measures competition from the top-10 apps (real installs, ratings, freshness, title matches) and computes an opportunity score. Results are committed to the repo and served as a static dashboard on GitHub Pages and/or Vercel; on Vercel a live `/api/analyze` endpoint powers instant keyword analysis. No paid APIs.
 
-The dashboard is decision-first: every keyword is reduced to GOLD / BUILD / WATCH / WEAK / SKIP with a one-sentence, deterministic reason and three key metrics (demand, competition, trend). The decision layer in `public/js/verdict.js` is presentation only — it never alters the scoring formulas — and applies guardrails (no GOLD on weak demand, capped verdicts on extreme competition or incomplete competitor data, never an invented trend). The original dense table lives on in Analyst Mode with all columns, numeric filters and CSV export.
+The dashboard is decision-first: every keyword is reduced to GOLD / BUILD / WATCH / WEAK / SKIP with a one-sentence, deterministic reason and four key metrics (demand, competition, reach, trend). A **reach** score answers the question that decides whether you get any installs at all: can a new app even enter this top 10 (the weakest top-10 app's install count), and does mid-pack placement pay (median installs of ranks 3-10), and is the market open to newcomers (apps released in the last 2 years that rank). Two guardrails encode the two ways a keyword leaves you at zero: a **wall** (you never rank) and a **dead pond** (you rank but nobody searches). Conversion rate and CPA are deliberately absent: store-listing views are private to the app owner and CPA is ad-spend data, so neither can be scraped; the dashboard uses measurable stand-ins (reach, and how many of the top 10 monetize at all). The decision layer in `public/js/verdict.js` is presentation only — it never alters the scoring formulas — and applies guardrails (no GOLD on weak demand, capped verdicts on extreme competition or incomplete competitor data, never an invented trend). The original dense table lives on in Analyst Mode with all columns, numeric filters and CSV export.

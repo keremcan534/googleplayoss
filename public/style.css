@@ -436,3 +436,91 @@ details.raw > summary { cursor: pointer; color: var(--accent); font-weight: 600;
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* ---------- erişim / risk etiketleri ---------- */
+.tag.t-real { color: var(--build); border-color: color-mix(in srgb, var(--build) 55%, transparent); background: color-mix(in srgb, var(--build) 12%, transparent); }
+.tag.t-risk { color: var(--skip); border-color: color-mix(in srgb, var(--skip) 50%, transparent); }
+.tag.t-var { color: var(--muted); }
+.chip.c-real.on { border-color: var(--build); color: var(--build); }
+.sum.s-real { --c: var(--build); }
+.sum.s-real b { color: var(--build); }
+.opp-metrics { grid-template-columns: repeat(4, 1fr); }
+.niche .opp-metrics { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 1400px) { .opp { grid-template-columns: 112px minmax(0, 1fr) 80px 380px 96px; } }
+@media (max-width: 1240px) { .opp { grid-template-columns: 108px minmax(0, 1fr) 76px 330px 88px; } }
+@media (max-width: 1100px) {
+  .opp { grid-template-columns: 104px minmax(0, 1fr) 72px 84px; }
+  .opp .opp-metrics { grid-column: 1 / -1; grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 720px) { .opp-metrics { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---------- sıralama grafiği ---------- */
+/* Palet dataviz doğrulayıcısından geçti:
+   açık tema #2f6fe0 / #12965d (L 0.43-0.77 bandı), koyu tema #4f8ff0 / #22a86f (L 0.48-0.67 bandı).
+   Her iki modda CVD ayrımı ΔE 20+, yüzeye karşı kontrast 3:1 üstü. */
+:root { --ch-p: #4f8ff0; --ch-s: #22a86f; }
+@media (prefers-color-scheme: light) { :root { --ch-p: #2f6fe0; --ch-s: #12965d; } }
+
+.chart-card {
+  margin: 0;
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 20px 22px;
+  overflow-x: auto;
+}
+.chart-head h2 { font-size: 18px; margin-bottom: 5px; }
+.chart-sub { color: var(--muted); font-size: 12.5px; max-width: 76ch; }
+.chart-legend { display: flex; gap: 16px; margin: 13px 0 4px; }
+.chart-legend .lg { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--text2); font-weight: 600; }
+.sw { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+.sw-p { background: var(--ch-p); }
+.sw-s { background: var(--ch-s); }
+
+.chart-grid { display: flex; flex-direction: column; margin-top: 8px; min-width: 620px; }
+.ch-row {
+  display: grid;
+  grid-template-columns: minmax(180px, 1.35fr) 96px minmax(150px, 1fr) minmax(150px, 1fr);
+  align-items: center;
+  gap: 18px;
+  padding: 7px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 55%, transparent);
+  cursor: pointer;
+}
+.ch-row:last-child { border-bottom: 0; }
+.ch-row:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); }
+.ch-row:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.ch-header {
+  cursor: default; border-bottom: 1px solid var(--line2); padding-bottom: 8px; margin-bottom: 4px;
+  font-size: 10.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted);
+}
+.ch-header:hover { background: none; }
+.ch-header span { display: inline-flex; align-items: center; gap: 5px; }
+.ch-name { min-width: 0; }
+.ch-name b { display: block; font-weight: 650; font-size: 14px; overflow-wrap: anywhere; }
+.ch-name i { display: block; font-style: normal; font-size: 11.5px; color: var(--muted); }
+/* çubuk: tabana yapışık, veri ucu 4px yuvarlak, ince (<=24px), etiket metin renginde.
+   Izgara: çubuk 1fr izinde, etiket kendi sabit kolonunda — etiket asla kırpılmaz. */
+.ch-bar { display: grid; grid-template-columns: minmax(0, 1fr) 52px; align-items: center; gap: 10px; min-width: 0; }
+.ch-bar > i {
+  display: block; height: 16px; width: var(--w, 0%); min-width: 2px;
+  border-radius: 0 4px 4px 0;
+}
+.ch-bar > .bar-p { background: var(--ch-p); }
+.ch-bar > .bar-s { background: var(--ch-s); }
+.ch-bar > b { font-variant-numeric: tabular-nums; font-size: 13px; color: var(--text); text-align: right; white-space: nowrap; }
+.chart-foot {
+  display: flex; flex-wrap: wrap; gap: 22px; margin-top: 16px; padding-top: 13px;
+  border-top: 1px solid var(--line); color: var(--muted); font-size: 12.5px;
+}
+.chart-foot b { color: var(--text); font-variant-numeric: tabular-nums; }
+@media (forced-colors: active) {
+  .ch-bar > i { border: 1px solid CanvasText; background: Highlight; }
+  .ch-bar > .bar-s { background: Canvas; }
+}
+@media (max-width: 720px) {
+  .chart-card { padding: 16px 14px; }
+  .ch-row { grid-template-columns: minmax(130px, 1.2fr) 88px minmax(110px, 1fr) minmax(110px, 1fr); gap: 10px; }
+  .chart-grid { min-width: 560px; }
+}
+.chart-note { flex-basis: 100%; font-style: italic; }

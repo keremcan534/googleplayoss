@@ -20,6 +20,7 @@
     <button class="nav-btn active" data-view="overview">Genel Bakış</button>
     <button class="nav-btn" data-view="opportunities">Fırsatlar</button>
     <button class="nav-btn" data-view="niches">Nişler</button>
+    <button class="nav-btn" data-view="ranking">Sıralama</button>
     <button class="nav-btn" data-view="live">Canlı Analiz</button>
     <button class="nav-btn" data-view="saved">Kaydedilenler <span class="nav-count" id="savedCount" hidden></span></button>
     <button class="nav-btn" data-view="analyst">Analist Modu</button>
@@ -68,6 +69,7 @@
         <option value="demand">En yüksek talep</option>
         <option value="easy">En düşük rekabet</option>
         <option value="rising">En hızlı yükselen</option>
+        <option value="reach">En yüksek erişim (indirme şansı)</option>
         <option value="market">En büyük pazar</option>
       </select>
       <button class="ghost" id="advToggle" aria-expanded="false">Gelişmiş filtreler</button>
@@ -96,6 +98,37 @@
       </select>
     </div>
     <div id="niches" class="niche-grid"></div>
+  </section>
+
+  <!-- ============ SIRALAMA (grafik) ============ -->
+  <section class="view" id="view-ranking" hidden>
+    <div class="controls">
+      <select id="rankWhat" aria-label="Neyi sırala">
+        <option value="niches">Nişler</option>
+        <option value="keywords">Kelimeler</option>
+      </select>
+      <select id="rankMetric" aria-label="Sıralama ölçüsü">
+        <option value="reach">Sırala: Erişim puanı</option>
+        <option value="demand">Sırala: Talep</option>
+        <option value="opportunity">Sırala: Fırsat puanı</option>
+        <option value="money">Sırala: Gelir modeli</option>
+        <option value="engagement">Sırala: Kullanıcı ilgisi</option>
+      </select>
+      <select id="rankSecond" aria-label="İkinci kolon">
+        <option value="money">Yanında: Gelir modeli</option>
+        <option value="engagement">Yanında: Kullanıcı ilgisi</option>
+        <option value="demand">Yanında: Talep</option>
+        <option value="reach">Yanında: Erişim</option>
+        <option value="difficulty">Yanında: Rekabet</option>
+      </select>
+      <select id="rankCount" aria-label="Kaç satır">
+        <option value="20">İlk 20</option>
+        <option value="30">İlk 30</option>
+        <option value="50">İlk 50</option>
+      </select>
+      <span class="muted small">Tam tablo ve CSV için <button class="link-btn" data-view-link="analyst">Analist Modu</button></span>
+    </div>
+    <figure class="chart-card" id="rankChart"></figure>
   </section>
 
   <!-- ============ CANLI ANALİZ ============ -->
@@ -172,6 +205,7 @@
             <th data-sort="opportunity" class="num">Fırsat</th>
             <th data-sort="demand" class="num">Talep</th>
             <th data-sort="difficulty" class="num">Zorluk</th>
+            <th data-sort="reachScore" class="num" title="Sıralamaya girersen indirme gelir mi">Erişim</th>
             <th data-sort="market" class="num">Pazar</th>
             <th data-sort="titleMatches" class="num">Başlıkta</th>
             <th data-sort="weak" class="num">Zayıf</th>

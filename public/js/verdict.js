@@ -6,6 +6,8 @@
  * Eşikler ve kurallar tek yerde: THRESHOLDS, GUARDS, LEVELS.
  */
 
+const clamp = (x, lo, hi) => Math.min(hi, Math.max(lo, x));
+
 export const VERDICT_ORDER = { GOLD: 0, BUILD: 1, WATCH: 2, WEAK: 3, SKIP: 4, PENDING: 5 };
 
 /** Fırsat puanı alt sınırları (üstten alta). */
@@ -19,7 +21,20 @@ export const GUARDS = {
   demandOverride: 85,     // …talep bunun üstündeyse en fazla BUILD
   minCompetitors: 5,      // rakip verisi bundan azsa en fazla WATCH
   risingDelta: 5,         // trend: fırsat puanı değişimi eşiği
-  trendMinDays: 2         // trend için gereken en az gün aralığı
+  trendMinDays: 2,        // trend için gereken en az gün aralığı
+
+  // --- "0 indirme" koruması: iki ayrı başarısızlık biçimi
+  // 1) DUVAR — ilk 10'un en zayıfı bile büyükse yeni uygulama sıralamaya hiç giremez.
+  wallHard: 1_000_000,    // en zayıf rakip 1M+ → en fazla WEAK
+  wallSoft: 100_000,      // en zayıf rakip 100K+ → en fazla WATCH
+  easyEntry: 5_000,       // en zayıf rakip 5K altı → girmek kolay (olumlu sinyal)
+  // 2) ÖLÜ GÖLET — girmek kolay ama orta sıradaki rakipler bile neredeyse boş.
+  deadPondHard: 1_000,    // orta sıra medyanı 1K altı → en fazla WEAK
+  deadPondSoft: 5_000,    // orta sıra medyanı 5K altı → en fazla WATCH
+  healthyPond: 100_000,   // orta sıra medyanı 100K+ → olumlu sinyal
+  leaderDominance: 0.7,   // lider ilk 10 toplamının %70'inden fazlasını alıyorsa uyarı
+  frozenMarketMin: 8,     // bu kadar tarihli uygulamada hiç yeni giren yoksa pazar donmuş
+  goldMinReach: 50        // GOLD için gereken en az erişim puanı
 };
 
 export const VERDICT_META = {
@@ -108,12 +123,72 @@ export function isNewRecord(record, now = Date.now(), days = 7) {
   return Number.isFinite(t) && now - t <= days * DAY;
 }
 
-function fmtInstalls(n) {
+export function fmtInstalls(n) {
   if (!Number.isFinite(n)) return '–';
   if (n >= 1e9) return `${(n / 1e9).toFixed(1)} milyar`;
   if (n >= 1e6) return `${(n / 1e6).toFixed(1)} milyon`;
-  if (n >= 1e3) return `${Math.round(n / 1e3)} bin`;
+  if (n >= 1e4) return `${Math.round(n / 1e3)} bin`;
+  if (n >= 1e3) return `${(n / 1e3).toFixed(1)} bin`;
   return String(n);
+}
+
+/**
+ * Erişim puanı (0-100): "sıralamaya girersem gerçekten indirme gelir mi?"
+ * Fırsat puanının YERİNE geçmez, yanında durur. Üç gerçek ölçüden oluşur:
+ *   girilebilirlik — ilk 10'un en zayıf uygulamasının yüklemesi (düşükse girmek kolay)
+ *   gölet büyüklüğü — 3. sıradan sonuncuya kadarki medyan yükleme (girince komşuların durumu)
+ *   yeniye açıklık — son 2 yılda çıkıp ilk 10'a girebilmiş uygulama oranı
+ * Hepsi logaritmik ölçekte; uydurma trafik tahmini yapılmaz.
+ */
+export function reachScore(reach) {
+  if (!reach || !reach.has) return null;
+  const log = (x) => Math.log10(Math.max(0, x || 0) + 1);
+  // entry2 (en küçükten ikinci) 100 yükleme → 1.0 ; 1M → 0. Tek aykırı uygulamaya dayanmaz.
+  const basis = Number.isFinite(reach.entry2) ? reach.entry2 : reach.entry;
+  const enterability = clamp((6 - log(basis)) / 4, 0, 1);
+  // midpack 1K → 0 ; 500K → 1
+  const pondSize = clamp((log(reach.midpack) - 3) / 2.7, 0, 1);
+  const openness = reach.dated ? clamp(reach.newcomers / Math.max(3, reach.dated * 0.4), 0, 1) : 0.5;
+  return Math.round(100 * (0.40 * enterability + 0.40 * pondSize + 0.20 * openness));
+}
+
+export const REACH_LEVELS = [[24, 'vlow', 'ÇOK ZAYIF'], [44, 'low', 'ZAYIF'], [64, 'mid', 'ORTA'], [79, 'high', 'İYİ'], [100, 'vhigh', 'ÇOK İYİ']];
+export function reachLevel(v) {
+  if (!Number.isFinite(v)) return { key: 'na', label: '—', index: -1 };
+  for (let i = 0; i < REACH_LEVELS.length; i++) if (v <= REACH_LEVELS[i][0]) return { key: REACH_LEVELS[i][1], label: REACH_LEVELS[i][2], index: i };
+  return { key: 'vhigh', label: 'ÇOK İYİ', index: 4 };
+}
+
+/**
+ * Erişilebilirlik teşhisi: sıralamaya girebilir miyim, girince ne alırım?
+ * Tamamen gerçek yükleme verisinden; tahmin/uydurma yok.
+ *   wall     → ilk 10'un en zayıfı bile büyük, yeni uygulama giremez (0 indirme riski)
+ *   deadPond → girmek kolay ama orta sıra neredeyse boş (girsen de trafik yok)
+ */
+export function reachability(record) {
+  const c = (record && record.comp) || {};
+  const n = c.n || 0;
+  const entry = Number.isFinite(c.entry) ? c.entry : null;
+  const midpack = Number.isFinite(c.midpack) ? c.midpack : null;
+  const out = {
+    n, entry, midpack,
+    entry2: Number.isFinite(c.entry2) ? c.entry2 : null,
+    tiny: Number.isFinite(c.tiny) ? c.tiny : null,
+    leaderShare: Number.isFinite(c.leaderShare) ? c.leaderShare : null,
+    newcomers: Number.isFinite(c.newcomers) ? c.newcomers : null,
+    dated: c.dated ?? null,
+    medianAgeYears: c.medianAgeYears ?? null,
+    wall: 'unknown', pond: 'unknown', frozen: false, dominated: false, has: false
+  };
+  if (!n || entry === null || midpack === null) return out;
+  out.has = true;
+  out.wall = entry >= GUARDS.wallHard ? 'hard' : entry >= GUARDS.wallSoft ? 'soft' : entry <= GUARDS.easyEntry ? 'open' : 'normal';
+  out.pond = midpack < GUARDS.deadPondHard ? 'dead' : midpack < GUARDS.deadPondSoft ? 'thin' : midpack >= GUARDS.healthyPond ? 'healthy' : 'normal';
+  out.frozen = out.newcomers === 0 && (out.dated || 0) >= GUARDS.frozenMarketMin;
+  out.dominated = out.leaderShare !== null && out.leaderShare >= GUARDS.leaderDominance;
+  out.score = reachScore(out);
+  out.level = reachLevel(out.score);
+  return out;
 }
 
 /** Olumlu / olumsuz sinyaller (ağırlığa göre sıralı). */
@@ -121,6 +196,7 @@ export function getSignals(record, trend) {
   const r = record || {};
   const c = r.comp || {};
   const n = c.n || 0;
+  const reach = reachability(r);
   const demand = r.demand ?? 0;
   const difficulty = r.difficulty;
   const pos = [];
@@ -162,6 +238,34 @@ export function getSignals(record, trend) {
   }
   if (r.st === 'partial' || (n > 0 && n < GUARDS.minCompetitors)) add(neg, 3, `Rakip verisi eksik (${n}/10), bir sonraki taramada tamamlanır`);
 
+  // erişilebilirlik: girebilir miyim, girince ne alırım
+  if (reach.has) {
+    if (reach.wall === 'hard') add(neg, 9, `Giriş duvarı: ilk 10'un en zayıf uygulaması bile ${fmtInstalls(reach.entry)} yükleme — yeni bir uygulama bu sıralamaya giremez`);
+    else if (reach.wall === 'soft') add(neg, 7, `Giriş zor: ilk 10'un en zayıfı ${fmtInstalls(reach.entry)} yükleme`);
+    else if (reach.wall === 'open') add(pos, 6, `Sıralamaya girmek kolay: ilk 10'un son sırasındaki uygulama sadece ${fmtInstalls(reach.entry)} yükleme`);
+
+    if (reach.pond === 'dead') add(neg, 8, `Ölü gölet: orta sıradaki rakip sadece ${fmtInstalls(reach.midpack)} yükleme — sıralasan bile indirme gelmez`);
+    else if (reach.pond === 'thin') add(neg, 6, `Pazar çok ince: orta sıradaki rakip ${fmtInstalls(reach.midpack)} yükleme`);
+    else if (reach.pond === 'healthy') add(pos, 5, `Orta sıradaki rakip ${fmtInstalls(reach.midpack)} yükleme — sıralamak gerçek trafik demek`);
+
+    if (reach.newcomers >= 3) add(pos, 5, `Pazar yeniye açık: son 2 yılda çıkan ${reach.newcomers} uygulama ilk 10'a girmiş`);
+    else if (reach.frozen) add(neg, 5, `Pazar donmuş: son 2 yılda çıkan hiçbir uygulama ilk 10'a girememiş (medyan yaş ${reach.medianAgeYears} yıl)`);
+    if (reach.dominated) add(neg, 4, `Tek uygulamanın pazarı: lider ilk 10 yüklemelerinin %${Math.round(reach.leaderShare * 100)}'ini almış`);
+  }
+
+  // para kazanma ve ilgi (CR/CPA yerine Play'in açık verisinden çıkarılabilenler)
+  if (n >= 5) {
+    if (Number.isFinite(c.monetized)) {
+      if (c.monetized >= 8) add(pos, 4, `Para kazanılan bir alan: ilk 10'un ${c.monetized}'inde uygulama içi satın alma, reklam ya da ücretli sürüm var`);
+      else if (c.monetized <= 2) add(neg, 5, `Para kazanma zor görünüyor: ilk 10'un sadece ${c.monetized}'inde gelir modeli var`);
+    }
+    if (Number.isFinite(c.iap) && c.iap >= 7) add(pos, 2, `İlk 10'un ${c.iap}'inde uygulama içi satın alma var (abonelik/tek seferlik satış çalışıyor)`);
+    if (Number.isFinite(c.engagement)) {
+      if (c.engagement >= 8) add(pos, 3, `Kullanıcı ilgisi yüksek: 1000 yüklemeye ${c.engagement} değerlendirme düşüyor`);
+      else if (c.engagement > 0 && c.engagement < 2) add(neg, 3, `Kullanıcı ilgisi düşük: 1000 yüklemeye sadece ${c.engagement} değerlendirme düşüyor`);
+    }
+  }
+
   // trend
   if (trend && trend.dir === 'rising') add(pos, 3, `Fırsat puanı yükseliyor (+${trend.delta}, ${trend.days} günde)`);
   if (trend && trend.dir === 'falling') add(neg, 3, `Fırsat puanı düşüyor (${trend.delta}, ${trend.days} günde)`);
@@ -183,6 +287,15 @@ export function buildReason(record, trend) {
   const D = demand >= 65 ? 'high' : demand >= 45 ? 'mid' : 'low';
   const C = difficulty >= 80 ? 'extreme' : difficulty >= 65 ? 'high' : difficulty >= 45 ? 'mid' : 'low';
 
+  // Karar için belirleyici olan şey erişilebilirlikse tek cümle onu söyler.
+  const reach = reachability(r);
+  if (reach.has) {
+    if (reach.wall === 'hard') return `İlk 10'un en zayıf uygulaması bile ${fmtInstalls(reach.entry)} yükleme: yeni bir uygulama bu sıralamaya giremez.`;
+    if (reach.pond === 'dead') return `Sıralamaya girmek kolay ama pazar boş: orta sıradaki rakip sadece ${fmtInstalls(reach.midpack)} yükleme.`;
+    if (reach.wall === 'soft' && C !== 'low') return `Giriş zor: ilk 10'un en zayıfı ${fmtInstalls(reach.entry)} yükleme, ${D === 'high' ? 'talep yüksek olsa da' : 'talep de sınırlı'}.`;
+    if (reach.pond === 'thin' && opportunity >= 45) return `Girmek kolay ama pazar ince: orta sıradaki rakip ${fmtInstalls(reach.midpack)} yükleme.`;
+  }
+
   if (opportunity >= 85 && D === 'high') return 'Mükemmel talep/rekabet oranı.';
 
   const base = {
@@ -203,7 +316,9 @@ export function buildReason(record, trend) {
   // tek bir ek yan cümle (öncelik sırasıyla)
   let extra = '';
   if (C === 'low' || C === 'mid') {
-    if (c.stale >= 3) extra = `${c.stale} rakip bir yıldır güncellenmiyor`;
+    if (reach.has && reach.wall === 'open' && reach.pond === 'healthy') extra = `girmek kolay ve orta sıra ${fmtInstalls(reach.midpack)} yükleme`;
+    else if (reach.has && reach.newcomers >= 3) extra = `son 2 yılda ${reach.newcomers} yeni uygulama ilk 10'a girmiş`;
+    else if (c.stale >= 3) extra = `${c.stale} rakip bir yıldır güncellenmiyor`;
     else if (c.lowRated >= 3) extra = 'rakiplerin puanları zayıf';
     else if (c.weak >= 3) extra = `ilk 10'da ${c.weak} zayıf uygulama var`;
     else if (trend && trend.dir === 'rising') extra = 'fırsat puanı da yükseliyor';
@@ -227,7 +342,7 @@ export function getOpportunityVerdict(record, opts = {}) {
   const r = record || {};
   const trend = getTrend(r);
   const isNew = isNewRecord(r, now);
-  const base = { trend, isNew, positives: [], negatives: [], capped: [], scoreLevel: opportunityLevel(r.opportunity) };
+  const base = { trend, isNew, positives: [], negatives: [], capped: [], scoreLevel: opportunityLevel(r.opportunity), reach: reachability(r) };
 
   const analyzed = r.st === 'ok' || r.st === 'partial' || r.st === 'no-demand';
   if (!analyzed) {
@@ -254,7 +369,19 @@ export function getOpportunityVerdict(record, opts = {}) {
   const n = (r.comp && r.comp.n) || 0;
   if (r.st === 'partial' || n < GUARDS.minCompetitors) cap('WATCH', 'Rakip verisi eksik olduğu için karar sınırlandı');
 
-  return { ...base, verdict, label: VERDICT_META[verdict].title, reason: buildReason(r, trend), positives, negatives, capped };
+  // "0 indirme" koruması
+  const reach = reachability(r);
+  if (reach.has) {
+    if (reach.wall === 'hard') cap('WEAK', 'İlk 10 duvar: en zayıf rakip bile çok büyük');
+    else if (reach.wall === 'soft') cap('WATCH', 'Sıralamaya girmek zor: en zayıf rakip 100 binin üstünde');
+    if (reach.pond === 'dead') cap('WEAK', 'Ölü gölet: sıralasan bile indirme gelmez');
+    else if (reach.pond === 'thin') cap('WATCH', 'Pazar ince: orta sıra 5 binin altında');
+    if (Number.isFinite(reach.score) && reach.score < GUARDS.goldMinReach) {
+      cap('BUILD', `Erişim puanı ${reach.score}: sıralasan bile getirisi sınırlı, GOLD verilmedi`);
+    }
+  }
+
+  return { ...base, verdict, label: VERDICT_META[verdict].title, reason: buildReason(r, trend), positives, negatives, capped, reach };
 }
 
 /** Rakip özeti (ilk 10). */
@@ -263,7 +390,14 @@ export function competitorSummary(record) {
   const n = c.n || 0;
   const lvl = difficultyLevel(record ? record.difficulty : null);
   const strength = lvl.index <= 1 ? { key: 'low', label: 'DÜŞÜK' } : lvl.index === 2 ? { key: 'mid', label: 'ORTA' } : lvl.index === 3 ? { key: 'high', label: 'YÜKSEK' } : lvl.index === 4 ? { key: 'extreme', label: 'AŞIRI' } : { key: 'na', label: '—' };
-  return { n, strength, weak: c.weak ?? 0, stale: c.stale ?? 0, lowRated: c.lowRated ?? 0, titleMatches: c.titleMatches ?? 0, big: c.big ?? 0, avgScore: c.avgScore ?? null, sumInstalls: c.sumInstalls ?? null, medianInstalls: c.medianInstalls ?? null };
+  return {
+    n, strength, weak: c.weak ?? 0, stale: c.stale ?? 0, lowRated: c.lowRated ?? 0,
+    titleMatches: c.titleMatches ?? 0, big: c.big ?? 0, avgScore: c.avgScore ?? null,
+    sumInstalls: c.sumInstalls ?? null, medianInstalls: c.medianInstalls ?? null,
+    iap: c.iap ?? 0, ads: c.ads ?? 0, paid: c.paid ?? 0,
+    monetized: Number.isFinite(c.monetized) ? c.monetized : null,
+    engagement: Number.isFinite(c.engagement) ? c.engagement : null
+  };
 }
 
 /** Varsayılan sıralama: karar sınıfı, sonra fırsat puanı, sonra ad. */
@@ -305,6 +439,9 @@ export function getNicheVerdict(niche, members) {
     trend = d >= GUARDS.risingDelta ? { dir: 'rising', label: 'YÜKSELİYOR', arrow: '↑', delta: d } : d <= -GUARDS.risingDelta ? { dir: 'falling', label: 'DÜŞÜYOR', arrow: '↓', delta: d } : { dir: 'stable', label: 'SABİT', arrow: '→', delta: d };
   }
   const best = sorted[0] || null;
+  // niş erişim puanı: en iyi 5 kelimenin erişim puanlarının ortalaması
+  const reachScores = top.map((m) => (m.decision && m.decision.reach && Number.isFinite(m.decision.reach.score) ? m.decision.reach.score : null)).filter((x) => x !== null);
+  const topReach = reachScores.length ? Math.round(mean(reachScores)) : null;
   const dl = demandLevel(topDemand);
   const cl = difficultyLevel(topDiff);
   const reason = topOpp === null
@@ -315,6 +452,7 @@ export function getNicheVerdict(niche, members) {
     topOpportunity: topOpp === null ? null : Math.round(topOpp),
     demand: { value: topDemand === null ? null : Math.round(topDemand), ...dl },
     competition: { value: topDiff === null ? null : Math.round(topDiff), ...cl },
+    reach: { value: topReach, ...reachLevel(topReach) },
     trend, counts, useful, best, total: (members || []).length
   };
 }

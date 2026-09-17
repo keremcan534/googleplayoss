@@ -13,7 +13,8 @@
     "analyze": "node src/cli.js",
     "serve": "node src/serve.js",
     "build": "node scripts/build-check.js",
-    "test": "node --test"
+    "test": "node --test",
+    "rescore": "node src/rescore.js"
   },
   "dependencies": {
     "google-play-scraper": "^10.1.3"

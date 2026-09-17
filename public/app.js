@@ -4,8 +4,8 @@
  */
 import {
   getOpportunityVerdict, getNicheVerdict, competitorSummary, compareByVerdict,
-  demandLevel, difficultyLevel, opportunityLevel, marketLevel,
-  VERDICT_META, VERDICT_ORDER
+  demandLevel, difficultyLevel, opportunityLevel, marketLevel, reachLevel, fmtInstalls,
+  VERDICT_META, VERDICT_ORDER, GUARDS
 } from './js/verdict.js';
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -13,8 +13,12 @@ const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const nf = new Intl.NumberFormat('tr-TR');
 const DAY = 86400000;
-const VIEWS = ['overview', 'opportunities', 'niches', 'live', 'saved', 'analyst', 'help'];
+const VIEWS = ['overview', 'opportunities', 'niches', 'ranking', 'live', 'saved', 'analyst', 'help'];
 const OPPORTUNITY_VERDICTS = ['GOLD', 'BUILD', 'WATCH'];
+/** "Gerçekçi" eşiği: kararı BUILD+ olan VE erişim puanı bunun üstünde olanlar. */
+const REALISTIC_REACH = 65;
+/** İlk 10 örtüşmesi bu oranın üstündeyse iki kelime aynı pazardır. */
+const VARIANT_OVERLAP = 0.6;
 /** "Fırsat" sayılan kayıt: WATCH ve üstü karar almış olanlar. */
 const isOpportunity = (r) => OPPORTUNITY_VERDICTS.includes(r.dv);
 /** Son 7 günde bulunmuş ve fırsat sayılan kayıt. */
@@ -52,7 +56,14 @@ const TIPS = {
   demand: 'Talep: Google Play otomatik tamamlamadan türetilen göreli arama ilgisi. Gerçek arama hacmi değildir.',
   difficulty: 'Rekabet: ilk 10 uygulamanın gücü. Yükleme sayısı, değerlendirme, puan, başlık eşleşmesi ve güncellik.',
   market: 'Pazar: ilk 10 uygulamanın toplam yüklemesi. Büyük pazar çok talep, küçük pazar keşfedilmemiş alan demek olabilir.',
-  trend: 'Trend: fırsat puanının önceki taramalara göre değişimi. Yeterli geçmiş yoksa YENİ yazar, trend uydurulmaz.'
+  trend: 'Trend: fırsat puanının önceki taramalara göre değişimi. Yeterli geçmiş yoksa YENİ yazar, trend uydurulmaz.',
+  reach: 'Erişim: sıralamaya girersem gerçekten indirme gelir mi? İlk 10\'un en zayıf uygulamasının yüklemesi (girmek kolay mı), orta sıradaki rakiplerin yüklemesi (girince ne alırım) ve son 2 yılda ilk 10\'a girebilmiş uygulama sayısından hesaplanır. Trafik tahmini değildir.',
+  entry: 'Giriş bariyeri: ilk 10\'daki en zayıf uygulamanın yükleme sayısı. Küçükse yeni bir uygulama sıralamaya girebilir; milyonlarsa giremez.',
+  midpack: 'Orta sıra: 3. sıradan sonuncuya kadarki uygulamaların medyan yüklemesi. Lideri saymaz. Ortalarda bir yere yerleşirsen komşularının durumu budur.',
+  leader: 'Lider payı: ilk 10\'un toplam yüklemesinin ne kadarı bir numaradaki uygulamada. Yüksekse pazar tek uygulamanın.',
+  money: 'Gelir modeli: ilk 10 uygulamanın kaçında uygulama içi satın alma, reklam ya da ücretli sürüm var. Bir alanda kimse para kazanmıyorsa sen de kazanamazsın. (Gerçek gelir verisi herkese açık değildir.)',
+  engagement: 'Kullanıcı ilgisi: 1000 yüklemeye düşen değerlendirme sayısı (ilk 10 medyanı). Yükleyenlerin ne kadarı uygulamayı kullanıp puan verecek kadar benimsemiş. Conversion rate DEĞİLDİR; mağaza sayfası görüntüleri sadece uygulama sahibine açıktır.',
+  newcomers: 'Yeni girenler: ilk 10\'daki uygulamalardan kaçı son 2 yılda yayınlanmış. Sıfırsa pazar yeniye kapalı demektir.'
 };
 
 const state = {
@@ -64,6 +75,7 @@ const state = {
   adv: { minOpp: 0, minDemand: 0, maxDiff: 100, status: 'analyzed', src: '' },
   analyst: { q: '', status: 'analyzed', src: '', minOpp: 0, minDemand: 0, maxDiff: 100, sort: { key: 'opportunity', dir: -1 }, shown: 100 },
   stars: loadStars(), drawerKey: null, drawerNiche: null, live: false, liveChecked: false, liveResult: null,
+  variantMap: new Map(), collapse: true,
   apiBase: (localStorage.getItem('apiBase') || '').trim(),
   nicheCache: null
 };
@@ -91,6 +103,8 @@ function enrich(record) {
     dv: decision.verdict,
     verdictOrder: VERDICT_ORDER[decision.verdict] ?? 9,
     trendDelta: decision.trend.dir === 'new' ? null : decision.trend.delta,
+    reachScore: decision.reach.has ? decision.reach.score : null,
+    realistic: ['GOLD', 'BUILD'].includes(decision.verdict) && decision.reach.has && decision.reach.score >= REALISTIC_REACH,
     titleMatches: num(c.titleMatches),
     weak: num(c.weak),
     avgScore: num(c.avgScore),
@@ -131,9 +145,17 @@ function trendMetric(trend) {
   return `<div class="m l-${trend.dir}"><span>Trend ${info('trend')}</span><b>${arrow}${delta}</b><i>${label}</i></div>`;
 }
 
-function tags(r) {
+function tags(r, opts = {}) {
   const out = [];
+  const x = r.decision.reach;
   if (state.stars.has(r.k)) out.push('<span class="tag t-star">★ kayıtlı</span>');
+  if (r.realistic) out.push('<span class="tag t-real">gerçekçi</span>');
+  if (x.has && x.wall === 'hard') out.push('<span class="tag t-risk">giriş duvarı</span>');
+  else if (x.has && x.wall === 'soft') out.push('<span class="tag t-risk">giriş zor</span>');
+  if (x.has && x.pond === 'dead') out.push('<span class="tag t-risk">ölü gölet</span>');
+  else if (x.has && x.pond === 'thin') out.push('<span class="tag t-risk">ince pazar</span>');
+  const vc = opts.variants || 0;
+  if (vc) out.push(`<span class="tag t-var" title="Aynı rakiplere düşen ${vc} kelime daha">+${vc} varyant</span>`);
   if (r.decision.isNew) out.push('<span class="tag t-new">yeni</span>');
   if (r.decision.trend.dir === 'rising') out.push('<span class="tag t-rising">yükseliyor</span>');
   if (r.decision.trend.dir === 'falling') out.push('<span class="tag t-falling">düşüyor</span>');
@@ -149,16 +171,18 @@ function oppCard(r) {
   const cl = difficultyLevel(r.difficulty);
   const ol = opportunityLevel(r.opportunity);
   const starred = state.stars.has(r.k);
+  const variants = (state.variantMap.get(r.k) || []).length;
   return `<article class="opp v-${d.verdict.toLowerCase()}" data-k="${esc(r.k)}">
     <div class="opp-verdict">${vbadge(d.verdict)}</div>
     <div class="opp-main">
-      <div class="opp-head"><h3>${esc(r.k)}</h3>${tags(r)}</div>
+      <div class="opp-head"><h3>${esc(r.k)}</h3>${tags(r, { variants })}</div>
       <p class="opp-reason">${esc(d.reason)}</p>
     </div>
     <div class="opp-score" title="Fırsat puanı"><b>${Number.isFinite(r.opportunity) ? r.opportunity : '–'}</b><span>${ol.label}</span></div>
     <div class="opp-metrics">
       ${metric('Talep', r.demand, dl, { tip: 'demand' })}
       ${metric('Rekabet', r.difficulty, cl, { invert: true, tip: 'difficulty' })}
+      ${metric('Erişim', r.reachScore, reachLevel(r.reachScore), { tip: 'reach' })}
       ${trendMetric(d.trend)}
     </div>
     <div class="opp-actions">
@@ -210,6 +234,20 @@ function detailBody(r, opts = {}) {
     .filter((x) => x.k !== r.k && x.demand > 0 && ((r.seed && x.seed === r.seed) || x.seed === r.k || (r.seed && x.k === r.seed)))
     .sort(compareByVerdict).slice(0, 10);
 
+  const x = d.reach;
+  const variants = state.variantMap.get(r.k) || [];
+  const reachBlock = x.has ? `
+  <div class="sec">
+    <h4>Girebilir miyim, girince ne alırım? ${info('reach')}</h4>
+    <div class="hero-metrics">
+      ${metric('Erişim puanı', x.score, reachLevel(x.score), { tip: 'reach' })}
+      <div class="m"><span>Giriş bariyeri ${info('entry')}</span><b>${fmtInstalls(x.entry)}</b><i>${x.wall === 'hard' ? 'DUVAR' : x.wall === 'soft' ? 'ZOR' : x.wall === 'open' ? 'KOLAY' : 'NORMAL'}</i></div>
+      <div class="m"><span>Orta sıra ${info('midpack')}</span><b>${fmtInstalls(x.midpack)}</b><i>${x.pond === 'dead' ? 'ÖLÜ' : x.pond === 'thin' ? 'İNCE' : x.pond === 'healthy' ? 'SAĞLAM' : 'NORMAL'}</i></div>
+      <div class="m"><span>Yeni girenler ${info('newcomers')}</span><b>${x.newcomers}/${x.dated || '–'}</b><i>${x.frozen ? 'DONMUŞ' : x.newcomers >= 3 ? 'AÇIK' : 'SINIRLI'}</i></div>
+      <div class="m"><span>Lider payı ${info('leader')}</span><b>${x.leaderShare === null ? '–' : `%${Math.round(x.leaderShare * 100)}`}</b><i>${x.dominated ? 'TEK HAKİM' : 'DAĞINIK'}</i></div>
+    </div>
+    <p class="mini" style="margin-top:8px">İlk 10'da 10 binin altında yüklemesi olan ${x.tiny ?? '–'} uygulama var${Number.isFinite(x.entry2) ? `; en zayıf ikinci uygulama ${fmtInstalls(x.entry2)} yükleme` : ''}${x.medianAgeYears !== null ? `; rakiplerin medyan yaşı ${x.medianAgeYears} yıl` : ''}.</p>
+  </div>` : '';
   const compRows = [
     ['Güç', cs.strength.label],
     ['Zayıf uygulama', `${cs.weak} / ${cs.n || 10}`],
@@ -236,6 +274,10 @@ function detailBody(r, opts = {}) {
     </div>
   </div>
 
+  ${reachBlock}
+  ${variants.length ? `<div class="sec"><h4>Aynı pazara düşen varyantlar</h4>
+    <p class="mini">Bu kelimelerin arama sonuçları neredeyse aynı; ayrı fırsat değil, aynı fikrin farklı yazımı.</p>
+    <div class="kw-chips">${variants.map((v) => `<button class="kw-chip" data-details="${esc(v.k)}">${esc(v.k)} <span class="o">${v.opportunity ?? '–'}</span></button>`).join('')}</div></div>` : ''}
   ${d.positives.length ? `<div class="sec"><h4>Neden iyi</h4>${signalList(d.positives, 'pos')}</div>` : ''}
   ${d.negatives.length ? `<div class="sec"><h4>Riskler</h4>${signalList(d.negatives, 'neg')}</div>` : ''}
 
@@ -248,6 +290,12 @@ function detailBody(r, opts = {}) {
     <h4>İlk 10 rekabet özeti</h4>
     <div class="comp-grid">${compRows.map(([l, v]) => `<div class="fact"><b>${esc(v)}</b><span>${esc(l)}</span></div>`).join('')}</div>
     <p class="mini" style="margin-top:8px">Ortalama puan ${cs.avgScore ?? '–'} · medyan yükleme ${fmtShort(cs.medianInstalls)} · ilk 10 toplam ${fmtShort(cs.sumInstalls)}</p>
+    <div class="comp-grid" style="margin-top:8px">
+      <div class="fact"><b>${cs.monetized === null ? '–' : `${cs.monetized}/${cs.n}`}</b><span>Gelir modeli var ${info('money')}</span></div>
+      <div class="fact"><b>${cs.iap}/${cs.n}</b><span>Uygulama içi satın alma</span></div>
+      <div class="fact"><b>${cs.ads}/${cs.n}</b><span>Reklamlı</span></div>
+      <div class="fact"><b>${cs.engagement === null ? '–' : cs.engagement}</b><span>1000 yüklemede değerlendirme ${info('engagement')}</span></div>
+    </div>
   </div>
 
   <div class="sec">
@@ -287,6 +335,10 @@ function detailBody(r, opts = {}) {
         <div class="fact"><b>${c.avgScore ?? '–'}</b><span>Ort. puan</span></div>
         <div class="fact"><b>${fmtShort(c.sumInstalls)}</b><span>Toplam yükleme</span></div>
         <div class="fact"><b>${fmtShort(c.medianInstalls)}</b><span>Medyan yükleme</span></div>
+        <div class="fact"><b>${fmtShort(c.entry)}</b><span>Giriş bariyeri</span></div>
+        <div class="fact"><b>${fmtShort(c.midpack)}</b><span>Orta sıra</span></div>
+        <div class="fact"><b>${c.newcomers ?? '–'}</b><span>Son 2 yılda giren</span></div>
+        <div class="fact"><b>${c.leaderShare === null || c.leaderShare === undefined ? '–' : `%${Math.round(c.leaderShare * 100)}`}</b><span>Lider payı</span></div>
         <div class="fact"><b>${c.ads ?? '–'}</b><span>Reklamlı</span></div>
         <div class="fact"><b>${c.iap ?? '–'}</b><span>IAP</span></div>
         <div class="fact"><b>${esc(SRC_LABEL[r.src] || r.src || '–')}</b><span>Kaynak</span></div>
@@ -324,6 +376,7 @@ function closeDrawer() {
 function matchesQuick(r, quick) {
   switch (quick) {
     case 'all': return r.dv !== 'PENDING';
+    case 'real': return r.realistic;
     case 'GOLD': return r.dv === 'GOLD';
     case 'BUILD': return r.dv === 'GOLD' || r.dv === 'BUILD';
     case 'WATCH': return r.dv === 'WATCH';
@@ -361,7 +414,8 @@ const SORTERS = {
   demand: (a, b) => (b.demand ?? -1) - (a.demand ?? -1) || compareByVerdict(a, b),
   easy: (a, b) => (a.difficulty ?? 999) - (b.difficulty ?? 999) || compareByVerdict(a, b),
   rising: (a, b) => (b.trendDelta ?? -999) - (a.trendDelta ?? -999) || compareByVerdict(a, b),
-  market: (a, b) => (b.market ?? -1) - (a.market ?? -1) || compareByVerdict(a, b)
+  market: (a, b) => (b.market ?? -1) - (a.market ?? -1) || compareByVerdict(a, b),
+  reach: (a, b) => (b.reachScore ?? -1) - (a.reachScore ?? -1) || compareByVerdict(a, b)
 };
 
 function sortRows(rows, key) {
@@ -384,6 +438,7 @@ function renderOverview() {
     ['', c.WEAK, 'WEAK', null],
     ['s-skip', c.SKIP, 'SKIP', null],
     ['', best || '–', 'En iyi skor', null],
+    ['s-real', state.records.filter((r) => r.realistic).length, 'Gerçekçi', 'real'],
     ['', newOpps.length ? `+${newOpps.length}` : '0', 'Yeni fırsat (7g)', 'new'],
     ['', fmtRel(d.generatedAt), 'Son tarama', null]
   ];
@@ -397,8 +452,10 @@ function renderOverview() {
   $('#summarySub').textContent = `${fmtInt(s.keywords)} kelime evreninde ${fmtInt(analyzed.length)} tanesi puanlandı, ${fmtInt(s.pending)} tanesi sırada. ${fmtInt((d.niches || []).length)} niş, ${fmtInt(s.apps)} rakip uygulama. ${fmtInt(s.runs)} tarama koşusu.`;
 
   // en iyi fırsatlar
-  const ranked = sortRows(analyzed.filter((r) => r.demand > 0), 'verdict');
-  const top = ranked.filter((r) => ['GOLD', 'BUILD'].includes(r.dv)).slice(0, 8);
+  const ranked = collapseVariants(sortRows(analyzed.filter((r) => r.demand > 0), 'verdict'));
+  const realistic = sortRows(ranked.filter((r) => r.realistic), 'reach');
+  const rest = ranked.filter((r) => !r.realistic && ['GOLD', 'BUILD'].includes(r.dv));
+  const top = [...realistic, ...rest].slice(0, 8);
   if (top.length) {
     renderList($('#topOpps'), top);
   } else {
@@ -418,6 +475,7 @@ function renderQuickFilters() {
   const c = state.counts;
   const savedCount = state.records.filter((r) => state.stars.has(r.k)).length;
   const defs = [
+    ['real', '◎ Gerçekçi', state.records.filter((r) => r.realistic).length, 'c-real'],
     ['all', 'Tümü', c.GOLD + c.BUILD + c.WATCH + c.WEAK + c.SKIP, ''],
     ['GOLD', '★ GOLD', c.GOLD, 'c-gold'],
     ['BUILD', 'BUILD', c.GOLD + c.BUILD, 'c-build'],
@@ -448,10 +506,42 @@ function renderAdvanced() {
   </div>`;
 }
 
+/**
+ * Aynı ilk 10'a düşen kelimeler tek pazardır ("tip calculator", "tip calculator free",
+ * "tip calculator free android" → bir fikir). En iyi puanlıyı temsilci yapar,
+ * kalanını varyant olarak altına bağlar. Analist Modu'nda katlama yapılmaz.
+ */
+function collapseVariants(rows) {
+  const map = new Map();
+  if (!state.collapse) { state.variantMap = map; return rows; }
+  const out = [];
+  const groups = [];
+  for (const r of rows) {
+    const top = r.top || [];
+    if (top.length < 5) { out.push(r); continue; }
+    let host = null;
+    for (const g of groups) {
+      let inter = 0;
+      for (const id of top) if (g.set.has(id)) inter++;
+      if (inter / Math.min(g.set.size, top.length) >= VARIANT_OVERLAP) { host = g; break; }
+    }
+    if (host) {
+      const list = map.get(host.rep.k) || [];
+      list.push(r);
+      map.set(host.rep.k, list);
+    } else {
+      groups.push({ set: new Set(top), rep: r });
+      out.push(r);
+    }
+  }
+  state.variantMap = map;
+  return out;
+}
+
 function renderOpportunities(reset = true) {
   if (reset) state.shown = 60;
   renderQuickFilters();
-  const rows = sortRows(filterQuick(), state.sort);
+  const rows = collapseVariants(sortRows(filterQuick(), state.sort));
   const shown = rows.slice(0, state.shown);
   const el = $('#cards');
 
@@ -460,6 +550,10 @@ function renderOpportunities(reset = true) {
       const alt = sortRows(state.records.filter((r) => r.dv === 'BUILD' || r.dv === 'WATCH'), 'verdict').slice(0, 6);
       el.innerHTML = `<div class="empty"><strong>Şu anda GOLD fırsat yok.</strong>GOLD için 70+ fırsat puanı ve yeterli talep gerekir.</div>
         ${alt.length ? `<p class="fallback-note">En iyi mevcut adaylar</p><div class="opp-list">${alt.map(oppCard).join('')}</div>` : ''}`;
+    } else if (state.quick === 'real') {
+      const alt = collapseVariants(sortRows(state.records.filter((r) => ['GOLD', 'BUILD'].includes(r.dv)), 'reach')).slice(0, 6);
+      el.innerHTML = `<div class="empty"><strong>Şu anda hem kararı BUILD+ hem erişimi ${REALISTIC_REACH}+ olan kelime yok.</strong>Tarama derinleştikçe çıkacak. En yakın adaylar aşağıda.</div>
+        ${alt.length ? `<p class="fallback-note">Erişimi en yüksek BUILD kelimeleri</p><div class="opp-list">${alt.map(oppCard).join('')}</div>` : ''}`;
     } else if (state.quick === 'saved') {
       el.innerHTML = '<div class="empty"><strong>Henüz kaydedilmiş fırsat yok.</strong>Kartlardaki ☆ düğmesine basarak buraya ekle.</div>';
     } else if (state.quick === 'rising') {
@@ -470,7 +564,10 @@ function renderOpportunities(reset = true) {
   } else {
     el.innerHTML = shown.map(oppCard).join('');
   }
-  $('#countInfo').textContent = rows.length ? `${fmtInt(shown.length)} / ${fmtInt(rows.length)} fırsat` : '';
+  const collapsed = [...state.variantMap.values()].reduce((n, v) => n + v.length, 0);
+  $('#countInfo').textContent = rows.length
+    ? `${fmtInt(shown.length)} / ${fmtInt(rows.length)} pazar${collapsed ? ` · ${fmtInt(collapsed)} varyant katlandı` : ''}`
+    : '';
   $('#more').hidden = state.shown >= rows.length;
   const chip = $('#nicheChip');
   if (state.niche) {
@@ -593,6 +690,7 @@ function renderAnalyst(reset = true) {
       <td class="num">${bar(r.opportunity)}</td>
       <td class="num">${bar(r.demand)}</td>
       <td class="num">${bar(r.difficulty, true)}</td>
+      <td class="num">${r.reachScore ?? '–'}</td>
       <td class="num">${r.market ?? '–'}</td>
       <td class="num">${r.titleMatches === null ? '–' : `${r.titleMatches}/${r.comp.n}`}</td>
       <td class="num">${r.weak ?? '–'}</td>
@@ -601,21 +699,27 @@ function renderAnalyst(reset = true) {
       <td class="num muted">${fmtDate(r.first)}</td>
       <td><button class="icon-btn" data-details="${esc(r.k)}">Detay</button></td>
     </tr>`;
-  }).join('') : '<tr><td colspan="13" class="empty">Filtrelere uyan kelime yok.</td></tr>';
+  }).join('') : '<tr><td colspan="14" class="empty">Filtrelere uyan kelime yok.</td></tr>';
   $('#aCountInfo').textContent = `${fmtInt(shown.length)} / ${fmtInt(rows.length)} kelime${state.niche ? ` · niş: ${state.niche.name}` : ''}`;
   $('#aMore').hidden = state.analyst.shown >= rows.length;
 }
 
 function exportCsv() {
   const rows = analystRows();
-  const cols = ['kelime', 'karar', 'gerekce', 'firsat', 'firsat_seviye', 'talep', 'talep_seviye', 'zorluk', 'zorluk_seviye', 'pazar', 'trend', 'trend_degisim', 'baslikta', 'rakip_sayisi', 'zayif', 'dusuk_puan', 'bayat', 'dev', 'ort_puan', 'toplam_yukleme', 'kaynak', 'tohum', 'bulundu', 'son_analiz', 'ilk_10'];
+  const cols = ['kelime', 'karar', 'gerekce', 'firsat', 'firsat_seviye', 'talep', 'talep_seviye', 'zorluk', 'zorluk_seviye',
+    'erisim', 'erisim_seviye', 'giris_bariyeri', 'orta_sira', 'lider_payi', 'yeni_giren', 'ilk10_10k_alti', 'gercekci',
+    'pazar', 'trend', 'trend_degisim', 'baslikta', 'rakip_sayisi', 'zayif', 'dusuk_puan', 'bayat', 'dev', 'ort_puan', 'toplam_yukleme', 'kaynak', 'tohum', 'bulundu', 'son_analiz', 'ilk_10'];
   const lines = [cols.join(';')];
   for (const r of rows) {
     const c = r.comp || {};
     const d = r.decision;
     const apps = (r.top || []).map((id) => state.data?.apps?.[id]?.title).filter(Boolean).join(' | ');
+    const x = d.reach;
     const vals = [r.k, d.verdict, d.reason, r.opportunity, opportunityLevel(r.opportunity).label, r.demand, demandLevel(r.demand).label,
-      r.difficulty, difficultyLevel(r.difficulty).label, r.market, d.trend.dir === 'new' ? 'YENİ' : d.trend.label, r.trendDelta,
+      r.difficulty, difficultyLevel(r.difficulty).label,
+      r.reachScore, r.reachScore === null ? '' : reachLevel(r.reachScore).label, x.entry, x.midpack,
+      x.leaderShare, x.newcomers, x.tiny, r.realistic ? 'evet' : 'hayır',
+      r.market, d.trend.dir === 'new' ? 'YENİ' : d.trend.label, r.trendDelta,
       c.titleMatches, c.n, c.weak, c.lowRated, c.stale, c.big, c.avgScore, c.sumInstalls,
       SRC_LABEL[r.src] || r.src, r.seed, r.first, r.at, apps];
     lines.push(vals.map((v) => `"${String(v ?? '').replace(/"/g, '""')}"`).join(';'));
@@ -628,6 +732,133 @@ function exportCsv() {
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+/* ============================ görünüm: sıralama grafiği ============================ */
+/*
+ * Biçim seçimi: karşılaştırılan şey büyüklük (magnitude) ve satırlar adlandırılmış
+ * kategoriler → sıralı yatay çubuk. İki farklı ölçü tek eksene bindirilmez;
+ * her ölçü kendi kolonunda, kendi ölçeğinde, kolon başlığıyla doğrudan etiketli.
+ * Renkler paletten (dataviz doğrulayıcısı ile onaylandı), metin asla veri rengi giymez.
+ */
+const RANK_METRICS = {
+  reach: { label: 'Erişim', tip: 'reach', get: (r) => r.reach, fmt: (v) => String(v), desc: 'Sıralamaya girersen indirme gelir mi' },
+  demand: { label: 'Talep', tip: 'demand', get: (r) => r.demand, fmt: (v) => String(v), desc: 'Otomatik tamamlamadaki arama ilgisi' },
+  opportunity: { label: 'Fırsat', tip: 'opportunity', get: (r) => r.opportunity, fmt: (v) => String(v), desc: 'Talep ve rekabetin birleşimi' },
+  difficulty: { label: 'Rekabet', tip: 'difficulty', get: (r) => r.difficulty, fmt: (v) => String(v), desc: 'İlk 10 uygulamanın gücü' },
+  money: { label: 'Gelir modeli', tip: 'money', get: (r) => r.money, fmt: (v) => `${v}/10`, desc: 'İlk 10 uygulamanın kaçında para kazanma yolu var (satın alma, reklam, ücretli)' },
+  engagement: { label: 'İlgi', tip: 'engagement', get: (r) => r.engagement, fmt: (v) => String(v), desc: '1000 yüklemeye düşen değerlendirme sayısı — kullanıcı bağlılığı göstergesi' }
+};
+
+function rankingRows() {
+  const what = $('#rankWhat').value;
+  if (what === 'niches') {
+    return buildNicheCards().map((n) => ({
+      key: n.name,
+      name: n.name,
+      sub: `${n.type === 'seed' ? 'tohum grubu' : 'ortak kelime'} · ${n.nv.useful}/${n.count} işe yarar kelime`,
+      verdict: n.nv.verdict,
+      useful: n.nv.useful,
+      reach: n.nv.reach ? n.nv.reach.value : null,
+      demand: n.nv.demand.value,
+      opportunity: n.nv.topOpportunity,
+      difficulty: n.nv.competition.value,
+      money: medianOf(n.members.map((m) => m.comp && m.comp.monetized)),
+      engagement: medianOf(n.members.map((m) => m.comp && m.comp.engagement)),
+      note: n.nv.best ? `en iyi: ${n.nv.best.k}` : '',
+      goto: { niche: n.name, type: n.type }
+    }))
+      // en az iki işe yarar (WATCH+) kelimesi olmayan grup niş sayılmaz
+      .filter((r) => r.useful >= 2 && (Number.isFinite(r.reach) || Number.isFinite(r.demand)));
+  }
+  const rows = collapseVariants(sortRows(state.records.filter((r) => r.dv !== 'PENDING' && r.demand > 0), 'verdict'));
+  return rows.map((r) => ({
+    key: r.k,
+    name: r.k,
+    sub: `${SRC_LABEL[r.src] || r.src}${r.seed && r.seed !== r.k ? ` · ${r.seed}` : ''}`,
+    verdict: r.dv,
+    reach: r.reachScore,
+    demand: r.demand,
+    opportunity: r.opportunity,
+    difficulty: r.difficulty,
+    money: Number.isFinite(r.comp?.monetized) ? r.comp.monetized : null,
+    engagement: Number.isFinite(r.comp?.engagement) ? r.comp.engagement : null,
+    note: r.decision.reach.has ? `giriş ${fmtInstalls(r.decision.reach.entry)} · orta sıra ${fmtInstalls(r.decision.reach.midpack)}` : '',
+    goto: { keyword: r.k }
+  }));
+}
+
+function medianOf(values) {
+  const v = values.filter(Number.isFinite).sort((a, b) => a - b);
+  if (!v.length) return null;
+  const mid = Math.floor(v.length / 2);
+  const m = v.length % 2 ? v[mid] : (v[mid - 1] + v[mid]) / 2;
+  return Math.round(m * 100) / 100;
+}
+
+function statsOf(values) {
+  const v = values.filter(Number.isFinite).sort((a, b) => a - b);
+  if (!v.length) return null;
+  const at = (q) => v[Math.min(v.length - 1, Math.floor(q * (v.length - 1)))];
+  return { n: v.length, min: v[0], max: v[v.length - 1], median: at(0.5), p75: at(0.75) };
+}
+
+function renderRanking() {
+  const el = $('#rankChart');
+  const primaryKey = $('#rankMetric').value;
+  let secondaryKey = $('#rankSecond').value;
+  if (secondaryKey === primaryKey) secondaryKey = primaryKey === 'money' ? 'reach' : 'money';
+  const P = RANK_METRICS[primaryKey];
+  const S = RANK_METRICS[secondaryKey];
+  const count = Number($('#rankCount').value) || 20;
+  const all = rankingRows();
+  const withPrimary = all.filter((r) => Number.isFinite(P.get(r)));
+  if (!withPrimary.length) {
+    el.innerHTML = '<div class="empty"><strong>Grafik için yeterli veri yok.</strong>Tarama ilerledikçe burası dolacak.</div>';
+    return;
+  }
+  const rows = withPrimary.slice().sort((a, b) => P.get(b) - P.get(a)).slice(0, count);
+  const pStats = statsOf(withPrimary.map(P.get));
+  const pMax = Math.max(...rows.map(P.get), 1);
+  const sVals = rows.map(S.get).filter(Number.isFinite);
+  const sMax = sVals.length ? Math.max(...sVals, 1) : 1;
+  const what = $('#rankWhat').value === 'niches' ? 'niş' : 'kelime';
+
+  el.innerHTML = `
+    <figcaption class="chart-head">
+      <h2>${esc(P.label)} puanına göre ilk ${rows.length} ${esc(what)}, yanında ${esc(S.label.toLowerCase())}</h2>
+      <p class="chart-sub">${esc(P.desc)}. Çubuklar kendi kolonunun en yüksek değerine göre ölçekli; her değer ayrıca yazılı.</p>
+      <div class="chart-legend">
+        <span class="lg"><i class="sw sw-p"></i>${esc(P.label)}</span>
+        <span class="lg"><i class="sw sw-s"></i>${esc(S.label)}</span>
+      </div>
+    </figcaption>
+    <div class="chart-grid" role="table" aria-label="${esc(P.label)} sıralaması">
+      <div class="ch-row ch-header" role="row">
+        <span role="columnheader">${esc(what === 'niş' ? 'Niş' : 'Kelime')}</span>
+        <span role="columnheader">Karar</span>
+        <span role="columnheader">${esc(P.label)} ${info(P.tip)}</span>
+        <span role="columnheader">${esc(S.label)} ${info(S.tip)}</span>
+      </div>
+      ${rows.map((r, i) => {
+        const pv = P.get(r);
+        const sv = S.get(r);
+        return `<div class="ch-row" role="row" data-rank-key="${esc(r.key)}" tabindex="0"
+          data-tip-title="${esc(r.name)}"
+          data-tip-body="${esc(`${P.label} ${P.fmt(pv)} · ${S.label} ${Number.isFinite(sv) ? S.fmt(sv) : '–'}${r.note ? ` · ${r.note}` : ''}`)}">
+          <span class="ch-name" role="cell"><b>${esc(r.name)}</b><i>${esc(r.sub)}</i></span>
+          <span role="cell">${vbadge(r.verdict)}</span>
+          <span class="ch-bar" role="cell"><i class="bar-p" style="--w:${(pv / pMax) * 100}%"></i><b>${esc(P.fmt(pv))}</b></span>
+          <span class="ch-bar" role="cell">${Number.isFinite(sv) ? `<i class="bar-s" style="--w:${(sv / sMax) * 100}%"></i><b>${esc(S.fmt(sv))}</b>` : '<b class="muted">–</b>'}</span>
+        </div>`;
+      }).join('')}
+    </div>
+    <figcaption class="chart-foot">
+      <span>Medyan ${esc(P.label.toLowerCase())}: <b>${esc(P.fmt(pStats.median))}</b> (${fmtInt(pStats.n)} ${esc(what)} üzerinden)</span>
+      <span>P75 eşiği: <b>${esc(P.fmt(pStats.p75))}</b></span>
+      <span>Yayılım: <b>${esc(P.fmt(pStats.min))} → ${esc(P.fmt(pStats.max))}</b></span>
+      <span class="chart-note">Conversion rate ve CPA Play Store'un açık verisinde yok; bunlar onların ölçülebilir karşılıkları.</span>
+    </figcaption>`;
 }
 
 /* ============================ görünüm: canlı analiz ============================ */
@@ -688,6 +919,7 @@ function showView(name) {
   if (name === 'overview') renderOverview();
   if (name === 'opportunities') renderOpportunities();
   if (name === 'niches') renderNiches();
+  if (name === 'ranking') renderRanking();
   if (name === 'saved') renderSaved();
   if (name === 'analyst') renderAnalyst();
   if (name === 'live' && !state.liveChecked) { state.liveChecked = true; detectLive(); }
@@ -700,6 +932,7 @@ function refreshCurrent() {
   else if (state.view === 'saved') renderSaved();
   else if (state.view === 'analyst') renderAnalyst(false);
   else if (state.view === 'niches') renderNiches();
+  else if (state.view === 'ranking') renderRanking();
   renderQuickFilters();
 }
 
@@ -748,6 +981,20 @@ function bind() {
     renderOpportunities();
   });
 
+  for (const id of ['#rankWhat', '#rankMetric', '#rankSecond', '#rankCount']) $(id).addEventListener('change', renderRanking);
+  $('#rankChart').addEventListener('click', (e) => {
+    const row = e.target.closest('[data-rank-key]');
+    if (!row || e.target.closest('.info')) return;
+    const key = row.dataset.rankKey;
+    if ($('#rankWhat').value === 'niches') {
+      const n = buildNicheCards().find((x) => x.name === key);
+      if (n) openNiche(n.name, n.type);
+    } else openDrawer(key);
+  });
+  $('#rankChart').addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter' || !e.target.dataset?.rankKey) return;
+    e.target.click();
+  });
   $('#nicheQ').addEventListener('input', renderNiches);
   $('#nicheType').addEventListener('change', renderNiches);
   $('#nicheVerdict').addEventListener('change', renderNiches);

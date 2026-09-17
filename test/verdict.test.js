@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   getOpportunityVerdict, verdictFromScore, capVerdict, getTrend, getSignals, buildReason,
-  demandLevel, difficultyLevel, opportunityLevel, marketLevel, competitorSummary, compareByVerdict, getNicheVerdict, THRESHOLDS
+  demandLevel, difficultyLevel, opportunityLevel, marketLevel, competitorSummary, compareByVerdict, getNicheVerdict,
+  reachability, fmtInstalls, THRESHOLDS, GUARDS
 } from '../public/js/verdict.js';
 
 const rec = (o = {}) => ({
@@ -135,4 +136,80 @@ test('niş kararı: en iyi 5 ortalaması + talep koruması, faydalı kelime say�
   const lowDemand = [mk('a', 80, 30, 'GOLD'), mk('b', 78, 35, 'GOLD'), mk('c', 75, 40, 'GOLD')];
   assert.equal(getNicheVerdict({ name: 'y' }, lowDemand).verdict, 'BUILD');
   assert.equal(getNicheVerdict({ name: 'z' }, []).topOpportunity, null);
+});
+
+/* ---------- "0 indirme" koruması: giriş duvarı ve ölü gölet ---------- */
+
+const reach = (o) => rec({
+  demand: 80, difficulty: 35, opportunity: 75,
+  comp: {
+    n: 10, titleMatches: 2, weak: 5, lowRated: 0, stale: 0, big: 0, avgScore: 4.4,
+    sumInstalls: 1_000_000, medianInstalls: 50_000,
+    entry: 3_000, midpack: 60_000, leaderShare: 0.3, newcomers: 2, dated: 10, medianAgeYears: 4,
+    ...o
+  }
+});
+
+test('giriş duvarı: ilk 10un en zayıfı 1M+ ise karar WEAK ile sınırlanır', () => {
+  const d = getOpportunityVerdict(reach({ entry: 1_200_000, midpack: 5_000_000 }));
+  assert.equal(d.verdict, 'WEAK');
+  assert.equal(d.reach.wall, 'hard');
+  assert.ok(d.negatives.some((s) => s.startsWith('Giriş duvarı')));
+  assert.ok(d.reason.includes('giremez'), d.reason);
+  assert.ok(d.capped.some((c) => c.includes('duvar')));
+});
+
+test('giriş zor: en zayıf rakip 100K+ ise en fazla WATCH', () => {
+  const d = getOpportunityVerdict(reach({ entry: 150_000, midpack: 800_000 }));
+  assert.equal(d.verdict, 'WATCH');
+  assert.equal(d.reach.wall, 'soft');
+  assert.ok(d.negatives.some((s) => s.startsWith('Giriş zor')));
+});
+
+test('ölü gölet: orta sıra 1K altındaysa karar WEAK ile sınırlanır', () => {
+  const d = getOpportunityVerdict(reach({ entry: 12, midpack: 400 }));
+  assert.equal(d.verdict, 'WEAK');
+  assert.equal(d.reach.pond, 'dead');
+  assert.ok(d.negatives.some((s) => s.startsWith('Ölü gölet')));
+  assert.ok(d.reason.includes('pazar boş'), d.reason);
+});
+
+test('ince pazar: orta sıra 5K altındaysa en fazla WATCH', () => {
+  const d = getOpportunityVerdict(reach({ entry: 50, midpack: 3_000 }));
+  assert.equal(d.verdict, 'WATCH');
+  assert.equal(d.reach.pond, 'thin');
+});
+
+test('sağlıklı gölet + kolay giriş: GOLD korunur ve olumlu sinyaller gelir', () => {
+  const d = getOpportunityVerdict(reach({ entry: 2_000, midpack: 250_000, newcomers: 4 }));
+  assert.equal(d.verdict, 'GOLD');
+  assert.deepEqual(d.capped, []);
+  assert.ok(d.positives.some((s) => s.includes('girmek kolay')));
+  assert.ok(d.positives.some((s) => s.includes('gerçek trafik')));
+  assert.ok(d.positives.some((s) => s.includes('yeniye açık')));
+});
+
+test('donmuş pazar ve tek uygulamanın pazarı uyarı verir (karar sınırlamaz)', () => {
+  const d = getOpportunityVerdict(reach({ newcomers: 0, dated: 10, medianAgeYears: 9, leaderShare: 0.85 }));
+  assert.ok(d.negatives.some((s) => s.startsWith('Pazar donmuş')));
+  assert.ok(d.negatives.some((s) => s.startsWith('Tek uygulamanın pazarı')));
+  assert.equal(d.verdict, 'GOLD', 'bu ikisi tek başına kararı düşürmez');
+});
+
+test('erişilebilirlik verisi yoksa hiçbir kural uygulanmaz (geriye dönük uyum)', () => {
+  const d = getOpportunityVerdict(rec({ demand: 80, difficulty: 30, opportunity: 75 }));
+  assert.equal(d.reach.has, false);
+  assert.equal(d.verdict, 'GOLD');
+  assert.deepEqual(d.capped, []);
+});
+
+test('eşik sınırları: duvar ve gölet tam değerlerde', () => {
+  assert.equal(getOpportunityVerdict(reach({ entry: 999_999, midpack: 5_000_000 })).reach.wall, 'soft');
+  assert.equal(getOpportunityVerdict(reach({ entry: 1_000_000, midpack: 5_000_000 })).reach.wall, 'hard');
+  assert.equal(getOpportunityVerdict(reach({ entry: 99_999 })).reach.wall, 'normal');
+  assert.equal(getOpportunityVerdict(reach({ entry: 5_000 })).reach.wall, 'open');
+  assert.equal(getOpportunityVerdict(reach({ midpack: 999 })).reach.pond, 'dead');
+  assert.equal(getOpportunityVerdict(reach({ midpack: 1_000 })).reach.pond, 'thin');
+  assert.equal(getOpportunityVerdict(reach({ midpack: 5_000 })).reach.pond, 'normal');
+  assert.equal(getOpportunityVerdict(reach({ midpack: 100_000 })).reach.pond, 'healthy');
 });
