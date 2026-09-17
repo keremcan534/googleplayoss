@@ -2,52 +2,152 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Play Kelime Radarı</title>
-<meta name="description" content="Google Play'de reklamsız (organik) trafik potansiyeli olan anahtar kelimeleri ve nişleri bulan, 7/24 çalışan açık kaynak radar.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Play Fırsat Radarı</title>
+<meta name="description" content="Google Play'de organik trafik potansiyeli olan anahtar kelimeleri BUILD / WATCH / SKIP kararına indiren radar.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📡%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<header class="top">
+<a class="skip-link" href="#main">İçeriğe geç</a>
+
+<header class="topbar">
   <div class="brand">
     <span class="logo" aria-hidden="true">📡</span>
-    <div>
-      <h1>Play Kelime Radarı</h1>
-      <p class="sub">Google Play'de reklamsız (organik) trafik getirebilecek anahtar kelimeler ve nişler — otomatik tamamlama talebi × rakip gücü</p>
-    </div>
+    <span class="brand-name">Play Fırsat Radarı</span>
   </div>
-  <div class="top-right">
-    <label class="field">Pazar <select id="market"></select></label>
-    <span id="updated" class="muted"></span>
+  <nav class="nav" id="nav" aria-label="Bölümler">
+    <button class="nav-btn active" data-view="overview">Genel Bakış</button>
+    <button class="nav-btn" data-view="opportunities">Fırsatlar</button>
+    <button class="nav-btn" data-view="niches">Nişler</button>
+    <button class="nav-btn" data-view="live">Canlı Analiz</button>
+    <button class="nav-btn" data-view="saved">Kaydedilenler <span class="nav-count" id="savedCount" hidden></span></button>
+    <button class="nav-btn" data-view="analyst">Analist Modu</button>
+    <button class="nav-btn" data-view="help" title="Nasıl çalışır?">Bilgi</button>
+  </nav>
+  <div class="topbar-right">
+    <select id="market" aria-label="Pazar"></select>
   </div>
 </header>
 
-<section class="stats" id="stats" aria-live="polite"></section>
+<main id="main">
+  <div id="notice" class="notice" hidden></div>
 
-<nav class="tabs" role="tablist">
-  <button class="tab-btn active" data-tab="keywords" role="tab">Kelimeler</button>
-  <button class="tab-btn" data-tab="niches" role="tab">Nişler</button>
-  <button class="tab-btn" data-tab="live" role="tab">Canlı analiz</button>
-  <button class="tab-btn" data-tab="help" role="tab">Nasıl çalışır?</button>
-</nav>
+  <!-- ============ GENEL BAKIŞ ============ -->
+  <section class="view" id="view-overview">
+    <div class="summary" id="summary"></div>
+    <p class="summary-sub muted" id="summarySub"></p>
 
-<main>
-  <div id="notice" class="notice hidden"></div>
+    <div class="block">
+      <div class="block-head">
+        <h2>Şu andaki en iyi fırsatlar</h2>
+        <button class="link-btn" data-view-link="opportunities">Tümünü gör →</button>
+      </div>
+      <div id="topOpps" class="opp-list"></div>
+    </div>
 
-  <section id="tab-keywords" class="tab">
-    <div class="toolbar">
-      <input id="q" type="search" placeholder="Kelime ara… (ör. offline, tracker)" autocomplete="off">
-      <label class="field range">Min. fırsat <input type="range" id="minOpp" min="0" max="100" value="0"><output id="minOppV">0</output></label>
-      <label class="field range">Min. talep <input type="range" id="minDemand" min="0" max="100" value="0"><output id="minDemandV">0</output></label>
-      <label class="field range">Maks. zorluk <input type="range" id="maxDiff" min="0" max="100" value="100"><output id="maxDiffV">100</output></label>
-      <select id="statusFilter" title="Durum">
+    <div class="block-grid">
+      <div class="block">
+        <div class="block-head"><h2>Yeni bulunanlar</h2></div>
+        <div id="newOpps" class="opp-list compact"></div>
+      </div>
+      <div class="block">
+        <div class="block-head"><h2>Yükselenler</h2></div>
+        <div id="risingOpps" class="opp-list compact"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FIRSATLAR (QUICK MODE) ============ -->
+  <section class="view" id="view-opportunities" hidden>
+    <div class="controls">
+      <input id="q" type="search" placeholder="Fırsat ara…" autocomplete="off" aria-label="Fırsat ara">
+      <select id="sort" aria-label="Sıralama">
+        <option value="verdict">Sıralama: Karar (önerilen)</option>
+        <option value="newest">En yeni bulunanlar</option>
+        <option value="demand">En yüksek talep</option>
+        <option value="easy">En düşük rekabet</option>
+        <option value="rising">En hızlı yükselen</option>
+        <option value="market">En büyük pazar</option>
+      </select>
+      <button class="ghost" id="advToggle" aria-expanded="false">Gelişmiş filtreler</button>
+    </div>
+    <div class="chips" id="quickFilters" role="group" aria-label="Hızlı filtreler"></div>
+    <div class="advanced" id="advanced" hidden></div>
+    <div class="list-meta"><span id="countInfo" class="muted"></span><span id="nicheChip" class="muted"></span></div>
+    <div id="cards" class="opp-list"></div>
+    <div class="pager"><button id="more" class="ghost" hidden>Daha fazla göster</button></div>
+  </section>
+
+  <!-- ============ NİŞLER ============ -->
+  <section class="view" id="view-niches" hidden>
+    <div class="controls">
+      <input id="nicheQ" type="search" placeholder="Niş ara…" autocomplete="off" aria-label="Niş ara">
+      <select id="nicheVerdict" aria-label="Niş kararı">
+        <option value="">Tüm kararlar</option>
+        <option value="GOLD">Sadece GOLD</option>
+        <option value="BUILD">GOLD + BUILD</option>
+        <option value="WATCH">WATCH ve üstü</option>
+      </select>
+      <select id="nicheType" aria-label="Niş tipi">
+        <option value="">Tüm gruplar</option>
+        <option value="token">Ortak kelime</option>
+        <option value="seed">Tohum kelime</option>
+      </select>
+    </div>
+    <div id="niches" class="niche-grid"></div>
+  </section>
+
+  <!-- ============ CANLI ANALİZ ============ -->
+  <section class="view" id="view-live" hidden>
+    <form id="liveForm" class="live-form">
+      <input id="liveQ" type="search" placeholder="Bir kelime yaz, hemen karar ver…" autocomplete="off" required minlength="2" maxlength="60" aria-label="Analiz edilecek kelime">
+      <select id="liveMarket" aria-label="Pazar">
+        <option value="us:en">US / en</option>
+        <option value="gb:en">GB / en</option>
+        <option value="tr:tr">TR / tr</option>
+        <option value="de:de">DE / de</option>
+        <option value="fr:fr">FR / fr</option>
+        <option value="es:es">ES / es</option>
+        <option value="br:pt">BR / pt</option>
+        <option value="in:en">IN / en</option>
+        <option value="id:id">ID / id</option>
+        <option value="mx:es">MX / es</option>
+        <option value="ru:ru">RU / ru</option>
+        <option value="jp:ja">JP / ja</option>
+        <option value="kr:ko">KR / ko</option>
+      </select>
+      <button id="liveBtn" type="submit">Analiz et</button>
+    </form>
+    <p id="liveStatus" class="muted small"></p>
+    <div id="liveResult"></div>
+    <details class="api-settings">
+      <summary>API adresi (GitHub Pages'te canlı analiz için Vercel adresi)</summary>
+      <div class="controls">
+        <input id="apiBase" type="url" placeholder="https://googleplayoss.vercel.app" aria-label="API adresi">
+        <button id="saveApi" class="ghost" type="button">Kaydet</button>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ KAYDEDİLENLER ============ -->
+  <section class="view" id="view-saved" hidden>
+    <div class="block-head"><h2>Kaydedilen fırsatlar</h2></div>
+    <div id="savedList" class="opp-list"></div>
+  </section>
+
+  <!-- ============ ANALİST MODU ============ -->
+  <section class="view" id="view-analyst" hidden>
+    <div class="controls">
+      <input id="aq" type="search" placeholder="Kelime ara…" autocomplete="off" aria-label="Kelime ara">
+      <select id="aStatus" aria-label="Durum">
         <option value="analyzed">Analiz edilenler</option>
         <option value="demand">Sadece talebi olanlar</option>
         <option value="all">Hepsi (bekleyenler dahil)</option>
         <option value="no-demand">Talep yok</option>
+        <option value="pending">Sadece bekleyenler</option>
       </select>
-      <select id="srcFilter" title="Kaynak">
+      <select id="aSrc" aria-label="Kaynak">
         <option value="">Tüm kaynaklar</option>
         <option value="seed">Tohum</option>
         <option value="suggest">Otomatik tamamlama</option>
@@ -56,25 +156,27 @@
         <option value="chart">Liste başlıkları</option>
         <option value="title">Arama başlıkları</option>
       </select>
-      <label class="chk"><input type="checkbox" id="onlyNew"> Son 7 günde bulunanlar</label>
-      <label class="chk"><input type="checkbox" id="onlyStars"> ★ Yıldızlılar</label>
-      <button id="clearNiche" class="ghost hidden">Niş filtresini kaldır ✕</button>
+      <label class="field range">Min. fırsat <input type="range" id="aMinOpp" min="0" max="100" value="0"><output id="aMinOppV">0</output></label>
+      <label class="field range">Min. talep <input type="range" id="aMinDemand" min="0" max="100" value="0"><output id="aMinDemandV">0</output></label>
+      <label class="field range">Maks. zorluk <input type="range" id="aMaxDiff" min="0" max="100" value="100"><output id="aMaxDiffV">100</output></label>
       <button id="exportCsv" class="ghost">CSV indir</button>
     </div>
+    <div class="list-meta"><span id="aCountInfo" class="muted"></span></div>
     <div class="table-wrap">
       <table id="kwTable">
         <thead>
           <tr>
             <th class="star-col"></th>
+            <th data-sort="verdictOrder">Karar</th>
             <th data-sort="k">Kelime</th>
             <th data-sort="opportunity" class="num">Fırsat</th>
             <th data-sort="demand" class="num">Talep</th>
             <th data-sort="difficulty" class="num">Zorluk</th>
-            <th data-sort="market" class="num" title="İlk 10 uygulamanın toplam yüklemesine göre pazar büyüklüğü">Pazar</th>
-            <th data-sort="titleMatches" class="num" title="İlk 10'da başlığında kelimeyi geçiren uygulama sayısı">Başlıkta</th>
-            <th data-sort="weak" class="num" title="İlk 10'da 100K'dan az yüklemesi olan uygulama sayısı">Zayıf</th>
+            <th data-sort="market" class="num">Pazar</th>
+            <th data-sort="titleMatches" class="num">Başlıkta</th>
+            <th data-sort="weak" class="num">Zayıf</th>
             <th data-sort="avgScore" class="num">Ort. puan</th>
-            <th data-sort="trend" class="num" title="Fırsat puanının 7+ gün önceki değere göre değişimi">Trend</th>
+            <th data-sort="trendDelta" class="num">Trend</th>
             <th data-sort="first" class="num">Bulundu</th>
             <th></th>
           </tr>
@@ -82,85 +184,72 @@
         <tbody></tbody>
       </table>
     </div>
-    <div class="pager">
-      <button id="more" class="ghost">Daha fazla göster</button>
-      <span id="countInfo" class="muted"></span>
-    </div>
+    <div class="pager"><button id="aMore" class="ghost" hidden>Daha fazla göster</button></div>
   </section>
 
-  <section id="tab-niches" class="tab hidden">
-    <div class="toolbar">
-      <input id="nicheQ" type="search" placeholder="Niş ara…" autocomplete="off">
-      <select id="nicheType">
-        <option value="">Tüm gruplar</option>
-        <option value="token">Ortak kelime</option>
-        <option value="seed">Tohum kelime</option>
-      </select>
-      <span class="muted">Skor = grubun en iyi 5 kelimesinin ortalama fırsatı × grup büyüklüğü. Bir kartın kelimelerine tıklayınca kelime tablosuna gidersin.</span>
-    </div>
-    <div id="niches" class="cards"></div>
-  </section>
-
-  <section id="tab-live" class="tab hidden">
-    <div class="live-box">
-      <p id="liveStatus" class="muted">Kontrol ediliyor…</p>
-      <form id="liveForm" class="toolbar">
-        <input id="liveQ" type="search" placeholder="ör. offline rpg games" autocomplete="off" required minlength="2" maxlength="60">
-        <select id="liveMarket">
-          <option value="us:en">US / en</option>
-          <option value="gb:en">GB / en</option>
-          <option value="tr:tr">TR / tr</option>
-          <option value="de:de">DE / de</option>
-          <option value="br:pt">BR / pt</option>
-          <option value="in:en">IN / en</option>
-          <option value="id:id">ID / id</option>
-          <option value="mx:es">MX / es</option>
-          <option value="jp:ja">JP / ja</option>
-          <option value="kr:ko">KR / ko</option>
-        </select>
-        <button id="liveBtn" type="submit">Analiz et</button>
-      </form>
-      <details class="api-settings">
-        <summary>API adresi ayarı (GitHub Pages'te canlı analiz için Vercel dağıtımının adresi)</summary>
-        <div class="toolbar">
-          <input id="apiBase" type="url" placeholder="https://projen.vercel.app">
-          <button id="saveApi" class="ghost" type="button">Kaydet</button>
-        </div>
-      </details>
-      <div id="liveResult"></div>
-    </div>
-  </section>
-
-  <section id="tab-help" class="tab hidden">
+  <!-- ============ BİLGİ ============ -->
+  <section class="view" id="view-help" hidden>
     <article class="help">
       <h2>Bu araç ne yapar?</h2>
-      <p>Google Play'de bir uygulama/oyun yayınladığında reklam vermeden, mağaza aramasından (organik) yükleme alabileceğin anahtar kelimeleri bulur. Bunun için resmi olmayan ama herkese açık Play Store uç noktalarını kullanır: <strong>otomatik tamamlama</strong> (talep), <strong>arama sonuçları</strong> ve <strong>uygulama detayları</strong> (rekabet).</p>
+      <p>Google Play'de bir uygulama ya da oyun yayınladığında reklam vermeden, mağaza aramasından yükleme getirebilecek anahtar kelimeleri bulur. Her kelime için tek bir karar üretir: <strong>GOLD</strong>, <strong>BUILD</strong>, <strong>WATCH</strong>, <strong>WEAK</strong> veya <strong>SKIP</strong>.</p>
+
+      <h3>Karar nasıl veriliyor?</h3>
+      <p>Karar, fırsat puanından türetilir ve koruma kurallarıyla düzeltilir. Puan formülleri değişmez; karar yalnızca bir yorum katmanıdır.</p>
+      <table class="help-table">
+        <thead><tr><th>Karar</th><th>Fırsat puanı</th><th>Anlamı</th></tr></thead>
+        <tbody>
+          <tr><td><span class="vbadge v-gold">★ GOLD</span></td><td>70-100</td><td>Olağanüstü fırsat, öncelik ver</td></tr>
+          <tr><td><span class="vbadge v-build">BUILD</span></td><td>60-69</td><td>Yapmaya değer</td></tr>
+          <tr><td><span class="vbadge v-watch">WATCH</span></td><td>45-59</td><td>Takipte tut</td></tr>
+          <tr><td><span class="vbadge v-weak">WEAK</span></td><td>30-44</td><td>Muhtemelen değmez</td></tr>
+          <tr><td><span class="vbadge v-skip">SKIP</span></td><td>0-29</td><td>Vakit harcama</td></tr>
+        </tbody>
+      </table>
+      <p>Koruma kuralları: talep 45'in altındaysa GOLD verilmez, 25'in altındaysa karar en fazla WATCH olur. Rekabet 80'in üstündeyse karar WATCH'a çekilir; talep 85'in üstündeyse en fazla BUILD olur. Rakip verisi 5'ten azsa karar yine WATCH ile sınırlanır.</p>
+
       <h3>Puanlar</h3>
       <ul>
-        <li><strong>Talep (0-100)</strong> — Kelime, otomatik tamamlamada ne kadar kısa bir ön ekle çıkıyor? "off" yazınca "offline games" öneriliyorsa talep çok yüksektir; ancak kelimenin tamamını yazınca öneriliyorsa düşüktür. Öneri listesindeki sıra da hesaba katılır. Kelime hiç önerilmiyorsa "talep yok" sayılır.</li>
-        <li><strong>Zorluk (0-100)</strong> — Aramadaki ilk 10 uygulamanın gücü: gerçek yükleme sayıları (medyan ve ilk 3'ün en güçlüsü), değerlendirme sayısı, ortalama puan, başlığında kelimeyi geçiren uygulama oranı ve güncellik.</li>
-        <li><strong>Pazar (0-100)</strong> — İlk 10 uygulamanın toplam yüklemesi (logaritmik). Talep varken pazar küçükse yeni bir alan olabilir.</li>
-        <li><strong>Fırsat (0-100)</strong> — <code>√(talep × (100 − zorluk))</code>; ilk 10'da zayıf (100K altı), düşük puanlı (4.0 altı) ve bir yıldır güncellenmemiş uygulamalar küçük bonus verir. 60+ güçlü, 45+ iyi, 30+ orta, altı zor.</li>
+        <li><strong>Talep</strong> — Kelime, otomatik tamamlamada ne kadar kısa bir ön ekle çıkıyor? "off" yazınca "offline games" öneriliyorsa talep çok yüksektir; ancak tamamını yazınca çıkıyorsa düşüktür. Öneri listesindeki sıra da hesaba katılır. Gerçek arama hacmi değildir, göreli bir tahmindir.</li>
+        <li><strong>Rekabet (zorluk)</strong> — Aramadaki ilk 10 uygulamanın gücü: gerçek yükleme sayıları, değerlendirme sayısı, ortalama puan, başlığında kelimeyi geçiren uygulama oranı ve güncellik.</li>
+        <li><strong>Pazar</strong> — İlk 10 uygulamanın toplam yüklemesi. Talep varken pazar küçükse yeni bir alan olabilir.</li>
+        <li><strong>Fırsat</strong> — <code>√(talep × (100 − zorluk))</code>; ilk 10'da zayıf, düşük puanlı ve bir yıldır güncellenmemiş uygulamalar küçük bonus verir.</li>
+        <li><strong>Trend</strong> — Fırsat puanının geçmiş taramalara göre değişimi. Yeterli geçmiş yoksa trend uydurulmaz, <strong>YENİ</strong> yazar.</li>
       </ul>
+
       <h3>Kelimeler nereden geliyor?</h3>
-      <p>Konfigürasyondaki tohum kelimelerden başlar; her tohum için otomatik tamamlama sorgulanır ("tohum", "tohum " ve "tohum a".."tohum z"). Umut vadeden kelimeler de aynı şekilde derinleştirilir. Ayrıca arama sonuçlarındaki ve kategori listelerindeki uygulama başlıklarından tekrar eden kelime öbekleri aday olarak eklenir; adaylar otomatik tamamlama doğrulamasından geçmeden puan almaz.</p>
+      <p>Konfigürasyondaki tohum kelimelerden başlar; her tohum için otomatik tamamlama sorgulanır. Umut vadeden kelimeler derinleştirilir. Ayrıca arama sonuçlarındaki ve kategori listelerindeki uygulama başlıklarından tekrar eden kelime öbekleri aday olarak eklenir. Adaylar otomatik tamamlama doğrulamasından geçmeden puan almaz.</p>
+
       <h3>7/24 nasıl çalışıyor?</h3>
-      <p>GitHub Actions her gün (istersen daha sık) tarayıcıyı çalıştırır, her koşuda sınırlı sayıda istek yapar (Google'ı yormamak için), sonuçları depoya commit eder ve GitHub Pages'e yayınlar. Vercel'e bağlıysa aynı commit Vercel'i de günceller; Vercel'de ayrıca "Canlı analiz" sekmesi çalışır. Kelime evreni her koşuda büyür, eski analizler periyodik olarak yenilenir.</p>
+      <p>GitHub Actions her gün tarayıcıyı çalıştırır, her koşuda sınırlı sayıda istek yapar, sonuçları depoya commit eder ve yayınlar. Kelime evreni her koşuda büyür, eski analizler periyodik olarak yenilenir. Canlı analiz sekmesi Vercel dağıtımındaki API ile çalışır.</p>
+
       <h3>Uyarılar</h3>
       <ul>
-        <li>Talep puanı gerçek arama hacmi değildir; otomatik tamamlamadan türetilmiş bir <em>tahmindir</em>. Kendi içinde karşılaştırma için kullan.</li>
-        <li>Play Store uç noktaları resmi değildir, Google değiştirirse tarayıcı güncelleme ister (<code>google-play-scraper</code> paketi).</li>
-        <li>Sonuçlar seçilen pazara (ülke/dil) özeldir.</li>
+        <li>Talep puanı gerçek arama hacmi değildir; otomatik tamamlamadan türetilmiş bir tahmindir.</li>
+        <li>Play Store uç noktaları resmi değildir; Google değiştirirse tarayıcı güncelleme ister.</li>
+        <li>Sonuçlar seçilen pazara (ülke ve dil) özeldir.</li>
       </ul>
     </article>
   </section>
 </main>
 
 <footer class="foot">
-  <span>Play Kelime Radarı · açık kaynak · veriler Google Play'in herkese açık sayfalarından türetilmiştir, Google ile bağlantısı yoktur.</span>
+  <span id="footInfo"></span>
+  <span>Veriler Google Play'in herkese açık sayfalarından türetilmiştir, Google ile bağlantısı yoktur.</span>
 </footer>
 
-<template id="rowTpl"></template>
-<script src="./app.js"></script>
+<!-- Detay çekmecesi (masaüstünde yan panel, mobilde alt sayfa) -->
+<div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-labelledby="drawerTitle" role="dialog" aria-modal="true">
+  <header class="drawer-head">
+    <div>
+      <h2 id="drawerTitle"></h2>
+      <p id="drawerSub" class="muted small"></p>
+    </div>
+    <button class="icon-btn" id="drawerClose" aria-label="Kapat">✕</button>
+  </header>
+  <div class="drawer-body" id="drawerBody"></div>
+</aside>
+
+<script type="module" src="./app.js"></script>
 </body>
 </html>

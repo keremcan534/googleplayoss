@@ -1,7 +1,7 @@
 {
   "name": "googleplayoss",
   "version": "1.0.0",
-  "description": "Google Play organik trafik / ASO anahtar kelime radarı — 7/24 GitHub Actions ile tarar, GitHub Pages veya Vercel'de yayınlanır.",
+  "description": "Google Play organik fırsat radarı — anahtar kelimeleri BUILD / WATCH / SKIP kararına indiren, 7/24 kendi kendine tarayan açık kaynak ASO panosu.",
   "type": "module",
   "private": true,
   "license": "MIT",
@@ -12,6 +12,7 @@
     "crawl": "node src/run.js",
     "analyze": "node src/cli.js",
     "serve": "node src/serve.js",
+    "build": "node scripts/build-check.js",
     "test": "node --test"
   },
   "dependencies": {

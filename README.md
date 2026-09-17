@@ -1,13 +1,61 @@
-# 📡 Play Kelime Radarı
+# 📡 Play Fırsat Radarı
 
 Google Play'de bir uygulama/oyun yayınladığında **reklam vermeden, mağaza aramasından (organik) yükleme getirebilecek anahtar kelimeleri ve nişleri** bulan, **7/24 kendi kendine çalışan** açık kaynak araç.
 
+Panel tek bir soruya cevap verecek şekilde tasarlandı: **bu kelime için uygulama yapmaya değer mi?** Her kelime bir karara indirgenir — **GOLD / BUILD / WATCH / WEAK / SKIP** — yanında tek cümlelik gerekçesiyle. Ham metrikler silinmedi, sadece arkaya alındı: karar → gerekçe → detay → ham veri.
+
 - **GitHub Actions** her gün Play Store'u tarar, sonuçları depoya commit eder.
 - **GitHub Pages** veya **Vercel** üzerinde statik bir panel olarak yayınlanır (ikisi de olur, ikisi birden de olur).
-- Vercel'de ek olarak **canlı analiz** çalışır: bir kelime yaz, saniyeler içinde talep + rakip + fırsat puanı.
+- Vercel'de ek olarak **canlı analiz** çalışır: bir kelime yaz, saniyeler içinde karar + gerekçe + rakip özeti.
 - Ücretli API yok, anahtar yok. Sadece Play Store'un herkese açık uç noktaları (`google-play-scraper`).
 
 > ⚠️ Talep puanı gerçek arama hacmi değildir; otomatik tamamlama davranışından türetilmiş bir **tahmindir**. Kelimeleri birbirine göre kıyaslamak için kullan.
+
+---
+
+## Arayüz
+
+| Bölüm | Ne için |
+|---|---|
+| **Genel Bakış** | Pazarın o anki durumu: karar sayaçları, en iyi skor, yeni fırsat sayısı, son tarama zamanı; ardından *şu andaki en iyi fırsatlar*, *yeni bulunanlar* ve *yükselenler*. Sayaç kutularına tıklayınca ilgili liste açılır. |
+| **Fırsatlar** (varsayılan çalışma ekranı) | Karar odaklı kartlar: karar etiketi, kelime, fırsat puanı, tek cümlelik gerekçe ve üç kritik metrik (talep, rekabet, trend). Hızlı filtre çipleri: Tümü / GOLD / BUILD / WATCH / Yeni / Yükselen / Kayıtlı. Sayısal filtreler *Gelişmiş filtreler* altında saklı. |
+| **Nişler** | Aynı karar dili nişlerde: niş kararı, niş skoru, işe yarar kelime sayısı, en iyi kelime, talep/rekabet/trend. *Nişi aç* o nişin tüm kelimelerini karara göre sıralı listeler. |
+| **Canlı Analiz** | Kelimeyi yaz, önce büyük karar ve gerekçe gelir; metrikler, "neden iyi", "riskler", rakip özeti ve ham veri altında. |
+| **Kaydedilenler** | ★ ile işaretlediklerin. Tarayıcında saklanır (`localStorage`). |
+| **Analist Modu** | Eski yoğun tablo olduğu gibi duruyor: tüm kolonlar, sıralama, sayısal filtreler ve CSV çıktısı. Artık varsayılan değil, derin araştırma için. |
+| **Bilgi** | Kararların ve puanların tanımı, uyarılar. Panodan uzun açıklama metinleri buraya taşındı. |
+
+Detay için herhangi bir karta tıkla: masaüstünde yan panel, mobilde alt sayfa açılır ve tüm metrikler, sinyaller ve rakip listesi orada.
+
+### Kararlar
+
+| Karar | Fırsat puanı | Anlamı |
+|---|---|---|
+| ★ **GOLD** | 70-100 | Olağanüstü fırsat, öncelik ver |
+| **BUILD** | 60-69 | Yapmaya değer |
+| **WATCH** | 45-59 | Takipte tut |
+| **WEAK** | 30-44 | Muhtemelen değmez |
+| **SKIP** | 0-29 | Vakit harcama |
+
+Karar **sunum katmanıdır**; puan formüllerini değiştirmez. Ham skorun üstünde koruma kuralları çalışır:
+
+- Talep 45'in altında → GOLD verilmez. Talep 25'in altında → karar en fazla WATCH.
+- Rekabet 80'in üstünde → karar WATCH'a çekilir; talep 85'in üstündeyse en fazla BUILD.
+- Rakip verisi 5'ten az (eksik tarama) → karar en fazla WATCH.
+- Trend için yeterli geçmiş yoksa **YENİ** yazar; trend asla uydurulmaz.
+
+Tüm eşikler, koruma kuralları, metrik etiketleri ve tek cümlelik gerekçe üreteci tek dosyada: [`public/js/verdict.js`](public/js/verdict.js). Eşiği değiştirmek istersen `THRESHOLDS` ve `GUARDS` sabitlerine dokunman yeter; `test/verdict.test.js` sınır değerleri ve kuralları doğrular.
+
+### Metrik dili
+
+Sayılar her zaman etiketle birlikte gösterilir; kesin skor da görünür kalır.
+
+| Puan | 0-24 | 25-44 | 45-64 | 65-79 | 80-100 |
+|---|---|---|---|---|---|
+| Talep | ÇOK DÜŞÜK | DÜŞÜK | ORTA | YÜKSEK | ÇOK YÜKSEK |
+| Rekabet | ÇOK DÜŞÜK | DÜŞÜK | ORTA | YÜKSEK | AŞIRI |
+
+Fırsat puanı: 0-29 KÖTÜ · 30-44 ZAYIF · 45-59 İLGİNÇ · 60-69 İYİ · 70-84 MÜKEMMEL · 85-100 OLAĞANÜSTÜ.
 
 ---
 
@@ -78,7 +126,8 @@ npm run crawl -- --search 30 --app 200 --minutes 5   # küçük deneme
 npm run analyze -- "offline rpg games"                # tek kelimeyi anında analiz et
 npm run analyze -- "çevrimdışı oyunlar" --market tr:tr
 npm run serve                      # http://localhost:3000 — panel + canlı analiz
-npm test
+npm test                           # karar katmanı + tarayıcı birim testleri
+npm run build                      # yayın kontrolü: JS sözdizimi, JSON'lar, public/ referansları
 ```
 
 ---
@@ -117,9 +166,14 @@ src/suggest.js           dayanıklı otomatik tamamlama istemcisi
 src/cli.js               npm run analyze
 src/serve.js             yerel sunucu (panel + api)
 api/*.js                 Vercel fonksiyonları: health, suggest, search, analyze
-public/                  statik panel (index.html, app.js, style.css) + data/*.json
+public/index.html        panel kabuğu (Genel Bakış, Fırsatlar, Nişler, Canlı, Kayıtlı, Analist, Bilgi)
+public/app.js            arayüz mantığı: kartlar, filtreler, çekmece, tablo, CSV
+public/js/verdict.js     KARAR KATMANI: eşikler, koruma kuralları, gerekçe üreteci, metrik etiketleri
+public/style.css         tema ve düzen (karanlık/aydınlık, mobil)
+public/data/*.json       tarayıcı çıktısı (panelin okuduğu veri)
 data/<pazar>/            önbellekler (apps, suggest, meta)
-.github/workflows/       crawl (cron), pages (yayın), ci (test)
+scripts/build-check.js   npm run build — yayın öncesi doğrulama
+.github/workflows/       crawl (cron), pages (yayın), ci (test + build)
 ```
 
 ## Çıktı formatı — `public/data/us-en.json`
@@ -140,7 +194,7 @@ data/<pazar>/            önbellekler (apps, suggest, meta)
 }
 ```
 
-CSV dışa aktarma panelden yapılır (filtrelenmiş görünüm).
+CSV dışa aktarma Analist Modu'ndan yapılır (filtrelenmiş görünüm; karar, gerekçe ve metrik etiketleri de kolon olarak gelir).
 
 ## Sınırlamalar
 
@@ -157,3 +211,5 @@ MIT
 ### English summary
 
 Self-running (GitHub Actions cron) keyword & niche finder for Google Play ASO. It expands seed keywords via Play autocomplete, estimates demand from the shortest prefix that triggers a suggestion, measures competition from the top-10 apps (real installs, ratings, freshness, title matches) and computes an opportunity score. Results are committed to the repo and served as a static dashboard on GitHub Pages and/or Vercel; on Vercel a live `/api/analyze` endpoint powers instant keyword analysis. No paid APIs.
+
+The dashboard is decision-first: every keyword is reduced to GOLD / BUILD / WATCH / WEAK / SKIP with a one-sentence, deterministic reason and three key metrics (demand, competition, trend). The decision layer in `public/js/verdict.js` is presentation only — it never alters the scoring formulas — and applies guardrails (no GOLD on weak demand, capped verdicts on extreme competition or incomplete competitor data, never an invented trend). The original dense table lives on in Analyst Mode with all columns, numeric filters and CSV export.
