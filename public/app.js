@@ -580,7 +580,7 @@ function renderOpportunities(reset = true) {
   $('#more').hidden = state.shown >= rows.length;
   const chip = $('#nicheChip');
   if (state.niche) {
-    chip.innerHTML = `Niş filtresi: <strong>${esc(state.niche.name)}</strong> <button class="kw-chip" data-clear-niche>kaldır ✕</button>`;
+    chip.innerHTML = `Niş filtresi: <strong>${esc(state.niche.label || state.niche.name)}</strong> <button class="kw-chip" data-clear-niche>kaldır ✕</button>`;
   } else chip.innerHTML = '';
 }
 
@@ -624,7 +624,7 @@ function renderNiches() {
     const best = nv.best;
     return `<article class="niche v-${nv.verdict.toLowerCase()}">
       <div class="niche-head">
-        <div>${vbadge(nv.verdict)}<h3 style="margin-top:7px">${esc(n.name)}</h3>
+        <div>${vbadge(nv.verdict)}<h3 style="margin-top:7px">${esc(n.label || n.name)}</h3>
           <div class="mini">${n.type === 'seed' ? 'tohum grubu' : 'ortak kelime'} · ${fmtInt(nv.useful)} işe yarar kelime / ${fmtInt(n.count)}</div></div>
         <div style="text-align:right"><div class="niche-score">${fmtInt(n.score)}</div><div class="mini">niş skoru</div></div>
       </div>
@@ -635,7 +635,7 @@ function renderNiches() {
         ${trendMetric(nv.trend)}
       </div>
       <p class="mini">${esc(nv.reason)}</p>
-      <div><button class="ghost" data-niche="${esc(n.name)}" data-niche-type="${esc(n.type)}">Nişi aç →</button></div>
+      <div><button class="ghost" data-niche="${esc(n.name)}" data-niche-type="${esc(n.type)}" data-niche-label="${esc(n.label || n.name)}">Nişi aç →</button></div>
     </article>`;
   }).join('');
 }
@@ -709,7 +709,7 @@ function renderAnalyst(reset = true) {
       <td><button class="icon-btn" data-details="${esc(r.k)}">Detay</button></td>
     </tr>`;
   }).join('') : '<tr><td colspan="14" class="empty">Filtrelere uyan kelime yok.</td></tr>';
-  $('#aCountInfo').textContent = `${fmtInt(shown.length)} / ${fmtInt(rows.length)} kelime${state.niche ? ` · niş: ${state.niche.name}` : ''}`;
+  $('#aCountInfo').textContent = `${fmtInt(shown.length)} / ${fmtInt(rows.length)} kelime${state.niche ? ` · niş: ${state.niche.label || state.niche.name}` : ''}`;
   $('#aMore').hidden = state.analyst.shown >= rows.length;
 }
 
@@ -764,7 +764,7 @@ function rankingRows() {
   if (what === 'niches') {
     return buildNicheCards().map((n) => ({
       key: n.name,
-      name: n.name,
+      name: n.label || n.name,
       sub: `${n.type === 'seed' ? 'tohum grubu' : 'ortak kelime'} · ${n.nv.useful}/${n.count} işe yarar kelime`,
       verdict: n.nv.verdict,
       useful: n.nv.useful,
@@ -951,8 +951,8 @@ function toggleStar(key) {
   refreshCurrent();
 }
 
-function openNiche(name, type) {
-  state.niche = { name, type };
+function openNiche(name, type, label) {
+  state.niche = { name, type, label: label || name };
   state.quick = 'all';
   state.q = '';
   $('#q').value = '';
@@ -996,8 +996,8 @@ function bind() {
     if (!row || e.target.closest('.info')) return;
     const key = row.dataset.rankKey;
     if ($('#rankWhat').value === 'niches') {
-      const n = buildNicheCards().find((x) => x.name === key);
-      if (n) openNiche(n.name, n.type);
+      const n = buildNicheCards().find((x) => (x.label || x.name) === key);
+      if (n) openNiche(n.name, n.type, n.label || n.name);
     } else openDrawer(key);
   });
   $('#rankChart').addEventListener('keydown', (e) => {
@@ -1057,7 +1057,7 @@ function bind() {
     }
 
     const ni = e.target.closest('[data-niche]');
-    if (ni) { openNiche(ni.dataset.niche, ni.dataset.nicheType); return; }
+    if (ni) { openNiche(ni.dataset.niche, ni.dataset.nicheType, ni.dataset.nicheLabel); return; }
 
     if (e.target.closest('[data-clear-niche]')) { state.niche = null; renderOpportunities(); return; }
 

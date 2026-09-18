@@ -17,6 +17,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { scoreCompetition, opportunityScore, verdict } from './score.js';
+import { buildNiches } from './niches.js';
 import { stringifyLines, todayISO } from './util.js';
 
 export const SCORE_VERSION = 2;
@@ -77,7 +78,21 @@ export function rescoreMarket(marketId, opts = {}) {
     }
   }
 
+  // nişler de aynı mantıkla yeniden kurulur (ad, skor, üyelik)
+  data.niches = buildNiches(data.keywords, { lang });
   const after = tally(data.keywords, 'verdict');
+  // pazar etiketini config'ten tazele (elle --market ile yapılan taramalarda boş kalabiliyordu)
+  const cfg = readJson(path.join(ROOT, 'config', 'seeds.json'), { markets: [] });
+  const known = (cfg.markets || []).find((m) => `${m.country}-${m.lang}` === marketId);
+  if (known && known.label) {
+    data.market = { ...data.market, label: known.label };
+    const indexPath = path.join(PUBLIC_DATA, 'index.json');
+    const index = readJson(indexPath, null);
+    if (index && Array.isArray(index.markets)) {
+      const row = index.markets.find((m) => m.id === marketId);
+      if (row) { row.label = known.label; if (!opts.dry) writeJson(indexPath, index); }
+    }
+  }
   data.scoreVersion = SCORE_VERSION;
   data.rescoredAt = new Date(now).toISOString();
   data.generatedAt = data.generatedAt || new Date(now).toISOString();

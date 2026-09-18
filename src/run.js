@@ -369,7 +369,11 @@ async function main() {
   let markets = cfg.markets || [{ country: 'us', lang: 'en' }];
   if (args.market) {
     const [country, lang] = args.market.split(':');
-    markets = [{ country: country || 'us', lang: lang || 'en' }];
+    const c = country || 'us';
+    const l = lang || 'en';
+    // etiket ve diğer alanlar için config'teki tanımı kullan (varsa)
+    const known = (cfg.markets || []).find((m) => m.country === c && m.lang === l);
+    markets = [known || { country: c, lang: l }];
   }
   for (const m of markets) await runMarket(cfg, m, args);
 }
