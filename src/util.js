@@ -113,12 +113,45 @@ export function stringifyLines(obj) {
   return lines.join('\n') + '\n';
 }
 
-/** "Nov 15, 2012" → "2012-11-15"; zaten ISO ise olduğu gibi. */
+/*
+ * Play Store yayın tarihi yerelleştirilmiş gelir: İngilizce "Nov 15, 2012",
+ * Türkçe "15 Kas 2012". JavaScript'in Date ayrıştırıcısı ikincisini anlamaz ve
+ * null döndürürdü; bu yüzden Türkçe pazarda uygulamaların yaşı ve "son 2 yılda
+ * ilk 10'a girenler" ölçüsü kör kalıyordu (tarihi okunabilen uygulama %17).
+ * Önce yerel ayrıştırıcı denenir, sonra "gün ay yıl" kalıbı ay sözlüğüyle çözülür.
+ */
+const MONTH_WORDS = {
+  // İngilizce
+  jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12,
+  // Türkçe (kısa ve uzun)
+  oca: 1, ocak: 1, sub: 2, şub: 2, subat: 2, şubat: 2, mart: 3, nis: 4, nisan: 4,
+  mayis: 5, mayıs: 5, haz: 6, haziran: 6, tem: 7, temmuz: 7, agu: 8, ağu: 8, agustos: 8, ağustos: 8,
+  eyl: 9, eylul: 9, eylül: 9, eki: 10, ekim: 10, kas: 11, kasim: 11, kasım: 11, ara: 12, aralik: 12, aralık: 12
+};
+
+/** Yerelleştirilmiş tarih metnini ISO güne çevirir. Çözülemezse null. */
+export function parseLocalizedDate(text) {
+  const s = String(text).trim();
+  const native = new Date(s);
+  if (!Number.isNaN(native.getTime())) return native.toISOString().slice(0, 10);
+  // "15 Kas 2012" / "15 Kasım 2012" / "15 Kas, 2012"
+  const m = s.match(/^(\d{1,2})\s+([\p{L}]+),?\s+(\d{4})$/u);
+  if (m) {
+    const month = MONTH_WORDS[m[2].toLowerCase()];
+    if (month) {
+      const iso = `${m[3]}-${String(month).padStart(2, '0')}-${String(Number(m[1])).padStart(2, '0')}`;
+      const d = new Date(`${iso}T00:00:00Z`);
+      if (!Number.isNaN(d.getTime())) return iso;
+    }
+  }
+  return null;
+}
+
+/** "Nov 15, 2012" → "2012-11-15"; zaman damgası, ISO ya da yerel metin kabul eder. */
 export function toISODate(v) {
   if (v === null || v === undefined || v === '') return null;
   if (typeof v === 'number') return Number.isFinite(v) ? new Date(v).toISOString().slice(0, 10) : null;
-  const d = new Date(v);
-  return Number.isNaN(d.getTime()) ? null : d.toISOString().slice(0, 10);
+  return parseLocalizedDate(v);
 }
 
 export function daysSince(iso, now = Date.now()) {

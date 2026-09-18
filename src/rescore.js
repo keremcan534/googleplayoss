@@ -44,7 +44,10 @@ export function rescoreMarket(marketId, opts = {}) {
   const data = readJson(outPath);
   if (!data) throw new Error(`Pazar dosyası okunamadı: ${outPath}`);
   const apps = readJson(path.join(DATA, marketId, 'apps.json'), {}) || {};
-  const pool = { ...apps, ...(data.apps || {}) };
+  // Önbellek (data/<pazar>/apps.json) her zaman daha tazedir; yayınlanan anlık
+  // görüntü yalnızca önbellekte olmayan kayıtları doldurur. Ters sıra, tazelenmiş
+  // alanların (ör. yeni ayrıştırılan yayın tarihleri) eski değerlerle ezilmesine yol açıyordu.
+  const pool = { ...(data.apps || {}), ...apps };
   const today = todayISO(now);
 
   let changed = 0;

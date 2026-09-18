@@ -14,7 +14,9 @@
     "serve": "node src/serve.js",
     "build": "node scripts/build-check.js",
     "test": "node --test",
-    "rescore": "node src/rescore.js"
+    "rescore": "node src/rescore.js",
+    "shortlist": "node src/shortlist.js",
+    "refresh-apps": "node src/refresh-apps.js"
   },
   "dependencies": {
     "google-play-scraper": "^10.1.3"

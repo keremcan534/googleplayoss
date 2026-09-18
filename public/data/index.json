@@ -1,6 +1,7 @@
 {
 "markets": [
+{"id":"tr-tr","country":"tr","lang":"tr","label":null,"generatedAt":"2026-09-18T06:59:49.842Z","keywords":4766,"analyzed":550,"withDemand":550},
 {"id":"us-en","country":"us","lang":"en","generatedAt":"2026-09-17T20:26:39.950Z","keywords":8000,"analyzed":1644,"withDemand":1644}
 ],
-"generatedAt": "2026-09-17T20:26:39.950Z"
+"generatedAt": "2026-09-18T06:59:49.842Z"
 }
