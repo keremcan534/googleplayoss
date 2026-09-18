@@ -7,6 +7,7 @@ import {
   demandLevel, difficultyLevel, opportunityLevel, marketLevel, reachLevel, fmtInstalls,
   VERDICT_META, VERDICT_ORDER, GUARDS
 } from './js/verdict.js';
+import { langOf, tokensFor } from './js/lang.js';
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -46,8 +47,13 @@ const fmtRel = (iso) => {
   return d === 1 ? 'dün' : `${d} gün önce`;
 };
 const num = (v) => (Number.isFinite(v) ? v : null);
-const toks = (s) => String(s || '').toLowerCase().split(/[^\p{L}\p{N}]+/u).filter(Boolean);
-const stem = (t) => (t.length > 4 && t.endsWith('ies') ? `${t.slice(0, -3)}y` : t.length > 3 && t.endsWith('s') && !t.endsWith('ss') ? t.slice(0, -1) : t);
+/** Aktif pazarın dili (kökleme ve harf kuralları için). */
+const marketLang = () => (state.data && state.data.market && state.data.market.lang) || 'en';
+/** Metni aktif pazarın diline göre köklenmiş parçalara ayırır. */
+const stemmed = (s, lang = marketLang()) => {
+  const L = langOf(lang);
+  return tokensFor(s, L.code).map(L.stem);
+};
 
 const SRC_LABEL = { seed: 'Tohum', suggest: 'Öneri', letter: 'Öneri (harf)', variant: 'Varyant', chart: 'Liste', title: 'Başlık', live: 'Canlı' };
 const ST_LABEL = { ok: 'Analiz edildi', partial: 'Eksik veri', pending: 'Bekliyor', error: 'Hata', 'no-demand': 'Talep yok' };
@@ -108,7 +114,7 @@ function enrich(record) {
     titleMatches: num(c.titleMatches),
     weak: num(c.weak),
     avgScore: num(c.avgScore),
-    tk: toks(record.k).map(stem)
+    tk: stemmed(record.k)
   };
 }
 
@@ -225,7 +231,8 @@ function detailBody(r, opts = {}) {
   const d = r.decision;
   const cs = competitorSummary(r);
   const c = r.comp || {};
-  const kwt = toks(r.k).map(stem);
+  const lang = (opts.market && opts.market.lang) || marketLang();
+  const kwt = stemmed(r.k, lang);
   const pop = r.pop;
   const popText = pop && pop.minPrefix
     ? `<code>${esc(r.k.slice(0, pop.minPrefix))}</code> yazıldığında ${pop.mode === 'ext' ? `<em>${esc(pop.via || '')}</em> öneriliyor (kelimenin kendisi değil, uzantısı)` : 'kelimenin kendisi öneriliyor'}; öneri listesinde ${pop.pos}. sırada, ${pop.minPrefix}/${pop.len} harf.`
@@ -307,7 +314,8 @@ function detailBody(r, opts = {}) {
     <details class="raw"${appsList.length <= 10 ? ' open' : ''}><summary>${appsList.length} rakibi göster / gizle</summary>
     <table class="apps"><thead><tr><th>#</th><th>Uygulama</th><th class="num">Yükleme</th><th class="num">Puan</th><th class="num">Değerl.</th><th>Güncelleme</th></tr></thead><tbody>
     ${appsList.map((a, i) => {
-      const match = kwt.length && kwt.every((t) => toks(a.title).map(stem).includes(t));
+      const titleTokens = stemmed(a.title, lang);
+      const match = kwt.length && kwt.every((t) => titleTokens.includes(t));
       const isWeak = Number.isFinite(a.real) && a.real < 100000;
       return `<tr class="${isWeak ? 'weak' : ''}"><td class="mini">${i + 1}</td>
         <td class="t"><a href="${playUrl(a.id, market)}" target="_blank" rel="noopener">${esc(a.title)}</a>${match ? ' <span class="tag">başlıkta</span>' : ''}
@@ -392,6 +400,7 @@ function inNiche(r, niche) {
   if (niche.type === 'seed') return r.seed === niche.name || r.k === niche.name;
   return r.tk.includes(niche.name);
 }
+
 
 function filterQuick() {
   const q = state.q.trim().toLowerCase();
@@ -1121,7 +1130,7 @@ async function init() {
   const markets = state.index.markets || [];
   if (!markets.length) { notice('Henüz hiçbir pazar taranmamış.'); return; }
   $('#market').innerHTML = markets.map((m) =>
-    `<option value="${esc(m.id)}">${esc(m.country.toUpperCase())} / ${esc(m.lang)} · ${fmtInt(m.analyzed)} analiz</option>`).join('');
+    `<option value="${esc(m.id)}">${esc(m.label || `${m.country.toUpperCase()} / ${m.lang}`)} · ${fmtInt(m.analyzed)} analiz</option>`).join('');
   let saved = null;
   try { saved = localStorage.getItem('market'); } catch { /* yoksay */ }
   const first = markets.some((m) => m.id === saved) ? saved : markets[0].id;

@@ -79,7 +79,7 @@ export function createStore(opts = {}) {
     hasBudget,
     suggest: (term) => call('suggest', `suggest:${term}`, async () => {
       const arr = await fetchSuggest(term, { lang, country });
-      return arr.map(normalize).filter(Boolean);
+      return arr.map((x) => normalize(x, lang)).filter(Boolean);
     }),
     search: (term, num = 20) => call('search', `search:${term}`, async () => {
       const arr = await gplay.search({ term, num, lang, country });

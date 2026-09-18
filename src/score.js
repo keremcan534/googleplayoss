@@ -1,5 +1,5 @@
 // Rekabet (zorluk) ve fırsat skorları. Saf fonksiyonlar; test edilebilir.
-import { tokens, stem, clamp, median, mean, round, daysSince } from './util.js';
+import { tokens, clamp, median, mean, round, daysSince, langOf } from './util.js';
 
 const log10p = (x) => Math.log10(Math.max(0, x || 0) + 1);
 
@@ -11,23 +11,22 @@ const log10p = (x) => Math.log10(Math.max(0, x || 0) + 1);
  * Not: "offline"/"online" burada YOK, çünkü onlar gerçekten başlıklarda geçen
  * anlamlı ayırt edici kelimelerdir.
  */
-export const TITLE_FILLER = new Set([
-  'free', 'app', 'apps', 'android', 'apk', 'download', 'downloads', 'install',
-  'best', 'top', 'new', 'pro', 'google', 'play', 'store', 'mobile', 'phone', 'version'
-]);
+export const TITLE_FILLER = langOf('en').titleFiller;
 
-/** Kelimenin başlık eşleşmesinde kullanılacak özü (dolgu ve yıl atılır). */
-export function coreTokens(keyword) {
-  const all = tokens(keyword).map(stem);
-  const core = all.filter((t) => !TITLE_FILLER.has(t) && !/^(19|20)\d\d$/.test(t));
+/** Kelimenin başlık eşleşmesinde kullanılacak özü (dolgu kelimeler ve yıllar atılır). */
+export function coreTokens(keyword, lang = 'en') {
+  const L = langOf(lang);
+  const all = tokens(keyword, L.code).map(L.stem);
+  const core = all.filter((t) => !L.titleFiller.has(t) && !/^(19|20)\d\d$/.test(t));
   return core.length ? core : all;
 }
 
 /** Başlık, anahtar kelimenin öz kelimelerini (köklenmiş) içeriyor mu? */
-export function titleMatches(keyword, title) {
-  const kw = coreTokens(keyword);
+export function titleMatches(keyword, title, lang = 'en') {
+  const L = langOf(lang);
+  const kw = coreTokens(keyword, L.code);
   if (!kw.length) return false;
-  const tt = new Set(tokens(title).map(stem));
+  const tt = new Set(tokens(title, L.code).map(L.stem));
   return kw.every((t) => tt.has(t));
 }
 
@@ -38,7 +37,7 @@ export function titleMatches(keyword, title) {
  * @param {{topN?:number, now?:number}} opts
  */
 export function scoreCompetition(keyword, apps, opts = {}) {
-  const { topN = 10, now = Date.now() } = opts;
+  const { topN = 10, now = Date.now(), lang = 'en' } = opts;
   const list = (apps || []).filter((a) => a && !a.missing).slice(0, topN);
   const n = list.length;
   if (!n) {
@@ -51,7 +50,7 @@ export function scoreCompetition(keyword, apps, opts = {}) {
   const rated = list.filter((a) => Number.isFinite(a.score) && a.ratings >= 50);
   const avgScore = rated.length ? mean(rated.map((a) => a.score)) : null;
   const quality = avgScore === null ? 0.5 : clamp((avgScore - 3.5) / 1.3, 0, 1); // 3.5 → 0, 4.8 → 1
-  const matches = list.filter((a) => titleMatches(keyword, a.title)).length;
+  const matches = list.filter((a) => titleMatches(keyword, a.title, lang)).length;
   const titleDensity = matches / n;
   const fresh = list.filter((a) => { const d = daysSince(a.updated, now); return d !== null && d <= 180; }).length;
   const freshness = fresh / n;

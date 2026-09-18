@@ -39,6 +39,7 @@ function writeJson(p, obj) {
  */
 export function rescoreMarket(marketId, opts = {}) {
   const { topN = 10, now = Date.now(), quiet = false } = opts;
+  const lang = opts.lang || (marketId.split('-')[1]) || 'en';
   const outPath = path.join(PUBLIC_DATA, `${marketId}.json`);
   const data = readJson(outPath);
   if (!data) throw new Error(`Pazar dosyası okunamadı: ${outPath}`);
@@ -56,7 +57,7 @@ export function rescoreMarket(marketId, opts = {}) {
     if (!(r.st === 'ok' || r.st === 'partial') || !Array.isArray(r.top) || !r.top.length) { skipped++; continue; }
     const list = r.top.map((id) => pool[id]).filter((a) => a && !a.missing);
     if (!list.length) { skipped++; continue; }
-    const { difficulty, market, comp } = scoreCompetition(r.k, list, { topN, now });
+    const { difficulty, market, comp } = scoreCompetition(r.k, list, { topN, now, lang });
     const opportunity = opportunityScore(r.demand, difficulty, comp);
     const was = { difficulty: r.difficulty, opportunity: r.opportunity, titleMatches: r.comp?.titleMatches };
     r.difficulty = difficulty;

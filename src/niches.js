@@ -1,5 +1,5 @@
 // Anahtar kelimeleri "niş"lere gruplar: ortak kelime (ör. "offline", "kids", "tracker") veya tohum.
-import { tokens, stem, STOPWORDS, mean, round } from './util.js';
+import { tokens, mean, round, langOf } from './util.js';
 
 function groupScore(opps, count) {
   const top = opps.slice().sort((a, b) => b - a).slice(0, 5);
@@ -11,16 +11,17 @@ function groupScore(opps, count) {
  * @param {{minCount?:number, max?:number}} opts
  */
 export function buildNiches(keywords, opts = {}) {
-  const { minCount = 3, max = 250 } = opts;
+  const { minCount = 3, max = 250, lang = 'en' } = opts;
+  const L = langOf(lang);
   const usable = keywords.filter((r) => r && r.demand > 0 && Number.isFinite(r.opportunity));
   const byToken = new Map();
   const bySeed = new Map();
 
   for (const r of usable) {
     const seen = new Set();
-    for (const raw of tokens(r.k)) {
-      const t = stem(raw);
-      if (STOPWORDS.has(raw) || STOPWORDS.has(t) || t.length < 3 || /^\d+$/.test(t) || seen.has(t)) continue;
+    for (const raw of tokens(r.k, L.code)) {
+      const t = L.stem(raw);
+      if (L.stopwords.has(raw) || L.stopwords.has(t) || t.length < 3 || /^\d+$/.test(t) || seen.has(t)) continue;
       seen.add(t);
       if (!byToken.has(t)) byToken.set(t, []);
       byToken.get(t).push(r);

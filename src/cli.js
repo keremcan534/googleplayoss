@@ -9,7 +9,8 @@ const argv = process.argv.slice(2);
 const json = argv.includes('--json');
 const mi = argv.indexOf('--market');
 const [country, lang] = (mi >= 0 ? argv[mi + 1] : 'us:en').split(':');
-const term = normalize(argv.filter((a, i) => !a.startsWith('--') && (mi < 0 || i !== mi + 1)).join(' '));
+const langArg = (mi >= 0 ? argv[mi + 1] : 'us:en').split(':')[1] || 'en';
+const term = normalize(argv.filter((a, i) => !a.startsWith('--') && (mi < 0 || i !== mi + 1)).join(' '), langArg);
 if (!term) {
   console.error('Kullanım: node src/cli.js "anahtar kelime" [--market us:en] [--json]');
   process.exit(2);
@@ -21,7 +22,8 @@ const res = await analyzeKeyword(term, {
   search: (t) => store.search(t, 20),
   getApp: async (id) => { const a = await store.app(id); return a && !a.missing ? a : null; },
   topN: 10,
-  appConcurrency: 4
+  appConcurrency: 4,
+  lang: langArg
 });
 
 if (json) {

@@ -11,7 +11,7 @@ export default async function handler(req, res) {
   if (handleOptions(req, res)) return;
   const q = parseMarketQuery(getQuery(req), { minLen: 2 });
   if (q.error) return sendJson(res, 400, { ok: false, error: q.error });
-  const keyword = normalize(q.term);
+  const keyword = normalize(q.term, q.lang);
   if (!keyword) return sendJson(res, 400, { ok: false, error: 'Geçersiz kelime' });
   const key = `${q.country}:${q.lang}:${keyword}`;
   const hit = cache.get(key);
@@ -34,7 +34,8 @@ export default async function handler(req, res) {
         return a && !a.missing ? a : null;
       },
       topN: TOP_N,
-      appConcurrency: 5
+      appConcurrency: 5,
+      lang: q.lang
     });
     const result = {
       k: keyword,

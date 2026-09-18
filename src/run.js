@@ -122,8 +122,8 @@ async function runMarket(cfg, market, args) {
 
   let added = 0;
   function addCandidate(raw, info) {
-    const k = normalize(raw);
-    if (!isValidKeyword(k)) return null;
+    const k = normalize(raw, market.lang);
+    if (!isValidKeyword(k, market.lang)) return null;
     const existing = kw.get(k);
     if (existing) {
       existing.hits = (existing.hits || 0) + (info.hits || 1);
@@ -142,7 +142,11 @@ async function runMarket(cfg, market, args) {
   }
 
   // ---- 1) tohumlar
-  const seeds = (args.seeds || cfg.seeds || []).map(normalize).filter(isValidKeyword);
+  // Tohumlar pazara özel olabilir: marketSeeds["tr-tr"] → marketSeeds["tr"] → seeds
+  const seedSource = args.seeds
+    || (cfg.marketSeeds && (cfg.marketSeeds[id] || cfg.marketSeeds[market.lang]))
+    || cfg.seeds || [];
+  const seeds = seedSource.map((x) => normalize(x, market.lang)).filter((x) => isValidKeyword(x, market.lang));
   const seedSet = new Set(seeds);
   for (const s of seeds) addCandidate(s, { src: 'seed', seed: s });
 
@@ -209,7 +213,7 @@ async function runMarket(cfg, market, args) {
       const cat = cats[(catCursor + i) % cats.length];
       try {
         const items = await store.list(collections.TOP_FREE, cat, 50);
-        for (const c of candidatesFromTitles(items.map((x) => x.title), { minFreq: 2 })) addCandidate(c.k, { src: 'chart', seed: null, hits: c.hits });
+        for (const c of candidatesFromTitles(items.map((x) => x.title), { minFreq: 2, lang: market.lang })) addCandidate(c.k, { src: 'chart', seed: null, hits: c.hits });
       } catch (err) {
         if (err && err.budget) break;
         log(`   liste hatası ${cat}: ${err.message}`);
@@ -262,11 +266,11 @@ async function runMarket(cfg, market, args) {
       runs: (meta.runs || 0) + 1
     };
     const out = {
-      market: { id, country: market.country, lang: market.lang },
+      market: { id, country: market.country, lang: market.lang, label: market.label || null },
       generatedAt: new Date().toISOString(),
       stats,
       budgetUsed: { ...store.state.used },
-      niches: buildNiches(records),
+      niches: buildNiches(records, { lang: market.lang }),
       keywords: records,
       apps: Object.fromEntries(Object.keys(usedApps).sort().map((k) => [k, usedApps[k]]))
     };
@@ -289,7 +293,7 @@ async function runMarket(cfg, market, args) {
     const indexPath = path.join(PUBLIC_DATA, 'index.json');
     const index = readJson(indexPath, { markets: [] });
     index.markets = (index.markets || []).filter((m) => m.id !== id);
-    index.markets.push({ id, country: market.country, lang: market.lang, generatedAt: out.generatedAt, keywords: stats.keywords, analyzed: stats.analyzed, withDemand: stats.withDemand });
+    index.markets.push({ id, country: market.country, lang: market.lang, label: market.label || null, generatedAt: out.generatedAt, keywords: stats.keywords, analyzed: stats.analyzed, withDemand: stats.withDemand });
     index.markets.sort((a, b) => a.id.localeCompare(b.id));
     index.generatedAt = out.generatedAt;
     writeJson(indexPath, index);
@@ -311,6 +315,7 @@ async function runMarket(cfg, market, args) {
         search: (t) => store.search(t, 20),
         getApp,
         topN: cfg.topN || 10,
+        lang: market.lang,
         knownPrefix: r.knownPrefix || (r.pop && r.pop.minPrefix) || null,
         skipDemand: needDemand ? null : r.pop,
         appConcurrency: cfg.concurrency ?? 2
@@ -331,7 +336,7 @@ async function runMarket(cfg, market, args) {
         r.hist = (r.hist || []).filter((h) => h[0] !== today);
         r.hist.push([today, r.demand, r.difficulty, r.opportunity]);
         if (r.hist.length > 30) r.hist = r.hist.slice(-30);
-        for (const c of candidatesFromTitles(res.titles || [], { minFreq: 2 })) addCandidate(c.k, { src: 'title', seed: r.seed || r.k, hits: c.hits });
+        for (const c of candidatesFromTitles(res.titles || [], { minFreq: 2, lang: market.lang })) addCandidate(c.k, { src: 'title', seed: r.seed || r.k, hits: c.hits });
       }
       for (const v of res.variants || []) addCandidate(v, { src: 'variant', seed: r.seed || r.k, knownPrefix: res.variantsPrefixLen || null });
       analyzed++;

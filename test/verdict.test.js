@@ -5,6 +5,8 @@ import {
   demandLevel, difficultyLevel, opportunityLevel, marketLevel, competitorSummary, compareByVerdict, getNicheVerdict,
   reachability, fmtInstalls, THRESHOLDS, GUARDS
 } from '../public/js/verdict.js';
+import { normalizeFor, stemTr, langOf } from '../public/js/lang.js';
+import { titleMatches } from '../src/score.js';
 
 const rec = (o = {}) => ({
   k: o.k || 'test kw', st: 'ok', first: '2026-09-01', demand: 70, difficulty: 40, opportunity: 65, market: 60,
@@ -212,4 +214,50 @@ test('eşik sınırları: duvar ve gölet tam değerlerde', () => {
   assert.equal(getOpportunityVerdict(reach({ midpack: 1_000 })).reach.pond, 'thin');
   assert.equal(getOpportunityVerdict(reach({ midpack: 5_000 })).reach.pond, 'normal');
   assert.equal(getOpportunityVerdict(reach({ midpack: 100_000 })).reach.pond, 'healthy');
+});
+
+/* ---------- dil desteği: Türkçe ---------- */
+
+test('Türkçe normalize: İ ve I harfleri kelimeyi bölmez, doğru küçültülür', () => {
+  assert.equal(normalizeFor('İSTANBUL Haritası', 'tr'), 'istanbul haritası');
+  assert.equal(normalizeFor('IŞIK Efekti', 'tr'), 'ışık efekti');
+  assert.equal(normalizeFor('Namaz Vakitleri İstanbul', 'tr'), 'namaz vakitleri istanbul');
+  // İngilizce tarafta I → i kalır (iPhone bozulmaz)
+  assert.equal(normalizeFor('IPHONE Case', 'en'), 'iphone case');
+  // noktalı İ hiçbir dilde birleşen nokta bırakmaz
+  assert.ok(!normalizeFor('İzmir', 'en').includes('̇'));
+});
+
+test('Türkçe kökleme: çoğul, iyelik ve ünlü düşmesi aynı köke iner', () => {
+  const pairs = [['oyunlar', 'oyun'], ['oyunları', 'oyunu'], ['vakitleri', 'vakti'], ['vakit', 'vakti'],
+    ['arabalar', 'araba'], ['haritası', 'harita'], ['sesleri', 'ses'], ['resimleri', 'resmi'],
+    ['şehirleri', 'şehri'], ['fotoğrafları', 'fotoğraf']];
+  for (const [a, b] of pairs) assert.equal(stemTr(a), stemTr(b), `${a} / ${b}`);
+  // aşırı kökleme farklı kelimeleri çakıştırmasın
+  assert.notEqual(stemTr('araba'), stemTr('arap'));
+  assert.notEqual(stemTr('harita'), stemTr('hariç'));
+  assert.notEqual(stemTr('ses'), stemTr('sen'));
+});
+
+test('Türkçe başlık eşleşmesi: çoğul ve dolgu kelimeleri doğru ele alınır', () => {
+  assert.equal(titleMatches('çevrimdışı oyunlar', 'Çevrimdışı Oyun - İnternetsiz', 'tr'), true);
+  assert.equal(titleMatches('namaz vakitleri', 'Namaz Vakti', 'tr'), true);
+  assert.equal(titleMatches('araba oyunları', 'Araba Oyunu 3D', 'tr'), true);
+  assert.equal(titleMatches('ücretsiz oyun', 'Oyun Merkezi', 'tr'), true, 'ücretsiz dolgudur');
+  assert.equal(titleMatches('istanbul haritası', 'İSTANBUL Harita Rehberi', 'tr'), true);
+  assert.equal(titleMatches('namaz vakitleri', 'Hava Durumu', 'tr'), false);
+  // İngilizce bozulmadı
+  assert.equal(titleMatches('offline games', 'Offline Games', 'en'), true);
+  assert.equal(titleMatches('sudoku free', 'Sudoku Classic', 'en'), true);
+  assert.equal(titleMatches('chess timer', 'Weather App', 'en'), false);
+});
+
+test('Türkçe niş gruplaması: oyun/uygulama gibi genel kelimeler niş adı olmaz', () => {
+  const L = langOf('tr');
+  for (const w of ['oyun', 'oyunlar', 'uygulama', 'ücretsiz', 'indir', 'için', 've']) {
+    assert.ok(L.stopwords.has(w) || L.stopwords.has(L.stem(w)), `${w} stopword olmalı`);
+  }
+  assert.ok(!L.stopwords.has('namaz'), 'anlamlı kelime stopword olmamalı');
+  assert.ok(!L.titleFiller.has('çevrimdışı'), 'çevrimdışı dolgu değildir');
+  assert.ok(L.titleFiller.has('ücretsiz'));
 });

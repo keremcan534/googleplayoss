@@ -2,38 +2,29 @@
 
 export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-/** Metni karşılaştırma için normalize eder: küçük harf, noktalama yok, tek boşluk. */
-export function normalize(s) {
-  return String(s || '')
-    .toLowerCase()
-    .normalize('NFKC')
-    .replace(/[’'`´]/g, '')
-    .replace(/[^\p{L}\p{N}]+/gu, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
+// Dile duyarlı metin işleme tarayıcı arayüzüyle ortaktır: public/js/lang.js
+export { langOf, LANGS, stemTokens } from '../public/js/lang.js';
+import { normalizeFor, tokensFor, langOf as langPack } from '../public/js/lang.js';
+
+/** Metni karşılaştırma için normalize eder. lang verilirse o dilin harf kuralları uygulanır. */
+export function normalize(s, lang = 'en') {
+  return normalizeFor(s, lang);
 }
 
-export function tokens(s) {
-  return normalize(s).split(' ').filter(Boolean);
+export function tokens(s, lang = 'en') {
+  return tokensFor(s, lang);
 }
 
-/** Kaba İngilizce çoğul kökleme: games → game, puzzles → puzzle, stories → story. */
-export function stem(t) {
-  if (t.length > 4 && t.endsWith('ies')) return t.slice(0, -3) + 'y';
-  if (t.length > 3 && t.endsWith('s') && !t.endsWith('ss')) return t.slice(0, -1);
-  return t;
+/** Dile göre kökleme (varsayılan İngilizce). */
+export function stem(t, lang = 'en') {
+  return langPack(lang).stem(t);
 }
 
-/** Niş gruplamada tek başına anlam taşımayan kelimeler. */
-export const STOPWORDS = new Set([
-  'game', 'games', 'app', 'apps', 'for', 'free', 'the', 'and', 'of', 'to', 'a', 'an', 'in', 'with',
-  'best', 'top', 'new', 'my', 'me', 'on', 'no', 'your', 'you', 'by', 'vs', 'or', 'all', 'it', 'is',
-  'pro', 'hd', 'ii', 'iii', 'from', 'at', 'as', 'be', 'this', 'that', 'plus', 'lite', 'ultimate',
-  'edition', 'mobile', 'android', 'version'
-]);
+/** Niş gruplamada tek başına anlam taşımayan kelimeler (varsayılan İngilizce). */
+export const STOPWORDS = langPack('en').stopwords;
 
-/** N-gram'ların kenarında olması anlamsız kelimeler ("for", "and" ile başlayan/biten aday olmasın). */
-export const EDGE_STOPWORDS = new Set(['for', 'and', 'the', 'of', 'to', 'a', 'an', 'in', 'with', 'by', 'or', 'on', 'at', 'as', 'from', 'vs', 'is', 'it', 'be', 'your', 'my']);
+/** N-gram'ların kenarında olması anlamsız kelimeler. */
+export const EDGE_STOPWORDS = langPack('en').edgeStopwords;
 
 export function ngrams(arr, min = 1, max = 3) {
   const out = [];

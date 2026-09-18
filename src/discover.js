@@ -1,11 +1,11 @@
 // Aday anahtar kelime üretimi: başlık n-gram'ları, tohum ön ekleri, geçerlilik filtresi.
-import { tokens, ngrams, normalize, STOPWORDS, EDGE_STOPWORDS } from './util.js';
+import { tokens, ngrams, normalize, langOf } from './util.js';
 
 const MAX_KEYWORD_LEN = 60;
 const MAX_TOKENS = 7;
 
-export function isValidKeyword(raw) {
-  const s = normalize(raw);
+export function isValidKeyword(raw, lang = 'en') {
+  const s = normalize(raw, lang);
   if (!s || s.length < 2 || s.length > MAX_KEYWORD_LEN) return false;
   if (s.split(' ').length > MAX_TOKENS) return false;
   if (!/\p{L}/u.test(s)) return false; // en az bir harf
@@ -18,17 +18,18 @@ export function isValidKeyword(raw) {
  * Tek kelimeler için eşik daha yüksek (marka gürültüsünü azaltmak için).
  */
 export function candidatesFromTitles(titles, opts = {}) {
-  const { minFreq = 2, maxN = 3 } = opts;
+  const { minFreq = 2, maxN = 3, lang = 'en' } = opts;
+  const L = langOf(lang);
   const freq = new Map();
   for (const title of titles || []) {
     const parts = String(title || '').split(/[-–—:|,()[\]!.•·/&+]+/);
     const seenInTitle = new Set();
     for (const part of parts) {
-      const t = tokens(part);
+      const t = tokens(part, L.code);
       for (const g of ngrams(t, 1, maxN)) {
-        if (g.length === 1 && (g[0].length < 4 || STOPWORDS.has(g[0]) || /^\d+$/.test(g[0]))) continue;
-        if (EDGE_STOPWORDS.has(g[0]) || EDGE_STOPWORDS.has(g[g.length - 1])) continue;
-        if (g.every((w) => STOPWORDS.has(w))) continue;
+        if (g.length === 1 && (g[0].length < 4 || L.stopwords.has(g[0]) || /^\d+$/.test(g[0]))) continue;
+        if (L.edgeStopwords.has(g[0]) || L.edgeStopwords.has(g[g.length - 1])) continue;
+        if (g.every((w) => L.stopwords.has(w))) continue;
         if (g.some((w) => w.length === 1 && !/\d/.test(w))) continue;
         const key = g.join(' ');
         if (seenInTitle.has(key)) continue;
@@ -44,7 +45,7 @@ export function candidatesFromTitles(titles, opts = {}) {
 }
 
 /** Bir tohum için sorgulanacak ön ekler: "seed", "seed " ve "seed a".."seed z". */
-export function seedPrefixes(seed, letters = 'abcdefghijklmnopqrstuvwxyz') {
-  const s = normalize(seed);
+export function seedPrefixes(seed, letters = 'abcdefghijklmnopqrstuvwxyz', lang = 'en') {
+  const s = normalize(seed, lang);
   return [s, s + ' ', ...[...letters].map((l) => `${s} ${l}`)];
 }

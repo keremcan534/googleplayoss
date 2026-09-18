@@ -16,7 +16,7 @@ import { pLimit } from './util.js';
  * @param {number} [deps.appConcurrency=2]
  */
 export async function analyzeKeyword(keyword, deps) {
-  const { getSuggest, search, getApp, topN = 10, knownPrefix = null, skipDemand = null, appConcurrency = 2 } = deps;
+  const { getSuggest, search, getApp, topN = 10, knownPrefix = null, skipDemand = null, appConcurrency = 2, lang = 'en' } = deps;
   const out = { k: keyword, status: 'ok', variants: [], variantsPrefixLen: null, skippedDemand: false };
 
   // 1) Talep (otomatik tamamlama)
@@ -56,7 +56,7 @@ export async function analyzeKeyword(keyword, deps) {
   })));
   out.apps = apps;
   const present = apps.filter(Boolean);
-  const { difficulty, market, comp } = scoreCompetition(keyword, present, { topN });
+  const { difficulty, market, comp } = scoreCompetition(keyword, present, { topN, lang });
   out.difficulty = difficulty;
   out.market = market;
   out.comp = comp;
