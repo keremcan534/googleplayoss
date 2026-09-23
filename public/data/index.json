@@ -1,7 +1,7 @@
 {
 "markets": [
-{"id":"tr-tr","country":"tr","lang":"tr","label":"Türkiye (TR / Türkçe)","generatedAt":"2026-09-22T08:54:16.717Z","keywords":8000,"analyzed":1800,"withDemand":1800},
-{"id":"us-en","country":"us","lang":"en","label":"Global (US / İngilizce)","generatedAt":"2026-09-22T08:47:02.894Z","keywords":8000,"analyzed":2894,"withDemand":2894}
+{"id":"tr-tr","country":"tr","lang":"tr","label":"Türkiye (TR / Türkçe)","generatedAt":"2026-09-23T08:54:23.398Z","keywords":8000,"analyzed":2050,"withDemand":2050},
+{"id":"us-en","country":"us","lang":"en","label":"Global (US / İngilizce)","generatedAt":"2026-09-23T08:46:54.699Z","keywords":8000,"analyzed":3144,"withDemand":3144}
 ],
-"generatedAt": "2026-09-22T08:54:16.717Z"
+"generatedAt": "2026-09-23T08:54:23.398Z"
 }
