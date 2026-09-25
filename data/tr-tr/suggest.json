@@ -12731,6 +12731,18 @@
 "t": 1790239270623,
 "s": ["iki kişilik çiftlik oyunu","iki kişilik çiftlik oyunları"]
 },
+"iki kişilik çiz": {
+"t": 1790326941697,
+"s": ["iki kişilik çizim oyunu","iki kişilik çizim","iki kişilik çizim oyunları","iki kişilik çizim uygulaması","iki kişilik çizgi film"]
+},
+"iki kişilik çizim ": {
+"t": 1790326941249,
+"s": ["iki kişilik çizim oyunu","iki kişilik çizim oyunları","iki kişilik çizim uygulaması","iki kişilik çizim","iki kişilik çizim uygulamaları"]
+},
+"iki kişilik çizim oyunu": {
+"t": 1790326940806,
+"s": ["iki kişilik çizim oyunu"]
+},
 "iki kişilik h": {
 "t": 1790239515236,
 "s": ["iki kişilik hayatta kalma oyunları","iki kişilik hayatta kalma oyunu","iki kişilik hello neighbor","iki kişilik hayatta kalma","iki kişilik hikayeli oyunlar"]
@@ -13075,16 +13087,20 @@
 "t": 1790239528559,
 "s": ["internetsiz oyunları","internetsiz oyunları araba","internetsiz oyunları silah","internetsiz oyunları futbol","internetsiz oyunları kız"]
 },
+"internetsiz oyunl": {
+"t": 1790326973013,
+"s": ["internetsiz oyunları","internetsiz oyunları araba","internetsiz oyunları silah","internetsiz oyunları futbol","internetsiz oyunları kız"]
+},
 "internetsiz oyunla": {
 "t": 1789714771205,
 "s": ["internetsiz oyunları","internetsiz oyunları araba","internetsiz oyunları silah","internetsiz oyunları futbol","internetsiz oyunları kız"]
 },
 "internetsiz oyunlar": {
-"t": 1789712731898,
+"t": 1790326905099,
 "s": ["internetsiz oyunları","internetsiz oyunları araba","internetsiz oyunları silah","internetsiz oyunları futbol","internetsiz oyunları kız"]
 },
 "internetsiz oyunlar ": {
-"t": 1789712732290,
+"t": 1790326905541,
 "s": ["internetsiz oyunlar araba","internetsiz oyunlar internetsiz oyunlar","internetsiz oyunlar kız","internetsiz oyunlar futbol","internetsiz oyunlar silah"]
 },
 "internetsiz oyunlar a": {
@@ -13172,36 +13188,124 @@
 "s": ["internetsiz oyunlar reklamsız","internetsiz oyunlar reklamsız oyunlar","internetsiz oyunlar roblox","internetsiz oyunlar rahatlatıcı","internetsiz oyunlar red ball"]
 },
 "internetsiz oyunlar s": {
-"t": 1789712925699,
+"t": 1790326918070,
 "s": ["internetsiz oyunlar silah","internetsiz oyunlar savaş oyunları","internetsiz oyunlar silah oyunları","internetsiz oyunlar savaş","internetsiz oyunlar simülasyon"]
 },
 "internetsiz oyunlar ş": {
-"t": 1789712926096,
-"s": ["internetsiz oyunlar şarkı","internetsiz oyunlar şişe","internetsiz oyunlar şehir","internetsiz oyunlar şeker oyunu","internetsiz oyunlar şarkılı"]
+"t": 1790326904656,
+"s": ["internetsiz oyunlar şarkı","internetsiz oyunlar şişe","internetsiz oyunlar şarkılı","internetsiz oyunlar şehir","internetsiz oyunlar şarkılar"]
 },
 "internetsiz oyunlar t": {
-"t": 1789712926493,
+"t": 1790326943991,
 "s": ["internetsiz oyunlar tır","internetsiz oyunlar toca boca","internetsiz oyunlar tom","internetsiz oyunlar tır oyunları","internetsiz oyunlar traktör"]
 },
 "internetsiz oyunlar u": {
-"t": 1789712926894,
-"s": ["internetsiz oyunlar uno","internetsiz oyunlar uçak","internetsiz oyunlar uygulaması","internetsiz oyunlar ucretsiz","internetsiz oyunlar uçak oyunu"]
+"t": 1790326949663,
+"s": ["internetsiz oyunlar uçak","internetsiz oyunlar uygulaması","internetsiz oyunlar uno","internetsiz oyunlar uçak oyunu","internetsiz oyunlar ucretsiz"]
 },
 "internetsiz oyunlar ü": {
-"t": 1789712927293,
-"s": ["internetsiz oyunlar ücretsiz","internetsiz oyunlar ünlü","internetsiz oyunlar ücretsiz oyunlar","internetsiz oyunlar ücretli","internetsiz oyunlar ülke"]
+"t": 1790326951460,
+"s": ["internetsiz oyunlar ücretsiz","internetsiz oyunlar ücretsiz oyunlar","internetsiz oyunlar ünlü","internetsiz oyunlar ücretli","internetsiz ve ücretsiz oyunlar"]
+},
+"internetsiz oyunlar ülke": {
+"t": 1790326955792,
+"s": ["internetsiz oyunlar savaş oyunları ülke"]
 },
 "internetsiz oyunlar v": {
-"t": 1789712927685,
-"s": ["internetsiz oyunlar ve reklamsız oyunlar","internetsiz oyunlar ve parasız oyunlar","internetsiz oyunlar ve reklamsız","internetsiz oyunlar ve ücretsiz","internetsiz oyunlar voleybol"]
+"t": 1790326960118,
+"s": ["internetsiz oyunlar ve reklamsız oyunlar","internetsiz oyunlar ve parasız oyunlar","internetsiz oyunlar ve ücretsiz","internetsiz oyunlar ve reklamsız","internetsiz oyunlar ve parasız"]
+},
+"internetsiz oyunlar vo": {
+"t": 1790326964667,
+"s": ["internetsiz oyunlar voleybol","internetsiz oyunlar voodoo"]
+},
+"internetsiz oyunlar vol": {
+"t": 1790326964231,
+"s": ["internetsiz oyunlar voleybol"]
+},
+"internetsiz oyunlar voley": {
+"t": 1790326963791,
+"s": ["internetsiz oyunlar voleybol"]
+},
+"internetsiz oyunlar voleybol": {
+"t": 1790326963353,
+"s": ["internetsiz oyunlar voleybol"]
 },
 "internetsiz oyunlar y": {
-"t": 1789712928082,
-"s": ["internetsiz oyunlar yemek","internetsiz oyunlar yemek yapma","internetsiz oyunlar yılan","internetsiz oyunlar yılan oyunu","internetsiz oyunlar yükle"]
+"t": 1790326966328,
+"s": ["internetsiz oyunlar yemek","internetsiz oyunlar yemek yapma","internetsiz oyunlar yılan","internetsiz oyunlar yükle","internetsiz oyunlar yılan oyunu"]
 },
 "internetsiz oyunlar z": {
-"t": 1789712928472,
-"s": ["internetsiz oyunlar zombi","internetsiz oyunlar zeka oyunu","internetsiz oyunlar zeka","internetsiz oyunlar zeka oyunları","internetsiz oyunlar zor"]
+"t": 1790326971386,
+"s": ["internetsiz oyunlar zombi","internetsiz oyunlar zeka oyunu","internetsiz oyunlar zeka","internetsiz oyunlar zor","internetsiz oyunlar zombi oyunu"]
+},
+"internetsiz oyunlar ze": {
+"t": 1790326974338,
+"s": ["internetsiz oyunlar zeka oyunu","internetsiz oyunlar zeka","internetsiz oyunlar zevkli","internetsiz oyunlar zeka oyunları","zeka geliştirici oyunlar internetsiz"]
+},
+"internetsiz oyunlar zek": {
+"t": 1790326973897,
+"s": ["internetsiz oyunlar zeka oyunu","internetsiz oyunlar zeka","internetsiz oyunlar zeka oyunları","zeka geliştirici oyunlar internetsiz","zeka geliştiren oyunlar internetsiz"]
+},
+"internetsiz oyunlar zeka ": {
+"t": 1790326973452,
+"s": ["internetsiz oyunlar zeka oyunu","internetsiz oyunlar zeka oyunları","internetsiz oyunlar zeka","zeka geliştirici oyunlar internetsiz","zeka geliştiren oyunlar internetsiz"]
+},
+"internetsiz oyunlar zeka oyunları": {
+"t": 1790326972572,
+"s": ["internetsiz oyunlar zeka oyunları"]
+},
+"internetsiz para": {
+"t": 1790326978168,
+"s": ["internetsiz parasız oyunlar","internetsiz parasız minecraft","internetsiz parasız araba oyunları","internetsiz parasız","internetsiz parasız minecraft oyunları"]
+},
+"internetsiz paras": {
+"t": 1790326979051,
+"s": ["internetsiz parasız oyunlar","internetsiz parasız minecraft","internetsiz parasız araba oyunları","internetsiz parasız","internetsiz parasız minecraft oyunları"]
+},
+"internetsiz parasız ": {
+"t": 1790326980367,
+"s": ["internetsiz parasız oyunlar","internetsiz parasız minecraft","internetsiz parasız araba oyunları","internetsiz parasız minecraft oyunları","internetsiz parasız kız oyunları"]
+},
+"internetsiz parasız z": {
+"t": 1790326980811,
+"s": ["internetsiz parasız zombi oyunları","zeka oyunları internetsiz parasız"]
+},
+"internetsiz parasız zo": {
+"t": 1790326979923,
+"s": ["internetsiz parasız zombi oyunları"]
+},
+"internetsiz parasız zombi ": {
+"t": 1790326979487,
+"s": ["internetsiz parasız zombi oyunları"]
+},
+"internetsiz parasız zombi oyunları": {
+"t": 1790326978609,
+"s": ["internetsiz parasız zombi oyunları"]
+},
+"internetsiz sava": {
+"t": 1790326981931,
+"s": ["internetsiz savaş oyunları","internetsiz savaş oyunu","internetsiz savas oyunlari","internetsiz savaş","internetsiz savas oyunları"]
+},
+"internetsiz savaş oyunla": {
+"t": 1790326982834,
+"s": ["internetsiz savaş oyunları","internetsiz savaş oyunları silahlı","internetsiz savaş oyunlari","internetsiz savaş oyunlar","internetsiz savaş oyunları 2"]
+},
+"internetsiz savaş oyunları": {
+"t": 1790326983718,
+"s": ["internetsiz savaş oyunları","internetsiz savaş oyunları silahlı","internetsiz savaş oyunları 3d","internetsiz savaş oyunları ülke","internetsiz savaş oyunları 2"]
+},
+"internetsiz savaş oyunları ": {
+"t": 1790326984157,
+"s": ["internetsiz savaş oyunları silahlı","internetsiz savaş oyunları 3d","internetsiz savaş oyunları ülke","internetsiz savaş oyunları 2","internetsiz savaş oyunları zombi"]
+},
+"internetsiz savaş oyunları z": {
+"t": 1790326983273,
+"s": ["internetsiz savaş oyunları zombi"]
+},
+"internetsiz savaş oyunları zombi": {
+"t": 1790326982372,
+"s": ["internetsiz savaş oyunları zombi"]
 },
 "internetsiz ve ": {
 "t": 1790153257751,
@@ -13243,6 +13347,14 @@
 "t": 1789981987793,
 "s": ["internetsiz zeka oyunları zor"]
 },
+"internetsiz zor f": {
+"t": 1790326925773,
+"s": []
+},
+"internetsiz zor futbol oyunları": {
+"t": 1790326926220,
+"s": []
+},
 "interval zamanlayıcı": {
 "t": 1789712830885,
 "s": []
@@ -13250,6 +13362,54 @@
 "interval zamanlayıcı ": {
 "t": 1789712831293,
 "s": []
+},
+"iphone emo": {
+"t": 1790326986162,
+"s": ["iphone emoji","iphone emoji klavye","iphone emoji yapma","iphone emojisi","iphone emoji keyboard"]
+},
+"iphone emoji ": {
+"t": 1790326987045,
+"s": ["iphone emoji klavye","iphone emoji yapma","iphone emoji keyboard","iphone emoji klavyesi","iphone emoji stickers for whatsapp"]
+},
+"iphone emoji k": {
+"t": 1790326987485,
+"s": ["iphone emoji klavye","iphone emoji keyboard","iphone emoji klavyesi","iphone emoji klavye samsung","iphone emoji klaviatura"]
+},
+"iphone emoji kl": {
+"t": 1790326986604,
+"s": ["iphone emoji klavye","iphone emoji klavyesi","iphone emoji klavye samsung","iphone emoji klaviatura","iphone klavye ve emoji"]
+},
+"iphone emoji klavye ": {
+"t": 1790326985261,
+"s": ["iphone emoji klavye samsung","iphone emoji klavye","iphone klavye ve emoji"]
+},
+"iphone emoji klavye redmi": {
+"t": 1790326985716,
+"s": []
+},
+"iphone emoji klavye türkçe": {
+"t": 1790326988588,
+"s": []
+},
+"iphone kla": {
+"t": 1790326989461,
+"s": ["iphone klavye","iphone klavye türkçe","iphone klavyesi","iphone klavye sesi","iphone klavye emojileri"]
+},
+"iphone klavye": {
+"t": 1790326990367,
+"s": ["iphone klavye","iphone klavye türkçe","iphone klavyesi","iphone klavye sesi","iphone klavye emojileri"]
+},
+"iphone klavye ": {
+"t": 1790326990805,
+"s": ["iphone klavye türkçe","iphone klavye sesi","iphone klavye emojileri","iphone klavye ios 14","iphone klavye indir"]
+},
+"iphone klavye v": {
+"t": 1790326989932,
+"s": ["iphone klavye ve emoji"]
+},
+"iphone klavye ve emo": {
+"t": 1790326989024,
+"s": ["iphone klavye ve emoji"]
 },
 "is": {
 "t": 1789720457994,
@@ -13615,6 +13775,58 @@
 "t": 1789720461016,
 "s": ["istanbul metro haritası"]
 },
+"ı": {
+"t": 1790327004293,
+"s": ["ınstagram","ınstagram lite","ı am cat","ınshot","ıng bank mobil"]
+},
+"ıkı ": {
+"t": 1790326992818,
+"s": ["ıkı kısılık oyunlar","ıkı kişilik oyunlar","ıkı kısılık oyun","ıkı kısılık","ıkı kişilik"]
+},
+"ıkı k": {
+"t": 1790326993710,
+"s": ["ıkı kısılık oyunlar","ıkı kişilik oyunlar","ıkı kısılık oyun","ıkı kısılık","ıkı kişilik"]
+},
+"ıkı kı": {
+"t": 1790326993266,
+"s": ["ıkı kısılık oyunlar","ıkı kısılık oyun","ıkı kısılık","ıkı kısılık oyunlar korku","ıkı kısılık korku oyunları"]
+},
+"ıkı kısı": {
+"t": 1790326992376,
+"s": ["ıkı kısılık oyunlar","ıkı kısılık oyun","ıkı kısılık","ıkı kısılık oyunlar korku","ıkı kısılık korku oyunları"]
+},
+"ıkı kısılık kork": {
+"t": 1790326991933,
+"s": ["ıkı kısılık korku oyunları","ıkı kısılık oyunlar korku"]
+},
+"ınternets": {
+"t": 1790326996038,
+"s": ["ınternetsiz oyunlar","ınternetsız oyunlar","ınternetsız okey","ınternetsiz araba oyunları","ınternetsiz oyunlar araba"]
+},
+"ınternetsiz ": {
+"t": 1790326996927,
+"s": ["ınternetsiz oyunlar","ınternetsiz araba oyunları","ınternetsiz oyunlar araba","ınternetsiz okey","ınternetsiz oyunlar futbol"]
+},
+"ınternetsiz t": {
+"t": 1790326997372,
+"s": ["ınternetsiz tır oyunları","ınternetsiz traktör oyunları","ınternetsiz tavla"]
+},
+"ınternetsiz tr": {
+"t": 1790326996489,
+"s": ["ınternetsiz traktör oyunları"]
+},
+"ınternetsiz traktö": {
+"t": 1790326995598,
+"s": ["ınternetsiz traktör oyunları"]
+},
+"ırak savaş oyunl": {
+"t": 1790326999047,
+"s": []
+},
+"ırak savaş oyunları": {
+"t": 1790326999482,
+"s": []
+},
 "ıs": {
 "t": 1789981990153,
 "s": ["ıstegram","ısmarlıyo","ıstanbulkart","ısubu","ısland"]
@@ -13639,6 +13851,14 @@
 "t": 1790066843860,
 "s": ["ışıklı araba oyunu","ışıklı araba oyunları","trafik ışıklı araba oyunu","kırmızı ışıklı araba oyunu","kırmızı ışıklı araba oyunları"]
 },
+"ışıklı m": {
+"t": 1790327000361,
+"s": ["ışıklı motor oyunları"]
+},
+"ışıklı motor oyu": {
+"t": 1790326999920,
+"s": ["ışıklı motor oyunları"]
+},
 "ısu": {
 "t": 1789894485336,
 "s": ["ısuzu kamyon oyunları modifiyeli","ısuzu kamyonet oyunları","ısuzu kamyon oyunları","ısubü","ısubu"]
@@ -13659,6 +13879,202 @@
 "t": 1789894484109,
 "s": ["ısuzu npr kamyon oyunları 2020"]
 },
+"ıv": {
+"t": 1790327003853,
+"s": ["ıvanti mobile","ıveco kamyon oyunları","ıvy wallet","ıvms 4500","ıveco minibüs"]
+},
+"ıve": {
+"t": 1790327003418,
+"s": ["ıveco kamyon oyunları","ıveco minibüs","ıveco","ıveco tır oyunları","ıveco oyunu"]
+},
+"ıvec": {
+"t": 1790327007466,
+"s": ["ıveco kamyon oyunları","ıveco minibüs","ıveco","ıveco tır oyunları","ıveco oyunu"]
+},
+"ıveco": {
+"t": 1790327002979,
+"s": ["ıveco kamyon oyunları","ıveco minibüs","ıveco","ıveco tır oyunları","ıveco oyunu"]
+},
+"ıveco kam": {
+"t": 1790327002540,
+"s": ["ıveco kamyon oyunları"]
+},
+"ıveco kamyon oyun": {
+"t": 1790327002100,
+"s": ["ıveco kamyon oyunları"]
+},
+"ıveco t": {
+"t": 1790327007022,
+"s": ["ıveco tır oyunları"]
+},
+"ıveco tır oyun": {
+"t": 1790327006587,
+"s": ["ıveco tır oyunları"]
+},
+"jandarma": {
+"t": 1790327009672,
+"s": ["jandarma oyunu","jandarma oyunları","jandarma","jandarma özel harekat oyunları","jandarma arabası"]
+},
+"jandarma ": {
+"t": 1790327010998,
+"s": ["jandarma oyunu","jandarma oyunları","jandarma özel harekat oyunları","jandarma arabası","jandarma oyunları araba"]
+},
+"jandarma m": {
+"t": 1790327010559,
+"s": ["jandarma mevzuat","jandarma motoru","jandarma mülakat","jandarma motor oyunları","jandarma mevzuat pro"]
+},
+"jandarma mot": {
+"t": 1790327010116,
+"s": ["jandarma motoru","jandarma motor oyunları","jandarma motor","jandarma motor oyunu"]
+},
+"jandarma motor o": {
+"t": 1790327009237,
+"s": ["jandarma motor oyunları","jandarma motor oyunu"]
+},
+"japo": {
+"t": 1790327013533,
+"s": ["japon vpn","japonca ögrenmek","japon king","japonca","japon araba oyunları"]
+},
+"japon": {
+"t": 1790327017585,
+"s": ["japon vpn","japonca ögrenmek","japon king","japonca","japon araba oyunları"]
+},
+"japon ": {
+"t": 1790327013972,
+"s": ["japon vpn","japon king","japon araba oyunları","japon oyunları","japon bebek"]
+},
+"japon d": {
+"t": 1790327014412,
+"s": ["japon dizileri","japon dili öğrenme","japon drift oyunu","japon doll","japon drift"]
+},
+"japon dö": {
+"t": 1790327013099,
+"s": ["japon dövüş oyunları","japon dövüş oyunu"]
+},
+"japon dövüş oyun": {
+"t": 1790327012656,
+"s": ["japon dövüş oyunları","japon dövüş oyunu"]
+},
+"japon f": {
+"t": 1790327018029,
+"s": ["japon filmleri","japon futbol oyunu","japon filmi","japon futbol oyunları","japon film"]
+},
+"japon fut": {
+"t": 1790327017138,
+"s": ["japon futbol oyunu","japon futbol oyunları","japon futbol"]
+},
+"japon futbol oyun": {
+"t": 1790327016698,
+"s": ["japon futbol oyunu","japon futbol oyunları"]
+},
+"japon m": {
+"t": 1790327020083,
+"s": ["japon minecraft","japon motor oyunları","japon market oyunu","japon minecraftı","japon motor oyunu"]
+},
+"japon mo": {
+"t": 1790327019642,
+"s": ["japon motor oyunları","japon motor oyunu","pubg mobile japon","moto japon","fc mobile japon"]
+},
+"japon motor oyun": {
+"t": 1790327019205,
+"s": ["japon motor oyunları","japon motor oyunu"]
+},
+"japon s": {
+"t": 1790327023153,
+"s": ["japon savaş oyunları","japon sohbet","japon satrancı","japon silah oyunu","japon simulator"]
+},
+"japon sa": {
+"t": 1790327022709,
+"s": ["japon savaş oyunları","japon satrancı","japon savaş oyunu","sayarat japon"]
+},
+"japon savaş oyun": {
+"t": 1790327022268,
+"s": ["japon savaş oyunları","japon savaş oyunu"]
+},
+"japonya ": {
+"t": 1790327027422,
+"s": ["japonya vpn","japonya araba oyunu","japonya oyunları","japonya araba oyunları","japonya oyunu"]
+},
+"japonya m": {
+"t": 1790327028751,
+"s": ["japonya minecraft","japonya motor oyunları","japonya motor oyunu","japonya market oyunu","japonya metro oyunu"]
+},
+"japonya mo": {
+"t": 1790327028304,
+"s": ["japonya motor oyunları","japonya motor oyunu","pubg mobile japonya"]
+},
+"japonya moto": {
+"t": 1790327027861,
+"s": ["japonya motor oyunları","japonya motor oyunu"]
+},
+"japonya motor oy": {
+"t": 1790327026972,
+"s": ["japonya motor oyunları","japonya motor oyunu"]
+},
+"jet ": {
+"t": 1790327035655,
+"s": ["jet oyunları","jet player","jet oyunu","jet play","jet ski oyunu"]
+},
+"jet k": {
+"t": 1790327031902,
+"s": ["jet kampüs","jet kurye","jet kontak","jet kurye sürücü","jet kamyon"]
+},
+"jet ka": {
+"t": 1790327032795,
+"s": ["jet kampüs","jet kamyon","jet kampus","jet kamyon oyunları","jet kamyonları"]
+},
+"jet kam": {
+"t": 1790327032342,
+"s": ["jet kampüs","jet kamyon","jet kampus","jet kamyon oyunları","jet kamyonları"]
+},
+"jet kamyo": {
+"t": 1790327031446,
+"s": ["jet kamyon","jet kamyon oyunları","jet kamyonları"]
+},
+"jet kamyon oyunla": {
+"t": 1790327031003,
+"s": ["jet kamyon oyunları"]
+},
+"jet t": {
+"t": 1790327036542,
+"s": ["jet tv","jet turizm","jet teslimat","jet tır oyunları","jet tofaş"]
+},
+"jet tı": {
+"t": 1790327036095,
+"s": ["jet tır oyunları","jet tır"]
+},
+"jet tır": {
+"t": 1790327035211,
+"s": ["jet tır oyunları","jet tır"]
+},
+"jet tır oyunla": {
+"t": 1790327034774,
+"s": ["jet tır oyunları"]
+},
+"jg": {
+"t": 1790327039079,
+"s": ["jg","jg motor oyunu","jg highway","jgu student","jgjgjgjgj game"]
+},
+"jg ": {
+"t": 1790327039554,
+"s": ["jg motor oyunu","jg highway","jungle adventure","jungle heat","jg motor oyunları"]
+},
+"jg m": {
+"t": 1790327038634,
+"s": ["jg motor oyunu","jg motor oyunları","jg motor","jg moto online","gg mouse pro"]
+},
+"jg motor": {
+"t": 1790327038199,
+"s": ["jg motor oyunu","jg motor oyunları","jg motor","jg motor online"]
+},
+"jg motor oyunlar": {
+"t": 1790327037758,
+"s": ["jg motor oyunları"]
+},
+"jo": {
+"t": 1790327042447,
+"s": ["jolly tur","joymi","joyark","jojo","jouma"]
+},
 "john cen": {
 "t": 1789894488228,
 "s": ["john cena","john cena oyunu","john cena dövüş oyunu","john cena oyunları","john cena dövüş"]
@@ -13678,6 +14094,30 @@
 "john cena dövüş ": {
 "t": 1789894487813,
 "s": ["john cena dövüş oyunu","john cena dövüş oyunları","john cena dövüş"]
+},
+"jon": {
+"t": 1790327042016,
+"s": ["john pork","johnny trigger","jondere traktör oyunları","john cena","jones journey"]
+},
+"jonde": {
+"t": 1790327041579,
+"s": ["jondere traktör oyunları","john deere traktör oyunu","john deere traktör oyunları","john deere oyunu","john deere oyunları"]
+},
+"jondere t": {
+"t": 1790327041137,
+"s": ["jondere traktör oyunları"]
+},
+"jondere traktör oy": {
+"t": 1790327040690,
+"s": ["jondere traktör oyunları"]
+},
+"jüpiter motor oy": {
+"t": 1790327043585,
+"s": ["jüpiter motor oyunu"]
+},
+"jüpiter motor oyunları": {
+"t": 1790327044026,
+"s": []
 },
 "jura ": {
 "t": 1789894739425,
@@ -13744,16 +14184,16 @@
 "s": ["kaçış oyunları","kaçış oyunu","kaçış oyunları internetsiz","kaçış oyunları korku","kaçış oyunları akıl hastanesi"]
 },
 "kaçış oyun": {
-"t": 1789720314504,
+"t": 1790327044892,
 "s": ["kaçış oyunları","kaçış oyunu","kaçış oyunları internetsiz","kaçış oyunları korku","kaçış oyunları akıl hastanesi"]
 },
 "kaçış oyunu": {
-"t": 1789712750335,
-"s": ["kaçış oyunu","kaçış oyunu internetsiz","kaçış oyunu korku","kaçış oyunu hapishaneden kaçış oyunu","kaçış oyunu multiplayer"]
+"t": 1790327048289,
+"s": ["kaçış oyunu","kaçış oyunu korku","kaçış oyunu internetsiz","kaçış oyunu multiplayer","kaçış oyunu hapishaneden kaçış oyunu"]
 },
 "kaçış oyunu ": {
-"t": 1789712750733,
-"s": ["kaçış oyunu internetsiz","kaçış oyunu korku","kaçış oyunu hapishaneden kaçış oyunu","kaçış oyunu multiplayer","kaçış oyunu akıl hastanesi"]
+"t": 1790327045347,
+"s": ["kaçış oyunu korku","kaçış oyunu internetsiz","kaçış oyunu multiplayer","kaçış oyunu hapishaneden kaçış oyunu","kaçış oyunu online"]
 },
 "kaçış oyunu a": {
 "t": 1789720239816,
@@ -13776,8 +14216,8 @@
 "s": ["tsunamiden kaçış oyunu","erzurumdan kaçış oyunu","dinozor kaçış oyunu","dinazordan kaçış oyunu","doktordan kaçış oyunu"]
 },
 "kaçış oyunu e": {
-"t": 1789720242004,
-"s": ["kaçış oyunu evden kaçış oyunu","kaçış oyunu evden","evden kaçış oyunu 2","evden kaçış oyunu","erzurumdan kaçış oyunu"]
+"t": 1790327044460,
+"s": ["kaçış oyunu evden kaçış oyunu","kaçış oyunu evden","evden kaçış oyunu 2","evden kaçış oyunu","çocuk evden kaçış oyunu"]
 },
 "kaçış oyunu f": {
 "t": 1789720242441,
@@ -13824,8 +14264,8 @@
 "s": ["neden kaçış oyunu","hello neighbor kaçış oyunu","sen neden kaçış oyunu"]
 },
 "kaçış oyunu o": {
-"t": 1789720247198,
-"s": ["kaçış oyunu online","kaçış oyunu kaçış oyunu"]
+"t": 1790327047846,
+"s": ["kaçış oyunu online"]
 },
 "kaçış oyunu ö": {
 "t": 1789720247629,
@@ -13836,12 +14276,16 @@
 "s": ["polisten kaçış oyunu","piramitten kaçış oyunu","pizzacıdan kaçış oyunu","parkour obby kaçış oyunu","roblox polisten kaçış oyunu"]
 },
 "kaçış oyunu r": {
-"t": 1789720248500,
-"s": ["kaçış oyunu roblox","hapishaneden kaçış oyunu roblox","hapisten kaçış oyunu roblox","büyükanneden kaçış oyunu roblox","rahibeden kaçış oyunu"]
+"t": 1790327049968,
+"s": ["hapishaneden kaçış oyunu roblox","hapisten kaçış oyunu roblox","rahibeden kaçış oyunu","roblox kaçış oyunu","roblox klavye kaçış oyunu"]
+},
+"kaçış oyunu roblox": {
+"t": 1790327050412,
+"s": ["hapishaneden kaçış oyunu roblox","hapisten kaçış oyunu roblox","roblox kaçış oyunu","roblox klavye kaçış oyunu","roblox hapishaneden kaçış oyunu internetsiz"]
 },
 "kaçış oyunu s": {
-"t": 1789720248933,
-"s": ["kaçış oyunu simülatör","101 kaçış oyunu sonsuz oyunl","hapishaneden kaçış oyunu simülatör","sünger bob kaçış oyunu","senden kaçış oyunu"]
+"t": 1790327050858,
+"s": ["kaçış oyunu simülatör","101 kaçış oyunu sonsuz oyunl","hapishaneden kaçış oyunu simülatör","saklambaç kaçış oyunu","senden kaçış oyunu"]
 },
 "kaçış oyunu ş": {
 "t": 1789720249362,
@@ -14044,12 +14488,52 @@
 "s": ["kamyon oyunları","kamyon oyunları 2020","kamyon simülasyonu oyunları","kamyon oyunları 2022","kamyon oyunları 2019"]
 },
 "kamyo": {
-"t": 1789720324806,
-"s": ["kamyon oyunları","kamyon oyunları 2020","kamyon simülasyonu oyunları","kamyon oyunları 2022","kamyon oyunları 2019"]
+"t": 1790327053407,
+"s": ["kamyon oyunları","kamyon oyunları 2020","kamyon simülasyonu oyunları","kamyon oyunları 2022","kamyon simülatör"]
 },
 "kamyon": {
 "t": 1789720323928,
 "s": ["kamyon oyunları","kamyon oyunları 2020","kamyon simülasyonu oyunları","kamyon oyunları 2022","kamyon oyunları 2019"]
+},
+"kamyon ": {
+"t": 1790327053846,
+"s": ["kamyon oyunları","kamyon oyunları 2020","kamyon simülasyonu oyunları","kamyon oyunları 2022","kamyon simülatör"]
+},
+"kamyon h": {
+"t": 1790327054284,
+"s": ["kamyon havalı korna sesleri","kamyon hayvan taşıma oyunları","kamyon hafriyat oyunu","kamyon haritası","hafriyat kamyon oyunları"]
+},
+"kamyon ha": {
+"t": 1790327052968,
+"s": ["kamyon havalı korna sesleri","kamyon hayvan taşıma oyunları","kamyon hafriyat oyunu","kamyon haritası","hafriyat kamyon oyunları"]
+},
+"kamyon hayvan taş": {
+"t": 1790327052526,
+"s": ["kamyon hayvan taşıma oyunları"]
+},
+"kamyon l": {
+"t": 1790327058976,
+"s": ["kamyon leo","kamyon leo oyunları","kamyon leo oyunu","kamyon l","küçük kamyon leo"]
+},
+"kamyon le": {
+"t": 1790327058519,
+"s": ["kamyon leo","kamyon leo oyunları","kamyon leo oyunu","küçük kamyon leo","küçük kamyon leo oyunu"]
+},
+"kamyon leo oyunla": {
+"t": 1790327058082,
+"s": ["kamyon leo oyunları","küçük kamyon leo oyunları"]
+},
+"kamyon n": {
+"t": 1790327063065,
+"s": ["kamyon navigasyonu türkiye","kamyon nakliye","kamyon navigasyon","kamyon navigasyonu","kamyon nakliye oyunları"]
+},
+"kamyon na": {
+"t": 1790327062624,
+"s": ["kamyon navigasyonu türkiye","kamyon nakliye","kamyon navigasyon","kamyon navigasyonu","kamyon nakliye oyunları"]
+},
+"kamyon nakliye oy": {
+"t": 1790327062172,
+"s": ["kamyon nakliye oyunları","kamyon nakliye oyunu"]
 },
 "kamyon o": {
 "t": 1789713783513,
@@ -14064,11 +14548,11 @@
 "s": ["kamyon oyunları","kamyon oyunları 2020","kamyon oyunları 2022","kamyon oyunları 2019","kamyon oyunu kamyon oyunu"]
 },
 "kamyon oyun": {
-"t": 1789714054256,
+"t": 1790327130875,
 "s": ["kamyon oyunları","kamyon oyunları 2020","kamyon oyunları 2022","kamyon oyunları 2019","kamyon oyunu kamyon oyunu"]
 },
 "kamyon oyunl": {
-"t": 1789714053459,
+"t": 1790327142609,
 "s": ["kamyon oyunları","kamyon oyunları 2020","kamyon oyunları 2022","kamyon oyunları 2019","kamyon oyunları internetsiz"]
 },
 "kamyon oyunla": {
@@ -14080,52 +14564,60 @@
 "s": ["kamyon oyunları","kamyon oyunları 2020","kamyon oyunları 2022","kamyon oyunları 2019","kamyon oyunları internetsiz"]
 },
 "kamyon oyunları": {
-"t": 1789712736693,
+"t": 1790327065154,
 "s": ["kamyon oyunları","kamyon oyunları 2020","kamyon oyunları 2022","kamyon oyunları 2019","kamyon oyunları internetsiz"]
 },
 "kamyon oyunları ": {
-"t": 1789712737118,
+"t": 1790327065595,
 "s": ["kamyon oyunları 2023","kamyon oyunları 2020","kamyon oyunları 2022","kamyon oyunları 2019","kamyon oyunları internetsiz"]
 },
 "kamyon oyunları a": {
-"t": 1789712986705,
-"s": ["kamyon oyunları aç","kamyon oyunları axor","kamyon oyunları araba oyunları","kamyon oyunları araba","kamyon oyunları avrupa"]
+"t": 1790327064707,
+"s": ["kamyon oyunları araba oyunları","kamyon oyunları aç","kamyon oyunları avrupa","kamyon oyunları axor","kamyon oyunları amerika"]
 },
 "kamyon oyunları b": {
-"t": 1789712987108,
-"s": ["kamyon oyunları beyaz","kamyon oyunları bebek","kamyon oyunları balya taşıma","kamyon oyunları brasil","kamyon oyunları bir de kepçe oyunları"]
+"t": 1790327071761,
+"s": ["kamyon oyunları balya taşıma","kamyon oyunları bebek","kamyon oyunları brasil","kamyon oyunları beyaz","kamyon oyunları bmc"]
+},
+"kamyon oyunları bir de kepçe oyunları": {
+"t": 1790327075473,
+"s": []
 },
 "kamyon oyunları c": {
-"t": 1789712987495,
-"s": ["kamyon oyunları cargo simülatör","kamyon oyunları cargo","kamyon oyunları cocuk","kamyon oyunları camur","canavar kamyon oyunları"]
+"t": 1790327079206,
+"s": ["kamyon oyunları cargo simülatör","kamyon oyunları cocuk","kamyon oyunları cargo","canavar kamyon oyunları","cöp kamyon oyunları"]
 },
 "kamyon oyunları ç": {
-"t": 1789712987892,
-"s": ["kamyon oyunları çocuk","kamyon oyunları çamur","kamyon oyunları çamurda","kamyon oyunları çevrimdışı","kamyon oyunları çok güzel"]
+"t": 1790327080089,
+"s": ["kamyon oyunları çamur","kamyon oyunları çocuk","kamyon oyunları çevrimdışı","kamyon oyunları çamurda","kamyon oyunları çok güzel"]
+},
+"kamyon oyunları camur": {
+"t": 1790327079657,
+"s": ["kamyon camur oyunları"]
 },
 "kamyon oyunları d": {
-"t": 1789712988289,
-"s": ["kamyon oyunları dağ yolu","kamyon oyunları dağ","kamyon oyunları dağda","kamyon oyunları direksiyonlu","kamyon oyunları damperli"]
+"t": 1790327089538,
+"s": ["kamyon oyunları dağ yolu","kamyon oyunları dağda","kamyon oyunları dağ","kamyon oyunları damperli","kamyon oyunları direksiyonlu"]
 },
 "kamyon oyunları e": {
-"t": 1789712988691,
-"s": ["kamyon oyunları europe","kamyon oyunları eski","kamyon oyunları en güzel","kamyon oyunları egzozlu","kamyon oyunları evo"]
+"t": 1790327094097,
+"s": ["kamyon oyunları europe","kamyon oyunları egzozlu","kamyon oyunları eski","kamyon oyunları en güzel","kamyon oyunları evo"]
 },
 "kamyon oyunları f": {
-"t": 1789712989089,
-"s": ["kamyon oyunları ford cargo","kamyon oyunları ford","kamyon oyunları fort","forklift oyunları kamyon yükleme","fort cargo kamyon oyunları"]
+"t": 1790327099675,
+"s": ["kamyon oyunları ford","kamyon oyunları ford cargo","kamyon oyunları fort","forklift oyunları kamyon yükleme","bmc fatih kamyon oyunları"]
 },
 "kamyon oyunları g": {
-"t": 1789712989487,
-"s": ["kamyon oyunları gerçekçi","kamyon oyunları gerçek","kamyon oyunları güzel","kepçe kamyon oyunları gerçek","kamyon oyunları zuuks game"]
+"t": 1790327102800,
+"s": ["kamyon oyunları gerçekçi","kamyon oyunları gerçek","kamyon oyunları güzel","kamyon oyunları gercekci","kamyon oyunları güzel oyun"]
 },
 "kamyon oyunları ğ": {
 "t": 1789712989890,
 "s": []
 },
 "kamyon oyunları h": {
-"t": 1789712990294,
-"s": ["kamyon oyunları hafriyat","hafriyat kamyon oyunları","kamyon hayvan taşıma oyunları","hint kamyon oyunları","havalı kamyon oyunları"]
+"t": 1790327105430,
+"s": ["kamyon oyunları hafriyat","kamyon oyunları hindistan","kamyon hayvan taşıma oyunları","havalı kamyon oyunları","hyundai kamyon oyunları"]
 },
 "kamyon oyunları i": {
 "t": 1789712991105,
@@ -14140,7 +14632,7 @@
 "s": ["jet kamyon oyunları"]
 },
 "kamyon oyunları k": {
-"t": 1789712991911,
+"t": 1790327107059,
 "s": ["kamyon oyunları kamyon oyunları","kamyon oyunları kamyon","kamyon oyunları kamyon oyunları kamyon oyunları","kamyon oyunları kepçe oyunları","kamyon oyunları kamyon oyunları kamyon oyunları kamyon oyunları"]
 },
 "kamyon oyunları l": {
@@ -14148,60 +14640,152 @@
 "s": ["kamyon leo oyunları"]
 },
 "kamyon oyunları m": {
-"t": 1789712992713,
-"s": ["kamyon oyunları mercedes","kamyon oyunları multiplayer","kamyon oyunları modifiyeli","kamyon oyunları manuel vites","kamyon oyunları mavi"]
+"t": 1790327112083,
+"s": ["kamyon oyunları mercedes","kamyon oyunları multiplayer","kamyon oyunları modifiyeli","kamyon oyunları mavi","kamyon oyunları manuel vites"]
 },
 "kamyon oyunları n": {
 "t": 1789712993117,
 "s": ["ısuzu npr kamyon oyunları 2020","kamyon nakliye oyunları","normal kamyon oyunları"]
 },
 "kamyon oyunları o": {
-"t": 1789712993515,
-"s": ["kamyon oyunları online","kamyon oyunları offroad","kamyon oyunları odun taşıma","kamyon oyunları otobüs oyunları","kamyon oyunları otobüs"]
+"t": 1790327117805,
+"s": ["kamyon oyunları online","kamyon oyunları offroad","kamyon oyunları odun taşıma","kamyon oyunları otobüs oyunları","kamyon oyunları off road 4x4"]
 },
 "kamyon oyunları ö": {
 "t": 1789712993910,
 "s": ["özel kamyon oyunları"]
 },
 "kamyon oyunları p": {
-"t": 1789712994306,
-"s": ["kamyon oyunları paralı","kamyon oyunları polis","kamyon park etme oyunları","parasız kamyon oyunları","polis araba oyunları kamyon"]
+"t": 1790327123543,
+"s": ["kamyon oyunları paralı","polis kamyon oyunları","kamyon park etme oyunları","parasız kamyon oyunları","pikap kamyon oyunları"]
+},
+"kamyon oyunları polis": {
+"t": 1790327125354,
+"s": ["polis kamyon oyunları"]
 },
 "kamyon oyunları r": {
-"t": 1789712994704,
-"s": ["kamyon oyunları rus","kamyon oyunları reklamsız","off road kamyon oyunları","renault kamyon oyunları","russian kamyon oyunları"]
+"t": 1790327125793,
+"s": ["kamyon oyunları reklamsız","kamyon oyunları rus","off road kamyon oyunları","renault kamyon oyunları","russian kamyon oyunları"]
 },
 "kamyon oyunları s": {
-"t": 1789712995103,
-"s": ["kamyon oyunları simülatör","kamyon oyunları saman taşıma","kamyon oyunları scania","kamyon oyunları saman","kamyon oyunları sebze"]
+"t": 1790327128160,
+"s": ["kamyon oyunları serbest","kamyon oyunları simülatör","kamyon oyunları saman taşıma","kamyon oyunları saman","kamyon oyunları sarı"]
 },
 "kamyon oyunları ş": {
 "t": 1789712995499,
 "s": ["kamyon şoförü oyunları","şarkılı kamyon oyunları","şok kamyon oyunları"]
 },
+"kamyon oyunları sc": {
+"t": 1790327132224,
+"s": ["kamyon oyunları scania","scania kırkayak kamyon oyunları"]
+},
+"kamyon oyunları sca": {
+"t": 1790327131762,
+"s": ["kamyon oyunları scania","scania kırkayak kamyon oyunları"]
+},
+"kamyon oyunları scan": {
+"t": 1790327131320,
+"s": ["kamyon oyunları scania","scania kırkayak kamyon oyunları"]
+},
+"kamyon oyunları scania": {
+"t": 1790327130434,
+"s": ["kamyon oyunları scania","scania kırkayak kamyon oyunları"]
+},
+"kamyon oyunları se": {
+"t": 1790327135386,
+"s": ["kamyon oyunları sebze","kamyon oyunları serbest","sebze meyve kamyon oyunları","sessiz kamyon oyunları"]
+},
+"kamyon oyunları seb": {
+"t": 1790327134943,
+"s": ["kamyon oyunları sebze","sebze meyve kamyon oyunları"]
+},
+"kamyon oyunları sebze": {
+"t": 1790327134506,
+"s": ["kamyon oyunları sebze","sebze meyve kamyon oyunları"]
+},
 "kamyon oyunları t": {
-"t": 1789712995893,
-"s": ["kamyon oyunları tır oyunları","kamyon oyunları türkiye","kamyon oyunları tır","kamyon oyunları tomruk taşıma","kamyon oyunları truck simulator"]
+"t": 1790327137772,
+"s": ["kamyon oyunları tır oyunları","kamyon oyunları truck simulator","kamyon oyunları tır","kamyon oyunları tomruk taşıma","kamyon oyunları transit"]
+},
+"kamyon oyunları tü": {
+"t": 1790327143056,
+"s": ["kamyon oyunları türkiye","kamyon oyunları türk","kamyon oyunları 2023 türkiye internetsiz","kamyon oyunları 2020 türkiye","kamyon oyunları 2026 türkiye"]
+},
+"kamyon oyunları türkiye": {
+"t": 1790327142168,
+"s": ["kamyon oyunları türkiye","kamyon oyunları 2023 türkiye internetsiz","kamyon oyunları 2020 türkiye","kamyon oyunları 2026 türkiye","kamyon oyunları 2019 yeni türkiye"]
 },
 "kamyon oyunları u": {
-"t": 1789712996280,
-"s": ["kamyon oyunları ucretsiz","kamyon oyunları uzun yol","uzun yol kamyon oyunları","uzun kamyon oyunları","uçan kamyon oyunları"]
+"t": 1790327144173,
+"s": ["kamyon oyunları uzun yol","kamyon oyunları ucretsiz","uzun kamyon oyunları"]
 },
 "kamyon oyunları ü": {
-"t": 1789712996678,
-"s": ["kamyon oyunları ücretsiz","kamyon oyunları internetsiz ücretsiz","ücretli kamyon oyunları"]
+"t": 1790327145346,
+"s": ["kamyon oyunları ücretsiz","kamyon oyunları ücretli","kamyon oyunları internetsiz ücretsiz","ücretli kamyon oyunları"]
 },
 "kamyon oyunları v": {
-"t": 1789712997075,
-"s": ["kamyon oyunları ve kepçe oyunları","kamyon oyunları ve tır oyunları","kamyon oyunları ve kepçe","kamyon oyunları ve otobüs oyunları","kamyon oyunları ve traktör oyunları"]
+"t": 1790327147206,
+"s": ["kamyon oyunları ve kepçe oyunları","kamyon oyunları ve kepçe","kamyon oyunları ve traktör oyunları","kamyon oyunları ve araba oyunları","kamyon oyunları ve tır oyunları"]
+},
+"kamyon oyunları ve ": {
+"t": 1790327152841,
+"s": ["kamyon oyunları ve kepçe oyunları","kamyon oyunları ve kepçe","kamyon oyunları ve traktör oyunları","kamyon oyunları ve araba oyunları","kamyon oyunları ve tır oyunları"]
+},
+"kamyon oyunları ve o": {
+"t": 1790327152400,
+"s": ["kamyon oyunları ve otobüs oyunları","kamyon oyunları ve kepçe oyunları","kamyon oyunları ve tır oyunları","kamyon oyunları ve traktör oyunları"]
+},
+"kamyon oyunları ve oto": {
+"t": 1790327151958,
+"s": ["kamyon oyunları ve otobüs oyunları"]
+},
+"kamyon oyunları ve otobüs ": {
+"t": 1790327151512,
+"s": ["kamyon oyunları ve otobüs oyunları"]
+},
+"kamyon oyunları ve otobüs oyunları": {
+"t": 1790327151070,
+"s": ["kamyon oyunları ve otobüs oyunları"]
 },
 "kamyon oyunları y": {
-"t": 1789712997471,
-"s": ["kamyon oyunları yük taşıma","kamyon oyunları yükle","kamyon oyunları yeni","kamyon oyunları yuk tasima","forklift oyunları kamyon yükleme"]
+"t": 1790327155481,
+"s": ["kamyon oyunları yük taşıma","kamyon oyunları yükle","kamyon oyunları yeni","kamyon oyunları yuk tasima","kamyon oyunları yük"]
 },
 "kamyon oyunları z": {
 "t": 1789712997869,
 "s": ["kamyon oyunları zuuks game","kamyon oyunları zorlu yollar","kamyon oyunları zuuks","zorlu kamyon oyunları","zor kamyon oyunları"]
+},
+"kamyon p": {
+"t": 1790327159891,
+"s": ["kamyon oyunları","kamyon park etme oyunu","kamyon polis","kamyon polis oyunu","kamyon park etme"]
+},
+"kamyon pa": {
+"t": 1790327159423,
+"s": ["kamyon park etme oyunu","kamyon park etme","kamyon park etme oyunları","kamyon park","kamyon park oyunları"]
+},
+"kamyon park etme ": {
+"t": 1790327158988,
+"s": ["kamyon park etme oyunu","kamyon park etme oyunları","kamyon park etme"]
+},
+"kamyon şo": {
+"t": 1790327163769,
+"s": ["kamyon şoförü","kamyon şoför","kamyon şoförü oyunu","kamyon şoförlüğü","kamyon şoför oyunu"]
+},
+"kamyon şofö": {
+"t": 1790327164650,
+"s": ["kamyon şoförü","kamyon şoför","kamyon şoförü oyunu","kamyon şoförlüğü","kamyon şoför oyunu"]
+},
+"kamyon şoför": {
+"t": 1790327165086,
+"s": ["kamyon şoförü","kamyon şoför","kamyon şoförü oyunu","kamyon şoförlüğü","kamyon şoför oyunu"]
+},
+"kamyon şoförü": {
+"t": 1790327164207,
+"s": ["kamyon şoförü","kamyon şoförü oyunu","kamyon şoförü oyunları","modern kamyon şoförü"]
+},
+"kamyon şoförü oyu": {
+"t": 1790327163328,
+"s": ["kamyon şoförü oyunu","kamyon şoförü oyunları"]
 },
 "kandi": {
 "t": 1789806283223,
@@ -14222,6 +14806,26 @@
 "kandil deprem uygu": {
 "t": 1789806282407,
 "s": ["kandil deprem uygulaması"]
+},
+"kang": {
+"t": 1790327167157,
+"s": ["kangal köpek oyunları","kangoo oyunları","kangal oyunu","kangoo araba oyunları","kangoo"]
+},
+"kangoo": {
+"t": 1790327167607,
+"s": ["kangoo oyunları","kangoo araba oyunları","kangoo","kangoo araba oyunu","kangoo oyunu"]
+},
+"kangoo ": {
+"t": 1790327168065,
+"s": ["kangoo oyunları","kangoo araba oyunları","kangoo araba oyunu","kangoo oyunu","kangoo oyunları drift"]
+},
+"kangoo o": {
+"t": 1790327166716,
+"s": ["kangoo oyunları","kangoo oyunu","kangoo oyunları drift","kangoo oyun","kangoo araba oyunları"]
+},
+"kangoo oyunları ": {
+"t": 1790327166275,
+"s": ["kangoo oyunları drift","kangoo oyunları","renault kangoo oyunları","ford kangoo oyunları","kangoo araba oyunları"]
 },
 "kap": {
 "t": 1789894344418,
@@ -14371,6 +14975,26 @@
 "t": 1789712820965,
 "s": ["karın kası egzersizi kadın","karın kası egzersizi erkek","karın kası egzersizi çoçuk","karın kası egzersizi ücretsiz","karın kası egzersizi internetsiz"]
 },
+"kawasaki": {
+"t": 1790327171218,
+"s": ["kawasaki motor oyunları","kawasaki motor oyunu","kawasaki","kawasaki oyunu","kawasaki ninja h2r oyunu"]
+},
+"kawasaki ": {
+"t": 1790327172540,
+"s": ["kawasaki motor oyunları","kawasaki motor oyunu","kawasaki oyunu","kawasaki ninja h2r oyunu","kawasaki oyunları"]
+},
+"kawasaki n": {
+"t": 1790327172086,
+"s": ["kawasaki ninja h2r oyunu","kawasaki ninja motor oyunu","kawasaki ninja motor oyunları","kawasaki ninja h2r","kawasaki ninja oyunu"]
+},
+"kawasaki nin": {
+"t": 1790327171651,
+"s": ["kawasaki ninja h2r oyunu","kawasaki ninja motor oyunu","kawasaki ninja motor oyunları","kawasaki ninja h2r","kawasaki ninja oyunu"]
+},
+"kawasaki ninja m": {
+"t": 1790327170777,
+"s": ["kawasaki ninja motor oyunu","kawasaki ninja motor oyunları","kawasaki ninja motor","kawasaki ninja motorcycle game","kawasaki ninja motorcycle"]
+},
 "kayser": {
 "t": 1789894747037,
 "s": ["kayseri ulaşım","kayseri ulaşım mobil uygulama","kayseri","kayseri otobüs saatleri","kayseri bisiklet"]
@@ -14483,6 +15107,30 @@
 "t": 1789713078483,
 "s": ["kedi oyunu","kelime oyunu","kelimelik","kepçe oyunları","kent kart"]
 },
+"kedi ": {
+"t": 1790327175338,
+"s": ["kedi oyunu","kedi simülatör","kedi tom","kedi bulma oyunu","kedi fare oyunu"]
+},
+"kedi r": {
+"t": 1790327176699,
+"s": ["kedi resimleri","kedi restoran oyunları","kedi resmi","kedi radyo","kedi robot"]
+},
+"kedi re": {
+"t": 1790327176231,
+"s": ["kedi resimleri","kedi restoran oyunları","kedi resmi","kedi restoranı","kedi restoran"]
+},
+"kedi res": {
+"t": 1790327175783,
+"s": ["kedi resimleri","kedi restoran oyunları","kedi resmi","kedi restoranı","kedi restoran"]
+},
+"kedi resto": {
+"t": 1790327174891,
+"s": ["kedi restoran oyunları","kedi restoranı","kedi restoran","kedi restoran oyunu","kedi oyunu restoran"]
+},
+"kedi restoran oyunl": {
+"t": 1790327174450,
+"s": ["kedi restoran oyunları"]
+},
 "kel": {
 "t": 1789713078891,
 "s": ["kelime oyunu","kelimelik","kelime savaşı","kelime oyunları","kelime bulmaca"]
@@ -14492,16 +15140,16 @@
 "s": ["kelime oyunu","kelimelik","kelime savaşı","kelime oyunları","kelime bulmaca"]
 },
 "kelim": {
-"t": 1789713791563,
-"s": ["kelime oyunu","kelimelik","kelime savaşı","kelime oyunları","kelime bulmaca"]
+"t": 1790327188716,
+"s": ["kelime oyunu","kelimelik","kelime savaşı","kelime bulmaca","kelime gezmece"]
 },
 "kelime": {
 "t": 1789714059809,
 "s": ["kelime oyunu","kelimelik","kelime savaşı","kelime oyunları","kelime bulmaca"]
 },
 "kelime ": {
-"t": 1789713077684,
-"s": ["kelime oyunu","kelime savaşı","kelime oyunları","kelime bulmaca","kelime kuran"]
+"t": 1790327189152,
+"s": ["kelime oyunu","kelime savaşı","kelime bulmaca","kelime gezmece","kelime oyunu internetsiz"]
 },
 "kelime a": {
 "t": 1789713791959,
@@ -14639,8 +15287,28 @@
 "t": 1789714020121,
 "s": ["kelime bulmaca","kelime bulmaca oyunları","kelime bul","kelime bilmece","kelime bulma oyunu"]
 },
+"kelime bi": {
+"t": 1790327181077,
+"s": ["kelime bilmece","kelime bilme oyunu","kelime bilmece oyunu","kelime bilme","kelime birleştirme oyunu"]
+},
+"kelime bilm": {
+"t": 1790327181981,
+"s": ["kelime bilmece","kelime bilme oyunu","kelime bilmece oyunu","kelime bilme","kelime bilme oyunları"]
+},
+"kelime bilme": {
+"t": 1790327182433,
+"s": ["kelime bilmece","kelime bilme oyunu","kelime bilmece oyunu","kelime bilme","kelime bilme oyunları"]
+},
+"kelime bilmec": {
+"t": 1790327181532,
+"s": ["kelime bilmece","kelime bilmece oyunu","kelime bilmece oyunları","kelime bilmece 2 kişilik","kelime bilmece internetsiz"]
+},
+"kelime bilmece oy": {
+"t": 1790327180638,
+"s": ["kelime bilmece oyunu","kelime bilmece oyunları"]
+},
 "kelime bu": {
-"t": 1789720331241,
+"t": 1790327184711,
 "s": ["kelime bulmaca","kelime bulmaca oyunları","kelime bul","kelime bulma oyunu","kelime bulucu"]
 },
 "kelime bul": {
@@ -14648,12 +15316,20 @@
 "s": ["kelime bulmaca","kelime bulmaca oyunları","kelime bul","kelime bulma oyunu","kelime bulucu"]
 },
 "kelime bulm": {
-"t": 1789720328725,
+"t": 1790327185604,
 "s": ["kelime bulmaca","kelime bulmaca oyunları","kelime bulma oyunu","kelime bulma","kelime bulmaca oyunu"]
 },
 "kelime bulma": {
-"t": 1789714020519,
+"t": 1790327186041,
 "s": ["kelime bulmaca","kelime bulmaca oyunları","kelime bulma oyunu","kelime bulma","kelime bulmaca oyunu"]
+},
+"kelime bulma ": {
+"t": 1790327185165,
+"s": ["kelime bulma oyunu","kelime bulma makinesi","kelime bulma oyunları","kelime bulma türkçe","kelime bulma oyunu online"]
+},
+"kelime bulma oyun": {
+"t": 1790327184279,
+"s": ["kelime bulma oyunu","kelime bulma oyunları","kelime bulma oyunu internetsiz","kelime bulma oyunu online","kelime bulma oyunu türkçe"]
 },
 "kelime bulmac": {
 "t": 1789720329159,
@@ -14815,6 +15491,38 @@
 "t": 1789894830404,
 "s": ["kelime çiftliği kare bulmaca","kelime çiftliği"]
 },
+"kelime e": {
+"t": 1790327189593,
+"s": ["kelime eşleştirme","kelime ezberleme ingilizce","kelime eslestirme oyunu","kelime eşleştirme oyunu","kelime ezberleme"]
+},
+"kelime eş": {
+"t": 1790327188278,
+"s": ["kelime eşleştirme","kelime eşleştirme oyunu","kelime eşleme","kelime eşleme oyunu","kelime eşleştirme oyunları"]
+},
+"kelime eşleştirme": {
+"t": 1790327187838,
+"s": ["kelime eşleştirme","kelime eşleştirme oyunu","kelime eşleştirme oyunları","ingilizce kelime eşleştirme","solitaire kelime eşleştirme"]
+},
+"kelime ge": {
+"t": 1790327191703,
+"s": ["kelime gezmece","kelime gezmece 2","kelime gezmece klasik","kelime gezmece oyunu","kelime gezmece internetsiz"]
+},
+"kelime gezmec": {
+"t": 1790327192143,
+"s": ["kelime gezmece","kelime gezmece 2","kelime gezmece klasik","kelime gezmece oyunu","kelime gezmece internetsiz"]
+},
+"kelime gezmece": {
+"t": 1790327193047,
+"s": ["kelime gezmece","kelime gezmece 2","kelime gezmece klasik","kelime gezmece oyunu","kelime gezmece internetsiz"]
+},
+"kelime gezmece ": {
+"t": 1790327192590,
+"s": ["kelime gezmece 2","kelime gezmece klasik","kelime gezmece oyunu","kelime gezmece internetsiz","kelime gezmece oyunları"]
+},
+"kelime gezmece oy": {
+"t": 1790327191268,
+"s": ["kelime gezmece oyunu","kelime gezmece oyunları","cumle gezmece kelime oyunu","bulmaca oyunları kelime gezmece"]
+},
 "kelime is": {
 "t": 1789720511811,
 "s": ["kelime iskambil","kelime iskambili","kelime iskambil türkçe","kelime iskambil oyunu","kelime iskambil solitaire"]
@@ -14880,8 +15588,8 @@
 "s": ["kelime öğrenme ingilizce","kelime öğrenme türkçe","kelime öğrenme","ingilizce kelime öğrenme oyunu","ingilizce kelime öğrenme ücretsiz"]
 },
 "kelime oy": {
-"t": 1789714060203,
-"s": ["kelime oyunu","kelime oyunları","kelime oyunu internetsiz","kelime oyunu türkçe","kelime oyunu sözcük bulmaca"]
+"t": 1790327194590,
+"s": ["kelime oyunu","kelime oyunu internetsiz","kelime oyunu türkçe","kelime oyunu sözcük bulmaca","kelime oyunu wow"]
 },
 "kelime oyu": {
 "t": 1789714023444,
@@ -14904,11 +15612,11 @@
 "s": ["kelime oyunları","kelime oyunları internetsiz","kelime oyunlari","kelime oyunları türkçe","kelime oyunlar"]
 },
 "kelime oyunları": {
-"t": 1789712734301,
+"t": 1790327195042,
 "s": ["kelime oyunları","kelime oyunları internetsiz","kelime oyunları türkçe","kelime oyunları ücretsiz","kelime oyunları online"]
 },
 "kelime oyunları ": {
-"t": 1789712734700,
+"t": 1790327195487,
 "s": ["kelime oyunları internetsiz","kelime oyunları türkçe","kelime oyunları ücretsiz","kelime oyunları online","kelime oyunları internetsiz türkçe"]
 },
 "kelime oyunları a": {
@@ -14916,8 +15624,8 @@
 "s": []
 },
 "kelime oyunları b": {
-"t": 1789712952417,
-"s": ["kelime oyunları bulmaca","kelime bulma oyunları","bulmaca oyunları kelime oyunu","kelime bulmaca oyunları türkçe internetsiz","kelime bilmece oyunları"]
+"t": 1790327194153,
+"s": ["kelime oyunları bulmaca","kelime bulma oyunları","kelime bulmaca oyunları türkçe internetsiz","bulmaca oyunları kelime oyunu","kelime bulmaca oyunları türkçe"]
 },
 "kelime oyunları c": {
 "t": 1789712952821,
@@ -14952,8 +15660,12 @@
 "s": []
 },
 "kelime oyunları i": {
-"t": 1789712956423,
-"s": ["kelime oyunları internetsiz","kelime oyunları internetsiz türkçe","kelime oyunları indir","kelime oyunları internet","kelime bulmaca oyunları türkçe internetsiz"]
+"t": 1790327196754,
+"s": ["kelime oyunları internetsiz","kelime oyunları internetsiz türkçe","kelime oyunları indir","kelime bulmaca oyunları türkçe internetsiz","kelime bulmaca oyunları internetsiz"]
+},
+"kelime oyunları internet": {
+"t": 1790327198497,
+"s": ["kelime oyunları internetsiz","kelime oyunları internetsiz türkçe","internetsiz oyunları kelime oyunu","kelime bulmaca oyunları türkçe internetsiz","ücretsiz internetsiz kelime oyunları"]
 },
 "kelime oyunları ı": {
 "t": 1789712956024,
@@ -14968,8 +15680,12 @@
 "s": ["kelime oyunları kelime oyunları","kelime oyunları kelime","kelime oyunları kolay","iki kişilik kelime oyunları","kelime kart oyunları"]
 },
 "kelime oyunları l": {
-"t": 1789712957609,
-"s": ["kelime oyunları lingo","lang game kelime oyunları"]
+"t": 1790327198945,
+"s": ["lang game kelime oyunları"]
+},
+"kelime oyunları lingo": {
+"t": 1790327199403,
+"s": []
 },
 "kelime oyunları m": {
 "t": 1789712958007,
@@ -14992,15 +15708,23 @@
 "s": ["para kazandıran kelime oyunları"]
 },
 "kelime oyunları r": {
-"t": 1789712959995,
-"s": ["kelime oyunları reklamsız"]
+"t": 1790327199845,
+"s": ["reklamsız kelime oyunları"]
+},
+"kelime oyunları reklamsız": {
+"t": 1790327200284,
+"s": ["reklamsız kelime oyunları"]
 },
 "kelime oyunları s": {
-"t": 1789712960390,
-"s": ["kelime oyunları sorulu","solitaire kelime oyunları","sohbetli kelime oyunları","1 sınıf kelime oyunları","kelime oyunları internetsiz"]
+"t": 1790327200730,
+"s": ["solitaire kelime oyunları","sohbetli kelime oyunları","1 sınıf kelime oyunları"]
 },
 "kelime oyunları ş": {
 "t": 1789712960793,
+"s": []
+},
+"kelime oyunları sorulu": {
+"t": 1790327201176,
 "s": []
 },
 "kelime oyunları t": {
@@ -15020,12 +15744,16 @@
 "s": ["kelime ve bulmaca oyunları"]
 },
 "kelime oyunları y": {
-"t": 1789712962788,
-"s": ["kelime oyunları yeni","kelime oyunları yükle","yeni kelime oyunları","yeni çıkan kelime oyunları","yasaklı kelime oyunları"]
+"t": 1790327201624,
+"s": ["kelime oyunları yeni","yeni çıkan kelime oyunları","kelime yazma oyunları"]
+},
+"kelime oyunları yükle": {
+"t": 1790327203814,
+"s": []
 },
 "kelime oyunları z": {
-"t": 1789712963184,
-"s": ["kelime oyunları zor","zeka oyunları kelime","zeka oyunları kelime bulmaca"]
+"t": 1790327204253,
+"s": ["kelime oyunları zor","zeka oyunları kelime","zeka oyunları kelime bulmaca","zıt anlamlı kelime oyunları"]
 },
 "kelime oyunu": {
 "t": 1789894834623,
@@ -15051,6 +15779,26 @@
 "t": 1789894506975,
 "s": ["kelime ve bulmaca oyunları"]
 },
+"kepçe kam": {
+"t": 1790327205849,
+"s": ["kepçe kamyon oyunları","kepçe kamyon","kepçe kamyon oyunu","kepçe kamyon kepçe kamyon","kepçe kamyon simülatör"]
+},
+"kepçe kamyon ": {
+"t": 1790327206289,
+"s": ["kepçe kamyon oyunları","kepçe kamyon oyunu","kepçe kamyon kepçe kamyon","kepçe kamyon simülatör","kepçe kamyon araba oyunu"]
+},
+"kepçe kamyon o": {
+"t": 1790327207167,
+"s": ["kepçe kamyon oyunları","kepçe kamyon oyunu","kepçe kamyon oyunları internetsiz","kepçe kamyon oyunlar","kepçe kamyon oyunları gerçek"]
+},
+"kepçe kamyon oy": {
+"t": 1790327206729,
+"s": ["kepçe kamyon oyunları","kepçe kamyon oyunu","kepçe kamyon oyunları internetsiz","kepçe kamyon oyunlar","kepçe kamyon oyunları gerçek"]
+},
+"kepçe kamyon oyun": {
+"t": 1790327205376,
+"s": ["kepçe kamyon oyunları","kepçe kamyon oyunu","kepçe kamyon oyunları internetsiz","kepçe kamyon oyunlar","kepçe kamyon oyunları gerçek"]
+},
 "kes": {
 "t": 1789720293474,
 "s": ["keskin nişancı oyunları","keskin nişancı oyunu","keskin nişancı oyunları internetsiz","kestirmeler","keskin nişancı"]
@@ -15063,12 +15811,28 @@
 "t": 1789720292618,
 "s": ["keskin nişancı oyunları","keskin nişancı oyunu","keskin nişancı oyunları internetsiz","keskin nişancı","keskin nişan"]
 },
+"keskin ni": {
+"t": 1790327209868,
+"s": ["keskin nişancı oyunları","keskin nişancı oyunu","keskin nişancı oyunları internetsiz","keskin nişancı","keskin nişan"]
+},
+"keskin nişan": {
+"t": 1790327210748,
+"s": ["keskin nişancı oyunları","keskin nişancı oyunu","keskin nişancı oyunları internetsiz","keskin nişancı","keskin nişan"]
+},
+"keskin nişanc": {
+"t": 1790327211184,
+"s": ["keskin nişancı oyunları","keskin nişancı oyunu","keskin nişancı oyunları internetsiz","keskin nişancı","keskin nişancı oyunları 2023"]
+},
+"keskin nişancı": {
+"t": 1790327210306,
+"s": ["keskin nişancı oyunları","keskin nişancı oyunu","keskin nişancı oyunları internetsiz","keskin nişancı","keskin nişancı oyunları 2023"]
+},
 "keskin nişancı ": {
 "t": 1789894347569,
 "s": ["keskin nişancı oyunları","keskin nişancı oyunu","keskin nişancı oyunları internetsiz","keskin nişancı oyunları 2023","keskin nişancı silah oyunu"]
 },
 "keskin nişancı o": {
-"t": 1789720292189,
+"t": 1790327212735,
 "s": ["keskin nişancı oyunları","keskin nişancı oyunu","keskin nişancı oyunları internetsiz","keskin nişancı oyunları 2023","keskin nişancı oyunu internetsiz"]
 },
 "keskin nişancı oy": {
@@ -15106,6 +15870,42 @@
 "keskin nişancı oyunları 3d gun": {
 "t": 1789894508399,
 "s": ["keskin nişancı oyunları 3d gun"]
+},
+"keskin nişancı oyunları ç": {
+"t": 1790327214055,
+"s": ["keskin nişancı oyunları çöp adam","çevrimdışı keskin nişancı oyunları"]
+},
+"keskin nişancı oyunları çö": {
+"t": 1790327213623,
+"s": ["keskin nişancı oyunları çöp adam"]
+},
+"keskin nişancı oyunları çöp ": {
+"t": 1790327213177,
+"s": ["keskin nişancı oyunları çöp adam"]
+},
+"keskin nişancı oyunları çöp adam": {
+"t": 1790327212293,
+"s": ["keskin nişancı oyunları çöp adam"]
+},
+"keskin nişancı oyunları g": {
+"t": 1790327217767,
+"s": ["keskin nişancı oyunları gerçekçi","keskin nişancı oyunları 3d gun","en güzel keskin nişancı oyunları","gerçek keskin nişancı oyunları"]
+},
+"keskin nişancı oyunları ge": {
+"t": 1790327217336,
+"s": ["keskin nişancı oyunları gerçekçi","gerçek keskin nişancı oyunları"]
+},
+"keskin nişancı oyunları gerç": {
+"t": 1790327216890,
+"s": ["keskin nişancı oyunları gerçekçi","gerçek keskin nişancı oyunları"]
+},
+"keskin nişancı oyunları gerçek": {
+"t": 1790327215993,
+"s": ["keskin nişancı oyunları gerçekçi","gerçek keskin nişancı oyunları"]
+},
+"keskin nişancı oyunları gerçekçi": {
+"t": 1790327216428,
+"s": ["keskin nişancı oyunları gerçekçi"]
 },
 "keskin nişancı oyunları h": {
 "t": 1789806187362,
@@ -15170,6 +15970,50 @@
 "keskin nişancı oyunları internetsiz ücretsiz": {
 "t": 1789982006233,
 "s": ["keskin nişancı oyunları internetsiz ücretsiz","keskin nişancı oyunları internetsiz ve ücretsiz"]
+},
+"keskin nişancı oyunları m": {
+"t": 1790327219378,
+"s": ["keskin nişancı oyunları minecraft"]
+},
+"keskin nişancı oyunları minecraft": {
+"t": 1790327218913,
+"s": ["keskin nişancı oyunları minecraft"]
+},
+"keskin nişancı oyunları r": {
+"t": 1790327221857,
+"s": ["keskin nişancı oyunları reklamsız"]
+},
+"keskin nişancı oyunları reklamsız": {
+"t": 1790327221422,
+"s": ["keskin nişancı oyunları reklamsız"]
+},
+"keskin nişancı oyunları ü": {
+"t": 1790327225131,
+"s": ["keskin nişancı oyunları ücretsiz","keskin nişancı oyunları internetsiz ücretsiz"]
+},
+"keskin nişancı oyunları üc": {
+"t": 1790327224690,
+"s": ["keskin nişancı oyunları ücretsiz","keskin nişancı oyunları internetsiz ücretsiz"]
+},
+"keskin nişancı oyunları ücre": {
+"t": 1790327224243,
+"s": ["keskin nişancı oyunları ücretsiz","keskin nişancı oyunları internetsiz ücretsiz","keskin nişancı oyunları internetsiz ve ücretsiz"]
+},
+"keskin nişancı oyunları ücretsiz": {
+"t": 1790327223802,
+"s": ["keskin nişancı oyunları ücretsiz","keskin nişancı oyunları internetsiz ücretsiz","keskin nişancı oyunları internetsiz ve ücretsiz"]
+},
+"keskin nişancı oyunları z": {
+"t": 1790327227166,
+"s": ["keskin nişancı oyunları zombi"]
+},
+"keskin nişancı oyunları zo": {
+"t": 1790327226730,
+"s": ["keskin nişancı oyunları zombi"]
+},
+"keskin nişancı oyunları zombi": {
+"t": 1790327226296,
+"s": ["keskin nişancı oyunları zombi"]
 },
 "kil": {
 "t": 1789713329902,
@@ -15419,6 +16263,26 @@
 "t": 1790066846890,
 "s": ["kırmızı top","kırmızı araba oyunu","kırmızı araba","kırmızı balık","kırmızı top oyunu"]
 },
+"kırmızı a": {
+"t": 1790327229354,
+"s": ["kırmızı araba oyunu","kırmızı araba","kırmızı araba oyunları","kırmızı arabalar","kırmızı adam"]
+},
+"kırmızı araba": {
+"t": 1790327229795,
+"s": ["kırmızı araba oyunu","kırmızı araba","kırmızı araba oyunları","kırmızı arabalar","kırmızı araba kırmızı araba"]
+},
+"kırmızı araba ": {
+"t": 1790327230679,
+"s": ["kırmızı araba oyunu","kırmızı araba oyunları","kırmızı araba kırmızı araba","kırmızı araba oyunu tofaş","kırmızı araba oyunu kırmızı araba oyunu"]
+},
+"kırmızı araba p": {
+"t": 1790327230233,
+"s": ["kırmızı araba park etme oyunu","car parking kırmızı araba","kırmızı passat araba oyunu","car parking kırmızı araba oyunu","kırmızı porsche araba oyunları"]
+},
+"kırmızı araba par": {
+"t": 1790327228904,
+"s": ["kırmızı araba park etme oyunu","car parking kırmızı araba","car parking kırmızı araba oyunu"]
+},
 "kırmızı ışık": {
 "t": 1790066847295,
 "s": ["kırmızı ışık yeşil ışık","kırmızı ışık","kırmızı ışık yeşil ışık oyunu","kırmızı ışık yeşil ışık oyunları","kırmızı ışık oyunu"]
@@ -15552,12 +16416,28 @@
 "s": ["klasman","klasik oyunlar","klas of clans","klasik kadranlar","klasik araba oyunları"]
 },
 "klasi": {
-"t": 1789720532710,
+"t": 1790327232746,
 "s": ["klasik oyunlar","klasik kadranlar","klasik araba oyunları","klasik minecraft","klasik tetris oyunu"]
 },
 "klasik": {
 "t": 1789720532282,
 "s": ["klasik oyunlar","klasik kadranlar","klasik araba oyunları","klasik minecraft","klasik tetris oyunu"]
+},
+"klasik ": {
+"t": 1790327233205,
+"s": ["klasik oyunlar","klasik kadranlar","klasik araba oyunları","klasik minecraft","klasik tetris oyunu"]
+},
+"klasik a": {
+"t": 1790327233657,
+"s": ["klasik araba oyunları","klasik araba oyunu","klasik araba","klasik araba park etme oyunu","klasik amerikan araba oyunları"]
+},
+"klasik ar": {
+"t": 1790327232311,
+"s": ["klasik araba oyunları","klasik araba oyunu","klasik araba","klasik araba park etme oyunu","klasik arabalar"]
+},
+"klasik araba park": {
+"t": 1790327231868,
+"s": ["klasik araba park etme oyunu"]
 },
 "klasik tetri": {
 "t": 1789720531848,
@@ -15715,6 +16595,10 @@
 "t": 1789806188848,
 "s": ["korku oyunları","korku oyunları online","korku oyunları online 2 kişilik","korku oyunları multiplayer","korku oyunlari"]
 },
+"korku oyun": {
+"t": 1790327261361,
+"s": ["korku oyunları","korku oyunları online","korku oyunları online 2 kişilik","korku oyunları multiplayer","korku oyunlari"]
+},
 "korku oyunl": {
 "t": 1789720551471,
 "s": ["korku oyunları","korku oyunları online","korku oyunları online 2 kişilik","korku oyunları multiplayer","korku oyunlari"]
@@ -15724,104 +16608,172 @@
 "s": ["korku oyunları","korku oyunları online","korku oyunları online 2 kişilik","korku oyunları multiplayer","korku oyunlari"]
 },
 "korku oyunlar": {
-"t": 1789720551940,
+"t": 1790327266420,
 "s": ["korku oyunları","korku oyunları online","korku oyunları online 2 kişilik","korku oyunları multiplayer","korku oyunlari"]
 },
 "korku oyunları": {
-"t": 1789712747940,
+"t": 1790327236038,
 "s": ["korku oyunları","korku oyunları online","korku oyunları online 2 kişilik","korku oyunları multiplayer","korku oyunları 2 kişilik"]
 },
 "korku oyunları ": {
-"t": 1789712748343,
+"t": 1790327236481,
 "s": ["korku oyunları online","korku oyunları online 2 kişilik","korku oyunları internetsiz","korku oyunları multiplayer","korku oyunları 2 kişilik"]
 },
 "korku oyunları a": {
-"t": 1789720201762,
-"s": ["korku oyunları arkadaşlarla","korku oyunları arama","korku oyunları arkadaşlı","korku oyunları anomali","korku oyunları anime"]
+"t": 1790327235593,
+"s": ["korku oyunları arkadaşlarla","korku oyunları arama","korku oyunları anomali","korku oyunları arkadaşlı","korku oyunları anime"]
 },
 "korku oyunları b": {
-"t": 1789720202195,
-"s": ["korku oyunları bebek","korku oyunları bebek bakıcısı","korku oyunları backrooms","korku oyunları bağlanmalı","korku oyunları baby yellow"]
+"t": 1790327243713,
+"s": ["korku oyunları bebek","korku oyunları backrooms","korku oyunları bebek bakıcısı","korku oyunları bağlanmalı","korku oyunları baby yellow"]
 },
 "korku oyunları c": {
-"t": 1789720202635,
-"s": ["korku oyunları cinli köy","korku oyunları cok oyunculu","korku oyunları cin","korku oyunları cevrimici","korku oyunları coklu"]
+"t": 1790327254131,
+"s": ["korku oyunları cok oyunculu","korku oyunları cinli köy","korku oyunları cevrimici","korku oyunları canavar","korku oyunları cin"]
 },
 "korku oyunları ç": {
-"t": 1789720203067,
-"s": ["korku oyunları çok oyunculu","korku oyunları çevrimiçi","korku oyunları çevrimdışı","korku oyunları çok korku","korku oyunları çoklu"]
+"t": 1790327252449,
+"s": ["korku oyunları çok oyunculu","korku oyunları çevrimiçi","korku oyunları çok korku","korku oyunları çevrimdışı","korku oyunları çoklu"]
+},
+"korku oyunları co": {
+"t": 1790327262253,
+"s": ["korku oyunları cok oyunculu","korku oyunları coklu","korku oyunları co op","korku oyunları cocuk"]
+},
+"korku oyunları cok": {
+"t": 1790327261806,
+"s": ["korku oyunları cok oyunculu","korku oyunları coklu"]
+},
+"korku oyunları coklu": {
+"t": 1790327260901,
+"s": ["korku oyunları coklu"]
 },
 "korku oyunları d": {
-"t": 1789720203520,
-"s": ["korku oyunları dondurmacı","korku oyunları dönerci","korku oyunları domuz","korku oyunları döner","korku oyunları domuz adam"]
+"t": 1790327264155,
+"s": ["korku oyunları dondurmacı","korku oyunları dönerci","korku oyunları domuz","korku oyunları döner","korku oyunları dark riddle"]
+},
+"korku oyunları do": {
+"t": 1790327267746,
+"s": ["korku oyunları dondurmacı","korku oyunları domuz","korku oyunları domuz adam","korku oyunları dondurmacı 1","korku oyunları dondurma"]
+},
+"korku oyunları dom": {
+"t": 1790327267309,
+"s": ["korku oyunları domuz","korku oyunları domuz adam"]
+},
+"korku oyunları domu": {
+"t": 1790327266863,
+"s": ["korku oyunları domuz","korku oyunları domuz adam"]
+},
+"korku oyunları domuz adam": {
+"t": 1790327265985,
+"s": ["korku oyunları domuz adam"]
 },
 "korku oyunları e": {
-"t": 1789720203955,
-"s": ["korku oyunları evil nun","korku oyunları en korkunçları","korku oyunları eyes","korku oyunları evden kaçış","korku oyunları ev"]
+"t": 1790327277198,
+"s": ["korku oyunları evil nun","korku oyunları en korkunçları","korku oyunları ev","korku oyunları evden kaçış","korku oyunları eyes"]
 },
 "korku oyunları f": {
-"t": 1789720204388,
+"t": 1790327286485,
 "s": ["korku oyunları fotoğrafçı","korku oyunları freddy","korku oyunları fnaf","korku oyunları freddy ücretsiz","korku oyunları fnaf ücretsiz"]
 },
 "korku oyunları g": {
-"t": 1789720204814,
-"s": ["korku oyunları granny 4","korku oyunları granny 1","korku oyunları grani","korku oyunları granny 2","korku oyunları granny 3"]
+"t": 1790327298251,
+"s": ["korku oyunları granny 1","korku oyunları granny 4","korku oyunları grani","korku oyunları granny 2","korku oyunları gerçekçi"]
 },
 "korku oyunları ğ": {
 "t": 1789720205250,
 "s": []
 },
+"korku oyunları gr": {
+"t": 1790327305470,
+"s": ["korku oyunları granny 1","korku oyunları granny 4","korku oyunları grani","korku oyunları granny 2","korku oyunları granny 3"]
+},
+"korku oyunları gra": {
+"t": 1790327305032,
+"s": ["korku oyunları granny 1","korku oyunları granny 4","korku oyunları grani","korku oyunları granny 2","korku oyunları granny 3"]
+},
+"korku oyunları granny 3": {
+"t": 1790327304589,
+"s": ["korku oyunları granny 3"]
+},
 "korku oyunları h": {
-"t": 1789720205707,
-"s": ["korku oyunları hastane","korku oyunları hikayeli","korku oyunları hello neighbor","korku oyunları horror playtime","korku oyunları hayatta kalma"]
+"t": 1790327308396,
+"s": ["korku oyunları hastane","korku oyunları horror playtime","korku oyunları hikayeli","korku oyunları hello neighbor","korku oyunları hotel"]
+},
+"korku oyunları ha": {
+"t": 1790327311992,
+"s": ["korku oyunları hastane","korku oyunları hayatta kalma","korku oyunları hayalet","korku oyunları hamburger","korku oyunları hastaneden kaçış"]
+},
+"korku oyunları hay": {
+"t": 1790327311549,
+"s": ["korku oyunları hayatta kalma","korku oyunları hayalet","korku oyunları hayvan","hayatta kalma korku oyunları multiplayer","hayatta kalma korku oyunları online"]
+},
+"korku oyunları hayatt": {
+"t": 1790327311104,
+"s": ["korku oyunları hayatta kalma","hayatta kalma korku oyunları multiplayer","hayatta kalma korku oyunları online","hayatta kalma korku oyunları 2 kişilik","hayatta kalma korku oyunları granny"]
+},
+"korku oyunları hayatta kalma": {
+"t": 1790327310667,
+"s": ["korku oyunları hayatta kalma","hayatta kalma korku oyunları multiplayer","hayatta kalma korku oyunları online","hayatta kalma korku oyunları 2 kişilik","hayatta kalma korku oyunları granny"]
 },
 "korku oyunları i": {
-"t": 1789720206576,
-"s": ["korku oyunları internetsiz","korku oyunları iki kisilik","korku oyunları internetsiz türkçe","korku oyunları iki kişilik","korku oyunları internetsiz granny"]
+"t": 1790327318070,
+"s": ["korku oyunları internetsiz","korku oyunları iki kisilik","korku oyunları iki kişilik","korku oyunları internetsiz türkçe","korku oyunları internetsiz granny"]
 },
 "korku oyunları ı": {
-"t": 1789720206135,
-"s": ["korku oyunları ıce cream","ıkı kısılık korku oyunları"]
+"t": 1790327321830,
+"s": ["korku oyunları ıce cream","ıkı kısılık korku oyunları","hacivatın korku oyunları","minecraftın korku oyunları"]
 },
 "korku oyunları j": {
-"t": 1789720207011,
-"s": ["korku oyunları jumpscare","korku oyunları japon","korku oyunları jeff the killer","korku oyunları jason","korku oyunları joker"]
+"t": 1790327323505,
+"s": ["korku oyunları jumpscare","korku oyunları japon","korku oyunları jeff the killer","korku oyunları joker","michael jackson korku oyunları"]
+},
+"korku oyunları jason": {
+"t": 1790327326167,
+"s": []
 },
 "korku oyunları k": {
-"t": 1789720207478,
+"t": 1790327333631,
 "s": ["korku oyunları korku oyunları","korku oyunları kaçış","korku oyunları kasap","korku oyunları korku oyunları korku oyunları","korku oyunları korku"]
 },
 "korku oyunları l": {
-"t": 1789720207920,
-"s": ["korku oyunları labirent","korku oyunları lanetli bebek","korku oyunları lanetli","korku oyunları lunapark","korku oyunları lokanta"]
+"t": 1790327338160,
+"s": ["korku oyunları labirent","korku oyunları lunapark","korku oyunları lan","korku oyunları lanetli bebek","korku oyunları lütfen"]
+},
+"korku oyunları lokanta": {
+"t": 1790327341844,
+"s": []
 },
 "korku oyunları m": {
-"t": 1789720208345,
-"s": ["korku oyunları multiplayer","korku oyunları momo","korku oyunları minecraft","korku oyunları market","korku oyunları multiplayer online"]
+"t": 1790327345632,
+"s": ["korku oyunları multiplayer","korku oyunları multiplayer online","korku oyunları momo","korku oyunları market","korku oyunları minecraft"]
 },
 "korku oyunları n": {
-"t": 1789720208778,
-"s": ["korku oyunları noclip","korku oyunları nine","korku oyunları nene","korku oyunları normal","korku oyunları nun"]
+"t": 1790327354141,
+"s": ["korku oyunları noclip","korku oyunları nene","korku oyunları nine","korku oyunları nun","korku oyunları hello neighbor"]
+},
+"korku oyunları normal": {
+"t": 1790327358333,
+"s": ["normal korku oyunları"]
 },
 "korku oyunları o": {
-"t": 1789720209220,
-"s": ["korku oyunları online","korku oyunları online 2 kişilik","korku oyunları online 18 yaş üstü","korku oyunları online 3 kişilik","korku oyunları online multiplayer"]
+"t": 1790327363356,
+"s": ["korku oyunları online","korku oyunları online 2 kişilik","korku oyunları online 18 yaş üstü","korku oyunları online multiplayer","korku oyunları online 3 kişilik"]
 },
 "korku oyunları ö": {
-"t": 1789720209651,
-"s": ["korku oyunları öğretmen","korku oyunları örümcek","korku oyunları ögretmen","çocuklara özel korku oyunları"]
+"t": 1790327359425,
+"s": ["korku oyunları öğretmen","korku oyunları örümcek","korku oyunları ögretmen","özel korku oyunları","çocuklara özel korku oyunları"]
 },
 "korku oyunları online 2 kişilik ": {
 "t": 1789805708777,
 "s": ["korku oyunları online 2 kişilik granny","korku oyunları online 2 kişilik backrooms","korku oyunları online 2 kişilik türkçe","korku oyunları online 2 kişilik multiplayer","korku oyunları online 2 kişilik internetsiz"]
 },
 "korku oyunları p": {
-"t": 1789720210080,
-"s": ["korku oyunları palyaço","korku oyunları paralı","korku oyunları poppy playtime","korku oyunları parasız","korku oyunları pou"]
+"t": 1790327368006,
+"s": ["korku oyunları paralı","korku oyunları palyaço","korku oyunları parasız","korku oyunları poppy playtime","korku oyunları pou"]
 },
 "korku oyunları r": {
-"t": 1789720210506,
-"s": ["korku oyunları reklamsız","korku oyunları robot","korku oyunları rahibe","korku oyunları restoran","korku oyunları roblox"]
+"t": 1790327375693,
+"s": ["korku oyunları reklamsız","korku oyunları robot","korku oyunları roblox","korku oyunları rahibe","korku oyunları restoran"]
 },
 "korku oyunları s": {
 "t": 1789720210978,
@@ -18319,6 +19271,30 @@
 "t": 1789805698330,
 "s": ["ögg sınav hazırlık"]
 },
+"öğretmen on": {
+"t": 1790326912119,
+"s": ["öğretmen onaylı oyunlar","öğretmen onaylı","öğretmen onaylı çocuk oyunları","öğretmen onayli oyunlar","öğretmen onayli"]
+},
+"öğretmen onaylı ": {
+"t": 1790326912562,
+"s": ["öğretmen onaylı oyunlar","öğretmen onaylı çocuk oyunları","öğretmen onaylı araba oyunları","öğretmen onaylı eğitici oyunlar","öğretmen onaylı oyun"]
+},
+"öğretmen onaylı o": {
+"t": 1790326913900,
+"s": ["öğretmen onaylı oyunlar","öğretmen onaylı oyunlar 9 yaş","öğretmen onaylı oyun","öğretmen onaylı oyunlar internetsiz","öğretmen onaylı oyunları"]
+},
+"öğretmen onaylı oy": {
+"t": 1790326913446,
+"s": ["öğretmen onaylı oyunlar","öğretmen onaylı oyunlar 9 yaş","öğretmen onaylı oyun","öğretmen onaylı oyunlar internetsiz","öğretmen onaylı oyunları"]
+},
+"öğretmen onaylı oyu": {
+"t": 1790326913003,
+"s": ["öğretmen onaylı oyunlar","öğretmen onaylı oyunlar 9 yaş","öğretmen onaylı oyun","öğretmen onaylı oyunlar internetsiz","öğretmen onaylı oyunları"]
+},
+"öğretmen onaylı oyunl": {
+"t": 1790326911664,
+"s": ["öğretmen onaylı oyunlar","öğretmen onaylı oyunlar 9 yaş","öğretmen onaylı oyunlar internetsiz","öğretmen onaylı oyunları","öğretmen onaylı oyunlar araba"]
+},
 "okey": {
 "t": 1789720710431,
 "s": ["okey","okey 101","okey plus","okey internetsiz","okey yalla"]
@@ -19287,6 +20263,26 @@
 "t": 1789805697919,
 "s": ["plaka sorgulama kime ait","araç plaka sorgulama kime ait"]
 },
+"playbook ": {
+"t": 1790326927117,
+"s": ["playbook app","playbook google","playbook lite","playbook connect app","playbook connect"]
+},
+"playbook i": {
+"t": 1790326928602,
+"s": ["playbook interaktif hikaye oyunları"]
+},
+"playbook in": {
+"t": 1790326928129,
+"s": ["playbook interaktif hikaye oyunları"]
+},
+"playbook inte": {
+"t": 1790326927613,
+"s": ["playbook interaktif hikaye oyunları"]
+},
+"playbook interakt": {
+"t": 1790326926669,
+"s": ["playbook interaktif hikaye oyunları"]
+},
 "playstat": {
 "t": 1790239216738,
 "s": ["playstation","playstation 5","playstation oyunları","playstation store","playstation 5 oyunları"]
@@ -19915,6 +20911,26 @@
 "t": 1789712781816,
 "s": ["rol yapma oyunu","rol yapma oyunları silah oyunu","rol yapma oyunları araba oyunu","rol yapma araba oyunu"]
 },
+"ronaldonu": {
+"t": 1790326908680,
+"s": ["ronaldonun oyunu","ronaldonun oyunları","ronaldonun maçı","ronaldonun","ronaldonun maç oyunu"]
+},
+"ronaldonun fu": {
+"t": 1790326909124,
+"s": []
+},
+"ronaldonun fut": {
+"t": 1790326910025,
+"s": []
+},
+"ronaldonun futb": {
+"t": 1790326909568,
+"s": ["ronaldonun futbol oyunu","ronaldonun futbol oyunları","ronaldonun futbolu","ronaldonun futbol","ronaldonun fotoları"]
+},
+"ronaldonun futbol": {
+"t": 1790326908239,
+"s": ["ronaldonun futbol oyunu","ronaldonun futbol oyunları","ronaldonun futbolu","ronaldonun futbol","ronaldonun fotoları"]
+},
 "royal": {
 "t": 1790239252319,
 "s": ["royal match","royal kingdom","royale online","royal smash","royal"]
@@ -20455,6 +21471,22 @@
 "t": 1789712847997,
 "s": ["sayaç uygulaması","adım sayar uygulaması"]
 },
+"seçi": {
+"t": 1790326916012,
+"s": ["seçim oyunu","seçim 2026","seçim simülasyonu","seçim","seçim oyunu 2026"]
+},
+"seçim": {
+"t": 1790326916893,
+"s": ["seçim oyunu","seçim 2026","seçim simülasyonu","seçim","seçim oyunu 2026"]
+},
+"seçiml": {
+"t": 1790326916457,
+"s": ["seçimli oyunlar","seçimli hikaye oyunları","seçimler","seçimler hayat simülasyonu","seçimli oyun"]
+},
+"seçimli ": {
+"t": 1790326915575,
+"s": ["seçimli oyunlar","seçimli hikaye oyunları","seçimli oyun"]
+},
 "şehir": {
 "t": 1789894569537,
 "s": ["şehir kurma oyunları","şehir oyunları","şehir bulma oyunu","şehir kurma ve savaş oyunları","şehir yok etme oyunu"]
@@ -20747,6 +21779,30 @@
 "t": 1789712851178,
 "s": ["şifre yöneticisi","google şifre yöneticisi","google play şifre yöneticisi"]
 },
+"silah oyunl": {
+"t": 1790326931847,
+"s": ["silah oyunları","silah oyunları 2024","silah oyunları 2025","silah oyunlari","silah oyunları 2023"]
+},
+"silah oyunları h": {
+"t": 1790326932305,
+"s": ["silah oyunları hayvan vurma","silah oyunları hikayeli","silah oyunları hayatta kalma","silah oyunları hayvan","silah oyunları hedef vurma"]
+},
+"silah oyunları he": {
+"t": 1790326933655,
+"s": ["silah oyunları hedef vurma","silah oyunları helikopter","silah oyunları hepsi","helikopterli silah oyunları","hesapsız silah oyunları"]
+},
+"silah oyunları hel": {
+"t": 1790326933220,
+"s": ["silah oyunları helikopter","helikopterli silah oyunları"]
+},
+"silah oyunları heli": {
+"t": 1790326932754,
+"s": ["silah oyunları helikopter","helikopterli silah oyunları"]
+},
+"silah oyunları heliko": {
+"t": 1790326931409,
+"s": ["silah oyunları helikopter","helikopterli silah oyunları"]
+},
 "silahl": {
 "t": 1789982191619,
 "s": ["silahlı oyunlar","silahlı minecraft","silahlı minecraft oyunları","silahlı minecraft oyunu","silahlı araba oyunları"]
@@ -20766,6 +21822,26 @@
 "silahlı satranç oyunu": {
 "t": 1789982190747,
 "s": ["silahlı satranç oyunu"]
+},
+"simülasyo": {
+"t": 1790326921681,
+"s": ["simülasyon oyunları","simülasyon oyunları araba","simülasyon","simülasyon oyunları tır","simülasyon oyunları internetsiz"]
+},
+"simülasyon ": {
+"t": 1790326922577,
+"s": ["simülasyon oyunları","simülasyon oyunları araba","simülasyon oyunları tır","simülasyon oyunları internetsiz","simülasyon oyunları otobüs"]
+},
+"simülasyon h": {
+"t": 1790326923021,
+"s": ["simülasyon hayvan oyunları","simülasyon hayatta kalma","simülasyon hikaye oyunları","simülasyon hayat","simülasyon hatası oyunu"]
+},
+"simülasyon hi": {
+"t": 1790326922128,
+"s": ["simülasyon hikaye oyunları","hikayeli simülasyon oyunları","hisse simülasyon"]
+},
+"simülasyon hikaye": {
+"t": 1790326921228,
+"s": ["simülasyon hikaye oyunları","hikayeli simülasyon oyunları"]
 },
 "sına": {
 "t": 1789713472610,
@@ -23135,6 +24211,14 @@
 "t": 1789894606982,
 "s": ["ücretsiz cv hazırlama","ücretsiz cv hazırlama programı","ücretsiz cv hazırla","cv hazırlama ücretsiz türkçe"]
 },
+"ücretsiz hikaye o": {
+"t": 1790326935288,
+"s": ["ücretsiz hikaye okuma"]
+},
+"ücretsiz hikaye oyunları": {
+"t": 1790326935738,
+"s": ["hikaye oyunları ücretsiz"]
+},
 "ücretsiz k": {
 "t": 1789805921776,
 "s": ["ücretsiz kitap oku","ücretsiz kahve falı indir","ücretsiz kitap okuma uygulaması","ücretsiz kahve falı","ücretsiz kıble bulma pusulası"]
@@ -24718,6 +25802,18 @@
 "zorlu ": {
 "t": 1789982079178,
 "s": ["zorlu yarış","zorlu enerji","zorlu psm","zorlu yarış oyunu","zorlu oyunlar"]
+},
+"zorlu f": {
+"t": 1790326937078,
+"s": ["zorlu futbol oyunları","zorlu futbol oyunu"]
+},
+"zorlu fut": {
+"t": 1790326936631,
+"s": ["zorlu futbol oyunları","zorlu futbol oyunu"]
+},
+"zorlu futbol oyun": {
+"t": 1790326936179,
+"s": ["zorlu futbol oyunları","zorlu futbol oyunu"]
 },
 "zorlu k": {
 "t": 1789982078721,
