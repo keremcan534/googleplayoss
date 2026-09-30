@@ -18,6 +18,7 @@
   </div>
   <nav class="nav" id="nav" aria-label="Bölümler">
     <button class="nav-btn active" data-view="overview">Genel Bakış</button>
+    <button class="nav-btn nav-projects" data-view="projects">Projeler</button>
     <button class="nav-btn" data-view="opportunities">Fırsatlar</button>
     <button class="nav-btn" data-view="niches">Nişler</button>
     <button class="nav-btn" data-view="ranking">Sıralama</button>
@@ -57,6 +58,11 @@
         <div id="risingOpps" class="opp-list compact"></div>
       </div>
     </div>
+  </section>
+
+  <!-- ============ PROJELER / YAYIN PAKETİ ============ -->
+  <section class="view" id="view-projects" hidden>
+    <div id="projectsRoot"></div>
   </section>
 
   <!-- ============ FIRSATLAR (QUICK MODE) ============ -->
@@ -255,6 +261,17 @@
 
       <h3>7/24 nasıl çalışıyor?</h3>
       <p>GitHub Actions her gün tarayıcıyı çalıştırır, her koşuda sınırlı sayıda istek yapar, sonuçları depoya commit eder ve yayınlar. Kelime evreni her koşuda büyür, eski analizler periyodik olarak yenilenir. Canlı analiz sekmesi Vercel dağıtımındaki API ile çalışır.</p>
+
+      <h3>Projeler ve Yayın Paketi</h3>
+      <p>Anahtar kelime keşfi proje oluşturmak için gerekmez. Bir projeye üç yoldan başlanır: bir fırsattan, bir fikirden ya da mevcut bir projeyi içe aktararak (elle, GitHub reposundan, kısa açıklamadan, Play'de yayındaki uygulamadan ya da ZIP'ten). Uygulamanı tamamen başka bir yerde geliştirip bu aracı yalnızca yayına hazırlamak için kullanabilirsin.</p>
+      <p><strong>Yayın Paketi Üret</strong> ürünün kendisinden başlar: açıklama, README, mekanikler, ekran notları, mevcut mağaza metinleri ve repodaki dosyalardan tür, çekirdek kanca ve gerçek özellikler çıkarılır. Arama kelimeleri bu üründen türetilir ve mevcut fırsat/rekabet sisteminden geçirilir. Amaç oyunu bir kelimeye göre değiştirmek değil, var olan oyun için en güçlü <em>doğru</em> konumlandırmayı bulmaktır:</p>
+      <ul>
+        <li>Birincil kelimenin her parçası üründe karşılık bulmalı. Başka bir markanın adı, yıl ya da ürünün yapmadığı bir iddia ("offline", "multiplayer") içeren kelimeler elenir.</li>
+        <li>Mağaza metinlerine yalnızca doğrulanmış olgular girer. Repo taramasından gelen iddialar "gözden geçir" olarak işaretlenir; Ürün bilgisi sekmesinde onaylarsın.</li>
+        <li>Başlık ve kısa açıklama Play meta veri politikasına göre denetlenir (karakter sınırları, "best", "#1", "free", emoji vb.).</li>
+        <li>Görseller Play ölçülerinde üretilir ve denetlenir: ikon 512×512 PNG, tanıtım görseli 1024×500 alfasız, ekran görüntüleri gerçek oyun görüntülerinden.</li>
+      </ul>
+      <p>Her kalemin durumu <strong>EKSİK</strong>, <strong>ÜRETİLİYOR</strong>, <strong>HAZIR</strong>, <strong>GÖZDEN GEÇİR</strong> ya da <strong>ONAYLANDI</strong> olur. Yayın hazırlığı yüzdesi zorunlu kalemlere daha çok ağırlık verir; %100 tüm kalemlerin onaylanması demektir. Onayladığın ya da elle düzenlediğin kalemler yeniden üretimde ezilmez. <strong>ZIP indir</strong> fastlane <code>supply</code> düzeninde meta veri ve görselleri, gizlilik politikası taslağını, kontrol listesini ve projenin tamamını (project.json) verir; aynı ZIP başka bir tarayıcıda içe aktarılabilir. Projeler yalnızca bu tarayıcıda (IndexedDB) saklanır.</p>
 
       <h3>Uyarılar</h3>
       <ul>

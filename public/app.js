@@ -8,13 +8,14 @@ import {
   VERDICT_META, VERDICT_ORDER, GUARDS
 } from './js/verdict.js';
 import { langOf, tokensFor } from './js/lang.js';
+import { initProjects, renderProjects, startFromOpportunity } from './js/pack/ui.js';
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const nf = new Intl.NumberFormat('tr-TR');
 const DAY = 86400000;
-const VIEWS = ['overview', 'opportunities', 'niches', 'ranking', 'live', 'saved', 'analyst', 'help'];
+const VIEWS = ['overview', 'projects', 'opportunities', 'niches', 'ranking', 'live', 'saved', 'analyst', 'help'];
 const OPPORTUNITY_VERDICTS = ['GOLD', 'BUILD', 'WATCH'];
 /** "Gerçekçi" eşiği: kararı BUILD+ olan VE erişim puanı bunun üstünde olanlar. */
 const REALISTIC_REACH = 65;
@@ -367,12 +368,18 @@ function openDrawer(key) {
   $('#drawerTitle').textContent = r.k;
   const m = state.data?.market;
   $('#drawerSub').textContent = `${SRC_LABEL[r.src] || r.src || 'kayıt'}${r.seed ? ` · tohum: ${r.seed}` : ''}${m ? ` · ${m.country.toUpperCase()}/${m.lang}` : ''} · bulundu ${fmtDate(r.first)}`;
-  $('#drawerBody').innerHTML = detailBody(r);
+  $('#drawerBody').innerHTML = detailBody(r) + projectCta(r);
   $('#drawer').hidden = false;
   $('#drawerBackdrop').hidden = false;
   document.body.style.overflow = 'hidden';
   $('#drawerClose').focus();
 }
+/** Fırsattan proje: keşif zorunlu değil, ama bir fırsattan başlamak da bir yol. */
+function projectCta(r) {
+  return `<div class="sec project-cta"><button type="button" data-new-project="${esc(r.k)}">Bu fırsattan proje oluştur</button>
+    <span class="muted small">Projeyi oluşturup ürününü anlat; Yayın Paketi bu kelimeyi ürünle uyumluysa kullanır.</span></div>`;
+}
+
 function closeDrawer() {
   state.drawerKey = null;
   $('#drawer').hidden = true;
@@ -907,6 +914,7 @@ async function runLive(term, marketStr) {
     const d = rec.decision;
     out.innerHTML = `<div class="verdict-hero v-${d.verdict.toLowerCase()}">
       ${detailBody(rec, { market: { country: gl, lang: hl }, apps: res.apps || [] })}
+      ${['us:en', 'tr:tr'].includes(`${gl}:${hl}`) ? projectCta(rec) : ''}
       <p class="mini" style="margin-top:14px">${esc(rec.k)} · ${gl.toUpperCase()}/${hl} · ${j.cached ? 'önbellekten' : 'canlı ölçüm'} · ${fmtDateTime(res.analyzedAt)}</p>
     </div>`;
   } catch (err) {
@@ -915,8 +923,11 @@ async function runLive(term, marketStr) {
 }
 
 /* ============================ gezinme ============================ */
-function showView(name) {
+function showView(route) {
+  let [name, ...rest] = String(route || '').split('/');
+  const sub = rest.join('/');
   if (!VIEWS.includes(name)) name = 'overview';
+  const same = state.view === name;
   state.view = name;
   $$('.nav-btn').forEach((b) => {
     const on = b.dataset.view === name;
@@ -924,7 +935,9 @@ function showView(name) {
     b.setAttribute('aria-current', on ? 'page' : 'false');
   });
   $$('main .view').forEach((v) => { v.hidden = v.id !== `view-${name}`; });
-  if (location.hash.replace('#', '') !== name) history.replaceState(null, '', `#${name}`);
+  const want = name === 'projects' && sub ? `projects/${sub}` : name;
+  if (location.hash.replace('#', '') !== want) history.replaceState(null, '', `#${want}`);
+  if (name === 'projects') { renderProjects(sub); if (!same || !sub) window.scrollTo({ top: 0, behavior: 'auto' }); return; }
   if (name === 'overview') renderOverview();
   if (name === 'opportunities') renderOpportunities();
   if (name === 'niches') renderNiches();
@@ -1043,6 +1056,15 @@ function bind() {
 
   // tek delege: yıldız, detay, niş, hızlı filtre, tooltip
   document.body.addEventListener('click', (e) => {
+    const np = e.target.closest('[data-new-project]');
+    if (np) {
+      const live = state.liveResult && state.liveResult.k === np.dataset.newProject && state.view === 'live';
+      const mk = live ? ($('#liveMarket').value === 'tr:tr' ? 'tr-tr' : 'us-en') : state.marketId;
+      closeDrawer();
+      startFromOpportunity(np.dataset.newProject, mk);
+      return;
+    }
+
     const star = e.target.closest('[data-star]');
     if (star) { toggleStar(star.dataset.star); return; }
 
@@ -1091,7 +1113,9 @@ function bind() {
   });
   window.addEventListener('hashchange', () => {
     const h = location.hash.replace('#', '');
-    if (VIEWS.includes(h) && h !== state.view) showView(h);
+    const base = h.split('/')[0];
+    if (base === 'projects') showView(h);
+    else if (VIEWS.includes(h) && h !== state.view) showView(h);
   });
 }
 
@@ -1116,14 +1140,36 @@ async function switchMarket(id) {
   if (m) $('#liveMarket').value = `${m.country}:${m.lang}`;
   $('#footInfo').textContent = `Son tarama: ${fmtDateTime(state.data.generatedAt)} · pazar ${m ? `${m.country.toUpperCase()}/${m.lang}` : id}`;
   closeDrawer();
-  showView(state.view);
+  showView(state.view === 'projects' ? location.hash.replace('#', '') : state.view);
 }
+
+const marketCache = new Map();
+const bridge = {
+  apiUrl,
+  currentMarket: () => state.marketId,
+  async isLive() {
+    if (!state.liveChecked) { state.liveChecked = true; await detectLive(); }
+    return state.live;
+  },
+  async getMarketData(id) {
+    if (id === state.marketId && state.data) return state.data;
+    if (!marketCache.has(id)) marketCache.set(id, loadJson(`./data/${encodeURIComponent(id)}.json`).catch((err) => { marketCache.delete(id); throw err; }));
+    return marketCache.get(id);
+  },
+  opportunityKeywords() {
+    const recs = state.records.filter((r) => isOpportunity(r) || state.stars.has(r.k)).sort(compareByVerdict).slice(0, 300);
+    return recs.map((r) => ({ k: r.k, v: `${r.dv} · talep ${r.demand ?? '–'} · fırsat ${r.opportunity ?? '–'}${state.stars.has(r.k) ? ' · kayıtlı' : ''}` }));
+  }
+};
 
 async function init() {
   bind();
+  initProjects(bridge);
+  const hash0 = location.hash.replace('#', '');
   try {
     state.index = await loadJson('./data/index.json');
   } catch {
+    if (hash0.startsWith('projects')) showView(hash0);
     notice('Henüz veri yok. İlk taramayı çalıştır: yerelde <code>npm run crawl</code>, ya da GitHub\'da <strong>Actions → crawl → Run workflow</strong>. Tarama günlük olarak otomatik da çalışır.');
     return;
   }
@@ -1136,7 +1182,7 @@ async function init() {
   const first = markets.some((m) => m.id === saved) ? saved : markets[0].id;
   $('#market').value = first;
   const hash = location.hash.replace('#', '');
-  if (VIEWS.includes(hash)) state.view = hash;
+  if (VIEWS.includes(hash.split('/')[0])) state.view = hash;
   await switchMarket(first);
 }
 
