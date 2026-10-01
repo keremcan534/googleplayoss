@@ -62,13 +62,12 @@ test('yüksek talep + düşük zorluk → güçlü karar ve olumlu sinyaller', (
   assert.equal(d.trend.dir, 'new', 'tek kayıtla trend uydurulmaz');
 });
 
-test('düşük talep → asla GOLD (BUILD ile sınırlanır), çok düşük talep → en fazla WATCH', () => {
-  const low = getOpportunityVerdict(rec({ demand: 40, difficulty: 5, opportunity: 72 }));
+test('düşük talep: ayrı bir sınır yok (fırsat formülü zaten tutuyor), uyarı ve gerekçe kalır', () => {
+  // doğrulama: eski 25/45 talep sınırları gerçek verilerde hiçbir kararı değiştirmiyordu
+  const low = getOpportunityVerdict(rec({ demand: 40, difficulty: 5, opportunity: 61 }));
   assert.equal(low.verdict, 'BUILD');
-  assert.ok(low.capped.length === 1);
+  assert.deepEqual(low.capped, []);
   assert.ok(low.negatives.some((s) => s.startsWith('Talep düşük')));
-  const vlow = getOpportunityVerdict(rec({ demand: 20, difficulty: 5, opportunity: 72 }));
-  assert.equal(vlow.verdict, 'WATCH');
   assert.equal(buildReason(rec({ demand: 20, difficulty: 5, opportunity: 50 })), 'Zayıf rekabete rağmen talep düşük.');
 });
 
@@ -93,18 +92,19 @@ test('talep yok → SKIP, bekleyen → PENDING, eksik rakip verisi → en fazla 
   assert.ok(partial.negatives.some((s) => s.includes('eksik')));
 });
 
-test('trend: yetersiz geçmişte "new", 7+ gün aralıkla yükseliş/düşüş/sabit', () => {
+test('trend: en az 3 ölçüm ve 21 gün yoksa "new"; varsa 7+ gün aralıkla yükseliş/düşüş/sabit', () => {
   assert.equal(getTrend({ hist: [] }).dir, 'new');
   assert.equal(getTrend({ hist: [['2026-09-01', 50, 50, 50]] }).dir, 'new');
-  assert.equal(getTrend({ hist: [['2026-09-01', 50, 50, 50], ['2026-09-01', 50, 50, 60]] }).dir, 'new', 'aynı gün iki kayıt trend değildir');
-  const up = getTrend({ hist: [['2026-09-01', 50, 50, 50], ['2026-09-05', 50, 50, 52], ['2026-09-10', 50, 50, 61]] });
+  assert.equal(getTrend({ hist: [['2026-09-01', 50, 50, 50], ['2026-09-10', 50, 50, 61]] }).dir, 'new', 'iki ölçüm trend değildir');
+  assert.equal(getTrend({ hist: [['2026-09-01', 50, 50, 50], ['2026-09-05', 50, 50, 52], ['2026-09-10', 50, 50, 61]] }).dir, 'new', '21 günden kısa');
+  const up = getTrend({ hist: [['2026-09-01', 50, 50, 50], ['2026-09-12', 50, 50, 52], ['2026-09-25', 50, 50, 61]] });
   assert.equal(up.dir, 'rising');
-  assert.equal(up.delta, 11);
-  const down = getTrend({ hist: [['2026-09-01', 50, 50, 70], ['2026-09-09', 50, 50, 60]] });
+  assert.equal(up.delta, 9);
+  const down = getTrend({ hist: [['2026-09-01', 50, 50, 70], ['2026-09-10', 50, 50, 66], ['2026-09-24', 50, 50, 60]] });
   assert.equal(down.dir, 'falling');
-  const flat = getTrend({ hist: [['2026-09-01', 50, 50, 60], ['2026-09-04', 50, 50, 62]] });
+  const flat = getTrend({ hist: [['2026-09-01', 50, 50, 60], ['2026-09-12', 50, 50, 61], ['2026-09-25', 50, 50, 62]] });
   assert.equal(flat.dir, 'stable');
-  const s = getSignals(rec({ hist: up ? [['2026-09-01', 50, 50, 50], ['2026-09-10', 50, 50, 61]] : [] }), up);
+  const s = getSignals(rec({ hist: [] }), up);
   assert.ok(s.positives.some((t) => t.includes('yükseliyor')));
 });
 
@@ -134,9 +134,9 @@ test('niş kararı: en iyi 5 ortalaması + talep koruması, faydalı kelime say�
   assert.equal(nv.counts.GOLD, 2);
   assert.equal(nv.best.k, 'a');
   assert.equal(nv.trend.dir, 'new');
-  // yüksek fırsat ama düşük talep → GOLD yerine BUILD
-  const lowDemand = [mk('a', 80, 30, 'GOLD'), mk('b', 78, 35, 'GOLD'), mk('c', 75, 40, 'GOLD')];
-  assert.equal(getNicheVerdict({ name: 'y' }, lowDemand).verdict, 'BUILD');
+  // niş, en iyi üyesinin korumalı kararından iyi olamaz (üyeler duvar/gölet nedeniyle sınırlanmışsa)
+  const capped = [mk('a', 80, 80, 'WATCH'), mk('b', 78, 75, 'WEAK'), mk('c', 75, 70, 'WATCH')];
+  assert.equal(getNicheVerdict({ name: 'y' }, capped).verdict, 'WATCH');
   assert.equal(getNicheVerdict({ name: 'z' }, []).topOpportunity, null);
 });
 
@@ -183,18 +183,20 @@ test('ince pazar: orta sıra 5K altındaysa en fazla WATCH', () => {
 });
 
 test('sağlıklı gölet + kolay giriş: GOLD korunur ve olumlu sinyaller gelir', () => {
-  const d = getOpportunityVerdict(reach({ entry: 2_000, midpack: 250_000, newcomers: 4 }));
+  const d = getOpportunityVerdict(reach({ entry: 2_000, entry2: 3_500, midpack: 250_000, newcomers: 4 }));
   assert.equal(d.verdict, 'GOLD');
   assert.deepEqual(d.capped, []);
-  assert.ok(d.positives.some((s) => s.includes('girmek kolay')));
+  assert.ok(d.positives.some((s) => s.startsWith('Girmek kolay')));
+  // tek bir minik uygulama girişi kolaylaştırmaz: ikinci en zayıf büyükse "open" değil
+  assert.notEqual(getOpportunityVerdict(reach({ entry: 293, entry2: 435_852, midpack: 250_000 })).reach.wall, 'open');
   assert.ok(d.positives.some((s) => s.includes('gerçek trafik')));
   assert.ok(d.positives.some((s) => s.includes('yeniye açık')));
 });
 
-test('donmuş pazar ve tek uygulamanın pazarı uyarı verir (karar sınırlamaz)', () => {
+test('donmuş pazar uyarı verir; lider payı olumsuz sinyal değildir (karar sınırlamaz)', () => {
   const d = getOpportunityVerdict(reach({ newcomers: 0, dated: 10, medianAgeYears: 9, leaderShare: 0.85 }));
   assert.ok(d.negatives.some((s) => s.startsWith('Pazar donmuş')));
-  assert.ok(d.negatives.some((s) => s.startsWith('Tek uygulamanın pazarı')));
+  assert.ok(!d.negatives.some((s) => s.startsWith('Tek uygulamanın pazarı')));
   assert.equal(d.verdict, 'GOLD', 'bu ikisi tek başına kararı düşürmez');
 });
 

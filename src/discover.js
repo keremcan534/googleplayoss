@@ -20,16 +20,26 @@ export function isValidKeyword(raw, lang = 'en') {
 export function candidatesFromTitles(titles, opts = {}) {
   const { minFreq = 2, maxN = 3, lang = 'en' } = opts;
   const L = langOf(lang);
+  const EN = langOf('en');
+  // İngilizce olmayan pazarlarda başlıkların bir kısmı İngilizcedir: iki dilin bağlaç/dolgu
+  // listeleri birlikte uygulanır ("and restore", "alarm clock for" gibi adaylar üretilmesin).
+  const foreign = L.code !== 'en';
+  const edge = (w) => L.edgeStopwords.has(w) || (foreign && EN.edgeStopwords.has(w));
+  const stop = (w) => L.stopwords.has(w) || (foreign && EN.stopwords.has(w));
   const freq = new Map();
   for (const title of titles || []) {
     const parts = String(title || '').split(/[-–—:|,()[\]!.•·/&+]+/);
     const seenInTitle = new Set();
     for (const part of parts) {
+      const ascii = /^[\x00-\x7F]*$/.test(part);
+      if (foreign && ascii && tokens(part, 'en').some((w) => EN.edgeStopwords.has(w))) continue; // İngilizce başlık parçası
       const t = tokens(part, L.code);
       for (const g of ngrams(t, 1, maxN)) {
-        if (g.length === 1 && (g[0].length < 4 || L.stopwords.has(g[0]) || /^\d+$/.test(g[0]))) continue;
-        if (L.edgeStopwords.has(g[0]) || L.edgeStopwords.has(g[g.length - 1])) continue;
-        if (g.every((w) => L.stopwords.has(w))) continue;
+        // ASCII parçadaki "I" harfi Türkçe kuralla "ı" olur ("GIF" → "gıf"): belirsiz, aday yapılmaz
+        if (foreign && L.code === 'tr' && ascii && g.some((w) => w.includes('ı'))) continue;
+        if (g.length === 1 && (g[0].length < 4 || stop(g[0]) || /^\d+$/.test(g[0]))) continue;
+        if (edge(g[0]) || edge(g[g.length - 1])) continue;
+        if (g.every((w) => stop(w))) continue;
         if (g.some((w) => w.length === 1 && !/\d/.test(w))) continue;
         const key = g.join(' ');
         if (seenInTitle.has(key)) continue;

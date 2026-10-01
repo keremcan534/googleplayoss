@@ -6,6 +6,8 @@
  * Eşikler ve kurallar tek yerde: THRESHOLDS, GUARDS, LEVELS.
  */
 
+import { detectFlags } from './flags.js';
+
 const clamp = (x, lo, hi) => Math.min(hi, Math.max(lo, x));
 
 export const VERDICT_ORDER = { GOLD: 0, BUILD: 1, WATCH: 2, WEAK: 3, SKIP: 4, PENDING: 5 };
@@ -15,13 +17,15 @@ export const THRESHOLDS = { GOLD: 70, BUILD: 60, WATCH: 45, WEAK: 30 };
 
 /** Koruma kuralları (guardrail). */
 export const GUARDS = {
-  veryLowDemand: 25,      // talep bunun altındaysa en fazla WATCH
-  lowDemand: 45,          // talep bunun altındaysa en fazla BUILD (asla GOLD)
+  // Not: eski "düşük talep" sınırları (25/45) kaldırıldı — hiçbir kararı değiştirmiyordu,
+  // çünkü fırsat formülündeki √talep terimi düşük talepte puanı zaten eşiklerin altında tutuyor.
   extremeDifficulty: 80,  // rekabet bunun üstündeyse en fazla WATCH…
   demandOverride: 85,     // …talep bunun üstündeyse en fazla BUILD
   minCompetitors: 5,      // rakip verisi bundan azsa en fazla WATCH
   risingDelta: 5,         // trend: fırsat puanı değişimi eşiği
   trendMinDays: 2,        // trend için gereken en az gün aralığı
+  trendMinPoints: 3,      // trend için en az ölçüm sayısı
+  trendMinSpan: 21,       // …ve en az bu kadar günlük aralık (talep 21 günde bir yeniden ölçülür)
 
   // --- "0 indirme" koruması: iki ayrı başarısızlık biçimi
   // 1) DUVAR — ilk 10'un en zayıfı bile büyükse yeni uygulama sıralamaya hiç giremez.
@@ -94,10 +98,14 @@ const DAY = 86400000;
 export function getTrend(record) {
   const hist = (record && Array.isArray(record.hist) ? record.hist : []).filter((h) => Array.isArray(h) && Number.isFinite(h[3]));
   const none = { dir: 'new', delta: null, label: 'YENİ', arrow: '•', days: 0 };
-  if (hist.length < 2) return none;
+  // İki ölçümle trend yok: talep 21 gün yeniden kullanıldığı için iki nokta arasındaki her
+  // değişim yalnızca rekabetten geliyordu ama "fırsat yükseliyor" diye gösteriliyordu.
+  if (hist.length < GUARDS.trendMinPoints) return none;
   const last = hist[hist.length - 1];
   const lastT = new Date(last[0]).getTime();
   if (!Number.isFinite(lastT)) return none;
+  const firstT = new Date(hist[0][0]).getTime();
+  if (!Number.isFinite(firstT) || lastT - firstT < GUARDS.trendMinSpan * DAY) return none;
   // 7+ gün önceki en yakın kayıt; yoksa en eski kayıt (en az trendMinDays gün önceyse)
   let base = null;
   for (let i = hist.length - 2; i >= 0; i--) {
@@ -182,7 +190,9 @@ export function reachability(record) {
   };
   if (!n || entry === null || midpack === null) return out;
   out.has = true;
-  out.wall = entry >= GUARDS.wallHard ? 'hard' : entry >= GUARDS.wallSoft ? 'soft' : entry <= GUARDS.easyEntry ? 'open' : 'normal';
+  // duvar sınırları en zayıf uygulamaya göre (doğrulandı); "kolay giriş" ise en zayıf İKİNCİYE göre:
+  // tek bir minik uygulama (ör. alarm clock: 293 yükleme, ikinci en zayıf 435 bin) girişi kolay göstermesin.
+  out.wall = entry >= GUARDS.wallHard ? 'hard' : entry >= GUARDS.wallSoft ? 'soft' : (out.entry2 ?? entry) <= GUARDS.easyEntry ? 'open' : 'normal';
   out.pond = midpack < GUARDS.deadPondHard ? 'dead' : midpack < GUARDS.deadPondSoft ? 'thin' : midpack >= GUARDS.healthyPond ? 'healthy' : 'normal';
   out.frozen = out.newcomers === 0 && (out.dated || 0) >= GUARDS.frozenMarketMin;
   out.dominated = out.leaderShare !== null && out.leaderShare >= GUARDS.leaderDominance;
@@ -242,7 +252,7 @@ export function getSignals(record, trend) {
   if (reach.has) {
     if (reach.wall === 'hard') add(neg, 9, `Giriş duvarı: ilk 10'un en zayıf uygulaması bile ${fmtInstalls(reach.entry)} yükleme — yeni bir uygulama bu sıralamaya giremez`);
     else if (reach.wall === 'soft') add(neg, 7, `Giriş zor: ilk 10'un en zayıfı ${fmtInstalls(reach.entry)} yükleme`);
-    else if (reach.wall === 'open') add(pos, 6, `Sıralamaya girmek kolay: ilk 10'un son sırasındaki uygulama sadece ${fmtInstalls(reach.entry)} yükleme`);
+    else if (reach.wall === 'open') add(pos, 2, `Girmek kolay: ilk 10'un en zayıf iki uygulaması 5 binin altında (${fmtInstalls(reach.entry2 ?? reach.entry)}). Bu sıralar tek başına çok yükleme getirmez.`);
 
     if (reach.pond === 'dead') add(neg, 8, `Ölü gölet: orta sıradaki rakip sadece ${fmtInstalls(reach.midpack)} yükleme — sıralasan bile indirme gelmez`);
     else if (reach.pond === 'thin') add(neg, 6, `Pazar çok ince: orta sıradaki rakip ${fmtInstalls(reach.midpack)} yükleme`);
@@ -250,7 +260,7 @@ export function getSignals(record, trend) {
 
     if (reach.newcomers >= 3) add(pos, 5, `Pazar yeniye açık: son 2 yılda çıkan ${reach.newcomers} uygulama ilk 10'a girmiş`);
     else if (reach.frozen) add(neg, 5, `Pazar donmuş: son 2 yılda çıkan hiçbir uygulama ilk 10'a girememiş (medyan yaş ${reach.medianAgeYears} yıl)`);
-    if (reach.dominated) add(neg, 4, `Tek uygulamanın pazarı: lider ilk 10 yüklemelerinin %${Math.round(reach.leaderShare * 100)}'ini almış`);
+    // lider payı olumsuz sinyal değil: en zayıf ikinci uygulamaya göre ayrıştırınca etkisi kayboluyor (doğrulama)
   }
 
   // para kazanma ve ilgi (CR/CPA yerine Play'in açık verisinden çıkarılabilenler)
@@ -342,7 +352,9 @@ export function getOpportunityVerdict(record, opts = {}) {
   const r = record || {};
   const trend = getTrend(r);
   const isNew = isNewRecord(r, now);
-  const base = { trend, isNew, positives: [], negatives: [], capped: [], scoreLevel: opportunityLevel(r.opportunity), reach: reachability(r) };
+  // yanlış pozitif kapıları (flags.js): veri seti bağlamı varsa tümü, yoksa kelimeye bakanlar
+  const flags = opts.flags || detectFlags(r, opts.ctx ? { ...opts.ctx, now: opts.ctx.now ?? now } : null);
+  const base = { trend, isNew, positives: [], negatives: [], capped: [], scoreLevel: opportunityLevel(r.opportunity), reach: reachability(r), flags };
 
   const analyzed = r.st === 'ok' || r.st === 'partial' || r.st === 'no-demand';
   if (!analyzed) {
@@ -363,8 +375,6 @@ export function getOpportunityVerdict(record, opts = {}) {
     const next = capVerdict(verdict, to);
     if (next !== verdict) { verdict = next; capped.push(why); }
   };
-  if (demand < GUARDS.veryLowDemand) cap('WATCH', 'Talep çok düşük olduğu için karar sınırlandı');
-  else if (demand < GUARDS.lowDemand) cap('BUILD', 'Talep düşük olduğu için GOLD verilmedi');
   if (r.difficulty >= GUARDS.extremeDifficulty) cap(demand >= GUARDS.demandOverride ? 'BUILD' : 'WATCH', 'Rekabet aşırı olduğu için karar sınırlandı');
   const n = (r.comp && r.comp.n) || 0;
   if (r.st === 'partial' || n < GUARDS.minCompetitors) cap('WATCH', 'Rakip verisi eksik olduğu için karar sınırlandı');
@@ -381,7 +391,18 @@ export function getOpportunityVerdict(record, opts = {}) {
     }
   }
 
-  return { ...base, verdict, label: VERDICT_META[verdict].title, reason: buildReason(r, trend), positives, negatives, capped, reach };
+  // yanlış pozitif kapıları en son uygulanır: marka/navigasyonel/yapay kelime puanı ne olursa olsun
+  let reason = buildReason(r, trend);
+  const excluded = flags.find((f) => f.level === 'exclude');
+  if (excluded) {
+    if (verdict !== 'SKIP') capped.push(`${excluded.label}: ${excluded.reason}`);
+    verdict = 'SKIP';
+    reason = excluded.reason;
+  } else {
+    for (const f of flags) if (f.level === 'cap' && f.cap) cap(f.cap, `${f.label}: ${f.reason}`);
+  }
+  for (const f of flags) if (f.level === 'flag') negatives.push(`${f.label}: ${f.reason}`);
+  return { ...base, verdict, label: VERDICT_META[verdict].title, reason, positives, negatives, capped, reach, excluded: !!excluded };
 }
 
 /** Rakip özeti (ilk 10). */
@@ -424,12 +445,12 @@ export function getNicheVerdict(niche, members) {
   const topDemand = mean(top.map((m) => m.demand));
   const topDiff = mean(top.map((m) => m.difficulty).filter(Number.isFinite));
   let verdict = verdictFromScore(topOpp);
-  if (topOpp !== null) {
-    if (topDemand < GUARDS.veryLowDemand) verdict = capVerdict(verdict, 'WATCH');
-    else if (topDemand < GUARDS.lowDemand) verdict = capVerdict(verdict, 'BUILD');
-  }
   const counts = { GOLD: 0, BUILD: 0, WATCH: 0, WEAK: 0, SKIP: 0, PENDING: 0 };
   for (const m of members || []) counts[(m.decision && m.decision.verdict) || 'PENDING']++;
+  // Niş, en iyi üyesinden daha iyi olamaz: üyelerin korumalı kararlarıyla sınırlanır
+  // (eskiden ham fırsat ortalamasıyla hiçbir üyesi BUILD olmayan nişler BUILD görünüyordu).
+  const bestMember = ['GOLD', 'BUILD', 'WATCH', 'WEAK', 'SKIP'].find((v) => counts[v] > 0);
+  if (bestMember && topOpp !== null) verdict = capVerdict(verdict, bestMember);
   const useful = counts.GOLD + counts.BUILD + counts.WATCH;
   // trend: yeterli geçmişi olan üyelerin ortalama değişimi
   const deltas = usable.map((m) => m.decision && m.decision.trend).filter((t) => t && t.dir !== 'new').map((t) => t.delta);

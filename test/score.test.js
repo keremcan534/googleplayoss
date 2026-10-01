@@ -49,3 +49,25 @@ test('verdict etiketleri', () => {
   assert.equal(verdict(null, 0), 'talep-yok');
   assert.equal(verdict(null, 40), 'eksik');
 });
+
+test('başlık eşleşmesi: bağlaçlar ve "games" zorunlu değil, Türkçe başlıkta İngilizce kelimeler', async () => {
+  const { titleMatches, coreTokens } = await import('../src/score.js');
+  assert.ok(titleMatches('puzzle games for adults', 'Jigsaw Puzzle - Adult Brain Game'));
+  assert.ok(titleMatches('truck driver games', 'Truck Driving Simulator'), 'driver ≈ driving');
+  assert.ok(!titleMatches('truck driver', 'Bus Driver'));
+  assert.deepEqual(coreTokens('free fire guide'), ['free', 'fire', 'guid'].map((t, i) => (i === 2 ? coreTokens('guide')[0] : t)));
+  assert.ok(titleMatches('gif yapıcı', 'GIF Maker - GIF Yapıcı', 'tr'), 'GIF Türkçe kuralla gıf olmamalı');
+  assert.ok(titleMatches('tansiyon takibi', 'Tansiyon Takip Günlüğü', 'tr'), 'takibi ≈ takip');
+  assert.ok(titleMatches('esmaül hüsna ve zikirmatik', 'Esmaül Hüsna Zikirmatik', 'tr'));
+  assert.ok(!titleMatches('araba oyunu', 'Arap Kahvesi', 'tr'));
+});
+
+test('pazar puanı doymuyor; fırsat zayıf uygulama bonusu vermiyor', async () => {
+  const { scoreCompetition, opportunityScore } = await import('../src/score.js');
+  const mk = (real) => ({ id: String(real), title: 'x', real, ratings: 10, score: 4, updated: '2026-01-01', released: '2020-01-01' });
+  const big = scoreCompetition('x', Array.from({ length: 10 }, () => mk(200_000_000)), { now: Date.parse('2026-10-01') });
+  const mid = scoreCompetition('x', Array.from({ length: 10 }, () => mk(5_000_000)), { now: Date.parse('2026-10-01') });
+  assert.ok(big.market > mid.market && big.market < 100, `${big.market} vs ${mid.market}`);
+  assert.equal(opportunityScore(50, 50, { weak: 10 }), opportunityScore(50, 50, {}), 'zayıf uygulama bonusu yok');
+  assert.ok(opportunityScore(50, 50, { lowRated: 5 }) > opportunityScore(50, 50, {}));
+});

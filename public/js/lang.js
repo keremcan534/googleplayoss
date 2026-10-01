@@ -38,11 +38,26 @@ export function tokensFor(s, lang = 'en') {
 
 /* ---------------- kökleme ---------------- */
 
-/** İngilizce kaba çoğul kökleme: games → game, stories → story. */
+/** Çoğul gibi görünen ama tekil olan kelimeler: kesilmez. */
+const EN_KEEP = new Set(['news', 'series', 'species', 'gas', 'bus', 'plus', 'yes', 'this', 'his', 'its', 'ios', 'tennis',
+  'analysis', 'basis', 'canvas', 'atlas', 'bonus', 'virus', 'status', 'campus', 'focus', 'lens', 'chaos', 'kudos', 'mathematics',
+  'physics', 'aerobics', 'gymnastics', 'pilates', 'abs', 'sms', 'gps', 'dns', 'vpn', 'tips']);
+
+/**
+ * İngilizce hafif kökleme. Amaç dilbilim değil, tutarlı eşleşme:
+ *   games → game, stories/story → stori, zombies/zombie → zombi, buses/bus → bus, boxes → box.
+ * Eski sürüm "zombies"i "zomby"ye, "zombie"yi "zombie"ye indiriyordu (eşleşmiyordu).
+ * Anahtar kelime, başlık ve dolgu kümeleri aynı fonksiyondan geçtiği için kök biçimi önemsizdir.
+ */
 export function stemEn(t) {
-  if (t.length > 4 && t.endsWith('ies')) return `${t.slice(0, -3)}y`;
-  if (t.length > 3 && t.endsWith('s') && !t.endsWith('ss')) return t.slice(0, -1);
-  return t;
+  if (t.length <= 3 || EN_KEEP.has(t)) return t;
+  let w = t;
+  if (w.length > 4 && w.endsWith('ies')) w = `${w.slice(0, -3)}i`;
+  else if (w.length > 4 && /(s|x|z|ch|sh)es$/.test(w)) w = w.slice(0, -2);
+  else if (w.endsWith('s') && !/(ss|us|is)$/.test(w)) w = w.slice(0, -1);
+  if (w.length > 3 && w.endsWith('ie')) w = `${w.slice(0, -2)}i`;
+  else if (w.length > 3 && /[^aeiou]y$/.test(w)) w = `${w.slice(0, -1)}i`;
+  return w;
 }
 
 // Türkçe ekler, uzundan kısaya. Amaç dilbilimsel doğruluk değil, tutarlı eşleşme:
@@ -72,7 +87,11 @@ const TR_VOWEL_DROP = {
   şükür: 'şükr', ömür: 'ömr', emir: 'emr', sır: 'sırr', metin: 'metn'
 };
 
-/** Türkçe hafif kökleme: en fazla iki ek atar, kök en az 3 harf kalır. */
+/**
+ * Türkçe hafif kökleme: en fazla iki ek atar, kök en az 3 harf kalır.
+ * Ünsüz yumuşaması (takip → takibi) burada çözülmez: "araba" ile "arap"ı birleştirirdi.
+ * Başlık eşleşmesi bunu ortak ön ek kuralıyla yakalar (src/score.js titleMatches).
+ */
 export function stemTr(t) {
   let w = TR_VOWEL_DROP[t] || t;
   for (let pass = 0; pass < 2; pass++) {
@@ -121,6 +140,7 @@ const FILLER_EN = [
   'best', 'top', 'new', 'pro', 'google', 'play', 'store', 'mobile', 'phone', 'version'
 ];
 const FILLER_TR = [
+  've', 'ile', 'türkçe',
   'ücretsiz', 'bedava', 'uygulama', 'uygulamalar', 'uygulaması', 'indir', 'indirme',
   'android', 'apk', 'en', 'iyi', 'yeni', 'pro', 'google', 'play', 'mobil', 'telefon', 'sürüm', 'program'
 ];

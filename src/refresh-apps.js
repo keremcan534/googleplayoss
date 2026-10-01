@@ -14,7 +14,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createStore } from './store.js';
-import { stringifyLines } from './util.js';
+import { stringifyLines, todayISO } from './util.js';
+import { appendHistory } from './history.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const readJson = (p, fb = null) => { try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return fb; } };
@@ -38,11 +39,13 @@ async function refresh(marketId, opts = {}) {
   const store = createStore({ country, lang, throttleMs, concurrency, budget: { app: ids.length + 10 }, log: (m) => console.log(m) });
   let fixed = 0;
   let done = 0;
+  const fresh = {};
   for (const id of ids) {
     try {
       const a = await store.app(id);
       if (a && !a.missing) {
         apps[id] = a;
+        if (Number.isFinite(a.real)) fresh[id] = a.real;
         if (a[field]) fixed++;
       }
     } catch (err) {
@@ -55,6 +58,7 @@ async function refresh(marketId, opts = {}) {
     }
   }
   writeJson(appsPath, apps);
+  appendHistory(path.join(ROOT, 'data', marketId), { date: todayISO(), serp: {}, apps: fresh });
   console.log(`[${marketId}] bitti: ${fixed}/${ids.length} kayıtta ${field} dolduruldu`);
   return { fixed, tried: ids.length };
 }

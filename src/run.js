@@ -9,6 +9,8 @@ import { analyzeKeyword } from './analyze.js';
 import { candidatesFromTitles, isValidKeyword } from './discover.js';
 import { buildNiches } from './niches.js';
 import { normalize, stringifyLines, todayISO, DAY_MS } from './util.js';
+import { decorate } from './publish.js';
+import { appendHistory } from './history.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CONFIG_PATH = path.join(ROOT, 'config', 'seeds.json');
@@ -105,6 +107,9 @@ async function runMarket(cfg, market, args) {
     const c = suggestCache[prefix];
     return !!(c && now - c.t < suggestTtl);
   }
+  // ileriye dönük kayıt: bu çalıştırmada tazelenen yüklemeler ve analiz edilen sonuç sayfaları
+  const freshInstalls = {};
+  const runSerps = {};
   async function getApp(appId) {
     const c = apps[appId];
     if (c && now - c.fetched < appTtl) return c.missing ? null : c;
@@ -112,6 +117,7 @@ async function runMarket(cfg, market, args) {
     try {
       const a = await store.app(appId);
       apps[appId] = a;
+      if (a && !a.missing && Number.isFinite(a.real)) freshInstalls[appId] = a.real;
       return a.missing ? null : a;
     } catch (err) {
       if (err && err.budget) throw err;
@@ -274,6 +280,7 @@ async function runMarket(cfg, market, args) {
       keywords: records,
       apps: Object.fromEntries(Object.keys(usedApps).sort().map((k) => [k, usedApps[k]]))
     };
+    decorate(id, out, PUBLIC_DATA, now);
     writeJson(outPath, out);
 
     // önbellek budaması
@@ -331,8 +338,11 @@ async function runMarket(cfg, market, args) {
         r.demand = res.demand;
         r.pop = res.pop;
         r.knownPrefix = res.pop.minPrefix;
-        if (!res.skippedDemand) r.demandAt = nowIso;
+        // bütçe ikili aramanın ortasında bittiyse minPrefix bir üst sınırdır: tarih yazılmaz,
+        // bir sonraki çalıştırmada yeniden ölçülür (aksi hâlde eksik ölçüm 21 gün donuyordu)
+        if (!res.skippedDemand && !res.demandPartial) r.demandAt = nowIso;
         Object.assign(r, { difficulty: res.difficulty, market: res.market, comp: res.comp, opportunity: res.opportunity, verdict: res.verdict, top: res.top });
+        if (Array.isArray(res.top) && res.top.length) runSerps[r.k] = res.top.slice(0, 10);
         r.hist = (r.hist || []).filter((h) => h[0] !== today);
         r.hist.push([today, r.demand, r.difficulty, r.opportunity]);
         if (r.hist.length > 30) r.hist = r.hist.slice(-30);
@@ -358,6 +368,8 @@ async function runMarket(cfg, market, args) {
   }
 
   const stats = writeOutputs();
+  const hist = appendHistory(marketDir, { date: today, serp: runSerps, apps: freshInstalls });
+  if (hist) log(`[${id}] geçmiş kaydı: ${Object.keys(runSerps).length} sonuç sayfası, ${Object.keys(freshInstalls).length} yükleme → ${path.relative(ROOT, hist)}`);
   log(`[${id}] bitti: ${analyzed} kelime analiz edildi | toplam ${stats.keywords}, talepli ${stats.withDemand}, bekleyen ${stats.pending} | istekler ${JSON.stringify(store.state.used)} | hata ${store.state.errors}`);
   return stats;
 }

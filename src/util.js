@@ -132,7 +132,16 @@ const MONTH_WORDS = {
 /** Yerelleştirilmiş tarih metnini ISO güne çevirir. Çözülemezse null. */
 export function parseLocalizedDate(text) {
   const s = String(text).trim();
-  const native = new Date(s);
+  if (/^\d{4}-\d{2}-\d{2}$/.test(s)) return s;
+  // "Nov 15, 2012" / "March 1, 2020": bileşenlerden UTC olarak kur. new Date(s) yerel gece
+  // yarısına çevirir; UTC'nin doğusunda (ör. Europe/Istanbul) gün bir geri kayıyordu.
+  const en = s.match(/^([\p{L}]+)\.?\s+(\d{1,2}),?\s+(\d{4})$/u);
+  if (en) {
+    const month = MONTH_WORDS[en[1].toLowerCase()] || MONTH_WORDS[en[1].toLowerCase().slice(0, 3)];
+    if (month) return `${en[3]}-${String(month).padStart(2, '0')}-${String(Number(en[2])).padStart(2, '0')}`;
+  }
+  // saat dilimi belirtilmemiş metinleri UTC say
+  const native = new Date(/[zZ]$|[+-]\d\d:?\d\d$|T\d/.test(s) ? s : `${s} UTC`);
   if (!Number.isNaN(native.getTime())) return native.toISOString().slice(0, 10);
   // "15 Kas 2012" / "15 Kasım 2012" / "15 Kas, 2012"
   const m = s.match(/^(\d{1,2})\s+([\p{L}]+),?\s+(\d{4})$/u);

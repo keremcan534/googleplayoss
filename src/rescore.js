@@ -19,8 +19,9 @@ import { fileURLToPath } from 'node:url';
 import { scoreCompetition, opportunityScore, verdict } from './score.js';
 import { buildNiches } from './niches.js';
 import { stringifyLines, todayISO } from './util.js';
+import { decorate } from './publish.js';
 
-export const SCORE_VERSION = 2;
+export const SCORE_VERSION = 3;
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PUBLIC_DATA = path.join(ROOT, 'public', 'data');
@@ -93,6 +94,7 @@ export function rescoreMarket(marketId, opts = {}) {
       if (row) { row.label = known.label; if (!opts.dry) writeJson(indexPath, index); }
     }
   }
+  decorate(marketId, data, PUBLIC_DATA, now);
   data.scoreVersion = SCORE_VERSION;
   data.rescoredAt = new Date(now).toISOString();
   data.generatedAt = data.generatedAt || new Date(now).toISOString();

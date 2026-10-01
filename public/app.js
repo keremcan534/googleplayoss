@@ -9,6 +9,8 @@ import {
 } from './js/verdict.js';
 import { langOf, tokensFor } from './js/lang.js';
 import { initProjects, renderProjects, startFromOpportunity } from './js/pack/ui.js';
+import { buildFlagContext, liveFlagContext, strongestFlag } from './js/flags.js';
+import { simulateKeyword, devStats, buildCohorts, ASSUMPTIONS, OUTSIDE_VIEW, CALENDAR, HORIZONS, sig2 } from './js/sim.js';
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -59,15 +61,16 @@ const stemmed = (s, lang = marketLang()) => {
 const SRC_LABEL = { seed: 'Tohum', suggest: 'Öneri', letter: 'Öneri (harf)', variant: 'Varyant', chart: 'Liste', title: 'Başlık', live: 'Canlı' };
 const ST_LABEL = { ok: 'Analiz edildi', partial: 'Eksik veri', pending: 'Bekliyor', error: 'Hata', 'no-demand': 'Talep yok' };
 const TIPS = {
-  opportunity: 'Fırsat: talep ve rekabetin birleşimi. √(talep × (100 − zorluk)); zayıf, düşük puanlı ve bayat rakipler küçük bonus verir.',
-  demand: 'Talep: Google Play otomatik tamamlamadan türetilen göreli arama ilgisi. Gerçek arama hacmi değildir.',
+  opportunity: 'Fırsat (= sıralanma kolaylığı): √(talep × (100 − zorluk)); düşük puanlı ve bayat rakipler küçük bonus verir. Trafik ya da gelir vaadi DEĞİLDİR: doğrulamada bu puanın yüksek olduğu kelimelere giren yeni uygulamalar günde tipik olarak birkaç düzine yükleme aldı.',
+  demand: 'Talep: kelimenin otomatik tamamlamada ne kadar kısa bir ön ekle çıktığı. Gerçek arama hacmi DEĞİLDİR; doğrulamada yeni uygulamaların aldığı yüklemeyle ilişkisi bulunamadı (yalnızca kısa baş terimlerde zayıf bir ilişki var). Kelimeleri kaba sıralamak için kullan.',
+  sim: 'Simülasyon: bu kelimenin ilk 10\'una son 2 yılda girmiş bağımsız uygulamaların günlük yükleme hızından (yoksa benzer pazarlardaki yeni uygulamalardan) başlar; elde tutma ve gelir yayımlanmış kıyaslamalardan gelir. Talep ya da fırsat puanı kullanılmaz.',
   difficulty: 'Rekabet: ilk 10 uygulamanın gücü. Yükleme sayısı, değerlendirme, puan, başlık eşleşmesi ve güncellik.',
-  market: 'Pazar: ilk 10 uygulamanın toplam yüklemesi. Büyük pazar çok talep, küçük pazar keşfedilmemiş alan demek olabilir.',
-  trend: 'Trend: fırsat puanının önceki taramalara göre değişimi. Yeterli geçmiş yoksa YENİ yazar, trend uydurulmaz.',
+  market: 'Pazar: ilk 10 uygulamanın toplam yüklemesi (logaritmik; 1M → 0, 10 milyar → 100). Liderin büyüklüğü yeni girenin alacağını göstermez; onun için simülasyona bak.',
+  trend: 'Trend: fırsat puanının önceki taramalara göre değişimi. En az 3 ölçüm ve 21 günlük geçmiş gerekir (talep 21 günde bir yeniden ölçülür); yoksa YENİ yazar, trend uydurulmaz.',
   reach: 'Erişim: sıralamaya girersem gerçekten indirme gelir mi? İlk 10\'un en zayıf uygulamasının yüklemesi (girmek kolay mı), orta sıradaki rakiplerin yüklemesi (girince ne alırım) ve son 2 yılda ilk 10\'a girebilmiş uygulama sayısından hesaplanır. Trafik tahmini değildir.',
   entry: 'Giriş bariyeri: ilk 10\'daki en zayıf uygulamanın yükleme sayısı. Küçükse yeni bir uygulama sıralamaya girebilir; milyonlarsa giremez.',
   midpack: 'Orta sıra: 3. sıradan sonuncuya kadarki uygulamaların medyan yüklemesi. Lideri saymaz. Ortalarda bir yere yerleşirsen komşularının durumu budur.',
-  leader: 'Lider payı: ilk 10\'un toplam yüklemesinin ne kadarı bir numaradaki uygulamada. Yüksekse pazar tek uygulamanın.',
+  leader: 'Lider payı: ilk 10\'un toplam yüklemesinin ne kadarı bir numaradaki uygulamada. Bilgi amaçlıdır: doğrulamada en zayıf rakiplere göre ayrıştırınca yeni girenlerin başarısını etkilemediği görüldü.',
   money: 'Gelir modeli: ilk 10 uygulamanın kaçında uygulama içi satın alma, reklam ya da ücretli sürüm var. Bir alanda kimse para kazanmıyorsa sen de kazanamazsın. (Gerçek gelir verisi herkese açık değildir.)',
   engagement: 'Kullanıcı ilgisi: 1000 yüklemeye düşen değerlendirme sayısı (ilk 10 medyanı). Yükleyenlerin ne kadarı uygulamayı kullanıp puan verecek kadar benimsemiş. Conversion rate DEĞİLDİR; mağaza sayfası görüntüleri sadece uygulama sahibine açıktır.',
   newcomers: 'Yeni girenler: ilk 10\'daki uygulamalardan kaçı son 2 yılda yayınlanmış. Sıfırsa pazar yeniye kapalı demektir.'
@@ -84,8 +87,14 @@ const state = {
   stars: loadStars(), drawerKey: null, drawerNiche: null, live: false, liveChecked: false, liveResult: null,
   variantMap: new Map(), collapse: true,
   apiBase: (localStorage.getItem('apiBase') || '').trim(),
+  simMoney: loadSimMoney(), simArgs: null,
   nicheCache: null
 };
+
+function loadSimMoney() {
+  try { const v = JSON.parse(localStorage.getItem('simMoney') || 'null'); if (v && typeof v.ads === 'boolean') return v; } catch { /* yoksay */ }
+  return { ads: true, purchases: false };
+}
 
 function loadStars() {
   try { return new Set(JSON.parse(localStorage.getItem('stars') || '[]')); } catch { return new Set(); }
@@ -102,7 +111,7 @@ async function loadJson(path) {
 }
 
 function enrich(record) {
-  const decision = getOpportunityVerdict(record);
+  const decision = getOpportunityVerdict(record, { ctx: state.flagCtx });
   const c = record.comp || {};
   return {
     ...record,
@@ -120,6 +129,16 @@ function enrich(record) {
 }
 
 function rebuild() {
+  // yanlış pozitif kapıları için veri seti bağlamı (sözlük sıklıkları, tohum kayıtları)
+  const ctx = buildFlagContext(state.data || { keywords: [], apps: {} });
+  const memo = new Map();
+  ctx.verdictOf = (k) => {
+    if (!memo.has(k)) { const rec = ctx.byK.get(k); memo.set(k, rec ? getOpportunityVerdict(rec, { ctx: { ...ctx, verdictOf: null } }).verdict : null); }
+    return memo.get(k);
+  };
+  state.flagCtx = ctx;
+  state.simDs = devStats(state.data?.apps);
+  state.cohorts = state.data?.simCohorts || buildCohorts(state.data || {});
   const list = (state.data?.keywords || []).map(enrich);
   state.records = list;
   state.byKey = new Map(list.map((r) => [r.k, r]));
@@ -166,6 +185,8 @@ function tags(r, opts = {}) {
   if (r.decision.isNew) out.push('<span class="tag t-new">yeni</span>');
   if (r.decision.trend.dir === 'rising') out.push('<span class="tag t-rising">yükseliyor</span>');
   if (r.decision.trend.dir === 'falling') out.push('<span class="tag t-falling">düşüyor</span>');
+  const fl = strongestFlag((r.decision.flags || []).filter((f) => f.level !== 'flag'));
+  if (fl) out.push(`<span class="tag t-risk" title="${esc(fl.reason)}">${esc(fl.label.toLocaleLowerCase('tr-TR'))}</span>`);
   if (r.st === 'partial') out.push('<span class="tag">eksik veri</span>');
   if (r.st === 'pending') out.push('<span class="tag">analiz bekliyor</span>');
   return out.join('');
@@ -224,6 +245,77 @@ function playUrl(id, market) {
   return `https://play.google.com/store/apps/details?id=${encodeURIComponent(id)}&hl=${encodeURIComponent(market?.lang || 'en')}&gl=${encodeURIComponent(market?.country || 'us')}`;
 }
 
+/* ============================ simülasyon ============================ */
+const fmtUsd = (x) => (!Number.isFinite(x) || x <= 0 ? '0 $' : x < 1 ? '<1 $' : `${fmtInt(sig2(x))} $`);
+const fmtN = (x) => (!Number.isFinite(x) ? '–' : x < 10 ? String(Math.round(x)) : fmtInt(sig2(x)));
+const fmtV = (v) => (!Number.isFinite(v) ? '–' : v < 10 ? v.toFixed(1).replace('.', ',') : fmtInt(Math.round(v)));
+
+/** "Benzer yeni uygulamalar ne aldı?" — kendi verimizle kurulmuş, varsayımları açık simülasyon. */
+function simSection(r, opts = {}) {
+  state.simArgs = { r, opts };
+  const lang = (opts.market && opts.market.lang) || marketLang();
+  const dm = state.data?.market;
+  const sameMarket = !opts.market || (dm && opts.market.lang === dm.lang && opts.market.country === dm.country);
+  const appsMap = opts.apps ? Object.fromEntries(opts.apps.filter(Boolean).map((a) => [a.id, a])) : (state.data?.apps || {});
+  const sim = simulateKeyword(r, {
+    apps: appsMap, lang, cohorts: sameMarket ? state.cohorts : null, ds: sameMarket ? state.simDs : devStats(appsMap),
+    flags: (r.decision && r.decision.flags) || [], money: state.simMoney
+  });
+  const head = `<h4>Benzer yeni uygulamalar ne aldı? <span class="mini">simülasyon, garanti değil</span> ${info('sim')}</h4>`;
+  const outside = `<p class="mini sim-outside">${esc(OUTSIDE_VIEW.text)} <a href="${OUTSIDE_VIEW.source.url}" target="_blank" rel="noopener">kaynak</a></p>`;
+  if (sim.gate) return `<div class="sec sim" id="simSec">${head}<p class="sim-gate">${esc(sim.gate)}</p>${outside}</div>`;
+  const ev = sim.level === 'own'
+    ? `<b>Kanıt:</b> bu kelimenin ilk 10'unda son 2 yılda girmiş ${sim.n} bağımsız uygulama.`
+    : sim.level === 'cohort'
+      ? `<b>Kanıt:</b> bu kelimede yeterli yeni uygulama yok; benzer pazarlardaki ${fmtInt(sim.n)} bağımsız yeni uygulama (${sim.type === 'game' ? 'oyun' : 'uygulama'}, eski rakiplerin orta sırası ${esc(sim.bucket)} yükleme).`
+      : '';
+  const nc = sim.entryNote;
+  const entryWarn = (sim.wall || (Number.isFinite(nc.newcomers) && nc.newcomers === 0))
+    ? `<p class="sim-warn">Bu ilk 10'a son 2 yılda giren uygulama: ${nc.newcomers ?? '–'}/${nc.dated ?? '–'}. Aşağıdaki rakamlar yalnızca <b>girebilirsen</b> geçerli; girme olasılığı düşük.</p>` : '';
+  const list = sim.newcomers.slice().sort((a, b) => a.rank - b.rank).slice(0, 8);
+  const listHtml = list.length ? `<details class="raw"${sim.level === 'own' ? ' open' : ''}><summary>Bu kelimedeki yeni uygulamalar (${list.length})</summary>
+    <table class="apps"><thead><tr><th>#</th><th>Uygulama</th><th class="num">Yaş</th><th class="num">Yükleme</th><th class="num">Günde</th></tr></thead><tbody>
+    ${list.map((x) => `<tr><td class="mini">${x.rank}</td><td class="t">${esc(x.title)}<div class="mini">${esc(x.dev || '')}</div></td><td class="num">${Math.round(x.ageDays / 30)} ay</td><td class="num">${fmtShort(x.real)}</td><td class="num">${fmtV(x.v)}</td></tr>`).join('')}
+    </tbody></table></details>` : '';
+  if (!sim.scenarios) {
+    return `<div class="sec sim" id="simSec">${head}<p class="sim-gate">${esc(sim.none)} Sayı üretmiyoruz.</p>${listHtml}${outside}</div>`;
+  }
+  const money = state.simMoney;
+  const toggles = `<div class="sim-money" role="group" aria-label="Gelir modeli">
+    <label><input type="checkbox" data-sim-money="ads" ${money.ads ? 'checked' : ''}> Reklam</label>
+    <label><input type="checkbox" data-sim-money="purchases" ${money.purchases ? 'checked' : ''}> ${sim.type === 'game' ? 'Uygulama içi satın alma' : 'Abonelik (ödeme duvarı)'}</label>
+  </div>`;
+  const rows = HORIZONS.map((h) => `<tr><th scope="row">${h} gün</th>${sim.scenarios.map((s) => {
+    const x = s.byHorizon[h];
+    const rev = money.ads || money.purchases ? `<span class="sim-rev">${fmtUsd(x.total)}</span>` : '';
+    return `<td><b>${fmtN(x.installs)}</b> yükleme<br><span class="mini">${fmtN(x.dau)} aktif kullanıcı</span>${rev ? `<br>${rev}` : ''}</td>`;
+  }).join('')}</tr>`).join('');
+  const base = sim.scenarios[1];
+  const payout = money.ads ? `<p class="mini">AdMob ödemesi 100 $ bakiyede yapılır: ${sim.scenarios.map((s) => `${s.label.toLowerCase()} senaryoda ${s.payoutDay ? `${Math.ceil(s.payoutDay / 30)}. ayda` : '12 ayda eşiğe ulaşılmıyor'}`).join(' · ')}.</p>` : '';
+  const split = (money.ads && money.purchases) ? `<p class="mini">365 günde temel senaryo: reklam ${fmtUsd(base.byHorizon[365].ads)} + ${sim.type === 'game' ? 'satın alma' : 'abonelik'} ${fmtUsd(base.byHorizon[365].purchases)} (Play'in %15'i${sim.market === 'tr' ? ' ve %20 KDV' : ''} düşülmüş).</p>` : '';
+  return `<div class="sec sim" id="simSec">${head}
+    <p class="small">${ev} Günlük hız: <b>${fmtV(sim.p[0])} / ${fmtV(sim.p[1])} / ${fmtV(sim.p[2])}</b> yükleme (çeyrek / medyan / üst çeyrek).</p>
+    ${entryWarn}${toggles}
+    <div class="sim-table-wrap"><table class="sim-table"><thead><tr><th></th>${sim.scenarios.map((s) => `<th>${esc(s.label)}<span class="mini">${s.lag} gün gecikme</span></th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div>
+    ${payout}${split}
+    <ul class="sim-notes mini">
+      <li>Yalnızca ilk 10'a girmeyi başaranları görüyoruz; başarısız denemeler görünmez. Bu yüzden rakamlar iyimser yöne kayar.</li>
+      <li>Bunlar bu kelimeden gelen trafik değil, benzer uygulamaların tüm kaynaklardan aldığı yüklemelerdir. Play Console genel kelime aramalarını çoğunlukla "Google Play keşfet" altında gösterir.</li>
+      <li>${esc(CALENDAR.text)}</li>
+    </ul>
+    ${listHtml}
+    ${outside}
+    <details class="raw"><summary>Varsayımlar ve kaynaklar</summary><ul class="sim-assump">${ASSUMPTIONS.map((a) => `<li><b>${esc(a.name)}:</b> ${esc(a.value)} <span class="mini">— ${a.source.url ? `<a href="${a.source.url}" target="_blank" rel="noopener">${esc(a.source.title)}</a>` : esc(a.source.title)} (${esc(a.source.status)})</span></li>`).join('')}</ul></details>
+    <p class="mini">Doğrulama: geçmiş veriyle sınırlı; ileriye dönük takip başladı.</p>
+  </div>`;
+}
+
+function rerenderSim() {
+  const el = $('#simSec');
+  if (!el || !state.simArgs) return;
+  el.outerHTML = simSection(state.simArgs.r, state.simArgs.opts);
+}
+
 /* ============================ detay içeriği ============================ */
 /** Çekmece ve canlı analiz aynı detay gövdesini kullanır. */
 function detailBody(r, opts = {}) {
@@ -273,6 +365,7 @@ function detailBody(r, opts = {}) {
       <div><div class="hero-title">${esc(opportunityLevel(r.opportunity).label)} fırsat</div><div class="mini">${esc(d.label)}</div></div>
     </div>
     <p class="hero-reason">${esc(d.reason)}</p>
+    ${(d.flags || []).length ? `<div class="flag-chips">${d.flags.map((f) => `<span class="tag ${f.level === 'flag' ? '' : 't-risk'}" title="${esc(f.reason)}">${esc(f.label)}</span>`).join('')}</div>` : ''}
     ${d.capped && d.capped.length ? `<p class="mini">Karar düzeltmesi: ${d.capped.map(esc).join('; ')}.</p>` : ''}
     <div class="hero-metrics">
       ${metric('Talep', r.demand, demandLevel(r.demand), { tip: 'demand' })}
@@ -283,6 +376,7 @@ function detailBody(r, opts = {}) {
   </div>
 
   ${reachBlock}
+  ${simSection(r, opts)}
   ${variants.length ? `<div class="sec"><h4>Aynı pazara düşen varyantlar</h4>
     <p class="mini">Bu kelimelerin arama sonuçları neredeyse aynı; ayrı fırsat değil, aynı fikrin farklı yazımı.</p>
     <div class="kw-chips">${variants.map((v) => `<button class="kw-chip" data-details="${esc(v.k)}">${esc(v.k)} <span class="o">${v.opportunity ?? '–'}</span></button>`).join('')}</div></div>` : ''}
@@ -908,7 +1002,7 @@ async function runLive(term, marketStr) {
       st: res.status === 'no-demand' ? 'no-demand' : res.partial ? 'partial' : 'ok',
       at: res.analyzedAt, src: 'live', first: null, hist: []
     };
-    rec.decision = getOpportunityVerdict(rec);
+    rec.decision = getOpportunityVerdict(rec, { ctx: liveFlagContext(res.apps || [], hl) });
     rec.dv = rec.decision.verdict;
     state.liveResult = rec;
     const d = rec.decision;
@@ -1104,6 +1198,13 @@ function bind() {
     // kartın boş bir yerine tıklamak detayı açar (düğmeler ve bağlantılar hariç)
     const card = e.target.closest('.opp[data-k]');
     if (card && !e.target.closest('button, a, .info')) openDrawer(card.dataset.k);
+  });
+  document.body.addEventListener('change', (e) => {
+    const m = e.target.closest && e.target.closest('[data-sim-money]');
+    if (!m) return;
+    state.simMoney = { ...state.simMoney, [m.dataset.simMoney]: m.checked };
+    try { localStorage.setItem('simMoney', JSON.stringify(state.simMoney)); } catch { /* yoksay */ }
+    rerenderSim();
   });
   document.body.addEventListener('keydown', (e) => {
     if ((e.key === 'Enter' || e.key === ' ') && e.target.classList?.contains('info')) {

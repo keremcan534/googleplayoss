@@ -11,7 +11,9 @@ test('normalize: küçük harf, noktalama temizliği, tek boşluk', () => {
 test('tokens ve stem', () => {
   assert.deepEqual(tokens('Puzzle Games!'), ['puzzle', 'games']);
   assert.equal(stem('games'), 'game');
-  assert.equal(stem('stories'), 'story');
+  assert.equal(stem('stories'), stem('story'), 'çoğul ve tekil aynı köke iner');
+  assert.equal(stem('zombies'), stem('zombie'));
+  assert.equal(stem('buses'), 'bus');
   assert.equal(stem('chess'), 'chess');
   assert.equal(stem('bus'), 'bus');
 });

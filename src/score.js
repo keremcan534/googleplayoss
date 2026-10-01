@@ -13,12 +13,43 @@ const log10p = (x) => Math.log10(Math.max(0, x || 0) + 1);
  */
 export const TITLE_FILLER = langOf('en').titleFiller;
 
-/** Kelimenin başlık eşleşmesinde kullanılacak özü (dolgu kelimeler ve yıllar atılır). */
+/** "game(s)" / "oyun(lar)" gibi tür kelimeleri: başka öz kelime varsa başlıkta aranmaz. */
+const GENERIC_STEMS = new Set(['game', 'gam', 'oyun', 'app', 'uygulama'].flatMap((w) => [w, langOf('en').stem(w), langOf('tr').stem(w)]));
+
+/**
+ * Kelimenin başlık eşleşmesinde kullanılacak özü: dolgu kelimeler, bağlaçlar ("for", "and",
+ * "ve", "ile"), yıllar ve (başka öz kelime varsa) "game/oyun" atılır.
+ * Eskiden bağlaçlar ve "games" zorunluydu: uzun kuyruk kelimelerde başlık eşleşmesi ~0 çıkıyor,
+ * zorluk düşük görünüyordu (aynı ilk 10'a sahip uzun varyant %83 oranında daha "kolay" çıkıyordu).
+ */
 export function coreTokens(keyword, lang = 'en') {
   const L = langOf(lang);
-  const all = tokens(keyword, L.code).map(L.stem);
-  const core = all.filter((t) => !L.titleFiller.has(t) && !/^(19|20)\d\d$/.test(t));
+  const raw = tokens(keyword, L.code);
+  const keepFree = raw.join(' ').includes('free fire'); // marka: "free" dolgu sayılmaz
+  const all = raw.map(L.stem);
+  let core = all.filter((t, i) => (keepFree && raw[i] === 'free') || (!L.titleFiller.has(t) && !L.edgeStopwords.has(t) && !L.edgeStopwords.has(raw[i]) && !/^(19|20)\d\d$/.test(t)));
+  const specific = core.filter((t) => !GENERIC_STEMS.has(t));
+  if (specific.length) core = specific;
   return core.length ? core : all;
+}
+
+/** Başlık token kümesi. Türkçe pazarda İngilizce başlıklar da var: "GIF", "WIFI" Türkçe harf kuralıyla "gıf" olurdu. */
+function titleStems(title, L) {
+  const set = new Set(tokens(title, L.code).map(L.stem));
+  if (L.code === 'tr') for (const t of tokens(title, 'en')) set.add(L.stem(t));
+  return set;
+}
+
+/** İki kök aynı kelimenin biçimleri mi? (driver/driving, takip/takib, translate/translator) */
+function sameWord(a, b, lang) {
+  if (a === b) return true;
+  const min = Math.min(a.length, b.length);
+  if (min < 4) return false;
+  let p = 0;
+  while (p < min && a[p] === b[p]) p++;
+  if (p >= Math.max(4, min - 2)) return true;
+  // Türkçe bileşik başlık kelimeleri: "zikirmatik" ⊃ "zikir"
+  return lang === 'tr' && min >= 5 && (a.includes(b) || b.includes(a));
 }
 
 /** Başlık, anahtar kelimenin öz kelimelerini (köklenmiş) içeriyor mu? */
@@ -26,8 +57,8 @@ export function titleMatches(keyword, title, lang = 'en') {
   const L = langOf(lang);
   const kw = coreTokens(keyword, L.code);
   if (!kw.length) return false;
-  const tt = new Set(tokens(title, L.code).map(L.stem));
-  return kw.every((t) => tt.has(t));
+  const tt = titleStems(title, L);
+  return kw.every((t) => tt.has(t) || [...tt].some((x) => sameWord(t, x, L.code)));
 }
 
 /**
@@ -71,7 +102,9 @@ export function scoreCompetition(keyword, apps, opts = {}) {
   const installs = list.map((a) => a.real || 0);
   const sumInstalls = installs.reduce((s, x) => s + x, 0);
   const medianInstalls = median(installs);
-  const market = Math.round(100 * clamp(log10p(sumInstalls) / 9, 0, 1)); // toplam 1 milyar → 100
+  // ilk 10 toplamı 1M → 0, 10 milyar → 100. Eski ölçek (1 milyar → 100) kayıtların üçte birinde
+  // 100'e doyuyor, "pazar büyük" sinyali neredeyse her kelimede yanıyordu.
+  const market = Math.round(100 * clamp((log10p(sumInstalls) - 6) / 4, 0, 1));
   const ads = list.filter((a) => a.ads).length;
   const iap = list.filter((a) => a.iap).length;
   const paid = list.filter((a) => a.free === false || (a.price || 0) > 0).length;
@@ -136,13 +169,18 @@ export function scoreCompetition(keyword, apps, opts = {}) {
   };
 }
 
-/** Talep × (100 - zorluk) → fırsat. Zayıf rakipler küçük bonus verir. */
+/**
+ * Talep × (100 - zorluk) → fırsat (= sıralanma kolaylığı; trafik vaadi değildir).
+ * Düşük puanlı ve bayat rakipler küçük bonus verir. "Zayıf uygulama" bonusu kaldırıldı:
+ * zorlukta zaten sayılıyor ve ilgisiz arama sonuçlarını ödüllendiriyordu (doğrulama: GOLD+BUILD'in
+ * çoğu yalnızca bu bonus sayesinde eşiği geçiyordu, yeni girenlerin başarısıyla ilişkisi yoktu).
+ */
 export function opportunityScore(demand, difficulty, comp = {}) {
   if (!Number.isFinite(demand) || !Number.isFinite(difficulty)) return null;
   const d = clamp(demand / 100, 0, 1);
   const e = clamp(1 - difficulty / 100, 0, 1);
   const base = Math.sqrt(d * e);
-  const bonus = Math.min(0.15, 0.03 * (comp.weak || 0) + 0.02 * (comp.lowRated || 0) + 0.01 * (comp.stale || 0));
+  const bonus = Math.min(0.15, 0.01 * (comp.lowRated || 0) + 0.005 * (comp.stale || 0));
   return Math.round(100 * Math.min(1, base * (1 + bonus)));
 }
 
