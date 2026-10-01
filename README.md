@@ -2,7 +2,7 @@
 
 Google Play'de bir uygulama/oyun yayınladığında **reklam vermeden, mağaza aramasından (organik) yükleme getirebilecek anahtar kelimeleri ve nişleri** bulan, **7/24 kendi kendine çalışan** açık kaynak araç.
 
-Panel tek bir soruya cevap verecek şekilde tasarlandı: **bu kelime için uygulama yapmaya değer mi?** Her kelime bir karara indirgenir — **GOLD / BUILD / WATCH / WEAK / SKIP** — yanında tek cümlelik gerekçesiyle. Ham metrikler silinmedi, sadece arkaya alındı: karar → gerekçe → detay → ham veri.
+Panel tek bir soruya cevap verecek şekilde tasarlandı: **yeni ve küçük bir uygulama bu kelimede ilk 10'a girip yükleme alabilir mi?** Her kelime bir karara indirgenir — **GOLD / BUILD / WATCH / WEAK / SKIP** — yanında gerekçesi, geri testte o sınıfta ne olduğu ve bir yükleme/gelir simülasyonu. Ham metrikler silinmedi, sadece arkaya alındı: karar → gerekçe → detay → ham veri.
 
 - **GitHub Actions** her gün Play Store'u tarar, sonuçları depoya commit eder.
 - **GitHub Pages** veya **Vercel** üzerinde statik bir panel olarak yayınlanır (ikisi de olur, ikisi birden de olur).
@@ -10,7 +10,7 @@ Panel tek bir soruya cevap verecek şekilde tasarlandı: **bu kelime için uygul
 - Ücretli API yok, anahtar yok. Sadece Play Store'un herkese açık uç noktaları (`google-play-scraper`).
 - **Projeler / Yayın Paketi**: oyununu ya da uygulamanı başka bir yerde geliştir, burada içe aktar (elle, GitHub reposu, kısa açıklama, Play'deki uygulama, ZIP) ve Play'e yüklenecek her şeyi (metinler, ikon, tanıtım görseli, ekran görüntüleri, Data Safety, gizlilik politikası, kontrol listesi) tek pakette hazırla. Anahtar kelime keşfi bunun için şart değil.
 
-> ⚠️ Talep puanı gerçek arama hacmi değildir; otomatik tamamlama davranışından türetilmiş bir **tahmindir**. Kelimeleri birbirine göre kıyaslamak için kullan.
+> ⚠️ Talep puanı gerçek arama hacmi değildir ve doğrulamada yeni uygulamaların aldığı yüklemeyle ilişkisi bulunamadı; karara girmez. Karar, geri testle doğrulanmış **girebilirlik × getiri** kuralıdır ve sınıf oranları "benzer kelimelerde başarı örneği var mı" sorusunun cevabıdır, para vaadi değildir.
 
 ---
 
@@ -30,42 +30,39 @@ Panel tek bir soruya cevap verecek şekilde tasarlandı: **bu kelime için uygul
 
 Detay için herhangi bir karta tıkla: masaüstünde yan panel, mobilde alt sayfa açılır ve tüm metrikler, sinyaller ve rakip listesi orada.
 
-### Kararlar
+### Kararlar: Girebilirlik × Getiri
 
-| Karar | Fırsat puanı | Anlamı |
-|---|---|---|
-| ★ **GOLD** | 70-100 | Olağanüstü fırsat, öncelik ver |
-| **BUILD** | 60-69 | Yapmaya değer |
-| **WATCH** | 45-59 | Takipte tut |
-| **WEAK** | 30-44 | Muhtemelen değmez |
-| **SKIP** | 0-29 | Vakit harcama |
+Karar, Ekim 2026'daki sızıntısız geri testle seçildi: her kelimenin **bir yıl önceki** ilk 10'u yeniden kuruldu ve o yıl içinde çıkan küçük geliştirici uygulamalarının **bugün** aldığı yüklemeyle karşılaştırıldı. Eski "talep × rekabet" formülü bu testte sıralanmıyordu; talep ve fırsat puanı artık karara girmez. Ayrıntılı rapor: [`docs/DOGRULAMA.md`](docs/DOGRULAMA.md).
 
-Karar **sunum katmanıdır**; puan formüllerini değiştirmez. Ham skorun üstünde koruma kuralları çalışır:
+| Karar | Ad | Girebilirlik | Geri testte "küçük bir yeni uygulama günde 50+ yükleme aldı" (ABD / TR) |
+|---|---|---|---|
+| ★ **GOLD** | Güçlü aday | 60+ | %69 / %73 (örneklem küçük) |
+| **BUILD** | İyi aday | 40-59 | %53 / %53 |
+| **WATCH** | Ortalama / riskli | 30-39 (ya da sınırlanmış) | %40 / %37 |
+| **WEAK** | Zayıf | 15-29 | %30 / %25 |
+| **SKIP** | Duvar | <15 | %20 / %16 |
 
-- Talep 45'in altında → GOLD verilmez. Talep 25'in altında → karar en fazla WATCH.
-- Rekabet 80'in üstünde → karar WATCH'a çekilir; talep 85'in üstündeyse en fazla BUILD.
-- Rakip verisi 5'ten az (eksik tarama) → karar en fazla WATCH.
-- Trend için yeterli geçmiş yoksa **YENİ** yazar; trend asla uydurulmaz.
+- **Girebilirlik (0-100):** ilk 10'un sıra ağırlıklı olarak ne kadarı son 2 yılda çıkmış ve ne kadarı küçük geliştiricilerin.
+- **Getiri:** yerleşik (1+ yaş) rakiplerin en zayıf ikincisi 3 binin altında → *sıralar ölü*, en fazla WEAK; 100 binin altında → *ince pazar / piyango*, en fazla WATCH. Orta sıra (3-10) getiri düzeyini gösterir.
+- **Sınırlar:** 1-2 kelimelik baş terimler en fazla WATCH; yanlış pozitif kuralları (marka, geliştirici adı, politika riski, yanlış ülke, ölü sıralar…) kararı sınırlar; yapay kelimeler (ı/ğ ad alanı, geçmiş yıl, tekrarlı öbek) ve talepsiz kelimeler **Geç** olarak değerlendirme dışı kalır.
+- **Kararlılık:** tarayıcı her kelimenin bandını kaydeder; puan bant sınırına 3'ten yakınsa ya da ilk 10'dan uygulama eksildiyse dünkü bant korunur.
+- Oranlar **sınıf düzeyindedir** ve yalnızca başaranları görebildiğimiz için tek bir uygulamanın başarı olasılığı değildir. Arayüz bunu her kararın yanında söyler.
 
-### "0 indirme" koruması
+Kural: [`public/js/enterpayoff.js`](public/js/enterpayoff.js) · yanlış pozitif kuralları: [`public/js/flags.js`](public/js/flags.js) · sarmalayıcı: [`public/js/verdict.js`](public/js/verdict.js).
 
-Bir kelime iki ayrı şekilde seni boş bırakır ve araç ikisini ayırır:
+### Simülasyon: "bu kelimeye girersem ne alırım?"
 
-| Başarısızlık | Nasıl anlaşılır | Sonuç |
-|---|---|---|
-| **Giriş duvarı** — sıralamaya hiç giremezsin | İlk 10'un *en zayıf* uygulaması bile 1M+ yükleme | Karar en fazla **WEAK** |
-| Giriş zor | En zayıf rakip 100K+ | Karar en fazla **WATCH** |
-| **Ölü gölet** — girersin ama kimse aramıyor | Orta sıra (3-10) medyanı 1.000'in altında | Karar en fazla **WEAK** |
-| İnce pazar | Orta sıra medyanı 5.000'in altında | Karar en fazla **WATCH** |
-| Erişim getirisi zayıf | Erişim puanı 50'nin altında | GOLD verilmez |
+Her kelimenin detayında 30 / 90 / 180 / 365 günde yükleme, aktif kullanıcı ve gelir; kötümser / temel / iyimser üç senaryo. Yükleme tarafı **kendi verimizden**: bu kelimenin ilk 10'una son 2 yılda girmiş bağımsız uygulamaların günlük hızı (yoksa aynı tür ve aynı "yerleşik orta sıra" hücresindeki yeni uygulamalar). Elde tutma ve gelir varsayımları kaynak kontrolünden geçmiş kıyaslamalardır (GameAnalytics, Adjust, AppsFlyer, Appodeal/Tenjin, RevenueCat, Play ve AdMob yardım sayfaları); hepsi kaynak bağlantısıyla arayüzde listelenir. Reklam, uygulama içi satın alma/abonelik ayrı hesaplanır; Play'in %15'i (ve Türkiye'de %20 KDV) yalnızca satın almadan düşülür; AdMob'un 100 $ ödeme eşiğine kaçıncı ayda ulaşılacağı gösterilir. Kanıt yoksa sayı üretilmez. Kod: [`public/js/sim.js`](public/js/sim.js).
 
-Örnek: `quran` kelimesinde ilk 10'un en zayıfı 998 bin yükleme → yeni bir uygulama giremez, garanti 0 indirme. `tip calculator` kelimesinde ilk 10'un son sırası 43 yükleme → girmek bedava ama orta sıra 11 bin, yani girmek kolay, kazanmak ayrı konu. Araç ikisini farklı söyler.
+### İleriye dönük kayıt
+
+Her tarama `data/<pazar>/history/AAAA-AA.jsonl` dosyasına analiz edilen kelimelerin ilk 10'unu ve tazelenen uygulamaların yükleme sayısını ekler. 60-90 gün sonra kararın ve simülasyonun ileriye dönük isabeti ölçülebilecek.
 
 ### Panelde olmayan şeyler (ve nedeni)
 
-**Conversion rate ve CPA yok.** Mağaza sayfası görüntüleri sadece uygulamanın sahibine, Play Console'da görünür; CPA ise reklam harcaması verisidir. İkisi de Play'in herkese açık sayfalarında yoktur, dolayısıyla kazıyıcıyla üretilemez. Bu araç onların yerine aynı kararı veren ve **gerçekten ölçülebilen** karşılıklarını kullanır: *erişim puanı* (sıralama indirmeye dönüşür mü) ve *gelir modeli* (bu alanda para kazanan var mı). Uydurma tahmin üretilmez.
+**Conversion rate ve CPA yok.** Mağaza sayfası görüntüleri sadece uygulamanın sahibine, Play Console'da görünür; CPA ise reklam harcaması verisidir. İkisi de Play'in herkese açık sayfalarında yoktur, dolayısıyla kazıyıcıyla üretilemez. Bu araç onların yerine **gerçekten ölçülebilen** karşılıklarını kullanır: benzer yeni uygulamaların gerçek yükleme hızları (simülasyon) ve *gelir modeli* (bu alanda para kazanan var mı). Uydurma tahmin üretilmez.
 
-Tüm eşikler, koruma kuralları, metrik etiketleri ve tek cümlelik gerekçe üreteci tek dosyada: [`public/js/verdict.js`](public/js/verdict.js). Eşiği değiştirmek istersen `THRESHOLDS` ve `GUARDS` sabitlerine dokunman yeter; `test/verdict.test.js` sınır değerleri ve kuralları doğrular.
+Eşikler `public/js/enterpayoff.js` içindeki `PARAMS`'tadır; değiştirirsen geri testi yeniden çalıştırmadan kalibrasyon oranlarını (`CALIBRATION`) yayınlama.
 
 ### Metrik dili
 
