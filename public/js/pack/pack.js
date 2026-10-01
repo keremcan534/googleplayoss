@@ -17,6 +17,7 @@ import {
 import { buildChecks, dataSafetyDraft, privacyPolicy, ratingPrep } from './compliance.js';
 import { brandDirection, featureGraphicPlan, screenshotPlan, promoVideoPlan, socialVideoPlans, socialCopy, SPECS } from './marketing.js';
 import { normalizeFor } from '../lang.js';
+import { buildFlagContext } from '../flags.js';
 
 export const STATUS = { MISSING: 'MISSING', GENERATING: 'GENERATING', READY: 'READY', NEEDS_REVIEW: 'NEEDS_REVIEW', APPROVED: 'APPROVED' };
 export const STATUS_LABEL = { MISSING: 'EKSİK', GENERATING: 'ÜRETİLİYOR', READY: 'HAZIR', NEEDS_REVIEW: 'GÖZDEN GEÇİR', APPROVED: 'ONAYLANDI' };
@@ -209,6 +210,13 @@ export function unlock(project, id) {
 
 /* ---------------- keşif ---------------- */
 
+const FLAG_CTX = new WeakMap();
+function flagContextFor(dataset, lang) {
+  let c = FLAG_CTX.get(dataset);
+  if (!c) { c = buildFlagContext(dataset, { lang }); FLAG_CTX.set(dataset, c); }
+  return c;
+}
+
 /** Canlı analiz yanıtını veri seti kaydı biçimine çevirir. */
 export function liveToRecord(res) {
   const apps = (res.apps || []).filter(Boolean);
@@ -280,8 +288,12 @@ export async function discoverCandidates(ctx) {
     await Promise.all([worker(), worker()]);
   }
   const appsMap = (ctx.dataset && ctx.dataset.apps) || {};
+  // karar, veri setinin bağlamıyla verilir (pazar geneli geliştirici tablosu, sözlükler): radardaki kararla aynı
+  const fctx = ctx.dataset ? flagContextFor(ctx.dataset, lang) : null;
   const candidates = [...pool.values()].map((c) => {
-    const ev = evaluateCandidate(c.record, analysis, { k: c.k, source: c.source, from: c.from, apps: c.record && c.record.apps ? c.record.apps : null });
+    const own = c.record && c.record.apps ? c.record.apps : null;
+    const map = own ? { ...appsMap, ...Object.fromEntries(own.filter(Boolean).map((a) => [a.id, a])) } : appsMap;
+    const ev = evaluateCandidate(c.record, analysis, { k: c.k, source: c.source, from: c.from, apps: own, ctx: fctx, appsMap: map });
     if (!ev.apps && ev.top.length) ev.apps = ev.top.map((id) => appsMap[id]).filter(Boolean);
     return ev;
   });
@@ -354,7 +366,8 @@ export async function generatePack(project, ctx = {}) {
     pack.positioning = { primary: pos.primary, secondary: pos.secondary, alternatives: pos.alternatives, partial: pos.partial, excluded: pos.excluded.slice(0, 40), warnings: pos.warnings };
     const p = pos.primary;
     put(project, 'primary', p ? { k: p.k, verdict: p.verdict, reason: p.reason, demand: p.demand, difficulty: p.difficulty, opportunity: p.opportunity, reach: p.reach, rel: p.rel.score } : null,
-      p ? (['GOLD', 'BUILD'].includes(p.verdict) ? STATUS.READY : STATUS.NEEDS_REVIEW) : STATUS.MISSING, pos.warnings.join(' '));
+      // WATCH = ortalama: kısa baş kelimeler geri testte hep bu sınıfa sınırlanır; zayıf/duvar ise gözden geçirilmeli
+      p ? (['GOLD', 'BUILD', 'WATCH'].includes(p.verdict) ? STATUS.READY : STATUS.NEEDS_REVIEW) : STATUS.MISSING, pos.warnings.join(' '));
     put(project, 'secondary', pos.secondary.map((c) => ({ k: c.k, verdict: c.verdict, demand: c.demand, opportunity: c.opportunity, rel: c.rel.score })),
       pos.secondary.length ? STATUS.READY : STATUS.NEEDS_REVIEW, pos.secondary.length ? '' : 'Ayrı pazarlarda ikincil kelime bulunamadı.');
     const cp = competitorPositioning(p, A(), (ctx.dataset && ctx.dataset.apps) || {});

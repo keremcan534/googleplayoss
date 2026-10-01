@@ -51,46 +51,9 @@ test('metrik etiket sınırları', () => {
   assert.equal(marketLevel(null).label, '—');
 });
 
-test('yüksek talep + düşük zorluk → güçlü karar ve olumlu sinyaller', () => {
-  const d = getOpportunityVerdict(rec({ demand: 86, difficulty: 24, opportunity: 82, comp: { n: 10, titleMatches: 2, weak: 4, lowRated: 2, stale: 3, big: 0, avgScore: 3.8, sumInstalls: 5_000_000 } }));
-  assert.equal(d.verdict, 'GOLD');
-  assert.ok(d.positives.some((s) => s.includes('4 zayıf uygulama')), 'zayıf rakip sinyali');
-  assert.ok(d.positives.some((s) => s.includes("4.0'ın altında")), 'düşük puan sinyali');
-  assert.ok(d.positives.some((s) => s.includes('güncellenmemiş')), 'bayat rakip sinyali');
-  assert.ok(d.positives.some((s) => s.includes('dev uygulama (10M+) yok')));
-  assert.equal(d.reason, 'Yüksek talep, düşük rekabet, 3 rakip bir yıldır güncellenmiyor.');
-  assert.equal(d.trend.dir, 'new', 'tek kayıtla trend uydurulmaz');
-});
 
-test('düşük talep: ayrı bir sınır yok (fırsat formülü zaten tutuyor), uyarı ve gerekçe kalır', () => {
-  // doğrulama: eski 25/45 talep sınırları gerçek verilerde hiçbir kararı değiştirmiyordu
-  const low = getOpportunityVerdict(rec({ demand: 40, difficulty: 5, opportunity: 61 }));
-  assert.equal(low.verdict, 'BUILD');
-  assert.deepEqual(low.capped, []);
-  assert.ok(low.negatives.some((s) => s.startsWith('Talep düşük')));
-  assert.equal(buildReason(rec({ demand: 20, difficulty: 5, opportunity: 50 })), 'Zayıf rekabete rağmen talep düşük.');
-});
 
-test('aşırı zorluk → olumsuz uyarı ve GOLD yok', () => {
-  const d = getOpportunityVerdict(rec({ demand: 96, difficulty: 94, opportunity: 21, comp: { n: 10, titleMatches: 8, weak: 0, lowRated: 0, stale: 0, big: 6, avgScore: 4.7 } }));
-  assert.equal(d.verdict, 'SKIP');
-  assert.ok(d.negatives.some((s) => s.startsWith('Rekabet aşırı')));
-  assert.ok(d.negatives.some((s) => s.includes('dev uygulama')));
-  assert.equal(d.reason, 'Çok güçlü rakipler arama sonuçlarına hakim, başlık rekabeti de çok yoğun.');
-  // formül yüksek verse bile koruma kuralı GOLD'u engeller
-  const forced = getOpportunityVerdict(rec({ demand: 96, difficulty: 85, opportunity: 75 }));
-  assert.equal(forced.verdict, 'BUILD');
-  const forced2 = getOpportunityVerdict(rec({ demand: 70, difficulty: 85, opportunity: 75 }));
-  assert.equal(forced2.verdict, 'WATCH');
-});
 
-test('talep yok → SKIP, bekleyen → PENDING, eksik rakip verisi → en fazla WATCH', () => {
-  assert.equal(getOpportunityVerdict({ k: 'x', st: 'no-demand', demand: 0 }).verdict, 'SKIP');
-  assert.equal(getOpportunityVerdict({ k: 'x', st: 'pending' }).verdict, 'PENDING');
-  const partial = getOpportunityVerdict(rec({ st: 'partial', demand: 80, difficulty: 20, opportunity: 80, comp: { n: 3, titleMatches: 0, weak: 3, lowRated: 0, stale: 0, big: 0, avgScore: 4.1 } }));
-  assert.equal(partial.verdict, 'WATCH');
-  assert.ok(partial.negatives.some((s) => s.includes('eksik')));
-});
 
 test('trend: en az 3 ölçüm ve 21 gün yoksa "new"; varsa 7+ gün aralıkla yükseliş/düşüş/sabit', () => {
   assert.equal(getTrend({ hist: [] }).dir, 'new');
@@ -124,21 +87,6 @@ test('rakip özeti ve varsayılan sıralama', () => {
   assert.equal(capVerdict('SKIP', 'BUILD'), 'SKIP');
 });
 
-test('niş kararı: en iyi 5 ortalaması + talep koruması, faydalı kelime sayısı', () => {
-  const mk = (k, opp, demand, verdict) => ({ ...rec({ k, opportunity: opp, demand, difficulty: 40 }), decision: { verdict, trend: { dir: 'new' } } });
-  const members = [mk('a', 80, 80, 'GOLD'), mk('b', 72, 75, 'GOLD'), mk('c', 65, 70, 'BUILD'), mk('d', 50, 60, 'WATCH'), mk('e', 20, 30, 'SKIP')];
-  const nv = getNicheVerdict({ name: 'x' }, members);
-  assert.equal(nv.topOpportunity, 57); // (80+72+65+50+20)/5
-  assert.equal(nv.verdict, 'WATCH');
-  assert.equal(nv.useful, 4);
-  assert.equal(nv.counts.GOLD, 2);
-  assert.equal(nv.best.k, 'a');
-  assert.equal(nv.trend.dir, 'new');
-  // niş, en iyi üyesinin korumalı kararından iyi olamaz (üyeler duvar/gölet nedeniyle sınırlanmışsa)
-  const capped = [mk('a', 80, 80, 'WATCH'), mk('b', 78, 75, 'WEAK'), mk('c', 75, 70, 'WATCH')];
-  assert.equal(getNicheVerdict({ name: 'y' }, capped).verdict, 'WATCH');
-  assert.equal(getNicheVerdict({ name: 'z' }, []).topOpportunity, null);
-});
 
 /* ---------- "0 indirme" koruması: giriş duvarı ve ölü gölet ---------- */
 
@@ -152,60 +100,12 @@ const reach = (o) => rec({
   }
 });
 
-test('giriş duvarı: ilk 10un en zayıfı 1M+ ise karar WEAK ile sınırlanır', () => {
-  const d = getOpportunityVerdict(reach({ entry: 1_200_000, midpack: 5_000_000 }));
-  assert.equal(d.verdict, 'WEAK');
-  assert.equal(d.reach.wall, 'hard');
-  assert.ok(d.negatives.some((s) => s.startsWith('Giriş duvarı')));
-  assert.ok(d.reason.includes('giremez'), d.reason);
-  assert.ok(d.capped.some((c) => c.includes('duvar')));
-});
 
-test('giriş zor: en zayıf rakip 100K+ ise en fazla WATCH', () => {
-  const d = getOpportunityVerdict(reach({ entry: 150_000, midpack: 800_000 }));
-  assert.equal(d.verdict, 'WATCH');
-  assert.equal(d.reach.wall, 'soft');
-  assert.ok(d.negatives.some((s) => s.startsWith('Giriş zor')));
-});
 
-test('ölü gölet: orta sıra 1K altındaysa karar WEAK ile sınırlanır', () => {
-  const d = getOpportunityVerdict(reach({ entry: 12, midpack: 400 }));
-  assert.equal(d.verdict, 'WEAK');
-  assert.equal(d.reach.pond, 'dead');
-  assert.ok(d.negatives.some((s) => s.startsWith('Ölü gölet')));
-  assert.ok(d.reason.includes('pazar boş'), d.reason);
-});
 
-test('ince pazar: orta sıra 5K altındaysa en fazla WATCH', () => {
-  const d = getOpportunityVerdict(reach({ entry: 50, midpack: 3_000 }));
-  assert.equal(d.verdict, 'WATCH');
-  assert.equal(d.reach.pond, 'thin');
-});
 
-test('sağlıklı gölet + kolay giriş: GOLD korunur ve olumlu sinyaller gelir', () => {
-  const d = getOpportunityVerdict(reach({ entry: 2_000, entry2: 3_500, midpack: 250_000, newcomers: 4 }));
-  assert.equal(d.verdict, 'GOLD');
-  assert.deepEqual(d.capped, []);
-  assert.ok(d.positives.some((s) => s.startsWith('Girmek kolay')));
-  // tek bir minik uygulama girişi kolaylaştırmaz: ikinci en zayıf büyükse "open" değil
-  assert.notEqual(getOpportunityVerdict(reach({ entry: 293, entry2: 435_852, midpack: 250_000 })).reach.wall, 'open');
-  assert.ok(d.positives.some((s) => s.includes('gerçek trafik')));
-  assert.ok(d.positives.some((s) => s.includes('yeniye açık')));
-});
 
-test('donmuş pazar uyarı verir; lider payı olumsuz sinyal değildir (karar sınırlamaz)', () => {
-  const d = getOpportunityVerdict(reach({ newcomers: 0, dated: 10, medianAgeYears: 9, leaderShare: 0.85 }));
-  assert.ok(d.negatives.some((s) => s.startsWith('Pazar donmuş')));
-  assert.ok(!d.negatives.some((s) => s.startsWith('Tek uygulamanın pazarı')));
-  assert.equal(d.verdict, 'GOLD', 'bu ikisi tek başına kararı düşürmez');
-});
 
-test('erişilebilirlik verisi yoksa hiçbir kural uygulanmaz (geriye dönük uyum)', () => {
-  const d = getOpportunityVerdict(rec({ demand: 80, difficulty: 30, opportunity: 75 }));
-  assert.equal(d.reach.has, false);
-  assert.equal(d.verdict, 'GOLD');
-  assert.deepEqual(d.capped, []);
-});
 
 test('eşik sınırları: duvar ve gölet tam değerlerde', () => {
   assert.equal(getOpportunityVerdict(reach({ entry: 999_999, midpack: 5_000_000 })).reach.wall, 'soft');
@@ -262,4 +162,105 @@ test('Türkçe niş gruplaması: oyun/uygulama gibi genel kelimeler niş adı ol
   assert.ok(!L.stopwords.has('namaz'), 'anlamlı kelime stopword olmamalı');
   assert.ok(!L.titleFiller.has('çevrimdışı'), 'çevrimdışı dolgu değildir');
   assert.ok(L.titleFiller.has('ücretsiz'));
+});
+
+/* ---------- karar: Girebilirlik × Getiri (geri testle seçilen kural) ---------- */
+
+const NOW = Date.parse('2026-10-01');
+const ago = (d) => new Date(NOW - d * 86400000).toISOString().slice(0, 10);
+/** n uygulamalık ilk 10: young = son 2 yılda çıkmış olanların sıraları, big = büyük yayıncılı sıralar. */
+function serp({ young = [], big = [], real = (i) => 500_000 - i * 20_000, n = 10 } = {}) {
+  const apps = Array.from({ length: n }, (_, i) => ({
+    id: `app${i}`, title: `App ${i}`, dev: big.includes(i) ? 'Giant Corp' : `Studio ${i}`,
+    real: big.includes(i) ? 50_000_000 : real(i), released: young.includes(i) ? ago(200) : ago(2000)
+  }));
+  return { apps, appsMap: Object.fromEntries(apps.map((a) => [a.id, a])), top: apps.map((a) => a.id) };
+}
+const kw = (k, s, o = {}) => ({ k, st: 'ok', demand: 50, difficulty: 40, opportunity: 50, top: s.top, ...o });
+// pazar geneli geliştirici tablosu (ctx.apps ≥ 500 uygulama) — yoksa karar "yaklaşık" olur ve GOLD verilmez
+const bigTable = Object.fromEntries(Array.from({ length: 600 }, (_, i) => [`x${i}`, { id: `x${i}`, dev: `Other ${i}`, real: 1000 }]));
+const ctxWith = (s, lang = 'en') => ({ lang, apps: { ...bigTable, ...s.appsMap }, titleDF: null, kwDF: null, byK: null, dotlessEn: null, now: NOW, currentYear: 2026, verdictOf: null });
+
+test('girebilirlik: ilk 10 yeni ve küçük uygulamalardan oluşuyorsa güçlü aday, eski ve büyükse duvar', () => {
+  const open = serp({ young: [0, 1, 2, 3, 4, 5, 6] });
+  const d = getOpportunityVerdict(kw('habit tracker for students', open), { now: NOW, ctx: ctxWith(open), appsMap: open.appsMap });
+  assert.equal(d.verdict, 'GOLD');
+  assert.equal(d.state, 'ok');
+  assert.ok(d.axes.enter.score >= 60, `giriş ${d.axes.enter.score}`);
+  assert.equal(d.axes.payoff.level, 'low');
+  assert.match(d.reason, /Girmesi kolay/);
+  assert.match(d.sentence, /günde 50\+ yükleme/);
+  assert.match(d.sentence, /tek bir uygulamanın başarı şansı değildir/);
+  const wall = serp({ big: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] });
+  const w = getOpportunityVerdict(kw('habit tracker for students', wall), { now: NOW, ctx: ctxWith(wall), appsMap: wall.appsMap });
+  assert.equal(w.verdict, 'SKIP');
+  assert.equal(w.label, 'Duvar');
+  assert.equal(w.state, 'ok', 'duvar geçersiz değil, değerlendirilmiş bir sınıf');
+});
+
+test('getiri sınırları: ölü sıralar en fazla WEAK, ince pazar en fazla WATCH', () => {
+  const dead = serp({ young: [0, 1, 2, 3, 4, 5, 6], real: () => 1_500 });
+  const d = getOpportunityVerdict(kw('habit tracker for students', dead), { now: NOW, ctx: ctxWith(dead), appsMap: dead.appsMap });
+  assert.equal(d.verdict, 'WEAK');
+  assert.equal(d.axes.payoff.level, 'dead');
+  assert.ok(d.capped.some((c) => c.startsWith('Sıralar ölü')));
+  const thin = serp({ young: [0, 1, 2, 3, 4, 5, 6], real: () => 40_000 });
+  const t = getOpportunityVerdict(kw('habit tracker for students', thin), { now: NOW, ctx: ctxWith(thin), appsMap: thin.appsMap });
+  assert.equal(t.verdict, 'WATCH');
+  assert.equal(t.axes.payoff.level, 'thin');
+});
+
+test('kısa baş kelime en fazla WATCH; eksik rakip verisi en fazla WATCH; geliştirici tablosu yoksa GOLD yok', () => {
+  const open = serp({ young: [0, 1, 2, 3, 4, 5, 6] });
+  assert.equal(getOpportunityVerdict(kw('habit tracker', open), { now: NOW, ctx: ctxWith(open), appsMap: open.appsMap }).verdict, 'WATCH');
+  const few = serp({ young: [0, 1, 2], n: 4 });
+  assert.equal(getOpportunityVerdict(kw('habit tracker for students', few), { now: NOW, ctx: ctxWith(few), appsMap: few.appsMap }).verdict, 'WATCH');
+  const bare = getOpportunityVerdict(kw('habit tracker for students', open), { now: NOW, appsMap: open.appsMap });
+  assert.equal(bare.verdict, 'BUILD', 'yalnızca bu ilk 10 bilinirken güçlü aday verilmez');
+  assert.equal(bare.approx, true);
+  assert.equal(bare.calibration, null, 'yaklaşık kararda geçmiş oran gösterilmez');
+});
+
+test('geçersiz kelimeler: talep yok ve yapay kelime "Geç" (değerlendirilmedi); bekleyen PENDING', () => {
+  const nd = getOpportunityVerdict({ k: 'x', st: 'no-demand', demand: 0 }, { now: NOW });
+  assert.equal(nd.verdict, 'SKIP');
+  assert.equal(nd.state, 'invalid');
+  assert.equal(nd.label, 'Geç');
+  assert.equal(getOpportunityVerdict({ k: 'x', st: 'pending' }).verdict, 'PENDING');
+  assert.equal(getOpportunityVerdict(rec({ top: ['a'] })).verdict, 'PENDING', 'uygulama verisi olmadan karar yok');
+  const open = serp({ young: [0, 1, 2, 3, 4, 5, 6] });
+  const old = getOpportunityVerdict(kw('habit tracker 2019', open), { now: NOW, ctx: ctxWith(open), appsMap: open.appsMap });
+  assert.equal(old.verdict, 'SKIP');
+  assert.equal(old.excluded, true);
+});
+
+test('yanlış pozitif sınırları karara uygulanır (politika riski en fazla WATCH)', () => {
+  const open = serp({ young: [0, 1, 2, 3, 4, 5, 6] });
+  const d = getOpportunityVerdict(kw('real money solitaire games', open), { now: NOW, ctx: ctxWith(open), appsMap: open.appsMap });
+  assert.equal(d.verdict, 'WATCH');
+  assert.ok(d.flags.some((f) => f.id === 'regulated' || f.id === 'realMoney'));
+});
+
+test('kararlılık: sınır komşusu puan dünkü bandı korur (histerezis)', () => {
+  const open = serp({ young: [0, 1, 2, 3, 4, 5, 6] });
+  const today = getOpportunityVerdict(kw('habit tracker for students', open), { now: NOW, ctx: ctxWith(open), appsMap: open.appsMap });
+  const e = today.axes.enter.score;
+  // dün bir alt banttaydı ve bugünkü puan sınıra 3 puandan yakınsa dünkü bant korunur
+  const near = Math.abs(e - 60) < 3;
+  const prev = { axes: { enter: { band: 'BUILD', nApps: 10 } } };
+  const held = getOpportunityVerdict(kw('habit tracker for students', open), { now: NOW, ctx: ctxWith(open), appsMap: open.appsMap, prev });
+  assert.equal(held.verdict, near ? 'BUILD' : 'GOLD');
+  // dün daha çok uygulama çözülebildiyse (veri boşluğu) bant tutulur
+  const shrunk = getOpportunityVerdict(kw('habit tracker for students', open), { now: NOW, ctx: ctxWith(open), appsMap: open.appsMap, prev: { axes: { enter: { band: 'WATCH', nApps: 12 } } } });
+  assert.equal(shrunk.verdict, 'WATCH');
+});
+
+test('sıralama: önce sınıf, sonra girebilirlik puanı; niş kararı en iyi üç üyenin ortancası', () => {
+  const mk = (k, verdict, sortKey) => ({ k, opportunity: 50, demand: 50, difficulty: 40, decision: { verdict, sortKey, state: 'ok', trend: { dir: 'new' } } });
+  const rows = [mk('a', 'BUILD', 3045), mk('b', 'BUILD', 3052), mk('c', 'GOLD', 4061), mk('d', 'WATCH', 2050)].sort(compareByVerdict).map((r) => r.k);
+  assert.deepEqual(rows, ['c', 'b', 'a', 'd']);
+  const nv = getNicheVerdict({ name: 'x' }, [mk('a', 'GOLD', 4070), mk('b', 'WATCH', 2040), mk('c', 'WEAK', 1030), mk('d', 'SKIP', 5)]);
+  assert.equal(nv.verdict, 'WATCH', 'tek bir GOLD üye nişi GOLD yapmaz');
+  assert.equal(nv.counts.GOLD, 1);
+  assert.equal(getNicheVerdict({ name: 'z' }, []).topOpportunity, null);
 });

@@ -70,12 +70,12 @@
     <div class="controls">
       <input id="q" type="search" placeholder="Fırsat ara…" autocomplete="off" aria-label="Fırsat ara">
       <select id="sort" aria-label="Sıralama">
-        <option value="verdict">Sıralama: Karar (önerilen)</option>
+        <option value="verdict">Sıralama: Karar, sonra girebilirlik (önerilen)</option>
         <option value="newest">En yeni bulunanlar</option>
         <option value="demand">En yüksek talep</option>
         <option value="easy">En düşük rekabet</option>
         <option value="rising">En hızlı yükselen</option>
-        <option value="reach">En yüksek erişim (indirme şansı)</option>
+        <option value="reach">En kolay giriş (girebilirlik)</option>
         <option value="market">En büyük pazar</option>
       </select>
       <button class="ghost" id="advToggle" aria-expanded="false">Gelişmiş filtreler</button>
@@ -211,7 +211,7 @@
             <th data-sort="opportunity" class="num">Fırsat</th>
             <th data-sort="demand" class="num">Talep</th>
             <th data-sort="difficulty" class="num">Zorluk</th>
-            <th data-sort="reachScore" class="num" title="Sıralamaya girersen indirme gelir mi">Erişim</th>
+            <th data-sort="enterScore" class="num" title="Girebilirlik: ilk 10'un ne kadarı son 2 yılda çıkmış ve küçük geliştiricilerin">Giriş</th>
             <th data-sort="market" class="num">Pazar</th>
             <th data-sort="titleMatches" class="num">Başlıkta</th>
             <th data-sort="weak" class="num">Zayıf</th>
@@ -234,26 +234,35 @@
       <p>Google Play'de bir uygulama ya da oyun yayınladığında reklam vermeden, mağaza aramasından yükleme getirebilecek anahtar kelimeleri bulur. Her kelime için tek bir karar üretir: <strong>GOLD</strong>, <strong>BUILD</strong>, <strong>WATCH</strong>, <strong>WEAK</strong> veya <strong>SKIP</strong>.</p>
 
       <h3>Karar nasıl veriliyor?</h3>
-      <p>Karar, fırsat puanından türetilir ve koruma kurallarıyla düzeltilir. Puan formülleri değişmez; karar yalnızca bir yorum katmanıdır.</p>
+      <p>Karar iki eksenden gelir. Ekim 2026'da yapılan sızıntısız geri testte (kelimelerin bir yıl önceki ilk 10'u → o yıl içinde çıkan uygulamaların bugünkü yüklemeleri) yeni girenlerin başarısını tek yönlü sıralayan kural budur. Eski "talep × rekabet" formülü bu testte sıralanmıyordu; talep ve fırsat puanı artık karara girmez, yalnızca gösterilir.</p>
+      <ul>
+        <li><strong>Girebilirlik (0-100):</strong> ilk 10'un sıra ağırlıklı olarak ne kadarı son 2 yılda çıkmış ve ne kadarı küçük geliştiricilerin (en büyük uygulaması 10 milyonun altında, az uygulamalı). 60+ güçlü aday, 40+ iyi aday, 30+ ortalama, 15+ zayıf, altı duvar.</li>
+        <li><strong>Getiri:</strong> 1 yaşından büyük rakiplerin en zayıf ikincisi. 3 binin altındaysa <em>sıralar ölü</em> (en fazla Zayıf), 100 binin altındaysa <em>ince pazar / piyango</em> (en fazla Ortalama).</li>
+        <li><strong>Sınırlar:</strong> 1-2 kelimelik baş terimler en fazla Ortalama (giren küçük uygulamaların ölü kalma oranı yüksek); marka, geliştirici adı, politika riski, yanlış ülke gibi yanlış pozitif kuralları kararı sınırlar; yapay kelimeler (ı/ğ ad alanı, geçmiş yıl, tekrarlı öbek) "Geç" olarak değerlendirme dışı kalır.</li>
+      </ul>
       <table class="help-table">
-        <thead><tr><th>Karar</th><th>Fırsat puanı</th><th>Anlamı</th></tr></thead>
+        <thead><tr><th>Karar</th><th>Ad</th><th>Anlamı</th></tr></thead>
         <tbody>
-          <tr><td><span class="vbadge v-gold">★ GOLD</span></td><td>70-100</td><td>Olağanüstü fırsat, öncelik ver</td></tr>
-          <tr><td><span class="vbadge v-build">BUILD</span></td><td>60-69</td><td>Yapmaya değer</td></tr>
-          <tr><td><span class="vbadge v-watch">WATCH</span></td><td>45-59</td><td>Takipte tut</td></tr>
-          <tr><td><span class="vbadge v-weak">WEAK</span></td><td>30-44</td><td>Muhtemelen değmez</td></tr>
-          <tr><td><span class="vbadge v-skip">SKIP</span></td><td>0-29</td><td>Vakit harcama</td></tr>
+          <tr><td><span class="vbadge v-gold">★ GOLD</span></td><td>Güçlü aday</td><td>İlk 10 büyük ölçüde yeni ve küçük uygulamaların; yerleşik rakipler de yükleme alıyor. Nadir, örneklem küçük.</td></tr>
+          <tr><td><span class="vbadge v-build">BUILD</span></td><td>İyi aday</td><td>Yeni ve küçük uygulamalara açık; sıralar ölü ya da ince değil.</td></tr>
+          <tr><td><span class="vbadge v-watch">WATCH</span></td><td>Ortalama / riskli</td><td>Orta giriş, ya da girmek kolay ama pazar ince (piyango); kısa baş kelimeler ve riskli kelimeler.</td></tr>
+          <tr><td><span class="vbadge v-weak">WEAK</span></td><td>Zayıf</td><td>İlk 10 çoğunlukla eski ve büyük uygulamaların ya da sıralar ölü.</td></tr>
+          <tr><td><span class="vbadge v-skip">SKIP</span></td><td>Duvar / Geç</td><td>Duvar: yeni küçük uygulama nadiren giriyor. Geç: yapay ya da talepsiz kelime, değerlendirilmedi.</td></tr>
         </tbody>
       </table>
-      <p>Koruma kuralları: talep 45'in altındaysa GOLD verilmez, 25'in altındaysa karar en fazla WATCH olur. Rekabet 80'in üstündeyse karar WATCH'a çekilir; talep 85'in üstündeyse en fazla BUILD olur. Rakip verisi 5'ten azsa karar yine WATCH ile sınırlanır.</p>
+
+      <h3 id="calibration">Geçmişte bu sınıflarda ne oldu? (kalibrasyon)</h3>
+      <p>Her sınıf için: bir yıl önce o sınıfta olacak kelimelerin yüzde kaçında, o yıl çıkan <strong>küçük bir geliştiricinin</strong> uygulaması ilk 10'a girip <strong>günde 50+ yükleme</strong> aldı. Aynı sonuç sayfasını paylaşan kelimeler bir kez sayıldı. Köşeli parantez %95 güven aralığıdır.</p>
+      <div id="calibrationTables"></div>
+      <p class="muted small">Önemli: yalnızca başaranları görebiliyoruz. Bu oranlar "benzer kelimelerin kaçında bir başarı örneği var" sorusunun cevabıdır; tek bir uygulamanın başarı olasılığı değildir. Yüklemeler tüm kaynaklardandır. Tek bir dönemden (2025-10 → 2026-10) ölçüldü; tarayıcı artık her gün sonuç sayfalarını ve yüklemeleri kaydediyor, 60-90 gün sonra ileriye dönük doğrulama yapılacak. Ayrıntılar: <code>docs/DOGRULAMA.md</code>.</p>
 
       <h3>Puanlar</h3>
       <ul>
-        <li><strong>Talep</strong> — Kelime, otomatik tamamlamada ne kadar kısa bir ön ekle çıkıyor? "off" yazınca "offline games" öneriliyorsa talep çok yüksektir; ancak tamamını yazınca çıkıyorsa düşüktür. Öneri listesindeki sıra da hesaba katılır. Gerçek arama hacmi değildir, göreli bir tahmindir.</li>
+        <li><strong>Talep</strong> (karara girmez) — Kelime, otomatik tamamlamada ne kadar kısa bir ön ekle çıkıyor? "off" yazınca "offline games" öneriliyorsa talep çok yüksektir; ancak tamamını yazınca çıkıyorsa düşüktür. Öneri listesindeki sıra da hesaba katılır. Gerçek arama hacmi değildir. Doğrulamada yeni uygulamaların aldığı yüklemeyle ilişkisi bulunamadı; marka adları ve seyrek ön ekler talebi şişirebiliyor.</li>
         <li><strong>Rekabet (zorluk)</strong> — Aramadaki ilk 10 uygulamanın gücü: gerçek yükleme sayıları, değerlendirme sayısı, ortalama puan, başlığında kelimeyi geçiren uygulama oranı ve güncellik.</li>
-        <li><strong>Pazar</strong> — İlk 10 uygulamanın toplam yüklemesi. Talep varken pazar küçükse yeni bir alan olabilir.</li>
-        <li><strong>Fırsat</strong> — <code>√(talep × (100 − zorluk))</code>; ilk 10'da zayıf, düşük puanlı ve bir yıldır güncellenmemiş uygulamalar küçük bonus verir.</li>
-        <li><strong>Trend</strong> — Fırsat puanının geçmiş taramalara göre değişimi. Yeterli geçmiş yoksa trend uydurulmaz, <strong>YENİ</strong> yazar.</li>
+        <li><strong>Pazar</strong> — İlk 10 uygulamanın toplam yüklemesi (1 milyon → 0, 10 milyar → 100).</li>
+        <li><strong>Fırsat</strong> (karara girmez) — <code>√(talep × (100 − zorluk))</code>; düşük puanlı ve bayat rakipler küçük bonus verir. Sıralanma kolaylığını gösterir, trafik değil.</li>
+        <li><strong>Trend</strong> — Fırsat puanının geçmiş taramalara göre değişimi. En az 3 ölçüm ve 21 gün gerekir; yoksa trend uydurulmaz, <strong>YENİ</strong> yazar.</li>
       </ul>
 
       <h3>Kelimeler nereden geliyor?</h3>

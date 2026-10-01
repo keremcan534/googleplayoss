@@ -726,3 +726,6 @@ pre.copy { white-space: pre-wrap; background: var(--bg); border: 1px solid var(-
 .sim-assump { padding-left: 18px; margin: 6px 0 0; display: flex; flex-direction: column; gap: 5px; font-size: 12.5px; }
 .sim-outside { margin-top: 8px; }
 .flag-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.hero-cal { margin-top: 10px; padding: 10px 12px; border-radius: var(--r-sm); background: var(--bg3); font-size: 13px; color: var(--text2); }
+.cal-table td, .cal-table th { white-space: nowrap; }
+.table-wrap { overflow-x: auto; }

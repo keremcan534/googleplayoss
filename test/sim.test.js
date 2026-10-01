@@ -104,10 +104,13 @@ test('yanlış pozitif kapıları: yıl, ı/ğ yapay kelime, politika, tek yayı
   assert.ok(!f.some((x) => x.startsWith('rarePrefix')), 'sözlük olmadan sıklık kuralı çalışmaz');
 });
 
-test('karar: yapay kelime SKIP, marka WEAK ile sınırlanır, gerekçe gösterilir', () => {
+test('karar: yapay kelime SKIP ve "Geç" (değerlendirilmedi), gerekçe gösterilir', () => {
   const ctx = buildFlagContext({ market: { lang: 'tr' }, apps: {}, keywords: [] }, { now: NOW });
-  const v = getOpportunityVerdict({ k: 'ıveco kamyon oyunları', st: 'ok', demand: 89, difficulty: 20, opportunity: 80, comp: { n: 10 } }, { now: NOW, ctx });
+  const apps = Array.from({ length: 10 }, (_, i) => app(`t${i}`, 200_000, 2000));
+  const v = getOpportunityVerdict({ k: 'ıveco kamyon oyunları', st: 'ok', demand: 89, difficulty: 20, opportunity: 80, comp: { n: 10 }, top: apps.map((a) => a.id) },
+    { now: NOW, ctx, appsMap: Object.fromEntries(apps.map((a) => [a.id, a])) });
   assert.equal(v.verdict, 'SKIP');
   assert.equal(v.excluded, true);
+  assert.equal(v.label, 'Geç');
   assert.match(v.reason, /yapay/);
 });

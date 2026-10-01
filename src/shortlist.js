@@ -2,8 +2,8 @@
 /*
  * Kısa liste — "yayınlarsam indirme gelir" adayları.
  *
- * Panelin "Gerçekçi" filtresinin komut satırı hali: kararı BUILD ya da GOLD olan
- * VE erişim puanı eşiğin üstünde olan kelimeler. Aynı ilk 10'a düşen kelimeler
+ * Kararı BUILD ya da GOLD olan (girebilirlik × getiri) VE girebilirlik puanı eşiğin üstünde olan
+ * kelimeler, girebilirliğe göre sıralı. Aynı ilk 10'a düşen kelimeler
  * tek pazar olarak katlanır (varyantlar altta listelenir).
  *
  * Kullanım:
@@ -16,13 +16,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { getOpportunityVerdict, fmtInstalls } from '../public/js/verdict.js';
+import { buildFlagContext } from '../public/js/flags.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PUBLIC_DATA = path.join(ROOT, 'public', 'data');
 const readJson = (p, fb = null) => { try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return fb; } };
 
 /** İki kelimenin ilk 10'u bu oranda örtüşüyorsa aynı pazardır. */
-const OVERLAP = 0.6;
+const OVERLAP = 0.7;
 
 function overlap(a, b) {
   const A = new Set(a || []);
@@ -38,17 +39,18 @@ function overlap(a, b) {
  * @returns {{market:object, groups:Array, total:number, counts:object}}
  */
 export function shortlistFor(marketId, opts = {}) {
-  const { minReach = 65, limit = 30, verdicts = ['GOLD', 'BUILD'] } = opts;
+  const { minReach = 40, limit = 30, verdicts = ['GOLD', 'BUILD'] } = opts;
   const data = readJson(path.join(PUBLIC_DATA, `${marketId}.json`));
   if (!data) throw new Error(`Pazar dosyası yok: ${marketId}`);
-  const recs = data.keywords.map((r) => ({ ...r, decision: getOpportunityVerdict(r) }));
+  const ctx = buildFlagContext(data);
+  const recs = data.keywords.map((r) => ({ ...r, decision: getOpportunityVerdict(r, { ctx }) }));
   const counts = {};
   for (const r of recs) counts[r.decision.verdict] = (counts[r.decision.verdict] || 0) + 1;
 
   const eligible = recs
     .filter((r) => verdicts.includes(r.decision.verdict))
-    .filter((r) => r.decision.reach.has && r.decision.reach.score >= minReach)
-    .sort((a, b) => b.decision.reach.score - a.decision.reach.score || b.opportunity - a.opportunity);
+    .filter((r) => r.decision.axes && r.decision.axes.enter.score >= minReach)
+    .sort((a, b) => b.decision.sortKey - a.decision.sortKey || b.opportunity - a.opportunity);
 
   const groups = [];
   for (const r of eligible) {
@@ -65,6 +67,10 @@ function row(r) {
   return {
     kelime: r.k,
     karar: r.decision.verdict,
+    karar_adi: r.decision.label,
+    girebilirlik: r.decision.axes ? r.decision.axes.enter.score : '',
+    getiri: r.decision.axes ? r.decision.axes.payoff.label : '',
+    gecmis_oran: r.decision.calibration ? r.decision.calibration.t50Shown : '',
     firsat: r.opportunity,
     talep: r.demand,
     rekabet: r.difficulty,
@@ -92,7 +98,8 @@ function printText(res) {
     console.log('');
     console.log(`${String(i + 1).padStart(2)}. ${r.k}   [${r.decision.verdict}]`);
     console.log(`    ${r.decision.reason}`);
-    console.log(`    talep ${r.demand} · rekabet ${r.difficulty} · fırsat ${r.opportunity} · erişim ${x.score}`);
+    if (r.decision.sentence) console.log(`    ${r.decision.sentence}`);
+    console.log(`    talep ${r.demand} · rekabet ${r.difficulty} · fırsat ${r.opportunity} · girebilirlik ${r.decision.axes ? r.decision.axes.enter.score : '–'}`);
     console.log(`    giriş ${fmtInstalls(x.entry)} · orta sıra ${fmtInstalls(x.midpack)} · son 2 yılda giren ${x.newcomers}/${x.dated} · lider %${Math.round((x.leaderShare || 0) * 100)}`);
     console.log(`    gelir modeli ${c.monetized ?? '–'}/${c.n ?? '–'} · 1000 yüklemede ${c.engagement ?? '–'} değerlendirme`);
     if (g.variants.length) console.log(`    aynı pazar: ${g.variants.map((v) => v.k).join(', ')}`);
@@ -118,7 +125,7 @@ function main() {
   const mi = argv.indexOf('--market');
   const index = readJson(path.join(PUBLIC_DATA, 'index.json'), { markets: [] });
   const ids = mi >= 0 ? [argv[mi + 1]] : (index.markets || []).map((m) => m.id);
-  const opts = { minReach: num('--reach', 65), limit: num('--limit', 30) };
+  const opts = { minReach: num('--reach', 40), limit: num('--limit', 30) };
   const all = ids.map((id) => shortlistFor(id, opts));
   if (argv.includes('--csv')) printCsv(all);
   else all.forEach(printText);

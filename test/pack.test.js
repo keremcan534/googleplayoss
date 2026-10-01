@@ -13,7 +13,7 @@ const ids = (p) => Array.from({ length: 10 }, (_, i) => `${p}.${i}`);
 const comp = { n: 10, titleMatches: 3, weak: 3, lowRated: 2, stale: 2, big: 2, ads: 8, iap: 5, paid: 0, monetized: 9, engagement: 4, avgScore: 4.0,
   medianInstalls: 300000, sumInstalls: 9e6, entry: 20000, entry2: 40000, tiny: 1, midpack: 200000, leaderShare: 0.4, newcomers: 3, dated: 4, medianAgeYears: 3 };
 const liveResult = (k, demand, opportunity, p) => ({ k, status: 'ok', demand, difficulty: 45, market: 60, opportunity, comp, pop: { minPrefix: 6 },
-  apps: ids(p).map((id, i) => ({ id, title: `Truck Driver ${i}`, dev: 'D', real: (10 - i) * 1e5, score: 4.1, ratings: 900, ads: true, iap: true, updated: '2026-05-01', released: '2022-01-01' })) });
+  apps: ids(p).map((id, i) => ({ id, title: `Truck Driver ${i}`, dev: `dev-${p}-${i}`, real: (10 - i) * 1e5, score: 4.1, ratings: 900, ads: true, iap: true, updated: '2026-05-01', released: i < 4 ? '2025-08-01' : '2019-01-01' })) });
 
 function ctx(extra = {}) {
   const calls = { suggest: [], analyze: [] };

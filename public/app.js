@@ -10,6 +10,7 @@ import {
 import { langOf, tokensFor } from './js/lang.js';
 import { initProjects, renderProjects, startFromOpportunity } from './js/pack/ui.js';
 import { buildFlagContext, liveFlagContext, strongestFlag } from './js/flags.js';
+import { CALIBRATION, CLASS_TR } from './js/enterpayoff.js';
 import { simulateKeyword, devStats, buildCohorts, ASSUMPTIONS, OUTSIDE_VIEW, CALENDAR, HORIZONS, sig2 } from './js/sim.js';
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -19,8 +20,6 @@ const nf = new Intl.NumberFormat('tr-TR');
 const DAY = 86400000;
 const VIEWS = ['overview', 'projects', 'opportunities', 'niches', 'ranking', 'live', 'saved', 'analyst', 'help'];
 const OPPORTUNITY_VERDICTS = ['GOLD', 'BUILD', 'WATCH'];
-/** "Gerçekçi" eşiği: kararı BUILD+ olan VE erişim puanı bunun üstünde olanlar. */
-const REALISTIC_REACH = 65;
 /** İlk 10 örtüşmesi bu oranın üstündeyse iki kelime aynı pazardır. */
 const VARIANT_OVERLAP = 0.6;
 /** "Fırsat" sayılan kayıt: WATCH ve üstü karar almış olanlar. */
@@ -67,6 +66,8 @@ const TIPS = {
   difficulty: 'Rekabet: ilk 10 uygulamanın gücü. Yükleme sayısı, değerlendirme, puan, başlık eşleşmesi ve güncellik.',
   market: 'Pazar: ilk 10 uygulamanın toplam yüklemesi (logaritmik; 1M → 0, 10 milyar → 100). Liderin büyüklüğü yeni girenin alacağını göstermez; onun için simülasyona bak.',
   trend: 'Trend: fırsat puanının önceki taramalara göre değişimi. En az 3 ölçüm ve 21 günlük geçmiş gerekir (talep 21 günde bir yeniden ölçülür); yoksa YENİ yazar, trend uydurulmaz.',
+  enter: 'Girebilirlik (0-100): ilk 10\'un sıra ağırlıklı olarak ne kadarı son 2 yılda çıkmış (yeni) ve ne kadarı küçük geliştiricilerin (en büyük uygulaması 10M altı, az uygulamalı). Geri testte yeni küçük uygulamaların başarısını sıralayan en iyi ölçü buydu. Bantlar: 60+ kolay, 40+ girilebilir, 30+ orta, 15+ zor, altı duvar.',
+  payoff: 'Getiri: 1 yaşından büyük (yerleşik) rakiplerin en zayıf ikincisi ve orta sırası (3.-10.). En zayıf ikinci 3 binin altındaysa sıralar ölü, 100 binin altındaysa ince pazar (piyango). Orta sıra büyüdükçe girmek zorlaşır ama girenin aldığı yükleme artar.',
   reach: 'Erişim: sıralamaya girersem gerçekten indirme gelir mi? İlk 10\'un en zayıf uygulamasının yüklemesi (girmek kolay mı), orta sıradaki rakiplerin yüklemesi (girince ne alırım) ve son 2 yılda ilk 10\'a girebilmiş uygulama sayısından hesaplanır. Trafik tahmini değildir.',
   entry: 'Giriş bariyeri: ilk 10\'daki en zayıf uygulamanın yükleme sayısı. Küçükse yeni bir uygulama sıralamaya girebilir; milyonlarsa giremez.',
   midpack: 'Orta sıra: 3. sıradan sonuncuya kadarki uygulamaların medyan yüklemesi. Lideri saymaz. Ortalarda bir yere yerleşirsen komşularının durumu budur.',
@@ -120,7 +121,10 @@ function enrich(record) {
     verdictOrder: VERDICT_ORDER[decision.verdict] ?? 9,
     trendDelta: decision.trend.dir === 'new' ? null : decision.trend.delta,
     reachScore: decision.reach.has ? decision.reach.score : null,
-    realistic: ['GOLD', 'BUILD'].includes(decision.verdict) && decision.reach.has && decision.reach.score >= REALISTIC_REACH,
+    enterScore: decision.axes ? decision.axes.enter.score : null,
+    payoff: decision.axes ? decision.axes.payoff.level : null,
+    // gerçekçi: güçlü/iyi aday VE yerleşik rakiplerin orta sırası 1M+ (girenler gerçek yükleme alıyor)
+    realistic: ['GOLD', 'BUILD'].includes(decision.verdict) && decision.axes && ['mid', 'high'].includes(decision.axes.payoff.level),
     titleMatches: num(c.titleMatches),
     weak: num(c.weak),
     avgScore: num(c.avgScore),
@@ -142,8 +146,8 @@ function rebuild() {
   const list = (state.data?.keywords || []).map(enrich);
   state.records = list;
   state.byKey = new Map(list.map((r) => [r.k, r]));
-  const counts = { GOLD: 0, BUILD: 0, WATCH: 0, WEAK: 0, SKIP: 0, PENDING: 0 };
-  for (const r of list) counts[r.dv]++;
+  const counts = { GOLD: 0, BUILD: 0, WATCH: 0, WEAK: 0, SKIP: 0, PENDING: 0, INVALID: 0 };
+  for (const r of list) counts[r.decision.excluded ? 'INVALID' : r.dv]++;
   state.counts = counts;
   state.nicheCache = null;
 }
@@ -156,6 +160,12 @@ function vbadge(verdict, extraClass = '') {
   const icon = verdict === 'GOLD' ? '★ ' : '';
   return `<span class="vbadge v-${verdict.toLowerCase()} ${extraClass}">${icon}${meta.label}</span>`;
 }
+
+const PAYOFF_UI = { dead: ['vlow', 'ÖLÜ'], thin: ['low', 'İNCE'], unknown: ['na', 'BELİRSİZ'], low: ['mid', 'SINIRLI'], mid: ['high', 'ORTA'], high: ['vhigh', 'YÜKSEK'] };
+const payoffLevelUi = (lv) => { const x = PAYOFF_UI[lv]; return x ? { key: x[0], label: x[1] } : { key: 'na', label: '—' }; };
+const payoffShort = (lv) => ({ dead: '✕', thin: '◔', unknown: '?', low: '◑', mid: '◕', high: '●' }[lv] || '–');
+/** Girebilirlik bantları kararla aynı eşikleri kullanır (60/40/30/15). */
+const enterLevelUi = (e) => (!Number.isFinite(e) ? { key: 'na', label: '—' } : e >= 60 ? { key: 'vhigh', label: 'KOLAY' } : e >= 40 ? { key: 'high', label: 'GİRİLEBİLİR' } : e >= 30 ? { key: 'mid', label: 'ORTA' } : e >= 15 ? { key: 'low', label: 'ZOR' } : { key: 'vlow', label: 'DUVAR' });
 
 /** Tek metrik kutusu: değer + seviye etiketi. */
 function metric(label, value, lvl, opts = {}) {
@@ -197,7 +207,6 @@ function oppCard(r) {
   const d = r.decision;
   const dl = demandLevel(r.demand);
   const cl = difficultyLevel(r.difficulty);
-  const ol = opportunityLevel(r.opportunity);
   const starred = state.stars.has(r.k);
   const variants = (state.variantMap.get(r.k) || []).length;
   return `<article class="opp v-${d.verdict.toLowerCase()}" data-k="${esc(r.k)}">
@@ -206,11 +215,11 @@ function oppCard(r) {
       <div class="opp-head"><h3>${esc(r.k)}</h3>${tags(r, { variants })}</div>
       <p class="opp-reason">${esc(d.reason)}</p>
     </div>
-    <div class="opp-score" title="Fırsat puanı"><b>${Number.isFinite(r.opportunity) ? r.opportunity : '–'}</b><span>${ol.label}</span></div>
+    <div class="opp-score" title="Girebilirlik: ilk 10'un ne kadarı yeni ve küçük uygulamalar"><b>${Number.isFinite(r.enterScore) ? r.enterScore : '–'}</b><span>giriş</span></div>
     <div class="opp-metrics">
-      ${metric('Talep', r.demand, dl, { tip: 'demand' })}
+      ${metric('Getiri', null, payoffLevelUi(r.payoff), { tip: 'payoff', display: payoffShort(r.payoff) })}
       ${metric('Rekabet', r.difficulty, cl, { invert: true, tip: 'difficulty' })}
-      ${metric('Erişim', r.reachScore, reachLevel(r.reachScore), { tip: 'reach' })}
+      ${metric('Talep', r.demand, dl, { tip: 'demand' })}
       ${trendMetric(d.trend)}
     </div>
     <div class="opp-actions">
@@ -340,7 +349,7 @@ function detailBody(r, opts = {}) {
   <div class="sec">
     <h4>Girebilir miyim, girince ne alırım? ${info('reach')}</h4>
     <div class="hero-metrics">
-      ${metric('Erişim puanı', x.score, reachLevel(x.score), { tip: 'reach' })}
+      ${d.axes ? `<div class="m"><span>Yeni / küçük ${info('enter')}</span><b>${d.axes.enter.nYoung} / ${d.axes.enter.nSmall}</b><i>${d.axes.enter.nApps} UYGULAMADAN</i></div>` : ''}
       <div class="m"><span>Giriş bariyeri ${info('entry')}</span><b>${fmtInstalls(x.entry)}</b><i>${x.wall === 'hard' ? 'DUVAR' : x.wall === 'soft' ? 'ZOR' : x.wall === 'open' ? 'KOLAY' : 'NORMAL'}</i></div>
       <div class="m"><span>Orta sıra ${info('midpack')}</span><b>${fmtInstalls(x.midpack)}</b><i>${x.pond === 'dead' ? 'ÖLÜ' : x.pond === 'thin' ? 'İNCE' : x.pond === 'healthy' ? 'SAĞLAM' : 'NORMAL'}</i></div>
       <div class="m"><span>Yeni girenler ${info('newcomers')}</span><b>${x.newcomers}/${x.dated || '–'}</b><i>${x.frozen ? 'DONMUŞ' : x.newcomers >= 3 ? 'AÇIK' : 'SINIRLI'}</i></div>
@@ -361,16 +370,17 @@ function detailBody(r, opts = {}) {
   <div class="sec">
     <div class="hero-top">
       ${vbadge(d.verdict, 'lg')}
-      <div class="hero-score">${Number.isFinite(r.opportunity) ? r.opportunity : '–'}<small> / 100</small></div>
-      <div><div class="hero-title">${esc(opportunityLevel(r.opportunity).label)} fırsat</div><div class="mini">${esc(d.label)}</div></div>
+      <div class="hero-score" title="Girebilirlik">${d.axes ? d.axes.enter.score : '–'}<small> / 100 giriş</small></div>
+      <div><div class="hero-title">${esc(d.label)}</div><div class="mini">${d.axes ? `${esc(d.axes.enter.label)} · ${esc(d.axes.payoff.label)}` : ''}</div></div>
     </div>
-    <p class="hero-reason">${esc(d.reason)}</p>
+    <p class="hero-reason">${esc(d.meaning || d.reason)}</p>
+    ${d.sentence ? `<p class="hero-cal">${esc(d.sentence)}${d.calibration ? ` <button class="link-btn" data-view-link="help" data-help-anchor="calibration">Nasıl ölçüldü?</button>` : ''}</p>` : ''}
     ${(d.flags || []).length ? `<div class="flag-chips">${d.flags.map((f) => `<span class="tag ${f.level === 'flag' ? '' : 't-risk'}" title="${esc(f.reason)}">${esc(f.label)}</span>`).join('')}</div>` : ''}
-    ${d.capped && d.capped.length ? `<p class="mini">Karar düzeltmesi: ${d.capped.map(esc).join('; ')}.</p>` : ''}
     <div class="hero-metrics">
-      ${metric('Talep', r.demand, demandLevel(r.demand), { tip: 'demand' })}
+      ${metric('Girebilirlik', d.axes ? d.axes.enter.score : null, enterLevelUi(d.axes ? d.axes.enter.score : null), { tip: 'enter' })}
+      ${metric('Getiri', null, payoffLevelUi(d.axes ? d.axes.payoff.level : null), { tip: 'payoff', display: d.axes && Number.isFinite(d.axes.payoff.midpack) ? fmtShort(d.axes.payoff.midpack) : '–' })}
       ${metric('Rekabet', r.difficulty, difficultyLevel(r.difficulty), { invert: true, tip: 'difficulty' })}
-      ${metric('Pazar', r.market, marketLevel(r.market), { tip: 'market' })}
+      ${metric('Talep', r.demand, demandLevel(r.demand), { tip: 'demand' })}
       ${trendMetric(d.trend)}
     </div>
   </div>
@@ -380,8 +390,9 @@ function detailBody(r, opts = {}) {
   ${variants.length ? `<div class="sec"><h4>Aynı pazara düşen varyantlar</h4>
     <p class="mini">Bu kelimelerin arama sonuçları neredeyse aynı; ayrı fırsat değil, aynı fikrin farklı yazımı.</p>
     <div class="kw-chips">${variants.map((v) => `<button class="kw-chip" data-details="${esc(v.k)}">${esc(v.k)} <span class="o">${v.opportunity ?? '–'}</span></button>`).join('')}</div></div>` : ''}
-  ${d.positives.length ? `<div class="sec"><h4>Neden iyi</h4>${signalList(d.positives, 'pos')}</div>` : ''}
-  ${d.negatives.length ? `<div class="sec"><h4>Riskler</h4>${signalList(d.negatives, 'neg')}</div>` : ''}
+  ${d.positives.length ? `<div class="sec"><h4>Neden bu karar</h4>${signalList(d.positives, 'pos')}</div>` : ''}
+  ${d.capped.length ? `<div class="sec"><h4>Kararı sınırlayanlar</h4>${signalList(d.capped, 'neg')}</div>` : ''}
+  ${d.negatives.length ? `<div class="sec"><h4>Uyarılar</h4>${signalList(d.negatives, 'neg')}</div>` : ''}
 
   <div class="sec">
     <h4>Talep kanıtı</h4>
@@ -484,7 +495,7 @@ function closeDrawer() {
 /* ============================ filtre + sıralama ============================ */
 function matchesQuick(r, quick) {
   switch (quick) {
-    case 'all': return r.dv !== 'PENDING';
+    case 'all': return r.dv !== 'PENDING' && !r.decision.excluded;
     case 'real': return r.realistic;
     case 'GOLD': return r.dv === 'GOLD';
     case 'BUILD': return r.dv === 'GOLD' || r.dv === 'BUILD';
@@ -525,7 +536,8 @@ const SORTERS = {
   easy: (a, b) => (a.difficulty ?? 999) - (b.difficulty ?? 999) || compareByVerdict(a, b),
   rising: (a, b) => (b.trendDelta ?? -999) - (a.trendDelta ?? -999) || compareByVerdict(a, b),
   market: (a, b) => (b.market ?? -1) - (a.market ?? -1) || compareByVerdict(a, b),
-  reach: (a, b) => (b.reachScore ?? -1) - (a.reachScore ?? -1) || compareByVerdict(a, b)
+  reach: (a, b) => (b.enterScore ?? -1) - (a.enterScore ?? -1) || compareByVerdict(a, b),
+  enterScore: (a, b) => (b.enterScore ?? -1) - (a.enterScore ?? -1) || compareByVerdict(a, b)
 };
 
 function sortRows(rows, key) {
@@ -538,7 +550,7 @@ function renderOverview() {
   if (!d) return;
   const c = state.counts;
   const analyzed = state.records.filter((r) => r.dv !== 'PENDING');
-  const best = Math.max(0, ...analyzed.map((r) => (Number.isFinite(r.opportunity) ? r.opportunity : 0)));
+  const best = Math.max(0, ...analyzed.filter((r) => !r.decision.excluded).map((r) => (Number.isFinite(r.enterScore) ? r.enterScore : 0)));
   const newOpps = state.records.filter(isNewOpportunity);
   const rising = state.records.filter((r) => r.decision.trend.dir === 'rising');
   const cells = [
@@ -546,8 +558,9 @@ function renderOverview() {
     ['s-build', c.BUILD, 'BUILD', 'BUILD'],
     ['s-watch', c.WATCH, 'WATCH', 'WATCH'],
     ['', c.WEAK, 'WEAK', null],
-    ['s-skip', c.SKIP, 'SKIP', null],
-    ['', best || '–', 'En iyi skor', null],
+    ['s-skip', c.SKIP, 'SKIP (duvar)', null],
+    ['', best || '–', 'En kolay giriş', null],
+    ['', c.INVALID, 'Geç (yapay / talepsiz)', null],
     ['s-real', state.records.filter((r) => r.realistic).length, 'Gerçekçi', 'real'],
     ['', newOpps.length ? `+${newOpps.length}` : '0', 'Yeni fırsat (7g)', 'new'],
     ['', fmtRel(d.generatedAt), 'Son tarama', null]
@@ -562,15 +575,15 @@ function renderOverview() {
   $('#summarySub').textContent = `${fmtInt(s.keywords)} kelime evreninde ${fmtInt(analyzed.length)} tanesi puanlandı, ${fmtInt(s.pending)} tanesi sırada. ${fmtInt((d.niches || []).length)} niş, ${fmtInt(s.apps)} rakip uygulama. ${fmtInt(s.runs)} tarama koşusu.`;
 
   // en iyi fırsatlar
-  const ranked = collapseVariants(sortRows(analyzed.filter((r) => r.demand > 0), 'verdict'));
-  const realistic = sortRows(ranked.filter((r) => r.realistic), 'reach');
+  const ranked = collapseVariants(sortRows(analyzed.filter((r) => r.demand > 0 && !r.decision.excluded), 'verdict'));
+  const realistic = sortRows(ranked.filter((r) => r.realistic), 'verdict');
   const rest = ranked.filter((r) => !r.realistic && ['GOLD', 'BUILD'].includes(r.dv));
   const top = [...realistic, ...rest].slice(0, 8);
   if (top.length) {
     renderList($('#topOpps'), top);
   } else {
     const fallback = ranked.slice(0, 5);
-    $('#topOpps').innerHTML = `<div class="empty"><strong>Şu anda GOLD veya BUILD fırsat yok.</strong>Tarama büyüdükçe burası dolacak. Şimdilik en güçlü adaylar aşağıda.</div>
+    $('#topOpps').innerHTML = `<div class="empty"><strong>Şu anda güçlü ya da iyi aday yok.</strong>Tarama büyüdükçe burası dolacak. Şimdilik en güçlü adaylar aşağıda.</div>
       <p class="fallback-note">En iyi mevcut adaylar</p><div class="opp-list">${fallback.map(oppCard).join('')}</div>`;
   }
 
@@ -662,7 +675,7 @@ function renderOpportunities(reset = true) {
         ${alt.length ? `<p class="fallback-note">En iyi mevcut adaylar</p><div class="opp-list">${alt.map(oppCard).join('')}</div>` : ''}`;
     } else if (state.quick === 'real') {
       const alt = collapseVariants(sortRows(state.records.filter((r) => ['GOLD', 'BUILD'].includes(r.dv)), 'reach')).slice(0, 6);
-      el.innerHTML = `<div class="empty"><strong>Şu anda hem kararı BUILD+ hem erişimi ${REALISTIC_REACH}+ olan kelime yok.</strong>Tarama derinleştikçe çıkacak. En yakın adaylar aşağıda.</div>
+      el.innerHTML = `<div class="empty"><strong>Şu anda hem güçlü/iyi aday hem de yerleşik rakiplerin orta sırası 1 milyon+ olan kelime yok.</strong>Tarama derinleştikçe çıkacak. En yakın adaylar aşağıda.</div>
         ${alt.length ? `<p class="fallback-note">Erişimi en yüksek BUILD kelimeleri</p><div class="opp-list">${alt.map(oppCard).join('')}</div>` : ''}`;
     } else if (state.quick === 'saved') {
       el.innerHTML = '<div class="empty"><strong>Henüz kaydedilmiş fırsat yok.</strong>Kartlardaki ☆ düğmesine basarak buraya ekle.</div>';
@@ -800,7 +813,7 @@ function renderAnalyst(reset = true) {
       <td class="num">${bar(r.opportunity)}</td>
       <td class="num">${bar(r.demand)}</td>
       <td class="num">${bar(r.difficulty, true)}</td>
-      <td class="num">${r.reachScore ?? '–'}</td>
+      <td class="num">${r.enterScore ?? '–'}</td>
       <td class="num">${r.market ?? '–'}</td>
       <td class="num">${r.titleMatches === null ? '–' : `${r.titleMatches}/${r.comp.n}`}</td>
       <td class="num">${r.weak ?? '–'}</td>
@@ -816,7 +829,7 @@ function renderAnalyst(reset = true) {
 
 function exportCsv() {
   const rows = analystRows();
-  const cols = ['kelime', 'karar', 'gerekce', 'firsat', 'firsat_seviye', 'talep', 'talep_seviye', 'zorluk', 'zorluk_seviye',
+  const cols = ['kelime', 'karar', 'karar_adi', 'girebilirlik', 'getiri', 'gecmis_oran', 'gerekce', 'firsat', 'firsat_seviye', 'talep', 'talep_seviye', 'zorluk', 'zorluk_seviye',
     'erisim', 'erisim_seviye', 'giris_bariyeri', 'orta_sira', 'lider_payi', 'yeni_giren', 'ilk10_10k_alti', 'gercekci',
     'pazar', 'trend', 'trend_degisim', 'baslikta', 'rakip_sayisi', 'zayif', 'dusuk_puan', 'bayat', 'dev', 'ort_puan', 'toplam_yukleme', 'kaynak', 'tohum', 'bulundu', 'son_analiz', 'ilk_10'];
   const lines = [cols.join(';')];
@@ -825,7 +838,7 @@ function exportCsv() {
     const d = r.decision;
     const apps = (r.top || []).map((id) => state.data?.apps?.[id]?.title).filter(Boolean).join(' | ');
     const x = d.reach;
-    const vals = [r.k, d.verdict, d.reason, r.opportunity, opportunityLevel(r.opportunity).label, r.demand, demandLevel(r.demand).label,
+    const vals = [r.k, d.excluded ? 'GEÇ' : d.verdict, d.label, r.enterScore, d.axes ? d.axes.payoff.label : '', d.calibration ? `%${d.calibration.t50Shown}` : '', d.reason, r.opportunity, opportunityLevel(r.opportunity).label, r.demand, demandLevel(r.demand).label,
       r.difficulty, difficultyLevel(r.difficulty).label,
       r.reachScore, r.reachScore === null ? '' : reachLevel(r.reachScore).label, x.entry, x.midpack,
       x.leaderShare, x.newcomers, x.tiny, r.realistic ? 'evet' : 'hayır',
@@ -1000,9 +1013,22 @@ async function runLive(term, marketStr) {
     const rec = {
       ...res,
       st: res.status === 'no-demand' ? 'no-demand' : res.partial ? 'partial' : 'ok',
+      top: (res.apps || []).filter(Boolean).map((a) => a.id),
       at: res.analyzedAt, src: 'live', first: null, hist: []
     };
-    rec.decision = getOpportunityVerdict(rec, { ctx: liveFlagContext(res.apps || [], hl) });
+    // Karar, o pazarın veri seti bağlamıyla verilir (pazar geneli geliştirici tablosu): radardaki kararla aynı.
+    // Veri seti olmayan pazarlarda "yaklaşık" karar: güçlü aday verilmez, geçmiş oran gösterilmez.
+    const mk = `${gl}-${hl}`;
+    let ctx = null;
+    const dm = state.data && state.data.market;
+    if (dm && `${dm.country}-${dm.lang}` === mk) ctx = state.flagCtx;
+    else if (['us-en', 'tr-tr'].includes(mk)) {
+      try { ctx = buildFlagContext(await bridge.getMarketData(mk)); } catch { ctx = null; }
+    }
+    rec.decision = getOpportunityVerdict(rec, {
+      ctx: ctx || liveFlagContext(res.apps || [], hl), market: mk,
+      appsMap: Object.fromEntries((res.apps || []).filter(Boolean).map((a) => [a.id, a]))
+    });
     rec.dv = rec.decision.verdict;
     state.liveResult = rec;
     const d = rec.decision;
@@ -1014,6 +1040,19 @@ async function runLive(term, marketStr) {
   } catch (err) {
     out.innerHTML = `<div class="verdict-hero v-skip"><h3>Analiz başarısız</h3><p class="muted">${esc(err.message)}</p></div>`;
   }
+}
+
+/* ============================ kalibrasyon ============================ */
+/** Geri test sonuçları: her sınıfta küçük bir geliştiricinin yeni uygulaması günde 50+ yüklemeye ulaştı mı? */
+function renderCalibration() {
+  const el = $('#calibrationTables');
+  if (!el || el.dataset.done) return;
+  const LABELS = { 'us-en': 'Global (ABD / İngilizce)', 'tr-tr': 'Türkiye (Türkçe)' };
+  el.innerHTML = Object.entries(CALIBRATION).map(([m, cal]) => `<h4>${esc(LABELS[m] || m)} <span class="muted small">— taban oran %${cal.base.t50}</span></h4>
+    <div class="table-wrap"><table class="help-table cal-table"><thead><tr><th>Karar</th><th class="num">Kelime grubu</th><th class="num">Günde 50+ alan küçük yeni uygulama</th><th class="num">Girenlerin ölü kalma oranı</th><th class="num">Girenlerin medyan günlük yüklemesi</th></tr></thead><tbody>
+    ${['GOLD', 'BUILD', 'WATCH', 'WEAK', 'SKIP'].map((v) => { const c = cal[v]; return `<tr><td>${vbadge(v)} <span class="mini">${esc(CLASS_TR[v].title)}</span></td><td class="num">${fmtInt(c.n)}</td><td class="num"><b>%${Math.round(c.t50)}</b> <span class="mini">[${Math.round(c.ci[0])}–${Math.round(c.ci[1])}]</span></td><td class="num">%${Math.round(c.zombieIfEntered)}</td><td class="num">${fmtInt(c.medV)}</td></tr>`; }).join('')}
+    </tbody></table></div>`).join('');
+  el.dataset.done = '1';
 }
 
 /* ============================ gezinme ============================ */
@@ -1038,6 +1077,7 @@ function showView(route) {
   if (name === 'ranking') renderRanking();
   if (name === 'saved') renderSaved();
   if (name === 'analyst') renderAnalyst();
+  if (name === 'help') renderCalibration();
   if (name === 'live' && !state.liveChecked) { state.liveChecked = true; detectLive(); }
   window.scrollTo({ top: 0, behavior: 'auto' });
 }
@@ -1176,6 +1216,15 @@ function bind() {
     if (ni) { openNiche(ni.dataset.niche, ni.dataset.nicheType, ni.dataset.nicheLabel); return; }
 
     if (e.target.closest('[data-clear-niche]')) { state.niche = null; renderOpportunities(); return; }
+
+    const vlink = e.target.closest('#drawer [data-view-link], #liveResult [data-view-link]');
+    if (vlink) {
+      closeDrawer();
+      showView(vlink.dataset.viewLink);
+      const anchor = vlink.dataset.helpAnchor && document.getElementById(vlink.dataset.helpAnchor);
+      if (anchor) anchor.scrollIntoView({ block: 'start' });
+      return;
+    }
 
     const lv = e.target.closest('[data-live]');
     if (lv) {

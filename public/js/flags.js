@@ -43,13 +43,33 @@ const REG_EN = [
   [/\bcbd\b|\bmarijuana\b|\bweed\b|\bvape\b|\bhookup\b|\bnsfw\b|\bsexy?\b/, 'yetişkin/madde']
 ];
 const REG_EN_CAUTION = /\bcrypto|\bbitcoin\b|\bforex\b|\btrading signal|\bnft\b/;
+/**
+ * Unicode'a duyarlı kelime sınırı. JS'deki \b, ı ş ğ ü ö ç harflerini kelime karakteri saymaz:
+ * /\bkırıcı\b/ hiçbir zaman eşleşmez ("wifi şifre kırıcı" politika kuralından kaçıyordu).
+ */
+const WB = (body) => new RegExp(`(?<![\\p{L}\\p{N}])(?:${body})(?![\\p{L}\\p{N}])`, 'u');
 const REG_TR = [
-  [/\bbahis\b|\biddaa\b|\bkumar\b|\bcasino\b|\bkazino\b|\bslot\b|\brulet\b|\bpoker\b|\bjackpot\b/, 'kumar/bahis'],
-  [/\bacil kredi\b|\bnakit kredi\b|\bborç para\b|\bhızlı kredi\b|\bkredi notu yükseltme\b/, 'kredi/borç'],
-  [/\bhack\b|\bhile(si)?\b|\bkırıcı\b|\bşifre kırma\b|\btakipçi\b|\bbeğeni hilesi\b|\bcasus\b|\bgizli dinleme\b|\bkim baktı\b|\bmod apk\b|\bbedava elmas\b|\belmas hilesi\b|\barama kaydı\b/, 'casus/hile'],
-  [/\b(tansiyon|şeker|ateş|kan şekeri) ölçer\b|parmakla.*ölç|ölçer.*parmak/, 'tıbbi ölçüm iddiası']
+  [WB('bahis|iddaa|kumar|casino|kazino|slot|rulet|poker|jackpot'), 'kumar/bahis'],
+  [WB('acil kredi|nakit kredi|borç para|hızlı kredi|kredi notu yükseltme'), 'kredi/borç'],
+  [WB('hack|hile|hilesi|kırıcı|şifre kırma|takipçi|beğeni hilesi|casus|gizli dinleme|kim baktı|mod apk|bedava elmas|elmas hilesi|arama kaydı'), 'casus/hile'],
+  [/(?:tansiyon|şeker|ateş|kan şekeri) ölçer(?![\p{L}\p{N}])|parmakla.*ölç|ölçer.*parmak/u, 'tıbbi ölçüm iddiası']
 ];
-const REG_TR_CAUTION = /\bkripto\b|\bbitcoin\b|\bforex\b|\bborsa\b|\bhisse\b/;
+const REG_TR_CAUTION = WB('kripto|bitcoin|forex|borsa|hisse');
+
+/* Geri testte (Ekim 2026) eklenen anahtar-kelime kuralları — hepsi en fazla WATCH. */
+const REAL_MONEY_EN = WB('cash ?out|gcash|paypal|real money|real cash|win (?:real )?(?:cash|money|prizes?)|earn (?:cash|money|rewards?|gift ?cards?)|make money|get paid|money games?|cash (?:games?|apps?|rewards?|prizes?)|(?:solitaire|bingo|bubble|word|puzzle|pool|blackout|dominoes|games?) cash|games? (?:that|to) (?:pay|earn)');
+const CASH_TOKEN = WB('cash');
+const MONEY_TOKEN = WB('money');
+const MONEY_THEME = WB("idle|tycoon|clicker|simulator|cost money|dont cost|don't cost|free");
+const GAME_TOKEN = WB('games?|solitaire|bingo|slots?|puzzles?|trivia|quiz|pool|fishing|match 3|merge|word|lounge|win|earn|prizes?|rewards?|play');
+const FINANCE_UTILITY = WB('money manager|money tracker|money counter|cash register|cash flow|cash book|cashbook|cash counter|cash calculator|petty cash|money management');
+const REAL_MONEY_TR = WB('para kazan\\p{L}*|gerçek para\\p{L}*|nakit ödül\\p{L}*|ödüllü oyun\\p{L}*|para veren|para ödeyen|kazandıran oyun\\p{L}*');
+const AZ_GEO = /ə/u;
+const AZ_WORD = WB('azerbaycan\\p{L}*|azərbaycan\\p{L}*|azeri\\p{L}*|\\p{L}{3,}(?:maq|mək)');
+// polis/jandarma bilerek yok: "polis oyunları" bir oyun türü, navigasyon değil
+const TR_AGENCY = WB('afad|kızılay|tcdd|nvi|nüfus müdürlüğü|yök|turkiye\\.gov');
+// ekli marka adı ("minecraftta", "roblox'ta"): sözlük yalnızca tam kelimeyi tanır
+const TR_IP_SUFFIX = WB("(?:minecraft|roblox|pubg|fortnite|pokemon|brawl stars|free fire|among us|toca boca|sakura school|subway surfers|gta|granny)'?\\p{L}+");
 
 const WRONG_GEO = new Set(['india', 'indian', 'hindi', 'marathi', 'tamil', 'telugu', 'kannada', 'malayalam', 'gujarati', 'punjabi', 'bengali', 'bangla', 'urdu', 'odia', 'oriya', 'assamese', 'nepali', 'nepal', 'sinhala', 'pakistan', 'pakistani', 'bangladesh', 'flipkart', 'paytm', 'upi', 'irctc', 'aadhaar', 'aadhar', 'jio', 'meesho', 'myntra', 'swiggy', 'zomato', 'kerala', 'mumbai', 'delhi', 'tagalog', 'filipino', 'pinoy', 'indonesia', 'indonesian', 'malaysia', 'nigeria', 'naija', 'kenya', 'ghana', 'lanka', 'bhojpuri', 'rajasthani', 'haryanvi', 'islamabad', 'karachi', 'lahore', 'dhaka', 'kolkata', 'chennai', 'hyderabad', 'bangalore']);
 const LIKE_X = /\b(like|similar to|alternative to|alternatives)\b/;
@@ -79,7 +99,8 @@ export function buildFlagContext(data, opts = {}) {
     byK.set(r.k, r);
     for (const t of new Set(String(r.k).split(' '))) kwDF.set(t, (kwDF.get(t) || 0) + 1);
   }
-  return { lang, apps, titleDF, kwDF, byK, dotlessEn, now: opts.now ?? Date.now(), currentYear: new Date(opts.now ?? Date.now()).getUTCFullYear(), verdictOf: null };
+  // _tok: başlık/geliştirici token önbelleği; bağlam kopyalansa da ({...ctx}) aynı Map paylaşılır
+  return { lang, apps, titleDF, kwDF, byK, dotlessEn, now: opts.now ?? Date.now(), currentYear: new Date(opts.now ?? Date.now()).getUTCFullYear(), verdictOf: null, _tok: new Map() };
 }
 
 /* ---------------- yardımcılar ---------------- */
@@ -132,6 +153,11 @@ export function detectFlags(r, ctx) {
     // tek harfle başlayan öbek ('l park etme'); iki harfli Türkçe kelimeler (su, ev, ön, üç, qr) gerçek
     const shortLead = lead.length === 1 && !/^\d+$/.test(lead);
     if (dup || toks.length >= 6 || shortLead || has(k, 'en iyisi')) add('junk', 'exclude', 'Doğal olmayan kelime', 'Başlık parçalarından türemiş, insanların yazmadığı bir öbek (tekrarlı kelime, çok uzun ya da anlamsız başlangıç).');
+  } else {
+    // "board game keyboard game keyboard game": anlamlı bir kelime tekrar ediyor (game/app gibi genel kelimeler hariç)
+    // bitişik tekrar ("tap tap", "bon bon") bir addır, iki aramanın birleşimi değildir
+    const content = toks.filter((t, i) => t.length >= 3 && !L.stopwords.has(t) && !L.stopwords.has(L.stem(t)) && toks[i - 1] !== t);
+    if (content.length !== new Set(content).size) add('junk', 'exclude', 'Doğal olmayan kelime', 'Aynı kelime iki kez geçiyor: iki aramanın birleşimi, insanların yazdığı bir sorgu değil.');
   }
 
   const season = isTr ? TR_SEASONAL.find((p) => has(k, p)) : (k.match(EN_SEASONAL) || [])[0];
@@ -141,6 +167,19 @@ export function detectFlags(r, ctx) {
   const reg = (isTr ? REG_TR : REG_EN).find(([re]) => re.test(k));
   if (reg) add('regulated', 'cap', 'Politika riski', `Play politikasında kısıtlı alan (${reg[1]}): yayın reddi ya da kaldırılma riski yüksek.`, 'WATCH');
   else if ((isTr ? REG_TR_CAUTION : REG_EN_CAUTION).test(k)) add('finance', 'flag', 'Finans politikası', 'Kripto/borsa uygulamaları Play\'in finansal hizmetler beyanına tabidir.');
+  const kl = String(r.k || '').toLocaleLowerCase(isTr ? 'tr' : 'en');
+  if (isTr) {
+    if (REAL_MONEY_TR.test(kl)) add('realMoney', 'cap', 'Para kazandırma', 'Para kazandırma vaadi: Play politikasında kısıtlı ve büyük yayıncıların alanı.', 'WATCH');
+    if (AZ_GEO.test(kl) || AZ_WORD.test(kl)) add('wrongGeoAz', 'cap', 'Yanlış mağaza', 'Azerbaycan Türkçesi: Türkiye mağazasında ölçülen değerler o pazarı yansıtmaz.', 'WATCH');
+    if (TR_AGENCY.test(kl)) add('agencyNav', 'cap', 'Kurum adı', 'Bir kamu kurumunun adı: arayan resmî uygulamayı istiyor.', 'WATCH');
+  } else if (!reg && (REAL_MONEY_EN.test(kl) || (GAME_TOKEN.test(kl) && !FINANCE_UTILITY.test(kl) && (CASH_TOKEN.test(kl) || (MONEY_TOKEN.test(kl) && !MONEY_THEME.test(kl)))))) {
+    add('realMoney', 'cap', 'Para kazandırma', 'Gerçek para / ödül vaadi: Play politikasında kısıtlı ve büyük yayıncıların alanı.', 'WATCH');
+  }
+  // ekli marka adı: sözlük ya da yayıncı adı kuralı zaten yakaladıysa tekrar eklenmez (sona bakılır)
+  const ipSuffix = () => {
+    if (isTr && !out.some((f) => f.id === 'brandTr') && TR_IP_SUFFIX.test(kl)) add('ipSuffix', 'cap', 'Ticari marka', 'Başka bir oyunun / markanın adı (ekli hâliyle): sonuçlar o markaya ait, adı meta veride kullanılamaz.', 'WATCH');
+    return out;
+  };
   if (!isTr) {
     if (LIKE_X.test(k)) add('likeX', 'cap', 'Başka oyuna atıf', '"… like X" araması belirli bir oyunu arıyor; sonuçlar o markaya ait.', 'WATCH');
     else if (IP_3P.test(k)) add('ip', 'cap', 'Ticari marka', 'Başka bir markanın/serinin adını içeriyor: meta veride kullanılamaz, sonuçlar o markaya ait.', 'WATCH');
@@ -155,9 +194,9 @@ export function detectFlags(r, ctx) {
     if (dotEn.length) add('dotlessEn', 'flag', 'Yazım ikizi', `"${dotEn[0]}" aslında İngilizce "${dotEn[0].replace(/ı/g, 'i')}": noktalı yazımıyla aynı kelime, ölçümler bölünmüş olabilir.`);
   }
 
-  if (!ctx || !Array.isArray(r.top) || !r.top.length) return out;
+  if (!ctx || !Array.isArray(r.top) || !r.top.length) return ipSuffix();
   const apps = topApps(r, ctx);
-  if (!apps.length) return out;
+  if (!apps.length) return ipSuffix();
 
   /* --- navigasyonel / tek yayıncı (kesinlik 75–100%) --- */
   const devCount = new Map();
@@ -228,14 +267,14 @@ export function detectFlags(r, ctx) {
     if (kt.length && has1(apps[0]) && apps.slice(1).filter(has1).length <= 1) add('navTop1', 'flag', 'Tek uygulama araması olabilir', `1. sıradaki "${apps[0].title}" kelimeyi birebir taşıyor, diğerleri taşımıyor.`);
   }
   if ((r.st === 'ok' || r.st === 'partial') && /[^\u0000-ɏ\s]/.test(r.k) && !isTr) add('script', 'flag', 'Farklı alfabe', 'Latin olmayan alfabe: bu pazarın dili değil.');
-  return out;
+  return ipSuffix();
 }
 
 /** Canlı tek kelime analizi için bağlam: yalnızca o kelimenin ilk 10'u (sıklık kuralları kapalı). */
 export function liveFlagContext(apps, lang, now = Date.now()) {
   const map = {};
   for (const a of apps || []) if (a && a.id) map[a.id] = a;
-  return { lang, apps: map, titleDF: null, kwDF: null, byK: null, dotlessEn: null, now, currentYear: new Date(now).getUTCFullYear(), verdictOf: null };
+  return { lang, apps: map, titleDF: null, kwDF: null, byK: null, dotlessEn: null, now, currentYear: new Date(now).getUTCFullYear(), verdictOf: null, _tok: new Map() };
 }
 
 /** Kural listesinin özeti: en sert eylem. */

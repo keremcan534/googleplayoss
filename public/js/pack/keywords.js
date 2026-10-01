@@ -21,7 +21,8 @@ const OVERLAP = 0.6;
 /** Aday kaydını (veri seti ya da canlı analiz) karar ve uyumla zenginleştirir. */
 export function evaluateCandidate(record, analysis, meta = {}) {
   const analyzed = !!record && ['ok', 'partial', 'no-demand'].includes(record.st);
-  const decision = analyzed ? getOpportunityVerdict(record) : null;
+  const appsMap = meta.appsMap || (meta.apps && meta.apps.length ? Object.fromEntries(meta.apps.filter(Boolean).map((a) => [a.id, a])) : null);
+  const decision = analyzed ? getOpportunityVerdict(record, { ctx: meta.ctx || null, appsMap: appsMap || undefined }) : null;
   const rel = keywordRelevance(record ? record.k : meta.k, analysis);
   return {
     k: record ? record.k : meta.k,
@@ -40,6 +41,8 @@ export function evaluateCandidate(record, analysis, meta = {}) {
     verdict: decision ? decision.verdict : 'PENDING',
     reason: decision ? decision.reason : 'Henüz analiz edilmedi.',
     reach: decision && decision.reach && decision.reach.has ? decision.reach.score : null,
+    enter: decision && decision.axes ? decision.axes.enter.score : null,
+    payoff: decision && decision.axes ? decision.axes.payoff.level : null,
     rel,
     lang: analysis.lang
   };
@@ -59,10 +62,13 @@ export function navigationalApp(c) {
   return null;
 }
 
-/** Sıralama puanı: karar sınıfı önce, sonra erişim, fırsat, talep. */
+/**
+ * Sıralama puanı: karar sınıfı önce, sonra girebilirlik (geri testte yeni girenlerin başarısını sıralayan tek ölçü),
+ * sonra küçük ağırlıkla fırsat ve talep (talep arama hacmi değildir; yalnızca eşitlik bozucu).
+ */
 export function positionScore(c) {
-  const reach = Number.isFinite(c.reach) ? c.reach : 40;
-  return VERDICT_RANK[c.verdict] * 100 + 0.4 * (c.opportunity || 0) + 0.35 * reach + 0.25 * (c.demand || 0);
+  const enter = Number.isFinite(c.enter) ? c.enter : 30;
+  return VERDICT_RANK[c.verdict] * 100 + 0.6 * enter + 0.2 * (c.opportunity || 0) + 0.2 * (c.demand || 0);
 }
 
 function overlap(a, b) {

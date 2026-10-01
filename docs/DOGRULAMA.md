@@ -73,6 +73,44 @@ denetlendi; sözlüğe dayanan kurallar (marka, geliştirici adı) yalnızca **s
 - **Tarih ayrıştırma** UTC'nin doğusunda bir gün geri kayıyordu.
 - **İngilizce kökleme** "zombies" ile "zombie"yi eşleştiremiyordu.
 
+## Yeni karar: Girebilirlik × Getiri
+
+Eski karar (talep × rekabet → fırsat eşikleri) sızıntısız geri testte sıralanmıyordu (AUC 0,52 ABD /
+0,50 TR; üst sınıflarda ölü kalma oranı en yüksekti). Ortak bir değerlendirme düzeneği üzerinde üç
+bağımsız tasarım (iki eksenli kapılar, kalibre olasılık modeli, asgari değişiklik) yarıştırıldı; üç
+yargıç (istatistik titizliği, dürüstlük/kullanılabilirlik, uygulanabilirlik) puanladı ve en iyi
+parçalar birleştirildi.
+
+- **Girebilirlik (0-100):** ilk 10'un sıra ağırlıklı olarak ne kadarı son 2 yılda çıkmış ve ne kadarı
+  küçük geliştiricilerin. Bantlar 60 / 40 / 30 / 15 → GOLD / BUILD / WATCH / WEAK / SKIP (duvar).
+  Bant eşikleri 20 rastgele yarıya bölmede dışarıda tutulan sıralamayla seçildi.
+- **Getiri sınırları:** yerleşik (1+ yaş) rakiplerin en zayıf ikincisi 3 binin altındaysa en fazla WEAK
+  (ölü sıralar), 100 binin altındaysa en fazla WATCH (ince pazar, piyango).
+- **Diğer sınırlar:** 1-2 kelimelik baş terimler en fazla WATCH; yanlış pozitif kuralları; pazar geneli
+  geliştirici tablosu yoksa (veri seti dışı canlı analiz) GOLD yok ve geçmiş oran gösterilmez.
+- **Kullanılmayanlar:** talep ve fırsat puanı karara girmez.
+
+Geri test sonucu (aynı sonuç sayfasını paylaşan kelimeler bir kez sayıldı; "T50" = o yıl çıkan küçük
+bir geliştiricinin uygulaması ilk 10'a girip günde 50+ yükleme aldı):
+
+| Sınıf | ABD n | ABD T50 [%95 GA] | TR n | TR T50 [%95 GA] |
+|---|---|---|---|---|
+| GOLD | 32 | %68,8 [53–84] | 15 | %73,3 [53–93] |
+| BUILD | 296 | %52,7 [47–59] | 131 | %52,7 [44–61] |
+| WATCH | 733 | %39,8 [36–44] | 395 | %37,2 [32–42] |
+| WEAK | 809 | %30,2 [27–33] | 494 | %24,9 [21–29] |
+| SKIP | 615 | %20,2 [17–23] | 499 | %15,6 [13–19] |
+
+Sınıflar her iki pazarda tek yönlü (AUC 0,63 ABD / 0,66 TR); GOLD+BUILD, WATCH'tan anlamlı biçimde
+iyi (+14,4 puan [8,3–20,7] ABD, +17,6 puan [8,0–27,4] TR), girenlerin ölü kalma oranı %2-4. Dayanıklılık:
+farklı "küçük geliştirici" tanımları, eşik oynatmaları, en sık 10 kazananın çıkarılması ve örneklem
+eşleştirmesiyle sonuç büyük ölçüde korunuyor; en katı tanımda (geliştirici 1M altı, en fazla 2 uygulama)
+ABD farkı anlamlılığı kaybediyor. Ayırt etme gücü gerçek ama orta düzeyde.
+
+Sınırlar: tek dönem (2025-10 → 2026-10); yalnızca başaranlar görünür; GOLD küçük ve aralığı geniş;
+kararlar her gün kaydedilir ve bant sınırında ±3 puanlık histerezis uygulanır (günlük sınıf değişimi
+%1'in altında). Oranlar yeni bir pazarda ayrı geri test yapılmadan gösterilmez.
+
 ## Simülasyon
 
 "Bu kelimeyi hedefleyen, reklam bütçesiz bir uygulama yayınlasam?" sorusu için: yükleme tarafı

@@ -6,7 +6,7 @@
  * Eşikler ve kurallar tek yerde: THRESHOLDS, GUARDS, LEVELS.
  */
 
-import { detectFlags } from './flags.js';
+import { classifyToday } from './enterpayoff.js';
 
 const clamp = (x, lo, hi) => Math.min(hi, Math.max(lo, x));
 
@@ -41,12 +41,13 @@ export const GUARDS = {
   goldMinReach: 50        // GOLD için gereken en az erişim puanı
 };
 
+/** Sınıf adları geri testle ölçülen anlamlarıyla (enterpayoff.js CLASS_TR). Trafik/para vaadi değildir. */
 export const VERDICT_META = {
-  GOLD: { label: 'GOLD', title: 'Olağanüstü fırsat', hint: 'Bunu yap', icon: '★', tone: 'gold' },
-  BUILD: { label: 'BUILD', title: 'İyi fırsat', hint: 'Yapmaya değer', icon: '●', tone: 'build' },
-  WATCH: { label: 'WATCH', title: 'İzle', hint: 'Takipte tut', icon: '●', tone: 'watch' },
-  WEAK: { label: 'WEAK', title: 'Zayıf', hint: 'Muhtemelen değmez', icon: '●', tone: 'weak' },
-  SKIP: { label: 'SKIP', title: 'Geç', hint: 'Vakit harcama', icon: '●', tone: 'skip' },
+  GOLD: { label: 'GOLD', title: 'Güçlü aday', hint: 'Yeni ve küçük uygulamalara en açık', icon: '★', tone: 'gold' },
+  BUILD: { label: 'BUILD', title: 'İyi aday', hint: 'Yeni ve küçük uygulamalara açık', icon: '●', tone: 'build' },
+  WATCH: { label: 'WATCH', title: 'Ortalama / riskli', hint: 'Orta giriş ya da ince pazar', icon: '●', tone: 'watch' },
+  WEAK: { label: 'WEAK', title: 'Zayıf', hint: 'Eski ve büyük uygulamaların ya da ölü sıralar', icon: '●', tone: 'weak' },
+  SKIP: { label: 'SKIP', title: 'Duvar', hint: 'Yeni küçük uygulama nadiren giriyor', icon: '●', tone: 'skip' },
   PENDING: { label: 'BEKLİYOR', title: 'Henüz analiz edilmedi', hint: 'Sırada', icon: '○', tone: 'pending' }
 };
 
@@ -343,66 +344,74 @@ export function buildReason(record, trend) {
   return extra ? `${base}, ${extra}.` : `${base}.`;
 }
 
+const CAP_SHORT = {
+  deadPond: 'sıralar ölü', thinPond: 'ince pazar', noEstablished: 'getiri ölçülemiyor', headTerm: 'kısa baş kelime',
+  fewApps: 'eksik rakip verisi', noDevTable: 'yaklaşık karar'
+};
+
+/** Kayıtla gelen uygulama listesini (canlı analiz) id → uygulama haritasına çevirir. */
+function appsMapOf(record, opts) {
+  if (opts.appsMap) return opts.appsMap;
+  if (Array.isArray(record.apps) && record.apps.length) return Object.fromEntries(record.apps.filter((a) => a && a.id).map((a) => [a.id, a]));
+  return (opts.ctx && opts.ctx.apps) || null;
+}
+
 /**
  * Ana giriş noktası: bir kelime kaydından karar üretir.
- * Dönen nesne sunum içindir; skorlar değiştirilmez.
+ *
+ * Karar "Girebilirlik × Getiri" kuralıdır (enterpayoff.js): ilk 10'un ne kadarı son 2 yılda çıkmış ve küçük
+ * geliştiricilerin (girebilirlik), yerleşik rakiplerin en zayıf ikincisi ve orta sırası ne kadar yükleme alıyor
+ * (getiri). Sızıntısız geri testte sınıflar yeni girenlerin başarısıyla tek yönlü sıralandı; eski
+ * talep × rekabet formülü sıralanmıyordu. Talep ve fırsat puanı karara girmez, yalnızca gösterilir.
+ *
+ * @param {object} record kelime kaydı
+ * @param {{now?:number, ctx?:object, appsMap?:object, prev?:object, flags?:Array, market?:string}} opts
+ *        ctx = buildFlagContext(veri seti) — pazar dili, sözlükler ve pazar geneli geliştirici tablosu (ctx.apps)
  */
 export function getOpportunityVerdict(record, opts = {}) {
   const now = opts.now ?? Date.now();
   const r = record || {};
   const trend = getTrend(r);
   const isNew = isNewRecord(r, now);
-  // yanlış pozitif kapıları (flags.js): veri seti bağlamı varsa tümü, yoksa kelimeye bakanlar
-  const flags = opts.flags || detectFlags(r, opts.ctx ? { ...opts.ctx, now: opts.ctx.now ?? now } : null);
-  const base = { trend, isNew, positives: [], negatives: [], capped: [], scoreLevel: opportunityLevel(r.opportunity), reach: reachability(r), flags };
-
+  const base = {
+    trend, isNew, positives: [], negatives: [], capped: [], flags: [], scoreLevel: opportunityLevel(r.opportunity), reach: reachability(r),
+    state: null, axes: null, calibration: null, sentence: null, sortKey: -1, meaning: '', approx: false, excluded: false
+  };
   const analyzed = r.st === 'ok' || r.st === 'partial' || r.st === 'no-demand';
   if (!analyzed) {
     return { ...base, verdict: 'PENDING', label: VERDICT_META.PENDING.title, reason: 'Analiz sırada bekliyor, karar bir sonraki taramada oluşur.' };
   }
-  const demand = r.demand ?? 0;
-  if (r.st === 'no-demand' || demand <= 0) {
-    return { ...base, verdict: 'SKIP', label: VERDICT_META.SKIP.title, reason: buildReason(r, trend), negatives: ['Otomatik tamamlamada ne kendisi ne de uzantısı görünüyor'] };
+  const appsMap = appsMapOf(r, opts);
+  const ep = r.st === 'no-demand' || appsMap ? classifyToday(r, appsMap || {}, opts.ctx || null, now, { prev: opts.prev ?? r.vprev ?? null, flags: opts.flags, market: opts.market }) : null;
+  if (!ep) {
+    return { ...base, verdict: 'PENDING', label: 'Eksik veri', reason: 'İlk 10 uygulama verisi yok: karar verilemedi.' };
   }
-  const { positives, negatives } = getSignals(r, trend);
-  if (!Number.isFinite(r.opportunity) || !Number.isFinite(r.difficulty)) {
-    return { ...base, verdict: 'PENDING', label: 'Eksik veri', reason: buildReason(r, trend), positives, negatives };
-  }
-
-  let verdict = verdictFromScore(r.opportunity);
-  const capped = [];
-  const cap = (to, why) => {
-    const next = capVerdict(verdict, to);
-    if (next !== verdict) { verdict = next; capped.push(why); }
+  const enter = ep.axes && ep.axes.enter;
+  const payoff = ep.axes && ep.axes.payoff;
+  const flagShort = new Map((ep.flags || []).map((f) => [f.id, f.label.toLocaleLowerCase('tr-TR')]));
+  const caps = (ep.capped || []).map((c) => CAP_SHORT[c.id] || flagShort.get(c.id) || c.id);
+  const reason = ep.state === 'invalid'
+    ? ep.guards[0] || ep.meaning
+    : `${enter.label} (giriş ${enter.score}/100) · ${payoff.label.toLocaleLowerCase('tr-TR')}${caps.length ? ` · sınır: ${[...new Set(caps)].join(', ')}` : ''}.`;
+  const negatives = (ep.flags || []).filter((f) => f.level === 'flag').map((f) => `${f.label}: ${f.reason}`);
+  return {
+    ...base,
+    verdict: ep.verdict,
+    label: ep.label,
+    meaning: ep.meaning,
+    reason,
+    state: ep.state,
+    approx: ep.approx,
+    excluded: ep.state === 'invalid',
+    axes: ep.axes,
+    calibration: ep.calibration,
+    sentence: ep.sentence,
+    sortKey: ep.sortKey,
+    positives: ep.state === 'invalid' ? [] : ep.reasons.slice(0, 2),
+    negatives,
+    capped: ep.guards,
+    flags: ep.flags || []
   };
-  if (r.difficulty >= GUARDS.extremeDifficulty) cap(demand >= GUARDS.demandOverride ? 'BUILD' : 'WATCH', 'Rekabet aşırı olduğu için karar sınırlandı');
-  const n = (r.comp && r.comp.n) || 0;
-  if (r.st === 'partial' || n < GUARDS.minCompetitors) cap('WATCH', 'Rakip verisi eksik olduğu için karar sınırlandı');
-
-  // "0 indirme" koruması
-  const reach = reachability(r);
-  if (reach.has) {
-    if (reach.wall === 'hard') cap('WEAK', 'İlk 10 duvar: en zayıf rakip bile çok büyük');
-    else if (reach.wall === 'soft') cap('WATCH', 'Sıralamaya girmek zor: en zayıf rakip 100 binin üstünde');
-    if (reach.pond === 'dead') cap('WEAK', 'Ölü gölet: sıralasan bile indirme gelmez');
-    else if (reach.pond === 'thin') cap('WATCH', 'Pazar ince: orta sıra 5 binin altında');
-    if (Number.isFinite(reach.score) && reach.score < GUARDS.goldMinReach) {
-      cap('BUILD', `Erişim puanı ${reach.score}: sıralasan bile getirisi sınırlı, GOLD verilmedi`);
-    }
-  }
-
-  // yanlış pozitif kapıları en son uygulanır: marka/navigasyonel/yapay kelime puanı ne olursa olsun
-  let reason = buildReason(r, trend);
-  const excluded = flags.find((f) => f.level === 'exclude');
-  if (excluded) {
-    if (verdict !== 'SKIP') capped.push(`${excluded.label}: ${excluded.reason}`);
-    verdict = 'SKIP';
-    reason = excluded.reason;
-  } else {
-    for (const f of flags) if (f.level === 'cap' && f.cap) cap(f.cap, `${f.label}: ${f.reason}`);
-  }
-  for (const f of flags) if (f.level === 'flag') negatives.push(`${f.label}: ${f.reason}`);
-  return { ...base, verdict, label: VERDICT_META[verdict].title, reason, positives, negatives, capped, reach, excluded: !!excluded };
 }
 
 /** Rakip özeti (ilk 10). */
@@ -421,11 +430,14 @@ export function competitorSummary(record) {
   };
 }
 
-/** Varsayılan sıralama: karar sınıfı, sonra fırsat puanı, sonra ad. */
+/** Varsayılan sıralama: karar sınıfı, sonra girebilirlik puanı, sonra ad. */
 export function compareByVerdict(a, b) {
   const va = VERDICT_ORDER[a.decision ? a.decision.verdict : 'PENDING'] ?? 9;
   const vb = VERDICT_ORDER[b.decision ? b.decision.verdict : 'PENDING'] ?? 9;
   if (va !== vb) return va - vb;
+  const ea = a.decision && Number.isFinite(a.decision.sortKey) ? a.decision.sortKey : -1;
+  const eb = b.decision && Number.isFinite(b.decision.sortKey) ? b.decision.sortKey : -1;
+  if (ea !== eb) return eb - ea;
   const oa = Number.isFinite(a.opportunity) ? a.opportunity : -1;
   const ob = Number.isFinite(b.opportunity) ? b.opportunity : -1;
   if (oa !== ob) return ob - oa;
@@ -438,19 +450,19 @@ export function compareByVerdict(a, b) {
  */
 export function getNicheVerdict(niche, members) {
   const usable = (members || []).filter((m) => m && Number.isFinite(m.opportunity) && m.demand > 0);
-  const sorted = usable.slice().sort((a, b) => b.opportunity - a.opportunity);
+  // Niş kararı üyelerin doğrulanmış kararlarından gelir: en iyi üç üyenin ortancası (tek bir aykırı
+  // kelime nişi taşıyamaz). Eskiden ham fırsat ortalamasıydı; geri testte sıralanmıyordu.
+  const decided = usable.filter((m) => m.decision && m.decision.state === 'ok').sort(compareByVerdict);
+  const top3 = decided.slice(0, 3);
+  const sorted = decided.length ? decided : usable.slice().sort((a, b) => b.opportunity - a.opportunity);
   const top = sorted.slice(0, 5);
   const mean = (arr) => (arr.length ? arr.reduce((s, x) => s + x, 0) / arr.length : null);
   const topOpp = mean(top.map((m) => m.opportunity));
   const topDemand = mean(top.map((m) => m.demand));
   const topDiff = mean(top.map((m) => m.difficulty).filter(Number.isFinite));
-  let verdict = verdictFromScore(topOpp);
+  const verdict = top3.length ? top3[Math.floor((top3.length - 1) / 2)].decision.verdict : (topOpp === null ? 'PENDING' : 'SKIP');
   const counts = { GOLD: 0, BUILD: 0, WATCH: 0, WEAK: 0, SKIP: 0, PENDING: 0 };
   for (const m of members || []) counts[(m.decision && m.decision.verdict) || 'PENDING']++;
-  // Niş, en iyi üyesinden daha iyi olamaz: üyelerin korumalı kararlarıyla sınırlanır
-  // (eskiden ham fırsat ortalamasıyla hiçbir üyesi BUILD olmayan nişler BUILD görünüyordu).
-  const bestMember = ['GOLD', 'BUILD', 'WATCH', 'WEAK', 'SKIP'].find((v) => counts[v] > 0);
-  if (bestMember && topOpp !== null) verdict = capVerdict(verdict, bestMember);
   const useful = counts.GOLD + counts.BUILD + counts.WATCH;
   // trend: yeterli geçmişi olan üyelerin ortalama değişimi
   const deltas = usable.map((m) => m.decision && m.decision.trend).filter((t) => t && t.dir !== 'new').map((t) => t.delta);
@@ -465,11 +477,11 @@ export function getNicheVerdict(niche, members) {
   const topReach = reachScores.length ? Math.round(mean(reachScores)) : null;
   const dl = demandLevel(topDemand);
   const cl = difficultyLevel(topDiff);
-  const reason = topOpp === null
-    ? 'Henüz puanlanmış kelime yok.'
-    : `En iyi ${top.length} kelimenin ortalama fırsatı ${Math.round(topOpp)}, talep ${dl.label.toLowerCase()}, rekabet ${cl.label.toLowerCase()}.`;
+  const reason = !top3.length
+    ? 'Henüz değerlendirilmiş kelime yok.'
+    : `En iyi ${top3.length} kelimenin ortanca kararı ${VERDICT_META[verdict].title.toLocaleLowerCase('tr-TR')}; ${counts.GOLD + counts.BUILD} kelime güçlü/iyi aday.`;
   return {
-    verdict, label: VERDICT_META[verdict].title, reason,
+    verdict, label: (VERDICT_META[verdict] || VERDICT_META.PENDING).title, reason,
     topOpportunity: topOpp === null ? null : Math.round(topOpp),
     demand: { value: topDemand === null ? null : Math.round(topDemand), ...dl },
     competition: { value: topDiff === null ? null : Math.round(topDiff), ...cl },
