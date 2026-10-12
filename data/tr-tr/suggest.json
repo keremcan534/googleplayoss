@@ -1,7 +1,15 @@
 {
+"1": {
+"t": 1791804287725,
+"s": ["101","1234 kişilik oyunlar","101 okey internetsiz","101 okey yalla","157 online"]
+},
 "2": {
 "t": 1791282894640,
 "s": ["2 kişilik oyunlar","234 player games","2026 futbol oyunları","2 kişilik oyunlar online","2048"]
+},
+"10": {
+"t": 1791804287290,
+"s": ["101","101 okey internetsiz","101 okey yalla","1000kitap","101 okey vip"]
 },
 "24": {
 "t": 1789894876942,
@@ -76,7 +84,7 @@
 "s": ["1001 tvs","1001 tv","1001 tvs ekran yansıtma","1001 tv screen mirroring app","1001 tvs mirror screen to tv"]
 },
 "101 ": {
-"t": 1789894858045,
+"t": 1791804286846,
 "s": ["101 okey","101 okey internetsiz","101 okey yalla","101 okey vip","101 okey mi"]
 },
 "101 ka": {
@@ -118,6 +126,10 @@
 "101 odadan kaçış oyunu gizemi": {
 "t": 1789894860436,
 "s": ["101 odadan kaçış oyunu gizemi"]
+},
+"101 okey": {
+"t": 1791804286406,
+"s": ["101 okey","101 okey internetsiz","101 okey yalla","101 okey vip","101 okey mi"]
 },
 "2 ": {
 "t": 1791714143666,
@@ -972,7 +984,7 @@
 "s": ["7 yaş macera oyunları"]
 },
 "a": {
-"t": 1791108187590,
+"t": 1791804172739,
 "s": ["araba oyunları","among us","aksiyon oyunları","akbank","ayıcık oyunu"]
 },
 "abone": {
@@ -1064,7 +1076,7 @@
 "s": ["açık nefes egzersizleri"]
 },
 "ad": {
-"t": 1791108187184,
+"t": 1791804493561,
 "s": ["adım sayar","adobe","adet takvimi kadın günlüğü","addons","addax"]
 },
 "ada": {
@@ -1356,16 +1368,16 @@
 "s": ["adam öldürmece oyunlar","adam öldürmece oyunları","adam öldürmece oyunlar internetsiz","adam öldürmece oyunlar sandbox","silah oyunları adam öldürmece"]
 },
 "adı": {
-"t": 1791108186771,
+"t": 1791803867821,
 "s": ["adım sayar","adım para","adım sayar ücretsiz internetsiz","adım","adım sayar ucretsiz"]
 },
 "adım": {
-"t": 1789714114072,
-"s": ["adım sayar","adım para","adım sayar ücretsiz internetsiz","adım sayar ücretsiz","adım"]
+"t": 1791803868690,
+"s": ["adım sayar","adım para","adım sayar ücretsiz internetsiz","adım","adım sayar ucretsiz"]
 },
 "adım ": {
-"t": 1789713576011,
-"s": ["adım sayar","adım para","adım sayar ücretsiz internetsiz","adım sayar ücretsiz","adım sayar ucretsiz"]
+"t": 1791803868252,
+"s": ["adım sayar","adım para","adım sayar ücretsiz internetsiz","adım sayar ucretsiz","adım sayar internetsiz"]
 },
 "adım s": {
 "t": 1791457075364,
@@ -1398,6 +1410,18 @@
 "adım sayar uygulama": {
 "t": 1791457079138,
 "s": ["adım sayar uygulaması"]
+},
+"adv": {
+"t": 1791804493138,
+"s": ["adventure","adv screen recorder","adventure time","adventure bear","adv"]
+},
+"adven": {
+"t": 1791804492704,
+"s": ["adventure","adventure time","adventure bear","adventure capitalist","adventure island"]
+},
+"adventure": {
+"t": 1791804492258,
+"s": ["adventure","adventure time","adventure bear","adventure capitalist","adventure island"]
 },
 "af": {
 "t": 1791283091064,
@@ -1712,35 +1736,51 @@
 "s": ["almanca öğreniyorum","almanca","almanca öğren","almanca türkçe çeviri","almanca öğrenme programı"]
 },
 "almanca ": {
-"t": 1789713581140,
+"t": 1791803893224,
 "s": ["almanca öğreniyorum","almanca öğren","almanca türkçe çeviri","almanca öğrenme programı","almanca sözlük"]
 },
 "almanca öğr": {
-"t": 1789714145509,
+"t": 1791803879486,
 "s": ["almanca öğreniyorum","almanca öğren","almanca öğrenme programı","almanca öğrenme","almanca öğreniyorum ücretsiz"]
 },
 "almanca öğre": {
-"t": 1789714142768,
+"t": 1791803893674,
 "s": ["almanca öğreniyorum","almanca öğren","almanca öğrenme programı","almanca öğrenme","almanca öğreniyorum ücretsiz"]
 },
 "almanca öğren": {
-"t": 1789714143566,
+"t": 1791803894563,
 "s": ["almanca öğreniyorum","almanca öğren","almanca öğrenme programı","almanca öğrenme","almanca öğreniyorum ücretsiz"]
 },
 "almanca öğrenm": {
-"t": 1789714143168,
-"s": ["almanca öğrenme programı","almanca öğrenme","almanca öğrenme uygulamaları","almanca öğrenmek","almanca öğrenme uygulaması"]
+"t": 1791803894132,
+"s": ["almanca öğrenme programı","almanca öğrenme","almanca öğrenme uygulamaları","almanca öğrenmek","almanca öğrenme programı internetsiz"]
 },
 "almanca öğrenme": {
 "t": 1789712878634,
 "s": ["almanca öğrenme programı","almanca öğrenme","almanca öğrenme uygulamaları","almanca öğrenmek","almanca öğrenme uygulaması"]
 },
 "almanca öğrenme ": {
-"t": 1789712879024,
-"s": ["almanca öğrenme programı","almanca öğrenme uygulamaları","almanca öğrenme uygulaması","almanca öğrenme programı internetsiz","almanca öğrenme oyunu"]
+"t": 1791803878616,
+"s": ["almanca öğrenme programı","almanca öğrenme uygulamaları","almanca öğrenme programı internetsiz","almanca öğrenme uygulaması","almanca öğrenme oyunları"]
+},
+"almanca öğrenme o": {
+"t": 1791803881053,
+"s": ["almanca öğrenme oyunları","almanca öğrenme oyunu"]
+},
+"almanca öğrenme oy": {
+"t": 1791803880620,
+"s": ["almanca öğrenme oyunları","almanca öğrenme oyunu"]
+},
+"almanca öğrenme oyu": {
+"t": 1791803879923,
+"s": ["almanca öğrenme oyunları","almanca öğrenme oyunu"]
+},
+"almanca öğrenme oyunu": {
+"t": 1791803879045,
+"s": ["almanca öğrenme oyunu"]
 },
 "alt": {
-"t": 1791197195898,
+"t": 1791803695092,
 "s": ["alternatif bank","altın oyunu","altına koş tom","altın fiyatları canlı güncel","altınyıldız"]
 },
 "altı": {
@@ -1784,12 +1824,12 @@
 "s": ["altın fiyatlari"]
 },
 "altın fiyatları": {
-"t": 1789712793357,
-"s": ["altın fiyatları canlı güncel","altın fiyatları","altın fiyatları uygulaması","altın fiyatları canlı güncel ücretsiz","altın fiyatları canlı"]
+"t": 1791803909605,
+"s": ["altın fiyatları canlı güncel","altın fiyatları","altın fiyatları takip","altın fiyatları uygulaması","altın fiyatları canlı güncel ücretsiz"]
 },
 "altın fiyatları ": {
-"t": 1789712793756,
-"s": ["altın fiyatları canlı güncel","altın fiyatları uygulaması","altın fiyatları canlı güncel ücretsiz","altın fiyatları canlı","altın fiyatları ve canlı döviz"]
+"t": 1791803908718,
+"s": ["altın fiyatları canlı güncel","altın fiyatları takip","altın fiyatları uygulaması","altın fiyatları canlı güncel ücretsiz","altın fiyatları canlı"]
 },
 "altın fiyatları canlı ": {
 "t": 1789720053971,
@@ -1802,6 +1842,34 @@
 "altın fiyatları uygulaması ": {
 "t": 1789720074143,
 "s": ["altın fiyatları uygulaması"]
+},
+"altın fiyatları v": {
+"t": 1791803910921,
+"s": ["altın fiyatları ve canlı döviz"]
+},
+"altın fiyatları ve ": {
+"t": 1791803910487,
+"s": ["altın fiyatları ve canlı döviz"]
+},
+"altın fiyatları ve canl": {
+"t": 1791803910047,
+"s": ["altın fiyatları ve canlı döviz"]
+},
+"altın fiyatları ve canlı döviz": {
+"t": 1791803909164,
+"s": ["altın fiyatları ve canlı döviz"]
+},
+"altl": {
+"t": 1791803695978,
+"s": ["altın","altılı ganyan","altlife","altln oyun","altlı üstlü isim yazma"]
+},
+"altlı": {
+"t": 1791803695537,
+"s": ["altılı ganyan","altlı üstlü isim yazma","altılı oyun","altılı ganyan tahminleri","altılı ganyan ne verir"]
+},
+"altlı ": {
+"t": 1791803694661,
+"s": ["altılı ganyan","altlı üstlü isim yazma","altılı oyun","altılı ganyan tahminleri","altılı ganyan ne verir"]
 },
 "among us": {
 "t": 1789894928665,
@@ -1884,16 +1952,28 @@
 "s": []
 },
 "appl": {
-"t": 1789806221557,
-"s": ["applock","apple music","apple","apple watch","apple tv"]
+"t": 1791803898001,
+"s": ["applock","apple tv","apple music","apple","apple watch"]
 },
 "apple ": {
-"t": 1789806221975,
-"s": ["apple music","apple watch","apple tv","apple store","apple knight"]
+"t": 1791803890121,
+"s": ["apple tv","apple music","apple watch","apple store","apple knight"]
 },
 "apple e": {
-"t": 1789806221144,
-"s": ["apple emoji","apple emoji klavye","apple ekran","apple emoji keyboard","apple e spor"]
+"t": 1791803889230,
+"s": ["apple emoji","apple emoji klavye","apple ekran","apple emoji keyboard","apple ekran yansıtma"]
+},
+"apple e ": {
+"t": 1791803891010,
+"s": ["apple e mail","apple e","apple e spor","carteira e apple pay","apple filmes e séries grátis"]
+},
+"apple e s": {
+"t": 1791803890565,
+"s": ["apple e spor","apple filmes e séries grátis"]
+},
+"apple e spor": {
+"t": 1791803889670,
+"s": ["apple e spor"]
 },
 "apple emoji k": {
 "t": 1789806220740,
@@ -1904,11 +1984,11 @@
 "s": ["apple emoji klavye"]
 },
 "ar": {
-"t": 1791108327535,
+"t": 1791804172312,
 "s": ["araba oyunları","armut","araba oyunları internetsiz","arabam com indir","araba oyunları 2026"]
 },
 "ara": {
-"t": 1791108152877,
+"t": 1791804171873,
 "s": ["araba oyunları","araba oyunları internetsiz","arabam com indir","araba oyunları 2026","araba simülasyonu oyunları"]
 },
 "arab": {
@@ -1916,7 +1996,7 @@
 "s": ["araba oyunları","araba oyunları internetsiz","arabam com indir","araba oyunları 2026","araba simülasyonu oyunları"]
 },
 "araba": {
-"t": 1791108153290,
+"t": 1791804171437,
 "s": ["araba oyunları","araba oyunları internetsiz","arabam com indir","araba oyunları 2026","araba simülasyonu oyunları"]
 },
 "araba ": {
@@ -1999,6 +2079,10 @@
 "t": 1789806224496,
 "s": ["araba oyunları","araba oyunları internetsiz","araba oyunları 2024","araba oyunları 2026","araba oyunları 2022"]
 },
+"araba oyun": {
+"t": 1791803932541,
+"s": ["araba oyunları","araba oyunları internetsiz","araba oyunları 2026","araba oyunları 2022","araba oyunları yarış"]
+},
 "araba oyunla": {
 "t": 1789806224909,
 "s": ["araba oyunları","araba oyunları internetsiz","araba oyunları 2024","araba oyunları 2026","araba oyunları 2022"]
@@ -2008,8 +2092,20 @@
 "s": ["araba oyunları","araba oyunları internetsiz","araba oyunları 2024","araba oyunları 2026","araba oyunları 2022"]
 },
 "araba oyunları ": {
-"t": 1789712735489,
-"s": ["araba oyunları internetsiz","araba oyunları 2024","araba oyunları 2026","araba oyunları 2022","araba oyunları 2023"]
+"t": 1791803931665,
+"s": ["araba oyunları 2026","araba oyunları internetsiz","araba oyunları 2022","araba oyunları araba oyunları","araba oyunları yarış"]
+},
+"araba oyunları 2": {
+"t": 1791803933416,
+"s": ["araba oyunları 2026","araba oyunları 2022","araba oyunları 2023","araba oyunları 2020 en yeni","araba oyunları 2021"]
+},
+"araba oyunları 20": {
+"t": 1791803932975,
+"s": ["araba oyunları 2026","araba oyunları 2022","araba oyunları 2023","araba oyunları 2020 en yeni","araba oyunları 2021"]
+},
+"araba oyunları 2023": {
+"t": 1791803932109,
+"s": ["araba oyunları 2023","araba oyunları 2023 tofaş","araba oyunları 2023 en yeni tofaş","araba oyunları 2023 internetsiz","araba oyunları 2023 internetsiz bmw"]
 },
 "araba oyunları a": {
 "t": 1789712963582,
@@ -2451,6 +2547,14 @@
 "t": 1790066912771,
 "s": ["art puzzle bulmaca oyunları"]
 },
+"as": {
+"t": 1791804534323,
+"s": ["astra ai","asker oyunları","asphalt 8","assetto corsa","asmr"]
+},
+"asmr": {
+"t": 1791804533887,
+"s": ["asmr","asmr tower","asmr oyunları","asmr oyunu","asmr keyboard"]
+},
 "av": {
 "t": 1791197209250,
 "s": ["avatar world","avcı oyunları","avakin life","avatar life","avast"]
@@ -2616,12 +2720,20 @@
 "s": []
 },
 "b": {
-"t": 1791108124881,
+"t": 1791804157340,
 "s": ["brawl stars","block blast","bein connect","bip","block crazy"]
 },
 "ba": {
-"t": 1791108138551,
+"t": 1791804405466,
 "s": ["balık oyunları","baldi","backrooms","barbie oyunları","batak"]
+},
+"bab": {
+"t": 1791804405899,
+"s": ["baby in yellow","babybus","baby","babysfer","baby games"]
+},
+"baby": {
+"t": 1791804405029,
+"s": ["baby in yellow","babybus","baby","babysfer","baby games"]
 },
 "babybus": {
 "t": 1790762295872,
@@ -2650,6 +2762,22 @@
 "babybus market": {
 "t": 1790762295439,
 "s": ["babybus market","babybus market oyunu","babybus market game","babybus market oyunları","babybus market wala game"]
+},
+"bac": {
+"t": 1791804455229,
+"s": ["backrooms","background eraser","backrooms oyunları","backrooms original","backrooms online"]
+},
+"back": {
+"t": 1791804455659,
+"s": ["backrooms","background eraser","backrooms oyunları","backrooms original","backrooms online"]
+},
+"backg": {
+"t": 1791804454794,
+"s": ["background eraser","backgammon","backgrounds","background","background video recorder"]
+},
+"backgammon": {
+"t": 1791804454356,
+"s": ["backgammon","backgammon tavla","backgammon galaxy","backgammon online","backgammon stars"]
 },
 "backroo": {
 "t": 1790066917868,
@@ -3056,16 +3184,28 @@
 "s": ["barkod okuyucu","barkod okuyucu indir","barkod okuyucu fiyat gösteren","barkod okuyucusu","barkod okuyucu ücretsiz"]
 },
 "barkod okuyu": {
-"t": 1789806226581,
-"s": ["barkod okuyucu","barkod okuyucu indir","barkod okuyucu fiyat gösteren","barkod okuyucu ücretsiz","barkod okuyucusu"]
+"t": 1791803946258,
+"s": ["barkod okuyucu","barkod okuyucu indir","barkod okuyucu fiyat gösteren","barkod okuyucusu","barkod okuyucu ücretsiz"]
 },
 "barkod okuyucu": {
-"t": 1789712841261,
-"s": ["barkod okuyucu","barkod okuyucu indir","barkod okuyucu fiyat gösteren","barkod okuyucu ücretsiz","barkod okuyucusu"]
+"t": 1791803946713,
+"s": ["barkod okuyucu","barkod okuyucu indir","barkod okuyucu fiyat gösteren","barkod okuyucusu","barkod okuyucu ücretsiz"]
 },
 "barkod okuyucu ": {
-"t": 1789712841658,
-"s": ["barkod okuyucu indir","barkod okuyucu fiyat gösteren","barkod okuyucu ücretsiz","barkod okuyucu market","barkod okuyucu sesi"]
+"t": 1791803945805,
+"s": ["barkod okuyucu indir","barkod okuyucu fiyat gösteren","barkod okuyucu ücretsiz","barkod okuyucu market","barkod okuyucu ucretsiz"]
+},
+"barkod okuyucu s": {
+"t": 1791803958595,
+"s": ["barkod okuyucu samsung","barkod okuyucu sesli","barkod okuyucu sesi","sayısal loto barkod okuyucu","tekel sigara barkod okuyucu"]
+},
+"barkod okuyucu se": {
+"t": 1791803958155,
+"s": ["barkod okuyucu sesli","barkod okuyucu sesi"]
+},
+"barkod okuyucu sesi": {
+"t": 1791803957714,
+"s": ["barkod okuyucu sesi"]
 },
 "bas": {
 "t": 1791108138960,
@@ -3360,7 +3500,7 @@
 "s": ["basketbol topu oyunları"]
 },
 "bat": {
-"t": 1791108248562,
+"t": 1791804441746,
 "s": ["batak","battle gang","batak online","batman belediye otobüs saatleri","batman"]
 },
 "bata": {
@@ -3539,12 +3679,20 @@
 "t": 1789805905640,
 "s": []
 },
+"batt": {
+"t": 1791804441308,
+"s": ["battle gang","battery sound notification","battlefield 1","battle royale","battlefield"]
+},
+"battery": {
+"t": 1791804440875,
+"s": ["battery sound notification","battery guru","battery","battery health","battery widget"]
+},
 "be": {
-"t": 1791108423450,
+"t": 1791804177393,
 "s": ["bein connect","bein sports","bershka","bebek oyunları","berber oyunu"]
 },
 "beb": {
-"t": 1791196988169,
+"t": 1791804176963,
 "s": ["bebek oyunları","bebek oyunu","bebek giydirme oyunu","bebek uyutucu","bebek bakma oyunları"]
 },
 "bebe": {
@@ -3552,8 +3700,8 @@
 "s": ["bebek oyunları","bebek oyunu","bebek giydirme oyunu","bebek uyutucu","bebek bakma oyunları"]
 },
 "bebek": {
-"t": 1790762378903,
-"s": ["bebek oyunları","bebek oyunu","bebek giydirme oyunu","bebek","bebek uyutucu"]
+"t": 1791804176533,
+"s": ["bebek oyunları","bebek oyunu","bebek giydirme oyunu","bebek uyutucu","bebek bakma oyunları"]
 },
 "bebek ": {
 "t": 1791457171161,
@@ -4168,11 +4316,11 @@
 "s": ["beyaz gürültü internetsiz"]
 },
 "bi": {
-"t": 1791197103779,
+"t": 1791804466781,
 "s": ["bip","biz","bimcell online işlemler","bim","bilyoner"]
 },
 "bil": {
-"t": 1791197220916,
+"t": 1791804466324,
 "s": ["bilyoner","bilgi sarmal","bildirio","biletinial","bilardo"]
 },
 "bile": {
@@ -4240,12 +4388,24 @@
 "s": ["bilgi yarışması","bilgi yarışması oyunları","bilgi yarışması online","bilgi yarışması internetsiz","bilgi yarışması oyunu"]
 },
 "bilgi yarışması": {
-"t": 1789712885807,
+"t": 1791803981293,
 "s": ["bilgi yarışması","bilgi yarışması oyunları","bilgi yarışması online","bilgi yarışması internetsiz","bilgi yarışması oyunu"]
 },
 "bilgi yarışması ": {
-"t": 1789712886211,
-"s": ["bilgi yarışması oyunları","bilgi yarışması online","bilgi yarışması internetsiz","bilgi yarışması oyunu","bilgi yarışması kpss"]
+"t": 1791803980422,
+"s": ["bilgi yarışması oyunları","bilgi yarışması online","bilgi yarışması internetsiz","bilgi yarışması oyunu","bilgi yarışması oyunları internetsiz"]
+},
+"bilgi yarışması k": {
+"t": 1791803982196,
+"s": ["bilgi yarışması kpss","genel kültür bilgi yarışması kpss","genel kültür bilgi yarışması","geç karşıma bilgi yarışması","kpss bilgi yarışması 2026"]
+},
+"bilgi yarışması kp": {
+"t": 1791803981758,
+"s": ["bilgi yarışması kpss","genel kültür bilgi yarışması kpss","kpss bilgi yarışması 2026","kpss tarih bilgi yarışması","kpss ortaöğretim bilgi yarışması"]
+},
+"bilgi yarışması kpss": {
+"t": 1791803980855,
+"s": ["bilgi yarışması kpss","genel kültür bilgi yarışması kpss","kpss bilgi yarışması 2026","kpss tarih bilgi yarışması","kpss ortaöğretim bilgi yarışması"]
 },
 "bim ": {
 "t": 1790762404935,
@@ -4372,8 +4532,8 @@
 "s": ["birleştirme oyunları","birleştirme oyunu","birleştirerek pişir","birleştirme","birleştirme oyunları internetsiz"]
 },
 "birleştir": {
-"t": 1789713614261,
-"s": ["birleştirme oyunları","birleştirme oyunu","birleştirerek pişir","birleştirme oyunları internetsiz","birleştirme"]
+"t": 1791803993598,
+"s": ["birleştirme oyunları","birleştirme oyunu","birleştirerek pişir","birleştirme","birleştirme oyunları internetsiz"]
 },
 "birleştirm": {
 "t": 1791108339827,
@@ -4388,7 +4548,7 @@
 "s": ["birleştirme oyunları","birleştirme oyunu","birleştirme oyunları internetsiz","birleştirme oyunu savaş","birleştirme oyunları savaş"]
 },
 "birleştirme oy": {
-"t": 1789806234472,
+"t": 1791803994036,
 "s": ["birleştirme oyunları","birleştirme oyunu","birleştirme oyunları internetsiz","birleştirme oyunu savaş","birleştirme oyunları savaş"]
 },
 "birleştirme oyu": {
@@ -4396,16 +4556,16 @@
 "s": ["birleştirme oyunları","birleştirme oyunu","birleştirme oyunları internetsiz","birleştirme oyunu savaş","birleştirme oyunları savaş"]
 },
 "birleştirme oyun": {
-"t": 1789714259076,
+"t": 1791803994476,
 "s": ["birleştirme oyunları","birleştirme oyunu","birleştirme oyunları internetsiz","birleştirme oyunu savaş","birleştirme oyunları savaş"]
 },
 "birleştirme oyunu": {
-"t": 1789712779010,
-"s": ["birleştirme oyunu","birleştirme oyunu savaş","birleştirme oyunu internetsiz","birleştirme oyunu birleştirme oyunu","birleştirme oyunu canavar"]
+"t": 1791803994956,
+"s": ["birleştirme oyunu","birleştirme oyunu savaş","birleştirme oyunu internetsiz","birleştirme oyunu araba","birleştirme oyunu dinozor"]
 },
 "birleştirme oyunu ": {
-"t": 1789712779407,
-"s": ["birleştirme oyunu savaş","birleştirme oyunu internetsiz","birleştirme oyunu birleştirme oyunu","birleştirme oyunu canavar","birleştirme oyunu dinozor"]
+"t": 1791803993162,
+"s": ["birleştirme oyunu savaş","birleştirme oyunu internetsiz","birleştirme oyunu araba","birleştirme oyunu dinozor","birleştirme oyunu hayvan"]
 },
 "birleştirme oyunu a": {
 "t": 1789894277573,
@@ -4572,12 +4732,12 @@
 "s": ["bitki tablet","bitki table"]
 },
 "bitki tan": {
-"t": 1789714269177,
-"s": ["bitki tanıma programı","bitki tanıma programı ücretsiz","bitki tanıma programı türkçe","bitki tanima ücretsiz","bitki tanıma"]
+"t": 1791804010549,
+"s": ["bitki tanıma programı","bitki tanıma programı ücretsiz","bitki tanıma programı türkçe","bitki tanıma","bitki tanıma programı ucretsiz"]
 },
 "bitki tanı": {
-"t": 1789806237696,
-"s": ["bitki tanıma programı","bitki tanıma programı ücretsiz","bitki tanıma programı türkçe","bitki tanıma","bitki tanıma programı ucretsiz"]
+"t": 1791804010094,
+"s": ["bitki tanıma programı","bitki tanıma programı ücretsiz","bitki tanıma programı türkçe","bitki tanıma","bitki tanıma ücretsiz"]
 },
 "bitki tanım": {
 "t": 1789714270987,
@@ -4588,8 +4748,8 @@
 "s": ["bitki tanıma programı","bitki tanıma programı ücretsiz","bitki tanıma programı türkçe","bitki tanıma","bitki tanıma programı ucretsiz"]
 },
 "bitki tanıma ": {
-"t": 1789712899775,
-"s": ["bitki tanıma programı","bitki tanıma programı ücretsiz","bitki tanıma programı türkçe","bitki tanıma programı ucretsiz","bitki tanıma ücretsiz"]
+"t": 1791804009653,
+"s": ["bitki tanıma programı","bitki tanıma programı ücretsiz","bitki tanıma programı türkçe","bitki tanıma ücretsiz","bitki tanıma uygulaması"]
 },
 "bitki tanıma p": {
 "t": 1790066960136,
@@ -4604,7 +4764,7 @@
 "s": ["bitki tanıma programı ücretsiz","bitki tanıma programı türkçe","bitki tanıma programı ucretsiz","bitki tanıma programı","bitki tanıma programı türkçe ücretsiz"]
 },
 "bl": {
-"t": 1791108430468,
+"t": 1791804218678,
 "s": ["block blast","block crazy","block craft","bla bla car","blood strike"]
 },
 "bl hikaye oyunlar": {
@@ -4615,12 +4775,28 @@
 "t": 1790066962151,
 "s": []
 },
+"bla": {
+"t": 1791804450580,
+"s": ["bla bla car","black hole","black blast","blackjack","blarma"]
+},
+"blas": {
+"t": 1791804451045,
+"s": ["blast","blaster","blasphemous","blasters","blast it"]
+},
+"blast": {
+"t": 1791804450137,
+"s": ["blast","blaster","blasters","blast it","blastas"]
+},
 "blo": {
 "t": 1791283140719,
 "s": ["block blast","block crazy","block craft","blood strike","block world"]
 },
 "bloc": {
 "t": 1791108430048,
+"s": ["block blast","block crazy","block craft","block world","block legends"]
+},
+"block": {
+"t": 1791804218246,
 "s": ["block blast","block crazy","block craft","block world","block legends"]
 },
 "blok": {
@@ -4648,7 +4824,7 @@
 "s": ["blok bulmaca oyunları","blok bulmaca","blok bulmaca jewel","blok bulmaca oyunları ücretsiz","blok bulmaca ahşap blast"]
 },
 "blok bulma": {
-"t": 1789806239161,
+"t": 1791804023541,
 "s": ["blok bulmaca oyunları","blok bulmaca","blok bulmaca jewel","blok bulmaca oyunları ücretsiz","blok bulmaca ahşap blast"]
 },
 "blok bulmac": {
@@ -4656,11 +4832,11 @@
 "s": ["blok bulmaca oyunları","blok bulmaca","blok bulmaca jewel","blok bulmaca oyunları ücretsiz","blok bulmaca ahşap blast"]
 },
 "blok bulmaca": {
-"t": 1789712776620,
+"t": 1791804023991,
 "s": ["blok bulmaca oyunları","blok bulmaca","blok bulmaca jewel","blok bulmaca oyunları ücretsiz","blok bulmaca ahşap blast"]
 },
 "blok bulmaca ": {
-"t": 1789712777010,
+"t": 1791804023101,
 "s": ["blok bulmaca oyunları","blok bulmaca jewel","blok bulmaca oyunları ücretsiz","blok bulmaca ahşap blast","blok bulmaca oyunları internetsiz"]
 },
 "blok bulmaca a": {
@@ -4860,7 +5036,7 @@
 "s": ["bmw park etme oyunu","bmw park etme oyunları","bmw araba park etme oyunu"]
 },
 "bo": {
-"t": 1791108190582,
+"t": 1791804156902,
 "s": ["boyama oyunları","bonusflaş","bobo","boykot dedektifi","boyner"]
 },
 "bor": {
@@ -5176,7 +5352,7 @@
 "s": ["boyama oyunları","boyama oyunları internetsiz","boyama oyunları büyükler için","boya oyunu","boyamalar"]
 },
 "boyama": {
-"t": 1791108521989,
+"t": 1791804156474,
 "s": ["boyama oyunları","boyama oyunları internetsiz","boyama oyunları büyükler için","boyamalar","boyama oyunları büyükler için internetsiz"]
 },
 "boyama ": {
@@ -5556,8 +5732,16 @@
 "s": []
 },
 "br": {
-"t": 1791197109147,
+"t": 1791804344214,
 "s": ["brawl stars","brave","brazil motor oyunu","brain test","browser"]
+},
+"bra": {
+"t": 1791804343771,
+"s": ["brawl stars","brave","brain test","brazil motor oyunu","brawlhalla"]
+},
+"brain": {
+"t": 1791804343323,
+"s": ["brain test","brainrot çalma oyunu","brainrot çalma oyunu internetsiz","brain puzzle","brain test 5"]
 },
 "brawl stars ": {
 "t": 1789894666426,
@@ -6360,24 +6544,32 @@
 "s": ["buzda balık tutma oyunu"]
 },
 "c": {
-"t": 1791108261516,
+"t": 1791804190245,
 "s": ["capcut","chatgpt","car parking","clash royale","chrome"]
 },
 "ç": {
-"t": 1791108136086,
-"s": ["çöp adam oyunları","çeviri","çar parking","çiçeksepeti","çevrimdışı oyunlar"]
+"t": 1791804240141,
+"s": ["çiğ köfte efsanesi","çöp adam oyunları","çeviri","çar parking","çiçeksepeti"]
 },
 "ca": {
 "t": 1791457335464,
 "s": ["capcut","car parking","canva","car parking 3d","cargo simulator 2021"]
 },
 "ça": {
-"t": 1791197062771,
+"t": 1791804409997,
 "s": ["çar parking","çark","çanak okey","çaput","çakma minecraft"]
 },
+"çal": {
+"t": 1791804409555,
+"s": ["çalar saat","çalar saat indir türkçe","çal of duty","çalışma programı","çalar saat alarm"]
+},
+"çalar": {
+"t": 1791804409117,
+"s": ["çalar saat","çalar saat indir türkçe","çalar saat alarm","çalar müzik","çalar"]
+},
 "can": {
-"t": 1790066824855,
-"s": ["canva","candy crush saga","canlı tv","canak okey","canon print"]
+"t": 1791804252586,
+"s": ["canva","candy crush saga","canlı tv","canon print","canak okey"]
 },
 "çan": {
 "t": 1791283167416,
@@ -6771,6 +6963,10 @@
 "t": 1791197111557,
 "s": ["çar parking 3d","çar parking","çark","çarpım tablosu","car parking"]
 },
+"car pa": {
+"t": 1791804189802,
+"s": ["car parking","car parking 3d","car parking 2","car parking master","car parking simulator"]
+},
 "car par": {
 "t": 1791457333046,
 "s": ["car parking","car parking 3d","car parking 2","car parking master","car parking simulator"]
@@ -6900,8 +7096,8 @@
 "s": ["çark çevirme oyunu","çark çevir","çark çevirme","çark çevirme oyunları","çark çut"]
 },
 "çark çe": {
-"t": 1789714362493,
-"s": ["çark çevirme oyunu","çark çevir","çark çevirme oyunları","çark çevirmece","çark çevirme uygulaması"]
+"t": 1791804034494,
+"s": ["çark çevirme oyunu","çark çevir","çark çevirme","çark çevirme oyunları","çark çevirmece"]
 },
 "çark çev": {
 "t": 1789714362103,
@@ -6912,19 +7108,19 @@
 "s": ["çark çevirme oyunu","çark çevir","çark çevirme oyunları","çark çevirmece","çark çevirme uygulaması"]
 },
 "çark çevir": {
-"t": 1789714358763,
-"s": ["çark çevirme oyunu","çark çevir","çark çevirme oyunları","çark çevirmece","çark çevirme uygulaması"]
+"t": 1791804034929,
+"s": ["çark çevirme oyunu","çark çevir","çark çevirme","çark çevirme oyunları","çark çevirmece"]
 },
 "çark çevirm": {
 "t": 1789714358359,
 "s": ["çark çevirme oyunu","çark çevirme oyunları","çark çevirmece","çark çevirme uygulaması","çark çevirme oyunu futbol"]
 },
 "çark çevirme": {
-"t": 1789712896192,
-"s": ["çark çevirme oyunu","çark çevirme oyunları","çark çevirmece","çark çevirme uygulaması","çark çevirme oyunu futbol"]
+"t": 1791804035370,
+"s": ["çark çevirme oyunu","çark çevirme","çark çevirme oyunları","çark çevirmece","çark çevirme uygulaması"]
 },
 "çark çevirme ": {
-"t": 1789712896601,
+"t": 1791804034062,
 "s": ["çark çevirme oyunu","çark çevirme oyunları","çark çevirme uygulaması","çark çevirme oyunu futbol","çark çevirme futbol"]
 },
 "çark çevirme o": {
@@ -7088,7 +7284,7 @@
 "s": ["çevrimdışı oyunlar","çevrimdışı","çevrimdışı haritalar","çevrimdışı oyun","çevrimdışı araba oyunları"]
 },
 "çevrimdı": {
-"t": 1791197249082,
+"t": 1791804053175,
 "s": ["çevrimdışı oyunlar","çevrimdışı","çevrimdışı haritalar","çevrimdışı oyun","çevrimdışı araba oyunları"]
 },
 "çevrimdış": {
@@ -7116,7 +7312,7 @@
 "s": ["çevrimdışı kelime oyunları","çevrimdışı kelime oyunu","çevrimdışı kelimelik","çevrimdışı oyunlar kelime"]
 },
 "çevrimdışı o": {
-"t": 1790762585805,
+"t": 1791804053619,
 "s": ["çevrimdışı oyunlar","çevrimdışı oyun","çevrimdışı oyunlar araba","çevrimdışı okey","çevrimdışı oyunlar futbol"]
 },
 "çevrimdışı ok": {
@@ -7140,15 +7336,15 @@
 "s": ["çevrimdışı oyunlar","çevrimdışı oyun","çevrimdışı oyunlar araba","çevrimdışı oyunlar futbol","çevrimdışı oyunlar silah"]
 },
 "çevrimdışı oyu": {
-"t": 1789714038846,
+"t": 1791804054053,
 "s": ["çevrimdışı oyunlar","çevrimdışı oyun","çevrimdışı oyunlar araba","çevrimdışı oyunlar futbol","çevrimdışı oyunlar silah"]
 },
 "çevrimdışı oyun": {
-"t": 1789714365954,
+"t": 1791804054487,
 "s": ["çevrimdışı oyunlar","çevrimdışı oyun","çevrimdışı oyunlar araba","çevrimdışı oyunlar futbol","çevrimdışı oyunlar silah"]
 },
 "çevrimdışı oyunl": {
-"t": 1789806241927,
+"t": 1791804052743,
 "s": ["çevrimdışı oyunlar","çevrimdışı oyunlar araba","çevrimdışı oyunlar futbol","çevrimdışı oyunlar silah","çevrimdışı oyunları"]
 },
 "çevrimdışı oyunla": {
@@ -8120,12 +8316,16 @@
 "s": []
 },
 "co": {
-"t": 1791019721013,
+"t": 1791804312594,
 "s": ["courier guy","courier guy motor oyunu","connected2 me anonim chat","coğrafyanın kodları","color block"]
 },
 "ço": {
-"t": 1791108310192,
+"t": 1791804239705,
 "s": ["çocuk oyunları","çok güzel oyunlar","çok oyunculu oyunlar","çocuk oyunu","çocuk youtube"]
+},
+"çoc": {
+"t": 1791804239262,
+"s": ["çocuk oyunları","çocuk oyunu","çocuk youtube","çocuklar için oyunlar","çocuk"]
 },
 "cocu": {
 "t": 1791019711105,
@@ -8528,7 +8728,7 @@
 "s": ["çocuk zeka oyunları","çocuk zeka oyunları internetsiz","çocuk zeka oyunu","çocuk zeka oyunlari","çocuk zeka oyunları ücretsiz"]
 },
 "çocuklar": {
-"t": 1790850337872,
+"t": 1791804264855,
 "s": ["çocuklar için oyunlar","çocuklar için oyun","çocuklar için eğitici oyunlar","çocuklara göre oyunlar","çocuklar için"]
 },
 "çocuklar ": {
@@ -8979,6 +9179,18 @@
 "t": 1790153357444,
 "s": ["connect drift oyunları"]
 },
+"coo": {
+"t": 1791804313040,
+"s": ["cookingo","cookie run kingdom","cookingdom","cooking simulator","cook merge"]
+},
+"cook": {
+"t": 1791804312162,
+"s": ["cookingo","cookie run kingdom","cookingdom","cooking simulator","cook merge"]
+},
+"cooking": {
+"t": 1791804311715,
+"s": ["cookingo","cookingdom","cooking simulator","cooking fever","cookingo perfect meal"]
+},
 "çöp ada": {
 "t": 1791019730638,
 "s": ["çöp adam oyunları","çöp adam oyunları dövüş","çöp adam oyunları savaş","çöp adam savaş","çöp adam savaş oyunları"]
@@ -9079,6 +9291,34 @@
 "t": 1790153368741,
 "s": []
 },
+"cr": {
+"t": 1791804481976,
+"s": ["crafting and building","craftsman","craft world","cr","critical ops"]
+},
+"cra": {
+"t": 1791804481532,
+"s": ["crafting and building","craftsman","craft world","craft world block crazy 3d","craft"]
+},
+"craft": {
+"t": 1791804481091,
+"s": ["crafting and building","craftsman","craft world","craft world block crazy 3d","craft"]
+},
+"cs ": {
+"t": 1791803913635,
+"s": ["cs go","cs 1 6","cs 2","cs go mobile","cs mobile offensive"]
+},
+"cs t": {
+"t": 1791803914073,
+"s": ["cs tarayıcı programı","cstimer","cs tarzı oyunlar","cs tactics","cs trade"]
+},
+"cs ta": {
+"t": 1791803913188,
+"s": ["cs tarayıcı programı","cs tarzı oyunlar","cs tactics","cs tap","cs tactical"]
+},
+"cs tarayıc": {
+"t": 1791803912722,
+"s": ["cs tarayıcı programı"]
+},
 "cv": {
 "t": 1791108261106,
 "s": ["cv oluştur","cv hazırlama","cv","cv oluştur ücretsiz","cv hazırlama ücretsiz"]
@@ -9096,8 +9336,8 @@
 "s": ["cv hazırlama","cv hazırlama ücretsiz","cv hazirlama ücretsiz","cv hazırlama programı","cv hazirlama"]
 },
 "cv haz": {
-"t": 1789713652383,
-"s": ["cv hazırlama","cv hazırlama ücretsiz","cv hazirlama ücretsiz","cv hazırlama programı","cv hazirlama"]
+"t": 1791804075319,
+"s": ["cv hazırlama","cv hazırlama ücretsiz","cv hazirlama","cv hazirlama ücretsiz","cv hazırlama programı"]
 },
 "cv hazı": {
 "t": 1791714251920,
@@ -9127,6 +9367,10 @@
 "t": 1791714251493,
 "s": ["cv hazırlama ücretsiz","cv hazırlama programı","cv hazırlama ucretsiz","cv hazırlama programı türkçe ücretsiz","cv hazırlama ücretsiz türkçe"]
 },
+"cv hazırlama azərbaycan": {
+"t": 1791804064721,
+"s": []
+},
 "cv hazırlama p": {
 "t": 1791108364842,
 "s": ["cv hazırlama programı","cv hazırlama programı türkçe ücretsiz","ücretsiz cv hazırlama programı","cv oluştur cv hazırlama pdf"]
@@ -9147,6 +9391,14 @@
 "t": 1789720065878,
 "s": ["cv hazırlama ücretsiz türkçe","cv hazırlama ücretsiz","ücretsiz cv hazırlama programı","cv hazırlama programı türkçe ücretsiz"]
 },
+"cv hazırlamaq": {
+"t": 1791804086992,
+"s": []
+},
+"cv hazırlamaq azərbaycan dilində": {
+"t": 1791804094334,
+"s": []
+},
 "cv m": {
 "t": 1791108270466,
 "s": ["cv maker","cv maker ücretsiz","cv maker app","cv maken","cv master"]
@@ -9156,7 +9408,7 @@
 "s": ["cv maker","cv maker ücretsiz","cv maker app","cv maker for job application","cv maker resume builder"]
 },
 "d": {
-"t": 1791108222903,
+"t": 1791804427303,
 "s": ["duolingo","denizbank mobil bankacilik","doa","dls","dolap"]
 },
 "da": {
@@ -10351,6 +10603,10 @@
 "t": 1789720057882,
 "s": ["diyet yemek tarifleri internetsiz","diyet yemek tarifleri ücretsiz","diyet yemek tarifleri","diyet yemek tarifleri türkçe"]
 },
+"diyet yemek tarifleri internetsiz": {
+"t": 1791804100689,
+"s": []
+},
 "diyet yemek tarifleri türkçe": {
 "t": 1791714283659,
 "s": []
@@ -10442,6 +10698,10 @@
 "doğum günü hatırlatıcı ": {
 "t": 1789712898986,
 "s": ["doğum günü hatırlatıcı","doğum günü hatırlatıcı ücretsiz"]
+},
+"doğum günü hesaplama": {
+"t": 1791803917201,
+"s": []
 },
 "doğumdan ": {
 "t": 1791543306545,
@@ -10784,7 +11044,7 @@
 "s": ["dövüş oyunu dövüş oyunu","dövüş oyunu dövüş oyunu dövüş oyunu","dövüş oyunu dövüş oyunu dövüş oyunu dövüş oyunu","dövüş oyunu dövüş oyunu dövüş oyunu dövüş","dövüş oyunu dövüş oyunu dövüş oyunu dövüş oyunu dövüş oyunu dövüş oyunu"]
 },
 "dr": {
-"t": 1791108411744,
+"t": 1791804277167,
 "s": ["dr driving","dream road online","drive","dream league","dreame"]
 },
 "dr drivin": {
@@ -10806,6 +11066,18 @@
 "dr driving park e": {
 "t": 1790153484722,
 "s": ["dr driving park etme oyunu","dr driving park etme"]
+},
+"dre": {
+"t": 1791804277603,
+"s": ["dream road online","dream league","dreame","dreame robot süpürge","dream city rp"]
+},
+"dres": {
+"t": 1791804276736,
+"s": ["dress to impress","dress kit","dress up","drest","dress"]
+},
+"dress up": {
+"t": 1791804276304,
+"s": ["dress up","dress up games","dress up game","dress up games for girls","dress up fashion star"]
 },
 "dri": {
 "t": 1791108411329,
@@ -11380,35 +11652,39 @@
 "s": ["düşen kelime oyunu","düşen kelime oyunları","düşen kelime oyunu internetsiz","düşen kelime oyunu 2026","düşen kelime oyunu bulmaca"]
 },
 "duv": {
-"t": 1791108222490,
+"t": 1791804426869,
 "s": ["duvar kağıtları","duvar kağıdı uygulamaları","duvar kağıtları ücretsiz","duvar saati","duvar kağıtları internetsiz"]
+},
+"duvar": {
+"t": 1791804426440,
+"s": ["duvar kağıtları","duvar kağıdı uygulamaları","duvar kağıtları ücretsiz","duvar saati","duvar kağıdı"]
 },
 "duvar ": {
 "t": 1789713675364,
 "s": ["duvar kağıtları","duvar kağıdı","duvar kağıdı uygulamaları","duvar kağıtları ücretsiz","duvar saati"]
 },
 "duvar k": {
-"t": 1789806249435,
-"s": ["duvar kağıtları","duvar kağıdı","duvar kağıdı uygulamaları","duvar kağıtları ücretsiz","duvar kağıtları internetsiz"]
+"t": 1791804109013,
+"s": ["duvar kağıtları","duvar kağıdı uygulamaları","duvar kağıtları ücretsiz","duvar kağıdı","duvar kağıtları internetsiz"]
 },
 "duvar kağ": {
 "t": 1789714494151,
 "s": ["duvar kağıtları","duvar kağıdı","duvar kağıdı uygulamaları","duvar kağıtları ücretsiz","duvar kağıtları internetsiz"]
 },
 "duvar kağı": {
-"t": 1789714494944,
-"s": ["duvar kağıtları","duvar kağıdı","duvar kağıdı uygulamaları","duvar kağıtları ücretsiz","duvar kağıtları internetsiz"]
+"t": 1791804109441,
+"s": ["duvar kağıtları","duvar kağıdı uygulamaları","duvar kağıtları ücretsiz","duvar kağıdı","duvar kağıtları internetsiz"]
 },
 "duvar kağıd": {
 "t": 1789714494548,
 "s": ["duvar kağıdı","duvar kağıdı uygulamaları","duvar kağıdı uygulaması","duvar kağıdı saat","duvar kağıdı futbol"]
 },
 "duvar kağıdı": {
-"t": 1789712870632,
+"t": 1791804109873,
 "s": ["duvar kağıdı","duvar kağıdı uygulamaları","duvar kağıdı uygulaması","duvar kağıdı saat","duvar kağıdı futbol"]
 },
 "duvar kağıdı ": {
-"t": 1789712871023,
+"t": 1791804108578,
 "s": ["duvar kağıdı uygulamaları","duvar kağıdı uygulaması","duvar kağıdı saat","duvar kağıdı futbol","duvar kağıdı yapma"]
 },
 "duvar kağıdı u": {
@@ -11448,8 +11724,8 @@
 "s": ["duvar kağıdı uygulamaları futbol","duvar kağıdı uygulamaları ücretsiz","duvar kağıdı uygulamaları futbolcu","duvar kağıdı uygulamaları galatasaray","duvar kağıdı uygulamaları tablet"]
 },
 "düz": {
-"t": 1790850470939,
-"s": ["düzenleme oyunları","düz okey","düzce üniversitesi","düzce kent kart","düzenleme oyunu"]
+"t": 1791804272331,
+"s": ["düz okey","düzenleme oyunları","düzce üniversitesi","düzce kent kart","düz okey internetsiz"]
 },
 "düz o": {
 "t": 1790850471353,
@@ -11463,8 +11739,24 @@
 "t": 1790850470068,
 "s": ["düz okey oyunu","düz okey oyunları","internetsiz düz okey oyunu","internetsiz oyunları düz okey","internetsiz oyunlar düz okey"]
 },
+"düze": {
+"t": 1791804273234,
+"s": ["düzenleme oyunları","düzenleme oyunu","düzenleme oyunları internetsiz","düzen oyunu","düzenleyici"]
+},
+"düzen": {
+"t": 1791804272774,
+"s": ["düzenleme oyunları","düzenleme oyunu","düzenleme oyunları internetsiz","düzen oyunu","düzenleyici"]
+},
+"düzenl": {
+"t": 1791804271897,
+"s": ["düzenleme oyunları","düzenleme oyunu","düzenleme oyunları internetsiz","düzenleyici","düzenleme"]
+},
+"düzenleyici": {
+"t": 1791804271459,
+"s": ["düzenleyici","düzenleyici fotoğraf düzenleyici","düzenleyici oyunlar","düzenleyici video","düzenleyici lite"]
+},
 "e": {
-"t": 1791108165101,
+"t": 1791804255909,
 "s": ["eba","e devlet","e nabız","e okul","efootball"]
 },
 "eb": {
@@ -11486,6 +11778,26 @@
 "ebru hoca ehliy": {
 "t": 1791543405860,
 "s": ["ebru hoca ehliyet sınav soruları","ebru hoca ehliyet sınav soruları 2026","ebru hoca ehliyet","ehliyet ebru hoca 2026"]
+},
+"edi": {
+"t": 1791804378288,
+"s": ["edits","edit","edit uygulaması","edit uygulamaları","edit yapma uygulaması"]
+},
+"edit": {
+"t": 1791804379158,
+"s": ["edits","edit","edit uygulaması","edit uygulamaları","edit yapma uygulaması"]
+},
+"edito": {
+"t": 1791804378721,
+"s": ["editor","editor video","editor pro","editorun secimi oyunlar","editor de fotos"]
+},
+"editor": {
+"t": 1791804377855,
+"s": ["editor","editor video","editor pro","editorun secimi oyunlar","editor de fotos"]
+},
+"editörü": {
+"t": 1791804459178,
+"s": ["editörün seçimi oyunlar","editörün seçimi","galeri editörü","skinler editörü","ses editörü"]
 },
 "efsane d": {
 "t": 1790153544524,
@@ -11514,6 +11826,18 @@
 "efsane kelime bulmaca": {
 "t": 1791019737986,
 "s": []
+},
+"eğ": {
+"t": 1791804515723,
+"s": ["eğlence","eğitici oyunlar","eğlenceli oyunlar","eğlenceli oyunlar internetsiz","eğlence oyunları"]
+},
+"eğit": {
+"t": 1791804515280,
+"s": ["eğitici oyunlar","eğitici çocuk oyunları","eğitim uygulamaları","eğitim vadisi","eğitmenim akademi"]
+},
+"eğitici": {
+"t": 1791804514848,
+"s": ["eğitici oyunlar","eğitici çocuk oyunları","eğitici oyun","eğitici oyunlar 5 yaş","eğitici oyunlar ucretsiz"]
 },
 "eğitici ": {
 "t": 1789720286060,
@@ -11576,11 +11900,15 @@
 "s": ["eğlenceli kelime oyunları"]
 },
 "eh": {
-"t": 1791108164700,
+"t": 1791804255477,
 "s": ["ehliyet sınav soruları 2026","ehliyet cenk hoca","ehliyet sınavı","ehliyet go","ehliyet cepte"]
 },
 "ehl": {
 "t": 1791108164291,
+"s": ["ehliyet sınav soruları 2026","ehliyet cenk hoca","ehliyet sınavı","ehliyet go","ehliyet cepte"]
+},
+"ehli": {
+"t": 1791804255040,
 "s": ["ehliyet sınav soruları 2026","ehliyet cenk hoca","ehliyet sınavı","ehliyet go","ehliyet cepte"]
 },
 "ehliy": {
@@ -11592,7 +11920,7 @@
 "s": ["ehliyet sınav soruları 2026","ehliyet cenk hoca","ehliyet sınav soruları","ehliyet go","ehliyet cepte"]
 },
 "ehliyet": {
-"t": 1791197005698,
+"t": 1791804254605,
 "s": ["ehliyet sınav soruları 2026","ehliyet cenk hoca","ehliyet sınavı","ehliyet go","ehliyet cepte"]
 },
 "ehliyet ": {
@@ -11652,7 +11980,7 @@
 "s": ["ehliyet sınavı soruları 2026","ehliyet sınavı soruları","ehliyet sınavı çıkmış sorular","ehliyet sınavı soruları 2026 ücretsiz","ehliyet sınavı 2026"]
 },
 "ehliyet sınavı s": {
-"t": 1789714511720,
+"t": 1791804125676,
 "s": ["ehliyet sınavı soruları 2026","ehliyet sınavı soruları","ehliyet sınavı soruları 2026 ücretsiz","ehliyet sınavı soruları cenk hoca","ehliyet sınavı soruları 2026 internetsiz"]
 },
 "ehliyet sınavı so": {
@@ -11672,8 +12000,24 @@
 "s": ["ehliyet sınavı soruları 2026","ehliyet sınavı soruları","ehliyet sınavı soruları 2026 ücretsiz","ehliyet sınavı soruları cenk hoca","ehliyet sınavı soruları 2026 internetsiz"]
 },
 "ehliyet sınavı soruları ": {
-"t": 1789712884609,
-"s": ["ehliyet sınavı soruları 2026","ehliyet sınavı soruları 2026 ücretsiz","ehliyet sınavı soruları cenk hoca","ehliyet sınavı soruları 2026 internetsiz","ehliyet sınavı soruları ücretsiz"]
+"t": 1791804124804,
+"s": ["ehliyet sınavı soruları 2026","ehliyet sınavı soruları 2026 ücretsiz","ehliyet sınavı soruları cenk hoca","ehliyet sınavı soruları 2027","ehliyet sınavı soruları 2026 internetsiz"]
+},
+"ehliyet sınavı soruları ü": {
+"t": 1791804127002,
+"s": ["ehliyet sınavı soruları ücretsiz","ehliyet sınavı soruları 2026 ücretsiz"]
+},
+"ehliyet sınavı soruları üc": {
+"t": 1791804126558,
+"s": ["ehliyet sınavı soruları ücretsiz","ehliyet sınavı soruları 2026 ücretsiz"]
+},
+"ehliyet sınavı soruları ücre": {
+"t": 1791804126118,
+"s": ["ehliyet sınavı soruları ücretsiz","ehliyet sınavı soruları 2026 ücretsiz"]
+},
+"ehliyet sınavı soruları ücretsiz": {
+"t": 1791804125235,
+"s": ["ehliyet sınavı soruları ücretsiz","ehliyet sınavı soruları 2026 ücretsiz"]
 },
 "ek": {
 "t": 1791108242120,
@@ -11691,21 +12035,41 @@
 "t": 1791108241273,
 "s": ["ekran kaydedici","ekran yansıtma","ekran fotoğrafları","ekran süresi","ekran kaydı"]
 },
+"ekran k": {
+"t": 1791804139211,
+"s": ["ekran kaydedici","ekran kaydı","ekran kilidi","ekran kalemi","ekran kaydedici ücretsiz"]
+},
 "ekran kay": {
-"t": 1789714515632,
-"s": ["ekran kaydedici","ekran kaydı","ekran kaydedici ücretsiz","ekran kaydi","ekran kaydedi"]
+"t": 1791804153289,
+"s": ["ekran kaydedici","ekran kaydı","ekran kaydedici ücretsiz","ekran kaydedi","ekran kaydi"]
 },
 "ekran kayd": {
 "t": 1789714516033,
 "s": ["ekran kaydedici","ekran kaydı","ekran kaydedici ücretsiz","ekran kaydi","ekran kaydedi"]
 },
 "ekran kaydı": {
-"t": 1789712856343,
-"s": ["ekran kaydı","ekran kaydı alma","ekran kaydı uygulaması","ekran kaydı alma uygulaması","ekran kaydırma uygulaması"]
+"t": 1791804139651,
+"s": ["ekran kaydı","ekran kaydı alma","ekran kaydı uygulaması","ekran kaydı alma uygulaması","ekran kaydırma"]
 },
 "ekran kaydı ": {
-"t": 1789712856740,
-"s": ["ekran kaydı alma","ekran kaydı uygulaması","ekran kaydı alma uygulaması","ekran kaydı sesli","ekran kaydı al"]
+"t": 1791804138323,
+"s": ["ekran kaydı alma","ekran kaydı uygulaması","ekran kaydı alma uygulaması","ekran kaydı ücretsiz","ekran kaydı uygulamaları"]
+},
+"ekran kaydı a": {
+"t": 1791804140113,
+"s": ["ekran kaydı alma","ekran kaydı alma uygulaması","ekran kaydı al","ekran kaydı alan uygulamalar","ekran kaydı alma ücretsiz"]
+},
+"ekran kaydı al": {
+"t": 1791804138779,
+"s": ["ekran kaydı alma","ekran kaydı alma uygulaması","ekran kaydı al","ekran kaydı alan uygulamalar","ekran kaydı alma ücretsiz"]
+},
+"ekran kaydı s": {
+"t": 1791804153733,
+"s": ["ekran kaydı samsung","ekran kaydı sesli","ekran ve ses kaydı"]
+},
+"ekran kaydı sesli": {
+"t": 1791804152831,
+"s": ["ekran kaydı sesli"]
 },
 "el": {
 "t": 1791283240323,
@@ -12339,6 +12703,26 @@
 "t": 1790850499495,
 "s": []
 },
+"en saçm": {
+"t": 1791803918100,
+"s": ["en saçma oyunlar","en saçma oyun","en saçma oyunları","en saçma oyunu","en saçma korku oyunları"]
+},
+"en saçma ": {
+"t": 1791803919004,
+"s": ["en saçma oyunlar","en saçma oyun","en saçma oyunları","en saçma oyunu","en saçma korku oyunları"]
+},
+"en saçma z": {
+"t": 1791803919446,
+"s": ["en saçma zombi oyunu"]
+},
+"en saçma zo": {
+"t": 1791803918543,
+"s": ["en saçma zombi oyunu"]
+},
+"en saçma zombi": {
+"t": 1791803917639,
+"s": ["en saçma zombi oyunu"]
+},
 "en ün": {
 "t": 1790153568447,
 "s": ["en ünlü oyunlar","en ünlü oyun","en ünlü oyunları","en ünlü minecraft","en ünlü oyunu"]
@@ -12476,7 +12860,7 @@
 "s": []
 },
 "es": {
-"t": 1791108415759,
+"t": 1791804211126,
 "s": ["eshot","eski oyunlar","estram","espressolab","esim io"]
 },
 "eş": {
@@ -12486,6 +12870,14 @@
 "eşa": {
 "t": 1791197270327,
 "s": ["eşarj","eşarj mobil","eşarj indir","eşarp","e şans"]
+},
+"esc": {
+"t": 1791804210644,
+"s": ["escape the backrooms","escape","escape room","escort escort app turkey","esc bus simulator"]
+},
+"escape": {
+"t": 1791804210210,
+"s": ["escape the backrooms","escape","escape room","escape from backrooms","escape the backrooms multiplayer"]
 },
 "eski": {
 "t": 1790153582378,
@@ -12631,6 +13023,10 @@
 "t": 1789806255337,
 "s": ["esmaül hüsna","esmaül hüsna ve zikirmatik","esmaül hüsna ve dualar","esmaül hüsna ve faziletleri","esmaül hüsna zikirleri"]
 },
+"esmaül hüsn": {
+"t": 1791804167246,
+"s": ["esmaül hüsna","esmaül hüsna ve zikirmatik","esmaül hüsna ve dualar","esmaül hüsna ve faziletleri","esmaül hüsna zikirleri"]
+},
 "esmaül husna": {
 "t": 1791369069492,
 "s": ["esmaül husna"]
@@ -12640,8 +13036,20 @@
 "s": ["esmaül hüsna","esmaül hüsna ve zikirmatik","esmaül hüsna ve dualar","esmaül hüsna ve faziletleri","esmaül hüsna zikirleri"]
 },
 "esmaül hüsna ": {
-"t": 1789712791360,
-"s": ["esmaül hüsna ve zikirmatik","esmaül hüsna ve dualar","esmaül hüsna ve faziletleri","esmaül hüsna zikirleri","esmaül hüsna ezberleme"]
+"t": 1791804166335,
+"s": ["esmaül hüsna ve zikirmatik","esmaül hüsna ve dualar","esmaül hüsna ve faziletleri","esmaül hüsna zikirleri","esmaül hüsna sesli dinle"]
+},
+"esmaül hüsna e": {
+"t": 1791804168116,
+"s": ["esmaül hüsna ezberleme","esmaül hüsna ezber"]
+},
+"esmaül hüsna ezbe": {
+"t": 1791804167677,
+"s": ["esmaül hüsna ezberleme","esmaül hüsna ezber"]
+},
+"esmaül hüsna ezberleme": {
+"t": 1791804166801,
+"s": ["esmaül hüsna ezberleme"]
 },
 "esmaül hüsna v": {
 "t": 1789894334888,
@@ -12928,15 +13336,15 @@
 "s": ["evde spor","evde spor hareketleri","evde spor yapma programı","evde spor hareketleri ücretsiz","evde spor ücretsiz"]
 },
 "evde spo": {
-"t": 1789806256929,
+"t": 1791804181409,
 "s": ["evde spor","evde spor hareketleri","evde spor yapma programı","evde spor hareketleri ücretsiz","evde spor ücretsiz"]
 },
 "evde spor": {
-"t": 1789712819775,
+"t": 1791804181841,
 "s": ["evde spor","evde spor hareketleri","evde spor yapma programı","evde spor hareketleri ücretsiz","evde spor ücretsiz"]
 },
 "evde spor ": {
-"t": 1789712820166,
+"t": 1791804180978,
 "s": ["evde spor hareketleri","evde spor yapma programı","evde spor hareketleri ücretsiz","evde spor ücretsiz","evde spor kadın"]
 },
 "evden": {
@@ -12995,6 +13403,10 @@
 "t": 1791369076397,
 "s": ["evden kaçma oyunu 2","evden kaçma oyunu 2 bölümü","evden kaçma oyunu 2 bölüm","evden kaçma oyunu 2026"]
 },
+"ez": {
+"t": 1791804352082,
+"s": ["ezan vakti","ezan alarmı","ezan vakti diyanet","ezzo","ezan vakti pro plus"]
+},
 "eza": {
 "t": 1791197281297,
 "s": ["ezan vakti","ezan alarmı","ezan vakti diyanet","ezan vakti pro plus","ezan vakti lite"]
@@ -13020,7 +13432,7 @@
 "s": ["ezan saati","ezan saatleri","ezan saati programı indir","ezan saati pro","ezan saatleri indir"]
 },
 "ezan saat": {
-"t": 1789714561941,
+"t": 1791804193583,
 "s": ["ezan saati","ezan saatleri","ezan saati programı indir","ezan saati pro","ezan saatleri indir"]
 },
 "ezan saati": {
@@ -13028,8 +13440,20 @@
 "s": ["ezan saati","ezan saati programı indir","ezan saati pro","ezan saati indir","ezan saati uygulaması"]
 },
 "ezan saati ": {
-"t": 1789712789774,
-"s": ["ezan saati programı indir","ezan saati pro","ezan saati indir","ezan saati uygulaması","ezan saati diyanet"]
+"t": 1791804192708,
+"s": ["ezan saati programı indir","ezan saati pro","ezan saati uygulaması","ezan saati indir","ezan saati programı indir ücretsiz"]
+},
+"ezan saati d": {
+"t": 1791804194463,
+"s": ["ezan saati diyanet"]
+},
+"ezan saati diy": {
+"t": 1791804194022,
+"s": ["ezan saati diyanet"]
+},
+"ezan saati diyanet": {
+"t": 1791804193139,
+"s": ["ezan saati diyanet"]
 },
 "ezan saati p": {
 "t": 1789894455023,
@@ -13572,7 +13996,7 @@
 "s": ["fotoğraf çekip boyama","fotoğraf çekip boyama oyunları","fotoğraf çekip boyama oyunu","fotoğraf çekip","fotoğraf çekip instagram bulma"]
 },
 "fotoğraf d": {
-"t": 1791108230200,
+"t": 1791804206412,
 "s": ["fotoğraf düzenleyici","fotoğraf düzenleme","fotoğraf duzenleyici","fotoğraf düzenleyici program","fotoğraf düzenleyici ücretsiz"]
 },
 "fotoğraf dü": {
@@ -13592,23 +14016,23 @@
 "s": ["fotoğraf düzenleyici","fotoğraf düzenleme","fotoğraf düzenleyici ücretsiz","fotoğraf düzenleyici program","fotoğraf düzenleyici efektli"]
 },
 "fotoğraf düzenl": {
-"t": 1789714587887,
-"s": ["fotoğraf düzenleyici","fotoğraf düzenleme","fotoğraf düzenleyici ücretsiz","fotoğraf düzenleyici program","fotoğraf düzenleyici efektli"]
+"t": 1791804206843,
+"s": ["fotoğraf düzenleyici","fotoğraf düzenleme","fotoğraf düzenleyici program","fotoğraf düzenleyici ücretsiz","fotoğraf düzenleyici efektli"]
 },
 "fotoğraf düzenle": {
 "t": 1789714585289,
 "s": ["fotoğraf düzenleyici","fotoğraf düzenleme","fotoğraf düzenleyici ücretsiz","fotoğraf düzenleyici program","fotoğraf düzenleyici efektli"]
 },
 "fotoğraf düzenlem": {
-"t": 1789714585693,
+"t": 1791804207288,
 "s": ["fotoğraf düzenleme","fotoğraf düzenleme uygulaması","fotoğraf düzenleme ücretsiz","fotoğraf düzenleme programı","fotoğraf düzenleme uygulamaları"]
 },
 "fotoğraf düzenleme": {
-"t": 1789712865850,
+"t": 1791804207724,
 "s": ["fotoğraf düzenleme","fotoğraf düzenleme uygulaması","fotoğraf düzenleme ücretsiz","fotoğraf düzenleme programı","fotoğraf düzenleme uygulamaları"]
 },
 "fotoğraf düzenleme ": {
-"t": 1789712866244,
+"t": 1791804205970,
 "s": ["fotoğraf düzenleme uygulaması","fotoğraf düzenleme ücretsiz","fotoğraf düzenleme programı","fotoğraf düzenleme uygulamaları","fotoğraf düzenleme yapay zeka"]
 },
 "fotoğraf e": {
@@ -13816,8 +14240,8 @@
 "s": ["futbol market oyunu","futbol market","market oyunları futbol","futbol kart market oyunları","futbol kartı market oyunu"]
 },
 "futbol o": {
-"t": 1789713715437,
-"s": ["futbol oyunları","futbol oyunları 2022","futbol oyunları 2023","futbol oyunları 2020 internetsiz","futbol oyunları 2027"]
+"t": 1791804220298,
+"s": ["futbol oyunları","futbol oyunları 2024","futbol oyunları 2023","futbol oyunları 2027","futbol oyunları 2020 internetsiz"]
 },
 "futbol öğrenme oy": {
 "t": 1790153624581,
@@ -13832,24 +14256,24 @@
 "s": ["futbol oyunları","futbol oyunları 2022","futbol oyunları 2023","futbol oyunları 2020 internetsiz","futbol oyunları 2027"]
 },
 "futbol oyunl": {
-"t": 1789806262474,
-"s": ["futbol oyunları","futbol oyunları 2022","futbol oyunları 2023","futbol oyunları 2020 internetsiz","futbol oyunları 2027"]
+"t": 1791804220727,
+"s": ["futbol oyunları","futbol oyunları 2024","futbol oyunları 2023","futbol oyunları 2027","futbol oyunları 2020 internetsiz"]
 },
 "futbol oyunla": {
 "t": 1789894460446,
 "s": ["futbol oyunları","futbol oyunları 2022","futbol oyunları 2023","futbol oyunları 2020 internetsiz","futbol oyunları 2027"]
 },
 "futbol oyunlar": {
-"t": 1789806262885,
-"s": ["futbol oyunları","futbol oyunları 2022","futbol oyunları 2023","futbol oyunları 2020 internetsiz","futbol oyunları 2027"]
+"t": 1791804221165,
+"s": ["futbol oyunları","futbol oyunları 2024","futbol oyunları 2023","futbol oyunları 2027","futbol oyunları 2020 internetsiz"]
 },
 "futbol oyunları": {
-"t": 1789712743121,
-"s": ["futbol oyunları","futbol oyunları 2022","futbol oyunları 2023","futbol oyunları 2020 internetsiz","futbol oyunları 2027"]
+"t": 1791804221605,
+"s": ["futbol oyunları","futbol oyunları 2024","futbol oyunları 2023","futbol oyunları 2027","futbol oyunları 2020 internetsiz"]
 },
 "futbol oyunları ": {
-"t": 1789712743516,
-"s": ["futbol oyunları 2026","futbol oyunları 2022","futbol oyunları 2023","futbol oyunları 2020 internetsiz","futbol oyunları 2027"]
+"t": 1791804219860,
+"s": ["futbol oyunları 2026","futbol oyunları 2022","futbol oyunları 2024","futbol oyunları 2023","futbol oyunları 2027"]
 },
 "futbol oyunları a": {
 "t": 1789720125907,
@@ -14096,12 +14520,16 @@
 "s": ["futbolcu kart market oyunu"]
 },
 "g": {
-"t": 1791108123031,
+"t": 1791804519812,
 "s": ["gemini","garanti","getcontact","google","getir"]
 },
 "ğ": {
 "t": 1790239372357,
 "s": ["ğ","ğaranti bankası","ğemini","ğoogle","ğöç bil"]
+},
+"ga": {
+"t": 1791804174607,
+"s": ["garanti","gangster mirage city","gardrops","galeri","gacha life"]
 },
 "galatasar": {
 "t": 1790239229043,
@@ -14122,6 +14550,14 @@
 "galatasarayın fut": {
 "t": 1790239228618,
 "s": ["galatasarayın futbol oyunu","galatasarayın futbol oyunları"]
+},
+"gam": {
+"t": 1791804175035,
+"s": ["game world","gamehub","game turbo","games","game"]
+},
+"game": {
+"t": 1791804174164,
+"s": ["game world","gamehub","game turbo","games","game"]
 },
 "gazete kelime bu": {
 "t": 1791019752421,
@@ -14184,8 +14620,8 @@
 "s": ["gebelik takibi","gebelik takibi en çok indirilen","gebelik takibi ücretsiz","gebelik takibim","gebelik takibi en çok indirilen ücretsiz"]
 },
 "gebelik takibi ": {
-"t": 1789712825713,
-"s": ["gebelik takibi en çok indirilen","gebelik takibi ücretsiz","gebelik takibi en çok indirilen ücretsiz","gebelik takibi happy mom","gebelik takibi ucretsiz"]
+"t": 1791804245326,
+"s": ["gebelik takibi en çok indirilen","gebelik takibi ücretsiz","gebelik takibi ucretsiz","gebelik takibi en çok indirilen ücretsiz","gebelik takibi uygulaması"]
 },
 "gebelik takibi e": {
 "t": 1790239356706,
@@ -14210,6 +14646,22 @@
 "gebelik takibi en çok indirilen ": {
 "t": 1789720072842,
 "s": ["gebelik takibi en çok indirilen ücretsiz","gebelik takibi en çok indirilen ucretsiz","gebelik takibi en çok indirilen"]
+},
+"gebelik takibi h": {
+"t": 1791804247119,
+"s": ["gebelik takibi happy mom","hafta hafta gebelik takibi","büyükbaş hayvan gebelik takibi","hayvan gebelik takibi","haftalık gebelik takibi"]
+},
+"gebelik takibi ha": {
+"t": 1791804246657,
+"s": ["gebelik takibi happy mom","hafta hafta gebelik takibi","büyükbaş hayvan gebelik takibi","hayvan gebelik takibi","haftalık gebelik takibi"]
+},
+"gebelik takibi hap": {
+"t": 1791804246206,
+"s": ["gebelik takibi happy mom"]
+},
+"gebelik takibi happy mom": {
+"t": 1791804245762,
+"s": ["gebelik takibi happy mom"]
 },
 "gel": {
 "t": 1791543584116,
@@ -14747,6 +15199,10 @@
 "t": 1791369100253,
 "s": ["gif yapma","gif yapma programı","gif yapma uygulaması","gif yapma programı ücretsiz","gif yapmak"]
 },
+"gif ya": {
+"t": 1791804267252,
+"s": ["gif yapma","gif yapma programı","gif yapma uygulaması","gif yapma programı ücretsiz","gif yapmak"]
+},
 "gif yap": {
 "t": 1791369101488,
 "s": ["gif yapma","gif yapma programı","gif yapma uygulaması","gif yapma programı ücretsiz","gif yapmak"]
@@ -14760,7 +15216,7 @@
 "s": ["gif yapıcı"]
 },
 "gif yapm": {
-"t": 1789806266361,
+"t": 1791804266809,
 "s": ["gif yapma","gif yapma programı","gif yapma uygulaması","gif yapma programı ücretsiz","gif yapmak"]
 },
 "gif yapma": {
@@ -14792,7 +15248,7 @@
 "s": ["gitar akort program","gitar","gitar akor","gitar oyunu","gitar akort"]
 },
 "gitar ": {
-"t": 1789713724046,
+"t": 1791804282396,
 "s": ["gitar akort program","gitar akor","gitar oyunu","gitar akort","gitar oyunları"]
 },
 "gitar a": {
@@ -14804,19 +15260,19 @@
 "s": ["gitar akort program","gitar akor","gitar akort","gitar akort programı","gitar akort program ücretsiz"]
 },
 "gitar ako": {
-"t": 1789714627222,
-"s": ["gitar akort program","gitar akor","gitar akort","gitar akort programı","gitar akort program ücretsiz"]
+"t": 1791804282832,
+"s": ["gitar akort program","gitar akor","gitar akort","gitar akort uygulaması","gitar akort programı"]
 },
 "gitar akor": {
 "t": 1789714631613,
 "s": ["gitar akort program","gitar akor","gitar akort","gitar akort programı","gitar akort program ücretsiz"]
 },
 "gitar akort": {
-"t": 1789712861100,
+"t": 1791804283273,
 "s": ["gitar akort program","gitar akort","gitar akort programı","gitar akort program ücretsiz","gitar akort uygulaması"]
 },
 "gitar akort ": {
-"t": 1789712861489,
+"t": 1791804281926,
 "s": ["gitar akort program","gitar akort programı","gitar akort program ücretsiz","gitar akort uygulaması","gitar akort ayarlama"]
 },
 "giy": {
@@ -15099,6 +15555,10 @@
 "t": 1791197303258,
 "s": ["gizlichat flört","gizlichat flört ve sevgili bul"]
 },
+"go": {
+"t": 1791804519375,
+"s": ["google","goose goose duck","google fotoğraflar","good lock","google maps"]
+},
 "gö": {
 "t": 1790850666732,
 "s": ["görüntülü konuşma","göç bill","görüntülü konuşma ücretsiz bayan","göz oyunu","görüntülü sohbet uygulamaları"]
@@ -15138,6 +15598,10 @@
 "gölden arabayla kaçış oyunu": {
 "t": 1790239386950,
 "s": []
+},
+"goo": {
+"t": 1791804518946,
+"s": ["google","goose goose duck","google fotoğraflar","good lock","google play"]
 },
 "goog": {
 "t": 1791543684870,
@@ -15355,6 +15819,22 @@
 "t": 1789894077906,
 "s": ["gram altın fiyatları canlı güncel"]
 },
+"gram ö": {
+"t": 1791803924717,
+"s": ["gram ölçen hassas terazi","gram ölçer","gram ölçme","gram ölçme uygulaması","terazi gram ölçer"]
+},
+"gram öl": {
+"t": 1791803924273,
+"s": ["gram ölçen hassas terazi","gram ölçer","gram ölçme","gram ölçme uygulaması","terazi gram ölçer"]
+},
+"gram ölç": {
+"t": 1791803923822,
+"s": ["gram ölçen hassas terazi","gram ölçer","gram ölçme","gram ölçme uygulaması","terazi gram ölçer"]
+},
+"gram ölçer": {
+"t": 1791803923389,
+"s": ["gram ölçer","terazi gram ölçer","altın gram ölçer","hassas terazi gram ölçer"]
+},
 "gta oyu": {
 "t": 1790850669651,
 "s": ["gta oyunları","gta oyunu","gta oyun","gta oyunlar","gta oyunlari"]
@@ -15508,7 +15988,7 @@
 "s": ["halkbank","hepsiburada","hay day","hello neighbor","hornet"]
 },
 "ha": {
-"t": 1791108396424,
+"t": 1791804317782,
 "s": ["halkbank","hay day","hadi","haritalar","happn"]
 },
 "hac": {
@@ -15551,6 +16031,10 @@
 "t": 1790239393889,
 "s": ["hafriyat kamyon oyunları","hafriyat kamyon oyunu"]
 },
+"ham": {
+"t": 1791804317320,
+"s": ["hamilelik takibi","hamburger oyunu","hamur adam","hamile oyunu","hamidiye su"]
+},
 "hamburg": {
 "t": 1790850673440,
 "s": ["hamburger oyunu","hamburger oyunları","hamburger","hamburg","hamburger yapma oyunu"]
@@ -15570,6 +16054,14 @@
 "hamburger mark": {
 "t": 1790850673036,
 "s": ["hamburger market oyunu","hamburger marketi","hamburger market"]
+},
+"hamil": {
+"t": 1791804316872,
+"s": ["hamilelik takibi","hamile oyunu","hamilelik testi","hamilelik","hamile oyunları"]
+},
+"hamilelik": {
+"t": 1791804316451,
+"s": ["hamilelik takibi","hamilelik testi","hamilelik","hamilelik uygulaması","hamilelik testi parmak izi"]
 },
 "hang": {
 "t": 1791543190973,
@@ -15900,7 +16392,7 @@
 "s": []
 },
 "hav": {
-"t": 1791197309091,
+"t": 1791804296349,
 "s": ["hava durumu","hava durumu indir türkçe","havaist","hava durumu indir","havuz oyunları"]
 },
 "hava": {
@@ -15912,8 +16404,8 @@
 "s": ["hava durumu","hava durumu indir türkçe","hava durumu indir","hava radar","hava durumu widget"]
 },
 "hava d": {
-"t": 1789713733498,
-"s": ["hava durumu","hava durumu indir türkçe","hava durumu indir","hava durumu widget","hava durumu reklamsız"]
+"t": 1791804295914,
+"s": ["hava durumu","hava durumu indir türkçe","hava durumu indir","hava durumu widget","hava durumu radar"]
 },
 "hava duru": {
 "t": 1789806267942,
@@ -15924,7 +16416,7 @@
 "s": ["hava durumu","hava durumu indir türkçe","hava durumu indir","hava durumu widget","hava durumu reklamsız"]
 },
 "hava durumu ": {
-"t": 1789712887770,
+"t": 1791804295480,
 "s": ["hava durumu indir türkçe","hava durumu indir","hava durumu widget","hava durumu radar","hava durumu reklamsız"]
 },
 "haval": {
@@ -16027,6 +16519,10 @@
 "t": 1789713738247,
 "s": ["hayatta kalma oyunları","hayatta kalma korku oyunları","hayatta kalma oyunu","hayatta kalma oyunları multiplayer","hayatta kalma oyunları online"]
 },
+"hayatta kalma": {
+"t": 1791804307758,
+"s": ["hayatta kalma oyunları","hayatta kalma korku oyunları","hayatta kalma oyunu","hayatta kalma oyunları online","hayatta kalma oyunları multiplayer"]
+},
 "hayatta kalma o": {
 "t": 1789714690464,
 "s": ["hayatta kalma oyunları","hayatta kalma oyunu","hayatta kalma oyunları multiplayer","hayatta kalma oyunları online","hayatta kalma oyunları internetsiz"]
@@ -16040,12 +16536,24 @@
 "s": ["hayatta kalma oyunları","hayatta kalma oyunu","hayatta kalma oyunları multiplayer","hayatta kalma oyunları online","hayatta kalma oyunları internetsiz"]
 },
 "hayatta kalma oyunu": {
-"t": 1789712782210,
+"t": 1791804308192,
 "s": ["hayatta kalma oyunu","hayatta kalma oyunu online","hayatta kalma oyunu multiplayer","hayatta kalma oyunu internetsiz","hayatta kalma oyunu 2 kişilik"]
 },
 "hayatta kalma oyunu ": {
-"t": 1789712782609,
-"s": ["hayatta kalma oyunu online","hayatta kalma oyunu multiplayer","hayatta kalma oyunu internetsiz","hayatta kalma oyunu 2 kişilik","hayatta kalma oyunu zombi"]
+"t": 1791804306854,
+"s": ["hayatta kalma oyunu online","hayatta kalma oyunu multiplayer","hayatta kalma oyunu internetsiz","hayatta kalma oyunu 2 kişilik","hayatta kalma oyunu minecraft"]
+},
+"hayatta kalma oyunu z": {
+"t": 1791804309076,
+"s": ["hayatta kalma oyunu zombi","zombilere karşı hayatta kalma oyunu","zombili hayatta kalma oyunu","zombi hayatta kalma oyunu multiplayer","zombi hayatta kalma oyunu online"]
+},
+"hayatta kalma oyunu zo": {
+"t": 1791804308635,
+"s": ["hayatta kalma oyunu zombi","zombilere karşı hayatta kalma oyunu","zombili hayatta kalma oyunu","zombi hayatta kalma oyunu multiplayer","zombi hayatta kalma oyunu online"]
+},
+"hayatta kalma oyunu zombi": {
+"t": 1791804307318,
+"s": ["hayatta kalma oyunu zombi","zombilere karşı hayatta kalma oyunu","zombili hayatta kalma oyunu","zombi hayatta kalma oyunu multiplayer","zombi hayatta kalma oyunu online"]
 },
 "hayv": {
 "t": 1790850700207,
@@ -17180,8 +17688,8 @@
 "s": ["hesap makinesi","hesap makinesi samsung","hesap makinesi indir ucretsiz","hesap makinesi indir","hesap makinesi uygulama gizle"]
 },
 "hesap ma": {
-"t": 1789806271105,
-"s": ["hesap makinesi","hesap makinesi samsung","hesap makinesi indir ucretsiz","hesap makinesi indir","hesap makinesi uygulama gizle"]
+"t": 1791804322449,
+"s": ["hesap makinesi","hesap makinesi indir ucretsiz","hesap makinesi indir","hesap makinesi uygulama gizle","hesap makineleri"]
 },
 "hesap mak": {
 "t": 1790239450396,
@@ -17192,15 +17700,19 @@
 "s": ["hesap makinesi","hesap makinesi samsung","hesap makinesi indir ucretsiz","hesap makinesi indir","hesap makinesi uygulama gizle"]
 },
 "hesap makine": {
-"t": 1789806271516,
-"s": ["hesap makinesi","hesap makinesi samsung","hesap makinesi indir ucretsiz","hesap makinesi indir","hesap makinesi uygulama gizle"]
+"t": 1791804322883,
+"s": ["hesap makinesi","hesap makinesi indir ucretsiz","hesap makinesi indir","hesap makinesi uygulama gizle","hesap makineleri"]
+},
+"hesap makines": {
+"t": 1791804323746,
+"s": ["hesap makinesi","hesap makinesi indir ucretsiz","hesap makinesi indir","hesap makinesi uygulama gizle","hesap makinesi internetsiz"]
 },
 "hesap makinesi": {
-"t": 1789712838870,
-"s": ["hesap makinesi","hesap makinesi samsung","hesap makinesi indir ucretsiz","hesap makinesi indir","hesap makinesi uygulama gizle"]
+"t": 1791804323310,
+"s": ["hesap makinesi","hesap makinesi indir ucretsiz","hesap makinesi indir","hesap makinesi uygulama gizle","hesap makinesi internetsiz"]
 },
 "hesap makinesi ": {
-"t": 1789712839268,
+"t": 1791804322007,
 "s": ["hesap makinesi samsung","hesap makinesi indir ucretsiz","hesap makinesi indir","hesap makinesi uygulama gizle","hesap makinesi internetsiz"]
 },
 "hesap makinesi i": {
@@ -17352,8 +17864,8 @@
 "s": ["hikaye oyunları","hikaye oyunları türkçe","hikaye oyunları aksiyon","hikaye oyunlari","hikaye oyunları internetsiz"]
 },
 "hikaye oyunla": {
-"t": 1789806273922,
-"s": ["hikaye oyunları","hikaye oyunları türkçe","hikaye oyunları aksiyon","hikaye oyunlari","hikaye oyunları korku"]
+"t": 1791804337956,
+"s": ["hikaye oyunları","hikaye oyunları türkçe","hikaye oyunları aksiyon","hikaye oyunlari","hikaye oyunları internetsiz"]
 },
 "hikaye oyunlar": {
 "t": 1791714366042,
@@ -17460,8 +17972,8 @@
 "s": []
 },
 "hikaye oyunları t": {
-"t": 1789720237198,
-"s": ["hikaye oyunları türkçe","hikaye oyunları turkce","hikaye oyunları türkçe aksiyon","hikaye oyunları türkçe internetsiz","hikaye oyunları türkçe korku"]
+"t": 1791804337520,
+"s": ["hikaye oyunları türkçe","hikaye oyunları türkçe korku","hikaye oyunları türkçe aksiyon","hikaye oyunları turkce","hikaye oyunları türkçe internetsiz"]
 },
 "hikaye oyunları tü": {
 "t": 1790239491725,
@@ -17672,7 +18184,7 @@
 "s": ["hypermarket 3d","hypermarket 3d market oyunu","hypermarket 3d store cashier","hypermarket 3d game","supermarket 3d simulator"]
 },
 "i": {
-"t": 1791197133180,
+"t": 1791804164933,
 "s": ["instagram","internetsiz oyunları","işcep","istanbulkart","iki kişilik oyunlar"]
 },
 "ibinin macera oyu": {
@@ -17988,7 +18500,7 @@
 "s": ["ilköğretim ailem","ilköğretim ailem uygulaması","ilköğretim ailem uygulamasını indir","ilköğretim ailem mobil uygulaması"]
 },
 "in": {
-"t": 1791108174656,
+"t": 1791804164478,
 "s": ["instagram","internetsiz oyunları","instagram lite","ing","inat box tv indir türkçe ücretsiz"]
 },
 "ing": {
@@ -18016,7 +18528,7 @@
 "s": ["ingilizce öğrenme programı","ingilizce","ingilizce kelime öğrenme","ingilizce türkçe çeviri","ingilizce oyunlar"]
 },
 "ingilizce": {
-"t": 1791108250849,
+"t": 1791804347856,
 "s": ["ingilizce öğrenme programı","ingilizce","ingilizce kelime öğrenme","ingilizce türkçe çeviri","ingilizce oyunlar"]
 },
 "ingilizce ": {
@@ -18052,27 +18564,27 @@
 "s": ["ingilizce öğrenme programı","ingilizce öğrenme programı ücretsiz","ingilizce öğrenme","ingilizce öğren","ingilizce öğrenme programı ucretsiz"]
 },
 "ingilizce öğre": {
-"t": 1789806275939,
-"s": ["ingilizce öğrenme programı","ingilizce öğrenme programı ücretsiz","ingilizce öğrenme","ingilizce öğren","ingilizce öğrenme programı ucretsiz"]
+"t": 1791804348291,
+"s": ["ingilizce öğrenme programı","ingilizce öğrenme programı ücretsiz","ingilizce öğrenme","ingilizce öğren","ingilizce öğrenme oyunları"]
 },
 "ingilizce öğren": {
-"t": 1789714755017,
-"s": ["ingilizce öğrenme programı","ingilizce öğrenme programı ücretsiz","ingilizce öğrenme","ingilizce öğren","ingilizce öğrenme programı ucretsiz"]
+"t": 1791804349157,
+"s": ["ingilizce öğrenme programı","ingilizce öğrenme programı ücretsiz","ingilizce öğrenme","ingilizce öğren","ingilizce öğrenme oyunları"]
 },
 "ingilizce öğrenm": {
-"t": 1789714755416,
-"s": ["ingilizce öğrenme programı","ingilizce öğrenme programı ücretsiz","ingilizce öğrenme","ingilizce öğrenme programı ucretsiz","ingilizce öğrenme oyunları"]
+"t": 1791804348724,
+"s": ["ingilizce öğrenme programı","ingilizce öğrenme programı ücretsiz","ingilizce öğrenme","ingilizce öğrenme oyunları","ingilizce öğrenme programı internetsiz"]
 },
 "ingilizce öğrenme": {
 "t": 1789712877018,
 "s": ["ingilizce öğrenme programı","ingilizce öğrenme programı ücretsiz","ingilizce öğrenme","ingilizce öğrenme programı ucretsiz","ingilizce öğrenme oyunları"]
 },
 "ingilizce öğrenme ": {
-"t": 1789712877422,
-"s": ["ingilizce öğrenme programı","ingilizce öğrenme programı ücretsiz","ingilizce öğrenme programı ucretsiz","ingilizce öğrenme oyunları","ingilizce öğrenme programı internetsiz"]
+"t": 1791804347429,
+"s": ["ingilizce öğrenme programı","ingilizce öğrenme programı ücretsiz","ingilizce öğrenme oyunları","ingilizce öğrenme programı internetsiz","ingilizce öğrenme uygulamaları"]
 },
 "int": {
-"t": 1791197050443,
+"t": 1791804164042,
 "s": ["internetsiz oyunları","internetsiz araba oyunları","internetsiz silah oyunları","internetsiz okey","internet"]
 },
 "inte": {
@@ -18122,6 +18634,10 @@
 "interaktif hikaye oyunları vampir": {
 "t": 1790239521835,
 "s": ["interaktif hikaye oyunları vampir"]
+},
+"intern": {
+"t": 1791804163600,
+"s": ["internetsiz oyunları","internetsiz araba oyunları","internetsiz silah oyunları","internetsiz okey","internet"]
 },
 "interne": {
 "t": 1791197049577,
@@ -18736,7 +19252,7 @@
 "s": ["işaret dili","işaret dili öğrenme","işaret dili hareketli sözlük","işaret dili öğrenme türkçe","işaret dili sözlüğü"]
 },
 "işaret di": {
-"t": 1789714778417,
+"t": 1791804360075,
 "s": ["işaret dili","işaret dili öğrenme","işaret dili hareketli sözlük","işaret dili öğrenme türkçe","işaret dili sözlüğü"]
 },
 "işaret dil": {
@@ -18744,7 +19260,7 @@
 "s": ["işaret dili","işaret dili öğrenme","işaret dili hareketli sözlük","işaret dili öğrenme türkçe","işaret dili sözlüğü"]
 },
 "işaret dili": {
-"t": 1789712883409,
+"t": 1791804360518,
 "s": ["işaret dili","işaret dili öğrenme","işaret dili hareketli sözlük","işaret dili öğrenme türkçe","işaret dili sözlüğü"]
 },
 "işaret dili ": {
@@ -19896,20 +20412,32 @@
 "s": ["kalori hesaplama","kalori hesaplama ücretsiz","kalori hesaplama ucretsiz","kalori hesaplayıcı","kalori hesaplama ücretsiz turkce"]
 },
 "kalori hesapla": {
-"t": 1789720474589,
-"s": ["kalori hesaplama","kalori hesaplama ücretsiz","kalori hesaplama ucretsiz","kalori hesaplayıcı","kalori hesaplama ücretsiz turkce"]
+"t": 1791804370014,
+"s": ["kalori hesaplama","kalori hesaplama ücretsiz","kalori hesaplama ucretsiz","kalori hesaplama ücretsiz turkce","kalori hesaplayıcı"]
 },
 "kalori hesaplam": {
 "t": 1789720475020,
 "s": ["kalori hesaplama","kalori hesaplama ücretsiz","kalori hesaplama ucretsiz","kalori hesaplama ücretsiz turkce","kalori hesaplama uygulaması"]
 },
 "kalori hesaplama": {
-"t": 1789712814149,
-"s": ["kalori hesaplama","kalori hesaplama ücretsiz","kalori hesaplama ucretsiz","kalori hesaplama ücretsiz turkce","kalori hesaplama uygulaması"]
+"t": 1791804371336,
+"s": ["kalori hesaplama","kalori hesaplama ücretsiz","kalori hesaplama ucretsiz","kalori hesaplama ücretsiz turkce","kalori hesaplama kilo alma"]
 },
 "kalori hesaplama ": {
-"t": 1789712814536,
-"s": ["kalori hesaplama ücretsiz","kalori hesaplama ucretsiz","kalori hesaplama ücretsiz turkce","kalori hesaplama uygulaması","kalori hesaplama internetsiz"]
+"t": 1791804369147,
+"s": ["kalori hesaplama ücretsiz","kalori hesaplama ucretsiz","kalori hesaplama ücretsiz turkce","kalori hesaplama kilo alma","kalori hesaplama uygulaması"]
+},
+"kalori hesaplama i": {
+"t": 1791804370895,
+"s": ["kalori hesaplama internetsiz","kalori hesaplama ücretsiz internetsiz"]
+},
+"kalori hesaplama inte": {
+"t": 1791804370460,
+"s": ["kalori hesaplama internetsiz","kalori hesaplama ücretsiz internetsiz"]
+},
+"kalori hesaplama internetsiz": {
+"t": 1791804369577,
+"s": ["kalori hesaplama internetsiz","kalori hesaplama ücretsiz internetsiz"]
 },
 "kalori takip": {
 "t": 1791197137742,
@@ -20004,7 +20532,7 @@
 "s": ["kamyon nakliye oyunları","kamyon nakliye oyunu"]
 },
 "kamyon o": {
-"t": 1789713783513,
+"t": 1791804384596,
 "s": ["kamyon oyunları","kamyon oyunları 2020","kamyon oyunları 2022","kamyon oyunları 2019","kamyon oyunu kamyon oyunu"]
 },
 "kamyon oy": {
@@ -20020,7 +20548,7 @@
 "s": ["kamyon oyunları","kamyon oyunları 2020","kamyon oyunları 2022","kamyon oyunları 2019","kamyon oyunu kamyon oyunu"]
 },
 "kamyon oyunl": {
-"t": 1790327142609,
+"t": 1791804385033,
 "s": ["kamyon oyunları","kamyon oyunları 2020","kamyon oyunları 2022","kamyon oyunları 2019","kamyon oyunları internetsiz"]
 },
 "kamyon oyunla": {
@@ -20028,15 +20556,15 @@
 "s": ["kamyon oyunları","kamyon oyunları 2020","kamyon oyunları 2022","kamyon oyunları 2019","kamyon oyunları internetsiz"]
 },
 "kamyon oyunlar": {
-"t": 1789806280881,
+"t": 1791804385475,
 "s": ["kamyon oyunları","kamyon oyunları 2020","kamyon oyunları 2022","kamyon oyunları 2019","kamyon oyunları internetsiz"]
 },
 "kamyon oyunları": {
-"t": 1790327065154,
+"t": 1791804385910,
 "s": ["kamyon oyunları","kamyon oyunları 2020","kamyon oyunları 2022","kamyon oyunları 2019","kamyon oyunları internetsiz"]
 },
 "kamyon oyunları ": {
-"t": 1790327065595,
+"t": 1791804384159,
 "s": ["kamyon oyunları 2023","kamyon oyunları 2020","kamyon oyunları 2022","kamyon oyunları 2019","kamyon oyunları internetsiz"]
 },
 "kamyon oyunları a": {
@@ -20255,17 +20783,21 @@
 "t": 1790327163328,
 "s": ["kamyon şoförü oyunu","kamyon şoförü oyunları"]
 },
+"kand": {
+"t": 1791803927601,
+"s": ["kandilli rasathanesi","kandilli","kandır","kandili rasathane","kandilli deprem bilgi sistemi"]
+},
 "kandi": {
 "t": 1789806283223,
 "s": ["kandilli rasathanesi","kandilli","kandil mesajları","kandilli deprem bilgi sistemi","kandili rasathane"]
 },
 "kandil": {
-"t": 1789806284067,
-"s": ["kandilli rasathanesi","kandilli","kandil mesajları","kandilli deprem bilgi sistemi","kandili rasathane"]
+"t": 1791803928043,
+"s": ["kandilli rasathanesi","kandilli","kandili rasathane","kandilli deprem bilgi sistemi","kandilli rasathane indir"]
 },
 "kandil ": {
-"t": 1789806283643,
-"s": ["kandil mesajları","kandil deprem uygulaması","kandil mesajları 2026","kandil mesajı","kandil medical company"]
+"t": 1791803927166,
+"s": ["kandil mesajları","kandil deprem uygulaması","kandil komşu","kandil medical company","kandil wala game"]
 },
 "kandil de": {
 "t": 1789806282821,
@@ -20274,6 +20806,14 @@
 "kandil deprem uygu": {
 "t": 1789806282407,
 "s": ["kandil deprem uygulaması"]
+},
+"kandil mesajı": {
+"t": 1791803931229,
+"s": []
+},
+"kandil mesajları 2026": {
+"t": 1791803940439,
+"s": []
 },
 "kang": {
 "t": 1790327167157,
@@ -20504,8 +21044,12 @@
 "s": ["karın kası egzersizi","karın kası egzersizi kadın","karın kası egzersizi erkek","karın kası egzersizi çoçuk","karın kası egzersizi ücretsiz"]
 },
 "karın kası egzersizi ": {
-"t": 1789712820965,
-"s": ["karın kası egzersizi kadın","karın kası egzersizi erkek","karın kası egzersizi çoçuk","karın kası egzersizi ücretsiz","karın kası egzersizi internetsiz"]
+"t": 1791804408247,
+"s": ["karın kası egzersizi kadın","karın kası egzersizi çoçuk","karın kası egzersizi erkek","karın kası egzersizi ücretsiz","karın kası egzersizi evde"]
+},
+"karın kası egzersizi internetsiz": {
+"t": 1791804408685,
+"s": []
 },
 "karın kası uygulaması": {
 "t": 1791369174471,
@@ -20550,6 +21094,18 @@
 "kawasaki ninja m": {
 "t": 1790327170777,
 "s": ["kawasaki ninja motor oyunu","kawasaki ninja motor oyunları","kawasaki ninja motor","kawasaki ninja motorcycle game","kawasaki ninja motorcycle"]
+},
+"kay": {
+"t": 1791804422290,
+"s": ["kaykay oyunu","kayseri ulaşım","kaykay","kaydedici","kaydol kazan"]
+},
+"kayde": {
+"t": 1791804421858,
+"s": ["kaydedici","kaydedi","kaydetme","kaydedici ekran","kaydetme uygulaması"]
+},
+"kaydedici": {
+"t": 1791804421418,
+"s": ["kaydedici","kaydedici ekran","kaydedici ses kaydedici","kaydedici ses","kaydedici ekran kaydedici"]
 },
 "kayser": {
 "t": 1789894747037,
@@ -20660,7 +21216,7 @@
 "s": ["kdv hesaplama programi"]
 },
 "ke": {
-"t": 1791108129863,
+"t": 1791804135929,
 "s": ["kedi oyunu","kepçe oyunları","kelime oyunu","kelimelik","kent kart"]
 },
 "kedi ": {
@@ -20720,7 +21276,7 @@
 "s": ["kedi restoran oyunları"]
 },
 "kel": {
-"t": 1791108129452,
+"t": 1791804135494,
 "s": ["kelime oyunu","kelimelik","kelime savaşı","kelime bulmaca","kelime gezmece"]
 },
 "keli": {
@@ -20772,7 +21328,7 @@
 "s": ["kelime avı","kelime avı oyunu","kelime avı internetsiz","kelime avı online","kelime avı 2"]
 },
 "kelime avı ": {
-"t": 1791019783509,
+"t": 1791804420531,
 "s": ["kelime avı oyunu","kelime avı internetsiz","kelime avı online","kelime avı 2","kelime avı türkçe"]
 },
 "kelime avı 2": {
@@ -20813,6 +21369,10 @@
 },
 "kelime avı ğ": {
 "t": 1789894151569,
+"s": []
+},
+"kelime avı gizemli bulmaca": {
+"t": 1791804420976,
 "s": []
 },
 "kelime avı h": {
@@ -21735,9 +22295,29 @@
 "t": 1790327226296,
 "s": ["keskin nişancı oyunları zombi"]
 },
+"key": {
+"t": 1791804397443,
+"s": ["keyboard obby","keyboard","keyboard escape","keyps","key mapper"]
+},
+"keyb": {
+"t": 1791804397009,
+"s": ["keyboard obby","keyboard","keyboard escape","keyboard obby asmr","keyboard obby roblox"]
+},
+"keyboard": {
+"t": 1791804396568,
+"s": ["keyboard obby","keyboard","keyboard escape","keyboard obby asmr","keyboard obby roblox"]
+},
 "ki": {
 "t": 1791282893070,
 "s": ["kick","kitap oku","kişiler","kitappad","kitchen together"]
+},
+"kid": {
+"t": 1791804464461,
+"s": ["kids","kidzwonder 3d","kidio","kids360","kids games"]
+},
+"kids": {
+"t": 1791804464027,
+"s": ["kids","kids360","kids games","kids youtube kids tube","kids toddlers"]
 },
 "kil": {
 "t": 1791197351186,
@@ -22036,8 +22616,8 @@
 "s": ["kıble bulma pusulası","kıble bulma pusulası diyanet","kıble bulucu","kıble bul","kıble bulma"]
 },
 "kıble bul": {
-"t": 1789720525361,
-"s": ["kıble bulma pusulası","kıble bulma pusulası diyanet","kıble bulucu","kıble bul","kıble bulma"]
+"t": 1791804429879,
+"s": ["kıble bulma pusulası","kıble bulma pusulası diyanet","kıble bulucu","kıble bulma","kıble bul"]
 },
 "kıble bulu": {
 "t": 1789720526255,
@@ -22048,12 +22628,20 @@
 "s": ["kıble bulucu","kıble bulucu diyanet","kıble bulucu ücretsiz","kıble bulucu kıble pusulası","kıble bulucu ucretsiz"]
 },
 "kıble bulucu": {
-"t": 1789712786173,
-"s": ["kıble bulucu","kıble bulucu diyanet","kıble bulucu ücretsiz","kıble bulucu kıble pusulası","kıble bulucu ucretsiz"]
+"t": 1791804430753,
+"s": ["kıble bulucu","kıble bulucu diyanet","kıble bulucu pusula","kıble bulucu ücretsiz","kıble bulucu ucretsiz"]
 },
 "kıble bulucu ": {
-"t": 1789712786577,
-"s": ["kıble bulucu diyanet","kıble bulucu ücretsiz","kıble bulucu kıble pusulası","kıble bulucu ucretsiz","kıble bulucu indir"]
+"t": 1791804429014,
+"s": ["kıble bulucu diyanet","kıble bulucu pusula","kıble bulucu ücretsiz","kıble bulucu ucretsiz","kıble bulucu kıble pusulası"]
+},
+"kıble bulucu i": {
+"t": 1791804430321,
+"s": ["kıble bulucu indir"]
+},
+"kıble bulucu indir": {
+"t": 1791804429449,
+"s": ["kıble bulucu indir"]
 },
 "kırmızı ": {
 "t": 1790066846890,
@@ -22616,8 +23204,8 @@
 "s": ["klavye uygulaması","klavye uygulamaları","klavye uygulamasi","klavye uygulaması ücretsiz","klavye uygulaması türkçe"]
 },
 "klavye uy": {
-"t": 1789713800762,
-"s": ["klavye uygulaması","klavye uygulamaları","klavye uygulamasi","klavye uygulaması ücretsiz","klavye uygulama"]
+"t": 1791804445013,
+"s": ["klavye uygulaması","klavye uygulamaları","klavye uygulaması indir","klavye uygulamasi","klavye uygulaması ücretsiz"]
 },
 "klavye uygul": {
 "t": 1789720542052,
@@ -22628,24 +23216,24 @@
 "s": ["klavye uygulaması","klavye uygulamaları","klavye uygulamasi","klavye uygulaması ücretsiz","klavye uygulama"]
 },
 "klavye uygulam": {
-"t": 1789720542481,
-"s": ["klavye uygulaması","klavye uygulamaları","klavye uygulamasi","klavye uygulaması ücretsiz","klavye uygulama"]
+"t": 1791804445461,
+"s": ["klavye uygulaması","klavye uygulamaları","klavye uygulaması indir","klavye uygulamasi","klavye uygulaması ücretsiz"]
 },
 "klavye uygulama": {
 "t": 1791627426460,
 "s": ["klavye uygulaması","klavye uygulamaları","klavye uygulaması indir","klavye uygulamasi","klavye uygulaması ücretsiz"]
 },
 "klavye uygulamas": {
-"t": 1789720536459,
-"s": ["klavye uygulaması","klavye uygulamasi","klavye uygulaması ücretsiz","klavye uygulaması türkçe","klavye uygulaması iphone"]
+"t": 1791804445897,
+"s": ["klavye uygulaması","klavye uygulaması indir","klavye uygulamasi","klavye uygulaması ücretsiz","klavye uygulaması türkçe"]
 },
 "klavye uygulaması": {
-"t": 1789712872233,
-"s": ["klavye uygulaması","klavye uygulaması ücretsiz","klavye uygulaması türkçe","klavye uygulaması iphone","klavye uygulaması indir"]
+"t": 1791804446336,
+"s": ["klavye uygulaması","klavye uygulaması indir","klavye uygulaması ücretsiz","klavye uygulaması türkçe","klavye uygulaması iphone"]
 },
 "klavye uygulaması ": {
-"t": 1789712872660,
-"s": ["klavye uygulaması ücretsiz","klavye uygulaması türkçe","klavye uygulaması iphone","klavye uygulaması indir","klavye uygulaması arapça"]
+"t": 1791804444577,
+"s": ["klavye uygulaması indir","klavye uygulaması ücretsiz","klavye uygulaması türkçe","klavye uygulaması iphone","klavye uygulaması arapça"]
 },
 "ko": {
 "t": 1791714491941,
@@ -22691,13 +23279,29 @@
 "t": 1789720548780,
 "s": ["kolaj yapma programı","kolaj yapma","kolaj yapma programı çoklu","kolaj yapma programı ücretsiz","kolaj yapma programı ucretsiz"]
 },
+"kolaj yapm": {
+"t": 1791804460509,
+"s": ["kolaj yapma programı","kolaj yapma","kolaj yapma programı çoklu","kolaj yapma programı ücretsiz","kolaj yapma programı ucretsiz"]
+},
 "kolaj yapma": {
 "t": 1789712868255,
 "s": ["kolaj yapma programı","kolaj yapma","kolaj yapma programı çoklu","kolaj yapma programı ücretsiz","kolaj yapma programı ucretsiz"]
 },
 "kolaj yapma ": {
-"t": 1789712868645,
-"s": ["kolaj yapma programı","kolaj yapma programı çoklu","kolaj yapma programı ücretsiz","kolaj yapma programı ucretsiz","kolaj yapma ücretsiz"]
+"t": 1791804459619,
+"s": ["kolaj yapma programı","kolaj yapma programı çoklu","kolaj yapma programı ücretsiz","kolaj yapma programı ucretsiz","kolaj yapma programı kolay ücretsiz"]
+},
+"kolaj yapma ü": {
+"t": 1791804461419,
+"s": ["kolaj yapma ücretsiz","kolaj yapma programı ücretsiz"]
+},
+"kolaj yapma ücr": {
+"t": 1791804460955,
+"s": ["kolaj yapma ücretsiz","kolaj yapma programı ücretsiz","kolaj yapma programı kolay ücretsiz"]
+},
+"kolaj yapma ücretsiz": {
+"t": 1791804460074,
+"s": ["kolaj yapma ücretsiz","kolaj yapma programı ücretsiz","kolaj yapma programı kolay ücretsiz"]
 },
 "kolay ": {
 "t": 1790935439446,
@@ -22770,6 +23374,14 @@
 "kolay tatlı tarifleri intern": {
 "t": 1791019844932,
 "s": ["kolay tatlı tarifleri internetsiz"]
+},
+"konu": {
+"t": 1791804435117,
+"s": ["konuşan tom","konum","konuşan ben","konum takip programı","konuşma uygulamaları"]
+},
+"konuşan": {
+"t": 1791804434688,
+"s": ["konuşan tom","konuşan ben","konuşan angela","konuşan tom ve arkadaşları","konuşan"]
 },
 "konuşm": {
 "t": 1790935442126,
@@ -23492,7 +24104,7 @@
 "s": ["kronometre","kronometre ders çalışma","kronometre ve zamanlayıcı","kronotrop","kronometre ücretsiz"]
 },
 "kronom": {
-"t": 1789720567260,
+"t": 1791804469824,
 "s": ["kronometre","kronometre ders çalışma","kronometre ve zamanlayıcı","kronometre ücretsiz","kronometre yayınları"]
 },
 "kronome": {
@@ -23504,15 +24116,15 @@
 "s": ["kronometre","kronometre ders çalışma","kronometre ve zamanlayıcı","kronometre ücretsiz","kronometre yayınları"]
 },
 "kronometr": {
-"t": 1789806294139,
+"t": 1791804470282,
 "s": ["kronometre","kronometre ders çalışma","kronometre ve zamanlayıcı","kronometre ücretsiz","kronometre yayınları"]
 },
 "kronometre": {
-"t": 1789712846808,
+"t": 1791804470712,
 "s": ["kronometre","kronometre ders çalışma","kronometre ve zamanlayıcı","kronometre ücretsiz","kronometre yayınları"]
 },
 "kronometre ": {
-"t": 1789712847205,
+"t": 1791804469390,
 "s": ["kronometre ders çalışma","kronometre ve zamanlayıcı","kronometre ücretsiz","kronometre yayınları","kronometre ders çalışma ücretsiz"]
 },
 "kronometre y": {
@@ -23536,7 +24148,7 @@
 "s": ["kronometre yayınları video çözüm","kronometre yayınları","limit yayınları kronometre paragraf"]
 },
 "ku": {
-"t": 1791197146093,
+"t": 1791804341278,
 "s": ["kuveyt türk","kuranı kerim indir","kumanda","kurt oyunları","kunduz"]
 },
 "küçük ": {
@@ -23596,8 +24208,8 @@
 "s": ["kule savunma oyunları","kule savaşları","kule savunma","kule savunma oyunları savaş","kule savunma oyunları savaş internetsiz"]
 },
 "kule sa": {
-"t": 1789720573109,
-"s": ["kule savunma oyunları","kule savaşları","kule savunma","kule savunma oyunları savaş","kule savunma oyunları savaş internetsiz"]
+"t": 1791804484875,
+"s": ["kule savunma oyunları","kule savaşları","kule savunma","kule savunma oyunları savaş internetsiz","kule savunma oyunları savaş"]
 },
 "kule sav": {
 "t": 1789720570948,
@@ -23608,16 +24220,16 @@
 "s": ["kule savunma oyunları","kule savunma","kule savunma oyunları savaş","kule savunma oyunları savaş internetsiz","kule savunma oyunları internetsiz"]
 },
 "kule savun": {
-"t": 1789806295267,
-"s": ["kule savunma oyunları","kule savunma","kule savunma oyunları savaş","kule savunma oyunları savaş internetsiz","kule savunma oyunları internetsiz"]
+"t": 1791804485314,
+"s": ["kule savunma oyunları","kule savunma","kule savunma oyunları savaş internetsiz","kule savunma oyunları savaş","kule savunma oyunları internetsiz"]
 },
 "kule savunma": {
-"t": 1789712779816,
-"s": ["kule savunma oyunları","kule savunma","kule savunma oyunları savaş","kule savunma oyunları savaş internetsiz","kule savunma oyunları internetsiz"]
+"t": 1791804485750,
+"s": ["kule savunma oyunları","kule savunma","kule savunma oyunları savaş internetsiz","kule savunma oyunları savaş","kule savunma oyunları internetsiz"]
 },
 "kule savunma ": {
-"t": 1789712780220,
-"s": ["kule savunma oyunları","kule savunma oyunları savaş","kule savunma oyunları savaş internetsiz","kule savunma oyunları internetsiz","kule savunma oyunu"]
+"t": 1791804484443,
+"s": ["kule savunma oyunları","kule savunma oyunları savaş internetsiz","kule savunma oyunları savaş","kule savunma oyunları internetsiz","kule savunma oyunu"]
 },
 "kule savunma a": {
 "t": 1789894289347,
@@ -23700,12 +24312,28 @@
 "s": ["kuran okuma","kuran okuma programi","kuran okuma uygulaması","kuran okumak","kuran okuma internetsiz"]
 },
 "kuran okuma": {
-"t": 1789712786977,
+"t": 1791804511596,
 "s": ["kuran okuma","kuran okuma programi","kuran okuma uygulaması","kuran okumak","kuran okuma internetsiz"]
 },
 "kuran okuma ": {
-"t": 1789712787376,
-"s": ["kuran okuma programi","kuran okuma uygulaması","kuran okuma internetsiz","kuran okuma oyunu","kuran okuma programi diyanet"]
+"t": 1791804499089,
+"s": ["kuran okuma programi","kuran okuma uygulaması","kuran okuma internetsiz","kuran okuma programı","kuran okuma öğrenme"]
+},
+"kuran okuma oyunu": {
+"t": 1791804499520,
+"s": []
+},
+"kuran okuma p": {
+"t": 1791804512039,
+"s": ["kuran okuma programi","kuran okuma programi diyanet","kuran okuma programı"]
+},
+"kuran okuma pr": {
+"t": 1791804511161,
+"s": ["kuran okuma programi","kuran okuma programi diyanet","kuran okuma programı"]
+},
+"kuran okuma programi diyanet": {
+"t": 1791804510722,
+"s": ["kuran okuma programi diyanet"]
 },
 "kurba": {
 "t": 1791713968450,
@@ -24160,7 +24788,7 @@
 "s": ["lol","love8","localsend","lova2","lords mobile"]
 },
 "log": {
-"t": 1791197369167,
+"t": 1791803664885,
 "s": ["logima whatsapp","logo tasarım programı","logima","logo","logo işbaşı"]
 },
 "logo": {
@@ -24328,7 +24956,7 @@
 "s": ["lunaparktan kaçış oyunu"]
 },
 "m": {
-"t": 1791108150174,
+"t": 1791804521941,
 "s": ["myt","minecraft","motor oyunları","minecraft oyunları","mhrs"]
 },
 "ma": {
@@ -24452,7 +25080,7 @@
 "s": ["macera oyunları","macera oyunları internetsiz","macera oyunu","macera oyunları minecraft","macera oyunları online"]
 },
 "macera o": {
-"t": 1789713829115,
+"t": 1791803669726,
 "s": ["macera oyunları","macera oyunları internetsiz","macera oyunu","macera oyunları minecraft","macera oyunları online"]
 },
 "macera oy": {
@@ -24468,7 +25096,7 @@
 "s": ["macera oyunları","macera oyunları internetsiz","macera oyunu","macera oyunları minecraft","macera oyunları online"]
 },
 "macera oyunl": {
-"t": 1789720295192,
+"t": 1791803670154,
 "s": ["macera oyunları","macera oyunları internetsiz","macera oyunları minecraft","macera oyunları online","macera oyunları en güzel"]
 },
 "macera oyunla": {
@@ -24476,15 +25104,15 @@
 "s": ["macera oyunları","macera oyunları internetsiz","macera oyunları minecraft","macera oyunları online","macera oyunları en güzel"]
 },
 "macera oyunlar": {
-"t": 1789806191577,
+"t": 1791803670586,
 "s": ["macera oyunları","macera oyunları internetsiz","macera oyunları minecraft","macera oyunları online","macera oyunları en güzel"]
 },
 "macera oyunları": {
-"t": 1790412617994,
+"t": 1791803671018,
 "s": ["macera oyunları","macera oyunları internetsiz","macera oyunları minecraft","macera oyunları online","macera oyunları en güzel"]
 },
 "macera oyunları ": {
-"t": 1790412618396,
+"t": 1791803669292,
 "s": ["macera oyunları internetsiz","macera oyunları minecraft","macera oyunları online","macera oyunları en güzel","macera oyunları multiplayer"]
 },
 "macera oyunları 1": {
@@ -24764,7 +25392,7 @@
 "s": ["makyaj oyunları","makyaj oyunları internetsiz","makyaj oyunları ve giydirme oyunları","makyaj oyunları gerçek","makyaj oyunu internetsiz"]
 },
 "makyaj oyunl": {
-"t": 1790935502182,
+"t": 1791803678375,
 "s": ["makyaj oyunları","makyaj oyunları internetsiz","makyaj oyunları ve giydirme oyunları","makyaj oyunları gerçek","makyaj oyunları makyaj oyunları"]
 },
 "makyaj oyunla": {
@@ -24772,15 +25400,15 @@
 "s": ["makyaj oyunları","makyaj oyunları internetsiz","makyaj oyunları ve giydirme oyunları","makyaj oyunları gerçek","makyaj oyunları makyaj oyunları"]
 },
 "makyaj oyunlar": {
-"t": 1789720602561,
-"s": ["makyaj oyunları","makyaj oyunları internetsiz","makyaj oyunları ve giydirme oyunları","makyaj oyunları gerçek","makyaj oyunlari"]
+"t": 1791803678808,
+"s": ["makyaj oyunları","makyaj oyunları internetsiz","makyaj oyunları ve giydirme oyunları","makyaj oyunları gerçek","makyaj oyunları makyaj oyunları"]
 },
 "makyaj oyunları": {
-"t": 1790935490371,
+"t": 1791803679239,
 "s": ["makyaj oyunları","makyaj oyunları internetsiz","makyaj oyunları ve giydirme oyunları","makyaj oyunları gerçek","makyaj oyunları makyaj oyunları"]
 },
 "makyaj oyunları ": {
-"t": 1790935490784,
+"t": 1791803677939,
 "s": ["makyaj oyunları internetsiz","makyaj oyunları ve giydirme oyunları","makyaj oyunları gerçek","makyaj oyunları makyaj oyunları","makyaj oyunları reklamsız"]
 },
 "makyaj oyunları a": {
@@ -25104,7 +25732,7 @@
 "s": ["manifest dans oyunu"]
 },
 "mar": {
-"t": 1791197079183,
+"t": 1791804531123,
 "s": ["martı","market oyunları","marvel","mario","market fiyatı"]
 },
 "mark": {
@@ -25112,8 +25740,8 @@
 "s": ["market oyunları","market fiyatı","market simulator","marks and spencer","market oyunları internetsiz"]
 },
 "market": {
-"t": 1790935586969,
-"s": ["market oyunları","market fiyatı","market oyunları internetsiz","marketçilik","marketçilik oyunu"]
+"t": 1791804530677,
+"s": ["market oyunları","market fiyatı","market simulator","market oyunları internetsiz","marketçilik"]
 },
 "market ": {
 "t": 1791714040902,
@@ -25571,6 +26199,26 @@
 "t": 1790412700747,
 "s": ["masin park etme oyunu"]
 },
+"mast": {
+"t": 1791804501912,
+"s": ["mastercraft","master","master mod","mastercard","masterpass"]
+},
+"maste": {
+"t": 1791804501467,
+"s": ["mastercraft","master","master mod","mastercard","masterpass"]
+},
+"master": {
+"t": 1791804501031,
+"s": ["mastercraft","master","master mod","mastercard","masterpass"]
+},
+"mat": {
+"t": 1791804496493,
+"s": ["matchpub","matematik oyunları","matematik","matematik oyunu","match master"]
+},
+"matem": {
+"t": 1791804496053,
+"s": ["matematik oyunları","matematik","matematik oyunu","matematik oyunları zor","matematik soru sor cevaplasın"]
+},
 "matema": {
 "t": 1791197390753,
 "s": ["matematik oyunları","matematik","matematik oyunu","matematik oyunları zor","matematik soru sor cevaplasın"]
@@ -25580,7 +26228,7 @@
 "s": ["matematik oyunları","matematik","matematik oyunu","matematik oyunları zor","matematik soru sor cevaplasın"]
 },
 "matematik": {
-"t": 1791197391179,
+"t": 1791803690878,
 "s": ["matematik oyunları","matematik","matematik oyunu","matematik oyunları zor","matematik soru sor cevaplasın"]
 },
 "matematik ": {
@@ -25600,24 +26248,28 @@
 "s": ["matematik öğrenme","matematik öğreniyorum","matematik öğren","matematik öğretmeni","matematik öğrenme uygulaması"]
 },
 "matematik öğre": {
-"t": 1789720624502,
-"s": ["matematik öğrenme","matematik öğreniyorum","matematik öğren","matematik öğretmeni","matematik öğrenme uygulaması"]
+"t": 1791803691316,
+"s": ["matematik öğrenme","matematik öğreniyorum","matematik öğren","matematik öğrenme uygulaması","matematik öğretmeni"]
 },
 "matematik öğren": {
-"t": 1789720620464,
-"s": ["matematik öğrenme","matematik öğreniyorum","matematik öğren","matematik öğrenme uygulaması","matematik öğrenme programı"]
+"t": 1791804524719,
+"s": ["matematik öğrenme","matematik öğreniyorum","matematik öğren","matematik öğrenme uygulaması","matematik öğrenme oyunu"]
 },
 "matematik öğrenm": {
-"t": 1789720620894,
-"s": ["matematik öğrenme","matematik öğrenme uygulaması","matematik öğrenme programı","matematik öğrenmek","matematik öğrenme oyunu"]
+"t": 1791803690010,
+"s": ["matematik öğrenme","matematik öğrenme uygulaması","matematik öğrenme oyunu","matematik öğrenme oyunları","matematik öğrenme programı"]
 },
 "matematik öğrenme": {
-"t": 1789712879419,
-"s": ["matematik öğrenme","matematik öğrenme uygulaması","matematik öğrenme programı","matematik öğrenmek","matematik öğrenme oyunu"]
+"t": 1791803691755,
+"s": ["matematik öğrenme","matematik öğrenme uygulaması","matematik öğrenme oyunu","matematik öğrenme oyunları","matematik öğrenme programı"]
 },
 "matematik öğrenme ": {
-"t": 1789712879817,
-"s": ["matematik öğrenme uygulaması","matematik öğrenme programı","matematik öğrenme oyunu","matematik öğrenme oyunları","matematik öğrenme"]
+"t": 1791804524278,
+"s": ["matematik öğrenme uygulaması","matematik öğrenme oyunu","matematik öğrenme oyunları","matematik öğrenme programı","matematik öğrenme 4 sınıf"]
+},
+"matematik öğrenmek": {
+"t": 1791803690444,
+"s": ["matematik öğrenmek"]
 },
 "may": {
 "t": 1791714055667,
@@ -25908,20 +26560,28 @@
 "s": ["melon sandbox oyunu"]
 },
 "men": {
-"t": 1791197101060,
+"t": 1791803941338,
 "s": ["menajerlik oyunu futbol","mentalup","menajer oyunu","mendil","mental hospital"]
 },
 "ment": {
-"t": 1789806305659,
+"t": 1791803941773,
 "s": ["mentalup","mental hospital","mentor","mentalist","mental math"]
 },
 "menta": {
-"t": 1791197100629,
+"t": 1791803940881,
 "s": ["mentalup","mental hospital","mentalist","mental math","mentalup eğitici zeka oyunları"]
 },
 "mentalup ": {
 "t": 1789806304405,
 "s": ["mentalup eğitici zeka oyunları","mentalup spor","mentalup brain","mentalup ücretsiz","mentalup iq test"]
+},
+"mer": {
+"t": 1791804401375,
+"s": ["mercedes oyunları","mersin 33 kart","mercedes araba oyunu","merge","mercedes oyunu"]
+},
+"merge": {
+"t": 1791804400911,
+"s": ["merge","merge fashion","merge mansion","merge fellas","mergen cep hastane"]
 },
 "met": {
 "t": 1791108289343,
@@ -25959,6 +26619,10 @@
 "t": 1791714095847,
 "s": ["metre ölçer","metre ölçer kamera","metre ölçer kamera ücretsiz","metre olcer","metre ölçer türkçe lazer ucretsiz"]
 },
+"metre ö": {
+"t": 1791803955294,
+"s": ["metre ölçer","metre ölçer kamera","metre ölçer kamera ücretsiz","metre ölçer türkçe lazer ucretsiz","metre ölçer ücretsiz"]
+},
 "metre öl": {
 "t": 1791714087673,
 "s": ["metre ölçer","metre ölçer kamera","metre ölçer kamera ücretsiz","metre ölçer türkçe lazer ucretsiz","metre ölçer ücretsiz"]
@@ -25970,6 +26634,10 @@
 "metre ölçe": {
 "t": 1791108446015,
 "s": ["metre ölçer","metre ölçer kamera","metre ölçer kamera ücretsiz","metre ölçer türkçe lazer ucretsiz","metre ölçer ücretsiz"]
+},
+"metre ölçer k": {
+"t": 1791803954857,
+"s": ["metre ölçer kamera","metre ölçer kamera ücretsiz","koşu metre ölçer"]
 },
 "metre ölçm": {
 "t": 1791714086846,
@@ -26336,8 +27004,12 @@
 "s": ["mma dövüş oyunları","mma dövüş oyunları internetsiz","mma dövüş oyunları ufc","mma dövüş oyunları online"]
 },
 "mo": {
-"t": 1791197152781,
+"t": 1791803703911,
 "s": ["motor oyunları","mobile legends","moovit","moto wheelie 3d","mojo launcher"]
+},
+"mob": {
+"t": 1791804521506,
+"s": ["mobile legends","mobildeniz","mobizen","mobil bankacılık","mobil"]
 },
 "mobil": {
 "t": 1790935643822,
@@ -26358,6 +27030,10 @@
 "mobil dinozor oyun": {
 "t": 1790935643005,
 "s": ["mobil dinozor oyunları","mobil dinozor oyunu"]
+},
+"mobile": {
+"t": 1791804521076,
+"s": ["mobile legends","mobile2","mobilet","mobile cloner","mobile legend"]
 },
 "moda ": {
 "t": 1790935646562,
@@ -26468,7 +27144,7 @@
 "s": ["moskova metro haritası"]
 },
 "mot": {
-"t": 1791197152354,
+"t": 1791803703476,
 "s": ["motor oyunları","moto wheelie 3d","motor oyunları 2024","motaş","motor oyunları internetsiz"]
 },
 "moto": {
@@ -26855,6 +27531,10 @@
 "t": 1790412870749,
 "s": ["motor zeka oyunları"]
 },
+"mu": {
+"t": 1791804262813,
+"s": ["muzik","multinet","muzekart","multiplayer oyunlar","muzik calar"]
+},
 "mü": {
 "t": 1791108149770,
 "s": ["müzik","müze kart","müzik çalar","müzik bulma programı","müzik oyunları"]
@@ -26910,6 +27590,14 @@
 "multiplayer hayva": {
 "t": 1790935654555,
 "s": ["multiplayer hayvan oyunları"]
+},
+"mus": {
+"t": 1791804262373,
+"s": ["music","musicolet","music player","muslima","mustafa oyunu"]
+},
+"music": {
+"t": 1791804261906,
+"s": ["music","musicolet","music player","music youtube","music speed changer"]
 },
 "mutfa": {
 "t": 1789894541440,
@@ -27048,7 +27736,7 @@
 "s": ["müzik oyunları","müzik oyunu","müzik oyunları internetsiz","müzik oyun","müzik oyunlari"]
 },
 "müzik oyunl": {
-"t": 1791019408861,
+"t": 1791803721074,
 "s": ["müzik oyunları","müzik oyunları internetsiz","müzik oyunlari","müzik oyunlar","müzik oyunları müzik oyunları"]
 },
 "müzik oyunla": {
@@ -27056,11 +27744,11 @@
 "s": ["müzik oyunları","müzik oyunları internetsiz","müzik oyunlari","müzik oyunlar","müzik oyunları müzik oyunları"]
 },
 "müzik oyunlar": {
-"t": 1789720669365,
-"s": ["müzik oyunları","müzik oyunları internetsiz","müzik oyunlar","müzik oyunları müzik oyunları","müzik oyunlari"]
+"t": 1791803721516,
+"s": ["müzik oyunları","müzik oyunları internetsiz","müzik oyunlari","müzik oyunlar","müzik oyunları müzik oyunları"]
 },
 "müzik oyunları": {
-"t": 1791019390991,
+"t": 1791803720640,
 "s": ["müzik oyunları","müzik oyunları internetsiz","müzik oyunları müzik oyunları","müzik oyunları türkçe şarkılar","müzik oyunları 2026"]
 },
 "müzik oyunları ": {
@@ -27448,7 +28136,7 @@
 "s": ["mynet çanak okey yükle"]
 },
 "n": {
-"t": 1791108258361,
+"t": 1791804202666,
 "s": ["nesine","netflix","namaz vakitleri","n11","n kolay"]
 },
 "na": {
@@ -27531,6 +28219,10 @@
 "t": 1789713862672,
 "s": ["namaz vakitleri","namaz vakitleri diyanet","namaz öğreniyorum","namaz sureleri","namaz vakitleri diyanet 2026"]
 },
+"namaz": {
+"t": 1791804202234,
+"s": ["namaz vakitleri","namaz vakitleri diyanet","namaz öğreniyorum","namaz vaktim","namaz sureleri"]
+},
 "namaz ": {
 "t": 1789720685962,
 "s": ["namaz vakitleri","namaz vakitleri diyanet","namaz öğreniyorum","namaz sureleri","namaz vakitleri diyanet 2026"]
@@ -27540,20 +28232,20 @@
 "s": ["namaz vakitleri","namaz vakitleri diyanet","namaz vakitleri diyanet 2026","namaz vaktim","namaz vakitleri internetsiz"]
 },
 "namaz va": {
-"t": 1789713862276,
-"s": ["namaz vakitleri","namaz vakitleri diyanet","namaz vakitleri diyanet 2026","namaz vaktim","namaz vakitleri internetsiz"]
+"t": 1791803733970,
+"s": ["namaz vakitleri","namaz vakitleri diyanet","namaz vaktim","namaz vakitleri internetsiz ücretsiz","namaz vakitleri internetsiz"]
 },
 "namaz vak": {
-"t": 1789720688982,
-"s": ["namaz vakitleri","namaz vakitleri diyanet","namaz vakitleri diyanet 2026","namaz vaktim","namaz vakitleri internetsiz"]
+"t": 1791803735292,
+"s": ["namaz vakitleri","namaz vakitleri diyanet","namaz vaktim","namaz vakitleri internetsiz ücretsiz","namaz vakitleri internetsiz"]
 },
 "namaz vaki": {
-"t": 1789720688532,
-"s": ["namaz vakitleri","namaz vakitleri diyanet","namaz vakitleri diyanet 2026","namaz vakitleri internetsiz","namaz vakitleri internetsiz ücretsiz"]
+"t": 1791803734848,
+"s": ["namaz vakitleri","namaz vakitleri diyanet","namaz vakitleri internetsiz ücretsiz","namaz vakitleri internetsiz","namaz vakitleri diyanet ücretsiz"]
 },
 "namaz vakitl": {
-"t": 1789720688087,
-"s": ["namaz vakitleri","namaz vakitleri diyanet","namaz vakitleri diyanet 2026","namaz vakitleri internetsiz","namaz vakitleri internetsiz ücretsiz"]
+"t": 1791803734406,
+"s": ["namaz vakitleri","namaz vakitleri diyanet","namaz vakitleri internetsiz ücretsiz","namaz vakitleri internetsiz","namaz vakitleri diyanet ücretsiz"]
 },
 "namaz vakitle": {
 "t": 1789894795723,
@@ -27568,8 +28260,8 @@
 "s": ["namaz vakitleri","namaz vakitleri diyanet","namaz vakitleri diyanet 2026","namaz vakitleri internetsiz","namaz vakitleri internetsiz ücretsiz"]
 },
 "namaz vakitleri ": {
-"t": 1789712785774,
-"s": ["namaz vakitleri diyanet","namaz vakitleri diyanet 2026","namaz vakitleri internetsiz","namaz vakitleri internetsiz ücretsiz","namaz vakitleri diyanet ücretsiz"]
+"t": 1791803733525,
+"s": ["namaz vakitleri diyanet","namaz vakitleri internetsiz ücretsiz","namaz vakitleri internetsiz","namaz vakitleri diyanet ücretsiz","namaz vakitleri pro"]
 },
 "namaz vakitleri d": {
 "t": 1789894320601,
@@ -28248,7 +28940,7 @@
 "s": ["numara sorgulama","numara sorgulama arayan kim","numara engelleme","numaralarla boyama","numara"]
 },
 "numara": {
-"t": 1791019468132,
+"t": 1791803710112,
 "s": ["numara sorgulama","numara sorgulama arayan kim","numara engelleme","numaralarla boyama","numara"]
 },
 "numara ": {
@@ -28270,6 +28962,46 @@
 "numara boyama ": {
 "t": 1791019459749,
 "s": ["numara boyama oyunu","numara boyama","numara ile boyama"]
+},
+"numarada": {
+"t": 1791803711452,
+"s": ["numaradan konum bulma ücretsiz türkçe","numaradan isim bulma","numaradan isim sorgulama","numaradan konum takip","numaradan takip ücretsiz"]
+},
+"numaradan": {
+"t": 1791803718125,
+"s": ["numaradan konum bulma ücretsiz türkçe","numaradan isim bulma","numaradan isim sorgulama","numaradan konum takip","numaradan takip ücretsiz"]
+},
+"numaradan ": {
+"t": 1791803712334,
+"s": ["numaradan konum bulma ücretsiz türkçe","numaradan isim bulma","numaradan isim sorgulama","numaradan konum takip","numaradan takip ücretsiz"]
+},
+"numaradan i": {
+"t": 1791803712775,
+"s": ["numaradan isim bulma","numaradan isim sorgulama","numaradan isim sorgulama ücretsiz","numaradan isim","numaradan isim bulma ücretsiz"]
+},
+"numaradan is": {
+"t": 1791803711892,
+"s": ["numaradan isim bulma","numaradan isim sorgulama","numaradan isim sorgulama ücretsiz","numaradan isim","numaradan isim bulma ücretsiz"]
+},
+"numaradan isi": {
+"t": 1791803718560,
+"s": ["numaradan isim bulma","numaradan isim sorgulama","numaradan isim sorgulama ücretsiz","numaradan isim","numaradan isim bulma ücretsiz"]
+},
+"numaradan isim ": {
+"t": 1791803711014,
+"s": ["numaradan isim bulma","numaradan isim sorgulama","numaradan isim sorgulama ücretsiz","numaradan isim bulma ücretsiz","numaradan isim öğrenme"]
+},
+"numaradan isim bulma ücretsiz": {
+"t": 1791803710559,
+"s": ["numaradan isim bulma ücretsiz"]
+},
+"numaradan isim so": {
+"t": 1791803717696,
+"s": ["numaradan isim sorgulama","numaradan isim sorgulama ücretsiz"]
+},
+"numaradan isim sorgulama ücretsiz": {
+"t": 1791803717257,
+"s": ["numaradan isim sorgulama ücretsiz"]
 },
 "numaral": {
 "t": 1791019463329,
@@ -28314,6 +29046,10 @@
 "numberzilla bulmac": {
 "t": 1790412902749,
 "s": ["numberzilla bulmaca oyunları"]
+},
+"o": {
+"t": 1791804145039,
+"s": ["oyunlar","omegle","okey","oyun","otobüs oyunları"]
 },
 "ö": {
 "t": 1791713837899,
@@ -28363,6 +29099,26 @@
 "t": 1790412907993,
 "s": []
 },
+"of": {
+"t": 1791804478116,
+"s": ["ofsayt","offroad oyunları","offline games","office","offline games internetsiz oyunlar"]
+},
+"of ": {
+"t": 1791804333017,
+"s": ["of the road","offroad oyunları","of the road 2","offroad","of clans"]
+},
+"of w": {
+"t": 1791804333478,
+"s": ["of war","of war 2","of wonders","of warcraft","of war 3"]
+},
+"of wo": {
+"t": 1791804332574,
+"s": ["of wonders","lf work app","of tank world of tank","of the world minecraft","of tanks world of tanks"]
+},
+"of wonders": {
+"t": 1791804332110,
+"s": ["of wonders"]
+},
 "off roa": {
 "t": 1790412908814,
 "s": ["off road","off road oyunları","off road oyunu","off road simulator","off road league online"]
@@ -28399,6 +29155,14 @@
 "t": 1790412908398,
 "s": ["off road tır oyunları","off road tır oyunu"]
 },
+"offl": {
+"t": 1791804477659,
+"s": ["offline games","offline games internetsiz oyunlar","offline","offline oyunlar","offline maps"]
+},
+"offline": {
+"t": 1791804477223,
+"s": ["offline games","offline games internetsiz oyunlar","offline","offline oyunlar","offline maps"]
+},
 "ög": {
 "t": 1791627144484,
 "s": ["ögys","ögretmen evrak","ögs","ögnet","ögg"]
@@ -28434,6 +29198,10 @@
 "ögg sınav hazırlık ": {
 "t": 1789805698330,
 "s": ["ögg sınav hazırlık"]
+},
+"öğren": {
+"t": 1791804196356,
+"s": ["öğrenci bilgi sistemi","öğrenci nerde yer","öğrenci","öğrenci ye","öğrenci kartı"]
 },
 "öğreti": {
 "t": 1791019469577,
@@ -28527,6 +29295,10 @@
 "t": 1790501248168,
 "s": ["öğretmenler kaçma oyunu","öğretmenler kaçış oyunu","öğretmenler kaçış","öğretmenler kaç","öğretmenler kaçış oyunları"]
 },
+"ok": {
+"t": 1791804144606,
+"s": ["okey","okey 101","okey plus","okuyorum","ok oyunları"]
+},
 "oke": {
 "t": 1791283009409,
 "s": ["okey","okey 101","okey plus","okey internetsiz","okey yalla"]
@@ -28540,7 +29312,7 @@
 "s": ["okey 101","okey plus","okey internetsiz","okey yalla","okey canlı"]
 },
 "okey o": {
-"t": 1791019473707,
+"t": 1791803748919,
 "s": ["okey oyunu","okey online","okey oyunları","okey okey","okey oyna"]
 },
 "okey ö": {
@@ -28580,7 +29352,7 @@
 "s": ["okey oyunu","okey oyunları","okey oyunu internetsiz","okey oyunu indir","okey oyunlari"]
 },
 "okey oyun": {
-"t": 1791019474114,
+"t": 1791803749357,
 "s": ["okey oyunu","okey oyunları","okey oyunu internetsiz","okey oyunu indir","okey oyunlari"]
 },
 "okey oyunu": {
@@ -28588,7 +29360,7 @@
 "s": ["okey oyunu","okey oyunu internetsiz","okey oyunu indir","okey oyunu okey oyunu","okey oyunu okey"]
 },
 "okey oyunu ": {
-"t": 1791019474520,
+"t": 1791803748465,
 "s": ["okey oyunu internetsiz","okey oyunu indir","okey oyunu okey oyunu","okey oyunu okey","okey oyunu yükle"]
 },
 "okey oyunu a": {
@@ -28775,6 +29547,26 @@
 "t": 1790501250004,
 "s": ["okul öncesi zeka oyunları"]
 },
+"okuy": {
+"t": 1791804291917,
+"s": ["okuyorum","okuyorum yazıyorum","okuyorum 2 sınıf","okuyan kuran","okuyo"]
+},
+"okuyu": {
+"t": 1791804292844,
+"s": ["okuyorum","okuyucu mi tarayıcı","okuyucu indir","okuyucu pdf","okuyucu mi"]
+},
+"okuyuc": {
+"t": 1791804292361,
+"s": ["okuyucu mi tarayıcı","okuyucu barkod okuyucu","okuyucu indir","okuyucu pdf","okuyucu mi"]
+},
+"okuyucu": {
+"t": 1791804291470,
+"s": ["okuyucu mi tarayıcı","okuyucu barkod okuyucu","okuyucu indir","okuyucu pdf","okuyucu mi"]
+},
+"on": {
+"t": 1791804149432,
+"s": ["online oyunlar","on mobil","one state","online","online korku oyunları"]
+},
 "ön": {
 "t": 1790501266892,
 "s": ["öne tv","öne state","önce human","öne block","öne state rp"]
@@ -28818,6 +29610,14 @@
 "ön kepçeli traktör": {
 "t": 1790501255862,
 "s": ["ön kepçeli traktör oyunları"]
+},
+"onl": {
+"t": 1791804148996,
+"s": ["online oyunlar","online","online korku oyunları","online araba oyunları","online oyun"]
+},
+"online": {
+"t": 1791804148559,
+"s": ["online oyunlar","online","online korku oyunları","online araba oyunları","online oyun"]
 },
 "online ": {
 "t": 1789894302102,
@@ -29180,8 +29980,8 @@
 "s": ["otobüs simülatörü","otobüs simulator","otobüs simülatörü oyunu","otobüs simulator ultimate","otobüs simülatörü oyunları"]
 },
 "otobüs simülatörü ": {
-"t": 1790501286933,
-"s": ["otobüs simülatörü oyunu","otobüs simulator ultimate","otobüs simülatörü oyunları","otobüs simülatörü ultımate","otobüs simülatörü şehir"]
+"t": 1791803755033,
+"s": ["otobüs simülatörü oyunu","otobüs simulator ultimate","otobüs simülatörü oyunları","otobüs simülatörü ultımate","otobüs simulator 2"]
 },
 "otobüs simülatörü a": {
 "t": 1790501284912,
@@ -29279,6 +30079,10 @@
 "t": 1789713007093,
 "s": ["otobüs simülatörü şehir"]
 },
+"otobüs simülatörü şehir": {
+"t": 1791803755473,
+"s": []
+},
 "otobüs simülatörü t": {
 "t": 1789713007508,
 "s": []
@@ -29322,6 +30126,18 @@
 "otobüs sürme simüla": {
 "t": 1790501288407,
 "s": ["otobüs sürme simülatör","otobüs sürme simülatörü","otobüs sürme simülasyonu","otobüs sürme simülasyon","otobüs sürme oyunu simülatör"]
+},
+"oy": {
+"t": 1791804438544,
+"s": ["oyunlar","oyun","oyunlar internetsiz","oyunu","oyunlar oyunlar"]
+},
+"oyn": {
+"t": 1791804438980,
+"s": ["oyun","oyunlar","oyna","oynaya oynaya","oyna kazan"]
+},
+"oyna": {
+"t": 1791804438104,
+"s": ["oyna","oynaya oynaya","oyna kazan","oynanan oyunlar","oynaya oynaya net"]
 },
 "özel": {
 "t": 1790501301197,
@@ -29700,7 +30516,7 @@
 "s": ["park etme oyunu","park etme oyunu 2024","park etme oyunu 2023","park etme oyunu 2020","park etme oyunu 2019"]
 },
 "park etme oyunu ": {
-"t": 1790501316980,
+"t": 1791803762990,
 "s": ["park etme oyunu 2024","park etme oyunu 2023","park etme oyunu 2020","park etme oyunu 2019","park etme oyunu araba"]
 },
 "park etme oyunu 2020": {
@@ -30015,9 +30831,29 @@
 "t": 1791019867944,
 "s": ["petek kelime bulmaca","petek kelime avı","kelime oyunu petek"]
 },
+"pho": {
+"t": 1791804358424,
+"s": ["photoshop","photoroom","phone clone","photomath","photopea"]
+},
+"phot": {
+"t": 1791804358863,
+"s": ["photoshop","photoroom","photomath","photopea","photo editor"]
+},
+"photo": {
+"t": 1791804357958,
+"s": ["photoshop","photoroom","photomath","photopea","photo editor"]
+},
 "pi": {
-"t": 1791108185750,
+"t": 1791804391475,
 "s": ["pinterest","pizza oyunu","picsart","pigeon paradise","pilot garage"]
+},
+"pia": {
+"t": 1791804391039,
+"s": ["piano","piano oyunu","piano tiles","piano kids","piapiri"]
+},
+"piano": {
+"t": 1791804390600,
+"s": ["piano","piano oyunu","piano tiles","piano kids","piano beat"]
 },
 "piks": {
 "t": 1790239213480,
@@ -30487,6 +31323,14 @@
 "t": 1790239216331,
 "s": ["playstation dövüş oyunları","playstation dövüş oyunu"]
 },
+"plu": {
+"t": 1791804488959,
+"s": ["pluxee sodexo","pluxee cep pos","plug runner","plus","plugshare"]
+},
+"plus": {
+"t": 1791804488520,
+"s": ["plus","plus 101","plus plus","plus messenger","pluspay"]
+},
 "po": {
 "t": 1791108246943,
 "s": ["polis oyunları","pollybuzz","pokemon","poppy playtime","pou"]
@@ -30643,6 +31487,10 @@
 "t": 1791019339658,
 "s": ["prenses makyaj oyunu","prenses makyaj oyunları","prenses makyaj spa oyunu"]
 },
+"pu": {
+"t": 1791804197681,
+"s": ["pubg mobile","pubg mobile lite","pull and bear","pubg mobile benzer oyunlar","pusula"]
+},
 "pusu": {
 "t": 1791714233545,
 "s": ["pusula","pusu games","pusula ile kıble bulma","pusula indir","pusula maraş"]
@@ -30674,6 +31522,14 @@
 "pusula uygulaması ": {
 "t": 1789712863080,
 "s": ["pusula uygulaması","türkçe pusula uygulaması"]
+},
+"puz": {
+"t": 1791804197238,
+"s": ["puzzle oyunları","puzzle","puzzle oyunu","puzzles survival","puzzle oyunları yetişkin zor"]
+},
+"puzzle": {
+"t": 1791804196794,
+"s": ["puzzle oyunları","puzzle","puzzle oyunu","puzzles survival","puzzle oyunları yetişkin zor"]
 },
 "q": {
 "t": 1791714243401,
@@ -30735,8 +31591,20 @@
 "t": 1791543547436,
 "s": ["qr kod okuyucu reklamsız"]
 },
+"qu": {
+"t": 1791804527635,
+"s": ["quizlet","quick share","quranify","qumpara","quark vpn"]
+},
+"qui": {
+"t": 1791804528072,
+"s": ["quizlet","quick share","quickedit","quizei","quiver"]
+},
+"quiz": {
+"t": 1791804527203,
+"s": ["quizlet","quizei","quiz","quizzland","quizlet ücretsiz"]
+},
 "r": {
-"t": 1791108220457,
+"t": 1791803672755,
 "s": ["roblox","reddit","rol yapma oyunları","red ball","remini"]
 },
 "ra": {
@@ -31263,6 +32131,10 @@
 "t": 1789720385286,
 "s": ["restoran oyunları","restoran oyunları internetsiz","restoran oyunu","restoran oyunları simülatör","restoran oyunlari"]
 },
+"restoran oyu": {
+"t": 1791803787318,
+"s": ["restoran oyunları","restoran oyunları internetsiz","restoran oyunu","restoran oyunları simülatör","restoran oyunlari"]
+},
 "restoran oyun": {
 "t": 1789720379038,
 "s": ["restoran oyunları","restoran oyunları internetsiz","restoran oyunu","restoran oyunları simülatör","restoran oyunlari"]
@@ -31284,8 +32156,8 @@
 "s": ["restoran oyunları","restoran oyunları internetsiz","restoran oyunları simülatör","restoran oyunları online","restoran oyunları korku"]
 },
 "restoran oyunları ": {
-"t": 1790501365408,
-"s": ["restoran oyunları internetsiz","restoran oyunları simülatör","restoran oyunları online","restoran oyunları korku","restoran oyunları 3d"]
+"t": 1791803786438,
+"s": ["restoran oyunları internetsiz","restoran oyunları simülatör","restoran oyunları 3d","restoran oyunları online","restoran oyunları türkçe"]
 },
 "restoran oyunları a": {
 "t": 1789720265036,
@@ -31340,8 +32212,20 @@
 "s": []
 },
 "restoran oyunları k": {
-"t": 1789720270834,
+"t": 1791803788630,
 "s": ["restoran oyunları korku","kafe ve restoran oyunları korku","kafe ve restoran oyunları","kedi restoran oyunları","2 kişilik restoran oyunları"]
+},
+"restoran oyunları ko": {
+"t": 1791803788193,
+"s": ["restoran oyunları korku","kafe ve restoran oyunları korku"]
+},
+"restoran oyunları kor": {
+"t": 1791803787758,
+"s": ["restoran oyunları korku","kafe ve restoran oyunları korku"]
+},
+"restoran oyunları korku": {
+"t": 1791803786881,
+"s": ["restoran oyunları korku","kafe ve restoran oyunları korku"]
 },
 "restoran oyunları l": {
 "t": 1789720271272,
@@ -33031,6 +33915,10 @@
 "t": 1791714363617,
 "s": ["sayaç","sayaç ders çalışma","sayac","sayaç gün sayma","sayar zikirmatik"]
 },
+"sayac": {
+"t": 1791804380936,
+"s": ["sayac","sayac gun saat dakika saniye","sayac ders","sayac widget","sayac uygulamasi"]
+},
 "sayaç": {
 "t": 1791714362780,
 "s": ["sayaç","sayaç ders çalışma","sayaç gün sayma","sayaç uygulaması","sayaç widget"]
@@ -33050,6 +33938,14 @@
 "sayaç uygulaması ": {
 "t": 1789712847997,
 "s": ["sayaç uygulaması","adım sayar uygulaması"]
+},
+"sayacı": {
+"t": 1791804380499,
+"s": ["sayacı","pomodoro sayacı","gün sayacı","okul sayacı","ölüm sayacı"]
+},
+"sayar": {
+"t": 1791804473497,
+"s": ["sayar zikirmatik","sayar","sayar market","sayar adım sayar","sayarti online"]
 },
 "se": {
 "t": 1791108243537,
@@ -33472,7 +34368,7 @@
 "s": ["ses seviyesi ölçer"]
 },
 "sesl": {
-"t": 1791019569424,
+"t": 1791803963036,
 "s": ["sesli sohbet","sesli kitap","sesli sohbet uygulamaları","sesli kitap dinleme ücretsiz","sesli sözlük"]
 },
 "sesli": {
@@ -33480,7 +34376,7 @@
 "s": ["sesli sohbet","sesli kitap","sesli sohbet uygulamaları","sesli kitap dinleme ücretsiz","sesli sözlük"]
 },
 "sesli ": {
-"t": 1791019569840,
+"t": 1791803963471,
 "s": ["sesli sohbet","sesli kitap","sesli sohbet uygulamaları","sesli kitap dinleme ücretsiz","sesli sözlük"]
 },
 "sesli b": {
@@ -33492,12 +34388,12 @@
 "s": ["sesli batak oyunu"]
 },
 "sesli i": {
-"t": 1789806335895,
-"s": ["sesli ingilizce ogrenme","sesli ingilizce ceviri","sesli ingilizce kitap","sesli iletişim","sesli incil"]
+"t": 1791803963910,
+"s": ["sesli ingilizce ogrenme","sesli ingilizce ceviri","sesli incil","sesli ingilizce kitap","sesli ingilizce sözlük"]
 },
 "sesli il": {
-"t": 1789806336310,
-"s": ["sesli ilmihal","sesli ilaç hatırlatıcı","sesli iletişim","sesli komut ile kişi arama"]
+"t": 1791803956830,
+"s": ["sesli ilmihal","sesli komut ile kişi arama"]
 },
 "sesli ila": {
 "t": 1789806335065,
@@ -33510,6 +34406,38 @@
 "sesli ilaç hatırlatıcı ": {
 "t": 1789894080736,
 "s": ["sesli ilaç hatırlatıcı"]
+},
+"sesli iletişim": {
+"t": 1791803957271,
+"s": []
+},
+"sesli k": {
+"t": 1791803969814,
+"s": ["sesli kitap","sesli kitap dinleme ücretsiz","sesli kuran","sesli konuşma","sesli klavye"]
+},
+"sesli ko": {
+"t": 1791803968470,
+"s": ["sesli konuşma","sesli konuşma uygulaması","sesli komut","sesli komut al akıllı asistan","sesli konusma"]
+},
+"sesli komu": {
+"t": 1791803970268,
+"s": ["sesli komut","sesli komut al akıllı asistan","sesli komutla arama yapma","sesli komut programı türkçe","sesli komut akıllı asistan"]
+},
+"sesli komut": {
+"t": 1791803971145,
+"s": ["sesli komut","sesli komut al akıllı asistan","sesli komutla arama yapma","sesli komut programı türkçe","sesli komut akıllı asistan"]
+},
+"sesli komut ": {
+"t": 1791803970707,
+"s": ["sesli komut al akıllı asistan","sesli komut programı türkçe","sesli komut akıllı asistan","sesli komut ile kişi arama","sesli komut ücretsiz"]
+},
+"sesli komut i": {
+"t": 1791803969346,
+"s": ["sesli komut ile kişi arama"]
+},
+"sesli komut ile kişi arama": {
+"t": 1791803968905,
+"s": ["sesli komut ile kişi arama"]
 },
 "sesli oke": {
 "t": 1791019571291,
@@ -33590,6 +34518,10 @@
 "sevgili tarih h": {
 "t": 1789720837657,
 "s": ["sevgili tarih hesaplama"]
+},
+"si": {
+"t": 1791804130415,
+"s": ["silah oyunları","simülasyon oyunları","sinepçet","simsimi","signal"]
 },
 "şi": {
 "t": 1791714392247,
@@ -33731,6 +34663,10 @@
 "t": 1789982190747,
 "s": ["silahlı satranç oyunu"]
 },
+"sim": {
+"t": 1791804129978,
+"s": ["simülasyon oyunları","sims","simsimi","simulator oyunlari","simcity"]
+},
 "şimşek mcqueen": {
 "t": 1791019573109,
 "s": ["şimşek mcqueen","şimşek mcqueen oyunu","şimşek mcqueen oyunları","şimşek mcqueen yarış oyunu","şimşek mcqueen araba oyunu"]
@@ -33754,6 +34690,10 @@
 "şimşek mcqueen boyama oyunu": {
 "t": 1791019573528,
 "s": ["şimşek mcqueen boyama oyunu"]
+},
+"simul": {
+"t": 1791804129543,
+"s": ["simulation moteur","simulator oyunlari","simulator","simulator oyunları","simulasyon oyunlari"]
 },
 "simülasyo": {
 "t": 1790326921681,
@@ -33807,6 +34747,10 @@
 "t": 1790501584441,
 "s": ["simülasyon ve macera oyunları"]
 },
+"simulator": {
+"t": 1791804129089,
+"s": ["simulator oyunlari","simulator","simulator moteur","simulator oyunları","simulator 2"]
+},
 "şişko p": {
 "t": 1790501587794,
 "s": ["şişko polis","şişko polis oyunu","şişko polis oyunları","şişko patates","şişko polisten kaçma oyunu"]
@@ -33826,6 +34770,14 @@
 "şişko poliste": {
 "t": 1790501587395,
 "s": ["şişko polisten kaçma oyunu","şişko polisten kaçma","şişko polisten kaçış oyunu"]
+},
+"sı": {
+"t": 1791804242949,
+"s": ["sınepçe","sınavbank","sınavza","sıpaydırmen","sıralama oyunları"]
+},
+"sın": {
+"t": 1791804242514,
+"s": ["sınepçe","sınavbank","sınavza","sınav oyunları","sınepçıt"]
 },
 "sına": {
 "t": 1791714398220,
@@ -33875,6 +34827,26 @@
 "t": 1789712885420,
 "s": ["sınav hazırlık","hac sınav hazırlık","kpss 2026 sınav hazırlık","ögg sınav hazırlık","ehliyet sınav hazırlık"]
 },
+"sınav s": {
+"t": 1791804275135,
+"s": ["sınav sayacı","sınav saati","sınav soruları","sınav soruları ehliyet","sınav sayaç"]
+},
+"sınav so": {
+"t": 1791804368004,
+"s": ["sınav soruları","sınav soruları ehliyet","sınav sonuçları","sınav soru çözüm","sınav soruları 2026"]
+},
+"sınav sor": {
+"t": 1791804367562,
+"s": ["sınav soruları","sınav soruları ehliyet","sınav soru çözüm","sınav soruları 2026","usta öğretici sınav soruları"]
+},
+"sınav sorul": {
+"t": 1791804367111,
+"s": ["sınav soruları","sınav soruları ehliyet","sınav soruları 2026","usta öğretici sınav soruları","sürücü kursu sınav soruları"]
+},
+"sınav soruları": {
+"t": 1791804274689,
+"s": ["sınav soruları","sınav soruları ehliyet","sınav soruları 2026","usta öğretici sınav soruları","sürücü kursu sınav soruları"]
+},
 "snipe": {
 "t": 1790501595252,
 "s": ["sniper 3d","sniper","sniper oyunları","sniper elite 4","sniper oyunu"]
@@ -33918,6 +34890,10 @@
 "sniper keskin nişa": {
 "t": 1790501594423,
 "s": ["sniper keskin nişancı oyunu","sniper keskin nişancı oyunları","sniper 3d keskin nişancı oyunları","sniper 3d keskin nişancı oyunları internetsiz","sniper 3d keskin nişancı"]
+},
+"so": {
+"t": 1791804354596,
+"s": ["sosyal","soccer mocer","soccer champs","sonic","sohbet uygulamalari"]
 },
 "şö": {
 "t": 1790501610328,
@@ -33999,12 +34975,20 @@
 "t": 1791019581446,
 "s": ["şok market oyunu","şok market oyunları"]
 },
+"sol": {
+"t": 1791804354161,
+"s": ["soliclub","solitaire","solar smash","solucan oyunu","solvi"]
+},
+"solit": {
+"t": 1791804353726,
+"s": ["solitaire","solitaire oyunları","solitaire associations journey game","solitaire associations journey","solitaire association"]
+},
 "solita": {
 "t": 1791108503993,
 "s": ["solitaire","solitaire oyunları","solitaire associations journey game","solitaire associations journey","solitaire association"]
 },
 "solitaire": {
-"t": 1791108504394,
+"t": 1791804353288,
 "s": ["solitaire","solitaire oyunları","solitaire associations journey game","solitaire associations journey","solitaire association"]
 },
 "solitaire ": {
@@ -34022,6 +35006,26 @@
 "solitaire kelime ": {
 "t": 1790501604942,
 "s": ["solitaire kelime eşleme","solitaire kelime oyunları","solitaire kelime oyunu","solitaire kelime eşleme türkçe","solitaire kelime eşleştirme"]
+},
+"soru": {
+"t": 1791804249712,
+"s": ["soru cevap oyunlari","soru çözme programı","soru oyunu","sorularla islamiyet","soru cevap"]
+},
+"sorula": {
+"t": 1791804250146,
+"s": ["sorularla islamiyet","sorular","sorularla yüksel","sorularla risale","sorula"]
+},
+"sorular": {
+"t": 1791804250580,
+"s": ["sorularla islamiyet","sorular","sorularla yüksel","sorularla risale","soruların recepi"]
+},
+"soruları": {
+"t": 1791804249281,
+"s": ["soruların recepi","soruları çözen uygulama","soruların receb","soruları","soruları bilme oyunu"]
+},
+"soruları 2026": {
+"t": 1791804346988,
+"s": ["güvenlik soruları 2026","ehliyet soruları 2026","özel güvenlik soruları 2026","motor ehliyeti soruları 2026","çıkmış ehliyet soruları 2026"]
 },
 "şöv": {
 "t": 1790501610733,
@@ -34067,13 +35071,17 @@
 "t": 1789712876626,
 "s": ["tdk sözlük uygulaması"]
 },
+"spo": {
+"t": 1791803985030,
+"s": ["spotify","spor oyunları","spor","spotbox","spor istanbul"]
+},
 "spor": {
-"t": 1789806338589,
-"s": ["spor oyunları","spor","spor ayı","spor oyunu","spor istanbul"]
+"t": 1791803976726,
+"s": ["spor oyunları","spor","spor istanbul","spor ayı","spor yapma programı"]
 },
 "spor ": {
-"t": 1789806339410,
-"s": ["spor oyunları","spor uygulamaları","spor ayı","spor oyunu","spor istanbul"]
+"t": 1791803985477,
+"s": ["spor oyunları","spor uygulamaları","spor istanbul","spor ayı","spor yapma programı"]
 },
 "spor oyunl": {
 "t": 1790153271470,
@@ -34096,12 +35104,20 @@
 "s": ["spor oyunları basketbol"]
 },
 "spor v": {
-"t": 1789806339003,
-"s": ["spor ve diyet programı","spor videoları","spor vpn","spor vücut geliştirme","spor ve adventur"]
+"t": 1791803975385,
+"s": ["spor ve diyet programı","spor videoları","spor ve egzersiz","spor vpn","spor vücut geliştirme"]
+},
+"spor ve": {
+"t": 1791803977177,
+"s": ["spor ve diyet programı","spor ve egzersiz","spor ve adventur","spor ve advan","spor verme"]
 },
 "spor ve ": {
-"t": 1789806338181,
-"s": ["spor ve diyet programı","spor ve adventur","spor ve adventure","spor ve egzersiz","spor ve diyet"]
+"t": 1791803976270,
+"s": ["spor ve diyet programı","spor ve egzersiz","spor ve adventur","spor ve advan","spor ve diyet"]
+},
+"spor ve adventur": {
+"t": 1791803975830,
+"s": ["spor ve adventur"]
 },
 "spor ve diyet p": {
 "t": 1789806337767,
@@ -34135,6 +35151,14 @@
 "t": 1790501613148,
 "s": ["stickman keskin nişancı oyunları"]
 },
+"sto": {
+"t": 1791804505865,
+"s": ["storytel","storyteller","stoys","story saver","stop motion"]
+},
+"story": {
+"t": 1791804505425,
+"s": ["storytel","storyteller","story saver","story","storygraph"]
+},
 "str": {
 "t": 1791626926320,
 "s": ["strateji oyunları","street pro","strava","stradivarius","street fıghter"]
@@ -34142,6 +35166,22 @@
 "stra": {
 "t": 1791626925895,
 "s": ["strateji oyunları","strava","stradivarius","strateji oyunları internetsiz","strateji"]
+},
+"stran": {
+"t": 1791804000246,
+"s": ["satranç","stranger things","stranded deep","stranger things oyunları","stranger school"]
+},
+"strang": {
+"t": 1791803999796,
+"s": ["stranger things","stranger things oyunları","stranger school","stranger","strange horticulture"]
+},
+"stranger": {
+"t": 1791803999345,
+"s": ["stranger things","stranger things oyunları","stranger school","stranger things wallpaper","stranger"]
+},
+"stranger things": {
+"t": 1791803998907,
+"s": ["stranger things","stranger things oyunları","stranger things wallpaper","stranger things oyunu","stranger things boyama oyunu"]
 },
 "strat": {
 "t": 1791626951663,
@@ -34212,31 +35252,43 @@
 "s": ["şüper ayı","şüper bear","şüper bear adventure","şükela reader","şükür defteri"]
 },
 "su ": {
-"t": 1791108308684,
+"t": 1791803828033,
 "s": ["su böreği","su terazisi","su içme hatırlatıcısı","su ve ateş","su çıkarma uygulaması"]
 },
 "su i": {
-"t": 1791108307864,
+"t": 1791803827601,
 "s": ["su içme hatırlatıcısı","su içme","su icmeyi hatirlatma","su iste","su içme hatırlatıcısı ücretsiz"]
 },
 "su iç": {
-"t": 1789713476878,
-"s": ["su içme hatırlatıcısı","su içme","su içme hatırlatıcısı ücretsiz","su içme takibi","su içme oyunu"]
+"t": 1791803801501,
+"s": ["su içme hatırlatıcısı","su içme","su içme hatırlatıcısı ücretsiz","su içme oyunu","su iç"]
 },
 "su içme": {
-"t": 1789806208093,
-"s": ["su içme hatırlatıcısı","su içme","su içme hatırlatıcısı ücretsiz","su içme takibi","su içme oyunu"]
+"t": 1791803801939,
+"s": ["su içme hatırlatıcısı","su içme","su içme hatırlatıcısı ücretsiz","su içme oyunu","su içme uygulaması"]
 },
 "su içme ": {
-"t": 1789713477284,
-"s": ["su içme hatırlatıcısı","su içme hatırlatıcısı ücretsiz","su içme takibi","su içme oyunu","su içme uygulaması"]
+"t": 1791803802398,
+"s": ["su içme hatırlatıcısı","su içme hatırlatıcısı ücretsiz","su içme oyunu","su içme uygulaması","su içme takibi"]
 },
 "su içme h": {
-"t": 1789713477683,
-"s": ["su içme hatırlatıcısı","su içme hatırlatıcısı ücretsiz","su içme hatırlatıcısı internetsiz","su içme hatırlatıcı","su içme hatırlatıcısı reklamsız"]
+"t": 1791803801067,
+"s": ["su içme hatırlatıcısı","su içme hatırlatıcısı ücretsiz","su içme hatırlatma uygulaması","su içme hatırlatıcısı internetsiz","su içme hatırlatıcı"]
 },
 "su içme ha": {
 "t": 1789713476454,
+"s": ["su içme hatırlatıcısı","su içme hatırlatıcısı ücretsiz","su içme hatırlatıcısı internetsiz","su içme hatırlatıcı","su içme hatırlatıcısı reklamsız"]
+},
+"su içme hatırlat": {
+"t": 1791803815141,
+"s": ["su içme hatırlatıcısı","su içme hatırlatıcısı ücretsiz","su içme hatırlatma uygulaması","su içme hatırlatıcısı internetsiz","su içme hatırlatıcı"]
+},
+"su içme hatırlatı": {
+"t": 1791803816904,
+"s": ["su içme hatırlatıcısı","su içme hatırlatıcısı ücretsiz","su içme hatırlatıcısı internetsiz","su içme hatırlatıcı","su içme hatırlatıcısı reklamsız"]
+},
+"su içme hatırlatıc": {
+"t": 1791803816467,
 "s": ["su içme hatırlatıcısı","su içme hatırlatıcısı ücretsiz","su içme hatırlatıcısı internetsiz","su içme hatırlatıcı","su içme hatırlatıcısı reklamsız"]
 },
 "su içme hatırlatıcı": {
@@ -34246,6 +35298,18 @@
 "su içme hatırlatıcı ": {
 "t": 1789712816143,
 "s": ["su içme hatırlatıcı"]
+},
+"su içme hatırlatıcıs": {
+"t": 1791803816022,
+"s": ["su içme hatırlatıcısı","su içme hatırlatıcısı ücretsiz","su içme hatırlatıcısı internetsiz","su içme hatırlatıcısı reklamsız","su içme hatırlatıcısı türkçe"]
+},
+"su içme hatırlatıcısı re": {
+"t": 1791803815579,
+"s": ["su içme hatırlatıcısı reklamsız"]
+},
+"su içme hatırlatıcısı reklamsız": {
+"t": 1791803814697,
+"s": ["su içme hatırlatıcısı reklamsız"]
 },
 "su t": {
 "t": 1791197051460,
@@ -34492,8 +35556,20 @@
 "s": ["sudoku quest","sudoku quest bulmaca oyunları","sudoku quest classic puzzle","sudoku quest sudoku puzzle","sudoku quest logic puzzles"]
 },
 "sudoku qu": {
-"t": 1789805963293,
-"s": ["sudoku quest bulmaca oyunları","sudoku quest","sudoku queen","sudoku quest logic puzzles","sudoku quest bulmaca oyunları"]
+"t": 1791804015579,
+"s": ["sudoku quest","sudoku quest logic puzzles","sudoku quest bulmaca oyunları","sudoku quest classic puzzle","sudoku quest sudoku puzzle"]
+},
+"sudoku que": {
+"t": 1791804016462,
+"s": ["sudoku quest","sudoku quest logic puzzles","sudoku quest rompecabezas","sudoku quest bulmaca oyunları","sudoku quest classic puzzle"]
+},
+"sudoku quee": {
+"t": 1791804016024,
+"s": ["sudoku queen","sudoku queens","queens master sudoku puzzle","queen master sudoku","queen puzzle wood sudoku"]
+},
+"sudoku queen": {
+"t": 1791804015142,
+"s": ["sudoku queen","sudoku queens","queens master sudoku puzzle","queen master sudoku","queen puzzle wood sudoku"]
 },
 "sudoku ques": {
 "t": 1789805962883,
@@ -34504,20 +35580,40 @@
 "s": ["sudoku quest bulmaca oyunları","sudoku quest bulmaca oyunları"]
 },
 "sudoku s": {
-"t": 1789806345724,
-"s": ["sudoku solver","sudoku samurai","sudoku sudoku","sudoku seviyeli","sudoku scienext"]
+"t": 1791804019921,
+"s": ["sudoku solver","sudoku sudoku bulmacalari","sudoku sudoku","sudoku seviyeli","sudoku solver pro"]
 },
 "sudoku su": {
-"t": 1789806345308,
-"s": ["sudoku sudoku sudoku","sudoku sudoku sudoku sudoku","sudoku sudoku","sudoku sudoku bulmacalari","sudoku sudoku oyunları"]
+"t": 1791804019477,
+"s": ["sudoku sudoku bulmacalari","sudoku sudoku","sudoku sudoku oyunları","sudoku sudoku puzzles","sudoku sudoku game"]
+},
+"sudoku sud": {
+"t": 1791804026742,
+"s": ["sudoku sudoku bulmacalari","sudoku sudoku","sudoku sudoku oyunları","sudoku sudoku puzzles","sudoku sudoku game"]
 },
 "sudoku sudo": {
 "t": 1789806344893,
 "s": ["sudoku sudoku sudoku","sudoku sudoku sudoku sudoku","sudoku sudoku","sudoku sudoku bulmacalari","sudoku sudoku oyunları"]
 },
+"sudoku sudoku": {
+"t": 1791804027663,
+"s": ["sudoku sudoku bulmacalari","sudoku sudoku","sudoku sudoku oyunları","sudoku sudoku puzzles","sudoku sudoku game"]
+},
 "sudoku sudoku ": {
-"t": 1789806344480,
-"s": ["sudoku sudoku sudoku","sudoku sudoku sudoku sudoku","sudoku sudoku bulmacalari","sudoku sudoku oyunları","sudoku sudoku teka teki"]
+"t": 1791804028103,
+"s": ["sudoku sudoku bulmacalari","sudoku sudoku oyunları","sudoku sudoku puzzles","sudoku sudoku game","sudoku sudoku classique"]
+},
+"sudoku sudoku s": {
+"t": 1791804027190,
+"s": ["sudoku sudoku sudoku","killer sudoku sudoku spill","sudoku com sudoku slagalica","sudoku klassiek sudoku spel","sudoku klassisk sudoku spil"]
+},
+"sudoku sudoku sudoku": {
+"t": 1791804026300,
+"s": ["sudoku sudoku sudoku"]
+},
+"sudoku sudoku sudoku sudoku": {
+"t": 1791804029595,
+"s": []
 },
 "şük": {
 "t": 1791714425157,
@@ -34619,6 +35715,18 @@
 "t": 1789982164855,
 "s": ["süpermarket oyunu","süpermarket oyunları","süpermarket oyunu internetsiz","süpermarket oyunları internetsiz","süpermarket oyunu süpermarket oyunu"]
 },
+"sur": {
+"t": 1791804374182,
+"s": ["survivor","survival craft","survival","survival island","survivor io"]
+},
+"surv": {
+"t": 1791804373730,
+"s": ["survivor","survival craft","survival","survival island","survivor io"]
+},
+"survival": {
+"t": 1791804373292,
+"s": ["survival craft","survival","survival island","survival simulator","survival on raft"]
+},
 "t": {
 "t": 1791714498382,
 "s": ["tiktok","telegram","trendyol","türk telekom","toca boca"]
@@ -34694,6 +35802,22 @@
 "taka": {
 "t": 1791714433810,
 "s": ["taka","takas oyunu","takasbank","takas","taka canlı"]
+},
+"taki": {
+"t": 1791804161029,
+"s": ["takip uygulaması","takip etmeyenleri bul instagram","takibi bırakanlar instagram","takip cihazı","takipçi analizi"]
+},
+"takib": {
+"t": 1791804160597,
+"s": ["takibi bırakanlar instagram","takibi bırakanlar","takibi birakanlar","takibi bırakanlar instagram ücretsiz","takibi birakanlar instagram ücretsiz"]
+},
+"takibi": {
+"t": 1791804160159,
+"s": ["takibi bırakanlar instagram","takibi bırakanlar","takibi birakanlar","takibi bırakanlar instagram ücretsiz","takibi birakanlar instagram ücretsiz"]
+},
+"takip": {
+"t": 1791804300273,
+"s": ["takip uygulaması","takip etmeyenleri bul instagram","takip cihazı","takipçi analizi","takip"]
 },
 "takımlı m": {
 "t": 1790501617062,
@@ -34938,6 +36062,22 @@
 "tari": {
 "t": 1791714436673,
 "s": ["tarim cebimde","tarih oyunları","tarih kpss","tarih","tarif defterim"]
+},
+"tarif": {
+"t": 1791804186894,
+"s": ["tarif defterim","tarif","tarifler","tarif defteri","tarif küpü"]
+},
+"tarifl": {
+"t": 1791804187777,
+"s": ["tarifler","tarifler kitabı","tarifler kitabı internetsiz","tarifleri","tariflar mobiuz"]
+},
+"tarifle": {
+"t": 1791804187334,
+"s": ["tarifler","tarifler kitabı","tarifler kitabı internetsiz","tarifleri","tatlı tarifleri"]
+},
+"tarifleri": {
+"t": 1791804186455,
+"s": ["tarifleri","tatlı tarifleri","kek tarifleri","kurabiye tarifleri","diyet tarifleri"]
 },
 "tarih ": {
 "t": 1791714437086,
@@ -35304,7 +36444,7 @@
 "s": ["tdk türkçe sözlük","tdk türkçe sözlük 2025","tdk turkce soz","tdk türkçe sözlük uygulaması","tdk tır oyunu"]
 },
 "te": {
-"t": 1791108283889,
+"t": 1791804214904,
 "s": ["telegram","temu","teb","teams","temalar"]
 },
 "tek kişi": {
@@ -35550,6 +36690,14 @@
 "tema uygulaması samsung": {
 "t": 1791627168551,
 "s": []
+},
+"tes": {
+"t": 1791804215336,
+"s": ["tesla","test","tesla oyunu","test çözme uygulamaları","tesla araba oyunu"]
+},
+"test": {
+"t": 1791804214472,
+"s": ["test","test çözme uygulamaları","testere oyunu","test çöz","testo"]
 },
 "tet": {
 "t": 1791108284293,
@@ -36380,7 +37528,7 @@
 "s": ["tombala","tombala oyunları","tombala oyunu","tombala oyunu 2 3 4 kişilik","tombal"]
 },
 "tombala": {
-"t": 1791019915986,
+"t": 1791803837521,
 "s": ["tombala","tombala oyunları","tombala oyunu","tombala oyunu 2 3 4 kişilik","tombalas"]
 },
 "tombala ": {
@@ -36507,6 +37655,26 @@
 "t": 1789894194856,
 "s": []
 },
+"tombalas": {
+"t": 1791803837046,
+"s": ["tombalas"]
+},
+"tombank": {
+"t": 1791803731558,
+"s": ["tombank","tombank hadi","tombank indir","tombank hadi güncelle","tombank hadi"]
+},
+"tombank ": {
+"t": 1791803732003,
+"s": ["tombank hadi indir","tombank hadi","tombank indir","tombank hadi güncelle","tombank hadi"]
+},
+"tombank h": {
+"t": 1791803731123,
+"s": ["tombank hadi indir","tombank hadi","tombank hadi güncelle","tombank hadi","tombank hadi uygulaması"]
+},
+"tombank hadi indir": {
+"t": 1791803730668,
+"s": ["tombank hadi indir"]
+},
 "topl": {
 "t": 1791019594340,
 "s": ["toplama çıkarma oyunları","topluyo","toplama oyunu","toplu taşıma uygulamaları","toplu oyunlar"]
@@ -36548,28 +37716,44 @@
 "s": ["toyota corolla oyunları","toyota corolla oyunları modifiye","toyota corolla oyunu","toyota corolla oyunları drift","toyota corolla oyunları yeni kasa"]
 },
 "tr": {
-"t": 1791197089561,
+"t": 1791804133771,
 "s": ["trendyol","trendyolmilla","traktör oyunları","trendyol go","traffic rider"]
 },
 "tra": {
 "t": 1791627294343,
 "s": ["traktör oyunları","traffic rider","transit simülatör","traffic racer","tradingview"]
 },
+"trac": {
+"t": 1791804417252,
+"s": ["trackview","tractor forest farm simulator","tracker gg","tracket motion","tracker"]
+},
+"tracker": {
+"t": 1791804416816,
+"s": ["tracker gg","tracker","tracker detect","tracker network","tracker valorant"]
+},
 "trafik": {
-"t": 1789713516511,
-"s": ["traffic rider","traffic racer","trafik polisi oyunu","trafik","trafik ceza rehberi 2026"]
+"t": 1791803741139,
+"s": ["traffic rider","traffic racer","trafik polisi oyunu","trafik ceza rehberi 2026","trafik"]
 },
 "trafik ce": {
-"t": 1789713516911,
-"s": ["trafik ceza rehberi 2026","trafik ceza rehberi","trafik ceza","trafik ceza rehberi 2025","trafik ceza rehberi 2023"]
+"t": 1791803741582,
+"s": ["trafik ceza rehberi 2026","trafik ceza rehberi","trafik ceza","trafik ceza rehberi 2025","trafik ceza ödeme"]
 },
 "trafik ceza": {
-"t": 1789713517306,
-"s": ["trafik ceza rehberi 2026","trafik ceza rehberi","trafik ceza","trafik ceza rehberi 2025","trafik ceza rehberi 2023"]
+"t": 1791803742024,
+"s": ["trafik ceza rehberi 2026","trafik ceza rehberi","trafik ceza","trafik ceza rehberi 2025","trafik ceza ödeme"]
 },
 "trafik cezas": {
-"t": 1789713516100,
-"s": ["trafik cezası ödeme","trafik cezası","trafik cezası sorgulama","trafik cezasi","trafik cezası oyunu"]
+"t": 1791803738936,
+"s": ["trafik cezası ödeme","trafik cezası","trafik cezası sorgulama","trafik cezası rehberi"]
+},
+"trafik cezasi": {
+"t": 1791803739371,
+"s": []
+},
+"trafik cezası oyunu": {
+"t": 1791803750581,
+"s": []
 },
 "trafik cezası sorgulama": {
 "t": 1789712806944,
@@ -37147,6 +38331,18 @@
 "t": 1791108080486,
 "s": ["trt satranç oyunu","trt çocuk satranç oyunu","trt çocuk oyunları satranç"]
 },
+"tru": {
+"t": 1791804133336,
+"s": ["truckers of europe 3","truck simülatör","truckers of europe 4","trumore","trugo"]
+},
+"truc": {
+"t": 1791804146553,
+"s": ["truckers of europe 3","truck simülatör","truckers of europe 4","truck simulator","truck simulator big rigs"]
+},
+"truck": {
+"t": 1791804132901,
+"s": ["truckers of europe 3","truck simülatör","truckers of europe 4","truck simulator","truck simulator big rigs"]
+},
 "tsunamiden ": {
 "t": 1789894587234,
 "s": ["tsunamiden kaçma oyunu","tsunamiden kaç","tsunamiden kaçma","tsunamiden kaçma oyunları","tsunamiden kaç oyunu"]
@@ -37214,6 +38410,10 @@
 "tüm zombi oyunla": {
 "t": 1790589995052,
 "s": ["tüm zombi oyunları"]
+},
+"turk": {
+"t": 1791803760205,
+"s": ["turk telekom","turkcell","turknet","turkish airlines","turkiye finans"]
 },
 "türk": {
 "t": 1791282951311,
@@ -37332,12 +38532,20 @@
 "s": ["türk yapımı savaş oyunları","türk yapımı savaş oyunu","türk yapımı savaş","türk yapımı oyunlar savaş"]
 },
 "türkç": {
-"t": 1789806035552,
-"s": ["türkçe klavye","türkçe ingilizce çeviri","türkçe öğrenme","türkçe sözlük","türkçe"]
+"t": 1791803751458,
+"s": ["türkçe sözlük","türkçe klavye","türkçe ingilizce çeviri","türkçe öğrenme","türkçe"]
+},
+"turkce": {
+"t": 1791803760644,
+"s": ["turkcell","turkcell tv","turkcell platinum","turkcell uygulamasi","turkcell salla kazan"]
 },
 "türkçe": {
 "t": 1791282951721,
 "s": ["türkçe sözlük","türkçe klavye","türkçe ingilizce çeviri","türkçe öğrenme","türkçe"]
+},
+"turkce ": {
+"t": 1791803761100,
+"s": ["turkce klavye","turkce ingilizce ceviri","turkce klavye indir","turkce sozluk internetsiz","turkce arapca ceviri"]
 },
 "türkçe ": {
 "t": 1791282952117,
@@ -37363,13 +38571,33 @@
 "t": 1791627338756,
 "s": ["türkçe çeviri uygulaması"]
 },
+"türkçe çı": {
+"t": 1791804030937,
+"s": ["türkçe çıkartma whatsapp","türkçe çıkartma","türkçe çıkartmalar","türkçe çıkmış sorular","kpss türkçe çıkmış sorular"]
+},
+"türkçe çıkm": {
+"t": 1791804030491,
+"s": ["türkçe çıkmış sorular","kpss türkçe çıkmış sorular","ales türkçe çıkmış sorular","tyt türkçe çıkmış sorular","kpss türkçe çıkmış"]
+},
+"türkçe çıkmış sorular": {
+"t": 1791804030029,
+"s": ["türkçe çıkmış sorular","kpss türkçe çıkmış sorular","ales türkçe çıkmış sorular","tyt türkçe çıkmış sorular","kpss önlisans türkçe çıkmış sorular"]
+},
+"turkce p": {
+"t": 1791803759771,
+"s": ["turkce pusula ucretsiz","turkce piyano oyunu","turkce paragraf","turkce pop sarkilar internetsiz","turkce pop remix sarkilar"]
+},
 "türkçe p": {
-"t": 1789720418715,
-"s": ["türkçe pitt","türkçe piti","türkçe pusula","türkçe pop şarkılar internetsiz 2026","türkçe piyano oyunu"]
+"t": 1791803751893,
+"s": ["türkçe pitt","türkçe piti","türkçe pop şarkılar internetsiz 2026","türkçe piyano oyunu","türkçe pop şarkılar internetsiz"]
 },
 "türkçe pu": {
-"t": 1789720420480,
-"s": ["türkçe pusula","türkçe pusula uygulaması","türkçe pubg","türkçe pusula indir","türkçe pubg mobile"]
+"t": 1791803751022,
+"s": ["türkçe pusula","türkçe pusula uygulaması","türkçe pusula indir","türkçe pubg","brain puzzle türkçe"]
+},
+"türkçe pubg mobile": {
+"t": 1791803754593,
+"s": ["pubg mobile türkçe"]
 },
 "türkçe pusul": {
 "t": 1789720419593,
@@ -37474,6 +38702,22 @@
 "tv plus ab": {
 "t": 1791369387890,
 "s": ["tv plus abonelik iptal","tv plus abonelik","remote tv plus abs cbn","abs cbn tv plus go","abs cbn tv plus go app"]
+},
+"tyt ": {
+"t": 1791803766133,
+"s": ["tyt muzik","tyt soru bankası","tyt ayt","tyt konu anlatimi","tyt matematik"]
+},
+"tyt f": {
+"t": 1791803767038,
+"s": ["tyt fizik","tyt fen","tyt felsefe","tyt fizik soru bankası","tyt fen oyun"]
+},
+"tyt fi": {
+"t": 1791803766572,
+"s": ["tyt fizik","tyt fizik soru bankası","tyt fizik konu anlatimi","tyt fizik oyunu","egzersiz tyt fizik"]
+},
+"tyt fiz": {
+"t": 1791803765689,
+"s": ["tyt fizik","tyt fizik soru bankası","tyt fizik konu anlatimi","tyt fizik oyunu","egzersiz tyt fizik"]
 },
 "u": {
 "t": 1791282916758,
@@ -37584,7 +38828,7 @@
 "s": ["uçak motor oyunu","uçak motor oyunları","uçak motor oyunu uçak motor oyunu","robot araba uçak motor oyunları","araba uçak motor oyunu"]
 },
 "uçak o": {
-"t": 1789720423711,
+"t": 1791803770375,
 "s": ["uçak oyunları","uçak oyunları 2026","uçak oyunları 2025","uçak oyunları internetsiz","uçak oyunu uçak oyunu"]
 },
 "uçak oy": {
@@ -38008,7 +39252,7 @@
 "s": ["ücretsiz oyunlar","ücretsiz vpn","ücretsiz sohbet programları","ücretsiz yapay zeka","ücretsiz minecraft"]
 },
 "ücretsi": {
-"t": 1791108089323,
+"t": 1791804038813,
 "s": ["ücretsiz oyunlar","ücretsiz vpn","ücretsiz sohbet programları","ücretsiz yapay zeka","ücretsiz minecraft"]
 },
 "ucretsiz": {
@@ -38524,7 +39768,7 @@
 "s": ["ultra pro","ultra pro camera","ultra pro max minecraft","ultra pro max vpn","ultra proxy"]
 },
 "un": {
-"t": 1790676221499,
+"t": 1791803772921,
 "s": ["uno","unsolved case","undertale","unicorn vpn","undawn"]
 },
 "unico": {
@@ -38647,6 +39891,10 @@
 "t": 1790676224547,
 "s": ["ünlü motor oyunları","dünyanın en ünlü motor oyunları"]
 },
+"uno": {
+"t": 1791803772485,
+"s": ["uno","uno oyunu","uno internetsiz","uno oyunları","uno türkçe"]
+},
 "usa": {
 "t": 1790676228489,
 "s": ["usa vpn","usagi shima","usak kart","usa","usa truck simulator"]
@@ -38706,6 +39954,30 @@
 "üst boyama oyu": {
 "t": 1790850299347,
 "s": ["üst boyama oyunu","üst boyama oyunları"]
+},
+"üst ü": {
+"t": 1791804044219,
+"s": ["üst üste kule yapma oyunu","üst üste fotoğraf ekleme","üst üste ev koyma oyunu","üst üste bina koyma oyunu","üst üste blok koyma oyunu"]
+},
+"üst üs": {
+"t": 1791804042889,
+"s": ["üst üste kule yapma oyunu","üst üste fotoğraf ekleme","üst üste ev koyma oyunu","üst üste bina koyma oyunu","üst üste blok koyma oyunu"]
+},
+"üst üste": {
+"t": 1791804044660,
+"s": ["üst üste kule yapma oyunu","üst üste fotoğraf ekleme","üst üste ev koyma oyunu","üst üste bina koyma oyunu","üst üste blok koyma oyunu"]
+},
+"üst üste ": {
+"t": 1791804045099,
+"s": ["üst üste kule yapma oyunu","üst üste fotoğraf ekleme","üst üste ev koyma oyunu","üst üste bina koyma oyunu","üst üste blok koyma oyunu"]
+},
+"üst üste i": {
+"t": 1791804043773,
+"s": ["üst üste isim yazma"]
+},
+"üst üste isim yazma": {
+"t": 1791804043335,
+"s": ["üst üste isim yazma"]
 },
 "uy": {
 "t": 1791108157045,
@@ -38963,6 +40235,18 @@
 "t": 1791019633669,
 "s": ["vahşi dinozor oyunu","vahşi dinozor oyunları"]
 },
+"vak": {
+"t": 1791804303525,
+"s": ["vakifbank","vakıf katılım","vakıfbank tradeonline","vakif","vakıf mobil"]
+},
+"vakt": {
+"t": 1791804303972,
+"s": ["vakti salat","vakti","vaktinde app","vakti pro","vaktimizdua"]
+},
+"vakti": {
+"t": 1791804303095,
+"s": ["vakti salat","vakti","vaktinde app","vakti pro","vaktimizdua"]
+},
 "vazo": {
 "t": 1790850189985,
 "s": ["vazo","vazo yapma oyunu","vazo oyunu","vozol","vazo vazo"]
@@ -39024,7 +40308,7 @@
 "s": ["video indirme programi","video duzenleyici","video","video kaydedici","video oynatıcı"]
 },
 "video": {
-"t": 1791108287851,
+"t": 1791804184062,
 "s": ["video indirme programi","video duzenleyici","video","video kaydedici","video oynatıcı"]
 },
 "video ": {
@@ -39064,20 +40348,32 @@
 "s": ["video düzenleme programı","video düzenleme uygulaması","video düzenleme programı ücretsiz","video düzenleme uygulamaları","video düzenleme ücretsiz"]
 },
 "video g": {
-"t": 1789806373680,
-"s": ["video gizleyici","video guru","video game","video geri getirme programi","video gizleme programi"]
+"t": 1791804048069,
+"s": ["video gizleyici","video game","video guru","video games","video geri getirme programi"]
 },
 "video gi": {
-"t": 1789806373255,
-"s": ["video gizleyici","video gizleme programi","video gif yapma","video gizleme","video gizleyici indir"]
+"t": 1791804047642,
+"s": ["video gizleyici","video gizleme programi","video gif yapma","video gizleme","video gizleyici programı indir"]
 },
 "video gif ": {
 "t": 1789806372426,
 "s": ["video gif yapma","video gif mp4 to wallpaper","video gif converter","video gif maker","video gif"]
 },
+"video giz": {
+"t": 1791804063241,
+"s": ["video gizleyici","video gizleme programi","video gizleme","video gizleyici programı indir","video gizleyici indir"]
+},
+"video gizle": {
+"t": 1791804062810,
+"s": ["video gizleyici","video gizleme programi","video gizleme","video gizleyici programı indir","video gizleyici indir"]
+},
+"video gizleyici indir": {
+"t": 1791804062375,
+"s": ["video gizleyici indir","video gizleyici programı indir"]
+},
 "video z": {
-"t": 1789806375528,
-"s": ["video zil sesi yapma","video zayıflatma programi","video zoomlama","video zayıflatma","video zoom"]
+"t": 1791804065155,
+"s": ["video zil sesi yapma","video zayıflatma programi","video zoom","video zapis","video zip"]
 },
 "video zi": {
 "t": 1789806375103,
@@ -39086,6 +40382,22 @@
 "video zil sesi ": {
 "t": 1789806374685,
 "s": ["video zil sesi yapma"]
+},
+"video zo": {
+"t": 1791804078361,
+"s": ["video zoom","video zoomlama","video zoom hd","video zoom player","video zoom app"]
+},
+"video zoo": {
+"t": 1791804077916,
+"s": ["video zoom","video zoomlama","video zoom hd","video zoom player","video zoom app"]
+},
+"video zooml": {
+"t": 1791804077481,
+"s": ["video zoomlama","zoomlu video oynatici"]
+},
+"video zoomlama": {
+"t": 1791804077047,
+"s": ["video zoomlama"]
 },
 "vo": {
 "t": 1789982195071,
@@ -39176,7 +40488,7 @@
 "s": ["vr market oyunu","market oyunları vr"]
 },
 "w": {
-"t": 1791108181882,
+"t": 1791804228351,
 "s": ["whatsapp","weplay","whatsapp business","wattpad","world soccer champs"]
 },
 "wi": {
@@ -39208,15 +40520,15 @@
 "s": ["wifi şifre gösterici","wifi şifre kırıcı program en iyisi","wifi şifre gösterici türkçe","wifi şifre kırıcı","wifi şifre"]
 },
 "wifi şifr": {
-"t": 1791019640618,
+"t": 1791803851565,
 "s": ["wifi şifre gösterici","wifi şifre kırıcı program en iyisi","wifi şifre kırıcı","wifi şifre gösterici türkçe","wifi şifre"]
 },
 "wifi şifre": {
-"t": 1789712851574,
-"s": ["wifi şifre gösterici","wifi şifre kırıcı program en iyisi","wifi şifre gösterici türkçe","wifi şifre kırıcı","wifi şifre"]
+"t": 1791803851996,
+"s": ["wifi şifre gösterici","wifi şifre kırıcı program en iyisi","wifi şifre kırıcı","wifi şifre gösterici türkçe","wifi şifre"]
 },
 "wifi şifre ": {
-"t": 1791019636842,
+"t": 1791803851098,
 "s": ["wifi şifre gösterici","wifi şifre kırıcı program en iyisi","wifi şifre kırıcı","wifi şifre gösterici türkçe","wifi şifre gösterici 2026"]
 },
 "wifi şifre g": {
@@ -39283,16 +40595,68 @@
 "t": 1789894081961,
 "s": ["wifi şifre kırıcı program en iyisi"]
 },
+"wo": {
+"t": 1791804227918,
+"s": ["word","world soccer champs","world mobil","wow","world"]
+},
+"wond": {
+"t": 1791804413677,
+"s": ["wonderkid football career sim","wonderkid","wonderkid football","wonderend 0","wondershare"]
+},
+"wonder": {
+"t": 1791804414113,
+"s": ["wonderkid football career sim","wonderkid","wonderkid football","wonderend 0","wondershare"]
+},
+"wonders": {
+"t": 1791804413211,
+"s": ["wondershare","wondershare filmora","wonders of world","wonders","wonders of wonders"]
+},
+"wor": {
+"t": 1791804227476,
+"s": ["word","world soccer champs","world mobil","world","worldbox"]
+},
+"word": {
+"t": 1791804258760,
+"s": ["word","words of wonders","wordle","wordismo","word search"]
+},
+"words": {
+"t": 1791804363236,
+"s": ["words of wonders","words","wordscapes","words of wonders kelime oyunu","words of wonders search"]
+},
+"words of": {
+"t": 1791804319686,
+"s": ["words of wonders","words of wonders kelime oyunu","words of wonders search","words of wonders guru","words of wonders zen"]
+},
+"world": {
+"t": 1791804227035,
+"s": ["world soccer champs","world mobil","world","worldbox","world war polygon"]
+},
+"xiao": {
+"t": 1791804087428,
+"s": ["xiaomi home","xiaomi earbuds","xiaomi","xiaomi saat uygulaması","xiaomi community"]
+},
+"xiaomi": {
+"t": 1791804080581,
+"s": ["xiaomi home","xiaomi earbuds","xiaomi","xiaomi saat uygulaması","xiaomi community"]
+},
+"xiaomi ": {
+"t": 1791804081880,
+"s": ["xiaomi home","xiaomi earbuds","xiaomi saat uygulaması","xiaomi community","xiaomi watch"]
+},
 "xiaomi t": {
-"t": 1789806379164,
-"s": ["xiaomi topluluğu","xiaomi tartı","xiaomi tag","xiaomi temalar uygulaması","xiaomi tema"]
+"t": 1791804081443,
+"s": ["xiaomi tag","xiaomi topluluğu","xiaomi tartı","xiaomi temalar uygulaması","xiaomi tema"]
+},
+"xiaomi te": {
+"t": 1791804081010,
+"s": ["xiaomi temalar uygulaması","xiaomi tema","xiaomi telefon","xiaomi telefon aktarma","xiaomi temalar"]
 },
 "xiaomi tem": {
-"t": 1789806379997,
+"t": 1791804088936,
 "s": ["xiaomi temalar uygulaması","xiaomi tema","xiaomi temalar","xiaomi temizleyici","xiaomi temizlik robotu"]
 },
 "xiaomi tema": {
-"t": 1789806380418,
+"t": 1791804080149,
 "s": ["xiaomi temalar uygulaması","xiaomi tema","xiaomi temalar","xiaomi temaları","xiaomi tema uygulaması"]
 },
 "xiaomi tema ": {
@@ -39308,12 +40672,28 @@
 "s": ["youtube","yapi kredi mobil","yemeksepeti","yarış oyunları","yandex"]
 },
 "ya": {
-"t": 1791108370280,
+"t": 1791803796271,
 "s": ["yapi kredi mobil","yarış oyunları","yandex","yapay zeka","yanımda"]
 },
 "yağ": {
-"t": 1791108369864,
+"t": 1791803782526,
 "s": ["yapi kredi mobil","yağ yakıcı egzersizler","yağmur sesleri","yağmur patpat oyunu","yağmur sesi"]
+},
+"yağ ": {
+"t": 1791803784263,
+"s": ["yağ yakıcı egzersizler","yağ eritme egzersizi","yağ sürücü","yağ oranı hesaplama","yağ yakmak egzersiz"]
+},
+"yağ e": {
+"t": 1791803783833,
+"s": ["yağ eritme egzersizi","yağ eritme","yağ eritme egzersizleri","yağ eritme egzersizi erkek","yağ yakıcı egzersizler"]
+},
+"yağ eritme": {
+"t": 1791803783403,
+"s": ["yağ eritme egzersizi","yağ eritme","yağ eritme egzersizleri","yağ eritme egzersizi erkek"]
+},
+"yağ eritme egzersizi": {
+"t": 1791803782965,
+"s": ["yağ eritme egzersizi","yağ eritme egzersizi erkek"]
 },
 "yağm": {
 "t": 1791713879202,
@@ -39499,6 +40879,10 @@
 "t": 1791369406934,
 "s": ["yapı kredi","yapı kredi mobil yükle","yapı kredi pos cepte","yapı kredi indir","yapı kredi yatırım dünyam"]
 },
+"yapı kred": {
+"t": 1791803684118,
+"s": ["yapı kredi","yapı kredi mobil yükle","yapı kredi pos cepte","yapı kredi indir","yapı kredi yatırım dünyam"]
+},
 "yapı kredi": {
 "t": 1791369407751,
 "s": ["yapı kredi","yapı kredi mobil yükle","yapı kredi pos cepte","yapı kredi indir","yapı kredi yatırım dünyam"]
@@ -39538,6 +40922,46 @@
 "yapı kredi hisse": {
 "t": 1791369406527,
 "s": ["yapı kredi hisse","yapı kredi hisse senedi takip"]
+},
+"yapı kredi mo": {
+"t": 1791803793374,
+"s": ["yapı kredi mobil","yapı kredi mobil yükle","yapı kredi mobili indir","yapı kredi mobil uygulaması","yapı kredi mobil güncelleme"]
+},
+"yapı kredi mobi": {
+"t": 1791803793811,
+"s": ["yapı kredi mobil","yapı kredi mobil yükle","yapı kredi mobili indir","yapı kredi mobil uygulaması","yapı kredi mobil güncelleme"]
+},
+"yapı kredi mobil": {
+"t": 1791803794247,
+"s": ["yapı kredi mobil","yapı kredi mobil yükle","yapı kredi mobili indir","yapı kredi mobil uygulaması","yapı kredi mobil güncelleme"]
+},
+"yapı kredi mobil ": {
+"t": 1791803792913,
+"s": ["yapı kredi mobil bankacılık indir","yapı kredi mobil yükle","yapı kredi mobil uygulaması","yapı kredi mobil güncelleme","yapı kredi mobil uygulaması indir"]
+},
+"yapı kredi mobil bankacılık indir": {
+"t": 1791803792478,
+"s": ["yapı kredi mobil bankacılık indir","yapı kredi bankası mobil bankacılık indir"]
+},
+"yapı kredi t": {
+"t": 1791803684994,
+"s": ["yapı kredi tablet","yapı kredi trader","yapı kredi tlcard","yapı kredi ticari","yapı kredi troy"]
+},
+"yapı kredi ta": {
+"t": 1791803684562,
+"s": ["yapı kredi tablet","yapı kredi borsa takip programi"]
+},
+"yapı kredi tablet": {
+"t": 1791803683685,
+"s": ["yapı kredi tablet"]
+},
+"yapı kredi tr": {
+"t": 1791803687758,
+"s": ["yapı kredi trader","yapı kredi troy","yapı kredi trade","yapı kredi world troy","yapı kredi e trader"]
+},
+"yapı kredi trader": {
+"t": 1791803687322,
+"s": ["yapı kredi trader","yapı kredi e trader"]
 },
 "yapıl": {
 "t": 1791713895973,
@@ -39668,7 +41092,7 @@
 "s": ["yemeksepeti","yemek oyunları","yeni oyunlar","yemek","yemek oyunu"]
 },
 "yem": {
-"t": 1791108380351,
+"t": 1791803830485,
 "s": ["yemeksepeti","yemek oyunları","yemek","yemek oyunu","yemeksepeti express"]
 },
 "yeme": {
@@ -39676,7 +41100,7 @@
 "s": ["yemeksepeti","yemek oyunları","yemek","yemek oyunu","yemeksepeti express"]
 },
 "yemek": {
-"t": 1791019646752,
+"t": 1791803830924,
 "s": ["yemeksepeti","yemek oyunları","yemek","yemek oyunu","yemeksepeti express"]
 },
 "yemek ": {
@@ -39684,8 +41108,24 @@
 "s": ["yemek sepeti","yemek oyunları","yemek oyunu","yemek yedirme oyunu","yemek siparişi"]
 },
 "yemek p": {
-"t": 1789713544989,
-"s": ["yemek pişirme oyunları","yemek pişirme oyunu","yemek planlama","yemek pişirme","yemek pisirme oyunlari"]
+"t": 1791803811297,
+"s": ["yemek pişirme oyunları","yemek pişirme oyunu","yemek pişirme","yemek planlama","yemek programı"]
+},
+"yemek pi": {
+"t": 1791803821735,
+"s": ["yemek pişirme oyunları","yemek pişirme oyunu","yemek pişirme","yemek pisirme oyunlari","yemek pişirme oyunları internetsiz"]
+},
+"yemek pis": {
+"t": 1791803821262,
+"s": ["yemek pisirme oyunlari","yemek pisirme","yemek pisirme oyunu","yemek pisirmek","yemek pisirme oyunlari internetsiz"]
+},
+"yemek pisir": {
+"t": 1791803820814,
+"s": ["yemek pisirme oyunlari","yemek pisirme","yemek pisirme oyunu","yemek pisirmek","yemek pisirme oyunlari internetsiz"]
+},
+"yemek pisirme oyunlari": {
+"t": 1791803820375,
+"s": ["yemek pisirme oyunlari","yemek pisirme oyunlari internetsiz"]
 },
 "yemek planlama": {
 "t": 1789712838066,
@@ -39796,12 +41236,12 @@
 "s": ["yemek toca boca","toca boca yemek oyunu","toca boca jr yemek","yemek oyunları toca boca","toca boca yemek yedirme"]
 },
 "yen": {
-"t": 1789720306819,
-"s": ["yeni oyunlar","yeni çıkan oyunlar","yenibiris","yeni twitter","yeni parti"]
+"t": 1791803840572,
+"s": ["yeni oyunlar","yeni çıkan oyunlar","yenibiris","yeni parti","yeni twitter"]
 },
 "yeni": {
-"t": 1789720307682,
-"s": ["yeni oyunlar","yeni çıkan oyunlar","yenibiris","yeni twitter","yeni parti"]
+"t": 1791803841002,
+"s": ["yeni oyunlar","yeni çıkan oyunlar","yenibiris","yeni parti","yeni twitter"]
 },
 "yeni ": {
 "t": 1790239222073,
@@ -39892,8 +41332,20 @@
 "s": ["yeni kelime oyunları","yeni çıkan kelime oyunları"]
 },
 "yenid": {
-"t": 1789720307246,
-"s": ["yenidoğan bebek takibi","yeniden başlatma programı","yeniden şekillendirme","yeniden başlat","yeniden boyutlandırma"]
+"t": 1791803840130,
+"s": ["yenidoğan bebek takibi","yeniden başlatma programı","yenidoğan ihtiyaç listesi","yeniden şekillendirme","yeniden başlat"]
+},
+"yenide": {
+"t": 1791803847439,
+"s": ["yeniden başlatma programı","yeniden şekillendirme","yeniden başlat","yeniden boyutlandırma","yeniden başlatma"]
+},
+"yeniden boy": {
+"t": 1791803847001,
+"s": ["yeniden boyutlandırma"]
+},
+"yeniden boyutlandırma": {
+"t": 1791803846565,
+"s": ["yeniden boyutlandırma"]
 },
 "yenido": {
 "t": 1789720306391,
@@ -40231,17 +41683,41 @@
 "t": 1791369424843,
 "s": ["yolculuk paylaşımı","blablacar yolculuk paylaşımı"]
 },
+"youtu": {
+"t": 1791804091701,
+"s": ["youtube","youtube kids","youtube music","youtube studio","youtube video indiricisi programı"]
+},
 "youtub": {
 "t": 1789806389758,
 "s": ["youtube","youtube kids","youtube music","youtube studio","youtube video indiricisi programı"]
 },
+"youtube ": {
+"t": 1791804092139,
+"s": ["youtube kids","youtube music","youtube youtube","youtube studio","youtube video indiricisi programı"]
+},
 "youtube l": {
-"t": 1789806390161,
+"t": 1791804092577,
 "s": ["youtube lite","youtube lego","youtube lar","youtube life","youtube live"]
 },
 "youtube lo": {
-"t": 1789806390569,
-"s": ["youtube love","youtube logo yapma","youtube lock parent control","youtube lock","youtube lock screen"]
+"t": 1791804091269,
+"s": ["youtube logo yapma","youtube lock","youtube lock parental control","youtube lock parent control","youtube love"]
+},
+"youtube lock": {
+"t": 1791804097316,
+"s": ["youtube lock","youtube lock parental control","youtube lock parent control","youtube locker","youtube lock app"]
+},
+"youtube lock ": {
+"t": 1791804096877,
+"s": ["youtube lock parental control","youtube lock parent control","youtube lock app","youtube lock screen player","youtube lock parent control"]
+},
+"youtube lock sc": {
+"t": 1791804096410,
+"s": ["youtube lock screen player","youtube lock screen","youtube lock screen song","youtube lock screen app","youtube music lock screen"]
+},
+"youtube lock screen": {
+"t": 1791804095969,
+"s": ["youtube lock screen player","youtube lock screen","youtube lock screen song","youtube lock screen app","lock screen while watching youtube"]
 },
 "youtube log": {
 "t": 1789806389334,
@@ -40332,7 +41808,7 @@
 "s": ["yüzbir çanak okey"]
 },
 "z": {
-"t": 1791197091983,
+"t": 1791804329195,
 "s": ["ziraat mobil","zar","zoom","zarchiver","zedge"]
 },
 "za": {
@@ -40348,12 +41824,16 @@
 "s": ["zaman yönetimi oyunları","zaman geçiren oyunlar","zaman sayacı","zaman geçirmelik oyunlar","zaman makinesi"]
 },
 "zaman ç": {
-"t": 1789713555899,
-"s": ["zaman çizelgesi","zaman çizelgeleri","google zaman çizelgesi"]
+"t": 1791803855610,
+"s": ["zaman çizelgesi","google zaman çizelgesi","roblox ne zaman çıkacak","google maps zaman çizelgesi"]
 },
 "zaman çi": {
 "t": 1789713554711,
 "s": ["zaman çizelgesi","zaman çizelgeleri","google zaman çizelgesi"]
+},
+"zaman çizelgeleri": {
+"t": 1791803856050,
+"s": []
 },
 "zaman çizelgesi": {
 "t": 1789712849979,
@@ -40372,12 +41852,20 @@
 "s": ["zar oyunu","zar atmaca","zar atma oyunları","zar oyunu internetsiz","zar at"]
 },
 "zar a": {
-"t": 1789806108242,
-"s": ["zar atma","zar atmaca","zar atma oyunu 2 kişilik","zar atma oyunları","zar atici"]
+"t": 1791804101122,
+"s": ["zar atma","zar atmaca","zar atma oyunları","zar at","zar atma oyunu 2 kişilik"]
 },
 "zar at": {
-"t": 1789806107833,
-"s": ["zar atma","zar atmaca","zar atma oyunu 2 kişilik","zar atma oyunları","zar atici"]
+"t": 1791804102468,
+"s": ["zar atma","zar atmaca","zar atma oyunları","zar at","zar atma oyunu 2 kişilik"]
+},
+"zar ati": {
+"t": 1791804102022,
+"s": ["zar atici","zar atici oyun","zar atiji"]
+},
+"zar atici": {
+"t": 1791804101584,
+"s": ["zar atici","zar atici oyun"]
 },
 "zar atm": {
 "t": 1789806393688,
@@ -40403,28 +41891,40 @@
 "t": 1791197176648,
 "s": ["zar çevirme","zar çevirme oyunu","zar çevirme uygulaması","zar çevirmece","zar çevirme oyunları"]
 },
+"zayıfl": {
+"t": 1791803856924,
+"s": ["zayıflama egzersiz programı","zayıflama","zayıflama programı","zayıflama uygulaması","zayıflatma photoshop"]
+},
 "zayıfla": {
 "t": 1789720441360,
 "s": ["zayıflama egzersiz programı","zayıflama","zayıflama programı","zayıflama uygulaması","zayıflatma photoshop"]
 },
 "zayıflama": {
-"t": 1789720442218,
+"t": 1791803857367,
 "s": ["zayıflama egzersiz programı","zayıflama","zayıflama programı","zayıflama uygulaması","zayıflama oyunu"]
 },
 "zayıflama ": {
-"t": 1789720442646,
+"t": 1791803857797,
 "s": ["zayıflama egzersiz programı","zayıflama programı","zayıflama uygulaması","zayıflama oyunu","zayıflama egzersiz programı kadın"]
 },
 "zayıflama d": {
-"t": 1789720441792,
-"s": ["zayıflama diyet programı","zayıflama dansı","zayıflama diyet","zayıflama diyeti","zayıflama defteri"]
+"t": 1791803856489,
+"s": ["zayıflama diyet programı","zayıflama diyet","zayıflama dansı","dans ederek zayıflama ücretsiz","dansla zayıflama ücretsiz"]
+},
+"zayıflama defteri": {
+"t": 1791803864559,
+"s": []
 },
 "zayıflama diye": {
 "t": 1789720440929,
 "s": ["zayıflama diyet programı","zayıflama diyet","zayıflama diyeti","diyet listesi ile zayıflama","diyet listesi ile zayıflama ücretsiz"]
 },
+"zayıflama diyeti": {
+"t": 1791803867385,
+"s": []
+},
 "ze": {
-"t": 1790850306037,
+"t": 1791804328746,
 "s": ["zedge","zepeto","zeka oyunları","zeka küpü çözme","zello"]
 },
 "zek": {
@@ -40432,7 +41932,7 @@
 "s": ["zeka oyunları","zeka küpü çözme","zeka oyunu","zeka oyunları büyükler için","zeka oyunları internetsiz"]
 },
 "zeka": {
-"t": 1790676272925,
+"t": 1791804328295,
 "s": ["zeka oyunları","zeka küpü çözme","zeka oyunu","zeka oyunları büyükler için","zeka oyunları internetsiz"]
 },
 "zeka ": {
@@ -40795,17 +42295,45 @@
 "t": 1791282905534,
 "s": ["ziraat mobil","ziraat katılım mobil","zip","zikirmatik","zil sesi"]
 },
+"ziki": {
+"t": 1791803873230,
+"s": ["zikirmatik","zikir","zikirmatik ve dualar","zikirmatik indir","zikirmatik pro"]
+},
+"zikir": {
+"t": 1791803875764,
+"s": ["zikirmatik","zikir","zikirmatik ve dualar","zikirmatik indir","zikirmatik pro"]
+},
 "zikir ": {
-"t": 1789713559711,
-"s": ["zikirmatik","zikir ve dualar","zikir metre vird pro","zikir sayaci","zikir uygulaması"]
+"t": 1791803725655,
+"s": ["zikirmatik","zikir ve dualar","zikir sayaci","zikir sayacı","zikir uygulaması"]
+},
+"zikir b": {
+"t": 1791803726965,
+"s": ["zikir bahçesi","zikir bahçesi zikirmatik","zikir bahcesi","zikir bahçesi elfida net","zikir brunei"]
+},
+"zikir ba": {
+"t": 1791803726528,
+"s": ["zikir bahçesi","zikir bahçesi zikirmatik","zikir bahcesi","zikir bahçesi elfida net","zikir baby tidur"]
+},
+"zikir bah": {
+"t": 1791803726085,
+"s": ["zikir bahçesi","zikir bahçesi zikirmatik","zikir bahcesi","zikir bahçesi elfida net","zikir harian al bahjah"]
+},
+"zikir bahçes": {
+"t": 1791803725197,
+"s": ["zikir bahçesi","zikir bahçesi zikirmatik","zikir bahçesi elfida net"]
 },
 "zikir s": {
-"t": 1789713560901,
-"s": ["zikir sayaci","zikir sayacı","zikir sayar","zikir sayaç","zikir saatleri"]
+"t": 1791803872357,
+"s": ["zikir sayaci","zikir sayacı","zikir sayaci ekran","zikir sayar","zikir sayaç"]
 },
 "zikir sa": {
 "t": 1789713560499,
 "s": ["zikir sayaci","zikir sayacı","zikir sayar","zikir sayaç","zikir saatleri"]
+},
+"zikir saatleri": {
+"t": 1791803872793,
+"s": []
 },
 "zikir say": {
 "t": 1789713560104,
@@ -40831,9 +42359,17 @@
 "t": 1791714077818,
 "s": ["zikirmatik ve dualar","zikirmatik indir","zikirmatik pro","zikirmatik tesbih","zikirmatik plus"]
 },
+"zikirmatik s": {
+"t": 1791803728603,
+"s": ["zikirmatik sesli zikir","zikirmatik sayar","zikirmatik sayaç","sesli zikirmatik","ihlas suresi zikirmatik"]
+},
 "zikirmatik z": {
 "t": 1791714076573,
 "s": ["zikirmatik zikir sayacı","zikir bahçesi zikirmatik","zikirmatik sesli zikir"]
+},
+"zikirmatik zikirmatik": {
+"t": 1791804104947,
+"s": []
 },
 "zil": {
 "t": 1791282944872,
@@ -40968,11 +42504,11 @@
 "s": ["zombi oyunları","zombie tsunami","zombie catchers","zombi oyunu 2","zombi oyunları internetsiz"]
 },
 "zombi": {
-"t": 1789805924466,
-"s": ["zombi oyunları","zombie tsunami","zombie catchers","zombi oyunları internetsiz","zombi oyunu 2"]
+"t": 1791804105821,
+"s": ["zombi oyunları","zombie","zombie tsunami","zombie catchers","zombi oyunu 2"]
 },
 "zombi ": {
-"t": 1790676365904,
+"t": 1791804105382,
 "s": ["zombi oyunları","zombi oyunu 2","zombi oyunları internetsiz","zombi oyunları 2","zombi araba oyunları"]
 },
 "zombi b": {
@@ -41000,8 +42536,8 @@
 "s": ["zombi keskin nişancı oyunları","zombi keskin nişancı","zombi keskin nişancı oyunu 3d","zombi keskin nişancı oyunu 3d","keskin nişancı zombi oyunu"]
 },
 "zombi o": {
-"t": 1789714006134,
-"s": ["zombi oyunları","zombi oyunları internetsiz","zombi oyunu 2","zombi oyunları 2","zombi oyunları silahlı"]
+"t": 1791804112315,
+"s": ["zombi oyunları","zombi oyunu 2","zombi oyunları internetsiz","zombi oyunları 2","zombi oyunları silahlı"]
 },
 "zombi ö": {
 "t": 1790676373214,
@@ -41016,7 +42552,7 @@
 "s": ["zombi öldürmece oyunları","zombi öldürmece oyunu","zombi öldürmece","araba ile zombi öldürmece","silah oyunları zombi öldürmece"]
 },
 "zombi oy": {
-"t": 1790589724214,
+"t": 1791803860726,
 "s": ["zombi oyunları","zombi oyunu 2","zombi oyunları internetsiz","zombi oyunları 2","zombi oyunları silahlı"]
 },
 "zombi oyu": {
@@ -41032,15 +42568,15 @@
 "s": ["zombi oyunları","zombi oyunları internetsiz","zombi oyunları 2","zombi oyunları silahlı","zombi oyunları online"]
 },
 "zombi oyunla": {
-"t": 1790589724623,
+"t": 1791803861163,
 "s": ["zombi oyunları","zombi oyunları internetsiz","zombi oyunları 2","zombi oyunları silahlı","zombi oyunları online"]
 },
 "zombi oyunları": {
-"t": 1790589725021,
+"t": 1791803861612,
 "s": ["zombi oyunları","zombi oyunları internetsiz","zombi oyunları 2","zombi oyunları silahlı","zombi oyunları online"]
 },
 "zombi oyunları ": {
-"t": 1790589725424,
+"t": 1791803860295,
 "s": ["zombi oyunları internetsiz","zombi oyunları 2","zombi oyunları silahlı","zombi oyunları online","zombi oyunları silahlı internetsiz"]
 },
 "zombi oyunları 2": {
@@ -41223,13 +42759,21 @@
 "t": 1790676469543,
 "s": ["zombi oyunları zombi oyunları","zombi oyunları zombi","zombi oyunları zombi oyunları zombi oyunları","zombi oyunları zombi oyunu","zombi oyunları zoom"]
 },
+"zombi oyunu": {
+"t": 1791804112752,
+"s": ["zombi oyunu","zombi oyunu 2","zombi oyunu zombi oyunu","zombi oyunu internetsiz","zombi oyunu zombi"]
+},
+"zombi oyunu ": {
+"t": 1791804113208,
+"s": ["zombi oyunu 2","zombi oyunu zombi oyunu","zombi oyunu internetsiz","zombi oyunu zombi","zombi oyunu araba"]
+},
 "zombi oyunu s": {
 "t": 1791714094180,
 "s": ["zombi oyunu silahlı","zombi oyunu silah","zombi oyunu silah oyunu","zombi oyunu savaş","zombi oyunu simülatör"]
 },
 "zombi oyunu sa": {
-"t": 1789806118527,
-"s": ["zombi oyunu savaş","zombi oyunu sandbox","zombi savunma oyunu","zombi salgını oyunu","en saçma zombi oyunu"]
+"t": 1791804111880,
+"s": ["zombi oyunu savaş","zombi savunma oyunu","zombi salgını oyunu","zombi saldırısı oyunu","en saçma zombi oyunu"]
 },
 "zombi oyunu san": {
 "t": 1789806118116,
@@ -41238,6 +42782,38 @@
 "zombi oyunu sandbox": {
 "t": 1791714094592,
 "s": []
+},
+"zombi s": {
+"t": 1791804116728,
+"s": ["zombi silah oyunu","zombi savaş oyunları","zombi silah oyunları","zombi salgını","zombi savaş oyunu"]
+},
+"zombi sa": {
+"t": 1791804118041,
+"s": ["zombi savaş oyunları","zombi salgını","zombi savaş oyunu","zombi safari","zombi savaşı"]
+},
+"zombi sal": {
+"t": 1791804117610,
+"s": ["zombi salgını","zombi salgını oyunu","zombi saldırısı","zombi salgınında hayatta kalma","zombi salgını minecraft"]
+},
+"zombi salgı": {
+"t": 1791804117166,
+"s": ["zombi salgını","zombi salgını oyunu","zombi salgınında hayatta kalma","zombi salgını minecraft","zombi salgını oyunları"]
+},
+"zombi salgını ": {
+"t": 1791804116293,
+"s": ["zombi salgını oyunu","zombi salgını minecraft","zombi salgını oyunları","zombi salgını hayatta kalma","zombi salgını online"]
+},
+"zombi sav": {
+"t": 1791804122438,
+"s": ["zombi savaş oyunları","zombi savaş oyunu","zombi savaşı","zombi savunma oyunu","zombi savaş"]
+},
+"zombi savun": {
+"t": 1791804122001,
+"s": ["zombi savunma oyunu","zombi savunma","zombi savunması","zombi savunma oyunları","zombi kule savunma"]
+},
+"zombi savunma ": {
+"t": 1791804121561,
+"s": ["zombi savunma oyunu","zombi savunma oyunları","zombi savunma","zombi kule savunma"]
 },
 "zombi ve çiçek o": {
 "t": 1790676473917,
@@ -41298,6 +42874,18 @@
 "zombilerden k": {
 "t": 1790676480223,
 "s": ["zombilerden kaçma oyunu","zombilerden korunma oyunu","zombilerden kaçış","zombilerden kaçış oyunu","zombilerden kaçma"]
+},
+"zoo": {
+"t": 1791803887483,
+"s": ["zoom","zooba","zoom earth","zoo","zoonomaly"]
+},
+"zoom ": {
+"t": 1791803887051,
+"s": ["zoom indir ücretsiz","zoom earth","zoom meeting","zoom workplace ücretsiz","zoom camera"]
+},
+"zoom earth": {
+"t": 1791803886533,
+"s": ["zoom earth","zoom earth weather app","zoom earth app","zoom earth uydu","zoom earth live satellite"]
 },
 "zor ": {
 "t": 1790239282855,
