@@ -12,6 +12,7 @@ import { initProjects, renderProjects, startFromOpportunity } from './js/pack/ui
 import { buildFlagContext, liveFlagContext, strongestFlag } from './js/flags.js';
 import { CALIBRATION, CLASS_TR } from './js/enterpayoff.js';
 import { simulateKeyword, devStats, buildCohorts, ASSUMPTIONS, OUTSIDE_VIEW, CALENDAR, HORIZONS, sig2 } from './js/sim.js';
+import { discoveryScore, discoveryLevel, normWeights, SIGNALS, SIGNAL_TR, PRIOR_WEIGHTS } from './js/discovery.js';
 
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -74,7 +75,8 @@ const TIPS = {
   leader: 'Lider payı: ilk 10\'un toplam yüklemesinin ne kadarı bir numaradaki uygulamada. Bilgi amaçlıdır: doğrulamada en zayıf rakiplere göre ayrıştırınca yeni girenlerin başarısını etkilemediği görüldü.',
   money: 'Gelir modeli: ilk 10 uygulamanın kaçında uygulama içi satın alma, reklam ya da ücretli sürüm var. Bir alanda kimse para kazanmıyorsa sen de kazanamazsın. (Gerçek gelir verisi herkese açık değildir.)',
   engagement: 'Kullanıcı ilgisi: 1000 yüklemeye düşen değerlendirme sayısı (ilk 10 medyanı). Yükleyenlerin ne kadarı uygulamayı kullanıp puan verecek kadar benimsemiş. Conversion rate DEĞİLDİR; mağaza sayfası görüntüleri sadece uygulama sahibine açıktır.',
-  newcomers: 'Yeni girenler: ilk 10\'daki uygulamalardan kaçı son 2 yılda yayınlanmış. Sıfırsa pazar yeniye kapalı demektir.'
+  newcomers: 'Yeni girenler: ilk 10\'daki uygulamalardan kaçı son 2 yılda yayınlanmış. Sıfırsa pazar yeniye kapalı demektir.',
+  discovery: 'Keşif skoru (HİPOTEZ, doğrulanmadı): Play bu uygulamayı aramanın dışında, öneri / benzer uygulama / kategori listelerinde gösterir mi? Tür, yükleme / talep oranı, benzer devler, rakip boşluğu (reklam + satın alma, puan, şikâyetler), görsel kanca, girebilirlik ve yapılabilirlikten elle seçilmiş ağırlıklarla. Hiçbir başarı oranı vaat etmez; Fabrika sonuçları biriktikçe kalibre edilecek.'
 };
 
 const state = {
@@ -111,12 +113,25 @@ async function loadJson(path) {
   return r.json();
 }
 
+/** Keşif skoru: karar ve tohum kelimenin ilk 10'u veri setinden (canlı analizde de aynı veri seti kullanılır). */
+function discoveryOf(record, decision, opts = {}) {
+  const ctx = state.flagCtx;
+  // canlı analiz kaydında tohum yok: aynı kelime açık veri setindeyse onun tohumu kullanılır
+  const seedK = record.seed || (record.src === 'live' ? (state.byKey.get(record.k) || {}).seed : null);
+  const seed = seedK && ctx && ctx.byK ? ctx.byK.get(seedK) : null;
+  const apps = opts.appsMap || state.data?.apps || {};
+  return discoveryScore(record, apps, { decision, seed, marketApps: state.data?.apps || apps, model: state.data?.discoveryModel, lang: opts.lang || marketLang() });
+}
+
 function enrich(record) {
   const decision = getOpportunityVerdict(record, { ctx: state.flagCtx });
   const c = record.comp || {};
+  const disc = discoveryOf(record, decision);
   return {
     ...record,
     decision,
+    disc,
+    discScore: disc ? disc.score : null,
     dv: decision.verdict,
     verdictOrder: VERDICT_ORDER[decision.verdict] ?? 9,
     trendDelta: decision.trend.dir === 'new' ? null : decision.trend.delta,
@@ -218,6 +233,7 @@ function oppCard(r) {
     <div class="opp-score" title="Girebilirlik: ilk 10'un ne kadarı yeni ve küçük uygulamalar"><b>${Number.isFinite(r.enterScore) ? r.enterScore : '–'}</b><span>giriş</span></div>
     <div class="opp-metrics">
       ${metric('Getiri', null, payoffLevelUi(r.payoff), { tip: 'payoff', display: payoffShort(r.payoff) })}
+      ${metric('Keşif', r.discScore, discoveryLevel(r.discScore), { tip: 'discovery' })}
       ${metric('Rekabet', r.difficulty, cl, { invert: true, tip: 'difficulty' })}
       ${metric('Talep', r.demand, dl, { tip: 'demand' })}
       ${trendMetric(d.trend)}
@@ -236,7 +252,7 @@ function renderList(el, rows, emptyHtml) {
 
 function signalList(items, kind) {
   if (!items.length) return '';
-  const mark = kind === 'pos' ? '✓' : '!';
+  const mark = kind === 'pos' ? '✓' : kind === 'neu' ? '•' : '!';
   return `<ul class="signals ${kind}">${items.map((t) => `<li><b>${mark}</b><span>${esc(t)}</span></li>`).join('')}</ul>`;
 }
 
@@ -385,6 +401,7 @@ function detailBody(r, opts = {}) {
     </div>
   </div>
 
+  ${discoverySection(r.disc)}
   ${reachBlock}
   ${simSection(r, opts)}
   ${variants.length ? `<div class="sec"><h4>Aynı pazara düşen varyantlar</h4>
@@ -465,6 +482,22 @@ function detailBody(r, opts = {}) {
   </div>`;
 }
 
+/** Keşif skoru bölümü: beş sinyal, ağırlıkları ve gerekçeleri; hipotez olduğu açıkça yazılır. */
+function discoverySection(x) {
+  if (!x) return '';
+  const S = x.signals;
+  const cal = state.data?.discoveryModel?.calibration;
+  return `<div class="sec">
+    <h4>Keşif potansiyeli <span class="tag">hipotez</span> ${info('discovery')}</h4>
+    <div class="hero-metrics">
+      ${metric('Keşif skoru', x.score, x.level, { tip: 'discovery' })}
+      ${SIGNALS.map((s) => metric(SIGNAL_TR[s], Number.isFinite(S[s].value) ? Math.round(100 * S[s].value) : null, discoveryLevel(Number.isFinite(S[s].value) ? 100 * S[s].value : null), { display: Number.isFinite(S[s].value) ? `${Math.round(100 * S[s].value)}<small> ×${x.weights[s].toFixed(2)}</small>` : '–' })).join('')}
+    </div>
+    ${signalList(x.reasons, x.blocked ? 'neg' : 'neu')}
+    <p class="hero-cal">Bu skor tek bir gözleme dayanan bir hipotezdir: radar önerilerinden yayınlanan 12 uygulamadan trafik alan tek uygulama gösterimlerini aramadan değil, Play'in öneri yüzeylerinden aldı. Ağırlıklar ${esc(x.weightsSource)}; ${cal ? `şu an ${cal.labelled} kesin etiket var (${cal.success} başarılı, ${cal.weak} zayıf), ` : ''}en az 20 etiketli uygulama birikmeden değiştirilmez. Başarı olasılığı değildir. <button class="link-btn" data-view-link="help" data-help-anchor="discovery">Nasıl hesaplanıyor?</button></p>
+  </div>`;
+}
+
 /* ============================ çekmece ============================ */
 function openDrawer(key) {
   const r = state.byKey.get(key) || (state.liveResult && state.liveResult.k === key ? state.liveResult : null);
@@ -537,6 +570,7 @@ const SORTERS = {
   rising: (a, b) => (b.trendDelta ?? -999) - (a.trendDelta ?? -999) || compareByVerdict(a, b),
   market: (a, b) => (b.market ?? -1) - (a.market ?? -1) || compareByVerdict(a, b),
   reach: (a, b) => (b.enterScore ?? -1) - (a.enterScore ?? -1) || compareByVerdict(a, b),
+  discovery: (a, b) => (b.discScore ?? -1) - (a.discScore ?? -1) || compareByVerdict(a, b),
   enterScore: (a, b) => (b.enterScore ?? -1) - (a.enterScore ?? -1) || compareByVerdict(a, b)
 };
 
@@ -814,6 +848,7 @@ function renderAnalyst(reset = true) {
       <td class="num">${bar(r.demand)}</td>
       <td class="num">${bar(r.difficulty, true)}</td>
       <td class="num">${r.enterScore ?? '–'}</td>
+      <td class="num">${r.discScore ?? '–'}</td>
       <td class="num">${r.market ?? '–'}</td>
       <td class="num">${r.titleMatches === null ? '–' : `${r.titleMatches}/${r.comp.n}`}</td>
       <td class="num">${r.weak ?? '–'}</td>
@@ -822,7 +857,7 @@ function renderAnalyst(reset = true) {
       <td class="num muted">${fmtDate(r.first)}</td>
       <td><button class="icon-btn" data-details="${esc(r.k)}">Detay</button></td>
     </tr>`;
-  }).join('') : '<tr><td colspan="14" class="empty">Filtrelere uyan kelime yok.</td></tr>';
+  }).join('') : '<tr><td colspan="15" class="empty">Filtrelere uyan kelime yok.</td></tr>';
   $('#aCountInfo').textContent = `${fmtInt(shown.length)} / ${fmtInt(rows.length)} kelime${state.niche ? ` · niş: ${state.niche.label || state.niche.name}` : ''}`;
   $('#aMore').hidden = state.analyst.shown >= rows.length;
 }
@@ -831,7 +866,8 @@ function exportCsv() {
   const rows = analystRows();
   const cols = ['kelime', 'karar', 'karar_adi', 'girebilirlik', 'getiri', 'gecmis_oran', 'gerekce', 'firsat', 'firsat_seviye', 'talep', 'talep_seviye', 'zorluk', 'zorluk_seviye',
     'erisim', 'erisim_seviye', 'giris_bariyeri', 'orta_sira', 'lider_payi', 'yeni_giren', 'ilk10_10k_alti', 'gercekci',
-    'pazar', 'trend', 'trend_degisim', 'baslikta', 'rakip_sayisi', 'zayif', 'dusuk_puan', 'bayat', 'dev', 'ort_puan', 'toplam_yukleme', 'kaynak', 'tohum', 'bulundu', 'son_analiz', 'ilk_10'];
+    'pazar', 'trend', 'trend_degisim', 'baslikta', 'rakip_sayisi', 'zayif', 'dusuk_puan', 'bayat', 'dev', 'ort_puan', 'toplam_yukleme',
+    'kesif', ...SIGNALS.map((s) => `kesif_${s}`), 'kaynak', 'tohum', 'bulundu', 'son_analiz', 'ilk_10'];
   const lines = [cols.join(';')];
   for (const r of rows) {
     const c = r.comp || {};
@@ -844,6 +880,7 @@ function exportCsv() {
       x.leaderShare, x.newcomers, x.tiny, r.realistic ? 'evet' : 'hayır',
       r.market, d.trend.dir === 'new' ? 'YENİ' : d.trend.label, r.trendDelta,
       c.titleMatches, c.n, c.weak, c.lowRated, c.stale, c.big, c.avgScore, c.sumInstalls,
+      r.discScore, ...SIGNALS.map((s) => (r.disc && Number.isFinite(r.disc.signals[s].value) ? Math.round(100 * r.disc.signals[s].value) : '')),
       SRC_LABEL[r.src] || r.src, r.seed, r.first, r.at, apps];
     lines.push(vals.map((v) => `"${String(v ?? '').replace(/"/g, '""')}"`).join(';'));
   }
@@ -1030,6 +1067,11 @@ async function runLive(term, marketStr) {
       appsMap: Object.fromEntries((res.apps || []).filter(Boolean).map((a) => [a.id, a]))
     });
     rec.dv = rec.decision.verdict;
+    // keşif skoru yalnızca açık pazarın veri setiyle (model, tohum kayıtları): başka pazarda hesaplanmaz
+    if (ctx && ctx === state.flagCtx) {
+      rec.disc = discoveryOf(rec, rec.decision, { appsMap: { ...(state.data?.apps || {}), ...Object.fromEntries((res.apps || []).filter(Boolean).map((a) => [a.id, a])) }, lang: hl });
+      rec.discScore = rec.disc ? rec.disc.score : null;
+    }
     state.liveResult = rec;
     const d = rec.decision;
     out.innerHTML = `<div class="verdict-hero v-${d.verdict.toLowerCase()}">
@@ -1055,6 +1097,21 @@ function renderCalibration() {
   el.dataset.done = '1';
 }
 
+/** Keşif modeli: açık pazarın veri setiyle gelen ağırlıklar ve Fabrika etiketlerinin durumu (pazar değişince yenilenir). */
+function renderDiscoveryModel() {
+  const el = $('#discoveryModel');
+  if (!el) return;
+  const m = state.data?.discoveryModel || null;
+  const w = normWeights(m ? m.weights : PRIOR_WEIGHTS);
+  const cal = m && m.calibration;
+  el.innerHTML = `<div class="table-wrap"><table class="help-table"><thead><tr><th>Sinyal</th><th class="num">Ağırlık</th></tr></thead><tbody>
+    ${SIGNALS.map((s) => `<tr><td>${esc(SIGNAL_TR[s])}</td><td class="num">${w[s].toFixed(2)}</td></tr>`).join('')}
+    </tbody></table></div>
+    <p class="muted small">Ağırlıklar: ${esc((m && m.weightsSource) || 'öncül (kalibre edilmedi)')}. ${cal
+    ? `Son geri besleme koşusu ${esc(cal.at)}: ${fmtInt(cal.apps)} uygulama, ${fmtInt(cal.success)} başarılı, ${fmtInt(cal.weak)} zayıf, ${fmtInt(cal.mid)} orta, ${fmtInt(cal.pending)} bekliyor; ağırlık kapısı ${cal.gateOpen ? 'açık' : 'kapalı'}.`
+    : 'Henüz geri besleme koşusu yapılmadı.'}</p>`;
+}
+
 /* ============================ gezinme ============================ */
 function showView(route) {
   let [name, ...rest] = String(route || '').split('/');
@@ -1077,7 +1134,7 @@ function showView(route) {
   if (name === 'ranking') renderRanking();
   if (name === 'saved') renderSaved();
   if (name === 'analyst') renderAnalyst();
-  if (name === 'help') renderCalibration();
+  if (name === 'help') { renderCalibration(); renderDiscoveryModel(); }
   if (name === 'live' && !state.liveChecked) { state.liveChecked = true; detectLive(); }
   window.scrollTo({ top: 0, behavior: 'auto' });
 }

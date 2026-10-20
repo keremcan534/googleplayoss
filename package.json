@@ -16,7 +16,8 @@
     "test": "node --test",
     "rescore": "node src/rescore.js",
     "shortlist": "node src/shortlist.js",
-    "refresh-apps": "node src/refresh-apps.js"
+    "refresh-apps": "node src/refresh-apps.js",
+    "calibrate-discovery": "node src/calibrate-discovery.js"
   },
   "dependencies": {
     "google-play-scraper": "^10.1.3"

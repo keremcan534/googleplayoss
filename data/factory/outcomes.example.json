@@ -1,0 +1,39 @@
+{
+  "$comment": "ÖRNEK — değerler uydurmadır. Gerçek dosya data/factory/outcomes.json (git'e girmez) ya da --outcomes / FACTORY_OUTCOMES ile gösterilen yol. Her uygulama için İLK 28 GÜNÜN Play Console sayıları: 28. günden sonra satırı dondur (son 28 gün penceresi ilk pencereyle aynı şey değildir). market: us-en | tr-tr. keyword: radarda seçildiği kelime, birebir. pickedAt: seçim günü (o günün ilk 10'u ileriye dönük kayıttan kurulur). ranks: rank izleyicisinden genel aramalar; uygulamanın kendi adıyla yapılan aramalar (title / brand) otomatik olarak yok sayılır.",
+  "apps": [
+    {
+      "app": "com.example.colorgems",
+      "name": "Örnek Renk",
+      "title": "Örnek Renk: Color by Number",
+      "brand": "Örnek Renk",
+      "market": "us-en",
+      "keyword": "color by number jewels",
+      "pickedAt": "2026-10-08",
+      "published": "2026-10-13",
+      "asOf": "2026-11-10",
+      "impressions": 900,
+      "visitors": 80,
+      "installTaps": 40,
+      "acquisitions": 35,
+      "sources": { "discovery": 880, "search": 20 },
+      "ranks": [
+        { "q": "örnek renk", "pos": 1 },
+        { "q": "color by number", "pos": null }
+      ]
+    },
+    {
+      "app": "com.example.focus",
+      "name": "Örnek Odak",
+      "title": "Örnek Odak - Pomodoro",
+      "market": "us-en",
+      "keyword": "pomodoro focus timer",
+      "pickedAt": "2026-10-08",
+      "published": "2026-10-12",
+      "asOf": "2026-11-09",
+      "impressions": 30,
+      "visitors": 1,
+      "installTaps": 0,
+      "acquisitions": 0
+    }
+  ]
+}

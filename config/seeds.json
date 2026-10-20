@@ -45,6 +45,7 @@
     "searchCalls": 250,
     "appCalls": 1500,
     "listCalls": 12,
+    "reviewCalls": 80,
     "maxKeywordsTotal": 8000,
     "maxRunMinutes": 40
   },
@@ -54,6 +55,8 @@
   "noDemandRecheckDays": 30,
   "suggestTtlDays": 7,
   "appTtlDays": 21,
+  "reviewTtlDays": 30,
+  "reviewSample": 100,
   "topN": 10,
   "throttleMs": 350,
   "concurrency": 2,

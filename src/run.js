@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // 7/24 tarayıcı: tohumlardan kelime keşfeder, talep ve rekabeti ölçer, public/data/*.json üretir.
-// Kullanım: node src/run.js [--market us:en] [--suggest N] [--search N] [--app N] [--minutes N] [--seeds "a,b"]
+// Kullanım: node src/run.js [--market us:en] [--suggest N] [--search N] [--app N] [--reviews N] [--minutes N] [--seeds "a,b"]
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -9,8 +9,9 @@ import { analyzeKeyword } from './analyze.js';
 import { candidatesFromTitles, isValidKeyword } from './discover.js';
 import { buildNiches } from './niches.js';
 import { normalize, stringifyLines, todayISO, DAY_MS } from './util.js';
-import { decorate } from './publish.js';
+import { decorate, publicApp } from './publish.js';
 import { appendHistory } from './history.js';
+import { pickReviewTargets, summarizeReviews } from './reviews.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CONFIG_PATH = path.join(ROOT, 'config', 'seeds.json');
@@ -44,26 +45,18 @@ function parseArgs(argv) {
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     const v = argv[i + 1];
-    if (a === '--market') { args.market = v; i++; } else if (a === '--suggest') { args.budget.suggestCalls = num(v); i++; } else if (a === '--search') { args.budget.searchCalls = num(v); i++; } else if (a === '--app') { args.budget.appCalls = num(v); i++; } else if (a === '--list') { args.budget.listCalls = num(v); i++; } else if (a === '--minutes') { args.budget.maxRunMinutes = num(v); i++; } else if (a === '--seeds') { args.seeds = v.split(',').map((s) => s.trim()).filter(Boolean); i++; }
+    if (a === '--market') { args.market = v; i++; } else if (a === '--suggest') { args.budget.suggestCalls = num(v); i++; } else if (a === '--search') { args.budget.searchCalls = num(v); i++; } else if (a === '--app') { args.budget.appCalls = num(v); i++; } else if (a === '--list') { args.budget.listCalls = num(v); i++; } else if (a === '--reviews') { args.budget.reviewCalls = num(v); i++; } else if (a === '--minutes') { args.budget.maxRunMinutes = num(v); i++; } else if (a === '--seeds') { args.seeds = v.split(',').map((s) => s.trim()).filter(Boolean); i++; }
   }
   const env = process.env;
   if (env.CRAWL_SUGGEST_CALLS) args.budget.suggestCalls = Number(env.CRAWL_SUGGEST_CALLS);
   if (env.CRAWL_SEARCH_CALLS) args.budget.searchCalls = Number(env.CRAWL_SEARCH_CALLS);
   if (env.CRAWL_APP_CALLS) args.budget.appCalls = Number(env.CRAWL_APP_CALLS);
+  if (env.CRAWL_REVIEW_CALLS) args.budget.reviewCalls = Number(env.CRAWL_REVIEW_CALLS);
   if (env.CRAWL_MAX_MINUTES) args.budget.maxRunMinutes = Number(env.CRAWL_MAX_MINUTES);
   if (env.CRAWL_MARKET) args.market = env.CRAWL_MARKET;
   if (env.CRAWL_SEEDS) args.seeds = env.CRAWL_SEEDS.split(',').map((s) => s.trim()).filter(Boolean);
   for (const k of Object.keys(args.budget)) if (!Number.isFinite(args.budget[k])) delete args.budget[k];
   return args;
-}
-
-/** Yayınlanan dosyaya giren kompakt uygulama kaydı. */
-function publicApp(a) {
-  return {
-    id: a.id, title: a.title, dev: a.dev, genre: a.genre, installs: a.installs, real: a.real,
-    score: a.score, ratings: a.ratings, released: a.released, updated: a.updated,
-    ads: a.ads, iap: a.iap, free: a.free, price: a.price
-  };
 }
 
 async function runMarket(cfg, market, args) {
@@ -79,6 +72,16 @@ async function runMarket(cfg, market, args) {
     budget: { suggest: budget.suggestCalls, search: budget.searchCalls, app: budget.appCalls, list: budget.listCalls },
     log
   });
+  // değerlendirmeler ayrı bir istemciden: uç nokta bozulursa ardışık hata sayacı ana taramayı durdurmasın
+  const reviewStore = createStore({
+    country: market.country,
+    lang: market.lang,
+    throttleMs: cfg.throttleMs ?? 350,
+    concurrency: 1,
+    maxConsecutiveFailures: 3,
+    budget: { reviews: budget.reviewCalls ?? 0 },
+    log
+  });
   const deadline = now + (budget.maxRunMinutes || 40) * 60_000;
   const timeUp = () => Date.now() > deadline;
 
@@ -88,6 +91,7 @@ async function runMarket(cfg, market, args) {
   const prev = readJson(outPath, null);
   const apps = readJson(path.join(marketDir, 'apps.json'), {});
   const suggestCache = readJson(path.join(marketDir, 'suggest.json'), {});
+  const reviewsCache = readJson(path.join(marketDir, 'reviews.json'), {});
   const meta = readJson(path.join(marketDir, 'meta.json'), { runs: 0, letterCursor: 0, catCursor: 0 });
   const kw = new Map();
   for (const r of (prev && prev.keywords) || []) kw.set(r.k, r);
@@ -252,13 +256,35 @@ async function runMarket(cfg, market, args) {
   }
   log(`[${id}] analiz kuyruğu: ${queue.length} kelime (bekleyen + bayat)`);
 
+  // ---- 3b) rakip değerlendirmeleri (keşif skorunun "rakip boşluğu" sinyali). Analizden önce: küçük ve ayrı
+  // bütçeli (reviewCalls), analiz süreyi doldursa da her gün biraz ilerler. Önce en çok kelimenin ilk 3'ünde
+  // görünen uygulamalar; önbellek ömrü reviewTtlDays.
+  const reviewTtl = (cfg.reviewTtlDays || 30) * DAY_MS;
+  const reviewCap = budget.reviewCalls ?? 0;
+  if (reviewCap > 0 && !timeUp()) {
+    const targets = pickReviewTargets([...kw.values()], reviewsCache, { now, ttlMs: reviewTtl, limit: reviewCap, apps });
+    let got = 0;
+    for (const appId of targets) {
+      if (timeUp() || !reviewStore.hasBudget('reviews')) break;
+      try {
+        const s = summarizeReviews(await reviewStore.reviews(appId, cfg.reviewSample || 100));
+        reviewsCache[appId] = { t: Date.now(), ...(s || { n: 0 }) };
+        got++;
+      } catch (err) {
+        if (err && err.budget) break;
+        log(`   değerlendirme alınamadı ${appId}: ${err.message}`);
+      }
+    }
+    log(`[${id}] değerlendirmeler: ${got}/${targets.length} uygulama, önbellekte ${Object.keys(reviewsCache).length}`);
+  }
+
   function writeOutputs() {
     const records = [...kw.values()].sort((a, b) => a.k.localeCompare(b.k));
     const usedApps = {};
     for (const r of records) {
       for (const appId of r.top || []) {
         const a = apps[appId];
-        if (a && !a.missing) usedApps[appId] = publicApp(a);
+        if (a && !a.missing) usedApps[appId] = publicApp(a, reviewsCache[appId]);
       }
     }
     const count = (fn) => records.filter(fn).length;
@@ -275,7 +301,7 @@ async function runMarket(cfg, market, args) {
       market: { id, country: market.country, lang: market.lang, label: market.label || null },
       generatedAt: new Date().toISOString(),
       stats,
-      budgetUsed: { ...store.state.used },
+      budgetUsed: { ...store.state.used, reviews: reviewStore.state.used.reviews },
       niches: buildNiches(records, { lang: market.lang }),
       keywords: records,
       apps: Object.fromEntries(Object.keys(usedApps).sort().map((k) => [k, usedApps[k]]))
@@ -293,8 +319,13 @@ async function runMarket(cfg, market, args) {
       const a = apps[appId];
       if (usedApps[appId] || Date.now() - (a.fetched || 0) < 90 * DAY_MS) keepApps[appId] = a;
     }
+    const keepReviews = {};
+    for (const appId of Object.keys(reviewsCache).sort()) {
+      if (usedApps[appId] || Date.now() - (reviewsCache[appId].t || 0) < 3 * reviewTtl) keepReviews[appId] = reviewsCache[appId];
+    }
     writeJson(path.join(marketDir, 'apps.json'), keepApps);
     writeJson(path.join(marketDir, 'suggest.json'), keepSuggest);
+    writeJson(path.join(marketDir, 'reviews.json'), keepReviews);
     writeJson(path.join(marketDir, 'meta.json'), { ...meta, runs: stats.runs, lastRun: out.generatedAt });
 
     const indexPath = path.join(PUBLIC_DATA, 'index.json');
@@ -370,7 +401,7 @@ async function runMarket(cfg, market, args) {
   const stats = writeOutputs();
   const hist = appendHistory(marketDir, { date: today, serp: runSerps, apps: freshInstalls });
   if (hist) log(`[${id}] geçmiş kaydı: ${Object.keys(runSerps).length} sonuç sayfası, ${Object.keys(freshInstalls).length} yükleme → ${path.relative(ROOT, hist)}`);
-  log(`[${id}] bitti: ${analyzed} kelime analiz edildi | toplam ${stats.keywords}, talepli ${stats.withDemand}, bekleyen ${stats.pending} | istekler ${JSON.stringify(store.state.used)} | hata ${store.state.errors}`);
+  log(`[${id}] bitti: ${analyzed} kelime analiz edildi | toplam ${stats.keywords}, talepli ${stats.withDemand}, bekleyen ${stats.pending} | istekler ${JSON.stringify({ ...store.state.used, reviews: reviewStore.state.used.reviews })} | hata ${store.state.errors + reviewStore.state.errors}`);
   return stats;
 }
 

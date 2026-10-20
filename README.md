@@ -50,6 +50,19 @@ Karar, Ekim 2026'daki sızıntısız geri testle seçildi: her kelimenin **bir y
 
 Kural: [`public/js/enterpayoff.js`](public/js/enterpayoff.js) · yanlış pozitif kuralları: [`public/js/flags.js`](public/js/flags.js) · sarmalayıcı: [`public/js/verdict.js`](public/js/verdict.js).
 
+### Keşif skoru (hipotez): "Play bu uygulamayı aramanın dışında da gösterir mi?"
+
+Karar sınıfı arama sorusunu cevaplar. Ekim 2026'da radar önerilerinden yayınlanan 12 uygulamada sınıf erken trafiği ayırmadı (10'u GOLD'du, biri trafik aldı) ve trafik alan uygulamanın gösterimlerinin neredeyse tamamı Play'in **keşif yüzeylerinden** (öneriler, benzer uygulamalar, kategori listeleri) geldi. Keşif skoru bu gözlemden türeyen hipotezleri ayrı bir puana çevirir; kararın ve kalibrasyonunun yerine geçmez.
+
+`skor = 100 · (0,35 keşif potansiyeli + 0,25 rakip boşluğu + 0,15 görsel kanca + 0,15 giriş bandı + 0,10 yapılabilirlik)`
+
+- **Keşif potansiyeli:** ilk 10'un türü (gündelik / bulmaca / simülasyon / arcade / sanat yüksek; araç / verimlilik / yaşam / eğitim düşük), ilk 10 toplam yüklemenin talep puanına oranı, kelimenin ve tohumunun ilk 10'unda aynı türden 1M+ / 10M+ uygulama sayısı. Devler ceza değil artıdır.
+- **Rakip boşluğu:** reklam + uygulama içi satın alma baskısı, ortalama puan ve tarayıcının her gün çektiği rakip değerlendirmelerindeki reklam / ödeme duvarı / "içerik bitti" şikâyetleri.
+- **Görsel kanca:** tür tabanı ± kelime sözlüğü; elle (ya da bir dil modeliyle) girilmiş değer önceliklidir (`config/discovery.json`).
+- **Giriş bandı:** girebilirlik / 100. **Yapılabilirlik:** politika / marka / yanlış pazar işaretleri ve çevrimiçi, çok oyunculu gibi ağır yapımlar; politika riskli kelimeler kısa listeye girmez.
+
+Ağırlıklar elle seçildi ve tek bir başarı gözlemine dayanıyor; skor bir başarı olasılığı değildir. **Geri besleme döngüsü:** Fabrika her uygulamanın ilk 28 günlük Play Console sonuçlarını gönderir (başarılı: 20+ edinme, zayıf: 50'den az gösterim; uygulamanın kendi adıyla yapılan aramadaki sıra sayılmaz), `npm run calibrate-discovery` sinyallerin ayırma gücünü ölçer ve en az 20 etiketli uygulama (her sınıftan en az 4) birikince öncüle doğru büzülmüş yeni ağırlık önerir. Play Console sayıları depoya girmez (`data/factory/outcomes.json` git dışıdır). Ayrıntı: [`docs/KESIF.md`](docs/KESIF.md) · kod: [`public/js/discovery.js`](public/js/discovery.js).
+
 ### Simülasyon: "bu kelimeye girersem ne alırım?"
 
 Her kelimenin detayında 30 / 90 / 180 / 365 günde yükleme, aktif kullanıcı ve gelir; kötümser / temel / iyimser üç senaryo. Yükleme tarafı **kendi verimizden**: bu kelimenin ilk 10'una son 2 yılda girmiş bağımsız uygulamaların günlük hızı (yoksa aynı tür ve aynı "yerleşik orta sıra" hücresindeki yeni uygulamalar). Elde tutma ve gelir varsayımları kaynak kontrolünden geçmiş kıyaslamalardır (GameAnalytics, Adjust, AppsFlyer, Appodeal/Tenjin, RevenueCat, Play ve AdMob yardım sayfaları); hepsi kaynak bağlantısıyla arayüzde listelenir. Reklam, uygulama içi satın alma/abonelik ayrı hesaplanır; Play'in %15'i (ve Türkiye'de %20 KDV) yalnızca satın almadan düşülür; AdMob'un 100 $ ödeme eşiğine kaçıncı ayda ulaşılacağı gösterilir. Kanıt yoksa sayı üretilmez. Kod: [`public/js/sim.js`](public/js/sim.js).
@@ -180,6 +193,8 @@ npm run serve                      # http://localhost:3000 — panel + canlı an
 npm test                           # karar katmanı + tarayıcı birim testleri
 npm run build                      # yayın kontrolü: JS sözdizimi, JSON'lar, public/ referansları
 npm run rescore                    # puanlama mantığı değişince: ağa gitmeden yeniden hesapla
+npm run shortlist -- --by discovery   # keşif skoruna göre kısa liste (varsayılan: karar sınıfına göre)
+npm run calibrate-discovery        # Fabrika sonuçlarıyla keşif skoru raporu (--outcomes yol, --write)
 ```
 
 ---
@@ -192,10 +207,10 @@ npm run rescore                    # puanlama mantığı değişince: ağa gitme
 | `seeds` | Keşfin başladığı tohum kelimeler. Kendi alanına göre değiştir (ör. sadece oyun türleri). |
 | `letters` / `marketLetters` | Harf genişletmesi için alfabe (Türkçe için `tr` tanımlı). |
 | `categories` | Kategori listelerinden (Top Free) başlık madenciliği yapılacak kategoriler. |
-| `budget.*` | Koşu başına istek sınırları ve süre. `maxKeywordsTotal` kelime evreninin tavanı. |
+| `budget.*` | Koşu başına istek sınırları ve süre. `maxKeywordsTotal` kelime evreninin tavanı. `reviewCalls` her gün değerlendirmesi çekilecek en fazla uygulama (keşif skorunun şikâyet sinyali). |
 | `discoveryShare` | Otomatik tamamlama bütçesinin keşfe ayrılan payı (kalanı talep ölçümüne gider). |
 | `refreshDays`, `demandRefreshDays`, `noDemandRecheckDays` | Yenileme aralıkları. |
-| `suggestTtlDays`, `appTtlDays` | Önbellek ömürleri. |
+| `suggestTtlDays`, `appTtlDays`, `reviewTtlDays` | Önbellek ömürleri. `reviewSample`: uygulama başına çekilen en yeni değerlendirme sayısı. |
 | `topN` | Kaç rakip incelensin (10). |
 | `throttleMs`, `concurrency` | İstek hızı. Engel yersen `throttleMs`'i artır. |
 
@@ -207,11 +222,15 @@ Elle tetiklenen koşuda (Run workflow) pazar ve bütçeleri geçici olarak deği
 
 ```
 config/seeds.json        tohumlar, pazarlar, bütçeler
+config/discovery.json    keşif skoru ağırlıkları, elle görsel / yapılabilirlik değerleri, etiket özeti
 src/run.js               7/24 tarayıcı (keşif → talep → rekabet → skor → JSON)
 src/analyze.js           tek kelime analizi (tarayıcı ve API ortak)
 src/demand.js            otomatik tamamlama ile talep ölçümü (ikili arama)
 src/score.js             zorluk / pazar / fırsat formülleri + erişim ölçüleri (giriş, orta sıra, yeni giren)
 src/rescore.js           npm run rescore — önbellekten yeniden puanlama (ağ yok)
+src/reviews.js           rakip değerlendirmelerinde şikâyet sınıflaması (reklam / ödeme / içerik)
+src/outcomes.js          Fabrika sonuçları → etiket, marka araması ayıklama, ağırlık kapısı
+src/calibrate-discovery.js  npm run calibrate-discovery — keşif skoru geri besleme raporu
 src/niches.js            niş gruplama
 src/discover.js          başlık n-gram adayları
 src/store.js             google-play-scraper sarmalayıcı: hız sınırı, retry, bütçe
@@ -222,12 +241,14 @@ api/*.js                 Vercel fonksiyonları: health, suggest, search, analyze
 public/index.html        panel kabuğu (Genel Bakış, Fırsatlar, Nişler, Canlı, Kayıtlı, Analist, Bilgi)
 public/app.js            arayüz mantığı: kartlar, filtreler, çekmece, tablo, CSV
 public/js/verdict.js     KARAR KATMANI: eşikler, koruma kuralları, gerekçe üreteci, metrik etiketleri
+public/js/discovery.js   KEŞİF SKORU (hipotez): keşif potansiyeli, rakip boşluğu, görsel kanca, yapılabilirlik
 public/js/pack/          YAYIN PAKETİ: lexicon (kavram/tür/SDK sözlüğü), product (ürün analizi, uyum),
                          repo (GitHub tarama), keywords (konumlandırma), aso, compliance, marketing,
                          pack (model + hat + dışa aktarım), binary (ZIP, PNG), render (canvas), db, ui
 public/style.css         tema ve düzen (karanlık/aydınlık, mobil)
 public/data/*.json       tarayıcı çıktısı (panelin okuduğu veri)
-data/<pazar>/            önbellekler (apps, suggest, meta)
+data/<pazar>/            önbellekler (apps, suggest, reviews, meta)
+data/factory/            Fabrika sonuçları (git dışı; biçim: outcomes.example.json)
 scripts/build-check.js   npm run build — yayın öncesi doğrulama
 .github/workflows/       crawl (cron), pages (yayın), ci (test + build)
 ```
@@ -244,9 +265,11 @@ scripts/build-check.js   npm run build — yayın öncesi doğrulama
     "st": "ok", "demand": 36, "difficulty": 80, "market": 91, "opportunity": 27, "verdict": "zor",
     "pop": { "minPrefix": 9, "pos": 4, "len": 17 },
     "comp": { "n": 10, "titleMatches": 0, "weak": 0, "lowRated": 0, "stale": 0, "big": 5, "avgScore": 4.59, "sumInstalls": 149869369 },
-    "top": ["com.example.app", "..."], "hist": [["2026-09-15", 36, 80, 27]]
+    "top": ["com.example.app", "..."], "hist": [["2026-09-15", 36, 80, 27]],
+    "disc": { "s": 67, "p": [65, 37, 93, 71, 100] }   // keşif skoru ve beş sinyal (0-100); b: 1 = politika engeli
   } ],
-  "apps": { "com.example.app": { "title": "...", "real": 15224793, "score": 4.65, "updated": "2026-07-29", ... } }
+  "discoveryModel": { "version": "discovery-prior-v1", "weights": { "discovery": 0.35, ... }, "weightsSource": "...", "calibration": null },
+  "apps": { "com.example.app": { "title": "...", "real": 15224793, "score": 4.65, "updated": "2026-07-29", "cx": { "n": 100, "any": 0.13, "ads": 0.12, "pay": 0.02, "content": 0.03 }, ... } }
 }
 ```
 
@@ -269,5 +292,7 @@ MIT
 Self-running (GitHub Actions cron) keyword & niche finder for Google Play ASO. It expands seed keywords via Play autocomplete, estimates demand from the shortest prefix that triggers a suggestion, measures competition from the top-10 apps (real installs, ratings, freshness, title matches) and computes an opportunity score. Results are committed to the repo and served as a static dashboard on GitHub Pages and/or Vercel; on Vercel a live `/api/analyze` endpoint powers instant keyword analysis. No paid APIs.
 
 The dashboard is decision-first: every keyword is reduced to GOLD / BUILD / WATCH / WEAK / SKIP with a one-sentence, deterministic reason and four key metrics (demand, competition, reach, trend). A **reach** score answers the question that decides whether you get any installs at all: can a new app even enter this top 10 (the weakest top-10 app's install count), and does mid-pack placement pay (median installs of ranks 3-10), and is the market open to newcomers (apps released in the last 2 years that rank). Two guardrails encode the two ways a keyword leaves you at zero: a **wall** (you never rank) and a **dead pond** (you rank but nobody searches). Conversion rate and CPA are deliberately absent: store-listing views are private to the app owner and CPA is ad-spend data, so neither can be scraped; the dashboard uses measurable stand-ins (reach, and how many of the top 10 monetize at all). The decision layer in `public/js/verdict.js` is presentation only — it never alters the scoring formulas — and applies guardrails (no GOLD on weak demand, capped verdicts on extreme competition or incomplete competitor data, never an invented trend). The original dense table lives on in Analyst Mode with all columns, numeric filters and CSV export.
+
+**Discovery score (hypothesis).** The verdict answers a search question ("can a new app enter this top 10?"). In October 2026, of 12 apps an automated factory published from the radar's picks (10 of them GOLD), only one got organic traffic, and almost all of its impressions came from Play's discovery surfaces (recommendations, similar apps, category lists), not search. The discovery score turns the resulting hypotheses into a separate 0-100 rank: `0.35 discovery potential (genre, installs/demand ratio, same-genre giants in the keyword's and seed's top 10) + 0.25 competitor gap (ads+IAP pressure, rating, ad/paywall/content complaints in competitors' newest reviews) + 0.15 visual hook + 0.15 enter band + 0.10 feasibility`. Weights are hand-set priors based on one success; it is not a probability and does not touch the verdict or its calibration. A feedback loop (`npm run calibrate-discovery`) labels factory apps from their first-28-day Play Console numbers (success ≥ 20 acquisitions, weak < 50 impressions, own-title rank ignored) and only proposes new weights, shrunk toward the prior, once 20+ apps with 4+ per class are labelled. Play Console data stays out of this public repo. See `docs/KESIF.md`.
 
 **Projects / Publish Pack.** Keyword discovery is never required. Create a project from an opportunity, from an idea, or by importing an existing project (manual, GitHub repo, short description, published Play listing, or ZIP). *Generate Publish Pack* runs a 16-stage pipeline that starts from the product itself (description, README, mechanics, manifest, SDKs), derives search terms, passes them through the existing opportunity/competition system and picks the strongest *truthful* positioning: every part of a primary/secondary keyword must be backed by the product, and trademarks, years, unsupported claims, mismatched intent and side-feature-only matches are excluded. It produces policy-linted store copy, Play-spec icon/feature graphic/framed screenshots (from real uploaded captures), Data Safety and privacy-policy drafts, rating prep, build checks and marketing plans. Every item is tracked as MISSING / GENERATING / READY / NEEDS REVIEW / APPROVED with an overall publish-readiness percentage, and the whole pack exports as a fastlane-layout ZIP. All project data stays in the browser (IndexedDB).

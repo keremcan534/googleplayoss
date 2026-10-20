@@ -4,3 +4,6 @@ node_modules/
 *.log
 .DS_Store
 data/**/*.tmp
+# Fabrika sonuçları (Play Console verisi) herkese açık depoya girmez; biçim: data/factory/outcomes.example.json
+data/factory/*
+!data/factory/outcomes.example.json

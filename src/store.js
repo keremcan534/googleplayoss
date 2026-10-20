@@ -15,7 +15,7 @@ const BACKOFF_MS = [1500, 4000, 10000];
 
 /**
  * createStore({ country, lang, throttleMs, concurrency, budget, log })
- * Dönen nesne: suggest(term), search(term, num), app(appId), list(collection, category, num)
+ * Dönen nesne: suggest(term), search(term, num), app(appId), list(collection, category, num), reviews(appId, num)
  * Her çağrı bütçeden düşer; bütçe bitince BudgetError fırlatır.
  */
 export function createStore(opts = {}) {
@@ -30,8 +30,8 @@ export function createStore(opts = {}) {
     log = () => {}
   } = opts;
 
-  const used = { suggest: 0, search: 0, app: 0, list: 0 };
-  const caps = { suggest: Infinity, search: Infinity, app: Infinity, list: Infinity, ...budget };
+  const used = { suggest: 0, search: 0, app: 0, list: 0, reviews: 0 };
+  const caps = { suggest: Infinity, search: Infinity, app: Infinity, list: Infinity, reviews: Infinity, ...budget };
   const state = { used, caps, aborted: false, failures: 0, errors: 0 };
   const limit = pLimit(concurrency);
 
@@ -97,6 +97,11 @@ export function createStore(opts = {}) {
     list: (collection, category, num = 50) => call('list', `list:${category}`, async () => {
       const arr = await gplay.list({ collection, category, num, lang, country });
       return (arr || []).map(compactResult);
+    }),
+    // en yeni değerlendirmeler: yalnızca yıldız ve metin tutulur (kullanıcı adı / görseli saklanmaz)
+    reviews: (appId, num = 100) => call('reviews', `reviews:${appId}`, async () => {
+      const res = await gplay.reviews({ appId, sort: gplay.sort.NEWEST, num, lang, country });
+      return ((res && res.data) || []).map((x) => ({ score: x.score, text: x.text || '' }));
     })
   };
 }
