@@ -1,0 +1,11 @@
+{
+  "$comment": "Keşif skoru modeli (public/js/discovery.js). HİPOTEZ: ağırlıklar Fabrika'nın 2026-10-20 önerisidir, geri testi yok. weights'i elle değiştirme: 'npm run calibrate-discovery -- --write' yalnızca en az minLabels etiketli uygulama (her sınıftan en az minPerClass) varken günceller. visual / feasibility: pazar → {kelime: 0-1} elle (ya da dil modeliyle) girilmiş değerler; sözlük tahmininin yerine geçer. calibration: son kalibrasyon koşusunun özeti (yalnızca sayılar).",
+  "version": "discovery-prior-v1",
+  "weights": { "discovery": 0.35, "gap": 0.25, "visual": 0.15, "band": 0.15, "feasibility": 0.10 },
+  "weightsSource": "öncül (Fabrika önerisi, 2026-10-20) — kalibre edilmedi",
+  "minLabels": 20,
+  "minPerClass": 4,
+  "calibration": null,
+  "visual": { "us-en": {}, "tr-tr": {} },
+  "feasibility": { "us-en": {}, "tr-tr": {} }
+}

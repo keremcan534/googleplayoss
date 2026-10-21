@@ -19,7 +19,7 @@ import { fileURLToPath } from 'node:url';
 import { scoreCompetition, opportunityScore, verdict } from './score.js';
 import { buildNiches } from './niches.js';
 import { stringifyLines, todayISO } from './util.js';
-import { decorate } from './publish.js';
+import { decorate, publicApp } from './publish.js';
 
 export const SCORE_VERSION = 3;
 
@@ -46,6 +46,7 @@ export function rescoreMarket(marketId, opts = {}) {
   const data = readJson(outPath);
   if (!data) throw new Error(`Pazar dosyası okunamadı: ${outPath}`);
   const apps = readJson(path.join(DATA, marketId, 'apps.json'), {}) || {};
+  const reviews = readJson(path.join(DATA, marketId, 'reviews.json'), {}) || {};
   // Önbellek (data/<pazar>/apps.json) her zaman daha tazedir; yayınlanan anlık
   // görüntü yalnızca önbellekte olmayan kayıtları doldurur. Ters sıra, tazelenmiş
   // alanların (ör. yeni ayrıştırılan yayın tarihleri) eski değerlerle ezilmesine yol açıyordu.
@@ -94,27 +95,20 @@ export function rescoreMarket(marketId, opts = {}) {
       if (row) { row.label = known.label; if (!opts.dry) writeJson(indexPath, index); }
     }
   }
+  // yayınlanan uygulama listesini tazele (yeni alanlar: released, değerlendirme özeti cx…). decorate'ten ÖNCE:
+  // simülasyon kohortları ve keşif skoru bu listeyi okur.
+  const used = {};
+  for (const r of data.keywords) for (const id of r.top || []) {
+    const a = pool[id];
+    if (a && !a.missing) used[id] = publicApp(a, reviews[id]);
+  }
+  data.apps = Object.fromEntries(Object.keys(used).sort().map((k) => [k, used[k]]));
   decorate(marketId, data, PUBLIC_DATA, now);
   data.scoreVersion = SCORE_VERSION;
   data.rescoredAt = new Date(now).toISOString();
   data.generatedAt = data.generatedAt || new Date(now).toISOString();
 
-  if (!opts.dry) {
-    // yayınlanan uygulama listesini de tazele (yeni alanlar: released vs.)
-    const used = {};
-    for (const r of data.keywords) for (const id of r.top || []) {
-      const a = pool[id];
-      if (a && !a.missing) {
-        used[id] = {
-          id: a.id, title: a.title, dev: a.dev, genre: a.genre, installs: a.installs, real: a.real,
-          score: a.score, ratings: a.ratings, released: a.released, updated: a.updated,
-          ads: a.ads, iap: a.iap, free: a.free, price: a.price
-        };
-      }
-    }
-    data.apps = Object.fromEntries(Object.keys(used).sort().map((k) => [k, used[k]]));
-    writeJson(outPath, data);
-  }
+  if (!opts.dry) writeJson(outPath, data);
   if (!quiet) {
     console.log(`[${marketId}] ${changed} kelimenin puanı değişti, ${skipped} kelime atlandı (analiz edilmemiş).`);
     console.log(`  önce: ${JSON.stringify(before)}`);

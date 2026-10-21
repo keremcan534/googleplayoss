@@ -23,6 +23,10 @@ on:
         description: 'Otomatik tamamlama bütçesi (boş = config)'
         required: false
         default: ''
+      review_calls:
+        description: 'Değerlendirmesi çekilecek uygulama sayısı (boş = config)'
+        required: false
+        default: ''
       max_minutes:
         description: 'En fazla süre (dakika, boş = config)'
         required: false
@@ -59,6 +63,7 @@ jobs:
           CRAWL_SEARCH_CALLS: ${{ inputs.search_calls }}
           CRAWL_APP_CALLS: ${{ inputs.app_calls }}
           CRAWL_SUGGEST_CALLS: ${{ inputs.suggest_calls }}
+          CRAWL_REVIEW_CALLS: ${{ inputs.review_calls }}
           CRAWL_MAX_MINUTES: ${{ inputs.max_minutes }}
         run: npm run crawl
 

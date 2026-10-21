@@ -2,14 +2,20 @@
 /*
  * Kısa liste — "yayınlarsam indirme gelir" adayları.
  *
- * Kararı BUILD ya da GOLD olan (girebilirlik × getiri) VE girebilirlik puanı eşiğin üstünde olan
- * kelimeler, girebilirliğe göre sıralı. Aynı ilk 10'a düşen kelimeler
- * tek pazar olarak katlanır (varyantlar altta listelenir).
+ * Varsayılan: kararı BUILD ya da GOLD olan (girebilirlik × getiri) VE girebilirlik puanı eşiğin üstünde olan
+ * kelimeler, girebilirliğe göre sıralı (arama trafiği sorusu, geri testli).
+ * --by discovery: keşif skoruna göre (public/js/discovery.js, HİPOTEZ: Play'in öneri / benzer uygulama
+ * yüzeylerinden erken trafik). Karar sınıfı eleme ölçütü değildir. Çıkanlar: politika / yetişkin engelli ve
+ * yapılabilirliği 0,5'in altında olanlar (marka, başka platform, başka ülke, başlık parçası; --min-feasibility).
+ * Skor büyük ölçüde tür düzeyinde olduğu için aynı tohumdan (tema) en fazla 2 pazar alınır (--per-seed).
+ * Aynı ilk 10'a düşen kelimeler tek pazar olarak katlanır (varyantlar altta listelenir).
  *
  * Kullanım:
  *   npm run shortlist                 # tüm pazarlar
  *   npm run shortlist -- --market tr-tr
  *   npm run shortlist -- --reach 55 --limit 25
+ *   npm run shortlist -- --by discovery --limit 20
+ *   npm run shortlist -- --by discovery --per-seed 1 --min-feasibility 0.3
  *   npm run shortlist -- --csv > liste.csv
  */
 import fs from 'node:fs';
@@ -17,6 +23,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { getOpportunityVerdict, fmtInstalls } from '../public/js/verdict.js';
 import { buildFlagContext } from '../public/js/flags.js';
+import { discoveryScore, SIGNALS } from '../public/js/discovery.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PUBLIC_DATA = path.join(ROOT, 'public', 'data');
@@ -39,18 +46,27 @@ function overlap(a, b) {
  * @returns {{market:object, groups:Array, total:number, counts:object}}
  */
 export function shortlistFor(marketId, opts = {}) {
-  const { minReach = 40, limit = 30, verdicts = ['GOLD', 'BUILD'] } = opts;
+  const { by = 'verdict', limit = 30, verdicts = ['GOLD', 'BUILD'], minFeasibility = 0.5, perSeed = 2 } = opts;
+  const minReach = opts.minReach ?? (by === 'discovery' ? 0 : 40);
   const data = readJson(path.join(PUBLIC_DATA, `${marketId}.json`));
   if (!data) throw new Error(`Pazar dosyası yok: ${marketId}`);
   const ctx = buildFlagContext(data);
-  const recs = data.keywords.map((r) => ({ ...r, decision: getOpportunityVerdict(r, { ctx }) }));
+  const lang = (data.market && data.market.lang) || 'en';
+  const recs = data.keywords.map((r) => {
+    const decision = getOpportunityVerdict(r, { ctx });
+    const disc = discoveryScore(r, data.apps, { decision, seed: r.seed ? ctx.byK.get(r.seed) : null, model: data.discoveryModel, lang });
+    return { ...r, decision, disc };
+  });
   const counts = {};
   for (const r of recs) counts[r.decision.verdict] = (counts[r.decision.verdict] || 0) + 1;
 
-  const eligible = recs
-    .filter((r) => verdicts.includes(r.decision.verdict))
-    .filter((r) => r.decision.axes && r.decision.axes.enter.score >= minReach)
-    .sort((a, b) => b.decision.sortKey - a.decision.sortKey || b.opportunity - a.opportunity);
+  const eligible = (by === 'discovery'
+    ? recs.filter((r) => r.disc && !r.disc.blocked && r.disc.signals.feasibility.value >= minFeasibility && r.decision.axes && r.decision.axes.enter.score >= minReach)
+      .sort((a, b) => b.disc.score - a.disc.score || b.decision.sortKey - a.decision.sortKey)
+    : recs
+      .filter((r) => verdicts.includes(r.decision.verdict))
+      .filter((r) => r.decision.axes && r.decision.axes.enter.score >= minReach)
+      .sort((a, b) => b.decision.sortKey - a.decision.sortKey || b.opportunity - a.opportunity));
 
   const groups = [];
   for (const r of eligible) {
@@ -58,7 +74,12 @@ export function shortlistFor(marketId, opts = {}) {
     if (host) host.variants.push(r);
     else groups.push({ head: r, variants: [] });
   }
-  return { market: data.market, generatedAt: data.generatedAt, stats: data.stats, counts, total: eligible.length, groups: groups.slice(0, limit) };
+  // keşif skoru tür düzeyinde: aynı temanın (tohum) kelimeleri art arda gelir ("truck simulator …" ×10). Tema başına sınır.
+  const seen = new Map();
+  const picked = by === 'discovery' && perSeed > 0
+    ? groups.filter((g) => { const t = g.head.seed || g.head.k; const n = (seen.get(t) || 0) + 1; seen.set(t, n); return n <= perSeed; })
+    : groups;
+  return { market: data.market, generatedAt: data.generatedAt, stats: data.stats, counts, by, model: data.discoveryModel || null, total: eligible.length, groups: picked.slice(0, limit) };
 }
 
 function row(r) {
@@ -81,6 +102,8 @@ function row(r) {
     lider_payi: x.leaderShare === null ? '' : Math.round(x.leaderShare * 100),
     gelir_modeli: c.monetized ?? '',
     ilgi: c.engagement ?? '',
+    kesif: r.disc ? r.disc.score : '',
+    ...Object.fromEntries(SIGNALS.map((s) => [`kesif_${s}`, r.disc && Number.isFinite(r.disc.signals[s].value) ? Math.round(100 * r.disc.signals[s].value) : ''])),
     gerekce: r.decision.reason
   };
 }
@@ -88,7 +111,8 @@ function row(r) {
 function printText(res) {
   const m = res.market;
   console.log('');
-  console.log(`=== ${m.label || `${m.country.toUpperCase()} / ${m.lang}`} — ${res.total} aday, ${res.groups.length} ayrı pazar ===`);
+  console.log(`=== ${m.label || `${m.country.toUpperCase()} / ${m.lang}`} — ${res.total} aday, ${res.groups.length} ayrı pazar${res.by === 'discovery' ? ' · keşif skoruna göre (HİPOTEZ)' : ''} ===`);
+  if (res.by === 'discovery') console.log(`ağırlıklar: ${res.model ? `${Object.entries(res.model.weights).map(([k, v]) => `${k} ${v.toFixed(2)}`).join(' · ')} — ${res.model.weightsSource}` : 'öncül'}`);
   console.log(`veri: ${res.stats.analyzed} puanlı kelime · son tarama ${new Date(res.generatedAt).toLocaleString('tr-TR')}`);
   console.log(`karar dağılımı: ${Object.entries(res.counts).filter(([k]) => k !== 'PENDING').map(([k, v]) => `${k} ${v}`).join(' · ')}`);
   res.groups.forEach((g, i) => {
@@ -96,7 +120,8 @@ function printText(res) {
     const x = r.decision.reach;
     const c = r.comp || {};
     console.log('');
-    console.log(`${String(i + 1).padStart(2)}. ${r.k}   [${r.decision.verdict}]`);
+    console.log(`${String(i + 1).padStart(2)}. ${r.k}   [${r.decision.verdict}]${r.disc ? `   keşif ${r.disc.score}` : ''}`);
+    if (res.by === 'discovery' && r.disc) for (const line of r.disc.reasons) console.log(`    ${line}`);
     console.log(`    ${r.decision.reason}`);
     if (r.decision.sentence) console.log(`    ${r.decision.sentence}`);
     console.log(`    talep ${r.demand} · rekabet ${r.difficulty} · fırsat ${r.opportunity} · girebilirlik ${r.decision.axes ? r.decision.axes.enter.score : '–'}`);
@@ -107,13 +132,14 @@ function printText(res) {
 }
 
 function printCsv(all) {
-  const cols = ['pazar', 'kelime', 'karar', 'firsat', 'talep', 'rekabet', 'erisim', 'giris', 'orta_sira', 'yeni_giren', 'lider_payi', 'gelir_modeli', 'ilgi', 'varyantlar', 'gerekce'];
+  const kcols = ['kesif', ...SIGNALS.map((s) => `kesif_${s}`)];
+  const cols = ['pazar', 'kelime', 'karar', 'firsat', 'talep', 'rekabet', 'erisim', 'giris', 'orta_sira', 'yeni_giren', 'lider_payi', 'gelir_modeli', 'ilgi', ...kcols, 'varyantlar', 'gerekce'];
   console.log(cols.join(';'));
   for (const res of all) {
     const mid = res.market.id;
     for (const g of res.groups) {
       const r = row(g.head);
-      const vals = [mid, r.kelime, r.karar, r.firsat, r.talep, r.rekabet, r.erisim, r.giris, r.orta_sira, r.yeni_giren, r.lider_payi, r.gelir_modeli, r.ilgi, g.variants.map((v) => v.k).join(' | '), r.gerekce];
+      const vals = [mid, r.kelime, r.karar, r.firsat, r.talep, r.rekabet, r.erisim, r.giris, r.orta_sira, r.yeni_giren, r.lider_payi, r.gelir_modeli, r.ilgi, ...kcols.map((k) => r[k]), g.variants.map((v) => v.k).join(' | '), r.gerekce];
       console.log(vals.map((v) => `"${String(v ?? '').replace(/"/g, '""')}"`).join(';'));
     }
   }
@@ -125,7 +151,13 @@ function main() {
   const mi = argv.indexOf('--market');
   const index = readJson(path.join(PUBLIC_DATA, 'index.json'), { markets: [] });
   const ids = mi >= 0 ? [argv[mi + 1]] : (index.markets || []).map((m) => m.id);
-  const opts = { minReach: num('--reach', 40), limit: num('--limit', 30) };
+  const bi = argv.indexOf('--by');
+  const by = bi >= 0 ? argv[bi + 1] : 'verdict';
+  if (!['verdict', 'discovery'].includes(by)) throw new Error(`--by verdict | discovery (verilen: ${by})`);
+  const opts = {
+    by, minReach: argv.includes('--reach') ? num('--reach', 40) : undefined, limit: num('--limit', 30),
+    perSeed: num('--per-seed', 2), minFeasibility: num('--min-feasibility', 0.5)
+  };
   const all = ids.map((id) => shortlistFor(id, opts));
   if (argv.includes('--csv')) printCsv(all);
   else all.forEach(printText);
