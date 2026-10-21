@@ -93,6 +93,23 @@ test('yapılabilirlik: politika riski engeller, marka düşürür, ağır yapım
   assert.equal(feasibilitySignal('sudoku', [f('zombie')], 'en').value, 1, 'arama tarafı işaretleri (ölü sıralar) yapılabilirliği etkilemez');
 });
 
+test('yapılabilirlik sözlükleri: marka, platform, başka ülke, yetişkin, başlık parçası; tuzak kelimeler etkilenmez', () => {
+  const v = (k, lang = 'en') => feasibilitySignal(k, [], lang);
+  assert.equal(v('truck simulator x bmw').value, 0.2);
+  assert.equal(v('block blast').value, 0.2);
+  assert.equal(v('araba oyunları jeep', 'tr').value, 0.2);
+  assert.equal(v('simulator games pc').value, 0.3);
+  assert.equal(v('truck simulator zimbabwe').value, 0.4);
+  assert.equal(v('tır oyunları amerikan', 'tr').value, 0.4);
+  assert.equal(v('puzzle games girls hot').blocked, true);
+  assert.equal(v('kız giydirme oyunları seksi', 'tr').blocked, true);
+  assert.equal(v('farm games pizza wala game').value, 0.2, 'başka pazar (0,4) × başlık parçası (0,5)');
+  assert.equal(v('araba oyunu oyunları', 'tr').value, 0.5);
+  for (const k of ['cooking games korean', 'mac and cheese cooking', 'steam train games', 'air traffic controller', 'youtuber simulator',
+    'dodge games', 'adult coloring book', 'truck simulator usa']) assert.equal(v(k).value, 1, k);
+  for (const k of ['seksen gün', 'yetişkin boyama', 'sudan kaçış', 'bulmaca oyunları araba']) assert.equal(v(k, 'tr').value, 1, k);
+});
+
 test('keşif skoru: değerlendirilmeyen kelimelerde null; ağırlıklar normalize; kısa biçim', () => {
   const games = top(10);
   const m = mapOf(games);

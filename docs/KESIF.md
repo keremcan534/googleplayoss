@@ -69,11 +69,23 @@ hesap makinesi, su terazisi, kelime…). Elle ya da bir dil modeliyle verilmiş 
 
 ### Yapılabilirlik
 
-`flags.js` işaretlerinin en düşüğü: politika riski / gerçek para 0 (**engelli**: kısa listeye girmez), marka /
-ticari ad / "… like X" / kurum adı 0,2, geliştirici adı / nadir ön ekli marka 0,3, yanlış ülke 0,4, tek yayıncı
-0,6, mevsimlik / yıla bağlı 0,7. Kelimede ağır yapım sözcüğü (online, multiplayer, pvp, open world, AR/VR, AI chat,
-bank, crypto… / çevrimiçi, çok oyunculu, açık dünya, canlı…) varsa ×0,6. Elle değer: `feasibility[...]`.
-Sınır: kapsam `flags.js`'inkidir; ör. ABD pazarında "bmw" ya da "zimbabwe / qatar" işaretlenmiyor.
+`flags.js` işaretlerinin ve bu skora özel sözlüklerin en düşüğü:
+
+- politika riski / gerçek para / **yetişkin içerik araması** 0 (**engelli**: kısa listeye girmez),
+- marka / ticari ad / "… like X" / kurum adı 0,2 — `flags.js`'e ek olarak araç markaları (bmw, jeep, scania…) ve
+  bilinen oyun adları (block blast, hill climb, candy crush…),
+- geliştirici adı / nadir ön ekli marka 0,3, **başka platform** (pc, xbox, youtube…) 0,3,
+- yanlış ülke 0,4 — `flags.js`'e ek olarak pazar dışındaki ülke ve bölge adları (zimbabwe, qatar, europe… / almanya,
+  amerikan, avrupa…); sıfatlar ("korean cooking") bilerek yok, çoğu zaman bir temadır,
+- tek yayıncı 0,6, mevsimlik / yıla bağlı 0,7.
+
+Sonra çarpanlar: ağır yapım sözcüğü (online, multiplayer, pvp, open world, AR/VR, AI chat, bank, crypto… /
+çevrimiçi, çok oyunculu, açık dünya, canlı…) ×0,6; tür kelimesi iki kez geçen başlık parçası ("farm games pizza
+wala game") ×0,5. Elle değer: `feasibility[...]`.
+
+Ek sözlükler yalnızca bu skoru etkiler; karar sınıfını sınırlayan `flags.js` kuralları (elle ölçülmüş kesinlikleriyle)
+değişmedi. Ekim 2026'da keşif kısa listesinin başında `flags.js`'in yakalamadığı bu tür kelimeler vardı; tuzak
+kelimeler ("steam train", "air traffic controller", "mac and cheese", "adult coloring", "seksen", "sudan") testte.
 
 ## İlk kontrol (örneklem içi, doğrulama değil)
 
@@ -105,6 +117,10 @@ npm run calibrate-discovery -- --outcomes ../aso-tracker/outcomes.json
 npm run calibrate-discovery -- --write                        # config/discovery.json: etiket özeti; kapı açıksa ağırlıklar
 npm run shortlist -- --by discovery --limit 20                # keşif skoruna göre kısa liste
 ```
+
+Keşif kısa listesi engellileri ve yapılabilirliği 0,5'in altındakileri (marka, başka platform, başka ülke, başlık
+parçası) çıkarır (`--min-feasibility`). Skor büyük ölçüde tür düzeyinde olduğu için aynı temanın kelimeleri art
+arda gelir ("truck simulator …" ×10); her tohumdan en fazla 2 pazar alınır (`--per-seed`).
 
 **Gizlilik:** Play Console sayıları herkese açık depoya girmez. `data/factory/outcomes.json` `.gitignore`'dadır;
 biçim için [`data/factory/outcomes.example.json`](../data/factory/outcomes.example.json). Yayınlanan veriye

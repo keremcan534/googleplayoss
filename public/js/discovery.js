@@ -55,7 +55,8 @@ export const PARAMS = Object.freeze({
   minReviewed: 2,           // ilk 5'te en az bu kadar uygulamanın örneği yoksa şikâyet bileşeni kullanılmaz
   reviewTopN: 5,
   visualTerm: 0.25,         // görsel / araç kelimesi başına ± (tek sefer)
-  heavyBuild: 0.6           // ağır yapım kelimesi yapılabilirliği bununla çarpar
+  heavyBuild: 0.6,          // ağır yapım kelimesi yapılabilirliği bununla çarpar
+  titleMash: 0.5            // tür kelimesi iki kez geçen öbek (başlık parçası) bununla çarpar
 });
 
 /* ------------------------------------------------------------------ tür öncülleri */
@@ -95,6 +96,28 @@ export function genreLabel(g) {
 
 /* ------------------------------------------------------------------ kelime sözlükleri */
 
+/** Başka bir şirketin ürünü / markası: adı meta veride kullanılamaz, arayan çoğu zaman o ürünü istiyor. Belirsiz kelimeler yok ("dodge", "mini", "gacha"). */
+const BRANDS = ['bmw', 'mercedes', 'benz', 'audi', 'porsche', 'ferrari', 'lamborghini', 'bugatti', 'tesla', 'toyota', 'honda', 'nissan',
+  'hyundai', 'kia', 'ford', 'chevrolet', 'chevy', 'jeep', 'volvo', 'scania', 'iveco', 'daf', 'kenworth', 'peterbilt', 'freightliner', 'renault',
+  'fiat', 'opel', 'volkswagen', 'vw', 'skoda', 'mazda', 'subaru', 'mitsubishi', 'suzuki', 'yamaha', 'kawasaki', 'ducati', 'harley',
+  'john deere', 'new holland', 'massey', 'fendt', 'caterpillar', 'komatsu', 'jcb', 'liebherr',
+  'block blast', 'hill climb', 'candy crush', 'subway surfers', 'temple run', 'angry birds', 'clash royale', 'royal match', 'homescapes',
+  'gardenscapes', 'township', 'coin master', 'monopoly', 'uno', 'scrabble', 'wordle', 'tetris', 'pac man', 'euro truck', 'ets2',
+  'american truck', 'bussid', 'talking tom', 'hello neighbor', 'poppy playtime', 'huggy wuggy', 'skibidi', 'fnaf', 'five nights',
+  'sakura school', 'avakin', 'bitlife', 'efootball', 'ludo king', 'stumble guys', 'geometry dash', 'fruit ninja', 'cut the rope',
+  'plants vs zombies', 'pvz', 'bloons', 'hay day', 'farmville', 'simcity', 'the sims'];
+/** ABD pazarı dışındaki ülke ve bölge adları (flags.js WRONG_GEO'nun kapsamadıkları dahil). Eyalet ya da kişi adı olabilenler yok ("georgia", "jordan"). */
+const GEO_EN = ['afghanistan', 'albania', 'algeria', 'argentina', 'armenia', 'australia', 'austria', 'azerbaijan', 'bahrain', 'bangladesh',
+  'belarus', 'belgium', 'bolivia', 'bosnia', 'brazil', 'brasil', 'bulgaria', 'cambodia', 'cameroon', 'canada', 'chile', 'china', 'colombia',
+  'croatia', 'cuba', 'czech', 'denmark', 'ecuador', 'egypt', 'england', 'estonia', 'ethiopia', 'finland', 'france', 'germany', 'ghana',
+  'greece', 'guatemala', 'haiti', 'honduras', 'hungary', 'iceland', 'india', 'indonesia', 'iran', 'iraq', 'ireland', 'israel', 'italy',
+  'jamaica', 'japan', 'kazakhstan', 'kenya', 'korea', 'kuwait', 'laos', 'latvia', 'lebanon', 'libya', 'lithuania', 'malaysia', 'mexico',
+  'mongolia', 'morocco', 'mozambique', 'myanmar', 'nepal', 'netherlands', 'nigeria', 'norway', 'oman', 'pakistan', 'panama', 'paraguay',
+  'peru', 'philippines', 'poland', 'portugal', 'qatar', 'romania', 'russia', 'rwanda', 'saudi', 'scotland', 'senegal', 'serbia', 'singapore',
+  'slovakia', 'slovenia', 'somalia', 'spain', 'sri lanka', 'sudan', 'sweden', 'switzerland', 'syria', 'taiwan', 'tanzania', 'thailand',
+  'tunisia', 'uganda', 'ukraine', 'uae', 'dubai', 'uruguay', 'uzbekistan', 'venezuela', 'vietnam', 'yemen', 'zambia', 'zimbabwe',
+  'europe', 'asia', 'africa', 'balkan', 'wala', 'wali'];
+
 // İngilizce: tam kelime (normalizeFor çıktısı üzerinde). Türkçe: kelime başı + ek ("boyama", "renkli", "arabalar").
 const enRe = (terms) => new RegExp(`\\b(${terms.join('|')})\\b`, 'g');
 const trRe = (terms) => new RegExp(`(?:^| )(${terms.join('|')})[^ ]*`, 'g');
@@ -125,6 +148,32 @@ const LEX = {
       'bitcoin', 'iptv', 'tv remote']),
     tr: trRe(['online', 'çevrimiçi', 'çok oyunculu', 'açık dünya', 'canlı', 'yapay zeka', 'sohbet', 'görüntülü', 'gps', 'bluetooth', 'nfc',
       'banka', 'kripto', 'bitcoin', 'iptv', 'tv kumanda'])
+  },
+  // Yapılabilirlik sözlükleri. flags.js'teki doğrulanmış kurallara (karar sınıfını sınırlar) DOKUNMAZ, yalnızca bu skoru
+  // etkiler: Ekim 2026'da keşif kısa listesinin başında flags.js'in yakalamadığı marka, platform, ülke ve yetişkin
+  // aramaları vardı ("truck simulator x bmw", "simulator games pc", "truck simulator zimbabwe", "puzzle games girls hot").
+  brand: {
+    en: enRe(BRANDS),
+    tr: trRe([...BRANDS, 'tofaş'])
+  },
+  platform: {
+    // "steam" (buharlı tren), "controller" (hava trafik kontrolörü), "mac" (mac and cheese), "youtuber" (simülasyon teması) bilerek yok
+    en: enRe(['pc', 'ps4', 'ps5', 'playstation', 'xbox', 'nintendo', 'console', 'youtube', 'tiktok', 'twitch', 'iphone', 'ipad', 'ios',
+      'macbook', 'windows', 'chromebook']),
+    tr: trRe(['pc(?= |$)', 'bilgisayar', 'ps4', 'ps5', 'playstation', 'xbox', 'steam', 'nintendo', 'konsol', 'youtube', 'tiktok', 'iphone', 'ios(?= |$)'])
+  },
+  // pazarın kendi ülkesi listede yok (ABD: usa / america; TR: türkiye). Sıfatlar ("korean", "japanese") bilerek yok:
+  // çoğu zaman bir tema ("korean cooking"), başka bir pazar değil.
+  geo: {
+    en: enRe(GEO_EN),
+    tr: trRe(['almanya', 'amerika', 'amerikan', 'avrupa', 'rusya', 'japonya', 'çin(?= |$)', 'kore(?= |$)', 'hindistan', 'brezilya', 'ingiltere',
+      'fransa', 'italya', 'ispanya', 'kanada', 'meksika', 'arabistan', 'katar', 'dubai', 'mısır', 'irak', 'iran(?= |$)', 'suriye', 'kazakistan',
+      'özbekistan', 'ukrayna', 'polonya', 'hollanda', 'afrika', 'asya', 'endonezya', 'pakistan',
+      ...GEO_EN.filter((g) => !['sudan', 'wala', 'wali'].includes(g))]) // "sudan" Türkçede "su-dan"
+  },
+  adult: {
+    en: enRe(['sexy', 'sex', 'nude', 'naked', 'nsfw', 'erotic', 'xxx', 'porn\\w*', 'hentai', 'hot girls?', 'hot women', 'hot babes?', 'girls? hot', 'women hot']),
+    tr: trRe(['seksi', 'seks(?= |$)', 'çıplak', 'erotik', 'porno', 'ateşli kız', 'kızlar ateşli']) // "seksen" eşleşmez
   }
 };
 function termsIn(k, kind, lang) {
@@ -137,6 +186,10 @@ function termsIn(k, kind, lang) {
  * Yapılabilirlik: flags.js işaretleri. Değer = işaretlerin en düşüğü. Politika riski (0) skoru değiştirmez ama
  * kaydı "engelli" yapar: kısa liste onu önermez.
  */
+/** Yapılabilirlik sözlüklerinin değerleri (flags.js işaretleriyle aynı ölçek); yetişkin araması engeller. */
+export const FEASIBILITY_TERMS = Object.freeze({ brand: 0.2, platform: 0.3, geo: 0.4 });
+const TERM_TR = { brand: 'marka', platform: 'başka platform', geo: 'başka ülke / pazar' };
+
 export const FEASIBILITY_FLAGS = Object.freeze({
   regulated: 0, realMoney: 0,
   brandTr: 0.2, ip: 0.2, ipSuffix: 0.2, likeX: 0.2, agencyNav: 0.2,
@@ -252,9 +305,18 @@ export function feasibilitySignal(k, flags, lang = 'en', overrides = null, P = P
     if (FEASIBILITY_FLAGS[f.id] < 1) reasons.push(f.label);
     v = Math.min(v, FEASIBILITY_FLAGS[f.id]);
   }
+  for (const kind of Object.keys(FEASIBILITY_TERMS)) {
+    const hit = termsIn(k, kind, lang);
+    if (hit.length) { v = Math.min(v, FEASIBILITY_TERMS[kind]); reasons.push(`${TERM_TR[kind]} (${hit.join(', ')})`); }
+  }
+  const adult = termsIn(k, 'adult', lang);
+  if (adult.length) { v = 0; reasons.push(`yetişkin içerik araması (${adult.join(', ')}): Play içerik politikası`); }
   const blocked = v === 0;
   const heavy = termsIn(k, 'heavy', lang);
   if (heavy.length) { v *= P.heavyBuild; reasons.push(`ağır yapım (${heavy.join(', ')})`); }
+  // başlık parçalarından türemiş öbek: tür kelimesi iki kez ("farm games pizza wala game", "araba oyunu oyunları")
+  const genreWords = k.split(' ').filter((t) => (lang === 'tr' ? /^oyun/.test(t) : /^games?$/.test(t))).length;
+  if (genreWords >= 2) { v *= P.titleMash; reasons.push('başlık parçası (tür kelimesi iki kez)'); }
   const manual = overrides && Object.prototype.hasOwnProperty.call(overrides, k) ? Number(overrides[k]) : null;
   if (Number.isFinite(manual)) return { value: r2(clamp01(manual)), source: 'manual', blocked: blocked && manual === 0, reasons: ['elle girilen değer'] };
   return { value: r2(v), source: 'auto', blocked, reasons, heavy };

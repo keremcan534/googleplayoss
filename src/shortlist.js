@@ -5,7 +5,9 @@
  * Varsayılan: kararı BUILD ya da GOLD olan (girebilirlik × getiri) VE girebilirlik puanı eşiğin üstünde olan
  * kelimeler, girebilirliğe göre sıralı (arama trafiği sorusu, geri testli).
  * --by discovery: keşif skoruna göre (public/js/discovery.js, HİPOTEZ: Play'in öneri / benzer uygulama
- * yüzeylerinden erken trafik). Karar sınıfı eleme ölçütü değildir; yalnızca politika engelli kelimeler çıkar.
+ * yüzeylerinden erken trafik). Karar sınıfı eleme ölçütü değildir. Çıkanlar: politika / yetişkin engelli ve
+ * yapılabilirliği 0,5'in altında olanlar (marka, başka platform, başka ülke, başlık parçası; --min-feasibility).
+ * Skor büyük ölçüde tür düzeyinde olduğu için aynı tohumdan (tema) en fazla 2 pazar alınır (--per-seed).
  * Aynı ilk 10'a düşen kelimeler tek pazar olarak katlanır (varyantlar altta listelenir).
  *
  * Kullanım:
@@ -13,6 +15,7 @@
  *   npm run shortlist -- --market tr-tr
  *   npm run shortlist -- --reach 55 --limit 25
  *   npm run shortlist -- --by discovery --limit 20
+ *   npm run shortlist -- --by discovery --per-seed 1 --min-feasibility 0.3
  *   npm run shortlist -- --csv > liste.csv
  */
 import fs from 'node:fs';
@@ -43,7 +46,7 @@ function overlap(a, b) {
  * @returns {{market:object, groups:Array, total:number, counts:object}}
  */
 export function shortlistFor(marketId, opts = {}) {
-  const { by = 'verdict', limit = 30, verdicts = ['GOLD', 'BUILD'] } = opts;
+  const { by = 'verdict', limit = 30, verdicts = ['GOLD', 'BUILD'], minFeasibility = 0.5, perSeed = 2 } = opts;
   const minReach = opts.minReach ?? (by === 'discovery' ? 0 : 40);
   const data = readJson(path.join(PUBLIC_DATA, `${marketId}.json`));
   if (!data) throw new Error(`Pazar dosyası yok: ${marketId}`);
@@ -58,7 +61,7 @@ export function shortlistFor(marketId, opts = {}) {
   for (const r of recs) counts[r.decision.verdict] = (counts[r.decision.verdict] || 0) + 1;
 
   const eligible = (by === 'discovery'
-    ? recs.filter((r) => r.disc && !r.disc.blocked && r.decision.axes && r.decision.axes.enter.score >= minReach)
+    ? recs.filter((r) => r.disc && !r.disc.blocked && r.disc.signals.feasibility.value >= minFeasibility && r.decision.axes && r.decision.axes.enter.score >= minReach)
       .sort((a, b) => b.disc.score - a.disc.score || b.decision.sortKey - a.decision.sortKey)
     : recs
       .filter((r) => verdicts.includes(r.decision.verdict))
@@ -71,7 +74,12 @@ export function shortlistFor(marketId, opts = {}) {
     if (host) host.variants.push(r);
     else groups.push({ head: r, variants: [] });
   }
-  return { market: data.market, generatedAt: data.generatedAt, stats: data.stats, counts, by, model: data.discoveryModel || null, total: eligible.length, groups: groups.slice(0, limit) };
+  // keşif skoru tür düzeyinde: aynı temanın (tohum) kelimeleri art arda gelir ("truck simulator …" ×10). Tema başına sınır.
+  const seen = new Map();
+  const picked = by === 'discovery' && perSeed > 0
+    ? groups.filter((g) => { const t = g.head.seed || g.head.k; const n = (seen.get(t) || 0) + 1; seen.set(t, n); return n <= perSeed; })
+    : groups;
+  return { market: data.market, generatedAt: data.generatedAt, stats: data.stats, counts, by, model: data.discoveryModel || null, total: eligible.length, groups: picked.slice(0, limit) };
 }
 
 function row(r) {
@@ -146,7 +154,10 @@ function main() {
   const bi = argv.indexOf('--by');
   const by = bi >= 0 ? argv[bi + 1] : 'verdict';
   if (!['verdict', 'discovery'].includes(by)) throw new Error(`--by verdict | discovery (verilen: ${by})`);
-  const opts = { by, minReach: argv.includes('--reach') ? num('--reach', 40) : undefined, limit: num('--limit', 30) };
+  const opts = {
+    by, minReach: argv.includes('--reach') ? num('--reach', 40) : undefined, limit: num('--limit', 30),
+    perSeed: num('--per-seed', 2), minFeasibility: num('--min-feasibility', 0.5)
+  };
   const all = ids.map((id) => shortlistFor(id, opts));
   if (argv.includes('--csv')) printCsv(all);
   else all.forEach(printText);
