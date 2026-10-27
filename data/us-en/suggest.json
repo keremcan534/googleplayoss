@@ -4716,7 +4716,7 @@
 "s": ["brave","brawl stars","brain games","brawlhalla","branch"]
 },
 "brai": {
-"t": 1792400510774,
+"t": 1793092458903,
 "s": ["brain games","brain puzzle","brain fm","brain puzzle 3","brain it on"]
 },
 "brain": {
@@ -4724,15 +4724,15 @@
 "s": ["brain games","brain puzzle","brain fm","brain puzzle 3","brain it on"]
 },
 "brain ": {
-"t": 1792138772801,
+"t": 1793092459305,
 "s": ["brain games","brain puzzle","brain fm","brain puzzle 3","brain it on"]
 },
 "brain g": {
-"t": 1791888344982,
-"s": ["brain games","brain games free","brain games for kids","brain games free for adults","brain games puzzle"]
+"t": 1793092458498,
+"s": ["brain games","brain games free","brain games for adults","brain games for kids","brain games free for adults"]
 },
 "brain ga": {
-"t": 1792311373222,
+"t": 1793092469914,
 "s": ["brain games","brain games free","brain games for adults","brain games for kids","brain games free for adults"]
 },
 "brain gam": {
@@ -4834,6 +4834,10 @@
 "brain games eraser": {
 "t": 1792311412700,
 "s": ["brain games eraser"]
+},
+"brain games free": {
+"t": 1793092469499,
+"s": ["brain games free","brain games free for adults","brain games free offline","brain games free no ads","brain games free for seniors"]
 },
 "brain games g": {
 "t": 1792311416642,
@@ -5940,8 +5944,8 @@
 "s": ["car games","car","carnival hub","carvana","card games"]
 },
 "car ": {
-"t": 1792224197376,
-"s": ["car games","car parking","car simulator","car evolve","car parking multiplayer 2"]
+"t": 1793092487167,
+"s": ["car games","car parking","car simulator","car guru","car evolve"]
 },
 "car d": {
 "t": 1792052903634,
@@ -5968,15 +5972,15 @@
 "s": ["car factory","car factory simulator","car factory games","car factory game offline","car factory build the car"]
 },
 "car g": {
-"t": 1791543131965,
-"s": ["car games","car guru","car games simulator","car games for kids","car games 3d"]
+"t": 1793092477542,
+"s": ["car games","car guru","car games simulator","car games offline","car games 3d"]
 },
 "car ga": {
-"t": 1792400821299,
+"t": 1793092479199,
 "s": ["car games","car games simulator","car games offline","car games for kids","car games 3d"]
 },
 "car gam": {
-"t": 1792485653613,
+"t": 1793092478788,
 "s": ["car games","car games simulator","car games offline","car games for kids","car games 3d"]
 },
 "car game": {
@@ -5984,7 +5988,7 @@
 "s": ["car games","car games simulator","car games offline","car games for kids","car games 3d"]
 },
 "car games": {
-"t": 1792400821699,
+"t": 1793092478375,
 "s": ["car games","car games simulator","car games offline","car games for kids","car games 2026"]
 },
 "car games ": {
@@ -6104,8 +6108,8 @@
 "s": ["car games for kids","car games for kids free","car games for kids free 2024","car games for kids offline","car games for kids piggy panda"]
 },
 "car games for kids": {
-"t": 1792400864548,
-"s": ["car games for kids","car games for kids free","car games for kids free 2024","car games for kids offline","car games for kids piggy panda"]
+"t": 1793092477960,
+"s": ["car games for kids","car games for kids free","car games for kids free offline","car games for kids free 2024","car games for kids offline"]
 },
 "car games for kids ": {
 "t": 1792400864941,
@@ -7584,24 +7588,28 @@
 "s": ["casual driving games","casual driving","casual dress up games","casual dress up games offline","casual drift"]
 },
 "casual g": {
-"t": 1792400555480,
-"s": ["casual games","casual games offline for boys","casual games offline for girls","casual game center","casual games for fun"]
+"t": 1793092498889,
+"s": ["casual games","casual games offline for boys","casual games offline for girls","casual game center","casual games offline"]
 },
 "casual ga": {
 "t": 1792400555080,
 "s": ["casual games","casual games offline for boys","casual games offline for girls","casual game center","casual games for fun"]
+},
+"casual gam": {
+"t": 1793092499705,
+"s": ["casual games","casual games offline for boys","casual games offline for girls","casual game center","casual games offline"]
 },
 "casual game": {
 "t": 1791888393656,
 "s": ["casual games","casual games offline for boys","casual games offline for girls","casual game center","casual games for fun"]
 },
 "casual games": {
-"t": 1792485740354,
-"s": ["casual games","casual games offline for boys","casual games offline for girls","casual games for fun","casual games car"]
+"t": 1793092452647,
+"s": ["casual games","casual games offline for boys","casual games offline for girls","casual games for fun","casual games offline"]
 },
 "casual games ": {
-"t": 1792400554049,
-"s": ["casual games offline","casual games no ads","casual games for adults","casual games for girls","casual games with simple controls"]
+"t": 1793092454800,
+"s": ["casual games offline","casual games no ads","casual games for girls","casual games for adults","casual games with simple controls"]
 },
 "casual games a": {
 "t": 1792485707459,
@@ -7636,8 +7644,24 @@
 "s": ["casual games earn money gcash","casual azur games evolution","solitaire casual games"]
 },
 "casual games f": {
-"t": 1791888388393,
-"s": ["casual games for adults","casual games for girls","casual games for fun","casual games free","casual games fighting"]
+"t": 1793092454384,
+"s": ["casual games for girls","casual games for adults","casual games for fun","casual games free","casual games for kids"]
+},
+"casual games fo": {
+"t": 1793092453972,
+"s": ["casual games for girls","casual games for adults","casual games for fun","casual games for kids","offline casual games for free"]
+},
+"casual games for a": {
+"t": 1793092453546,
+"s": ["casual games for adults"]
+},
+"casual games for adults": {
+"t": 1793092453139,
+"s": ["casual games for adults"]
+},
+"casual games for fun": {
+"t": 1793092499302,
+"s": ["casual games for fun"]
 },
 "casual games for kids": {
 "t": 1791888388808,
@@ -27244,8 +27268,8 @@
 "s": ["peacock tv","perplexity ai","period tracker","petsmart","petco"]
 },
 "ped": {
-"t": 1791542591135,
-"s": ["pedometer","pedometer free app for android","pedidos ya","pedometer step counter","pedal commander"]
+"t": 1793092081580,
+"s": ["pedometer","pedometer free app for android","pedidos ya","pedometer step counter","peddle car app"]
 },
 "per": {
 "t": 1791888380613,
@@ -27328,8 +27352,8 @@
 "s": ["period tracker free app","period tracker free app offline","period tracker free app for teens","period tracker free app teens","my period tracker free app"]
 },
 "pet": {
-"t": 1791803190322,
-"s": ["petsmart","petco","pet games","petlibro","petit planet"]
+"t": 1793092086445,
+"s": ["petsmart","petco","pet games","petdesk app","petlibro"]
 },
 "pet ga": {
 "t": 1791456269650,
@@ -27372,8 +27396,8 @@
 "s": ["petdesk app","petdesk mobile app","petdesk free app"]
 },
 "ph": {
-"t": 1792138880539,
-"s": ["photos","photo editor","phone","photography","phone app"]
+"t": 1793092093898,
+"s": ["photos","photo editor","phone","photography","photoshop"]
 },
 "pho": {
 "t": 1791803201094,
@@ -27444,19 +27468,19 @@
 "s": ["phonics","phonics for kids","phonics learning app free","phonics app","phonics games"]
 },
 "phot": {
-"t": 1791542597108,
-"s": ["photos","photo editor","photography","photoshop","photomath"]
+"t": 1793092099430,
+"s": ["photos","photo editor","photography","photoshop","photo recovery"]
 },
 "photo": {
 "t": 1791803200663,
 "s": ["photos","photo editor","photography","photoshop","photomath"]
 },
 "photo ": {
-"t": 1791542597538,
-"s": ["photo editor","photo albums","photo recovery","photo collage","photo editor free"]
+"t": 1793092099841,
+"s": ["photo editor","photo recovery","photo albums","photo collage","photo editor free"]
 },
 "photo e": {
-"t": 1791542597988,
+"t": 1793092100245,
 "s": ["photo editor","photo editor free","photo editing","photo editor app","photo editing app"]
 },
 "photo edi": {
@@ -27480,8 +27504,8 @@
 "s": ["photo editor 2023","photo editor 2023 free app","photo editor 2023 background change","photo editing 2023 background","photo editor 2023 video song"]
 },
 "photo en": {
-"t": 1791542596667,
-"s": ["photo enhancer free","photo enhancer","photo enhancer pixel and blurry fix","photo enhance","photo enhancement apps free"]
+"t": 1793092099023,
+"s": ["photo enhancer free","photo enhancer pixel and blurry fix","photo enhancement apps free","photo enhance","photo enhancer to better quality"]
 },
 "photo enh": {
 "t": 1791713450336,
@@ -27532,8 +27556,8 @@
 "s": ["photoshop","photoshop express for android","photoshop free","photoshop free app","photoshop editor"]
 },
 "phy": {
-"t": 1792138880940,
-"s": ["phyphox","physics games","physics puzzle games","physics toolbox","physics"]
+"t": 1793092105795,
+"s": ["phyphox","phygitals","physics games","physics puzzle games","physics"]
 },
 "phys": {
 "t": 1792138880119,
@@ -27588,8 +27612,8 @@
 "s": ["physics puzzle games","physics puzzles","physics puzzle games offline","physics puzzle games with ragdolls","physics puzzle games for adults"]
 },
 "pi": {
-"t": 1791456334795,
-"s": ["pinterest","picsart","pine drama","pizza hut","piano"]
+"t": 1793092113062,
+"s": ["pinterest","picsart","pizza hut","piano","pine drama"]
 },
 "pia": {
 "t": 1791968341942,
@@ -27628,7 +27652,7 @@
 "s": ["pill identifier","pill reminder","pills2me driver app","pillars","pill counter"]
 },
 "pix": {
-"t": 1791456334381,
+"t": 1793092112650,
 "s": ["pixel art","pixel","pixel gun 3d","pixel watch","pixiv"]
 },
 "pixe": {
@@ -28152,11 +28176,11 @@
 "s": ["playstation","planet fitness","pluto tv","plants vs zombies","plex"]
 },
 "pla": {
-"t": 1792224158789,
-"s": ["playstation","planet fitness","plants vs zombies","play games","plato"]
+"t": 1793092124409,
+"s": ["playstation","planet fitness","plants vs zombies","plato","play games"]
 },
 "plan": {
-"t": 1792223801763,
+"t": 1793092119438,
 "s": ["planet fitness","plants vs zombies","plants vs zombies 2","plane","planning center"]
 },
 "plann": {
@@ -28176,19 +28200,19 @@
 "s": ["plants vs zombies","plans","plans games","plansource mobile app","plansource"]
 },
 "plant": {
-"t": 1791967906129,
-"s": ["plants vs zombies","plants vs zombies 2","plant identifier app","plants vs zombies 3","plants vs zombies fusion"]
+"t": 1793092124828,
+"s": ["plants vs zombies","plants vs zombies 2","plants vs zombies 3","plant identifier app","plant identifier app free"]
 },
 "plant ": {
-"t": 1792053224320,
-"s": ["plant identifier app","plant identification","plant vs zombies","plant identifier app free","plant care app free"]
+"t": 1793092119843,
+"s": ["plant identifier app","plant identifier app free","plant vs zombies","plant identification","plant nanny"]
 },
 "plant a": {
 "t": 1792053223907,
 "s": ["plant app","plant app free","plant app identifier and care free","plant ai","plant apps for free"]
 },
 "plant c": {
-"t": 1791542780244,
+"t": 1793092119036,
 "s": ["plant care app free","plant care","plant care app","plant craft","plant care free app"]
 },
 "plant ca": {
@@ -28388,8 +28412,8 @@
 "s": ["player","player games","playerspace","players lounge","player pro"]
 },
 "po": {
-"t": 1791456429551,
-"s": ["poly ai","pokemon go","powerschool","pokemon","pof"]
+"t": 1793092129017,
+"s": ["poly ai","pokemon go","pokemon","powerschool","pof"]
 },
 "pod": {
 "t": 1791888535608,
@@ -28404,8 +28428,8 @@
 "s": ["podcasts app for android","podcasts","podcasts for android free","podcasts app","podcasts app for android free"]
 },
 "pom": {
-"t": 1791456429145,
-"s": ["pomodoro","pomodoro timer clock","pomodoro timer","pomelo app","pomelo"]
+"t": 1793092128615,
+"s": ["pomodoro","pomelo","pomodoro timer clock","pomodoro timer app","pomelo app"]
 },
 "pomod": {
 "t": 1791456688166,
@@ -28508,16 +28532,16 @@
 "s": ["pomodoro timer for study free","pomodoro timer for study offline free"]
 },
 "poo": {
-"t": 1791456280572,
-"s": ["pool","pool table game","poo","poop","pool billiards"]
+"t": 1793092135649,
+"s": ["pool","pool table game","poople","pookie","poop"]
 },
 "pool": {
-"t": 1791803219911,
-"s": ["pool","pool table game","pool billiards","pool blitz","poolstar"]
+"t": 1793092136057,
+"s": ["pool","pool table game","pool billiards","pool clash 8","pool blitz"]
 },
 "pool ": {
-"t": 1791456280977,
-"s": ["pool table game","pool games","pool billiards","pool blitz","pool games for real money"]
+"t": 1793092135248,
+"s": ["pool table game","pool games","pool billiards","pool clash 8","pool blitz"]
 },
 "pool g": {
 "t": 1791456280170,
@@ -28564,7 +28588,7 @@
 "s": ["portfolio app","portfolio","portfolio tracker","portfolio performance","portfolio maker"]
 },
 "pos": {
-"t": 1791456650982,
+"t": 1793092141579,
 "s": ["poshmark","possible finance","postmates","posh","post office app"]
 },
 "posi": {
@@ -28576,12 +28600,12 @@
 "s": ["positive grid spark app","positive affirmations","positive grid","positive affirmations free app","positive"]
 },
 "post": {
-"t": 1791456761068,
-"s": ["postmates","post office app","postparty","postmates driver","postcode by nipost"]
+"t": 1793092141984,
+"s": ["postmates","post office app","postparty","postmates driver","poster maker"]
 },
 "postu": {
-"t": 1792138645583,
-"s": ["posture","posture correction exercise","postureletics","posture scale","posture flow app"]
+"t": 1793092141164,
+"s": ["posture","posture correction exercise","postureletics","posture scale","posture reminder"]
 },
 "postur": {
 "t": 1791713485700,
@@ -28756,20 +28780,20 @@
 "s": ["prayer time","prayer app","prayer lock","prayer","prayermate app"]
 },
 "prayer": {
-"t": 1791803233210,
-"s": ["prayer time","prayer app","prayer lock","prayer","prayermate app"]
+"t": 1793092147348,
+"s": ["prayer time","prayer app","prayer","prayer lock","prayer journal"]
 },
 "prayer ": {
-"t": 1791542528027,
-"s": ["prayer time","prayer app","prayer lock","prayer journal","prayer now"]
+"t": 1793092148574,
+"s": ["prayer time","prayer app","prayer lock","prayer journal","prayer times app"]
 },
 "prayer t": {
-"t": 1791713367962,
-"s": ["prayer time","prayer times no ads","prayer times app","prayer times azan","prayer tracker"]
+"t": 1793092148172,
+"s": ["prayer time","prayer times app","prayer times azan","prayer times no ads","prayer times qibla and hadees"]
 },
 "prayer ti": {
-"t": 1791713368813,
-"s": ["prayer time","prayer times no ads","prayer times app","prayer times azan","prayer time qibla"]
+"t": 1793092147753,
+"s": ["prayer time","prayer times app","prayer times azan","prayer times no ads","prayer times qibla and hadees"]
 },
 "prayer tim": {
 "t": 1792311282139,
@@ -28784,8 +28808,8 @@
 "s": ["prayer time qibla","prayer time qibla and hadees","prayer time qibla and namaz","prayer time qibla hadees","prayer time qibla app"]
 },
 "prayer times": {
-"t": 1791713506933,
-"s": ["prayer times","prayer times no ads","prayer times app","prayer times azan","prayer times sri lanka"]
+"t": 1793092146935,
+"s": ["prayer times","prayer times app","prayer times azan","prayer times no ads","prayer times sri lanka"]
 },
 "prayer times ": {
 "t": 1791713507774,
@@ -28952,15 +28976,15 @@
 "s": ["prime video","prizepicks","private browser","principal mobile app","priority pass"]
 },
 "pric": {
-"t": 1791713371660,
-"s": ["priceline","pricecharting","price chopper app","priceless iga","priceline app for android"]
+"t": 1793092154727,
+"s": ["priceline","pricecharting","price chopper app","priceline app for android","priceline mobile app"]
 },
 "price": {
 "t": 1791968207906,
 "s": ["priceline","pricecharting","price chopper app","priceline app for android","priceless iga"]
 },
 "price ": {
-"t": 1791713372065,
+"t": 1793092155139,
 "s": ["price chopper app","pricecharting","price chopper","price is right bingo game app","price scanner"]
 },
 "price c": {
@@ -28996,8 +29020,8 @@
 "s": []
 },
 "price t": {
-"t": 1791713371245,
-"s": ["price tracker","price tracker app","price tag scanner","price tag maker","price tracking app"]
+"t": 1793092154326,
+"s": ["price tracker","price tracker app","price tag scanner","price tracker amazon flipkart","price travel"]
 },
 "price tracker ": {
 "t": 1791713514102,
@@ -29580,8 +29604,8 @@
 "s": ["puzzles games","puzzles games free for adults","puzzle games for adults with levels","puzzle games for kids","puzzle games for adults"]
 },
 "q": {
-"t": 1791456826512,
-"s": ["qr code scanner","qt app","quest diagnostics app","quickbooks","quizlet"]
+"t": 1793092160232,
+"s": ["qr code scanner","quest diagnostics app","quizlet","qt app","quickbooks"]
 },
 "qd": {
 "t": 1791803248263,
@@ -29632,8 +29656,8 @@
 "s": ["qr code scanner free","qr code scanner for android","qr code scanner free for android","qr code scanner for wifi password","qr code scanner app"]
 },
 "qu": {
-"t": 1791456353558,
-"s": ["quizlet","quest diagnostics app","quickbooks","quick share","quiktrip"]
+"t": 1793092165153,
+"s": ["quizlet","quest diagnostics app","quickbooks","quick share","quran"]
 },
 "qua": {
 "t": 1792400741019,
@@ -29732,8 +29756,8 @@
 "s": ["question cards","question card games","question card games for friends","question card games for couple","question cards for friends"]
 },
 "qui": {
-"t": 1791456353954,
-"s": ["quick share","quizlet","quickbooks","quiktrip","quickbooks workforce"]
+"t": 1793092165560,
+"s": ["quizlet","quick share","quickbooks","quiktrip","quickbooks workforce"]
 },
 "quilt col": {
 "t": 1791196786720,
@@ -29760,8 +29784,8 @@
 "s": []
 },
 "quiz": {
-"t": 1791456353161,
-"s": ["quizlet","quiz games","quiz","quizard","quiz maker"]
+"t": 1793092164748,
+"s": ["quizlet","quiz games","quiz","quiz maker","quizard"]
 },
 "quiz ": {
 "t": 1791542757385,
@@ -29800,8 +29824,8 @@
 "s": ["quiznos","quiznos app","quiznos costa rica","quiznos canada","quiznos subs"]
 },
 "qur": {
-"t": 1791713547601,
-"s": ["quran","quran app","quran majeed","quranify","quran english"]
+"t": 1793092171402,
+"s": ["quran","quran app","quran majeed","quranify","quranly"]
 },
 "qura": {
 "t": 1792138667098,
@@ -29880,11 +29904,11 @@
 "s": ["quran pro","quran progress","quran pro app offline","quran pro القران الكريم","quran progress app"]
 },
 "r": {
-"t": 1792223840087,
-"s": ["roblox","reddit","roku remote","ring","rocket money"]
+"t": 1793092176347,
+"s": ["roblox","reddit","roku remote","ring","retro bowl"]
 },
 "ra": {
-"t": 1791713402176,
+"t": 1793092175934,
 "s": ["racing games","rar","radio","raising canes app","rainbow six mobile"]
 },
 "rac": {
@@ -30328,8 +30352,8 @@
 "s": ["radar","radarscope","radar now","radar app","radaromega"]
 },
 "rai": {
-"t": 1791713403401,
-"s": ["rainbow six mobile","raising cane s app","raid shadow legends","rainbet","rain"]
+"t": 1793092184030,
+"s": ["rainbow six mobile","raising canes app","raid shadow legends","rainbet","rain"]
 },
 "rail": {
 "t": 1792223891500,
@@ -30340,7 +30364,7 @@
 "s": ["railroad crossing","railroad","railroad empire","railroad games","railroad tycoon"]
 },
 "rain": {
-"t": 1791713402990,
+"t": 1793092183618,
 "s": ["rainbow six mobile","rainbet","rain","raindrop app","rain sounds"]
 },
 "rain ": {
@@ -30520,19 +30544,19 @@
 "s": ["recorder","rec room","recorder voice recorder","recreation gov mobile app","recording app"]
 },
 "reci": {
-"t": 1791456803083,
-"s": ["recime","recipe keeper","recipes app","recipes","recipe sage"]
+"t": 1793092189409,
+"s": ["recime","recipe keeper","recipes app","recipes","recime recipe keeper"]
 },
 "recip": {
 "t": 1791968361281,
 "s": ["recipe keeper","recipes app","recipes","recipe sage","recipe lab"]
 },
 "recipe": {
-"t": 1791542720817,
-"s": ["recipe keeper","recipes app","recipes","recipe sage","recipe book"]
+"t": 1793092189819,
+"s": ["recipe keeper","recipes app","recipes","recipe lab","recipe sage"]
 },
 "recipe ": {
-"t": 1792223742725,
+"t": 1793092188993,
 "s": ["recipe keeper","recipe app","recipe sage","recipe lab","recipe vault"]
 },
 "recipe a": {
@@ -30912,8 +30936,8 @@
 "s": ["rewards","rewards apps","rewards arcade","rewards google","rewards go"]
 },
 "rh": {
-"t": 1791713418732,
-"s": ["rhythm hive","rhythm games","rhyme game","rheem econet app","rhyme travel"]
+"t": 1793092198336,
+"s": ["rhythm hive","rheem econet app","rhyme game","rheem","rhyme travel"]
 },
 "rhy": {
 "t": 1791968216471,
@@ -30928,12 +30952,12 @@
 "s": ["rhythm hive","rhythm battle games","rhythm rush","rhythm heaven","rhythm tiles"]
 },
 "rhythm": {
-"t": 1791542971403,
-"s": ["rhythm hive","rhythm games","rhythm battle games","rhythm rush","rhythm heaven"]
+"t": 1793092199163,
+"s": ["rhythm hive","rhythm tiles","rhythm rush","rhythm battle games","rhythm heaven"]
 },
 "rhythm ": {
-"t": 1792138794813,
-"s": ["rhythm hive","rhythm battle games","rhythm rush","rhythm heaven","rhythm tiles"]
+"t": 1793092200407,
+"s": ["rhythm hive","rhythm tiles","rhythm rush","rhythm battle games","rhythm heaven"]
 },
 "rhythm b": {
 "t": 1791196816897,
@@ -30972,8 +30996,12 @@
 "s": ["rhythm fire","rhythm fire edm shooting game","rhythm fighter","rhythm fire game","rhythm fighting games"]
 },
 "rhythm g": {
-"t": 1791542970973,
-"s": ["rhythm games","rhythm games offline","rhythm games kpop","rhythm games that use your music","rhythm generator"]
+"t": 1793092199992,
+"s": ["rhythm games","rhythm games offline","rhythm games anime","rhythm games that use your music","rhythm games kpop"]
+},
+"rhythm ga": {
+"t": 1793092199580,
+"s": ["rhythm games","rhythm games offline","rhythm games anime","rhythm games that use your music","rhythm games kpop"]
 },
 "rhythm gam": {
 "t": 1791456319350,
@@ -30984,7 +31012,7 @@
 "s": ["rhythm games","rhythm games offline","rhythm games kpop","rhythm games that use your music","rhythm games anime"]
 },
 "rhythm games": {
-"t": 1791196842955,
+"t": 1793092198754,
 "s": ["rhythm games","rhythm games offline","rhythm games that use your music","rhythm games kpop","rhythm games anime"]
 },
 "rhythm games ": {
@@ -31148,7 +31176,7 @@
 "s": ["music games rhythm tiles","cat piano tiles rhythm games"]
 },
 "ri": {
-"t": 1791456603170,
+"t": 1793092206400,
 "s": ["ring","ringtone","ring doorbell app","rips by triumph","ringtone maker"]
 },
 "rid": {
@@ -31192,8 +31220,8 @@
 "s": ["ringtones","ringtones for android phone free download","ringtones free","ringtones for android phone","ringtones free songs"]
 },
 "ro": {
-"t": 1792224114551,
-"s": ["roblox","roku remote","rocket money","role playing games","royal caribbean app"]
+"t": 1793092214535,
+"s": ["roblox","roku remote","rocket money","royal caribbean app","role playing games"]
 },
 "road t": {
 "t": 1792917239525,
@@ -31228,8 +31256,8 @@
 "s": []
 },
 "rog": {
-"t": 1791196896141,
-"s": ["roguelike games","rogue legends","roguelite","rogue credit union","rogue"]
+"t": 1793092214129,
+"s": ["roguelike games","roguelike","rogue legends","roguelite","rogue credit union"]
 },
 "rogue": {
 "t": 1791196896568,
@@ -31680,7 +31708,7 @@
 "s": ["royal match 3 games","royal match 3","royal match 3 games 2024","royal match 3d","royal match 3 games 2023"]
 },
 "rp": {
-"t": 1791542800299,
+"t": 1793092220345,
 "s": ["rpg","rpg games","rpmsg","rp","rpg games free offline"]
 },
 "rpg": {
@@ -32196,8 +32224,8 @@
 "s": ["snapchat","spotify","signal","subway surfers","smart switch"]
 },
 "sa": {
-"t": 1792138749157,
-"s": ["sam s club","samsung health","samsung","samsung smart switch","sandbox"]
+"t": 1793092224725,
+"s": ["sams club","samsung health","samsung","samsung smart switch","sandbox"]
 },
 "safe": {
 "t": 1792224051579,
@@ -32272,7 +32300,7 @@
 "s": ["salon 4","salon 4 toca boca","salon 4 hair salon 4","toca hair salon 4","hair salon 4 netflix"]
 },
 "san": {
-"t": 1791456381631,
+"t": 1793092224307,
 "s": ["sandbox","sandbox games","santander","sandboxx military app","san andreas"]
 },
 "sand": {
@@ -32672,8 +32700,8 @@
 "s": ["sandisk","sandisk app download","sandisk memory zone app for android","sandisk ultra dual drive usb type c","sandisk app"]
 },
 "sc": {
-"t": 1792138897804,
-"s": ["scary games","screen recorder","scanner app","scoopz","schoology"]
+"t": 1793092237046,
+"s": ["screen recorder","scanner app","scary games","scoopz","scarlet skips"]
 },
 "sca": {
 "t": 1792052807856,
@@ -33040,8 +33068,8 @@
 "s": ["shadow hunter","shadow hunter lost world","shadow hunter offline game","shadow hunter game","shadow hunter lost world premium"]
 },
 "sho": {
-"t": 1791456362113,
-"s": ["shooting games","shop","shokz","shopping","shopify"]
+"t": 1793092249815,
+"s": ["shop","shooting games","shokz","shopping","shopify"]
 },
 "shoo": {
 "t": 1791456361297,
@@ -33432,12 +33460,12 @@
 "s": ["shooting games zombie shooting games"]
 },
 "shop": {
-"t": 1791542813432,
+"t": 1793092250230,
 "s": ["shop","shopping","shopify","shopper instacart app","shoprite app"]
 },
 "shopp": {
-"t": 1791456444971,
-"s": ["shopping","shopper instacart app","shopping apps","shopping list","shopping games"]
+"t": 1793092249403,
+"s": ["shopping","shopper instacart app","shopping list","shopping games","shopee"]
 },
 "shoppin": {
 "t": 1791713629643,
@@ -33460,8 +33488,8 @@
 "s": ["signal","sirius xm","simulation games","single player games","sims"]
 },
 "sig": {
-"t": 1791803315137,
-"s": ["signal","signia app","sign language","signia","sight bulb app"]
+"t": 1793092254915,
+"s": ["signal","signia app","sign language","signia app for android","sight bulb app"]
 },
 "sign": {
 "t": 1791713639545,
@@ -34068,16 +34096,16 @@
 "s": ["skills motocross 2","skills motocross","skills motocross 3","mad skills motocross 3","mad skills motocross 2"]
 },
 "sl": {
-"t": 1791456372274,
-"s": ["slack","sleeper","sling tv","slides","slots"]
+"t": 1793092258522,
+"s": ["slack","slots","sling tv","slots games","slides"]
 },
 "sle": {
-"t": 1792310976338,
-"s": ["sleeper","sleep number","sleep sounds","sleep","sled surfers"]
+"t": 1793092258111,
+"s": ["sleeper","sleep sounds","sleep number","sleep","sled surfers"]
 },
 "slee": {
-"t": 1791542804127,
-"s": ["sleeper","sleep number","sleep sounds","sleep","sleep tracker"]
+"t": 1793092266761,
+"s": ["sleeper","sleep sounds","sleep number","sleep","sleep tracker"]
 },
 "sleep": {
 "t": 1792310976755,
@@ -34180,8 +34208,8 @@
 "s": ["smash hit","smash fest","smashy road","smash land","smashburger"]
 },
 "sn": {
-"t": 1791456347548,
-"s": ["snapchat","snapseed","snake","sniper games","snake clash"]
+"t": 1793092274339,
+"s": ["snapchat","snapseed","sniper games","snake","sniper"]
 },
 "sni": {
 "t": 1791456347134,
@@ -35200,11 +35228,11 @@
 "s": ["sounds for sleeping","sounds for sleep","sounds for sleeping free","rain sounds for sleep","fan sounds for sleeping"]
 },
 "sp": {
-"t": 1792139043197,
+"t": 1793092279754,
 "s": ["spotify","spark driver app","spectrum app","sports games","speedway"]
 },
 "spa": {
-"t": 1792139043616,
+"t": 1793092279337,
 "s": ["spark driver app","spades","space games","spades plus","space"]
 },
 "spac": {
@@ -35368,8 +35396,8 @@
 "s": ["tip n split tip calculator","tip calculator and bill split","tip split calculator"]
 },
 "spo": {
-"t": 1791542849467,
-"s": ["spotify","sports games","sportsyou","sports betting","spothero"]
+"t": 1793092287494,
+"s": ["spotify","sports games","sports betting","sportsyou","spothero"]
 },
 "sport": {
 "t": 1793005942416,
@@ -35388,12 +35416,12 @@
 "s": ["sports tracker","sports trivia","sports trading","sports tracker app","sports trivia games free"]
 },
 "spot": {
-"t": 1792223898385,
-"s": ["spotify","spothero","spotify for artists","spot the station","spotify kids"]
+"t": 1793092287899,
+"s": ["spotify","spothero","spotify for artists","spotify kids","spot me"]
 },
 "spot ": {
-"t": 1792224244960,
-"s": ["spot the station","spothero","spot pet insurance","spot me","spot on"]
+"t": 1793092287080,
+"s": ["spothero","spot me","spot the station","spot pet insurance","spot the difference"]
 },
 "spot d": {
 "t": 1792223898791,
@@ -35468,7 +35496,7 @@
 "s": ["sri lanka police app","sri lankan airline app","sri lanka bus game","sri lanka radio","sri lanka lottery result app"]
 },
 "st": {
-"t": 1792486055975,
+"t": 1793092302418,
 "s": ["steam","starbucks","state farm","stylized games","starlink"]
 },
 "ste": {
@@ -35508,28 +35536,32 @@
 "s": ["stickman","stick war","stickman fight","sticker","sticky notes"]
 },
 "stickm": {
-"t": 1791803349670,
-"s": ["stickman","stickman fight","stickman games","stickman hook","stickman war"]
+"t": 1793092295237,
+"s": ["stickman","stickman fight","stickman hook","stickman war","stickman dismount"]
 },
 "stickma": {
-"t": 1791282464631,
-"s": ["stickman","stickman fight","stickman games","stickman hook","stickman war"]
+"t": 1793092296058,
+"s": ["stickman","stickman fight","stickman hook","stickman war","stickman dismount"]
 },
 "stickman": {
-"t": 1791542660283,
-"s": ["stickman","stickman fight","stickman games","stickman hook","stickman war"]
+"t": 1793092297300,
+"s": ["stickman","stickman fight","stickman hook","stickman war","stickman dismount"]
 },
 "stickman ": {
-"t": 1791803343672,
+"t": 1793092296880,
 "s": ["stickman fight","stickman games","stickman hook","stickman party","stickman war"]
+},
+"stickman ga": {
+"t": 1793092296470,
+"s": ["stickman games","stickman games fighting","stickman games offline","stickman gangster","stickman games 2 player"]
 },
 "stickman gam": {
 "t": 1791542660713,
 "s": ["stickman games","stickman games fighting","stickman games offline","stickman games 2 player","stickman games offline fighting"]
 },
 "stickman games": {
-"t": 1791542661177,
-"s": ["stickman games","stickman games fighting","stickman games offline","stickman games 2 player","stickman games offline fighting"]
+"t": 1793092295642,
+"s": ["stickman games","stickman games fighting","stickman games offline","stickman games 2 player","stickman games spiderman"]
 },
 "stickman games ": {
 "t": 1791542659860,
@@ -35640,7 +35672,7 @@
 "s": ["storyreel","storygraph","storyteller","story games","story"]
 },
 "str": {
-"t": 1792223809881,
+"t": 1793092302015,
 "s": ["strava","straight talk","strategy games","stremio","stripe"]
 },
 "stra": {
@@ -35751,13 +35783,113 @@
 "t": 1793005971149,
 "s": ["strategy games board","strategy board games free","strategy board games offline","strategy board games monopoly","strategy board games war"]
 },
+"strategy games c": {
+"t": 1793092082600,
+"s": ["strategy games chess","strategy games countries","strategy games civilization","strategy games country","strategy games card"]
+},
+"strategy games co": {
+"t": 1793092088240,
+"s": ["strategy games countries","strategy games country","strategy games countryballs","strategy games command and conquer","strategy games conquer"]
+},
+"strategy games d": {
+"t": 1793092092394,
+"s": ["strategy games defense","strategy games dots","strategy games dls","tower defence strategy games","tower defense strategy games"]
+},
+"strategy games dino": {
+"t": 1793092094963,
+"s": ["dinosaur strategy games"]
+},
+"strategy games dragon": {
+"t": 1793092101751,
+"s": ["dragon strategy games"]
+},
+"strategy games e": {
+"t": 1793092102161,
+"s": ["strategy games empire","strategy games early access","strategy games europe","new strategy games early access","endless strategy games with replayability"]
+},
+"strategy games f": {
+"t": 1793092109507,
+"s": ["strategy games for kids","strategy games for adults","strategy games free","strategy games football","strategy games free fire"]
+},
+"strategy games g": {
+"t": 1793092120853,
+"s": ["strategy games golf","strategy games gta 5","strategy games gun","strategy games girls","grand strategy games"]
+},
+"strategy games granny": {
+"t": 1793092124001,
+"s": []
+},
+"strategy games h": {
+"t": 1793092127143,
+"s": ["strategy games history","strategy games hoi4","strategy games horror","strategy games hex","historical strategy games"]
+},
+"strategy games i": {
+"t": 1793092132734,
+"s": ["strategy games involving resource management","strategy games io","strategy games indian bike game","strategy games idle","strategy games island"]
+},
+"strategy games india": {
+"t": 1793092137596,
+"s": ["strategy games indian bike game","indian strategy games"]
+},
+"strategy games k": {
+"t": 1793092143434,
+"s": ["strategy games kingdom","knight strategy games","kingdom strategy games offline","king strategy games","strategy games for kids"]
+},
+"strategy games kids": {
+"t": 1793092143843,
+"s": ["strategy games for kids"]
+},
+"strategy games l": {
+"t": 1793092145825,
+"s": ["strategy games low mb","strategy games like chess","strategy games like coc","top strategy games lords mobile","strategy games offline low mb"]
+},
+"strategy games li": {
+"t": 1793092145406,
+"s": ["strategy games like chess","strategy games like coc","offline strategy games"]
+},
+"strategy games like clash of clans": {
+"t": 1793092149646,
+"s": ["offline strategy games like clash of clans","strategy base building games like clash of clans"]
+},
+"strategy games low mb offline": {
+"t": 1793092156710,
+"s": ["strategy games offline low mb"]
+},
+"strategy games m": {
+"t": 1793092157122,
+"s": ["strategy games military","strategy games medieval","strategy games multiplayer","strategy games map","strategy games minecraft"]
+},
+"strategy games n": {
+"t": 1793092166602,
+"s": ["strategy games new","strategy games no ads","strategy games napoleon","strategy games new 2026","strategy games napoleonic"]
+},
+"strategy games no": {
+"t": 1793092172942,
+"s": ["strategy games no ads","strategy games no wifi","strategy games offline no ads"]
+},
+"strategy games no internet": {
+"t": 1793092173383,
+"s": []
+},
+"strategy games no wifi": {
+"t": 1793092173797,
+"s": ["strategy games no wifi"]
+},
+"strategy games o": {
+"t": 1793092174898,
+"s": ["strategy games offline","strategy games offline war","strategy games offline free","strategy games offline low mb","strategy games online multiplayer"]
+},
+"strategy games off": {
+"t": 1793092177829,
+"s": ["strategy games offline","strategy games offline war","strategy games offline free","strategy games offline low mb","strategy games offline ww2"]
+},
 "strategy games offline": {
 "t": 1791542672450,
 "s": ["strategy games offline","strategy games offline war","strategy games offline tower defense","strategy games offline ww2","strategy games offline free without internet"]
 },
 "strategy games offline ": {
-"t": 1791542673801,
-"s": ["strategy games offline war","strategy games offline free without internet","strategy games offline low mb","strategy games offline free","strategy games offline tower defense"]
+"t": 1793092178656,
+"s": ["strategy games offline war","strategy games offline low mb","strategy games offline free without internet","strategy games offline free","strategy games offline ww2"]
 },
 "strategy games offline l": {
 "t": 1791542673367,
@@ -35771,9 +35903,109 @@
 "t": 1791542671996,
 "s": ["strategy games offline low mb"]
 },
+"strategy games offline t": {
+"t": 1793092179489,
+"s": ["strategy games offline tower defense","tank strategy games offline","top strategy games offline","offline turn based strategy games","total battle strategy games offline"]
+},
+"strategy games offline to": {
+"t": 1793092179076,
+"s": ["strategy games offline tower defense"]
+},
+"strategy games offline towe": {
+"t": 1793092178248,
+"s": ["strategy games offline tower defense"]
+},
+"strategy games offline tower defense": {
+"t": 1793092177410,
+"s": ["strategy games offline tower defense"]
+},
+"strategy games p": {
+"t": 1793092181426,
+"s": ["strategy games premium","strategy games pixel","strategy games paid","strategy games puzzle","strategy games pvp"]
+},
+"strategy games pc": {
+"t": 1793092181024,
+"s": ["strategy games pc"]
+},
+"strategy games r": {
+"t": 1793092192503,
+"s": ["strategy games roblox","strategy games rome","strategy games red alert 2","strategy games rpg","strategy games rts"]
+},
+"strategy games ri": {
+"t": 1793092192085,
+"s": ["strategy games risk"]
+},
+"strategy games s": {
+"t": 1793092204158,
+"s": ["strategy games space","strategy games survival","strategy games stickman","strategy games sandbox","strategy games simulator"]
+},
+"strategy games sh": {
+"t": 1793092205379,
+"s": ["strategy games shooting","ship strategy games","short session strategy games online","strategy shooting games offline","strategy shooter games"]
+},
+"strategy games sho": {
+"t": 1793092204971,
+"s": ["strategy games shooting","short session strategy games online","strategy shooting games offline","strategy shooter games"]
+},
+"strategy games shooting": {
+"t": 1793092204564,
+"s": ["strategy games shooting","strategy shooting games offline"]
+},
+"strategy games si": {
+"t": 1793092209200,
+"s": ["strategy games simulator","strategy games single player","single player strategy games offline","strategy simulation games offline","simple strategy games"]
+},
+"strategy games sin": {
+"t": 1793092208782,
+"s": ["strategy games single player","single player strategy games offline","single player war strategy games"]
+},
+"strategy games single": {
+"t": 1793092208368,
+"s": ["strategy games single player","single player strategy games offline","single player war strategy games"]
+},
+"strategy games single player": {
+"t": 1793092207950,
+"s": ["strategy games single player","single player strategy games offline","single player war strategy games","single player strategy card games"]
+},
+"strategy games t": {
+"t": 1793092217196,
+"s": ["strategy games tower defense","strategy games turn based","strategy games tower","strategy games tiktok","strategy games tank"]
+},
+"strategy games ta": {
+"t": 1793092216781,
+"s": ["strategy games tank","tactical strategy games","tank strategy games offline","ww2 tank strategy games","strategy tactics games offline"]
+},
+"strategy games td": {
+"t": 1793092218780,
+"s": ["strategy games td","rush royale strategy games td"]
+},
+"strategy games v": {
+"t": 1793092225735,
+"s": ["strategy games virus","strategy games viking","vampire strategy games","vertical strategy games"]
+},
+"strategy games vpn": {
+"t": 1793092230895,
+"s": []
+},
+"strategy games w": {
+"t": 1793092251766,
+"s": ["strategy games ww2","strategy games war","strategy games with resource management","strategy games war offline","strategy games ww2 offline"]
+},
+"strategy games witho": {
+"t": 1793092254093,
+"s": ["offline strategy games without internet","fast paced strategy games with online competition","strategy games offline free without internet"]
+},
+"strategy games without internet": {
+"t": 1793092254507,
+"s": ["offline strategy games without internet","strategy games offline free without internet"]
+},
+"strategy games z": {
+"t": 1793092257062,
+"s": ["strategy games zombie","zombie survival strategy games","zombie strategy games offline","zombie survival strategy games offline"]
+},
 "stre": {
-"t": 1792223810796,
-"s": ["stremio","street fighter","streamlabs","stream","streaming apps"]
+"t": 1793092314151,
+"s": ["stremio","street fighter","stream","streamlabs","streaming apps"]
 },
 "stres": {
 "t": 1792223810305,
@@ -35800,7 +36032,7 @@
 "s": ["stress and anxiety relief games","stress and anxiety relief apps free","stress and anxiety relief","relax stress and anxiety relief"]
 },
 "stret": {
-"t": 1791456648120,
+"t": 1793092313739,
 "s": ["stretching apps","stretch zone mobile app","stretch","stretching","stretchlab app"]
 },
 "stretch": {
@@ -35984,8 +36216,8 @@
 "s": ["stylized multiplayer games","stylized match 3 games","stylized multiplayer games free fire","mapshifter stylized game map","stylized games minecraft"]
 },
 "su": {
-"t": 1792400949343,
-"s": ["subway surfers","subway app","suno","superlive","sudoku"]
+"t": 1793092317954,
+"s": ["subway surfers","subway app","suno","substack","super vpn"]
 },
 "sub": {
 "t": 1791456684715,
@@ -36020,24 +36252,88 @@
 "s": ["subscription manager","subscription cancellation app","subscription manager google play","subscription tracker","subscription cancellation app free"]
 },
 "sud": {
-"t": 1792400948945,
-"s": ["sudoku","sudoku no ads","sudoku for free","sudowrite","sudoku offline"]
+"t": 1793092317539,
+"s": ["sudoku","sudoku no ads","sudoku for free","sudowrite","sudoku games"]
 },
 "sudo": {
-"t": 1792400642622,
-"s": ["sudoku","sudoku no ads","sudoku for free","sudowrite","sudoku offline"]
+"t": 1793092263300,
+"s": ["sudoku","sudoku no ads","sudoku for free","sudowrite","sudoku games"]
+},
+"sudok": {
+"t": 1793092271949,
+"s": ["sudoku","sudoku no ads","sudoku for free","sudoku games","sudoku block"]
 },
 "sudoku": {
-"t": 1792400643021,
-"s": ["sudoku","sudoku no ads","sudoku for free","sudoku offline","sudoku master"]
+"t": 1793092260890,
+"s": ["sudoku","sudoku no ads","sudoku for free","sudoku games","sudoku block"]
 },
 "sudoku ": {
-"t": 1792400547863,
-"s": ["sudoku no ads","sudoku for free","sudoku games","sudoku master","sudoku free"]
+"t": 1793092263713,
+"s": ["sudoku no ads","sudoku for free","sudoku games","sudoku block","sudoku free"]
+},
+"sudoku a": {
+"t": 1793092260057,
+"s": ["sudoku ad free","sudoku adventure","sudoku animal","sudoku ai factory","sudoku app"]
+},
+"sudoku a ": {
+"t": 1793092261308,
+"s": ["sudoku a day"]
+},
+"sudoku a day": {
+"t": 1793092260476,
+"s": ["sudoku a day"]
+},
+"sudoku b": {
+"t": 1793092272361,
+"s": ["sudoku block","sudoku blast","sudoku brainium","sudoku block puzzle","sudoku brain puzzle game"]
+},
+"sudoku ba": {
+"t": 1793092271546,
+"s": ["sudoku battle","sudoku basic","sudoku battle with friends","sudoku battle online","sudoku bamboo"]
+},
+"sudoku c": {
+"t": 1793092282490,
+"s": ["sudoku coach","sudoku cat","sudoku club","sudoku classic","sudoku color"]
+},
+"sudoku d": {
+"t": 1793092298322,
+"s": ["sudoku dark mode","sudoku daily","sudoku dark","sudoku detective","sudoku duel"]
+},
+"sudoku do": {
+"t": 1793092307098,
+"s": ["sudoku dojo","sudoku doku","sudoku dog","sudoku download","sudoku dozen"]
+},
+"sudoku dog": {
+"t": 1793092306687,
+"s": ["sudoku dog","dig dog sudoku","dog sudoku puzzle"]
+},
+"sudoku e": {
+"t": 1793092310901,
+"s": ["sudoku easy","sudoku easybrain","sudoku epic","sudoku extreme","sudoku exchange"]
+},
+"sudoku ea": {
+"t": 1793092311732,
+"s": ["sudoku easy","sudoku easybrain","sudoku earning app","sudoku earn money","sudoku easy for kids"]
+},
+"sudoku earning app": {
+"t": 1793092311316,
+"s": ["sudoku earning app"]
+},
+"sudoku f": {
+"t": 1793092320577,
+"s": ["sudoku for free","sudoku free","sudoku for kids","sudoku friends","sudoku free no ads"]
+},
+"sudoku fr": {
+"t": 1793092323918,
+"s": ["sudoku free","sudoku friends","sudoku free no ads","sudoku free games","sudoku free games offline"]
+},
+"sudoku free games": {
+"t": 1793092323500,
+"s": ["sudoku free games","sudoku free games no ads","sudoku free games offline","sudoku free games no ads offline","microsoft sudoku free games"]
 },
 "sudoku g": {
-"t": 1791968350696,
-"s": ["sudoku games","sudoku genina","sudoku games offline","sudoku genius","sudoku genina free"]
+"t": 1793092328818,
+"s": ["sudoku games","sudoku genina","sudoku games offline","sudoku genina free","sudoku genius"]
 },
 "sudoku ga": {
 "t": 1791968350287,
@@ -36046,6 +36342,70 @@
 "sudoku game": {
 "t": 1791968349877,
 "s": ["sudoku games","sudoku games offline","sudoku games offline free","sudoku game free download","sudoku games for kids"]
+},
+"sudoku h": {
+"t": 1793092334635,
+"s": ["sudoku hard","sudoku hard level","sudoku helper","sudoku hint","sudoku help"]
+},
+"sudoku he": {
+"t": 1793092339802,
+"s": ["sudoku helper","sudoku help","sudoku hexadecimal","hexagon sudoku","hexa sudoku"]
+},
+"sudoku hero": {
+"t": 1793092340225,
+"s": []
+},
+"sudoku ho": {
+"t": 1793092342954,
+"s": ["sudoku how to play","sudoku hors ligne avec niveaux","sudoku hors ligne","sudoku hors ligne gratuit","sudoku hors connexion"]
+},
+"sudoku how to play": {
+"t": 1793092342546,
+"s": ["sudoku how to play"]
+},
+"sudoku i": {
+"t": 1793092345761,
+"s": ["sudoku installed","sudoku irregular","sudoku iq","sudoku infinity","sudoku iq test"]
+},
+"sudoku in": {
+"t": 1793092345342,
+"s": ["sudoku installed","sudoku infinity","sudoku india","sudoku in chinese","sudoku investigativo"]
+},
+"sudoku inf": {
+"t": 1793092344502,
+"s": ["sudoku infinity","infinite sudoku","sudoku infantil","sudoku infantil gratis"]
+},
+"sudoku infinite": {
+"t": 1793092344919,
+"s": ["infinite sudoku"]
+},
+"sudoku j": {
+"t": 1793092354574,
+"s": ["sudoku joy","sudoku jigsaw","sudoku joy app","sudoku journey","sudoku junior"]
+},
+"sudoku k": {
+"t": 1793092364968,
+"s": ["sudoku kids","sudoku killer","sudoku kids offline","sudoku kids 2x2","sudoku killer offline"]
+},
+"sudoku l": {
+"t": 1793092373540,
+"s": ["sudoku logic wiz","sudoku learn","sudoku large print","sudoku levels","sudoku logic puzzle"]
+},
+"sudoku la": {
+"t": 1793092373133,
+"s": ["sudoku large print","sudoku landscape","sudoku labs","sudoku large","sudoku latviesu"]
+},
+"sudoku li": {
+"t": 1793092380290,
+"s": ["sudoku like games","sudoku lite","sudoku linkedin","sudoku lite offline","sudoku light"]
+},
+"sudoku like games": {
+"t": 1793092379880,
+"s": ["sudoku like games","puzzle games like sudoku"]
+},
+"sudoku m": {
+"t": 1793092383360,
+"s": ["sudoku master","sudoku microsoft","sudoku multiplayer","sudoku master free","sudoku mobilityware"]
 },
 "sudoku n": {
 "t": 1791803388981,
@@ -36147,6 +36507,118 @@
 "t": 1791967849478,
 "s": ["sudoku puzzle games","free sudoku puzzle games","puzzle games sudoku offline","sudoku crossword puzzle games","puzzle games like sudoku"]
 },
+"sudoku q": {
+"t": 1793092389721,
+"s": ["sudoku quest","sudoku quest sudoku puzzle","sudoku quarzo apps","sudoku q","sudoku queen"]
+},
+"sudoku r": {
+"t": 1793092399713,
+"s": ["sudoku royale","sudoku rpg","sudoku race","sudoku rabbit","sudoku roguelike"]
+},
+"sudoku re": {
+"t": 1793092403673,
+"s": ["sudoku relax","sudoku real cash game","sudoku real","sudoku resolver","sudoku reklamsız"]
+},
+"sudoku relax": {
+"t": 1793092403255,
+"s": ["sudoku relax"]
+},
+"sudoku s": {
+"t": 1793092409679,
+"s": ["sudoku solver","sudoku solver app","sudoku samurai","sudoku shapes","sudoku spark"]
+},
+"sudoku sin ": {
+"t": 1793092414196,
+"s": ["sudoku sin anuncios","sudoku sin internet","sudoku sin vidas","sudoku sin anuncios gratis","sudoku sin conexión"]
+},
+"sudoku sin a": {
+"t": 1793092415036,
+"s": ["sudoku sin anuncios","sudoku sin anuncios gratis","sudoku sin anuncios y gratis","sudoku sin anuncios offline","sudoku sin anuncios y sin internet"]
+},
+"sudoku sin an": {
+"t": 1793092414618,
+"s": ["sudoku sin anuncios","sudoku sin anuncios gratis","sudoku sin anuncios y gratis","sudoku sin anuncios offline","sudoku sin anuncios y sin internet"]
+},
+"sudoku sin anu": {
+"t": 1793092413784,
+"s": ["sudoku sin anuncios","sudoku sin anuncios gratis","sudoku gratis español sin anuncios","sudoku sin anuncios y gratis","sudoku sin anuncios offline"]
+},
+"sudoku sin anuncios y gratis": {
+"t": 1793092413372,
+"s": ["sudoku sin anuncios y gratis","sudoku gratis sin internet y sin anuncios"]
+},
+"sudoku so": {
+"t": 1793092419435,
+"s": ["sudoku solver","sudoku solver app","sudoku solver free","sudoku solving app","sudoku solver camera"]
+},
+"sudoku st": {
+"t": 1793092420446,
+"s": ["sudoku story","sudoku star","sudoku staple games","sudoku strategies","sudoku story mode"]
+},
+"sudoku t": {
+"t": 1793092422067,
+"s": ["sudoku the clean one","sudoku type games","sudoku trainer","sudoku tutorial","sudoku techniques"]
+},
+"sudoku to": {
+"t": 1793092425825,
+"s": ["sudoku together","sudoku tower","sudoku tournament","sudoku tough","sudoku together multiplayer"]
+},
+"sudoku tog": {
+"t": 1793092425407,
+"s": ["sudoku together","sudoku together multiplayer","daily sudoku together"]
+},
+"sudoku toget": {
+"t": 1793092424998,
+"s": ["sudoku together","sudoku together multiplayer","daily sudoku together"]
+},
+"sudoku together": {
+"t": 1793092424579,
+"s": ["sudoku together","sudoku together multiplayer","daily sudoku together"]
+},
+"sudoku tower": {
+"t": 1793092427325,
+"s": ["sudoku tower","sudoku cat tower"]
+},
+"sudoku tr": {
+"t": 1793092430147,
+"s": ["sudoku trainer","sudoku training","sudoku tripledot","sudoku tricks","sudoku train"]
+},
+"sudoku tra": {
+"t": 1793092430971,
+"s": ["sudoku trainer","sudoku training","sudoku train","sudoku train your brain","sudoku trails"]
+},
+"sudoku trai": {
+"t": 1793092430557,
+"s": ["sudoku trainer","sudoku training","sudoku train","sudoku train your brain","sudoku trails"]
+},
+"sudoku train": {
+"t": 1793092429727,
+"s": ["sudoku trainer","sudoku training","sudoku train","sudoku train your brain","train track sudoku"]
+},
+"sudoku train your brain": {
+"t": 1793092429322,
+"s": ["sudoku train your brain"]
+},
+"sudoku u": {
+"t": 1793092436155,
+"s": ["sudoku ultimate offline puzzle","sudoku unlimited mistakes","sudoku unlimited","sudoku update","sudoku universe"]
+},
+"sudoku un": {
+"t": 1793092440597,
+"s": ["sudoku unlimited mistakes","sudoku unlimited","sudoku universe","sudoku unity","sudoku unico"]
+},
+"sudoku unity": {
+"t": 1793092440180,
+"s": ["sudoku unity"]
+},
+"sudoku v": {
+"t": 1793092445464,
+"s": ["sudoku variants","sudoku variations","sudoku vs","sudoku volcano","sudoku vs friends"]
+},
+"sudoku ve": {
+"t": 1793092449500,
+"s": ["sudoku versus","sudoku verse","sudoku very hard","sudoku new version","velo sudoku"]
+},
 "sudoku w": {
 "t": 1791803410344,
 "s": ["sudoku without ads","sudoku with friends","sudoku with no ads","sudoku with letters","sudoku with levels"]
@@ -36190,6 +36662,42 @@
 "sudoku world": {
 "t": 1792400646984,
 "s": ["sudoku world","sudoku world","sudoku world traveler"]
+},
+"sudoku x": {
+"t": 1793092456373,
+"s": ["sudoku x","sudoku x free","sudoku free","sudoku 6 x 6","sudoku 4 x 4"]
+},
+"sudoku xdee": {
+"t": 1793092460338,
+"s": ["sudoku free","sudoku free no ads","sudoku free games","sudoku free games offline","sudoku free games no ads offline"]
+},
+"sudoku xy": {
+"t": 1793092460753,
+"s": ["sudoku xyz"]
+},
+"sudoku y": {
+"t": 1793092463155,
+"s": ["sudoku you","sudoku y sopa de letras","sudoku gigante numeros y letras","sudoku y crucigramas","sudoku y mas juegos"]
+},
+"sudoku y ": {
+"t": 1793092462726,
+"s": ["sudoku y sopa de letras","sudoku gigante numeros y letras","sudoku y crucigramas","sudoku y mas juegos","sudoku y ajedrez"]
+},
+"sudoku z": {
+"t": 1793092468053,
+"s": ["sudoku zen","sudoku zoo","sudoku zeeron","sudoku zen garden","good sudoku zach gage"]
+},
+"sudoku za": {
+"t": 1793092468468,
+"s": ["good sudoku zach gage","sudoku zagadki liczbowe","sudoku zahlenspiele","sudoku za djecu","sudoku za darmo"]
+},
+"sudoku za ": {
+"t": 1793092467642,
+"s": ["sudoku za djecu","sudoku za darmo","sudoku za decu"]
+},
+"sudoku zenkai": {
+"t": 1793092474507,
+"s": []
 },
 "sudokup": {
 "t": 1791967858155,
@@ -36252,8 +36760,8 @@
 "s": ["supremacy","supremacy 1914","supremacy world war 3","supremacy call of war 1942","supremacy ww3"]
 },
 "sur": {
-"t": 1791456323186,
-"s": ["survival games","surfshark","survival horror games","survey","survivor io"]
+"t": 1793092325496,
+"s": ["surfshark","survival games","survival horror games","survey","survivor io"]
 },
 "surv": {
 "t": 1791456322329,
@@ -37135,6 +37643,22 @@
 "t": 1792052894231,
 "s": ["tasks","tasks app","tasksboard","tasks to do list and reminders","tasks microsoft"]
 },
+"taxi": {
+"t": 1793092480690,
+"s": ["taxi","taxi driver","taxi app","taxi caller app","taxi meter"]
+},
+"taxi ": {
+"t": 1793092481528,
+"s": ["taxi games","taxi driver","taxi simulator","taxi app","taxi caller app"]
+},
+"taxi q": {
+"t": 1793092481115,
+"s": ["taxi qatar","taxi quantum game","taxi quantum","taxi quantum games simulator","taxi app"]
+},
+"taxi qu": {
+"t": 1793092480290,
+"s": ["taxi quantum game","taxi quantum","taxi quantum games simulator","taxi quantum game 2026","taxi quebec"]
+},
 "te": {
 "t": 1791888312691,
 "s": ["telegram","textnow","teams","temu","text free"]
@@ -37168,24 +37692,24 @@
 "s": ["testerup","testo smart app","testermax","testerup app","test"]
 },
 "tex": {
-"t": 1791542502528,
-"s": ["textnow","text free","text","texas lottery","texas roadhouse mobile app"]
+"t": 1793092336064,
+"s": ["textnow","text free","text","texas roadhouse mobile app","texas lottery"]
 },
 "text": {
 "t": 1792917354784,
 "s": ["textnow","text free","text","textplus","textra"]
 },
 "text ": {
-"t": 1791456558573,
-"s": ["text now","text free","text me","text app","text plus"]
+"t": 1793092336471,
+"s": ["text now","text free","text me","text app","text to speech"]
 },
 "text a": {
-"t": 1791542707819,
+"t": 1793092331890,
 "s": ["text app","text and call app for free","text apps free for android","text app free","text and drive"]
 },
 "text ad": {
-"t": 1791542708250,
-"s": ["text adventure","text adventure games","text adventure rpg","text add in photo","text add"]
+"t": 1793092331486,
+"s": ["text adventure","text adventure games","text adventure rpg","text add in photo","text add in video"]
 },
 "text add": {
 "t": 1791542893464,
@@ -37224,8 +37748,16 @@
 "s": ["dnd text adventure","duels rpg text adventure","text adventure deutsch"]
 },
 "text b": {
-"t": 1791803245010,
+"t": 1793092483491,
 "s": ["text now","text based rpg","text based games","text behind","text behind app"]
+},
+"text ba": {
+"t": 1793092483904,
+"s": ["text based rpg","text based games","text backup","text based","text based rpg offline"]
+},
+"text bas": {
+"t": 1793092483072,
+"s": ["text based rpg","text based games","text based","text based rpg offline","text based games rpg"]
 },
 "text base": {
 "t": 1791803245442,
@@ -37276,8 +37808,8 @@
 "s": ["text rpg games","text rpg games offline","ai text rpg games","text based games rpg","text based rpg games free offline"]
 },
 "text t": {
-"t": 1791542606105,
-"s": ["text to speech","text to speech reader","text to speech reader free","text to speech free","text twist"]
+"t": 1793092335652,
+"s": ["text to speech","text to speech reader","text to voice","text twist","text to speech reader free"]
 },
 "text to": {
 "t": 1791542607475,
@@ -37315,6 +37847,22 @@
 "t": 1791888595120,
 "s": ["the weather channel","the choicer voicer","themes","the white house app","the score"]
 },
+"the b": {
+"t": 1793092485352,
+"s": ["the baby in yellow","the battle cats","the bible app","the binding of isaac","the bible"]
+},
+"the best": {
+"t": 1793092485765,
+"s": ["the best games","the best games in the world","the best game ever","the best car games","the best weather app"]
+},
+"the best ": {
+"t": 1793092486170,
+"s": ["the best games","the best games in the world","the best game ever","the best car games","the best weather app"]
+},
+"the best z": {
+"t": 1793092484950,
+"s": ["the best zombie games","the best zombie games in the world","the best zombie games ever","the best zombie apocalypse games","the best offline zombie game"]
+},
 "them": {
 "t": 1792223814771,
 "s": ["themes","theme pack","theme park","themes and wallpapers","theme park samsung"]
@@ -37324,7 +37872,7 @@
 "s": ["themes","themes and wallpapers","themes samsung","themes for android free samsung","themes app icons free"]
 },
 "ti": {
-"t": 1791713493264,
+"t": 1793092341050,
 "s": ["tiktok","tinder","tiktok lite","ticketmaster app","tiktok pro"]
 },
 "tic": {
@@ -37420,8 +37968,8 @@
 "s": ["tiny room escape games"]
 },
 "tip": {
-"t": 1791713492845,
-"s": ["tipsy","tip calculator free","tip calculator","tipsee","tip"]
+"t": 1793092340640,
+"s": ["tipsy","tip calculator free","tip calculator","tipsy chat live your story","tiphaus"]
 },
 "tip calcu": {
 "t": 1791713709593,
@@ -37460,7 +38008,7 @@
 "s": ["tipster predictions"]
 },
 "to": {
-"t": 1791456337327,
+"t": 1793092349240,
 "s": ["toca boca","tor","too good to go","toyota app for android","touchtunes"]
 },
 "toc": {
@@ -37488,7 +38036,7 @@
 "s": ["toca boca hair salon","toca boca hair salon 4","toca boca hair salon 3","toca boca hair salon 2","toca boca hair"]
 },
 "tod": {
-"t": 1791542611515,
+"t": 1793092349641,
 "s": ["toddler games","todoist","toddler games free for 3 year olds","todaytix","toddler games free for 2 year olds"]
 },
 "todd": {
@@ -37508,7 +38056,7 @@
 "s": ["toddlers games","toddlers games for 3 year old","toddlers games for 2 year old","toddlers","toddlers learning games"]
 },
 "todo": {
-"t": 1791542611068,
+"t": 1793092348832,
 "s": ["todoist","todo","todo list","todoist app free","todo list app"]
 },
 "todo ": {
@@ -37583,9 +38131,29 @@
 "t": 1791888651783,
 "s": ["tom friends","tom friends 2","tom friends offline","tom friends run","tom friends world"]
 },
+"top": {
+"t": 1793092489475,
+"s": ["top drama","topgolf","top surveys","top girl","top lords"]
+},
+"top casu": {
+"t": 1793092488253,
+"s": ["top rated casual car racing mobile games"]
+},
+"top casual games": {
+"t": 1793092488666,
+"s": []
+},
+"top m": {
+"t": 1793092489884,
+"s": ["top merge","top money making apps","top music video game with eighties hits","top media ai","top money making games"]
+},
+"top ma": {
+"t": 1793092489071,
+"s": ["top mahjong games","top match 3 games free","top maker","top manhua","topmate"]
+},
 "tow": {
-"t": 1791456336927,
-"s": ["tower defense","township","tower","tower war","towbook"]
+"t": 1793092353509,
+"s": ["township","tower defense","tower","towbook","townsquare app"]
 },
 "towe": {
 "t": 1791542816428,
@@ -37600,20 +38168,52 @@
 "s": ["tower defense","tower defense games offline","tower defense 2","tower defense offline games 2019","tower destiny survive"]
 },
 "tower de": {
-"t": 1791803422461,
+"t": 1793092491349,
 "s": ["tower defense","tower defense games offline","tower defense 2","tower defense offline games 2019","tower destiny survive"]
 },
+"tower def": {
+"t": 1793092505773,
+"s": ["tower defense","tower defense games offline","tower defense 2","tower defense offline games 2019","tower defense game"]
+},
 "tower defens": {
-"t": 1791803422930,
+"t": 1793092491760,
 "s": ["tower defense","tower defense games offline","tower defense 2","tower defense offline games 2019","tower defense game"]
 },
 "tower defense": {
-"t": 1791803433239,
+"t": 1793092506194,
 "s": ["tower defense","tower defense games offline","tower defense 2","tower defense offline games 2019","tower defense game"]
 },
 "tower defense ": {
-"t": 1791542815552,
-"s": ["tower defense games","tower defense games offline","tower defense 2","tower defense offline games 2019","tower defense games offline free"]
+"t": 1793092492175,
+"s": ["tower defense games","tower defense games offline","tower defense 2","tower defense free","tower defense offline games 2019"]
+},
+"tower defense a": {
+"t": 1793092490942,
+"s": ["tower defense anime","tower defense alien","tower defense army","tower defense ad free","tower defense archer"]
+},
+"tower defense ani": {
+"t": 1793092497475,
+"s": ["tower defense anime","tower defense animal","tower defense anime offline","anime tower defense games","anime tower defense games offline"]
+},
+"tower defense anime games": {
+"t": 1793092497895,
+"s": ["anime tower defense games","anime tower defense games offline"]
+},
+"tower defense ar": {
+"t": 1793092500773,
+"s": ["tower defense army","tower defense archer","tower defense arrow","tower defense arcade","tower defense arena"]
+},
+"tower defense b": {
+"t": 1793092502898,
+"s": ["tower defense bloons","tower defense build and battle games","tower defense balloon","tower defense basic","tower defense battle"]
+},
+"tower defense ba": {
+"t": 1793092506609,
+"s": ["tower defense balloon","tower defense basic","tower defense battle","tower defense back to the roots","tower defense bloons"]
+},
+"tower defense bat": {
+"t": 1793092505364,
+"s": ["tower defense battle","tower defense battle strategy","tower defense battle zone","balloon tower defense battles","balloon tower defense battles 2"]
 },
 "tower defense g": {
 "t": 1791803422020,
@@ -37639,50 +38239,6 @@
 "t": 1791803448856,
 "s": ["tower defense games online"]
 },
-"tower defense pr": {
-"t": 1790589316024,
-"s": ["tower defense premium","tower defense pro","tower defense protect your gold","premium tower defense games","tower defense legend pro"]
-},
-"tower defense protect your gold": {
-"t": 1790589315616,
-"s": ["tower defense protect your gold"]
-},
-"tower defense r": {
-"t": 1790589300161,
-"s": ["tower defense rpg","tower defense roguelike","tower defense rush","tower defense rush games offline","tower defense robot"]
-},
-"tower defense ro": {
-"t": 1790589323226,
-"s": ["tower defense roguelike","tower defense rpg","tower defense roguelite","tower defense robot","tower defense roblox"]
-},
-"tower defense rog": {
-"t": 1790589322816,
-"s": ["tower defense rpg","tower defense roguelike","tower defense roguelite","tower defense rogue","tower defense rpg offline"]
-},
-"tower defense rogu": {
-"t": 1790589322408,
-"s": ["tower defense roguelike","tower defense roguelite","tower defense rogue","rogue defense hybrid tower td","lone tower roguelike defense"]
-},
-"tower defense roguelite": {
-"t": 1790589322000,
-"s": ["tower defense roguelite"]
-},
-"tower defense s": {
-"t": 1790589325983,
-"s": ["tower defense survival","tower defense simulator","tower defense strategy","tower defense strategy games","tower defense space"]
-},
-"tower defense st": {
-"t": 1790589329184,
-"s": ["tower defense strategy","tower defense strategy games","tower defense stickman","tower defense steampunk","tower defense stick"]
-},
-"tower defense sti": {
-"t": 1790589328757,
-"s": ["tower defense stickman","tower defense stick","stick hero tower defense","stickman tower defense offline","stickman hero tower defense"]
-},
-"tower defense stickman": {
-"t": 1790589328356,
-"s": ["tower defense stickman","stickman tower defense offline","stickman hero tower defense","stickman fight tower defense","stickman tower defense games"]
-},
 "tower defense t": {
 "t": 1791967887261,
 "s": ["tower defense td","tower defense tycoon","tower defense tank","tower defense towerlands","tower defense turret"]
@@ -37707,78 +38263,6 @@
 "t": 1791967903177,
 "s": ["tower defense to war 2"]
 },
-"tower defense u": {
-"t": 1790589334791,
-"s": ["tower defense upgrade","tower defense ultra hd","utopia idle tower defense","undead siege tower defense","broken universe tower defense"]
-},
-"tower defense ultimate": {
-"t": 1790589335197,
-"s": ["ultimate tower defense"]
-},
-"tower defense v": {
-"t": 1790589338405,
-"s": ["tower defense vertical","tower defense vs zombies","tower defense vengeance","tower defense voodoo","tower defense vs"]
-},
-"tower defense vi": {
-"t": 1790589341916,
-"s": ["tower defense viking","tower defense virus"]
-},
-"tower defense vik": {
-"t": 1790589341517,
-"s": ["tower defense viking"]
-},
-"tower defense viki": {
-"t": 1790589341111,
-"s": ["tower defense viking"]
-},
-"tower defense viking": {
-"t": 1790589340703,
-"s": ["tower defense viking"]
-},
-"tower defense w": {
-"t": 1790589347725,
-"s": ["tower defense ww2","tower defense war games","tower defense war","tower defense waves","tower defense warcraft"]
-},
-"tower defense wa": {
-"t": 1790589348931,
-"s": ["tower defense war games","tower defense war","tower defense waves","tower defense warcraft","tower defense waifu"]
-},
-"tower defense wai": {
-"t": 1790589348525,
-"s": ["tower defense waifu"]
-},
-"tower defense waifu": {
-"t": 1790589348124,
-"s": ["tower defense waifu"]
-},
-"tower defense x": {
-"t": 1790589355964,
-"s": ["tower defense x","space xyz tower defense"]
-},
-"tower defense z": {
-"t": 1790589358188,
-"s": ["tower defense zombie","tower defense zombie games","tower defense zone 3","tower defense zone 4","tower defense zone"]
-},
-"tower defense zo": {
-"t": 1790589360525,
-"s": ["tower defense zombie","tower defense zombie games","tower defense zone 3","tower defense zone 4","tower defense zone"]
-},
-"tower defense zom": {
-"t": 1790589360929,
-"s": ["tower defense zombie","tower defense zombie games","tower defense zombie offline","tower defense zombie games offline","zombie base tower defense"]
-},
-"tower defense zomb": {
-"t": 1790589360120,
-"s": ["tower defense zombie","tower defense zombie games","tower defense zombie offline","tower defense zombie games offline","zombie base tower defense"]
-},
-"tower defense zombie ": {
-"t": 1790589359713,
-"s": ["tower defense zombie games","tower defense zombie offline","tower defense zombie games offline","tower defense zombie","zombie base tower defense"]
-},
-"tower defense zombie offline": {
-"t": 1790589359304,
-"s": ["tower defense zombie offline","tower defense games offline zombie","zombie tower defense games offline free"]
-},
 "tower of": {
 "t": 1791713511565,
 "s": ["tower of fantasy","tower of god","tower of hanoi","tower of saviors","tower of adventure cookie run"]
@@ -37792,12 +38276,12 @@
 "s": ["township","townsquare app","town of salem","towniz","town"]
 },
 "tr": {
-"t": 1792138858068,
-"s": ["translate","transit","tropical smoothie cafe","truecaller","tradingview"]
+"t": 1793092359643,
+"s": ["translate","transit","trump account","truecaller","tradingview"]
 },
 "tra": {
-"t": 1792138858475,
-"s": ["translate","transit","tradingview","tractor supply app","tracfone"]
+"t": 1793092360047,
+"s": ["translate","transit","tradingview","tractor supply app","transformers"]
 },
 "trac": {
 "t": 1791803542307,
@@ -37868,7 +38352,7 @@
 "s": ["traffic rider","traffic jam","traffic racer","traffic escape","traffic flow"]
 },
 "trai": {
-"t": 1792138857650,
+"t": 1793092359239,
 "s": ["train","train games","trails end","traintime","train simulator"]
 },
 "trail": {
@@ -38172,8 +38656,8 @@
 "s": ["travel games","travel games to do when in the car","travel games offline","travel games bus","travel games car"]
 },
 "tri": {
-"t": 1791456583956,
-"s": ["trivago","triumph","trivia crack","triumph arcade","tripshot"]
+"t": 1793092367088,
+"s": ["trivago","trivia crack","triumph","triumph arcade","tripadvisor"]
 },
 "tric": {
 "t": 1791888404430,
@@ -38232,8 +38716,8 @@
 "s": ["tripeaks solitaire","tripeaks","tripeaks games","tripeaks solitaire free","tripeaks solitaire adventure"]
 },
 "triv": {
-"t": 1791456583547,
-"s": ["trivago","trivia crack","trivia games","trivago free app","trivia crack 2"]
+"t": 1793092366684,
+"s": ["trivago","trivia crack","trivia games","trivia crack 2","trivial pursuit"]
 },
 "trivago": {
 "t": 1791803375440,
@@ -38287,30 +38771,6 @@
 "t": 1792400654891,
 "s": ["trivia games free","trivia games offline","trivia games multiplayer","trivia games free for adults","trivia games with friends"]
 },
-"trivia games a": {
-"t": 1790589366947,
-"s": ["trivia games ad free","trivia games no ads","trivia games for adults"]
-},
-"trivia games and quiz": {
-"t": 1790589372421,
-"s": []
-},
-"trivia games b": {
-"t": 1790589372829,
-"s": ["bible trivia games","free bible trivia games","black trivia games","brain teasers trivia games","moba games trivia beta"]
-},
-"trivia games bible": {
-"t": 1790589373233,
-"s": ["bible trivia games","free bible trivia games","bible games trivia and verse","bible trivia and word games","daily bible trivia bible games"]
-},
-"trivia games d": {
-"t": 1790589373878,
-"s": ["trivia games disney","dingbats word games trivia","disney trivia games","disney trivia games free","drinking trivia games"]
-},
-"trivia games e": {
-"t": 1790589377920,
-"s": ["trivia games earn money","trivia games english","easy trivia games free","educational games trivia"]
-},
 "trivia games f": {
 "t": 1791967939615,
 "s": ["trivia games free","trivia games free for adults","trivia games for kids","trivia games for adults","trivia games for groups"]
@@ -38318,14 +38778,6 @@
 "trivia games fo": {
 "t": 1792400651954,
 "s": ["trivia games for kids","trivia games for adults","trivia games for money","trivia games for real money","trivia games for couples"]
-},
-"trivia games for": {
-"t": 1790589380615,
-"s": ["trivia games for kids","trivia games for seniors","trivia games for money","trivia games for couples","trivia games for car rides"]
-},
-"trivia games for ": {
-"t": 1790589381022,
-"s": ["trivia games for kids","trivia games for seniors","trivia games for money","trivia games for couples","trivia games for car rides"]
 },
 "trivia games for c": {
 "t": 1792400651543,
@@ -38335,69 +38787,9 @@
 "t": 1792400650728,
 "s": ["trivia games for couples"]
 },
-"trivia games for r": {
-"t": 1790589380214,
-"s": ["trivia games for real money","trivia games for car rides"]
-},
-"trivia games for real": {
-"t": 1790589379805,
-"s": ["trivia games for real money"]
-},
-"trivia games for real money": {
-"t": 1790589379405,
-"s": ["trivia games for real money"]
-},
-"trivia games g": {
-"t": 1790589382101,
-"s": ["trivia games general knowledge","group trivia games","geography trivia games"]
-},
-"trivia games geography": {
-"t": 1790589382499,
-"s": ["geography trivia games"]
-},
-"trivia games group": {
-"t": 1790589383557,
-"s": ["group trivia games"]
-},
-"trivia games h": {
-"t": 1790589383967,
-"s": ["trivia games hard","trivia games hindi","history trivia games","harry potter trivia games","hip hop trivia games"]
-},
-"trivia games k": {
-"t": 1790589387723,
-"s": ["trivia games kids","trivia games general knowledge"]
-},
-"trivia games m": {
-"t": 1790589389304,
-"s": ["trivia games multiplayer","trivia games music","trivia games movies","moba games trivia","music trivia games free"]
-},
-"trivia games n": {
-"t": 1790589394662,
-"s": ["trivia games no ads","nfl trivia games","new trivia games 2026","new trivia games"]
-},
-"trivia games new": {
-"t": 1790589395061,
-"s": ["new trivia games 2026","new trivia games"]
-},
 "trivia games o": {
 "t": 1791967949948,
 "s": ["trivia games offline","trivia games offline tagalog","trivia games offline science","trivia games online","trivia games offline free"]
-},
-"trivia games q": {
-"t": 1790589395474,
-"s": ["trivia games quiz","trivia star quiz games offline","trivia quiz games offline","millionaire quiz trivia games","quiz trivia games"]
-},
-"trivia games r": {
-"t": 1790589396504,
-"s": ["road trip trivia games","rock trivia games"]
-},
-"trivia games riddle": {
-"t": 1790589396914,
-"s": []
-},
-"trivia games s": {
-"t": 1790589398450,
-"s": ["trivia games science","trivia games spelling","trivia games sports","trivia star quiz games offline","sports trivia games free"]
 },
 "trivia games t": {
 "t": 1791967962973,
@@ -38419,37 +38811,9 @@
 "t": 1791967972627,
 "s": []
 },
-"trivia quiz": {
-"t": 1790589402821,
-"s": ["trivia quiz","trivia quiz games","trivia quiz to earn money","trivia quiz app","trivia quizzes"]
-},
-"trivia quiz ": {
-"t": 1790589403632,
-"s": ["trivia quiz games","trivia quiz knowledge","trivia quiz to earn money","trivia quiz app","trivia quiz app to earn money"]
-},
-"trivia quiz g": {
-"t": 1790589403230,
-"s": ["trivia quiz games","trivia quiz games offline","bible trivia quiz game offline","flashback trivia quiz game","bible trivia quiz game"]
-},
-"trivia quiz ga": {
-"t": 1790589402426,
-"s": ["trivia quiz games","trivia quiz games offline","bible trivia quiz game offline","flashback trivia quiz game","bible trivia quiz game"]
-},
 "trivia s": {
 "t": 1791967978107,
 "s": ["trivia scapes","trivia star","trivia star quiz games offline","trivia star quiz games","trivia spin"]
-},
-"trivia st": {
-"t": 1790589405466,
-"s": ["trivia star","trivia star quiz games offline","trivia storm","trivia star quiz games","trivia star quiz"]
-},
-"trivia star": {
-"t": 1790589405065,
-"s": ["trivia star","trivia star quiz games offline","trivia star quiz games","trivia star quiz","trivia star game"]
-},
-"trivia star qu": {
-"t": 1790589404657,
-"s": ["trivia star quiz games offline","trivia star quiz games","trivia star quiz","trivia star quiz games offline"]
 },
 "trivo": {
 "t": 1791803381797,
@@ -38463,29 +38827,9 @@
 "t": 1791803380921,
 "s": ["trivora","trivora app","trivora capital","tivora tv","trivora trivia"]
 },
-"tropical": {
-"t": 1790589407327,
-"s": ["tropical smoothie cafe","tropical smoothie app","tropical drums","tropical cafe","tropical"]
-},
-"tropical m": {
-"t": 1790589408143,
-"s": ["tropical merge","tropical merge game","tropical merge offline game","tropical mathematics","tropical mobile banking app"]
-},
-"tropical ma": {
-"t": 1790589408549,
-"s": ["tropical merge","tropical mathematics","tropical match","tropical match 3","tropical merge game"]
-},
-"tropical mat": {
-"t": 1790589407734,
-"s": ["tropical match","tropical match 3","tropical mathematics","tropical match 3 games","zim topical maths"]
-},
-"tropical match ": {
-"t": 1790589406920,
-"s": ["tropical match 3","tropical match 3 games","tropical match","tropicats tropical match 3","tropical island games match 3"]
-},
 "tru": {
-"t": 1791803384285,
-"s": ["truecaller","trust wallet","truist bank app","trump account","trusted traveler program"]
+"t": 1793092371450,
+"s": ["truecaller","trump account","truist bank app","trust wallet","truck simulator"]
 },
 "truc": {
 "t": 1791967847353,
@@ -38508,8 +38852,8 @@
 "s": ["truck manager","truck manager 2026","truck manager offline","truck manager 2026 offline","truck manager 2025 offline"]
 },
 "truck sim": {
-"t": 1792139169384,
-"s": ["truck simulator","truck simulator games","truck simulator big rigs","truck simulator europe","truck simulator legends usa"]
+"t": 1793092247120,
+"s": ["truck simulator","truck simulator games","truck simulator big rigs","truck simulator legends usa","truck simulator europe"]
 },
 "truck simu": {
 "t": 1791368966785,
@@ -38524,19 +38868,19 @@
 "s": ["truck simulator","truck simulator games","truck simulator big rigs","truck simulator europe","truck simulator legends usa"]
 },
 "truck simulat": {
-"t": 1792139169795,
-"s": ["truck simulator","truck simulator games","truck simulator big rigs","truck simulator europe","truck simulator legends usa"]
+"t": 1793092247530,
+"s": ["truck simulator","truck simulator games","truck simulator big rigs","truck simulator legends usa","truck simulator europe"]
 },
 "truck simulato": {
 "t": 1793005701047,
 "s": ["truck simulator","truck simulator big rigs","truck simulator legends usa","truck simulator europe","truck simulator world"]
 },
 "truck simulator": {
-"t": 1792139170204,
-"s": ["truck simulator","truck simulator big rigs","truck simulator europe","truck simulator legends usa","truck simulator world"]
+"t": 1793092247948,
+"s": ["truck simulator","truck simulator big rigs","truck simulator legends usa","truck simulator europe","truck simulator world"]
 },
 "truck simulator ": {
-"t": 1792139170617,
+"t": 1793092248360,
 "s": ["truck simulator games","truck simulator big rigs","truck simulator europe","truck simulator legends usa","truck simulator world"]
 },
 "truck simulator a": {
@@ -38774,6 +39118,18 @@
 "truck simulator games offline": {
 "t": 1791368900017,
 "s": ["truck simulator games offline","truck simulator games offline offroad","truck simulator games offline 2026","truck simulator games offline indian","truck simulator games offline 3d"]
+},
+"truck simulator games z": {
+"t": 1793092232127,
+"s": ["truck simulator games zuuks","truck simulator ultimate zuuks games","truck simulator zuuks games offline","truck simulator europe zuuks games"]
+},
+"truck simulator games zu": {
+"t": 1793092231716,
+"s": ["truck simulator games zuuks","truck simulator ultimate zuuks games","truck simulator zuuks games offline","truck simulator europe zuuks games"]
+},
+"truck simulator games zuuks": {
+"t": 1793092231306,
+"s": ["truck simulator games zuuks","truck simulator ultimate zuuks games","truck simulator zuuks games offline","truck simulator europe zuuks games","truck simulator ultimate de zuuks games"]
 },
 "truck simulator h": {
 "t": 1791368902126,
@@ -39227,10 +39583,6 @@
 "t": 1791456172103,
 "s": ["truck simulator your","truck simulator europe","truck simulator europe 3","truck simulator europe 2","truck simulator europe 1"]
 },
-"truck simulator z": {
-"t": 1790589311673,
-"s": ["truck simulator zuuks","truck simulator zuuks games","truck simulator zuuks games offline","truck simulator zimbabwe","truck simulator zone"]
-},
 "trucke": {
 "t": 1792053161610,
 "s": ["trucker path","truckers of europe 3","trucker tools","trucker tools app","trucker gps"]
@@ -39415,30 +39767,6 @@
 "t": 1792138769681,
 "s": ["tycoon games","tycoon club monopoly go","tycoon club","tycoon club monopoly go rewards","tycoon offline"]
 },
-"tycoon e": {
-"t": 1790589414187,
-"s": ["tycoon empire","tycoon empire games","tycoon egg","tycoon empire games offline","tycoon empire city"]
-},
-"tycoon em": {
-"t": 1790589413787,
-"s": ["tycoon empire","tycoon empire games","tycoon empire games offline","tycoon empire 2","tycoon empire city"]
-},
-"tycoon empi": {
-"t": 1790589413386,
-"s": ["tycoon empire","tycoon empire games","tycoon empire games offline","tycoon empire 2","tycoon empire city"]
-},
-"tycoon empire ": {
-"t": 1790589412581,
-"s": ["tycoon empire games","tycoon empire 2","tycoon empire transport","tycoon empire games offline","tycoon empire city"]
-},
-"tycoon g": {
-"t": 1790589435862,
-"s": ["tycoon games","tycoon games offline","tycoon games idle","tycoon games no ads","tycoon games hotel"]
-},
-"tycoon ga": {
-"t": 1790589442063,
-"s": ["tycoon games","tycoon games offline","tycoon games idle","tycoon games no ads","tycoon games hotel"]
-},
 "tycoon gam": {
 "t": 1791456454371,
 "s": ["tycoon games","tycoon games offline","tycoon games idle","tycoon games no ads","tycoon games car"]
@@ -39454,222 +39782,6 @@
 "tycoon games ": {
 "t": 1791456453556,
 "s": ["tycoon games offline","tycoon games idle","tycoon games no ads","tycoon games free","tycoon games train"]
-},
-"tycoon games a": {
-"t": 1790589415852,
-"s": ["tycoon games airport","tycoon games army","tycoon games airplane","tycoon games apartment","tycoon games all"]
-},
-"tycoon games an": {
-"t": 1790589420346,
-"s": ["tycoon games animal"]
-},
-"tycoon games animal": {
-"t": 1790589419538,
-"s": ["tycoon games animal"]
-},
-"tycoon games aquarium": {
-"t": 1790589422356,
-"s": ["aquarium tycoon games","aquarium inc idle tycoon games"]
-},
-"tycoon games b": {
-"t": 1790589424757,
-"s": ["tycoon games business","tycoon games bank","tycoon games building","tycoon games bus","tycoon games best"]
-},
-"tycoon games bu": {
-"t": 1790589435458,
-"s": ["tycoon games business","tycoon games building","tycoon games bus","tycoon games business offline","tycoon games burger"]
-},
-"tycoon games business offline": {
-"t": 1790589435049,
-"s": ["tycoon games business offline","idle business tycoon games offline","business tycoon games offline 3d","business empire tycoon games offline","car business tycoon games offline"]
-},
-"tycoon games c": {
-"t": 1790589437314,
-"s": ["tycoon games cat","tycoon games car","tycoon games city","tycoon games car for sale","tycoon games cooking"]
-},
-"tycoon games co": {
-"t": 1790589442464,
-"s": ["tycoon games cooking","tycoon games coin","tycoon games company","tycoon games console","tycoon games construction"]
-},
-"tycoon games coin": {
-"t": 1790589441668,
-"s": ["tycoon games coin","carnival tycoon coin games","carnival tycoon coin games offline","tycoon blitz coin games"]
-},
-"tycoon games d": {
-"t": 1790589446934,
-"s": ["tycoon games dinosaur","tycoon games device","tycoon games dev","tycoon games doctor","tycoon games dam"]
-},
-"tycoon games e": {
-"t": 1790589454025,
-"s": ["tycoon games empire","tycoon games egg","tycoon games electronic","tycoon games earn money","tycoon empire games offline"]
-},
-"tycoon games f": {
-"t": 1790589459962,
-"s": ["tycoon games free","tycoon games fish","tycoon games farm","tycoon games food","tycoon games fishing"]
-},
-"tycoon games fo": {
-"t": 1790589465426,
-"s": ["tycoon games food","tycoon games for girls","tycoon games football","tycoon games for kids","tycoon games for adults"]
-},
-"tycoon games for": {
-"t": 1790589465025,
-"s": ["tycoon games for girls","tycoon games for kids","tycoon games for adults","tycoon games for boys","tycoon games car for sale"]
-},
-"tycoon games for kids": {
-"t": 1790589464629,
-"s": ["tycoon games for kids"]
-},
-"tycoon games fr": {
-"t": 1790589468824,
-"s": ["tycoon games free","tycoon games free offline","tycoon casino games free offline","ad free tycoon games","tycoon games fish fry"]
-},
-"tycoon games fre": {
-"t": 1790589468416,
-"s": ["tycoon games free","tycoon games free offline","tycoon casino games free offline","top tycoon free games","ad free tycoon games"]
-},
-"tycoon games free o": {
-"t": 1790589468012,
-"s": ["tycoon games free offline","tycoon casino games free offline"]
-},
-"tycoon games free offline": {
-"t": 1790589467609,
-"s": ["tycoon games free offline","tycoon casino games free offline","survival games offline free tycoon"]
-},
-"tycoon games g": {
-"t": 1790589469843,
-"s": ["tycoon games gym","tycoon games gas station","tycoon games garbage","tycoon games gun","tycoon games gold"]
-},
-"tycoon games garden": {
-"t": 1790589470248,
-"s": ["garden tycoon games"]
-},
-"tycoon games h": {
-"t": 1790589478329,
-"s": ["tycoon games hotel","tycoon games hospital","tycoon games house","tycoon games hero","tycoon games home"]
-},
-"tycoon games horror": {
-"t": 1790589480428,
-"s": ["horror games tycoon"]
-},
-"tycoon games i": {
-"t": 1790589486677,
-"s": ["tycoon games idle","tycoon games idle offline","tycoon games island","tycoon games in roblox","tycoon games in offline"]
-},
-"tycoon games idle miner": {
-"t": 1790589487082,
-"s": ["idle miner tycoon gold games","idle miner tycoon gold games offline","idle miner tycoon games offline","idle miner tycoon gold games 2","idle miner tycoon money games"]
-},
-"tycoon games j": {
-"t": 1790589494185,
-"s": ["tycoon games jail","tycoon games juice","tycoon jackpot games","job tycoon games","junkyard tycoon games"]
-},
-"tycoon games job": {
-"t": 1790589495760,
-"s": ["job tycoon games"]
-},
-"tycoon games k": {
-"t": 1790589496169,
-"s": ["tycoon games for kids","kingdom tycoon games","king tycoon games"]
-},
-"tycoon games kingdom": {
-"t": 1790589496586,
-"s": ["kingdom tycoon games"]
-},
-"tycoon games l": {
-"t": 1790589497631,
-"s": ["tycoon games lumber","tycoon games low mb","tycoon games low mb offline","tycoon games life","tycoon games like roblox"]
-},
-"tycoon games m": {
-"t": 1790589504532,
-"s": ["tycoon games mobile","tycoon games mining","tycoon games mall","tycoon games money","tycoon games market"]
-},
-"tycoon games mod": {
-"t": 1790589508695,
-"s": []
-},
-"tycoon games mu": {
-"t": 1790589511146,
-"s": ["tycoon games multiplayer","museum tycoon games","music tycoon games","tycoon games online multiplayer"]
-},
-"tycoon games multi": {
-"t": 1790589510732,
-"s": ["tycoon games multiplayer","tycoon games online multiplayer"]
-},
-"tycoon games multiplayer": {
-"t": 1790589510329,
-"s": ["tycoon games multiplayer","tycoon games online multiplayer"]
-},
-"tycoon games n": {
-"t": 1790589512983,
-"s": ["tycoon games no ads","tycoon games new","tycoon games new 2026","tycoon games no internet","idle tycoon games new"]
-},
-"tycoon games no wifi": {
-"t": 1790589515953,
-"s": ["no wifi tycoon games","no wifi games free tycoon"]
-},
-"tycoon games o": {
-"t": 1790589517017,
-"s": ["tycoon games offline","tycoon games offline new","tycoon games offline business","tycoon games offline 3d","tycoon games offline low mb"]
-},
-"tycoon games p": {
-"t": 1790589521136,
-"s": ["tycoon games pizza","tycoon games premium","tycoon games police","tycoon games prison","tycoon games phone"]
-},
-"tycoon games pc": {
-"t": 1790589521570,
-"s": ["tycoon games pc","hacker simulator pc tycoon games"]
-},
-"tycoon games r": {
-"t": 1790589529226,
-"s": ["tycoon games restaurant","tycoon games roller coaster","tycoon games roblox","tycoon games real","tycoon games realistic"]
-},
-"tycoon games ro": {
-"t": 1790589532511,
-"s": ["tycoon games roller coaster","tycoon games roblox","tycoon games road","roblox superhero tycoon games","roblox tycoon games offline"]
-},
-"tycoon games road": {
-"t": 1790589532105,
-"s": ["tycoon games road"]
-},
-"tycoon games s": {
-"t": 1790589537002,
-"s": ["tycoon games simulation","tycoon games simulator","tycoon games supermarket","tycoon games ship","tycoon games school"]
-},
-"tycoon games sh": {
-"t": 1790589543088,
-"s": ["tycoon games ship","tycoon games shopping mall","tycoon games shop","ship tycoon games offline","idle ship tycoon games offline"]
-},
-"tycoon games shop": {
-"t": 1790589542673,
-"s": ["tycoon games shopping mall","tycoon games shop","shop tycoon games offline","shopping mall tycoon games offline","idle tycoon shop games offline"]
-},
-"tycoon games t": {
-"t": 1790589548141,
-"s": ["tycoon games train","tycoon games theme park","tycoon games truck","tycoon games transport","tycoon games tree cutting"]
-},
-"tycoon games tv": {
-"t": 1790589556641,
-"s": ["tycoon games tv","tv empire tycoon games offline","tv tycoon games offline"]
-},
-"tycoon games u": {
-"t": 1790589559276,
-"s": ["tycoon games under 50mb","tycoon games university","tycoon games under 100 mb","used car tycoon games","university tycoon games offline"]
-},
-"tycoon games w": {
-"t": 1790589562054,
-"s": ["tycoon games with no ads","tycoon games weed","tycoon games without ads","tycoon games water park","tycoon games wood cutting"]
-},
-"tycoon games y": {
-"t": 1790589570648,
-"s": []
-},
-"tycoon games youtube": {
-"t": 1790589571054,
-"s": []
-},
-"tycoon games z": {
-"t": 1790589571462,
-"s": ["tycoon games zombie","tycoon games zoo","idle zombie tycoon games","idle tycoon games offline zombie","zombie tycoon games offline"]
 },
 "tycoon i": {
 "t": 1792138769263,
@@ -39747,34 +39859,6 @@
 "t": 1791456179578,
 "s": []
 },
-"uncles g": {
-"t": 1790589575478,
-"s": ["uncles garden","uncle giuseppes app","uncle game","uncle game ice cream uncle game","uncle game 3"]
-},
-"uncles garde": {
-"t": 1790589575887,
-"s": ["uncles garden"]
-},
-"uncles garden": {
-"t": 1790589576700,
-"s": ["uncles garden"]
-},
-"uncles garden ": {
-"t": 1790589576300,
-"s": ["uncles garden match 3 games","uncles garden"]
-},
-"uncles garden m": {
-"t": 1790589575070,
-"s": ["uncles garden match 3 games"]
-},
-"underwater fish": {
-"t": 1790589578663,
-"s": ["underwater fishing","underwater fishing game","underwater fish game","underwater fish","underwater fish hunting games"]
-},
-"underwater fishing games": {
-"t": 1790589579072,
-"s": []
-},
 "undestroyed": {
 "t": 1791456179989,
 "s": ["undestroyed","undestroyed 2","undestroyed platformer game","undestroyed shadow","undestroyed shadow arpg"]
@@ -39816,11 +39900,19 @@
 "s": ["unicorn pixel art by numbers"]
 },
 "unit": {
-"t": 1791803406286,
-"s": ["united airlines","unitedhealthcare","unity","unity by hard rock","unite"]
+"t": 1793092375654,
+"s": ["united airlines","unitedhealthcare","unity","united bank","unity by hard rock"]
+},
+"unit ": {
+"t": 1793092377306,
+"s": ["unit converter","unit converter app free","unit converter app","unit conversion","unit 1 app"]
 },
 "unit c": {
-"t": 1791542865206,
+"t": 1793092376896,
+"s": ["unit converter","unit converter app free","unit converter app","unit conversion","unit conversion app"]
+},
+"unit co": {
+"t": 1793092376483,
 "s": ["unit converter","unit converter app free","unit converter app","unit conversion","unit conversion app"]
 },
 "unit conv": {
@@ -39834,6 +39926,10 @@
 "unit convert": {
 "t": 1791542864754,
 "s": ["unit converter","unit converter app free","unit converter app","unit converter offline","unit converter calculator"]
+},
+"unit converter": {
+"t": 1793092376066,
+"s": ["unit converter","unit converter app free","unit converter app","unit converter ultimate","unit converter offline"]
 },
 "unit converter ": {
 "t": 1791713760056,
@@ -39879,10 +39975,6 @@
 "t": 1791456188582,
 "s": ["unity car parking games","car parking unity","car parking made with unity"]
 },
-"univers": {
-"t": 1790589580534,
-"s": ["universal studios","universal tv remote","universal studios hollywood","universal remote","universe sandbox"]
-},
 "universe sa": {
 "t": 1791456193139,
 "s": ["universe sandbox","universe sandbox 2","universe sandbox game","universe sandbox 1","universe sandbox free game"]
@@ -39907,38 +39999,6 @@
 "t": 1791456192729,
 "s": ["universe sandbox games","games like universe sandbox"]
 },
-"university ": {
-"t": 1790589580937,
-"s": ["university hospital mychart","university of subway","university of phoenix","university of michigan","university of arizona"]
-},
-"university t": {
-"t": 1790589581736,
-"s": ["universal tv remote","university tycoon","university truck simulator","university truck game","universal truck simulator"]
-},
-"university ty": {
-"t": 1790589581338,
-"s": ["university tycoon","university tycoon games","university tycoon games offline","idle university tycoon offline","my university tycoon"]
-},
-"university tyc": {
-"t": 1790589580130,
-"s": ["university tycoon","university tycoon games","university tycoon games offline","idle university tycoon offline","my university tycoon"]
-},
-"unscre": {
-"t": 1790589583239,
-"s": ["unscrew","unscrew games","unscrew 3d","unscrew frenzy 3d","unscrew girls clothes"]
-},
-"unscrew ": {
-"t": 1790589584052,
-"s": ["unscrew games","unscrew 3d","unscrew frenzy 3d","unscrew nuts","unscrew girls clothes"]
-},
-"unscrew w": {
-"t": 1790589583651,
-"s": ["unscrew word 3d","unscrew women","unscrew word games","unscrew words","unscrew wood"]
-},
-"unscrew word": {
-"t": 1790589582827,
-"s": ["unscrew word 3d","unscrew words","unscrew word games","unscrew word bolts","word screw 3d unscrew bolts"]
-},
 "up": {
 "t": 1792052731962,
 "s": ["ups","upside","upward","upwork","uphold"]
@@ -39955,26 +40015,6 @@
 "t": 1792052731152,
 "s": ["up game","up game cloud gaming","up game cloud game play pc game","up game emulator","up game ludo"]
 },
-"upla": {
-"t": 1790589587903,
-"s": ["uplayer","upland","uplay","uplayer video player","uplate"]
-},
-"uplay": {
-"t": 1790589588708,
-"s": ["uplayer","uplay","uplayer video player","uplayer app","uplay casual games"]
-},
-"uplay ": {
-"t": 1790589588312,
-"s": ["uplay app","uplay games","uplay casual games","uplay ntuc","uplay armenia"]
-},
-"uplay c": {
-"t": 1790589587492,
-"s": ["uplay casual games","uplay connect"]
-},
-"uplay casual g": {
-"t": 1790589587082,
-"s": ["uplay casual games"]
-},
 "us": {
 "t": 1792224095121,
 "s": ["us bank","usaa","usps mobile app","usps informed delivery app","usaa drive safe app"]
@@ -39983,14 +40023,6 @@
 "t": 1792224095528,
 "s": ["useeplus","user testing","used car","useeplus endoscope","userland"]
 },
-"use your brai": {
-"t": 1790589591877,
-"s": ["use your brain","use your brain game","use your brain power game","use your brainz edu","use your brains edu"]
-},
-"use your brain games": {
-"t": 1790589592279,
-"s": []
-},
 "used": {
 "t": 1792224094716,
 "s": ["used car","used cars for sale apps","used clothes","used car tycoon","used car app"]
@@ -39998,50 +40030,6 @@
 "used car": {
 "t": 1792224094309,
 "s": ["used car","used cars for sale apps","used car tycoon","used car app","used car parts app"]
-},
-"used car ty": {
-"t": 1790589593499,
-"s": ["used car tycoon","used car tycoon game offline","used car tycoon game 2","used car tyre","used car tycoon offline"]
-},
-"used car tycoo": {
-"t": 1790589592685,
-"s": ["used car tycoon","used car tycoon game offline","used car tycoon game 2","used car tycoon offline","idle used car tycoon"]
-},
-"used car tycoon ": {
-"t": 1790589593903,
-"s": ["used car tycoon game offline","used car tycoon game 2","used car tycoon offline","used car tycoon","idle used car tycoon"]
-},
-"used car tycoon gam": {
-"t": 1790589594310,
-"s": ["used car tycoon game offline","used car tycoon game 2","used car dealer tycoon game"]
-},
-"used car tycoon game": {
-"t": 1790589594714,
-"s": ["used car tycoon game offline","used car tycoon game 2","used car dealer tycoon game"]
-},
-"used car tycoon games": {
-"t": 1790589593086,
-"s": ["used car tycoon games"]
-},
-"ut": {
-"t": 1790589597463,
-"s": ["utorrent","utube download ap","utube music download ap","uta","uta on demand"]
-},
-"uto": {
-"t": 1790589597862,
-"s": ["utorrent","utopia","utorrent android","youtube","utool"]
-},
-"utop": {
-"t": 1790589597064,
-"s": ["utopia","utopia builder pokopia","utop","utopia party","utopia idle tower defense"]
-},
-"utopia i": {
-"t": 1790589596664,
-"s": ["utopia idle tower defense","utopia idle tower"]
-},
-"utopia idle tow": {
-"t": 1790589596258,
-"s": ["utopia idle tower defense","utopia idle tower"]
 },
 "uzb car parking": {
 "t": 1791456201415,
@@ -40060,28 +40048,8 @@
 "s": ["uzbek car parking games"]
 },
 "v": {
-"t": 1791456405732,
+"t": 1793092382338,
 "s": ["vpn","venmo","vinted","video downloader","vlc"]
-},
-"v2": {
-"t": 1790589601778,
-"s": ["v2box","v2ray","v2rayng","v2vpn","v2max vpn"]
-},
-"v2r": {
-"t": 1790589602179,
-"s": ["v2ray","v2rayng","v2rayn","v2rayng vpn فیلتر شکن","v2raybox"]
-},
-"v2r ": {
-"t": 1790589601374,
-"s": ["v2r games","v2r match 3 games","v2r vpn","v2r box","v2r jewel games new"]
-},
-"v2r matc": {
-"t": 1790589600957,
-"s": ["v2r match 3 games"]
-},
-"v2r match 3 gam": {
-"t": 1790589600553,
-"s": ["v2r match 3 games"]
 },
 "v8 c": {
 "t": 1791456203889,
@@ -40148,8 +40116,8 @@
 "s": ["vampire survivors","vampir","vampire games","vampires fall","vampire crawlers"]
 },
 "vampir": {
-"t": 1791456209478,
-"s": ["vampire survivors","vampire","vampir","vampire games","vampires fall"]
+"t": 1793092233549,
+"s": ["vampire survivors","vampir","vampire crawlers","vampire games","vampire s fall"]
 },
 "vampire": {
 "t": 1792659003137,
@@ -40179,22 +40147,6 @@
 "t": 1792745122409,
 "s": ["vampire mmorpg","vampire masquerade","vampire mod for minecraft","vampire mmo","vampire minecraft"]
 },
-"vampire ma": {
-"t": 1790589604698,
-"s": ["vampire masquerade","vampire master","vampire match","vampire makeup","vampire makeup game"]
-},
-"vampire mat": {
-"t": 1790589605103,
-"s": ["vampire match","vampire match 3 games","vampire match 3","shadow match vampire rpg","match 3 vampire"]
-},
-"vampire matc": {
-"t": 1790589604297,
-"s": ["vampire match","vampire match 3 games","vampire match 3","shadow match vampire rpg","match 3 vampire"]
-},
-"vampire match 3": {
-"t": 1790589603888,
-"s": ["vampire match 3 games","vampire match 3","match 3 vampire"]
-},
 "vampire me": {
 "t": 1792745121998,
 "s": ["vampire merge","vampire mercedes game","vampire merge games","vampire mercedes","vampire 63 mercedes"]
@@ -40207,33 +40159,21 @@
 "t": 1792917363854,
 "s": ["vampire rpg","vampire rpg games","vampire rpg games offline","vampire rp","blood invasion vampire rpg"]
 },
+"vampire s": {
+"t": 1793092233957,
+"s": ["vampire survivors","vampire s fall","vampires fall origins rpg 2","vampire s fall origins","vampire survival"]
+},
+"vampire st": {
+"t": 1793092234369,
+"s": ["vampire story games","vampire story","vampire stories","vampire story love game","vampire strategy games"]
+},
+"vampire str": {
+"t": 1793092233143,
+"s": ["vampire strategy games","vampire strategy","vampire the eternal struggle"]
+},
 "van ": {
 "t": 1791456212670,
 "s": ["van games","van simulator","van draw","van life","van life simulator"]
-},
-"van games simulat": {
-"t": 1790589607567,
-"s": ["van games simulator offline","van games simulator pakistan","van games simulator pakistan 2024","van games simulator","van games simulator traveller offline"]
-},
-"van games simulator": {
-"t": 1790589609208,
-"s": ["van games simulator offline","van games simulator pakistan","van games simulator pakistan 2024","van games simulator","van games simulator traveller offline"]
-},
-"van games simulator ": {
-"t": 1790589609610,
-"s": ["van games simulator offline","van games simulator pakistan","van games simulator pakistan 2024","van games simulator traveller offline","van games simulator traveller 2023"]
-},
-"van games simulator x": {
-"t": 1790589608803,
-"s": ["van games simulator x multiplayer","van games simulator x"]
-},
-"van games simulator x mul": {
-"t": 1790589608386,
-"s": ["van games simulator x multiplayer"]
-},
-"van games simulator x multiplayer": {
-"t": 1790589607980,
-"s": ["van games simulator x multiplayer"]
 },
 "van pa": {
 "t": 1791456213080,
@@ -40327,14 +40267,6 @@
 "t": 1792139203478,
 "s": ["vehicle maintenance log","vehicle maintenance tracker","vehicle maintenance","vehicle maintenance app","vehicle maintenance log book"]
 },
-"vehicle merge": {
-"t": 1790589611986,
-"s": ["vehicle merge","merge vehicle games"]
-},
-"vehicle merge games": {
-"t": 1790589612406,
-"s": ["merge vehicle games"]
-},
 "vehicle p": {
 "t": 1791456219057,
 "s": ["vehicle puzzles","vehicle parts shopping app","vehicle parts","vehicle paper checking app","vehicle permit app"]
@@ -40367,21 +40299,9 @@
 "t": 1792659006736,
 "s": ["vertical games","vertical drama","vertical raise","verticons","vertical discounts"]
 },
-"vertical": {
-"t": 1790589615298,
-"s": ["vertical games","vertical drama","vertical raise","vertical discounts","vertical jump measure"]
-},
 "vertical ": {
 "t": 1792659007139,
 "s": ["vertical games","vertical drama","vertical raise","vertical discounts","vertical jump measure"]
-},
-"vertical g": {
-"t": 1790589613219,
-"s": ["vertical games","vertical gallery","vertical games offline","vertical games rpg","vertical games idle"]
-},
-"vertical ga": {
-"t": 1790589612816,
-"s": ["vertical games","vertical gallery","vertical games offline","vertical games rpg","vertical games idle"]
 },
 "vertical i": {
 "t": 1792659007563,
@@ -40391,25 +40311,9 @@
 "t": 1792659006328,
 "s": ["vertical idle games","vertical idle rpg","vertical idle","idle vertical rpg games"]
 },
-"vertical s": {
-"t": 1790589616101,
-"s": ["vertical scroll launcher","vertical shorts","vertical shooter","vertical shooting games","vertical screen games"]
-},
-"vertical st": {
-"t": 1790589616511,
-"s": ["vertical stopwatch","vertical strike","vertical studio","vertical stream","vertical strategy games"]
-},
-"vertical str": {
-"t": 1790589615699,
-"s": ["vertical strike","vertical stream","vertical strategy games","vertical live stream","vertical live stream app"]
-},
-"vertical strateg": {
-"t": 1790589614869,
-"s": ["vertical strategy games"]
-},
 "vi": {
-"t": 1791803425486,
-"s": ["vinted","vizio tv control remote","video downloader","vivint","video editor"]
+"t": 1793092381928,
+"s": ["vinted","video downloader","vizio tv control remote","video editor","vivint"]
 },
 "vid": {
 "t": 1791803601869,
@@ -40491,22 +40395,6 @@
 "t": 1791888584077,
 "s": ["video game","video generator","video guru","video game emulator","video generator ai free"]
 },
-"video games": {
-"t": 1790589620073,
-"s": ["video games","video games app","video games emulator","video games offline 90s","video games video games"]
-},
-"video games ": {
-"t": 1790589620887,
-"s": ["video games app","video games emulator","video games offline 90s","video games etc","video games video games"]
-},
-"video games t": {
-"t": 1790589620473,
-"s": ["video games tracker","video games tycoon","video games tv","video games to play","tractor games video"]
-},
-"video games ty": {
-"t": 1790589619263,
-"s": ["video games tycoon"]
-},
 "video ge": {
 "t": 1791888583658,
 "s": ["video generator","video generator ai free","video generator free","video generator flix ai","video generator app"]
@@ -40538,18 +40426,6 @@
 "video to gif": {
 "t": 1792053244518,
 "s": ["video to gif","video to gif converter","video to gif converter hd","video to gif free","video to gif maker make gifs"]
-},
-"vidlo": {
-"t": 1790589623190,
-"s": ["vidlife","vidlife app","vidlife movie app","video","vindaloo"]
-},
-"vidloo": {
-"t": 1790589622380,
-"s": ["vindaloo","vindaloo konkani app","vidloonnya kids games","vidloop","vindaloo tv"]
-},
-"vidloonnya k": {
-"t": 1790589621975,
-"s": ["vidloonnya kids games"]
 },
 "vijay drawing g": {
 "t": 1791456220663,
@@ -40591,53 +40467,9 @@
 "t": 1792223841585,
 "s": ["virtual pet","virtual pet games","virtual pet cat games","virtual pets for adults","virtual pet for couples"]
 },
-"vit": {
-"t": 1790589626570,
-"s": ["vita mahjong","vitalsource bookshelf","vita","vitality app","vitamin shoppe app"]
-},
-"vita ": {
-"t": 1790589626975,
-"s": ["vita mahjong","vita solitaire for seniors","vita fighters","vita games","vita mahjong free"]
-},
-"vita w": {
-"t": 1790589626166,
-"s": ["vita word search for seniors","vita wood mahjong","vita word search","vita word games for seniors","vita wallet"]
-},
-"vita word ga": {
-"t": 1790589625767,
-"s": ["vita word games for seniors","vita word game"]
-},
 "vo": {
-"t": 1791456405335,
+"t": 1793092386144,
 "s": ["volume booster","voice recorder","voice","voice changer","voicemail"]
-},
-"vocabulary b": {
-"t": 1790589629657,
-"s": ["vocabulary builder app","vocabulary builder","vocabulary builder app offline","vocabulary booster","vocabulary book"]
-},
-"vocabulary buil": {
-"t": 1790589630461,
-"s": ["vocabulary builder app","vocabulary builder","vocabulary builder app offline","vocabulary builder game","vocabulary builder test prep"]
-},
-"vocabulary build": {
-"t": 1790589632094,
-"s": ["vocabulary builder app","vocabulary builder","vocabulary builder app offline","vocabulary builder game","vocabulary builder test prep"]
-},
-"vocabulary buildi": {
-"t": 1790589631691,
-"s": ["vocabulary building games","vocabulary building","vocabulary building app","vocabulary building word games"]
-},
-"vocabulary building": {
-"t": 1790589631282,
-"s": ["vocabulary building games","vocabulary building","vocabulary building app","vocabulary building word games"]
-},
-"vocabulary building wor": {
-"t": 1790589630866,
-"s": ["vocabulary building word games"]
-},
-"vocabulary building word games": {
-"t": 1790589630063,
-"s": ["vocabulary building word games"]
 },
 "voic": {
 "t": 1792223912361,
@@ -40743,49 +40575,9 @@
 "t": 1791888698567,
 "s": ["volume booster","volume control launcher","volaris","voloco","volleyball"]
 },
-"volleyball g": {
-"t": 1790589635115,
-"s": ["volleyball games","volleyball game 2024","volleyball games offline free 6v6","volleyball games online","volleyball girls"]
-},
-"volleyball game": {
-"t": 1790589634316,
-"s": ["volleyball games","volleyball game 2024","volleyball games offline free 6v6","volleyball game offline boys 6v6","volleyball game beach"]
-},
-"volleyball games ": {
-"t": 1790589635924,
-"s": ["volleyball games online","volleyball games of 6 players","volleyball games offline","volleyball games offline free 6v6","volleyball games offline boys"]
-},
-"volleyball games n": {
-"t": 1790589635521,
-"s": ["volleyball games new","volleyball games no internet","volleyball games no network","volleyball games no wifi","volleyball games no net"]
-},
-"volleyball games no wifi": {
-"t": 1790589634716,
-"s": ["volleyball games no wifi"]
-},
 "volume": {
 "t": 1791888698150,
 "s": ["volume booster","volume control launcher","volume control","volume booster free","volume booster for android"]
-},
-"vr f": {
-"t": 1790589638286,
-"s": ["vr full body tracking","vr fighting games","vr fishing","vr football","vr fbt"]
-},
-"vr fi": {
-"t": 1790589639091,
-"s": ["vr fighting games","vr fishing","vr finder","vr finland","vr fight"]
-},
-"vr fis": {
-"t": 1790589638684,
-"s": ["vr fishing","vr fish game","vr fish","vr fishing games","real vr fishing"]
-},
-"vr fishi": {
-"t": 1790589637867,
-"s": ["vr fishing","vr fishing games","real vr fishing","vr real feel fishing","vr reel fishing"]
-},
-"vr fishing game": {
-"t": 1790589637469,
-"s": ["vr fishing games"]
 },
 "vr ga": {
 "t": 1791456222322,
@@ -40832,8 +40624,8 @@
 "s": ["whatsapp","walmart","waze","weather app","whatnot"]
 },
 "wa": {
-"t": 1791542929481,
-"s": ["walmart","waze","wallet","wallpaper","wattpad app"]
+"t": 1793092406068,
+"s": ["walmart","waze","wallet","walgreens","wallpaper"]
 },
 "wal": {
 "t": 1791888497246,
@@ -40848,7 +40640,7 @@
 "s": ["walking app","walking dead","walking app for money","walking tracker","walking"]
 },
 "wallp": {
-"t": 1791888496825,
+"t": 1793092397384,
 "s": ["wallpaper","wallpaper engine","wallpaper apps","wallpaper changer","wallpics"]
 },
 "wallpa": {
@@ -40859,13 +40651,17 @@
 "t": 1791888906542,
 "s": ["wallpaper","wallpaper engine","wallpaper apps","wallpaper changer","wallpaper maker"]
 },
+"wallpape": {
+"t": 1793092397785,
+"s": ["wallpaper","wallpaper engine","wallpaper apps","wallpaper changer","wallpaper maker"]
+},
 "wallpaper": {
-"t": 1791802957334,
+"t": 1793092398190,
 "s": ["wallpaper","wallpaper engine","wallpaper apps","wallpaper changer","wallpaper maker"]
 },
 "wallpapers": {
-"t": 1791802957768,
-"s": ["wallpapers","wallpapers for girls","wallpapers free","wallpapers and backgrounds","wallpapers apps"]
+"t": 1793092396982,
+"s": ["wallpapers","wallpapers free","wallpapers for girls","wallpapers and backgrounds","wallpapers app"]
 },
 "wallpapers ": {
 "t": 1791802956411,
@@ -40928,12 +40724,12 @@
 "s": ["warp scan","warp scan filter","warp scanner","time warp scan offline","time warp scan free"]
 },
 "wat": {
-"t": 1791542929938,
-"s": ["wattpad app","wattpad","watch duty fire app","water park game for kids","water game for kids"]
+"t": 1793092406485,
+"s": ["wattpad app","wattpad","watch faces","watch duty fire app","water park game for kids"]
 },
 "wate": {
-"t": 1791542929054,
-"s": ["water park game for kids","water game for kids","water sort","water reminder","water park simulator"]
+"t": 1793092405660,
+"s": ["water park game for kids","water game for kids","water sort","water reminder","waterfox"]
 },
 "water": {
 "t": 1791713526260,
@@ -41056,8 +40852,8 @@
 "s": ["waves","waves traffic app","waves app","waves map","waves launcher"]
 },
 "we": {
-"t": 1791456576807,
-"s": ["weather app","wells fargo","wendys","weather channel app","webtoon"]
+"t": 1793092423516,
+"s": ["weather app","wells fargo","wendy s","weather channel app","webtoon"]
 },
 "weal": {
 "t": 1792139245812,
@@ -41124,8 +40920,8 @@
 "s": ["weather forecast","weather forecast app","weather forecast live radar","weather forecaster","weather forecast apps philippines"]
 },
 "wei": {
-"t": 1791456576378,
-"s": ["weight watchers","weight loss","weis markets app","weight tracker","weinersnitchel app"]
+"t": 1793092423095,
+"s": ["weight loss","weight watchers","weis markets app","weight tracker","weinersnitchel app"]
 },
 "weigh": {
 "t": 1791967750229,
@@ -41168,8 +40964,8 @@
 "s": ["weight tracker cute","weight loss tracker cute"]
 },
 "wh": {
-"t": 1791713542578,
-"s": ["whatsapp","whatnot","whatsapp business","whataburger","who"]
+"t": 1793092437596,
+"s": ["whatsapp","whatnot","whatsapp business","whataburger","white house app"]
 },
 "whatsa": {
 "t": 1791803461897,
@@ -41188,19 +40984,19 @@
 "s": ["whatsapp hide app","whatsapp hide","whatsapp hidden app","whatsapp hide status seen app","whatsapp hindi stickers"]
 },
 "whe": {
-"t": 1791803477078,
-"s": ["where s my water","wheel of fortune","where winds meet","wheel","wheres the bus"]
+"t": 1793092432474,
+"s": ["where winds meet","wheel of fortune","wheel","where s my water","where s the bus"]
 },
 "whee": {
 "t": 1791803473182,
 "s": ["wheel of fortune","wheel","wheelz","wheelie life","wheelie"]
 },
 "wheel": {
-"t": 1791803485606,
-"s": ["wheel of fortune","wheel","wheelz","wheelie life","wheelie"]
+"t": 1793092432887,
+"s": ["wheel of fortune","wheel","wheelie life","wheelz","wheelie"]
 },
 "wheel ": {
-"t": 1791803471844,
+"t": 1793092432041,
 "s": ["wheel of fortune","wheel spinner","wheel of names","wheel of fortune casino","wheel spin app"]
 },
 "wheel o": {
@@ -41228,8 +41024,8 @@
 "s": ["wheel spinner custom","wheel spinner app","wheel spinner free","wheel spinner game","wheel spinner earn money"]
 },
 "whi": {
-"t": 1791713542172,
-"s": ["white castle app","white house app","whisper","white noise","whiteout survival"]
+"t": 1793092437192,
+"s": ["white house app","white castle app","whisper","white noise","whiteout survival"]
 },
 "whisper flow": {
 "t": 1791803490770,
@@ -41288,7 +41084,7 @@
 "s": ["white noise sleep sounds","white noise sleep sounds rain","white noise sleep app","white noise sleep","white noise sleep and relax"]
 },
 "wi": {
-"t": 1791456396990,
+"t": 1793092443792,
 "s": ["wingstop","wizz","wise","widget","wic app"]
 },
 "wid": {
@@ -41308,8 +41104,8 @@
 "s": ["widgets","widgetsmith","widgets for android free","widgets app","widgets for android"]
 },
 "wif": {
-"t": 1792311107876,
-"s": ["wifi analyzer","wifi","wifiman","wifi calling app","wifi scanner"]
+"t": 1793092443388,
+"s": ["wifi analyzer","wifi","wifiman","wifi calling app","wifi ar"]
 },
 "wifi": {
 "t": 1791542909211,
@@ -41479,29 +41275,9 @@
 "t": 1791888589105,
 "s": ["word connect","word connect association","word connect games","word connect 2026","word connection"]
 },
-"word cros": {
-"t": 1790589642200,
-"s": ["word cross","word crossy","word crossword","word cross game","word crossy 2nd anniversary"]
-},
-"word cross ": {
-"t": 1790589642598,
-"s": ["word cross game","word cross puzzle","word cross jam","word cross jigsaw","word cross offline"]
-},
-"word cross j": {
-"t": 1790589641378,
-"s": ["word cross jam","word cross jigsaw","word cross jigsaw word games","word cross jigsaw word games"]
-},
 "word g": {
 "t": 1791456480146,
 "s": ["word games","word games free for adults","word games offline","word games free for adults single player","word guess"]
-},
-"word ga": {
-"t": 1790589701058,
-"s": ["word games","word games free for adults","word games offline","word games free for adults single player","word games for kids"]
-},
-"word gam": {
-"t": 1790589700654,
-"s": ["word games","word games free for adults","word games offline","word games free for adults single player","word games for kids"]
 },
 "word game": {
 "t": 1791456480544,
@@ -41514,150 +41290,6 @@
 "word games ": {
 "t": 1791456479748,
 "s": ["word games free for adults","word games offline","word games free for adults single player","word games for adults","word games no ads"]
-},
-"word games a": {
-"t": 1790589645156,
-"s": ["word games ad free","word games against others","word games and puzzles","word games anagrams","word games avatar"]
-},
-"word games ad": {
-"t": 1790589647872,
-"s": ["word games ad free","word games advanced","word games no ads","free word games for adults","word spelling games for adults"]
-},
-"word games adul": {
-"t": 1790589648279,
-"s": ["word games free for adults","word games free for adults single player","word spelling games for adults","word puzzle games for adults offline","word puzzle games for adults with levels"]
-},
-"word games adult": {
-"t": 1790589648684,
-"s": ["word games free for adults","word games free for adults single player","word spelling games for adults","word puzzle games for adults offline","word puzzle games for adults with levels"]
-},
-"word games adults": {
-"t": 1790589647463,
-"s": ["word games adults","word games free for adults","word games free for adults single player","word spelling games for adults","word puzzle games for adults offline"]
-},
-"word games adva": {
-"t": 1790589651228,
-"s": ["word games advanced","advanced word search games"]
-},
-"word games advanced": {
-"t": 1790589650418,
-"s": ["word games advanced","advanced word search games"]
-},
-"word games as": {
-"t": 1790589654509,
-"s": ["word games association"]
-},
-"word games ass": {
-"t": 1790589654094,
-"s": ["word games association","word association games free","word association games offline","word association solitaire games","word association games no ads"]
-},
-"word games associ": {
-"t": 1790589653692,
-"s": ["word games association","word association games free","word association games offline","word association solitaire games","word association games no ads"]
-},
-"word games association": {
-"t": 1790589653287,
-"s": ["word games association","word association games free","word association games offline","word association solitaire games","word association games no ads"]
-},
-"word games b": {
-"t": 1790589660039,
-"s": ["word games boggle","word games bubble","word games bahasa melayu","word games bangla","word games bible"]
-},
-"word games bi": {
-"t": 1790589666438,
-"s": ["word games bible","word games bible verse","word bibles find word games","word bingo games","bible word games offline"]
-},
-"word games bib": {
-"t": 1790589666030,
-"s": ["word games bible","word games bible verse","bible word puzzle word games","bible word puzzle games free offline","word bibles find word games"]
-},
-"word games bible ": {
-"t": 1790589665627,
-"s": ["word games bible verse","word games bible","bible word puzzle word games","bible word puzzle games free offline","bible word puzzle games offline"]
-},
-"word games bible verse": {
-"t": 1790589665224,
-"s": ["word games bible verse"]
-},
-"word games bu": {
-"t": 1790589676346,
-"s": ["word games bus simulator","word games bus","word games bubble","word games bugtong","word bubble games"]
-},
-"word games bus": {
-"t": 1790589675944,
-"s": ["word games bus simulator","word games bus"]
-},
-"word games bus ": {
-"t": 1790589675540,
-"s": ["word games bus simulator","word games bus"]
-},
-"word games bus sim": {
-"t": 1790589675134,
-"s": ["word games bus simulator"]
-},
-"word games bus simulator": {
-"t": 1790589674726,
-"s": ["word games bus simulator"]
-},
-"word games c": {
-"t": 1790589678590,
-"s": ["word games connect","word games crossword and search","word games collection","word games cookies","word games cash out"]
-},
-"word games co": {
-"t": 1790589683584,
-"s": ["word games competition","word games connect","word games collection","word games cookies","word games collection"]
-},
-"word games com": {
-"t": 1790589683182,
-"s": ["word games competition"]
-},
-"word games compet": {
-"t": 1790589682778,
-"s": ["word games competition","competitive multiplayer word games"]
-},
-"word games competition": {
-"t": 1790589682371,
-"s": ["word games competition"]
-},
-"word games d": {
-"t": 1790589687842,
-"s": ["word games difficult","word games doll","word games design","word games deutsch","word search daily word games"]
-},
-"word games dark mode": {
-"t": 1790589688242,
-"s": []
-},
-"word games dugtong": {
-"t": 1790589693589,
-"s": ["dugtong word games tagalog"]
-},
-"word games e": {
-"t": 1790589693996,
-"s": ["word games earn money","word games earn money gcash","word games earn real money","word games easy","word games english"]
-},
-"word games f": {
-"t": 1790589700254,
-"s": ["word games free for adults","word games free for adults single player","word games for adults","word games for kids","word games free"]
-},
-"word games g": {
-"t": 1790589705438,
-"s": ["word games guess the word","word games guru","word games german","word games gcash","offline games word games"]
-},
-"word games games": {
-"t": 1790589705841,
-"s": ["offline games word games","free games word games","games word games","games open world games"]
-},
-"word games girl": {
-"t": 1790589708615,
-"s": ["word games for girls"]
-},
-"word games gun": {
-"t": 1790589711328,
-"s": []
-},
-"word games h": {
-"t": 1790589711732,
-"s": ["word games hard","word games home design","word games hindi","word games hangman","word games hardest"]
 },
 "word games i": {
 "t": 1790675777648,
@@ -42484,8 +42116,8 @@
 "s": ["extreme car games simulator","extreme car games simulator offline"]
 },
 "ya": {
-"t": 1791888495229,
-"s": ["yahoo mail","yahoo fantasy","yahoo sports","yandex","yahoo finance"]
+"t": 1793092239474,
+"s": ["yahoo mail","yahoo fantasy","yandex","yapper","yahoo sports"]
 },
 "yahtzee rog": {
 "t": 1791456262306,
@@ -42494,6 +42126,10 @@
 "yahtzee roguelike": {
 "t": 1791456262709,
 "s": []
+},
+"yam": {
+"t": 1793092239880,
+"s": ["yamaha","yami","yamaha soundbar controller","yamaha av controller app","yam"]
 },
 "yamaha": {
 "t": 1791456276852,
@@ -42546,6 +42182,10 @@
 "yamaha r15 b": {
 "t": 1791456276447,
 "s": ["yamaha r15 bike games","yamaha r15 bike"]
+},
+"yamt": {
+"t": 1793092239071,
+"s": ["yamtar simulator games","yamtar simulator games monster","yamtar simulator games animal","yamtar simulator games all","yamtar games"]
 },
 "yamtar": {
 "t": 1790675910354,
@@ -42683,6 +42323,10 @@
 "t": 1792139119580,
 "s": ["you escape","can you escape","can you escape 2","can you escape 1","can you escape 3"]
 },
+"yu": {
+"t": 1793092243656,
+"s": ["yuka","yubo","yugioh","yumeship","yubikey"]
+},
 "yugioh color by n": {
 "t": 1791456279350,
 "s": []
@@ -42703,12 +42347,16 @@
 "t": 1792400670635,
 "s": ["yukon solitaire","yukon family adventure","yukon gold casino","yukon","yukon russian solitaire"]
 },
+"yus": {
+"t": 1793092243242,
+"s": ["yousician","yuspeak","yusr","yusuf kalo full quran offline","yusibo simulator games"]
+},
 "yusi": {
 "t": 1790675912455,
 "s": ["yousician","yusibo simulator games","ymusic","yusibo","yusibo simulator games monster"]
 },
 "z": {
-"t": 1791456317441,
+"t": 1793092447972,
 "s": ["zoom","zedge","zangi","zelle","zillow"]
 },
 "zen word ga": {
@@ -42808,8 +42456,8 @@
 "s": ["zikr","zikr and dua","zikrii fi duaaii","zikr ring","zikr counter"]
 },
 "zo": {
-"t": 1791456317038,
-"s": ["zoom","zombie","zombie games","zocdoc","zoox app"]
+"t": 1793092447571,
+"s": ["zoom","zombie","zombie games","zocdoc","zoho mail"]
 },
 "zom": {
 "t": 1791803497108,
@@ -43423,26 +43071,6 @@
 "t": 1791368544410,
 "s": ["zombie state roguelike fps offline"]
 },
-"zombie str": {
-"t": 1790589305079,
-"s": ["zombie strategy games","zombie strike","zombie streets","zombie strike shoot fire","zombie strategy"]
-},
-"zombie stra": {
-"t": 1790589305485,
-"s": ["zombie strategy games","zombie strategy","zombie strategy games offline","zombie strafing","zombie strike"]
-},
-"zombie strat": {
-"t": 1790589304676,
-"s": ["zombie strategy games","zombie strategy","zombie strategy games offline","zombie defense strategy","zombie survival strategy games offline"]
-},
-"zombie strategy ": {
-"t": 1790589303859,
-"s": ["zombie strategy games","zombie strategy games offline","zombie strategy","zombie defense strategy","zombie survival strategy games offline"]
-},
-"zombie sur": {
-"t": 1790589308885,
-"s": ["zombie survival games","zombie survival","zombie survival games offline","zombie survivors","zombie survival games multiplayer"]
-},
 "zombie surviva": {
 "t": 1790676118856,
 "s": ["zombie survival games","zombie survival","zombie survival games offline","zombie survival games multiplayer","zombie survival games open world"]
@@ -43450,10 +43078,6 @@
 "zombie survival": {
 "t": 1791456287752,
 "s": ["zombie survival games","zombie survival","zombie survival games offline","zombie survival games multiplayer","zombie survival games open world"]
-},
-"zombie survival ": {
-"t": 1790589307653,
-"s": ["zombie survival games","zombie survival games offline","zombie survival games multiplayer","zombie survival games open world","zombie survival simulator"]
 },
 "zombie survival games": {
 "t": 1790676119668,
@@ -43502,18 +43126,6 @@
 "zombie survival sandbox games": {
 "t": 1791456288158,
 "s": ["zombie survival sandbox games","zombie survival games offline sandbox"]
-},
-"zombie survival st": {
-"t": 1790589310104,
-"s": ["zombie survival stickman","zombie survival story games","zombie survival story","zombie survival strategy games offline","zombie survival stickman game"]
-},
-"zombie survival str": {
-"t": 1790589308473,
-"s": ["zombie survival strategy games","zombie survival strategy","zombie survival strategy games offline","blocky combat strike zombie survival","zombie apocalypse survival strategies"]
-},
-"zombie survival strategy games offline": {
-"t": 1790589308056,
-"s": ["zombie survival strategy games offline"]
 },
 "zombiestm": {
 "t": 1791968336452,

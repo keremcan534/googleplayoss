@@ -1697,17 +1697,17 @@
 "dev": "FDG Entertainment GmbH & Co.KG",
 "genre": "GAME_ACTION",
 "installs": 5000000,
-"real": 8678285,
-"score": 4.69,
-"ratings": 212561,
-"reviews": 2324,
+"real": 8695333,
+"score": 4.71,
+"ratings": 212529,
+"reviews": 2325,
 "released": "2013-09-16",
 "updated": "2026-09-07",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790676222770
+"fetched": 1793093009025
 },
 "air.com.FDGEntertainment.Lonewolf.gp": {
 "id": "air.com.FDGEntertainment.Lonewolf.gp",
@@ -3281,7 +3281,7 @@
 "dev": "Hidden Fun Escape",
 "genre": "GAME_ADVENTURE",
 "installs": 50000,
-"real": 56330,
+"real": 58022,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -3291,7 +3291,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589991733
+"fetched": 1793092808771
 },
 "air.com.hypah.io.slither": {
 "id": "air.com.hypah.io.slither",
@@ -4451,17 +4451,17 @@
 "dev": "Denis Gladkii",
 "genre": "EDUCATION",
 "installs": 100000,
-"real": 265617,
-"score": 4.71,
-"ratings": 7221,
+"real": 271654,
+"score": 4.72,
+"ratings": 7443,
 "reviews": 12,
 "released": "2019-05-09",
-"updated": "2026-09-17",
+"updated": "2026-10-22",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789713249284
+"fetched": 1793092744711
 },
 "air.ru.uchimslova.words": {
 "id": "air.ru.uchimslova.words",
@@ -5693,7 +5693,7 @@
 "dev": "Mindvoll",
 "genre": "LIFESTYLE",
 "installs": 1000000,
-"real": 1511322,
+"real": 1511889,
 "score": 4.5,
 "ratings": 8902,
 "reviews": 83,
@@ -5703,7 +5703,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789714931749
+"fetched": 1793092566515
 },
 "app.ayt.naberise": {
 "id": "app.ayt.naberise",
@@ -5819,9 +5819,9 @@
 "dev": "Tip Tap Apps",
 "genre": "LIFESTYLE",
 "installs": 50000,
-"real": 77562,
+"real": 78005,
 "score": 4.62,
-"ratings": 1358,
+"ratings": 1360,
 "reviews": 4,
 "released": "2024-03-04",
 "updated": "2026-07-28",
@@ -5829,7 +5829,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1791108483485
+"fetched": 1793092999586
 },
 "app.bluereef.app": {
 "id": "app.bluereef.app",
@@ -6067,13 +6067,13 @@
 },
 "app.elika.baby": {
 "id": "app.elika.baby",
-"title": "Elika: Bebek Gelişim Takibi",
+"title": "Elika: Bebek Takibi ve Bakımı",
 "dev": "Elika Teknoloji",
 "genre": "PARENTING",
 "installs": 100000,
-"real": 221112,
+"real": 221417,
 "score": 4.5,
-"ratings": 2981,
+"ratings": 2978,
 "reviews": 668,
 "released": "2021-06-10",
 "updated": "2026-09-29",
@@ -6081,7 +6081,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790935323676
+"fetched": 1793092594347
 },
 "app.extraordinerdy.redfirhills": {
 "id": "app.extraordinerdy.redfirhills",
@@ -6587,6 +6587,24 @@
 "price": 0,
 "fetched": 1791968891920
 },
+"app.maashesaplama": {
+"id": "app.maashesaplama",
+"title": "Maaş Hesaplama: Brüt Net Mesai",
+"dev": "D Corps",
+"genre": "FINANCE",
+"installs": 1,
+"real": 3,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-10-10",
+"updated": "2026-10-10",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092899732
+},
 "app.macsadventure.com": {
 "id": "app.macsadventure.com",
 "title": "Macs Adventure",
@@ -6665,17 +6683,17 @@
 "dev": "Meditopia",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 10000000,
-"real": 23107388,
+"real": 23170069,
 "score": 4.51,
-"ratings": 281302,
-"reviews": 12405,
+"ratings": 281696,
+"reviews": 12403,
 "released": "2017-03-07",
-"updated": "2026-09-15",
+"updated": "2026-10-02",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789713379386
+"fetched": 1793092928432
 },
 "app.meep.cyprus.pame": {
 "id": "app.meep.cyprus.pame",
@@ -11147,17 +11165,17 @@
 "dev": "Lojong Meditation, Mindfulness and Sleep",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 1000000,
-"real": 4518971,
+"real": 4527092,
 "score": 4.76,
-"ratings": 119929,
+"ratings": 119988,
 "reviews": 15,
 "released": "2021-04-23",
-"updated": "2026-08-14",
+"updated": "2026-10-23",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789714952787
+"fetched": 1793092929706
 },
 "br.com.make.scaniabr": {
 "id": "br.com.make.scaniabr",
@@ -13397,17 +13415,17 @@
 "dev": "ANKIT SARAF",
 "genre": "BUSINESS",
 "installs": 10000000,
-"real": 10574634,
-"score": 4.75,
-"ratings": 144049,
-"reviews": 293,
+"real": 10877356,
+"score": 4.72,
+"ratings": 147827,
+"reviews": 297,
 "released": "2021-03-09",
 "updated": "2026-09-25",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589953408
+"fetched": 1793092762208
 },
 "cast.video.screenmirroring.casttotv": {
 "id": "cast.video.screenmirroring.casttotv",
@@ -15755,9 +15773,9 @@
 "dev": "Wiserapps Software",
 "genre": "PARENTING",
 "installs": 100000,
-"real": 157689,
-"score": 3.63,
-"ratings": 1095,
+"real": 162147,
+"score": 3.66,
+"ratings": 1221,
 "reviews": 17,
 "released": "2023-10-22",
 "updated": "2026-09-26",
@@ -15765,7 +15783,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590011964
+"fetched": 1793092828025
 },
 "co.wiserapps.glycemicindex": {
 "id": "co.wiserapps.glycemicindex",
@@ -18113,7 +18131,7 @@
 "dev": "Byteraft Studios",
 "genre": "GAME_SIMULATION",
 "installs": 5000000,
-"real": 6161727,
+"real": 6249738,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -18123,7 +18141,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589853014
+"fetched": 1793092672839
 },
 "com.CAYN.TowerOfHellObby": {
 "id": "com.CAYN.TowerOfHellObby",
@@ -18399,19 +18417,19 @@
 "id": "com.Chillgaming.oneState",
 "title": "OneState RP: Online Role Play",
 "dev": "ChillBase",
-"genre": "GAME_ADVENTURE",
+"genre": "GAME_ROLE_PLAYING",
 "installs": 10000000,
-"real": 36934110,
-"score": 4.18,
-"ratings": 140940,
-"reviews": 1644,
+"real": 38608555,
+"score": 3.9,
+"ratings": 149349,
+"reviews": 1970,
 "released": "2022-05-25",
-"updated": "2026-08-25",
+"updated": "2026-10-09",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789713439853
+"fetched": 1793092991842
 },
 "com.ChillyRoom.DungeonShooter": {
 "id": "com.ChillyRoom.DungeonShooter",
@@ -20201,9 +20219,9 @@
 "dev": "EY Software",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 141261,
-"score": 2.86,
-"ratings": 222,
+"real": 147882,
+"score": 3.13,
+"ratings": 230,
 "reviews": 7,
 "released": "2024-06-24",
 "updated": "2025-10-26",
@@ -20211,7 +20229,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589919581
+"fetched": 1793092736000
 },
 "com.EYSoftware.tractorTrials": {
 "id": "com.EYSoftware.tractorTrials",
@@ -20471,9 +20489,9 @@
 "dev": "Apaydın Games",
 "genre": "GAME_SIMULATION",
 "installs": 1000000,
-"real": 1734178,
+"real": 1741825,
 "score": 4.15,
-"ratings": 2164,
+"ratings": 2171,
 "reviews": 226,
 "released": "2018-05-03",
 "updated": "2026-05-08",
@@ -20481,7 +20499,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589774878
+"fetched": 1793092572660
 },
 "com.ErenApaydin.KangoDriftandDrivingSimulator": {
 "id": "com.ErenApaydin.KangoDriftandDrivingSimulator",
@@ -22721,17 +22739,17 @@
 "dev": "Gull Soft",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 313572,
-"score": 3.63,
-"ratings": 742,
-"reviews": 9,
+"real": 323107,
+"score": 3.7,
+"ratings": 761,
+"reviews": 10,
 "released": "2024-07-28",
 "updated": "2026-08-27",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790676145089
+"fetched": 1793092932178
 },
 "com.GustaGamingWorld.DiniBilgiYarismasi": {
 "id": "com.GustaGamingWorld.DiniBilgiYarismasi",
@@ -23387,7 +23405,7 @@
 "dev": "HS-Games",
 "genre": "GAME_RACING",
 "installs": 1000,
-"real": 4496,
+"real": 4794,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -23397,7 +23415,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589775836
+"fetched": 1793092573641
 },
 "com.Hypemasters.rts": {
 "id": "com.Hypemasters.rts",
@@ -23819,9 +23837,9 @@
 "dev": "Ireptio Craftia Corporation",
 "genre": "ENTERTAINMENT",
 "installs": 100000,
-"real": 364921,
+"real": 371782,
 "score": 4.27,
-"ratings": 697,
+"ratings": 702,
 "reviews": 7,
 "released": "2022-12-16",
 "updated": "2025-11-14",
@@ -23829,7 +23847,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790676147177
+"fetched": 1793092934202
 },
 "com.IronEqual.GunshipOperator3D": {
 "id": "com.IronEqual.GunshipOperator3D",
@@ -24053,7 +24071,7 @@
 "dev": "Jahn Star Games",
 "genre": "GAME_SIMULATION",
 "installs": 1000000,
-"real": 1303860,
+"real": 1324400,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -24063,7 +24081,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589870422
+"fetched": 1793092693975
 },
 "com.JavedRehman.GameDev.RubiksCube3D": {
 "id": "com.JavedRehman.GameDev.RubiksCube3D",
@@ -25205,9 +25223,9 @@
 "dev": "Little Brother Games",
 "genre": "GAME_SIMULATION",
 "installs": 5000000,
-"real": 7430932,
+"real": 7476241,
 "score": 3.43,
-"ratings": 8061,
+"ratings": 8087,
 "reviews": 2,
 "released": "2022-03-07",
 "updated": "2026-06-25",
@@ -25215,7 +25233,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589847828
+"fetched": 1793092666401
 },
 "com.Locos.MBS": {
 "id": "com.Locos.MBS",
@@ -26153,13 +26171,31 @@
 "price": 0,
 "fetched": 1792224805252
 },
+"com.MiniCo.UltraFarmingTractorTrucks": {
+"id": "com.MiniCo.UltraFarmingTractorTrucks",
+"title": "Ultra Farming Tractor Trucks",
+"dev": "MiniCo Games",
+"genre": "GAME_RACING",
+"installs": 100000,
+"real": 200601,
+"score": 3.33,
+"ratings": 136,
+"reviews": 2,
+"released": "2023-08-08",
+"updated": "2026-03-01",
+"ads": true,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092736007
+},
 "com.MiniDevGames.CrazyTractorRelease": {
 "id": "com.MiniDevGames.CrazyTractorRelease",
 "title": "Crazy Tractor",
 "dev": "MiniDevGames",
 "genre": "GAME_ARCADE",
 "installs": 1000,
-"real": 1241,
+"real": 1301,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -26169,7 +26205,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589878863
+"fetched": 1793092651970
 },
 "com.MiniPoP_Games.Obby_Escape_Sprunki_Horror": {
 "id": "com.MiniPoP_Games.Obby_Escape_Sprunki_Horror",
@@ -26746,6 +26782,24 @@
 "free": true,
 "price": 0,
 "fetched": 1792224529596
+},
+"com.NejaTech.UltimateTruckSimulatorCargoDrive": {
+"id": "com.NejaTech.UltimateTruckSimulatorCargoDrive",
+"title": "Ultimate Truck Simulator",
+"dev": "NejaTech",
+"genre": "GAME_SIMULATION",
+"installs": 10000,
+"real": 21274,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-07-20",
+"updated": "2026-10-15",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092561763
 },
 "com.NepWag.AirHockeyHome": {
 "id": "com.NepWag.AirHockeyHome",
@@ -28517,9 +28571,9 @@
 "dev": "PIXEL XYZ GAMES",
 "genre": "GAME_SIMULATION",
 "installs": 10000000,
-"real": 30185257,
-"score": 4,
-"ratings": 100116,
+"real": 30458121,
+"score": 4.01,
+"ratings": 100351,
 "reviews": 76,
 "released": "2020-09-13",
 "updated": "2026-06-23",
@@ -28527,7 +28581,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589848142
+"fetched": 1793092666536
 },
 "com.PizzaNightmaresClub.BurgerPizHorrorRestaurant": {
 "id": "com.PizzaNightmaresClub.BurgerPizHorrorRestaurant",
@@ -29921,17 +29975,17 @@
 "dev": "Rumor Games, LLC",
 "genre": "GAME_PUZZLE",
 "installs": 100000,
-"real": 474645,
-"score": 4.34,
-"ratings": 9725,
-"reviews": 35,
+"real": 478862,
+"score": 4.33,
+"ratings": 9739,
+"reviews": 37,
 "released": "2013-08-20",
-"updated": "2026-06-25",
+"updated": "2026-09-26",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715001900
+"fetched": 1793092745936
 },
 "com.RuzgarApp.AccentDriftSimulator": {
 "id": "com.RuzgarApp.AccentDriftSimulator",
@@ -30587,17 +30641,17 @@
 "dev": "SevenGears Games",
 "genre": "GAME_SIMULATION",
 "installs": 1000000,
-"real": 4313256,
-"score": 4.17,
-"ratings": 13428,
-"reviews": 227,
+"real": 4397404,
+"score": 4.22,
+"ratings": 13537,
+"reviews": 228,
 "released": "2023-01-30",
 "updated": "2026-04-11",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790590019315
+"fetched": 1793092836005
 },
 "com.SevenGearsGames.TrafficCrashesCarCrash": {
 "id": "com.SevenGearsGames.TrafficCrashesCarCrash",
@@ -31235,17 +31289,17 @@
 "dev": "Team Curiosity ✦",
 "genre": "GAME_SIMULATION",
 "installs": 10000000,
-"real": 44929857,
+"real": 45173961,
 "score": 4.74,
-"ratings": 592997,
-"reviews": 5320,
+"ratings": 594564,
+"reviews": 5359,
 "released": "2017-11-30",
 "updated": "2026-09-22",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589941436
+"fetched": 1793092745065
 },
 "com.StellarStudioGame.HitBottlesKnockDown": {
 "id": "com.StellarStudioGame.HitBottlesKnockDown",
@@ -32351,9 +32405,9 @@
 "dev": "TalkAlice",
 "genre": "GAME_SIMULATION",
 "installs": 1000000,
-"real": 2235647,
+"real": 2249558,
 "score": 3.09,
-"ratings": 3620,
+"ratings": 3626,
 "reviews": 67,
 "released": "2023-04-08",
 "updated": "2026-03-16",
@@ -32361,7 +32415,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589830992
+"fetched": 1793092646328
 },
 "com.Ukun.ObbyCheeseMazeEscape": {
 "id": "com.Ukun.ObbyCheeseMazeEscape",
@@ -33233,17 +33287,17 @@
 "dev": "YovoGames",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 478832,
+"real": 479547,
 "score": 3.6,
 "ratings": 304,
 "reviews": 4,
 "released": "2023-03-17",
-"updated": "2026-08-28",
+"updated": "2026-10-20",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590028110
+"fetched": 1793092988316
 },
 "com.YovoGames.babyCare2": {
 "id": "com.YovoGames.babyCare2",
@@ -33982,6 +34036,24 @@
 "free": true,
 "price": 0,
 "fetched": 1792311541643
+},
+"com.aahil.think.manager.quick": {
+"id": "com.aahil.think.manager.quick",
+"title": "Dear Passengers: Co-op Airline",
+"dev": "AAHIL PUBLICATIONS",
+"genre": "GAME_SIMULATION",
+"installs": 10000,
+"real": 47635,
+"score": 1.8,
+"ratings": 55,
+"reviews": 4,
+"released": "2026-08-20",
+"updated": "2026-10-19",
+"ads": false,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092866000
 },
 "com.aapplication.mosaic": {
 "id": "com.aapplication.mosaic",
@@ -34954,6 +35026,24 @@
 "free": true,
 "price": 0,
 "fetched": 1789805993396
+},
+"com.acex.crazypassengers": {
+"id": "com.acex.crazypassengers",
+"title": "Crazy Cabin: Crew Simulator",
+"dev": "3rd Arrow Games",
+"genre": "GAME_ROLE_PLAYING",
+"installs": 500000,
+"real": 870742,
+"score": 1.34,
+"ratings": 716,
+"reviews": 23,
+"released": "2026-09-01",
+"updated": "2026-09-28",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092863534
 },
 "com.achimsapps.breathe": {
 "id": "com.achimsapps.breathe",
@@ -35999,6 +36089,24 @@
 "price": 0,
 "fetched": 1789715021057
 },
+"com.aeke.exchangeapp": {
+"id": "com.aeke.exchangeapp",
+"title": "Canlı Döviz, Altın, Dolar Kuru",
+"dev": "Eke Software Solutions",
+"genre": "FINANCE",
+"installs": 1000,
+"real": 1203,
+"score": 4.33,
+"ratings": 6,
+"reviews": 4,
+"released": "2024-07-18",
+"updated": "2026-10-23",
+"ads": true,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092704075
+},
 "com.aeni.guvenliortalama": {
 "id": "com.aeni.guvenliortalama",
 "title": "Güvenli Ortalama: EDS & Rota",
@@ -36725,17 +36833,17 @@
 "dev": "Aged Studio Limited",
 "genre": "GAME_CARD",
 "installs": 50000000,
-"real": 60132988,
-"score": 4.32,
-"ratings": 190745,
-"reviews": 70,
+"real": 60592567,
+"score": 4.25,
+"ratings": 190821,
+"reviews": 71,
 "released": "2019-01-29",
 "updated": "2026-09-02",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589988027
+"fetched": 1793092804824
 },
 "com.agedstudio.pixelblast.games": {
 "id": "com.agedstudio.pixelblast.games",
@@ -37979,6 +38087,24 @@
 "price": 0,
 "fetched": 1791889512475
 },
+"com.airfly.flyf16simulator.airplanegames": {
+"id": "com.airfly.flyf16simulator.airplanegames",
+"title": "F16 Hava Savaş Simülatörü",
+"dev": "Gaga Games",
+"genre": "GAME_ACTION",
+"installs": 10000,
+"real": 37725,
+"score": 3.11,
+"ratings": 85,
+"reviews": 12,
+"released": "2023-03-29",
+"updated": "2026-08-06",
+"ads": true,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092882305
+},
 "com.airhelp.mobile": {
 "id": "com.airhelp.mobile",
 "title": "AirHelp・Uçuş Takip",
@@ -38195,6 +38321,24 @@
 "price": 0,
 "fetched": 1792224444094
 },
+"com.aistudio.corbadefteri.app": {
+"id": "com.aistudio.corbadefteri.app",
+"title": "Çorba Tarifleri: Çorba Defteri",
+"dev": "ayonsalabs",
+"genre": "FOOD_AND_DRINK",
+"installs": 10,
+"real": 48,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-08-16",
+"updated": "2026-08-16",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092670300
+},
 "com.aistudio.kelimekilidi.kkpuz": {
 "id": "com.aistudio.kelimekilidi.kkpuz",
 "title": "Kelime Kilidi | Kelime Bulmaca",
@@ -38338,6 +38482,24 @@
 "free": true,
 "price": 0,
 "fetched": 1791369131950
+},
+"com.ajdevelopersteam.goldfileexplorer": {
+"id": "com.ajdevelopersteam.goldfileexplorer",
+"title": "File Explorer - Gold",
+"dev": "AJ Developers Team",
+"genre": "TOOLS",
+"installs": 100,
+"real": 298,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-09-25",
+"updated": "2026-10-26",
+"ads": false,
+"iap": false,
+"free": false,
+"price": 2359.99,
+"fetched": 1793092699268
 },
 "com.ajet.mobile": {
 "id": "com.ajet.mobile",
@@ -39587,9 +39749,9 @@
 "dev": "Satur Entertainment",
 "genre": "GAME_ARCADE",
 "installs": 1000000,
-"real": 2276633,
+"real": 2283452,
 "score": 4.05,
-"ratings": 9206,
+"ratings": 9221,
 "reviews": 49,
 "released": "2016-11-29",
 "updated": "2026-08-26",
@@ -39597,7 +39759,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790676180221
+"fetched": 1793092966748
 },
 "com.alexandrous.calculatorsimple": {
 "id": "com.alexandrous.calculatorsimple",
@@ -42089,17 +42251,17 @@
 "dev": "AMICOOLSOFT",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 100000,
-"real": 357721,
-"score": 4.5,
-"ratings": 7535,
+"real": 360962,
+"score": 4.49,
+"ratings": 7579,
 "reviews": 13,
 "released": "2017-10-06",
-"updated": "2026-04-25",
+"updated": "2026-09-25",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1789715043764
+"fetched": 1793092607759
 },
 "com.amila.parenting": {
 "id": "com.amila.parenting",
@@ -42479,6 +42641,24 @@
 "price": 0,
 "fetched": 1790239441570
 },
+"com.anaurt.lugat": {
+"id": "com.anaurt.lugat",
+"title": "Qirimtatar lugati",
+"dev": "Ana-Yurt",
+"genre": "EDUCATION",
+"installs": 1000,
+"real": 4609,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2019-03-23",
+"updated": "2026-10-24",
+"ads": false,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092814004
+},
 "com.ancestry.android.apps.ancestry": {
 "id": "com.ancestry.android.apps.ancestry",
 "title": "Ancestry: Family History & DNA",
@@ -42827,17 +43007,17 @@
 "dev": "DIGIT GROVE",
 "genre": "TOOLS",
 "installs": 10000000,
-"real": 10875204,
-"score": 4.7,
-"ratings": 189571,
+"real": 10936367,
+"score": 4.71,
+"ratings": 189874,
 "reviews": 247,
 "released": "2014-08-17",
-"updated": "2026-08-11",
+"updated": "2026-10-03",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715048010
+"fetched": 1793092614587
 },
 "com.androidassistant.free": {
 "id": "com.androidassistant.free",
@@ -43997,17 +44177,17 @@
 "dev": "Portfoy Finansal Teknolojiler",
 "genre": "FINANCE",
 "installs": 10000,
-"real": 16018,
-"score": 4.49,
-"ratings": 271,
-"reviews": 39,
+"real": 16780,
+"score": 4.48,
+"ratings": 283,
+"reviews": 42,
 "released": "2025-03-21",
-"updated": "2026-09-05",
+"updated": "2026-10-10",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790935525447
+"fetched": 1793092621463
 },
 "com.anonymous.WhiteNoiseRN": {
 "id": "com.anonymous.WhiteNoiseRN",
@@ -44447,9 +44627,9 @@
 "dev": "Anyma Car Game",
 "genre": "GAME_RACING",
 "installs": 100000,
-"real": 211653,
-"score": 2,
-"ratings": 220,
+"real": 224133,
+"score": 2.25,
+"ratings": 229,
 "reviews": 5,
 "released": "2023-09-21",
 "updated": "2025-11-17",
@@ -44457,7 +44637,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589775818
+"fetched": 1793092573182
 },
 "com.anysignapp": {
 "id": "com.anysignapp",
@@ -44566,6 +44746,24 @@
 "free": true,
 "price": 0,
 "fetched": 1791627205805
+},
+"com.aots.chaos.airline.passengers": {
+"id": "com.aots.chaos.airline.passengers",
+"title": "Dear Passengers",
+"dev": "ALLIED OUTSOURCE TECHNOLOGY SERVICES",
+"genre": "GAME_CASUAL",
+"installs": 1,
+"real": 2,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": null,
+"updated": "2026-10-12",
+"ads": false,
+"iap": false,
+"free": false,
+"price": 174.99,
+"fetched": 1793092865049
 },
 "com.aoujapps.turkiyesuperligi": {
 "id": "com.aoujapps.turkiyesuperligi",
@@ -45491,9 +45689,9 @@
 "dev": "Appalex Ltd.",
 "genre": "EDUCATION",
 "installs": 100000,
-"real": 208295,
-"score": 4.32,
-"ratings": 9728,
+"real": 222607,
+"score": 4.43,
+"ratings": 10344,
 "reviews": 9,
 "released": "2025-10-25",
 "updated": "2026-08-16",
@@ -45501,7 +45699,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715055788
+"fetched": 1793092855363
 },
 "com.appatolyesi.gumussoydoviz": {
 "id": "com.appatolyesi.gumussoydoviz",
@@ -46193,17 +46391,17 @@
 "dev": "First Media US",
 "genre": "EDUCATION",
 "installs": 1000000,
-"real": 2368409,
-"score": 3.8,
-"ratings": 8306,
-"reviews": 33,
+"real": 2438213,
+"score": 3.56,
+"ratings": 8463,
+"reviews": 35,
 "released": "2012-09-13",
 "updated": "2026-09-22",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589843595
+"fetched": 1793092662216
 },
 "com.application.muhasebeapp": {
 "id": "com.application.muhasebeapp",
@@ -48491,6 +48689,24 @@
 "price": 719.99,
 "fetched": 1791968607579
 },
+"com.armedairforces.armedairforces": {
+"id": "com.armedairforces.armedairforces",
+"title": "Armed Air Forces - Flight Sim",
+"dev": "Flight Sim Studio",
+"genre": "GAME_SIMULATION",
+"installs": 1000000,
+"real": 1194045,
+"score": 4.41,
+"ratings": 11049,
+"reviews": 331,
+"released": "2021-03-31",
+"updated": "2026-08-25",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092882809
+},
 "com.armmc.app": {
 "id": "com.armmc.app",
 "title": "Anvil-MC: Minecraft Sunucuları",
@@ -49307,17 +49523,17 @@
 "dev": "Art of the State LLC",
 "genre": "GAME_ACTION",
 "installs": 1000000,
-"real": 1557610,
+"real": 1671260,
 "score": 3.89,
-"ratings": 2483,
-"reviews": 49,
+"ratings": 2876,
+"reviews": 56,
 "released": "2026-08-31",
 "updated": "2026-09-16",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790676206575
+"fetched": 1793092910043
 },
 "com.artpoldev.kidsee": {
 "id": "com.artpoldev.kidsee",
@@ -49433,17 +49649,17 @@
 "dev": "Ataorge Sptiq",
 "genre": "GAME_RACING",
 "installs": 10000,
-"real": 34577,
-"score": null,
-"ratings": 0,
-"reviews": 0,
+"real": 41609,
+"score": 4.5,
+"ratings": 104,
+"reviews": 2,
 "released": "2026-08-18",
-"updated": "2026-08-18",
+"updated": "2026-10-21",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790590044716
+"fetched": 1793092865105
 },
 "com.asali.drawverse": {
 "id": "com.asali.drawverse",
@@ -50399,6 +50615,24 @@
 "price": 0,
 "fetched": 1792311667782
 },
+"com.astragon.takeoffasia": {
+"id": "com.astragon.takeoffasia",
+"title": "Take Off Flight Simulator",
+"dev": "astragon Entertainment GmbH",
+"genre": "GAME_SIMULATION",
+"installs": 5000000,
+"real": 5629890,
+"score": 4.06,
+"ratings": 73611,
+"reviews": 1814,
+"released": "2016-09-22",
+"updated": "2017-08-10",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092967901
+},
 "com.astragon.trucksimtwo": {
 "id": "com.astragon.trucksimtwo",
 "title": "Truck Simulation 19",
@@ -51251,17 +51485,17 @@
 "dev": "Classic Games Network",
 "genre": "GAME_CARD",
 "installs": 1000,
-"real": 1592,
+"real": 1871,
 "score": null,
 "ratings": 0,
 "reviews": 0,
 "released": "2025-12-17",
-"updated": "2026-06-12",
+"updated": "2026-10-14",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790935573633
+"fetched": 1793092637003
 },
 "com.atq.quranemajeedapp.org.tfq": {
 "id": "com.atq.quranemajeedapp.org.tfq",
@@ -51791,17 +52025,17 @@
 "dev": "Northern Forge",
 "genre": "GAME_ROLE_PLAYING",
 "installs": 1000000,
-"real": 3149600,
-"score": 4.32,
-"ratings": 53952,
+"real": 3186219,
+"score": 4.34,
+"ratings": 54607,
 "reviews": 127,
 "released": "2022-11-15",
-"updated": "2026-09-03",
+"updated": "2026-10-22",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715074540
+"fetched": 1793092992437
 },
 "com.avast.android.cleaner": {
 "id": "com.avast.android.cleaner",
@@ -52756,6 +52990,24 @@
 "free": true,
 "price": 0,
 "fetched": 1793006324856
+},
+"com.aydemavstudio.turkcesozlukoyunu": {
+"id": "com.aydemavstudio.turkcesozlukoyunu",
+"title": "Türkçe Sözlük Oyunu",
+"dev": "Aydemav Studio",
+"genre": "GAME_WORD",
+"installs": 10000,
+"real": 17158,
+"score": 4.14,
+"ratings": 56,
+"reviews": 23,
+"released": "2022-07-14",
+"updated": "2026-05-05",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092814458
 },
 "com.ayder.sesimelim": {
 "id": "com.ayder.sesimelim",
@@ -53951,9 +54203,9 @@
 "dev": "Bajake Studios",
 "genre": "GAME_SIMULATION",
 "installs": 5000000,
-"real": 7553403,
+"real": 7596682,
 "score": 3.51,
-"ratings": 5685,
+"ratings": 5703,
 "reviews": 31,
 "released": "2019-11-22",
 "updated": "2026-06-17",
@@ -53961,7 +54213,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589841340
+"fetched": 1793092647397
 },
 "com.bakanlik112.mobil.ng112mobil": {
 "id": "com.bakanlik112.mobil.ng112mobil",
@@ -55300,18 +55552,18 @@
 "title": "Pil Yöneticisi: Sağlık Durumu",
 "dev": "Baxolino",
 "genre": "TOOLS",
-"installs": 10000,
-"real": 49763,
-"score": 4.33,
-"ratings": 941,
-"reviews": 4,
+"installs": 50000,
+"real": 62745,
+"score": 4.43,
+"ratings": 1246,
+"reviews": 5,
 "released": "2026-02-13",
-"updated": "2026-09-03",
+"updated": "2026-10-10",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715089497
+"fetched": 1793092960132
 },
 "com.bayraktar.kpsstest": {
 "id": "com.bayraktar.kpsstest",
@@ -55625,17 +55877,17 @@
 "dev": "Skyloft Yazılım Bilişim ve Anonim Şirketi",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 105293,
-"score": 2.33,
-"ratings": 85,
-"reviews": 4,
+"real": 143213,
+"score": 2.88,
+"ratings": 116,
+"reviews": 5,
 "released": "2026-06-30",
-"updated": "2026-08-25",
+"updated": "2026-10-16",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590075876
+"fetched": 1793092902194
 },
 "com.bbp.cargoboom": {
 "id": "com.bbp.cargoboom",
@@ -57587,17 +57839,17 @@
 "dev": "DesignWiz Apps",
 "genre": "ART_AND_DESIGN",
 "installs": 1000000,
-"real": 4302780,
-"score": 4.71,
-"ratings": 79256,
+"real": 4323924,
+"score": 4.7,
+"ratings": 80333,
 "reviews": 45,
 "released": "2018-03-24",
-"updated": "2026-09-24",
+"updated": "2026-10-26",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590067875
+"fetched": 1793092894689
 },
 "com.bg.procarParking.real.simulation.drive": {
 "id": "com.bg.procarParking.real.simulation.drive",
@@ -57785,9 +58037,9 @@
 "dev": "BhGames LTD",
 "genre": "GAME_CARD",
 "installs": 100000,
-"real": 178606,
-"score": 3.24,
-"ratings": 155,
+"real": 180705,
+"score": 3.2,
+"ratings": 156,
 "reviews": 50,
 "released": "2023-03-11",
 "updated": "2026-08-26",
@@ -57795,7 +58047,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1791197040643
+"fetched": 1793092965250
 },
 "com.bho.colorblock": {
 "id": "com.bho.colorblock",
@@ -59855,17 +60107,17 @@
 "dev": "Tele Labs",
 "genre": "EDUCATION",
 "installs": 100000,
-"real": 352548,
+"real": 353920,
 "score": 3.31,
-"ratings": 2456,
+"ratings": 2469,
 "reviews": 3,
 "released": "2022-09-04",
-"updated": "2026-07-03",
+"updated": "2026-10-22",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1791197366765
+"fetched": 1793092887845
 },
 "com.birdbuddy.sound.identifier": {
 "id": "com.birdbuddy.sound.identifier",
@@ -59891,17 +60143,17 @@
 "dev": "BIRDLETTER Inc.",
 "genre": "GAME_SIMULATION",
 "installs": 500000,
-"real": 815912,
+"real": 816479,
 "score": 3.94,
-"ratings": 9219,
+"ratings": 9225,
 "reviews": 43,
 "released": "2018-11-18",
-"updated": "2026-06-19",
+"updated": "2026-09-30",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589856980
+"fetched": 1793092676056
 },
 "com.birds.animals.ringtone": {
 "id": "com.birds.animals.ringtone",
@@ -62843,7 +63095,7 @@
 "dev": "Kissy Team",
 "genre": "GAME_STRATEGY",
 "installs": 1000,
-"real": 1316,
+"real": 1514,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -62853,7 +63105,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589930204
+"fetched": 1793092731513
 },
 "com.bookfusion.android.reader": {
 "id": "com.bookfusion.android.reader",
@@ -64625,17 +64877,17 @@
 "dev": "Bridge Base On Line, LLC",
 "genre": "GAME_CARD",
 "installs": 5000,
-"real": 7713,
-"score": 4.75,
-"ratings": 292,
+"real": 8622,
+"score": 4.77,
+"ratings": 337,
 "reviews": 2,
 "released": "2026-02-16",
-"updated": "2026-07-31",
+"updated": "2026-09-30",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715119212
+"fetched": 1793092636570
 },
 "com.brighteasestudio.photorecovery.recoveryallfiles": {
 "id": "com.brighteasestudio.photorecovery.recoveryallfiles",
@@ -65723,9 +65975,9 @@
 "dev": "Budge Studios",
 "genre": "GAME_ADVENTURE",
 "installs": 10000000,
-"real": 44463500,
-"score": 4.11,
-"ratings": 90765,
+"real": 44785976,
+"score": 4.12,
+"ratings": 91429,
 "reviews": 567,
 "released": "2016-12-14",
 "updated": "2025-12-04",
@@ -65733,7 +65985,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589993546
+"fetched": 1793092810467
 },
 "com.budgestudios.googleplay.TransformersDisasterDash": {
 "id": "com.budgestudios.googleplay.TransformersDisasterDash",
@@ -65921,17 +66173,17 @@
 "dev": "Hyper Joy Games",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 459247,
-"score": 2.65,
-"ratings": 4203,
+"real": 479709,
+"score": 2.71,
+"ratings": 4348,
 "reviews": 59,
 "released": "2025-06-04",
-"updated": "2025-11-17",
+"updated": "2026-10-23",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790676145609
+"fetched": 1793092931717
 },
 "com.builder.fun.rain.game.box.crazy.pixelart.best.building": {
 "id": "com.builder.fun.rain.game.box.crazy.pixelart.best.building",
@@ -66659,9 +66911,9 @@
 "dev": "BUZZWORTHY VIBE COMPANY, LTD.",
 "genre": "SHOPPING",
 "installs": 1000000,
-"real": 1296506,
+"real": 1298488,
 "score": 4.76,
-"ratings": 33877,
+"ratings": 33920,
 "reviews": 26,
 "released": "2013-08-20",
 "updated": "2026-08-26",
@@ -66669,7 +66921,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715126717
+"fetched": 1793092578306
 },
 "com.buyukpolat.yapayzekaborsa": {
 "id": "com.buyukpolat.yapayzekaborsa",
@@ -66821,9 +67073,9 @@
 "dev": "By Aliens L.L.C-F.Z",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 363359,
+"real": 367687,
 "score": 3.54,
-"ratings": 2985,
+"ratings": 3011,
 "reviews": 35,
 "released": "2022-09-13",
 "updated": "2026-08-21",
@@ -66831,7 +67083,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790412602673
+"fetched": 1793092932671
 },
 "com.bybazsoft.challenge": {
 "id": "com.bybazsoft.challenge",
@@ -68945,7 +69197,7 @@
 "dev": "Biza Studio - Puzzle Games",
 "genre": "GAME_PUZZLE",
 "installs": 10000,
-"real": 12243,
+"real": 12322,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -68955,7 +69207,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790676202768
+"fetched": 1793092995098
 },
 "com.car2go": {
 "id": "com.car2go",
@@ -69071,7 +69323,7 @@
 "dev": "CaringUp",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 100000,
-"real": 340864,
+"real": 341040,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -69081,7 +69333,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589975961
+"fetched": 1793092792357
 },
 "com.carebaby.app": {
 "id": "com.carebaby.app",
@@ -69953,7 +70205,7 @@
 "dev": "Catuny SAS",
 "genre": "EDUCATION",
 "installs": 10000,
-"real": 13756,
+"real": 14956,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -69963,7 +70215,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589844074
+"fetched": 1793092662683
 },
 "com.cauaplays.carrossocados": {
 "id": "com.cauaplays.carrossocados",
@@ -72833,17 +73085,17 @@
 "dev": "Citymapper Limited",
 "genre": "MAPS_AND_NAVIGATION",
 "installs": 10000000,
-"real": 23846694,
-"score": 4.78,
-"ratings": 386435,
-"reviews": 762,
+"real": 24061706,
+"score": 4.79,
+"ratings": 390247,
+"reviews": 766,
 "released": "2013-04-11",
-"updated": "2026-09-26",
+"updated": "2026-10-16",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790676153459
+"fetched": 1793092942258
 },
 "com.cityvity.spinbottle": {
 "id": "com.cityvity.spinbottle",
@@ -73445,9 +73697,9 @@
 "dev": "Clever Apps Pte. Ltd.",
 "genre": "GAME_CARD",
 "installs": 100000,
-"real": 390151,
+"real": 390889,
 "score": 4.58,
-"ratings": 8248,
+"ratings": 8269,
 "reviews": 18,
 "released": "2020-07-20",
 "updated": "2026-09-03",
@@ -73455,7 +73707,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590047291
+"fetched": 1793092869072
 },
 "com.clevertype.ai.keyboard": {
 "id": "com.clevertype.ai.keyboard",
@@ -74021,17 +74273,17 @@
 "dev": "CNH Industrial",
 "genre": "BUSINESS",
 "installs": 10000,
-"real": 22059,
+"real": 23557,
 "score": null,
 "ratings": 0,
 "reviews": 0,
 "released": "2024-08-19",
-"updated": "2026-08-10",
+"updated": "2026-09-30",
 "ads": false,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589911802
+"fetched": 1793092713570
 },
 "com.cnrapps.howmanydays": {
 "id": "com.cnrapps.howmanydays",
@@ -75544,6 +75796,24 @@
 "free": true,
 "price": 0,
 "fetched": 1790501573909
+},
+"com.coldapp.prisonadventure3": {
+"id": "com.coldapp.prisonadventure3",
+"title": "Escape game:prison adventure 3",
+"dev": "BusColdApp",
+"genre": "GAME_ADVENTURE",
+"installs": 500000,
+"real": 906024,
+"score": 4.5,
+"ratings": 21250,
+"reviews": 74,
+"released": "2020-12-01",
+"updated": "2026-09-10",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092825581
 },
 "com.colendi.bnplapp": {
 "id": "com.colendi.bnplapp",
@@ -79007,9 +79277,9 @@
 "dev": "BoomBit Games",
 "genre": "GAME_SIMULATION",
 "installs": 50000000,
-"real": 81580749,
-"score": 3.38,
-"ratings": 91522,
+"real": 81777805,
+"score": 3.47,
+"ratings": 91957,
 "reviews": 1438,
 "released": "2021-07-15",
 "updated": "2026-09-09",
@@ -79017,7 +79287,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590048526
+"fetched": 1793092926037
 },
 "com.crazyblock.kodvox": {
 "id": "com.crazyblock.kodvox",
@@ -82079,6 +82349,24 @@
 "price": 0,
 "fetched": 1791283027426
 },
+"com.danielpolish.vrflight": {
+"id": "com.danielpolish.vrflight",
+"title": "Flight Simulator Multiplayer",
+"dev": "DanielPolish",
+"genre": "GAME_SIMULATION",
+"installs": 100000,
+"real": 483914,
+"score": 3.82,
+"ratings": 542,
+"reviews": 7,
+"released": "2024-06-19",
+"updated": "2025-11-01",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092939009
+},
 "com.danielsantos.safewallet": {
 "id": "com.danielsantos.safewallet",
 "title": "Safe Wallet",
@@ -82211,9 +82499,9 @@
 "dev": "DarekAppLab",
 "genre": "GAME_RACING",
 "installs": 1000000,
-"real": 3446133,
+"real": 3450316,
 "score": 3.89,
-"ratings": 7073,
+"ratings": 7051,
 "reviews": 122,
 "released": "2014-10-02",
 "updated": "2025-09-15",
@@ -82221,7 +82509,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790412846669
+"fetched": 1793092586251
 },
 "com.darekapps.motojumper": {
 "id": "com.darekapps.motojumper",
@@ -82979,6 +83267,24 @@
 "price": 0,
 "fetched": 1792139827438
 },
+"com.dc.cargotrolleysimulator": {
+"id": "com.dc.cargotrolleysimulator",
+"title": "Tarım Traktörü: 4x4 Römorklu",
+"dev": "DEV CAPS",
+"genre": "GAME_SIMULATION",
+"installs": 50000,
+"real": 66852,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2025-12-11",
+"updated": "2026-10-16",
+"ads": true,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092686403
+},
 "com.dc.hwsj": {
 "id": "com.dc.hwsj",
 "title": "Game of Sultans",
@@ -83248,6 +83554,24 @@
 "free": true,
 "price": 0,
 "fetched": 1791969073904
+},
+"com.dear.passenger.airport.game": {
+"id": "com.dear.passenger.airport.game",
+"title": "Airport Passenger: Pranks Game",
+"dev": "THEMA ARCHITECTS LIMITED",
+"genre": "GAME_PUZZLE",
+"installs": 500,
+"real": 683,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-08-08",
+"updated": "2026-08-08",
+"ads": false,
+"iap": false,
+"free": false,
+"price": 229.99,
+"fetched": 1793092866032
 },
 "com.dearu.bubble.jyp": {
 "id": "com.dearu.bubble.jyp",
@@ -83884,18 +84208,18 @@
 "title": "Pusula – Ücretsiz, Reklamsız",
 "dev": "MixxApps",
 "genre": "TOOLS",
-"installs": 100000,
-"real": 477956,
-"score": null,
-"ratings": 0,
+"installs": 500000,
+"real": 517647,
+"score": 4.4,
+"ratings": 1220,
 "reviews": 0,
 "released": "2019-09-18",
-"updated": "2026-05-06",
+"updated": "2026-10-20",
 "ads": false,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790676186458
+"fetched": 1793092977621
 },
 "com.delacrixmorgan.kingscup": {
 "id": "com.delacrixmorgan.kingscup",
@@ -85217,7 +85541,7 @@
 "dev": "Mob Gaming Studio",
 "genre": "GAME_ROLE_PLAYING",
 "installs": 1000,
-"real": 4307,
+"real": 4839,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -85227,7 +85551,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589930677
+"fetched": 1793092731969
 },
 "com.devin.animedarkwallpapers": {
 "id": "com.devin.animedarkwallpapers",
@@ -85469,17 +85793,17 @@
 "dev": "level38",
 "genre": "MEDICAL",
 "installs": 500000,
-"real": 815532,
-"score": 4.52,
-"ratings": 17910,
-"reviews": 145,
+"real": 817961,
+"score": 4.51,
+"ratings": 17937,
+"reviews": 146,
 "released": "2017-02-26",
 "updated": "2026-08-06",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715190342
+"fetched": 1793092792846
 },
 "com.devstree.zombiesfighter": {
 "id": "com.devstree.zombiesfighter",
@@ -86975,6 +87299,24 @@
 "price": 0,
 "fetched": 1791889213133
 },
+"com.dijion.astrovia": {
+"id": "com.dijion.astrovia",
+"title": "Günlük Burç Yorumları",
+"dev": "Dijion",
+"genre": "LIFESTYLE",
+"installs": 100,
+"real": 232,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-09-11",
+"updated": "2026-10-26",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092644736
+},
 "com.dijitalkoc": {
 "id": "com.dijitalkoc",
 "title": "Ders Çalışma ve Deneme Takibi",
@@ -87881,9 +88223,9 @@
 "dev": "Tasnim Co",
 "genre": "LIFESTYLE",
 "installs": 1000000,
-"real": 1186501,
+"real": 1191749,
 "score": 4.14,
-"ratings": 5405,
+"ratings": 5433,
 "reviews": 11,
 "released": "2023-03-07",
 "updated": "2026-01-07",
@@ -87891,7 +88233,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589881257
+"fetched": 1793092708368
 },
 "com.divinecodeproductions.MathMaster": {
 "id": "com.divinecodeproductions.MathMaster",
@@ -88349,9 +88691,9 @@
 "dev": "Dlite Games",
 "genre": "GAME_ROLE_PLAYING",
 "installs": 100000,
-"real": 144791,
+"real": 156201,
 "score": 3.82,
-"ratings": 295,
+"ratings": 302,
 "reviews": 7,
 "released": "2025-07-13",
 "updated": "2025-11-17",
@@ -88359,7 +88701,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590075890
+"fetched": 1793092902183
 },
 "com.dlitegames.terminalmaster": {
 "id": "com.dlitegames.terminalmaster",
@@ -88378,6 +88720,24 @@
 "free": true,
 "price": 0,
 "fetched": 1791714199465
+},
+"com.dlnko.spacemerge": {
+"id": "com.dlnko.spacemerge",
+"title": "Merge Spaceship: Idle Space",
+"dev": "Dlnko",
+"genre": "GAME_SIMULATION",
+"installs": 10000,
+"real": 39497,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2021-05-20",
+"updated": "2026-10-15",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092831884
 },
 "com.dm.scary.baby.horrorgame": {
 "id": "com.dm.scary.baby.horrorgame",
@@ -89765,6 +90125,24 @@
 "price": 0,
 "fetched": 1791019833845
 },
+"com.dorular.parily": {
+"id": "com.dorular.parily",
+"title": "Gelir Gider & Bütçe Takibi",
+"dev": "DORULAR Inc.",
+"genre": "FINANCE",
+"installs": 100,
+"real": 351,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-07-17",
+"updated": "2026-09-14",
+"ads": false,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092762063
+},
 "com.dosemealtiyazilim.canlialtin": {
 "id": "com.dosemealtiyazilim.canlialtin",
 "title": "Gram Altın - Döviz & Altın",
@@ -90077,17 +90455,17 @@
 "dev": "Yoga Buddhi Co.",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 1000000,
-"real": 1074190,
-"score": 4.84,
-"ratings": 58769,
-"reviews": 70,
+"real": 1079299,
+"score": 4.8,
+"ratings": 58780,
+"reviews": 71,
 "released": "2020-12-05",
-"updated": "2026-08-12",
+"updated": "2026-10-22",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715203383
+"fetched": 1793092928999
 },
 "com.downdogapp.pilates": {
 "id": "com.downdogapp.pilates",
@@ -94882,18 +95260,18 @@
 "title": "Alışveriş Listesi",
 "dev": "Eco Mobile for Work",
 "genre": "SHOPPING",
-"installs": 10000,
-"real": 44932,
-"score": 4.67,
-"ratings": 318,
+"installs": 50000,
+"real": 52146,
+"score": 4.71,
+"ratings": 388,
 "reviews": 1,
 "released": "2025-07-17",
-"updated": "2026-08-28",
+"updated": "2026-10-19",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790850607289
+"fetched": 1793092577857
 },
 "com.eco.iconchanger.themes": {
 "id": "com.eco.iconchanger.themes",
@@ -98123,9 +98501,9 @@
 "dev": "Prometheus Interactive LLC",
 "genre": "FOOD_AND_DRINK",
 "installs": 100000,
-"real": 310789,
-"score": 3.55,
-"ratings": 1031,
+"real": 327866,
+"score": 3.67,
+"ratings": 1089,
 "reviews": 3,
 "released": "2016-10-21",
 "updated": "2026-06-07",
@@ -98133,7 +98511,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715230846
+"fetched": 1793092669854
 },
 "com.endless.stewrecipes": {
 "id": "com.endless.stewrecipes",
@@ -99017,6 +99395,24 @@
 "price": 0,
 "fetched": 1792486693883
 },
+"com.epic.OffroadTractorDrivingGames.TractorTrollyGame.TractorGames": {
+"id": "com.epic.OffroadTractorDrivingGames.TractorTrollyGame.TractorGames",
+"title": "Offroad Tractor Trolly Games",
+"dev": "GamersLab Pvt Ltd",
+"genre": "GAME_ADVENTURE",
+"installs": 500000,
+"real": 576947,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2022-03-29",
+"updated": "2026-09-07",
+"ads": true,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092718979
+},
 "com.epicage.android": {
 "id": "com.epicage.android",
 "title": "Epic Age",
@@ -99365,17 +99761,17 @@
 "dev": "ErBaY",
 "genre": "BOOKS_AND_REFERENCE",
 "installs": 500,
-"real": 578,
+"real": 803,
 "score": 4.98,
-"ratings": 54,
-"reviews": 20,
+"ratings": 64,
+"reviews": 26,
 "released": "2026-02-14",
-"updated": "2026-09-02",
+"updated": "2026-10-20",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1791108334835
+"fetched": 1793093003867
 },
 "com.erciyes.esa": {
 "id": "com.erciyes.esa",
@@ -99509,7 +99905,7 @@
 "dev": "Erdil Dev.",
 "genre": "TOOLS",
 "installs": 10,
-"real": 19,
+"real": 36,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -99519,7 +99915,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1789715237011
+"fetched": 1793092734300
 },
 "com.erdinc.carpimtablosu": {
 "id": "com.erdinc.carpimtablosu",
@@ -99545,17 +99941,17 @@
 "dev": "Eren Exe",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 500,
-"real": 549,
+"real": 609,
 "score": 4.78,
 "ratings": 9,
 "reviews": 7,
 "released": "2026-03-28",
-"updated": "2026-09-01",
+"updated": "2026-09-26",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789713104449
+"fetched": 1793092566420
 },
 "com.erepubliklabs.worldatwar": {
 "id": "com.erepubliklabs.worldatwar",
@@ -101615,17 +102011,17 @@
 "dev": "EVL Apps",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 208752,
-"score": 3.64,
-"ratings": 947,
-"reviews": 7,
+"real": 226552,
+"score": 3.7,
+"ratings": 1044,
+"reviews": 8,
 "released": "2025-10-02",
 "updated": "2026-09-25",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790676141060
+"fetched": 1793092924907
 },
 "com.evogames.slavsforvk": {
 "id": "com.evogames.slavsforvk",
@@ -102869,6 +103265,24 @@
 "price": 0,
 "fetched": 1790066936281
 },
+"com.ezgitaner.zodiya": {
+"id": "com.ezgitaner.zodiya",
+"title": "Zodiya: Burç ve Rüya Yorumu",
+"dev": "Ezgi Taner",
+"genre": "LIFESTYLE",
+"installs": 5,
+"real": 8,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-10-24",
+"updated": "2026-10-24",
+"ads": false,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092644694
+},
 "com.ezi.pic.collage.template.story.maker": {
 "id": "com.ezi.pic.collage.template.story.maker",
 "title": "Ezi: Story Collage & Easy Post",
@@ -103444,6 +103858,24 @@
 "free": true,
 "price": 0,
 "fetched": 1791108178763
+},
+"com.falcon.warfare": {
+"id": "com.falcon.warfare",
+"title": "Falcon Warfare: Air Combat",
+"dev": "24 HIT Riga SIA",
+"genre": "GAME_ACTION",
+"installs": 50000,
+"real": 95494,
+"score": 3.6,
+"ratings": 973,
+"reviews": 1,
+"released": "2025-01-10",
+"updated": "2026-08-21",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092963686
 },
 "com.faldanadam.faldanadam": {
 "id": "com.faldanadam.faldanadam",
@@ -104135,7 +104567,7 @@
 "dev": "Pak World Technology",
 "genre": "GAME_SIMULATION",
 "installs": 500000,
-"real": 585965,
+"real": 625995,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -104145,7 +104577,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589848263
+"fetched": 1793092667001
 },
 "com.farmadventure.global": {
 "id": "com.farmadventure.global",
@@ -104200,6 +104632,24 @@
 "free": true,
 "price": 0,
 "fetched": 1792659606955
+},
+"com.farmtractor.simulator": {
+"id": "com.farmtractor.simulator",
+"title": "Real Tractor Driving Simulator",
+"dev": "ANCAMA",
+"genre": "GAME_SIMULATION",
+"installs": 50000,
+"real": 79761,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2023-11-13",
+"updated": "2025-10-26",
+"ads": true,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092603112
 },
 "com.faruxbits.seek": {
 "id": "com.faruxbits.seek",
@@ -104477,9 +104927,9 @@
 "dev": "softbuild Tech",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 175158,
+"real": 179644,
 "score": 3.33,
-"ratings": 228,
+"ratings": 230,
 "reviews": 3,
 "released": "2021-07-24",
 "updated": "2025-11-11",
@@ -104487,7 +104937,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589933942
+"fetched": 1793092720494
 },
 "com.fastpoodlegames.idletaxitycoon": {
 "id": "com.fastpoodlegames.idletaxitycoon",
@@ -105749,6 +106199,24 @@
 "price": 0,
 "fetched": 1791282999665
 },
+"com.fermancalan.kredifaiz": {
+"id": "com.fermancalan.kredifaiz",
+"title": "Kredi Faiz Hesaplama",
+"dev": "FermanÇ",
+"genre": "FINANCE",
+"installs": 5,
+"real": 8,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-10-18",
+"updated": "2026-10-21",
+"ads": false,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092734286
+},
 "com.fernus.lms.bilgisarmal": {
 "id": "com.fernus.lms.bilgisarmal",
 "title": "Sarmal Okul",
@@ -105917,7 +106385,7 @@
 "dev": "Fun Finny Games",
 "genre": "GAME_SIMULATION",
 "installs": 50000,
-"real": 67845,
+"real": 77328,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -105927,7 +106395,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589816912
+"fetched": 1793092622953
 },
 "com.ffgames.racingincar2": {
 "id": "com.ffgames.racingincar2",
@@ -106547,17 +107015,17 @@
 "dev": "Imagination AI",
 "genre": "TOOLS",
 "installs": 10000000,
-"real": 29558717,
-"score": 3.5,
-"ratings": 50059,
-"reviews": 190,
+"real": 30392622,
+"score": 3.48,
+"ratings": 51815,
+"reviews": 193,
 "released": "2024-10-17",
 "updated": "2026-09-16",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715260037
+"fetched": 1793092699387
 },
 "com.filemanager.managefile.fileexplorer.smartfiles": {
 "id": "com.filemanager.managefile.fileexplorer.smartfiles",
@@ -107699,35 +108167,35 @@
 "dev": "FitNow, Inc.",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 10000000,
-"real": 21655041,
-"score": 4.53,
-"ratings": 183843,
+"real": 21726258,
+"score": 4.55,
+"ratings": 184526,
 "reviews": 98,
 "released": "2016-02-05",
-"updated": "2026-09-28",
+"updated": "2026-10-26",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1791197035256
+"fetched": 1793092861075
 },
 "com.fitny.coach": {
 "id": "com.fitny.coach",
 "title": "Fitny: Stretching & Fitness",
 "dev": "AI Workout Planner Apps Ltd",
 "genre": "HEALTH_AND_FITNESS",
-"installs": 500000,
-"real": 992079,
+"installs": 1000000,
+"real": 1016250,
 "score": 4.47,
-"ratings": 11033,
+"ratings": 11550,
 "reviews": 1,
 "released": "2024-07-30",
-"updated": "2026-05-02",
+"updated": "2026-10-18",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715269991
+"fetched": 1793092727873
 },
 "com.fitofitness.sixpack_mens_02": {
 "id": "com.fitofitness.sixpack_mens_02",
@@ -108185,17 +108653,17 @@
 "dev": "7th Beat Games",
 "genre": "GAME_MUSIC",
 "installs": 1000000,
-"real": 1119854,
-"score": 4.56,
-"ratings": 34171,
-"reviews": 461,
+"real": 1133226,
+"score": 4.55,
+"ratings": 34291,
+"reviews": 466,
 "released": "2014-10-04",
 "updated": "2026-08-05",
 "ads": false,
 "iap": true,
 "free": false,
 "price": 10.99,
-"fetched": 1790589857267
+"fetched": 1793092676117
 },
 "com.fkgames.minitruckergame": {
 "id": "com.fkgames.minitruckergame",
@@ -108977,9 +109445,9 @@
 "dev": "Enor Yazılım",
 "genre": "LIFESTYLE",
 "installs": 10000,
-"real": 42980,
+"real": 43703,
 "score": 4.43,
-"ratings": 212,
+"ratings": 218,
 "reviews": 49,
 "released": "2021-05-08",
 "updated": "2026-06-28",
@@ -108987,7 +109455,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789720370701
+"fetched": 1793092645167
 },
 "com.flybirdgames.adventureislandmerge": {
 "id": "com.flybirdgames.adventureislandmerge",
@@ -112715,6 +113183,24 @@
 "price": 0,
 "fetched": 1792139811132
 },
+"com.fugr.masalify": {
+"id": "com.fugr.masalify",
+"title": "Masalify: Masal Dinle",
+"dev": "DK Pixel",
+"genre": "ENTERTAINMENT",
+"installs": 100,
+"real": 163,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-01-23",
+"updated": "2026-01-29",
+"ads": false,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092914789
+},
 "com.fullfat.android.blockysoccer": {
 "id": "com.fullfat.android.blockysoccer",
 "title": "Blocky Soccer",
@@ -114358,8 +114844,8 @@
 "title": "Currency Converter & Rates",
 "dev": "Ai Photo Labs",
 "genre": "FINANCE",
-"installs": 50000,
-"real": 98662,
+"installs": 100000,
+"real": 148005,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -114369,7 +114855,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589811582
+"fetched": 1793092615572
 },
 "com.fynova.sixpack": {
 "id": "com.fynova.sixpack",
@@ -114845,17 +115331,17 @@
 "dev": "Zipzoom Studios",
 "genre": "GAME_STRATEGY",
 "installs": 1000000,
-"real": 4426748,
+"real": 4428909,
 "score": 3.88,
-"ratings": 14836,
+"ratings": 14818,
 "reviews": 40,
 "released": "2017-04-06",
-"updated": "2026-09-23",
+"updated": "2026-10-19",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1791197325670
+"fetched": 1793092898237
 },
 "com.game.NightclubSimulator": {
 "id": "com.game.NightclubSimulator",
@@ -115511,9 +115997,9 @@
 "dev": "Game Bunkers",
 "genre": "GAME_SIMULATION",
 "installs": 1000000,
-"real": 1715268,
+"real": 1719789,
 "score": 3.75,
-"ratings": 2857,
+"ratings": 2851,
 "reviews": 200,
 "released": "2017-11-09",
 "updated": "2026-04-29",
@@ -115521,7 +116007,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589918062
+"fetched": 1793092718015
 },
 "com.gamecircus.tycoon": {
 "id": "com.gamecircus.tycoon",
@@ -116027,6 +116513,24 @@
 "price": 0,
 "fetched": 1792572868548
 },
+"com.gamehouse.aa2": {
+"id": "com.gamehouse.aa2",
+"title": "Amber's Airline - 7 Wonders",
+"dev": "GameHouse LLC",
+"genre": "GAME_CASUAL",
+"installs": 1000000,
+"real": 4152240,
+"score": 4.24,
+"ratings": 38808,
+"reviews": 64,
+"released": "2019-03-21",
+"updated": "2026-03-25",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092902784
+},
 "com.gamehouse.cc1": {
 "id": "com.gamehouse.cc1",
 "title": "Claire’s Café: Tasty Cuisine",
@@ -116213,17 +116717,17 @@
 "dev": "Game Insight Classics",
 "genre": "GAME_STRATEGY",
 "installs": 1000000,
-"real": 2080511,
+"real": 2088702,
 "score": null,
 "ratings": 0,
 "reviews": 0,
 "released": "2019-11-22",
-"updated": "2026-02-17",
+"updated": "2026-10-21",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590033382
+"fetched": 1793092856492
 },
 "com.gameinsight.airport": {
 "id": "com.gameinsight.airport",
@@ -116231,17 +116735,17 @@
 "dev": "Game Insight",
 "genre": "GAME_SIMULATION",
 "installs": 50000000,
-"real": 62491852,
+"real": 62584239,
 "score": 3.88,
-"ratings": 912688,
-"reviews": 3513,
+"ratings": 911030,
+"reviews": 3510,
 "released": "2012-02-14",
-"updated": "2026-09-15",
+"updated": "2026-10-16",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790676167227
+"fetched": 1793092988443
 },
 "com.gameinsight.gobandroid": {
 "id": "com.gameinsight.gobandroid",
@@ -117275,17 +117779,17 @@
 "dev": "GamerMan",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 235048,
-"score": 3.63,
-"ratings": 260,
-"reviews": 34,
+"real": 237903,
+"score": 3.61,
+"ratings": 263,
+"reviews": 35,
 "released": "2021-01-13",
 "updated": "2026-06-15",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589867262
+"fetched": 1793092759047
 },
 "com.gamerman.traktorbalyamakinesisimulatoru": {
 "id": "com.gamerman.traktorbalyamakinesisimulatoru",
@@ -117293,7 +117797,7 @@
 "dev": "GamerMan",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 234824,
+"real": 236085,
 "score": 3.69,
 "ratings": 449,
 "reviews": 86,
@@ -117303,7 +117807,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589790537
+"fetched": 1793092588374
 },
 "com.gamerman.traktorbalyatasima2021": {
 "id": "com.gamerman.traktorbalyatasima2021",
@@ -117977,17 +118481,17 @@
 "dev": "Gamesture sp. z o.o.",
 "genre": "GAME_ROLE_PLAYING",
 "installs": 5000000,
-"real": 8199625,
-"score": 4.69,
-"ratings": 535986,
-"reviews": 3196,
+"real": 8229342,
+"score": 4.68,
+"ratings": 536249,
+"reviews": 3195,
 "released": "2018-04-11",
-"updated": "2026-09-22",
+"updated": "2026-10-02",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790676199910
+"fetched": 1793092992724
 },
 "com.gamesture.soccer.clash.football.world.sport.league": {
 "id": "com.gamesture.soccer.clash.football.world.sport.league",
@@ -118697,17 +119201,17 @@
 "dev": "Painite Apps",
 "genre": "EDUCATION",
 "installs": 10000,
-"real": 34674,
-"score": 4.47,
-"ratings": 871,
-"reviews": 89,
+"real": 35890,
+"score": 4.46,
+"ratings": 893,
+"reviews": 92,
 "released": "2021-02-14",
 "updated": "2026-04-03",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590034572
+"fetched": 1793092855079
 },
 "com.gan.puzzleone": {
 "id": "com.gan.puzzleone",
@@ -119380,8 +119884,8 @@
 "title": "Dear Passengers Airplane Game",
 "dev": "GAME DEV STUDIO",
 "genre": "GAME_ADVENTURE",
-"installs": 500,
-"real": 697,
+"installs": 1000,
+"real": 3940,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -119391,7 +119895,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790590042703
+"fetched": 1793092862582
 },
 "com.gdv.subway2055": {
 "id": "com.gdv.subway2055",
@@ -119950,6 +120454,24 @@
 "free": true,
 "price": 0,
 "fetched": 1789715306919
+},
+"com.gencalsoft.maaspro": {
+"id": "com.gencalsoft.maaspro",
+"title": "Maaş ve Tazminat Hesaplama",
+"dev": "Gencalsoft",
+"genre": "TOOLS",
+"installs": 0,
+"real": 0,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-10-24",
+"updated": "2026-10-26",
+"ads": false,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092899725
 },
 "com.generagames.merge.robots.idle": {
 "id": "com.generagames.merge.robots.idle",
@@ -128951,6 +129473,24 @@
 "price": 0,
 "fetched": 1791968433440
 },
+"com.gzh.real.tractor.farming.game": {
+"id": "com.gzh.real.tractor.farming.game",
+"title": "Real Tractor Farming Game 2026",
+"dev": "Gaming Zone Hub",
+"genre": "GAME_SIMULATION",
+"installs": 100000,
+"real": 147494,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-08-16",
+"updated": "2026-09-24",
+"ads": true,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092679224
+},
 "com.gzl.drivebus.parking.game": {
 "id": "com.gzl.drivebus.parking.game",
 "title": "Modern Bus: Otobüs Sürme Oyunu",
@@ -129274,6 +129814,24 @@
 "free": true,
 "price": 0,
 "fetched": 1792573232756
+},
+"com.hado.property.rivals": {
+"id": "com.hado.property.rivals",
+"title": "Dear Crew: Save Passengers",
+"dev": "hado",
+"genre": "GAME_CASUAL",
+"installs": 100,
+"real": 387,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-08-02",
+"updated": "2026-09-04",
+"ads": true,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092863997
 },
 "com.hadra.vehicleplatematcher": {
 "id": "com.hadra.vehicleplatematcher",
@@ -129616,6 +130174,24 @@
 "free": true,
 "price": 0,
 "fetched": 1791714079528
+},
+"com.hakcep.app": {
+"id": "com.hakcep.app",
+"title": "HakCep: Maaş Mesai Hesaplama",
+"dev": "Viral Logic",
+"genre": "FINANCE",
+"installs": 1,
+"real": 4,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-10-18",
+"updated": "2026-10-24",
+"ads": false,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092900205
 },
 "com.hakki.cleveralarm": {
 "id": "com.hakki.cleveralarm",
@@ -130757,17 +131333,17 @@
 "dev": "Happy Go Game",
 "genre": "GAME_ARCADE",
 "installs": 10000000,
-"real": 21586497,
-"score": 3.7,
-"ratings": 13772,
-"reviews": 118,
+"real": 22225772,
+"score": 3.78,
+"ratings": 14177,
+"reviews": 124,
 "released": "2025-04-07",
-"updated": "2026-09-18",
+"updated": "2026-10-23",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790153337417
+"fetched": 1793092809856
 },
 "com.happykamp.aquariumland": {
 "id": "com.happykamp.aquariumland",
@@ -131495,7 +132071,7 @@
 "dev": "Hashir Labs",
 "genre": "BOOKS_AND_REFERENCE",
 "installs": 500000,
-"real": 532312,
+"real": 536932,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -131505,7 +132081,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790935622746
+"fetched": 1793092708327
 },
 "com.hasmetd.notificationnotes": {
 "id": "com.hasmetd.notificationnotes",
@@ -134339,7 +134915,7 @@
 "dev": "Hyper Fun Labs",
 "genre": "GAME_STRATEGY",
 "installs": 100000,
-"real": 380324,
+"real": 403112,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -134349,7 +134925,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589855753
+"fetched": 1793092625677
 },
 "com.hg.bfbb": {
 "id": "com.hg.bfbb",
@@ -134573,17 +135149,17 @@
 "dev": "NEOWIZ",
 "genre": "GAME_SIMULATION",
 "installs": 10000000,
-"real": 42924481,
+"real": 43004426,
 "score": 4.61,
-"ratings": 1765189,
-"reviews": 7457,
+"ratings": 1765067,
+"reviews": 7455,
 "released": "2021-10-12",
-"updated": "2026-09-16",
+"updated": "2026-10-20",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589849845
+"fetched": 1793092670325
 },
 "com.hidea.cat.magicrecipe": {
 "id": "com.hidea.cat.magicrecipe",
@@ -135916,6 +136492,24 @@
 "free": true,
 "price": 0,
 "fetched": 1792830404258
+},
+"com.hollywidget.app": {
+"id": "com.hollywidget.app",
+"title": "Kur'an-i Sözler : Kuran  Namaz",
+"dev": "NDCop",
+"genre": "BOOKS_AND_REFERENCE",
+"installs": 50,
+"real": 52,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-06-30",
+"updated": "2026-09-02",
+"ads": false,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092817223
 },
 "com.hollywood.merge": {
 "id": "com.hollywood.merge",
@@ -138677,9 +139271,9 @@
 "dev": "i6 Games",
 "genre": "GAME_RACING",
 "installs": 50000,
-"real": 82467,
+"real": 82498,
 "score": 5,
-"ratings": 797,
+"ratings": 792,
 "reviews": 5,
 "released": "2014-02-24",
 "updated": "2017-05-02",
@@ -138687,7 +139281,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589930275
+"fetched": 1793092731488
 },
 "com.i6.policebikesim": {
 "id": "com.i6.policebikesim",
@@ -139066,6 +139660,24 @@
 "free": true,
 "price": 0,
 "fetched": 1792659316378
+},
+"com.iamtruckmechanic.drivingsimulator": {
+"id": "com.iamtruckmechanic.drivingsimulator",
+"title": "Truck Games: Build & Cargo",
+"dev": "IntelliVerse Tech LLC",
+"genre": "GAME_ROLE_PLAYING",
+"installs": 100000,
+"real": 100149,
+"score": 4.55,
+"ratings": 204,
+"reviews": 2,
+"released": "2026-08-18",
+"updated": "2026-10-07",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092689053
 },
 "com.iantry.minesweepercampaign": {
 "id": "com.iantry.minesweepercampaign",
@@ -140207,17 +140819,17 @@
 "dev": "idris Celik",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 442602,
-"score": 3.45,
-"ratings": 5042,
-"reviews": 291,
+"real": 447672,
+"score": 3.46,
+"ratings": 5048,
+"reviews": 292,
 "released": "2020-05-31",
 "updated": "2025-12-02",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790676172203
+"fetched": 1793092957793
 },
 "com.idrive.photos.android": {
 "id": "com.idrive.photos.android",
@@ -141917,9 +142529,9 @@
 "dev": "Yateland Games for kids",
 "genre": "GAME_EDUCATIONAL",
 "installs": 1000000,
-"real": 3047258,
+"real": 3050830,
 "score": 4.24,
-"ratings": 5657,
+"ratings": 5667,
 "reviews": 13,
 "released": "2019-09-16",
 "updated": "2026-07-31",
@@ -141927,7 +142539,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789894442228
+"fetched": 1793092851596
 },
 "com.imayi.dinocity": {
 "id": "com.imayi.dinocity",
@@ -142799,9 +143411,9 @@
 "dev": "Imelda Keisha",
 "genre": "ENTERTAINMENT",
 "installs": 100000,
-"real": 482778,
-"score": 4.24,
-"ratings": 5272,
+"real": 489058,
+"score": 4.26,
+"ratings": 5305,
 "reviews": 40,
 "released": "2020-08-29",
 "updated": "2024-01-29",
@@ -142809,7 +143421,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790412725925
+"fetched": 1793092934245
 },
 "com.imeldake.helicopters_mods_addons_mcpe": {
 "id": "com.imeldake.helicopters_mods_addons_mcpe",
@@ -143537,7 +144149,7 @@
 "dev": "Craox Technologies LLP.",
 "genre": "GAME_EDUCATIONAL",
 "installs": 10000,
-"real": 24397,
+"real": 25116,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -143547,7 +144159,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790935551370
+"fetched": 1793092632306
 },
 "com.infinitel8p.xtream": {
 "id": "com.infinitel8p.xtream",
@@ -143645,17 +144257,17 @@
 "dev": "Infinity Games, Lda",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 170659,
-"score": 3.56,
-"ratings": 2558,
+"real": 183305,
+"score": 3.58,
+"ratings": 2630,
 "reviews": 5,
 "released": "2026-04-03",
-"updated": "2026-09-04",
+"updated": "2026-10-19",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590066299
+"fetched": 1793092890847
 },
 "com.infinitygames.idletruckfleet": {
 "id": "com.infinitygames.idletruckfleet",
@@ -144058,8 +144670,8 @@
 "title": "Inhale: Breathing Exercises",
 "dev": "Must Have Apps.",
 "genre": "HEALTH_AND_FITNESS",
-"installs": 100,
-"real": 313,
+"installs": 500,
+"real": 548,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -144069,7 +144681,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1791108480691
+"fetched": 1793092951605
 },
 "com.inikworld.growthbook": {
 "id": "com.inikworld.growthbook",
@@ -144455,17 +145067,17 @@
 "dev": "iCook Ltd",
 "genre": "FOOD_AND_DRINK",
 "installs": 50000,
-"real": 96054,
+"real": 96705,
 "score": 4.9,
-"ratings": 1283,
+"ratings": 1284,
 "reviews": 3,
 "released": "2018-11-05",
-"updated": "2026-07-23",
+"updated": "2026-10-23",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715386210
+"fetched": 1793092828526
 },
 "com.inspectorstudios.extremecardrivingmaxdrift": {
 "id": "com.inspectorstudios.extremecardrivingmaxdrift",
@@ -146399,17 +147011,17 @@
 "dev": "Isha Foundation",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 5000000,
-"real": 7968952,
+"real": 7991982,
 "score": 4.9,
-"ratings": 161091,
+"ratings": 162103,
 "reviews": 29,
 "released": "2012-07-03",
-"updated": "2026-09-21",
+"updated": "2026-10-14",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790676143409
+"fetched": 1793092929800
 },
 "com.isharing.isharing": {
 "id": "com.isharing.isharing",
@@ -147353,9 +147965,9 @@
 "dev": "Timpy Games For Kids, Toddlers & Baby",
 "genre": "GAME_EDUCATIONAL",
 "installs": 500000,
-"real": 529180,
+"real": 531499,
 "score": 4.05,
-"ratings": 567,
+"ratings": 569,
 "reviews": 1,
 "released": "2023-03-23",
 "updated": "2026-05-26",
@@ -147363,7 +147975,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790153334636
+"fetched": 1793092845304
 },
 "com.iz.baby.balloon.bubble.pop.kids.toddler.games": {
 "id": "com.iz.baby.balloon.bubble.pop.kids.toddler.games",
@@ -147857,17 +148469,17 @@
 "dev": "Tizi Town Games",
 "genre": "GAME_EDUCATIONAL",
 "installs": 10000000,
-"real": 27295315,
-"score": 3.77,
-"ratings": 33460,
-"reviews": 617,
+"real": 27334140,
+"score": 3.78,
+"ratings": 33500,
+"reviews": 615,
 "released": "2019-06-13",
 "updated": "2026-09-09",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789982047198
+"fetched": 1793092897018
 },
 "com.iz.sweet.bakery.cake.shop.dessert.pastry.kids.games": {
 "id": "com.iz.sweet.bakery.cake.shop.dessert.pastry.kids.games",
@@ -149023,21 +149635,21 @@
 },
 "com.jf.ragdoll.lab.sandbox.lite": {
 "id": "com.jf.ragdoll.lab.sandbox.lite",
-"title": "Dear Passengers",
+"title": "Plane Passengers Chaos Sim",
 "dev": "JOY FAST FOOD. LLC",
 "genre": "GAME_SIMULATION",
 "installs": 1000000,
-"real": 2782322,
-"score": 1.34,
-"ratings": 3989,
-"reviews": 178,
+"real": 2993358,
+"score": 1.37,
+"ratings": 4060,
+"reviews": 180,
 "released": "2026-07-28",
-"updated": "2026-08-25",
+"updated": "2026-09-29",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790590044305
+"fetched": 1793092865538
 },
 "com.jfsimgames.heavyweightboxing": {
 "id": "com.jfsimgames.heavyweightboxing",
@@ -151349,17 +151961,17 @@
 "dev": "Denys Makhinchuk",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 1000,
-"real": 1229,
+"real": 2752,
 "score": null,
 "ratings": 0,
 "reviews": 0,
 "released": "2026-05-19",
-"updated": "2026-08-25",
+"updated": "2026-10-25",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590040696
+"fetched": 1793092860225
 },
 "com.juvelop.sudoku_paperlike": {
 "id": "com.juvelop.sudoku_paperlike",
@@ -151450,6 +152062,24 @@
 "free": true,
 "price": 0,
 "fetched": 1790153647492
+},
+"com.k3games.airportmanager": {
+"id": "com.k3games.airportmanager",
+"title": "Airport Manager",
+"dev": "Tap Happy",
+"genre": "GAME_CASUAL",
+"installs": 5000000,
+"real": 5892418,
+"score": 4.04,
+"ratings": 69635,
+"reviews": 331,
+"released": "2016-03-15",
+"updated": "2026-08-26",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092988982
 },
 "com.k3games.jungleanimalsalon.free": {
 "id": "com.k3games.jungleanimalsalon.free",
@@ -153239,7 +153869,7 @@
 "dev": "Brattli",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 5000,
-"real": 8187,
+"real": 9578,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -153249,7 +153879,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1791108218851
+"fetched": 1793092727390
 },
 "com.kbridge.kbridge": {
 "id": "com.kbridge.kbridge",
@@ -156965,9 +157595,9 @@
 "dev": "eFarmer B V",
 "genre": "TOOLS",
 "installs": 500000,
-"real": 606797,
+"real": 611484,
 "score": 3.87,
-"ratings": 2032,
+"ratings": 2033,
 "reviews": 27,
 "released": "2011-12-22",
 "updated": "2026-05-22",
@@ -156975,7 +157605,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589939591
+"fetched": 1793092747002
 },
 "com.kn.moderncar.simulator.parking.games": {
 "id": "com.kn.moderncar.simulator.parking.games",
@@ -157930,6 +158560,24 @@
 "free": true,
 "price": 0,
 "fetched": 1791968891958
+},
+"com.komorebi.shoppinglist": {
+"id": "com.komorebi.shoppinglist",
+"title": "Alışveriş ve Market Listesi",
+"dev": "Komorebi Inc.",
+"genre": "SHOPPING",
+"installs": 100000,
+"real": 455800,
+"score": 4.37,
+"ratings": 11549,
+"reviews": 6,
+"released": "2018-04-03",
+"updated": "2026-08-09",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092577365
 },
 "com.komorebi.smartdiet": {
 "id": "com.komorebi.smartdiet",
@@ -159028,6 +159676,24 @@
 "free": true,
 "price": 0,
 "fetched": 1791889266391
+},
+"com.krb.kdvhesaplama": {
+"id": "com.krb.kdvhesaplama",
+"title": "KRB KDV Hesaplama",
+"dev": "Googsi",
+"genre": "FINANCE",
+"installs": 10,
+"real": 20,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-10-13",
+"updated": "2026-10-17",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092847183
 },
 "com.kredibank": {
 "id": "com.kredibank",
@@ -160799,17 +161465,17 @@
 "dev": "LAL Entertainment Apps",
 "genre": "GAME_CASUAL",
 "installs": 10000,
-"real": 23698,
+"real": 25024,
 "score": null,
 "ratings": 0,
 "reviews": 0,
 "released": "2025-11-23",
-"updated": "2026-07-09",
+"updated": "2026-10-20",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589929726
+"fetched": 1793092731048
 },
 "com.lal.ent.game.tractor.parking.challenge.premium": {
 "id": "com.lal.ent.game.tractor.parking.challenge.premium",
@@ -160827,7 +161493,7 @@
 "iap": false,
 "free": false,
 "price": 59.99,
-"fetched": 1790589929709
+"fetched": 1793092731015
 },
 "com.lalamove.global.driver.sea": {
 "id": "com.lalamove.global.driver.sea",
@@ -160889,17 +161555,17 @@
 "dev": "Fatih Yağcı",
 "genre": "EDUCATION",
 "installs": 1000000,
-"real": 1247926,
-"score": 4.89,
-"ratings": 21037,
-"reviews": 4058,
+"real": 1336975,
+"score": 4.9,
+"ratings": 22844,
+"reviews": 4285,
 "released": "2020-11-16",
 "updated": "2026-09-01",
 "ads": false,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790590001790
+"fetched": 1793092817270
 },
 "com.laminarresearch.x_plane10": {
 "id": "com.laminarresearch.x_plane10",
@@ -164507,17 +165173,17 @@
 "dev": "Granite Digital Apps",
 "genre": "PRODUCTIVITY",
 "installs": 1000,
-"real": 2141,
+"real": 2503,
 "score": null,
 "ratings": 0,
 "reviews": 0,
 "released": "2025-11-28",
-"updated": "2026-09-23",
+"updated": "2026-10-05",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589801947
+"fetched": 1793092601598
 },
 "com.lockscreen.clockwidget.alarmclock.timeclock.digitalclock.analogclock.nightclock": {
 "id": "com.lockscreen.clockwidget.alarmclock.timeclock.digitalclock.analogclock.nightclock",
@@ -166955,17 +167621,17 @@
 "dev": "BLW SOCIAL",
 "genre": "PARENTING",
 "installs": 50000,
-"real": 63663,
+"real": 64015,
 "score": null,
 "ratings": 0,
 "reviews": 0,
 "released": "2022-03-10",
-"updated": "2026-03-17",
+"updated": "2026-10-22",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590011946
+"fetched": 1793092828522
 },
 "com.maan.mandir": {
 "id": "com.maan.mandir",
@@ -168215,17 +168881,17 @@
 "dev": "Tobias Maihoff",
 "genre": "EDUCATION",
 "installs": 100000,
-"real": 258409,
+"real": 261471,
 "score": 4.55,
-"ratings": 2954,
+"ratings": 2962,
 "reviews": 24,
 "released": "2017-11-18",
-"updated": "2026-09-24",
+"updated": "2026-10-12",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590061269
+"fetched": 1793092884411
 },
 "com.main.gopuff": {
 "id": "com.main.gopuff",
@@ -168298,6 +168964,24 @@
 "free": true,
 "price": 0,
 "fetched": 1791627226012
+},
+"com.make.it.fly": {
+"id": "com.make.it.fly",
+"title": "Make It Fly!",
+"dev": "TapNice",
+"genre": "GAME_CASUAL",
+"installs": 10000000,
+"real": 25085715,
+"score": 3.6,
+"ratings": 97804,
+"reviews": 757,
+"released": "2021-04-25",
+"updated": "2026-08-26",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092932302
 },
 "com.makeevapps.contactswidget": {
 "id": "com.makeevapps.contactswidget",
@@ -169385,17 +170069,17 @@
 "dev": "MapMyFitness, Inc.",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 10000000,
-"real": 17728930,
+"real": 17777420,
 "score": 4.63,
-"ratings": 455656,
+"ratings": 456022,
 "reviews": 178,
 "released": "2010-09-09",
-"updated": "2026-07-09",
+"updated": "2026-10-21",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590054056
+"fetched": 1793092874748
 },
 "com.mapplico.bebekliknew": {
 "id": "com.mapplico.bebekliknew",
@@ -169583,17 +170267,17 @@
 "dev": "Tamam Bilgi Teknolojileri",
 "genre": "SHOPPING",
 "installs": 100000,
-"real": 120256,
-"score": 3.22,
-"ratings": 131,
-"reviews": 79,
+"real": 124743,
+"score": 3.25,
+"ratings": 139,
+"reviews": 82,
 "released": "2023-03-20",
-"updated": "2026-07-25",
+"updated": "2026-10-26",
 "ads": false,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1789713366434
+"fetched": 1793092906137
 },
 "com.markettrainingvpgame.moneytycoon": {
 "id": "com.markettrainingvpgame.moneytycoon",
@@ -170140,18 +170824,18 @@
 "title": "Masaliyo - Çocuk Masal Dinleme",
 "dev": "Masaliyo",
 "genre": "BOOKS_AND_REFERENCE",
-"installs": 10,
-"real": 42,
+"installs": 100,
+"real": 235,
 "score": 5,
-"ratings": 9,
-"reviews": 7,
+"ratings": 37,
+"reviews": 32,
 "released": "2026-08-29",
-"updated": "2026-09-11",
+"updated": "2026-10-20",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715454952
+"fetched": 1793092914247
 },
 "com.masalkitabi.app": {
 "id": "com.masalkitabi.app",
@@ -171365,17 +172049,17 @@
 "dev": "MCKGames",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 161033,
-"score": 4.27,
-"ratings": 274,
-"reviews": 6,
+"real": 166505,
+"score": 4,
+"ratings": 278,
+"reviews": 7,
 "released": "2023-04-26",
 "updated": "2025-10-09",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790590055794
+"fetched": 1793092878701
 },
 "com.mckgames.BusSimulatorDeluxe2022": {
 "id": "com.mckgames.BusSimulatorDeluxe2022",
@@ -172337,9 +173021,9 @@
 "dev": "Meemu: Educational Learning Games for Kids age 2-5",
 "genre": "GAME_EDUCATIONAL",
 "installs": 100000,
-"real": 156621,
+"real": 163317,
 "score": 3,
-"ratings": 100,
+"ratings": 101,
 "reviews": 3,
 "released": "2020-07-08",
 "updated": "2025-10-24",
@@ -172347,7 +173031,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1789894593766
+"fetched": 1793092844823
 },
 "com.meemu.cars": {
 "id": "com.meemu.cars",
@@ -173321,6 +174005,24 @@
 "price": 0,
 "fetched": 1791803952375
 },
+"com.mentallabs.mentalhealth": {
+"id": "com.mentallabs.mentalhealth",
+"title": "Ruh Sağlığı: Serene",
+"dev": "Uprise Labs",
+"genre": "HEALTH_AND_FITNESS",
+"installs": 1000000,
+"real": 1455862,
+"score": 4.56,
+"ratings": 66880,
+"reviews": 128,
+"released": "2025-04-13",
+"updated": "2026-10-22",
+"ads": false,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092999088
+},
 "com.mepasenerji.mepas": {
 "id": "com.mepasenerji.mepas",
 "title": "MEPAŞ",
@@ -174022,6 +174724,24 @@
 "free": true,
 "price": 0,
 "fetched": 1791108367407
+},
+"com.meshskimmer.dear.passengers.chaos.simulator": {
+"id": "com.meshskimmer.dear.passengers.chaos.simulator",
+"title": "Dear Plane Passenger Chaos",
+"dev": "Mesh Skimmer LLC",
+"genre": "GAME_ADVENTURE",
+"installs": 100,
+"real": 423,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": null,
+"updated": "2026-10-12",
+"ads": true,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092862614
 },
 "com.messa.MW33": {
 "id": "com.messa.MW33",
@@ -176008,8 +176728,8 @@
 "title": "Çorba Tarifleri",
 "dev": "Mievo Studio",
 "genre": "FOOD_AND_DRINK",
-"installs": 5,
-"real": 8,
+"installs": 50,
+"real": 78,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -176019,7 +176739,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1789715475298
+"fetched": 1793092669356
 },
 "com.mievo.kektarifleri": {
 "id": "com.mievo.kektarifleri",
@@ -180437,17 +181157,17 @@
 "dev": "mobirix",
 "genre": "GAME_CARD",
 "installs": 1000000,
-"real": 2432935,
+"real": 2433635,
 "score": 4.53,
-"ratings": 22327,
+"ratings": 22279,
 "reviews": 44,
 "released": "2015-04-02",
-"updated": "2026-05-22",
+"updated": "2026-10-15",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1789715493330
+"fetched": 1793092869553
 },
 "com.mobirix.airhockey": {
 "id": "com.mobirix.airhockey",
@@ -181535,9 +182255,9 @@
 "dev": "Mokort",
 "genre": "GAME_CARD",
 "installs": 50000,
-"real": 96997,
+"real": 97096,
 "score": 3.87,
-"ratings": 807,
+"ratings": 806,
 "reviews": 9,
 "released": "2015-10-02",
 "updated": "2023-10-12",
@@ -181545,7 +182265,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715497404
+"fetched": 1793092636555
 },
 "com.mokvold.flatzombies_defense_free": {
 "id": "com.mokvold.flatzombies_defense_free",
@@ -183245,9 +183965,9 @@
 "dev": "Big Fat Simulations Inc.",
 "genre": "GAME_ADVENTURE",
 "installs": 5000000,
-"real": 6058992,
+"real": 6083827,
 "score": 3.77,
-"ratings": 28092,
+"ratings": 28103,
 "reviews": 171,
 "released": "2016-06-30",
 "updated": "2025-10-09",
@@ -183255,7 +183975,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590070177
+"fetched": 1793092896843
 },
 "com.mpr.heightcal": {
 "id": "com.mpr.heightcal",
@@ -183479,9 +184199,9 @@
 "dev": "msSoft",
 "genre": "PARENTING",
 "installs": 100000,
-"real": 484913,
-"score": 3.99,
-"ratings": 743,
+"real": 485669,
+"score": 3.97,
+"ratings": 742,
 "reviews": 372,
 "released": "2018-11-05",
 "updated": "2026-08-27",
@@ -183489,7 +184209,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1791197024954
+"fetched": 1793092914293
 },
 "com.mslm.tasbih": {
 "id": "com.mslm.tasbih",
@@ -183526,6 +184246,24 @@
 "free": true,
 "price": 0,
 "fetched": 1789715500862
+},
+"com.msoft.kdvhesaplama": {
+"id": "com.msoft.kdvhesaplama",
+"title": "KDV Hesaplama",
+"dev": "MSOFTIS DIGITAL AGENCY",
+"genre": "FINANCE",
+"installs": 10,
+"real": 34,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2025-03-20",
+"updated": "2026-01-25",
+"ads": true,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092847630
 },
 "com.mspy.lite": {
 "id": "com.mspy.lite",
@@ -184918,18 +185656,18 @@
 "title": "Peacefy: Ruh Hali Günlüğü",
 "dev": "SYZAI",
 "genre": "HEALTH_AND_FITNESS",
-"installs": 10,
-"real": 39,
+"installs": 50,
+"real": 50,
 "score": null,
 "ratings": 0,
 "reviews": 0,
 "released": "2026-04-03",
-"updated": "2026-09-28",
+"updated": "2026-10-07",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790676208577
+"fetched": 1793093000070
 },
 "com.muxyvmodmcpe.dinosaur_jurassic_mcpe_mod_new": {
 "id": "com.muxyvmodmcpe.dinosaur_jurassic_mcpe_mod_new",
@@ -185278,18 +186016,18 @@
 "title": "Crazy Flight Passengers",
 "dev": "Luxor Tech",
 "genre": "GAME_ACTION",
-"installs": 50000,
-"real": 55050,
+"installs": 100000,
+"real": 467463,
 "score": null,
 "ratings": 0,
 "reviews": 0,
 "released": null,
-"updated": "2026-09-21",
+"updated": "2026-10-22",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590045335
+"fetched": 1793092865560
 },
 "com.my.defense": {
 "id": "com.my.defense",
@@ -187025,17 +187763,17 @@
 "dev": "EtnApps",
 "genre": "BUSINESS",
 "installs": 10000,
-"real": 21179,
-"score": 4.57,
-"ratings": 32,
+"real": 21274,
+"score": 4.48,
+"ratings": 36,
 "reviews": 12,
 "released": "2018-09-22",
-"updated": "2026-09-15",
+"updated": "2026-09-18",
 "ads": false,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1789715509210
+"fetched": 1793092847192
 },
 "com.nat.kidoku": {
 "id": "com.nat.kidoku",
@@ -188717,7 +189455,7 @@
 "dev": "Exptional Global",
 "genre": "SHOPPING",
 "installs": 100000,
-"real": 204493,
+"real": 207698,
 "score": 3.27,
 "ratings": 437,
 "reviews": 8,
@@ -188727,7 +189465,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790590078869
+"fetched": 1793092906625
 },
 "com.netease.newspikeme": {
 "id": "com.netease.newspikeme",
@@ -188843,9 +189581,9 @@
 "dev": "Netflix, Inc.",
 "genre": "GAME_SIMULATION",
 "installs": 500000,
-"real": 621456,
-"score": 4.43,
-"ratings": 6829,
+"real": 631479,
+"score": 4.44,
+"ratings": 6877,
 "reviews": 43,
 "released": "2022-11-04",
 "updated": "2026-04-14",
@@ -188853,7 +189591,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589909745
+"fetched": 1793092710458
 },
 "com.netflix.NGP.CozyGrove2": {
 "id": "com.netflix.NGP.CozyGrove2",
@@ -189179,6 +189917,24 @@
 "price": 0,
 "fetched": 1792745563502
 },
+"com.netflix.NGP.Spiritfarer": {
+"id": "com.netflix.NGP.Spiritfarer",
+"title": "Spiritfarer: Netflix Edition",
+"dev": "Netflix, Inc.",
+"genre": "GAME_SIMULATION",
+"installs": 500000,
+"real": 930884,
+"score": 4.01,
+"ratings": 5159,
+"reviews": 78,
+"released": "2022-10-03",
+"updated": "2025-10-02",
+"ads": false,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092710952
+},
 "com.netflix.NGP.SpongeBobKrustyCookOff": {
 "id": "com.netflix.NGP.SpongeBobKrustyCookOff",
 "title": "SüngerBob: Mutfakta",
@@ -189365,17 +190121,17 @@
 "dev": "Netflix, Inc.",
 "genre": "GAME_PUZZLE",
 "installs": 100000,
-"real": 458951,
-"score": 4.41,
-"ratings": 4457,
-"reviews": 20,
+"real": 463684,
+"score": 4.4,
+"ratings": 4483,
+"reviews": 21,
 "released": "2022-09-12",
 "updated": "2026-06-12",
 "ads": false,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1791197014637
+"fetched": 1793092710491
 },
 "com.netflix.NGP.WorldofGooHD": {
 "id": "com.netflix.NGP.WorldofGooHD",
@@ -189700,6 +190456,24 @@
 "free": true,
 "price": 0,
 "fetched": 1793006159229
+},
+"com.netmetrik.hiztesti": {
+"id": "com.netmetrik.hiztesti",
+"title": "HIZ TESTI - Speed test",
+"dev": "hiztesti.com",
+"genre": "TOOLS",
+"installs": 1000,
+"real": 1505,
+"score": 4.58,
+"ratings": 28,
+"reviews": 14,
+"released": "2020-03-16",
+"updated": "2026-10-22",
+"ads": false,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092797206
 },
 "com.netpulse.mobile.modusportclubs": {
 "id": "com.netpulse.mobile.modusportclubs",
@@ -190535,9 +191309,9 @@
 "dev": "NexGen Game World",
 "genre": "GAME_CASUAL",
 "installs": 500000,
-"real": 863892,
+"real": 866441,
 "score": 4.24,
-"ratings": 6129,
+"ratings": 6138,
 "reviews": 27,
 "released": "2022-03-29",
 "updated": "2026-06-19",
@@ -190545,7 +191319,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790676167701
+"fetched": 1793092995083
 },
 "com.neximolabs.blackr": {
 "id": "com.neximolabs.blackr",
@@ -191053,21 +191827,21 @@
 },
 "com.nhtgamingstudio.indianfarmersimulator3d": {
 "id": "com.nhtgamingstudio.indianfarmersimulator3d",
-"title": "Indian Farmer Simulator 3D",
+"title": "Indian Kheti Simulator 3D",
 "dev": "Nht Gaming Studio",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 141133,
+"real": 229649,
 "score": null,
 "ratings": 0,
 "reviews": 0,
 "released": "2026-06-11",
-"updated": "2026-09-10",
+"updated": "2026-10-10",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589853607
+"fetched": 1793092672676
 },
 "com.nianticlabs.monsterhunter": {
 "id": "com.nianticlabs.monsterhunter",
@@ -191590,6 +192364,24 @@
 "free": true,
 "price": 0,
 "fetched": 1791627440710
+},
+"com.nikesh.ofarm": {
+"id": "com.nikesh.ofarm",
+"title": "Tractor parking game 3d 2025",
+"dev": "Ultra Gaming Zone",
+"genre": "GAME_STRATEGY",
+"installs": 1000,
+"real": 1226,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2024-08-31",
+"updated": "2026-05-22",
+"ads": true,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092731997
 },
 "com.nikita4ever.nscc": {
 "id": "com.nikita4ever.nscc",
@@ -193775,17 +194567,17 @@
 "dev": "NOXGAMES",
 "genre": "GAME_CASUAL",
 "installs": 5000000,
-"real": 7529053,
+"real": 7556105,
 "score": 4.62,
-"ratings": 190569,
-"reviews": 3095,
+"ratings": 190592,
+"reviews": 3096,
 "released": "2020-06-04",
 "updated": "2026-04-28",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590015442
+"fetched": 1793092831473
 },
 "com.noxgames.merge.air.planes.airline.money": {
 "id": "com.noxgames.merge.air.planes.airline.money",
@@ -193793,9 +194585,9 @@
 "dev": "Hyper Idle Arcade Games - Merge Games",
 "genre": "GAME_SIMULATION",
 "installs": 1000000,
-"real": 1196059,
+"real": 1198435,
 "score": 4.71,
-"ratings": 14221,
+"ratings": 14234,
 "reviews": 239,
 "released": "2021-02-19",
 "updated": "2026-04-28",
@@ -193803,7 +194595,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590015265
+"fetched": 1793092831423
 },
 "com.noxgames.merge.sandwich": {
 "id": "com.noxgames.merge.sandwich",
@@ -195034,8 +195826,8 @@
 "title": "Nefes: Rahatlama ve Uyku",
 "dev": "Wagner Creative",
 "genre": "HEALTH_AND_FITNESS",
-"installs": 10,
-"real": 18,
+"installs": 50,
+"real": 50,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -195045,7 +195837,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790676163440
+"fetched": 1793092951171
 },
 "com.octro.soccerpunch": {
 "id": "com.octro.soccerpunch",
@@ -201851,6 +202643,24 @@
 "price": 0,
 "fetched": 1789982185366
 },
+"com.panstudio.tumturkce": {
+"id": "com.panstudio.tumturkce",
+"title": "TümTürkçe: Türkçe Sözlük",
+"dev": "MobiLand Studio",
+"genre": "BOOKS_AND_REFERENCE",
+"installs": 100,
+"real": 361,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-06-19",
+"updated": "2026-09-11",
+"ads": false,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092814000
+},
 "com.panteon.arcanearena": {
 "id": "com.panteon.arcanearena",
 "title": "Arcane Arena: Tower Defense TD",
@@ -201886,6 +202696,24 @@
 "free": true,
 "price": 0,
 "fetched": 1792312051745
+},
+"com.pantherandleopard.mergeplaneneon": {
+"id": "com.pantherandleopard.mergeplaneneon",
+"title": "Merge Planes Neon Game Idle",
+"dev": "Baxter Games",
+"genre": "GAME_CASUAL",
+"installs": 100000,
+"real": 102884,
+"score": 4.69,
+"ratings": 1011,
+"reviews": 5,
+"released": "2022-02-08",
+"updated": "2026-10-05",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092832378
 },
 "com.pantheraplay.soulhuntress": {
 "id": "com.pantheraplay.soulhuntress",
@@ -202253,9 +203081,9 @@
 "dev": "Kidgy",
 "genre": "SHOPPING",
 "installs": 100000,
-"real": 368215,
+"real": 368775,
 "score": 2.08,
-"ratings": 1114,
+"ratings": 1115,
 "reviews": 11,
 "released": "2020-10-23",
 "updated": "2026-08-12",
@@ -202263,7 +203091,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789720487891
+"fetched": 1793092840220
 },
 "com.parclick": {
 "id": "com.parclick",
@@ -203981,9 +204809,9 @@
 "dev": "PearlMountain Technology Limited",
 "genre": "BUSINESS",
 "installs": 1000000,
-"real": 3314247,
+"real": 3314472,
 "score": 3.95,
-"ratings": 5789,
+"ratings": 5788,
 "reviews": 34,
 "released": "2018-04-10",
 "updated": "2018-04-19",
@@ -203991,7 +204819,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590067453
+"fetched": 1793092894866
 },
 "com.pearmobile.shoppinglist": {
 "id": "com.pearmobile.shoppinglist",
@@ -204629,7 +205457,7 @@
 "dev": "Pestorosso Games",
 "genre": "GAME_EDUCATIONAL",
 "installs": 10000,
-"real": 13279,
+"real": 13687,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -204639,7 +205467,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790676138001
+"fetched": 1793092922269
 },
 "com.pet.desktop.onscreen": {
 "id": "com.pet.desktop.onscreen",
@@ -205853,17 +206681,17 @@
 "dev": "Game Pickle",
 "genre": "GAME_CASUAL",
 "installs": 100000,
-"real": 265665,
-"score": 4.27,
-"ratings": 1255,
-"reviews": 3,
+"real": 310301,
+"score": 4.2,
+"ratings": 1471,
+"reviews": 5,
 "released": "2026-02-03",
 "updated": "2026-02-18",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590048901
+"fetched": 1793092870636
 },
 "com.pickle.AirplaneFlightPilotSimulator": {
 "id": "com.pickle.AirplaneFlightPilotSimulator",
@@ -206657,6 +207485,24 @@
 "price": 0,
 "fetched": 1791019751571
 },
+"com.pin.TractorMechanicSimulator.free": {
+"id": "com.pin.TractorMechanicSimulator.free",
+"title": "Off-road Tractor Driving Games",
+"dev": "GamersLab Pvt Ltd",
+"genre": "GAME_ADVENTURE",
+"installs": 1000000,
+"real": 1317897,
+"score": 3.16,
+"ratings": 1178,
+"reviews": 15,
+"released": "2018-07-12",
+"updated": "2026-09-07",
+"ads": true,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092718503
+},
 "com.pin.screw.color.nuts.bolts.spin.free.game": {
 "id": "com.pin.screw.color.nuts.bolts.spin.free.game",
 "title": "Somunları Sökün: Pin Bulmacası",
@@ -207059,17 +207905,17 @@
 "dev": "Pixel Ape Studios",
 "genre": "GAME_PUZZLE",
 "installs": 1000000,
-"real": 4779004,
-"score": 4.52,
-"ratings": 60395,
-"reviews": 191,
+"real": 4782746,
+"score": 4.53,
+"ratings": 60432,
+"reviews": 190,
 "released": "2017-03-16",
 "updated": "2025-11-12",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789713249359
+"fetched": 1793092745733
 },
 "com.pixelberrystudios.choices": {
 "id": "com.pixelberrystudios.choices",
@@ -208265,7 +209111,7 @@
 "dev": "HLD team",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 487703,
+"real": 491400,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -208275,7 +209121,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790676145603
+"fetched": 1793092931713
 },
 "com.plane.crash.flight.simulator.game": {
 "id": "com.plane.crash.flight.simulator.game",
@@ -208283,17 +209129,17 @@
 "dev": "Hyper Joy Games",
 "genre": "GAME_SIMULATION",
 "installs": 500000,
-"real": 765963,
+"real": 773599,
 "score": 2.91,
-"ratings": 1353,
+"ratings": 1370,
 "reviews": 10,
 "released": "2024-05-28",
-"updated": "2025-12-10",
+"updated": "2026-10-27",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790676140579
+"fetched": 1793092924398
 },
 "com.plane.emergency.landing": {
 "id": "com.plane.emergency.landing",
@@ -208517,17 +209363,17 @@
 "dev": "Plarium Global Ltd",
 "genre": "GAME_ROLE_PLAYING",
 "installs": 50000000,
-"real": 76452626,
+"real": 76846684,
 "score": 4.33,
-"ratings": 2263708,
-"reviews": 9472,
+"ratings": 2270924,
+"reviews": 9479,
 "released": "2019-02-26",
-"updated": "2026-09-04",
+"updated": "2026-10-19",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790067083503
+"fetched": 1793092992088
 },
 "com.plarium.vikings": {
 "id": "com.plarium.vikings",
@@ -210695,17 +211541,17 @@
 "dev": "Ref 360",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 5000,
-"real": 5389,
-"score": 4.82,
-"ratings": 57,
-"reviews": 1,
+"real": 6149,
+"score": 4.79,
+"ratings": 78,
+"reviews": 2,
 "released": "2026-05-18",
-"updated": "2026-09-17",
+"updated": "2026-10-26",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1791019686140
+"fetched": 1793092691878
 },
 "com.plusplusinstructions": {
 "id": "com.plusplusinstructions",
@@ -212171,17 +213017,17 @@
 "dev": "Türkiye İş Bankası A.Ş.",
 "genre": "FINANCE",
 "installs": 10000000,
-"real": 45256553,
+"real": 45595708,
 "score": 4.15,
-"ratings": 990735,
-"reviews": 303850,
+"ratings": 992346,
+"reviews": 304347,
 "released": "2011-01-25",
 "updated": "2026-09-26",
 "ads": false,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589972333
+"fetched": 1793092784578
 },
 "com.pozitron.pegasus": {
 "id": "com.pozitron.pegasus",
@@ -212945,7 +213791,7 @@
 "dev": "Pak PrimeSoft",
 "genre": "GAME_SIMULATION",
 "installs": 1000,
-"real": 4772,
+"real": 4932,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -212955,7 +213801,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589830952
+"fetched": 1793092646292
 },
 "com.primoscale.app": {
 "id": "com.primoscale.app",
@@ -214457,9 +215303,9 @@
 "dev": "Sloth games",
 "genre": "GAME_SIMULATION",
 "installs": 50000,
-"real": 52109,
+"real": 61500,
 "score": 1.33,
-"ratings": 31,
+"ratings": 34,
 "reviews": 10,
 "released": "2026-09-17",
 "updated": "2026-09-22",
@@ -214467,7 +215313,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590042773
+"fetched": 1793092863568
 },
 "com.pubg.newstate": {
 "id": "com.pubg.newstate",
@@ -217103,9 +217949,9 @@
 "dev": "RAD BROTHERS",
 "genre": "GAME_PUZZLE",
 "installs": 5000000,
-"real": 7145315,
+"real": 7147104,
 "score": 4.16,
-"ratings": 62535,
+"ratings": 62527,
 "reviews": 1849,
 "released": "2016-12-22",
 "updated": "2026-02-03",
@@ -217113,7 +217959,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715606003
+"fetched": 1793092745369
 },
 "com.radbug.richmango": {
 "id": "com.radbug.richmango",
@@ -217409,9 +218255,9 @@
 "dev": "RAJAWAT Entertainment",
 "genre": "GAME_SIMULATION",
 "installs": 5000000,
-"real": 5058693,
+"real": 5090956,
 "score": 4.2,
-"ratings": 11682,
+"ratings": 11701,
 "reviews": 14,
 "released": "2021-12-17",
 "updated": "2025-10-17",
@@ -217419,7 +218265,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589853152
+"fetched": 1793092672320
 },
 "com.ram.chocolate.otphead": {
 "id": "com.ram.chocolate.otphead",
@@ -218356,6 +219202,24 @@
 "free": true,
 "price": 0,
 "fetched": 1790153265762
+},
+"com.rc.heavy.tractor.trolley.farming.simulation.offroad.game": {
+"id": "com.rc.heavy.tractor.trolley.farming.simulation.offroad.game",
+"title": "Farming Tractor Trolley Sim 3D",
+"dev": "Redstone Creatives",
+"genre": "GAME_SIMULATION",
+"installs": 5000000,
+"real": 5137047,
+"score": 3.83,
+"ratings": 4499,
+"reviews": 14,
+"released": "2020-06-09",
+"updated": "2026-02-01",
+"ads": true,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092622963
 },
 "com.rc21.horror.sandbox.sprunki.ragdoll.playground": {
 "id": "com.rc21.horror.sandbox.sprunki.ragdoll.playground",
@@ -220523,17 +221387,17 @@
 "dev": "RI Casual Offline Games",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 311856,
-"score": 2.45,
-"ratings": 1892,
-"reviews": 13,
+"real": 402436,
+"score": 2.7,
+"ratings": 2307,
+"reviews": 16,
 "released": "2026-01-09",
 "updated": "2026-01-27",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790676148452
+"fetched": 1793092870616
 },
 "com.renderedideas.jungleadventures3": {
 "id": "com.renderedideas.jungleadventures3",
@@ -221405,7 +222269,7 @@
 "dev": "Riafy Technologies",
 "genre": "FOOD_AND_DRINK",
 "installs": 500000,
-"real": 562538,
+"real": 563163,
 "score": 3,
 "ratings": 1836,
 "reviews": 6,
@@ -221415,7 +222279,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715618559
+"fetched": 1793092691874
 },
 "com.riatech.easyrecipes": {
 "id": "com.riatech.easyrecipes",
@@ -221423,9 +222287,9 @@
 "dev": "Riafy Technologies",
 "genre": "FOOD_AND_DRINK",
 "installs": 500000,
-"real": 858144,
+"real": 859129,
 "score": 2.75,
-"ratings": 3764,
+"ratings": 3761,
 "reviews": 7,
 "released": "2013-10-08",
 "updated": "2026-09-02",
@@ -221433,7 +222297,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789720469328
+"fetched": 1793092828040
 },
 "com.riatech.fitberry": {
 "id": "com.riatech.fitberry",
@@ -221477,9 +222341,9 @@
 "dev": "Riafy Technologies",
 "genre": "FOOD_AND_DRINK",
 "installs": 500000,
-"real": 819122,
+"real": 819455,
 "score": 4.62,
-"ratings": 3315,
+"ratings": 3314,
 "reviews": 10,
 "released": "2013-10-07",
 "updated": "2026-08-28",
@@ -221487,7 +222351,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715618949
+"fetched": 1793092669845
 },
 "com.riatech.weightlossrecipes": {
 "id": "com.riatech.weightlossrecipes",
@@ -222089,7 +222953,7 @@
 "dev": "Riseup Labs",
 "genre": "LIFESTYLE",
 "installs": 50000,
-"real": 63609,
+"real": 64975,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -222099,7 +222963,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1789715619726
+"fetched": 1793092817688
 },
 "com.risingcabbage.hd.camera": {
 "id": "com.risingcabbage.hd.camera",
@@ -223511,7 +224375,7 @@
 "dev": "Roka Market",
 "genre": "SHOPPING",
 "installs": 5000,
-"real": 5714,
+"real": 6277,
 "score": 3.4,
 "ratings": 25,
 "reviews": 13,
@@ -223521,7 +224385,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1789720612544
+"fetched": 1793092906179
 },
 "com.roleplai.app": {
 "id": "com.roleplai.app",
@@ -224573,17 +225437,17 @@
 "dev": "RockRex Games",
 "genre": "GAME_SIMULATION",
 "installs": 1000000,
-"real": 1426488,
-"score": 2.98,
-"ratings": 2973,
-"reviews": 36,
+"real": 1527529,
+"score": 3.04,
+"ratings": 3106,
+"reviews": 37,
 "released": "2025-05-09",
 "updated": "2026-09-14",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589832121
+"fetched": 1793092647426
 },
 "com.rs.data_usage": {
 "id": "com.rs.data_usage",
@@ -225899,6 +226763,24 @@
 "price": 0,
 "fetched": 1792486278298
 },
+"com.ruyaname.twa": {
+"id": "com.ruyaname.twa",
+"title": "Rüyaname - Rüya Tabiri",
+"dev": "AtlantiS",
+"genre": "LIFESTYLE",
+"installs": 10,
+"real": 20,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-10-21",
+"updated": "2026-10-22",
+"ads": false,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793093003871
+},
 "com.ruyanla.ruyanlaMobile": {
 "id": "com.ruyanla.ruyanlaMobile",
 "title": "Ruyanla - Rüya Tabiri",
@@ -227039,17 +227921,17 @@
 "dev": "sahibinden.com",
 "genre": "SHOPPING",
 "installs": 50000000,
-"real": 77774023,
+"real": 78360834,
 "score": 4.41,
-"ratings": 1204246,
-"reviews": 307568,
+"ratings": 1205976,
+"reviews": 308076,
 "released": "2014-06-26",
-"updated": "2026-09-18",
+"updated": "2026-10-16",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589972213
+"fetched": 1793092784526
 },
 "com.sahibinden.pro": {
 "id": "com.sahibinden.pro",
@@ -229157,6 +230039,24 @@
 "price": 0,
 "fetched": 1792139542938
 },
+"com.school.life.ponycraft.party.game": {
+"id": "com.school.life.ponycraft.party.game",
+"title": "Dear Passengers: Crazy Flight",
+"dev": "AK PROPERTY AND MARKETING SMC-PRIVATE LIMITED",
+"genre": "GAME_SIMULATION",
+"installs": 5000,
+"real": 6470,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": null,
+"updated": "2026-10-26",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092866498
+},
 "com.school.simulator.gp.x8": {
 "id": "com.school.simulator.gp.x8",
 "title": "Teacher: School Simulator",
@@ -229768,6 +230668,24 @@
 "free": true,
 "price": 0,
 "fetched": 1791543353627
+},
+"com.se.indian.tractor.farming.game": {
+"id": "com.se.indian.tractor.farming.game",
+"title": "Indian Offroad Tractor Driving",
+"dev": "Imaginative Innovations, Inc.",
+"genre": "GAME_STRATEGY",
+"installs": 100000,
+"real": 367391,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2025-10-19",
+"updated": "2026-10-24",
+"ads": true,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092718497
 },
 "com.seal.northmen": {
 "id": "com.seal.northmen",
@@ -230690,20 +231608,20 @@
 "com.selantoapps.weightdiary": {
 "id": "com.selantoapps.weightdiary",
 "title": "Kilo Takibi - BMI yağ resimler",
-"dev": "Selanto Apps (Inspiring Positive Actions)",
+"dev": "Selanto Apps - BMI, Body & Weight Trackers",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 1000000,
-"real": 4172405,
+"real": 4185739,
 "score": 4.66,
-"ratings": 47678,
+"ratings": 47797,
 "reviews": 246,
 "released": "2018-08-11",
-"updated": "2026-09-14",
+"updated": "2026-10-19",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715656560
+"fetched": 1793092860425
 },
 "com.selcukak.ingilizce3000": {
 "id": "com.selcukak.ingilizce3000",
@@ -233141,17 +234059,17 @@
 "dev": "Galaxy studio apps",
 "genre": "TOOLS",
 "installs": 100000,
-"real": 107167,
-"score": null,
-"ratings": 0,
-"reviews": 0,
+"real": 108719,
+"score": 5,
+"ratings": 760,
+"reviews": 2,
 "released": "2022-03-27",
-"updated": "2024-10-09",
+"updated": "2026-10-25",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789713435711
+"fetched": 1793092986110
 },
 "com.shiamuslimproject.main": {
 "id": "com.shiamuslimproject.main",
@@ -235211,9 +236129,9 @@
 "dev": "BabyBus",
 "genre": "GAME_EDUCATIONAL",
 "installs": 50000000,
-"real": 57459739,
+"real": 57988298,
 "score": 4.02,
-"ratings": 38471,
+"ratings": 38594,
 "reviews": 143,
 "released": "2018-07-18",
 "updated": "2026-09-03",
@@ -235221,7 +236139,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590028388
+"fetched": 1793092844911
 },
 "com.sinyee.babybus.amusement": {
 "id": "com.sinyee.babybus.amusement",
@@ -237281,17 +238199,17 @@
 "dev": "Matific - Educational Maths Games",
 "genre": "EDUCATION",
 "installs": 5000000,
-"real": 6733884,
-"score": 4.45,
-"ratings": 30012,
-"reviews": 46,
+"real": 6912159,
+"score": 4.51,
+"ratings": 31037,
+"reviews": 47,
 "released": "2015-07-03",
-"updated": "2026-08-23",
+"updated": "2026-10-13",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715675288
+"fetched": 1793092921848
 },
 "com.slay.pengu": {
 "id": "com.slay.pengu",
@@ -239741,6 +240659,24 @@
 "price": 0,
 "fetched": 1791804209421
 },
+"com.snowcorp.soda.android": {
+"id": "com.snowcorp.soda.android",
+"title": "SODA - Natural Beauty Camera",
+"dev": "SNOW Corporation",
+"genre": "PHOTOGRAPHY",
+"installs": 10000000,
+"real": 44384803,
+"score": 4.27,
+"ratings": 180343,
+"reviews": 251,
+"released": "2018-10-10",
+"updated": "2026-09-23",
+"ads": false,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092752753
+},
 "com.snowcorp.stickerly.android": {
 "id": "com.snowcorp.stickerly.android",
 "title": "Sticker.ly - WASticker",
@@ -239909,17 +240845,17 @@
 "dev": "SOBS Tech",
 "genre": "GAME_ARCADE",
 "installs": 1000000,
-"real": 3646068,
+"real": 3650056,
 "score": 3.43,
-"ratings": 10732,
+"ratings": 10731,
 "reviews": 125,
 "released": "2020-04-09",
-"updated": "2026-08-10",
+"updated": "2026-10-17",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589992870
+"fetched": 1793092809313
 },
 "com.socby.prankcall.scary.fake.video.horror": {
 "id": "com.socby.prankcall.scary.fake.video.horror",
@@ -241241,9 +242177,9 @@
 "dev": "Kutuki",
 "genre": "EDUCATION",
 "installs": 5000000,
-"real": 5493741,
+"real": 5498273,
 "score": 2.33,
-"ratings": 9195,
+"ratings": 9223,
 "reviews": 5,
 "released": "2019-01-03",
 "updated": "2025-04-16",
@@ -241251,7 +242187,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589843628
+"fetched": 1793092662289
 },
 "com.sonkins.tbanjo": {
 "id": "com.sonkins.tbanjo",
@@ -242855,6 +243791,24 @@
 "price": 0,
 "fetched": 1792745462965
 },
+"com.speedcar.corolla": {
+"id": "com.speedcar.corolla",
+"title": "Corolla Araba Sürme Oyunu",
+"dev": "SPEED CAR DRİVE GAMES",
+"genre": "GAME_SIMULATION",
+"installs": 50000,
+"real": 98527,
+"score": 4.66,
+"ratings": 414,
+"reviews": 10,
+"released": "2026-06-14",
+"updated": "2026-08-23",
+"ads": true,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092573136
+},
 "com.speedcar.golf": {
 "id": "com.speedcar.golf",
 "title": "Golf GTI Araba:Taksi Şoförü",
@@ -242879,17 +243833,17 @@
 "dev": "SPEED CAR DRİVE GAMES",
 "genre": "GAME_SIMULATION",
 "installs": 1000000,
-"real": 2032817,
-"score": 4.32,
-"ratings": 6206,
-"reviews": 77,
+"real": 2077277,
+"score": 4.34,
+"ratings": 6265,
+"reviews": 75,
 "released": "2023-02-17",
 "updated": "2026-04-02",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589775361
+"fetched": 1793092573700
 },
 "com.speedygtgames.reddropheadcopescape": {
 "id": "com.speedygtgames.reddropheadcopescape",
@@ -243593,15 +244547,33 @@
 "price": 0,
 "fetched": 1791627227219
 },
+"com.spookyhousestudios.railmaze": {
+"id": "com.spookyhousestudios.railmaze",
+"title": "Rail Maze : Train puzzler",
+"dev": "Spooky House Studios UG (haftungsbeschraenkt)",
+"genre": "GAME_PUZZLE",
+"installs": 5000000,
+"real": 8240466,
+"score": 4.51,
+"ratings": 33806,
+"reviews": 224,
+"released": "2012-03-30",
+"updated": "2023-10-17",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092809360
+},
 "com.spookyhousestudios.railmaze2": {
 "id": "com.spookyhousestudios.railmaze2",
 "title": "Rail Maze 2: Train puzzle game",
 "dev": "Spooky House Studios UG (haftungsbeschraenkt)",
 "genre": "GAME_PUZZLE",
 "installs": 1000000,
-"real": 2917944,
+"real": 2918488,
 "score": 4.28,
-"ratings": 14824,
+"ratings": 14808,
 "reviews": 64,
 "released": "2014-08-29",
 "updated": "2025-05-06",
@@ -243609,7 +244581,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589993432
+"fetched": 1793092810346
 },
 "com.sport.vpn": {
 "id": "com.sport.vpn",
@@ -244013,7 +244985,7 @@
 "dev": "SR Technologies01",
 "genre": "GAME_ACTION",
 "installs": 10000,
-"real": 24318,
+"real": 48460,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -244023,7 +244995,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790590045668
+"fetched": 1793092863066
 },
 "com.sry.rateglance": {
 "id": "com.sry.rateglance",
@@ -244204,6 +245176,24 @@
 "free": true,
 "price": 0,
 "fetched": 1790327302062
+},
+"com.ss.traindigger": {
+"id": "com.ss.traindigger",
+"title": "Train Digger - Idle Game",
+"dev": "Sablo Studio",
+"genre": "GAME_SIMULATION",
+"installs": 100000,
+"real": 205441,
+"score": 3.86,
+"ratings": 1952,
+"reviews": 5,
+"released": "2025-07-10",
+"updated": "2026-09-22",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092810837
 },
 "com.ssi.bus.games.bus.simulator": {
 "id": "com.ssi.bus.games.bus.simulator",
@@ -245003,9 +245993,9 @@
 "dev": "STEC Games",
 "genre": "GAME_CARD",
 "installs": 100,
-"real": 397,
-"score": 4.88,
-"ratings": 8,
+"real": 499,
+"score": 4.75,
+"ratings": 12,
 "reviews": 3,
 "released": "2026-08-11",
 "updated": "2026-09-10",
@@ -245013,7 +246003,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1791019831067
+"fetched": 1793092869058
 },
 "com.steelcloudstudio.classic.car.parking.real.driving.test": {
 "id": "com.steelcloudstudio.classic.car.parking.real.driving.test",
@@ -245939,17 +246929,17 @@
 "dev": "StormTech Apps",
 "genre": "PARENTING",
 "installs": 100,
-"real": 242,
+"real": 369,
 "score": null,
 "ratings": 0,
 "reviews": 0,
 "released": "2026-06-02",
-"updated": "2026-09-27",
-"ads": true,
+"updated": "2026-10-19",
+"ads": false,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790935369125
+"fetched": 1793092607808
 },
 "com.stormx.castle": {
 "id": "com.stormx.castle",
@@ -249719,7 +250709,7 @@
 "dev": "SYSTWEAK SOFTWARE",
 "genre": "GAME_EDUCATIONAL",
 "installs": 50000,
-"real": 55733,
+"real": 59036,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -249729,7 +250719,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790676138052
+"fetched": 1793092921796
 },
 "com.syubestgames.teachersimulator": {
 "id": "com.syubestgames.teachersimulator",
@@ -249935,17 +250925,17 @@
 "dev": "Tech 3D Games Studios",
 "genre": "GAME_SIMULATION",
 "installs": 1000000,
-"real": 2247089,
-"score": 3.85,
-"ratings": 6876,
-"reviews": 623,
+"real": 2248871,
+"score": 3.88,
+"ratings": 6858,
+"reviews": 622,
 "released": "2017-10-04",
 "updated": "2026-04-06",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589865051
+"fetched": 1793092689058
 },
 "com.t3gss.offroad.tractor.tow.pull.driving": {
 "id": "com.t3gss.offroad.tractor.tow.pull.driving",
@@ -249953,9 +250943,9 @@
 "dev": "Tech 3D Games Studios",
 "genre": "GAME_SIMULATION",
 "installs": 1000000,
-"real": 1075138,
-"score": 3.94,
-"ratings": 1839,
+"real": 1076507,
+"score": 3.93,
+"ratings": 1838,
 "reviews": 39,
 "released": "2018-03-08",
 "updated": "2026-09-14",
@@ -249963,7 +250953,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589918021
+"fetched": 1793092718046
 },
 "com.ta.online.strike.fps": {
 "id": "com.ta.online.strike.fps",
@@ -250187,17 +251177,17 @@
 "dev": "TabTale",
 "genre": "GAME_CASUAL",
 "installs": 10000000,
-"real": 12841579,
+"real": 12842449,
 "score": 3.22,
-"ratings": 67300,
-"reviews": 1101,
+"ratings": 67239,
+"reviews": 1097,
 "released": "2017-04-18",
 "updated": "2024-02-29",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590076734
+"fetched": 1793092902788
 },
 "com.tabtale.teacher": {
 "id": "com.tabtale.teacher",
@@ -251267,17 +252257,17 @@
 "dev": "Tap Dog Studio",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 420007,
-"score": 3.09,
-"ratings": 1522,
-"reviews": 49,
+"real": 445575,
+"score": 3.14,
+"ratings": 1589,
+"reviews": 52,
 "released": "2025-05-20",
 "updated": "2025-10-27",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1789982052707
+"fetched": 1793092890829
 },
 "com.tapfire.chameleonhide.paint": {
 "id": "com.tapfire.chameleonhide.paint",
@@ -252383,7 +253373,7 @@
 "dev": "tbgaming",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 123180,
+"real": 194499,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -252393,7 +253383,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589853483
+"fetched": 1793092672232
 },
 "com.tck.cambridge.exam.b1": {
 "id": "com.tck.cambridge.exam.b1",
@@ -252779,17 +253769,17 @@
 "dev": "Teapot Games",
 "genre": "GAME_SIMULATION",
 "installs": 5000000,
-"real": 9577548,
-"score": 4.4,
-"ratings": 49268,
-"reviews": 102,
+"real": 9809637,
+"score": 4.52,
+"ratings": 50487,
+"reviews": 104,
 "released": "2024-03-30",
 "updated": "2025-11-12",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590060108
+"fetched": 1793092882863
 },
 "com.teapotgames.jumbojetflightsimulator": {
 "id": "com.teapotgames.jumbojetflightsimulator",
@@ -255497,9 +256487,9 @@
 "dev": "Thetis Games and Flight Simulators",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 331534,
+"real": 333753,
 "score": 3.17,
-"ratings": 696,
+"ratings": 701,
 "reviews": 3,
 "released": "2017-08-31",
 "updated": "2025-12-16",
@@ -255507,7 +256497,25 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790676172599
+"fetched": 1793092957304
+},
+"com.thetisgames.googleplay.realrcflightsimulator2026": {
+"id": "com.thetisgames.googleplay.realrcflightsimulator2026",
+"title": "Gerçek RC Uçuş Simülatörü 2026",
+"dev": "Thetis Games and Flight Simulators",
+"genre": "GAME_SIMULATION",
+"installs": 50000,
+"real": 63689,
+"score": 2.17,
+"ratings": 117,
+"reviews": 5,
+"released": "2025-10-03",
+"updated": "2026-02-03",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092957259
 },
 "com.thetisgames.googleplay.simcopter.free": {
 "id": "com.thetisgames.googleplay.simcopter.free",
@@ -257417,6 +258425,24 @@
 "price": 0,
 "fetched": 1792486734060
 },
+"com.titisoftware.tractor.driving.simulator.real.games": {
+"id": "com.titisoftware.tractor.driving.simulator.real.games",
+"title": "Tractor Farm Driving Simulator",
+"dev": "Titi Software : Car Driving Simulator Games",
+"genre": "GAME_SIMULATION",
+"installs": 50000,
+"real": 51805,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-01-17",
+"updated": "2026-09-17",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092611414
+},
 "com.title.craft.puzzle.match": {
 "id": "com.title.craft.puzzle.match",
 "title": "Title Craft: Puzzle Match",
@@ -257981,17 +259007,17 @@
 "dev": "Toy Tap LLP",
 "genre": "GAME_EDUCATIONAL",
 "installs": 10000000,
-"real": 31931449,
-"score": 4.29,
-"ratings": 13786,
-"reviews": 57,
+"real": 32054499,
+"score": 4.27,
+"ratings": 13946,
+"reviews": 56,
 "released": "2020-02-06",
-"updated": "2025-10-15",
+"updated": "2026-10-15",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715760295
+"fetched": 1793092632278
 },
 "com.todo.list.schedule.reminder.task": {
 "id": "com.todo.list.schedule.reminder.task",
@@ -259817,25 +260843,25 @@
 "dev": "Skyloft Yazılım Bilişim ve Anonim Şirketi",
 "genre": "GAME_SIMULATION",
 "installs": 5000000,
-"real": 5093862,
-"score": 3.75,
-"ratings": 7744,
-"reviews": 72,
+"real": 5491011,
+"score": 3.67,
+"ratings": 8098,
+"reviews": 75,
 "released": "2025-05-26",
 "updated": "2026-08-26",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790153314121
+"fetched": 1793092585906
 },
 "com.tractor_farming_driver_simulator_game.Indian_Farming_Game_3D": {
 "id": "com.tractor_farming_driver_simulator_game.Indian_Farming_Game_3D",
 "title": "Indian Desi Farming Tractor 3D",
 "dev": "Pak World Technology",
 "genre": "GAME_SIMULATION",
-"installs": 100000,
-"real": 387756,
+"installs": 500000,
+"real": 556370,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -259845,7 +260871,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589848621
+"fetched": 1793092666922
 },
 "com.tractorsimulator.real.farming.games": {
 "id": "com.tractorsimulator.real.farming.games",
@@ -259907,17 +260933,17 @@
 "dev": "TRADEGAME Lab Inc.",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 454761,
+"real": 459382,
 "score": 3.39,
-"ratings": 3141,
+"ratings": 3145,
 "reviews": 48,
 "released": "2017-12-20",
-"updated": "2025-10-30",
+"updated": "2026-10-19",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590065761
+"fetched": 1793092919058
 },
 "com.trademaster.mobile": {
 "id": "com.trademaster.mobile",
@@ -260897,17 +261923,17 @@
 "dev": "Trifoil Trailblazer",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 5000,
-"real": 7565,
+"real": 8942,
 "score": null,
 "ratings": 0,
 "reviews": 0,
 "released": "2025-10-12",
-"updated": "2026-09-29",
+"updated": "2026-10-27",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790676209081
+"fetched": 1793092999080
 },
 "com.trifoiltrailblazer.ctrl_neck": {
 "id": "com.trifoiltrailblazer.ctrl_neck",
@@ -263015,6 +264041,24 @@
 "price": 0,
 "fetched": 1792486737879
 },
+"com.tugokapp.smokingtracker": {
+"id": "com.tugokapp.smokingtracker",
+"title": "Nefes: Sigarayı Bırak",
+"dev": "TuGok App",
+"genre": "HEALTH_AND_FITNESS",
+"installs": 10,
+"real": 42,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-10-17",
+"updated": "2026-10-18",
+"ads": true,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092951137
+},
 "com.tugokapp.waterreminder": {
 "id": "com.tugokapp.waterreminder",
 "title": "Su İçme Hatırlatıcısı",
@@ -263633,17 +264677,17 @@
 "dev": "Turktell Bilişim Servisleri A.Ş.",
 "genre": "FINANCE",
 "installs": 10000000,
-"real": 19901280,
+"real": 20029589,
 "score": 4.73,
-"ratings": 255503,
-"reviews": 76895,
+"ratings": 258665,
+"reviews": 77063,
 "released": "2017-08-15",
-"updated": "2026-09-08",
+"updated": "2026-10-22",
 "ads": false,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1791197128592
+"fetched": 1793092785028
 },
 "com.turkcell.sesplus": {
 "id": "com.turkcell.sesplus",
@@ -266765,7 +267809,7 @@
 "dev": "Unico Studio",
 "genre": "GAME_PUZZLE",
 "installs": 1000,
-"real": 3647,
+"real": 3683,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -266775,7 +267819,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589991751
+"fetched": 1793092808777
 },
 "com.unicogames.buspuzzle": {
 "id": "com.unicogames.buspuzzle",
@@ -269483,9 +270527,9 @@
 "dev": "Veewa Labs",
 "genre": "TOOLS",
 "installs": 100000,
-"real": 391845,
+"real": 396875,
 "score": 3.29,
-"ratings": 1646,
+"ratings": 1653,
 "reviews": 1,
 "released": "2021-07-11",
 "updated": "2026-06-25",
@@ -269493,7 +270537,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715795777
+"fetched": 1793092615087
 },
 "com.vehicles.coloringdodo": {
 "id": "com.vehicles.coloringdodo",
@@ -269663,9 +270707,9 @@
 "dev": "DictionaryAndTranslator",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 50000,
-"real": 91686,
-"score": 4.33,
-"ratings": 859,
+"real": 97440,
+"score": 4.43,
+"ratings": 883,
 "reviews": 2,
 "released": "2024-06-07",
 "updated": "2026-09-21",
@@ -269673,7 +270717,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589912974
+"fetched": 1793092715956
 },
 "com.verdadoreto2": {
 "id": "com.verdadoreto2",
@@ -276407,6 +277451,24 @@
 "price": 0,
 "fetched": 1792139885029
 },
+"com.willdev.passengerPanic": {
+"id": "com.willdev.passengerPanic",
+"title": "DEAR TRAVELLERS: Co-Op Chaos",
+"dev": "1Car2Wills Games",
+"genre": "GAME_SIMULATION",
+"installs": 5000,
+"real": 5810,
+"score": 4.8,
+"ratings": 96,
+"reviews": 8,
+"released": "2026-08-14",
+"updated": "2026-10-12",
+"ads": true,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092863081
+},
 "com.wilysis.cellinfo": {
 "id": "com.wilysis.cellinfo",
 "title": "Network Cell Info & Wifi",
@@ -277529,9 +278591,9 @@
 "dev": "Word Search Games",
 "genre": "EDUCATION",
 "installs": 100000,
-"real": 121918,
+"real": 127744,
 "score": 4.45,
-"ratings": 1527,
+"ratings": 1573,
 "reviews": 1,
 "released": "2024-12-20",
 "updated": "2026-07-22",
@@ -277539,7 +278601,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590034537
+"fetched": 1793092854864
 },
 "com.wordfarm.scapes": {
 "id": "com.wordfarm.scapes",
@@ -278105,9 +279167,9 @@
 "dev": "1der Sports",
 "genre": "GAME_SIMULATION",
 "installs": 500000,
-"real": 883905,
+"real": 902437,
 "score": 3.61,
-"ratings": 738,
+"ratings": 750,
 "reviews": 1,
 "released": "2025-07-21",
 "updated": "2026-04-09",
@@ -278115,7 +279177,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589992223
+"fetched": 1793092809796
 },
 "com.ws_studio.iphonekeyboard.iosemojis": {
 "id": "com.ws_studio.iphonekeyboard.iosemojis",
@@ -279347,9 +280409,9 @@
 "dev": "Xtreme Car Games",
 "genre": "GAME_RACING",
 "installs": 500000,
-"real": 642856,
+"real": 652498,
 "score": 3.14,
-"ratings": 740,
+"ratings": 746,
 "reviews": 2,
 "released": "2022-08-19",
 "updated": "2025-10-30",
@@ -279357,7 +280419,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589775334
+"fetched": 1793092572690
 },
 "com.xtremecar.hondacivic": {
 "id": "com.xtremecar.hondacivic",
@@ -279671,17 +280733,17 @@
 "dev": "Yahoo",
 "genre": "FINANCE",
 "installs": 10000000,
-"real": 25731180,
+"real": 26012006,
 "score": 4.44,
-"ratings": 243196,
+"ratings": 243634,
 "reviews": 165,
 "released": "2018-03-27",
-"updated": "2026-09-25",
+"updated": "2026-10-23",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589815784
+"fetched": 1793092621885
 },
 "com.yakit.hesaplayici": {
 "id": "com.yakit.hesaplayici",
@@ -279743,7 +280805,7 @@
 "dev": "BirthNet",
 "genre": "PRODUCTIVITY",
 "installs": 100,
-"real": 189,
+"real": 268,
 "score": 4.94,
 "ratings": 17,
 "reviews": 7,
@@ -279753,7 +280815,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790590072043
+"fetched": 1793092900198
 },
 "com.yalla.okey101yalla": {
 "id": "com.yalla.okey101yalla",
@@ -281471,17 +282533,17 @@
 "dev": "TOPYD LLC",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 100000,
-"real": 242622,
+"real": 246831,
 "score": 4.36,
-"ratings": 14603,
+"ratings": 14929,
 "reviews": 2,
 "released": "2023-07-03",
-"updated": "2026-09-02",
+"updated": "2026-10-23",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790676143037
+"fetched": 1793092930190
 },
 "com.yirmidortsaatteis.app": {
 "id": "com.yirmidortsaatteis.app",
@@ -285503,17 +286565,17 @@
 "dev": "Zoho Corporation",
 "genre": "BUSINESS",
 "installs": 1000000,
-"real": 1437950,
+"real": 1447693,
 "score": 4.62,
-"ratings": 37746,
+"ratings": 38049,
 "reviews": 2,
 "released": "2016-02-15",
-"updated": "2026-08-20",
+"updated": "2026-10-13",
 "ads": false,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1789715849676
+"fetched": 1793092739572
 },
 "com.zoho.meeting": {
 "id": "com.zoho.meeting",
@@ -285701,17 +286763,17 @@
 "dev": "Game Ocean Technology Limited",
 "genre": "GAME_ACTION",
 "installs": 10000000,
-"real": 32407856,
+"real": 32493100,
 "score": 4.75,
-"ratings": 191018,
-"reviews": 673,
+"ratings": 191336,
+"reviews": 672,
 "released": "2021-05-13",
 "updated": "2025-10-21",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790676223031
+"fetched": 1793093009129
 },
 "com.zombodroid.videogifmemepaidgplay": {
 "id": "com.zombodroid.videogifmemepaidgplay",
@@ -286270,6 +287332,24 @@
 "free": true,
 "price": 0,
 "fetched": 1791714148293
+},
+"com.zwh.ai.gif.enhancer.app": {
+"id": "com.zwh.ai.gif.enhancer.app",
+"title": "AI GIF Yapıcı & Editör: GIFix",
+"dev": "zwh.tec",
+"genre": "TOOLS",
+"installs": 500,
+"real": 553,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-08-13",
+"updated": "2026-08-20",
+"ads": false,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092766632
 },
 "com.zwh.gif.background.eraser.app": {
 "id": "com.zwh.gif.background.eraser.app",
@@ -288473,17 +289553,17 @@
 "dev": "Billdu LTD",
 "genre": "BUSINESS",
 "installs": 500000,
-"real": 536613,
+"real": 548487,
 "score": 4.56,
-"ratings": 14307,
+"ratings": 14583,
 "reviews": 5,
 "released": "2017-06-07",
-"updated": "2026-08-28",
+"updated": "2026-09-29",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589936020
+"fetched": 1793092739577
 },
 "de.ml.myhousemeters": {
 "id": "de.ml.myhousemeters",
@@ -288959,17 +290039,17 @@
 "dev": "Tim Frölich",
 "genre": "SHOPPING",
 "installs": 1000,
-"real": 2334,
+"real": 2539,
 "score": null,
 "ratings": 0,
 "reviews": 0,
 "released": "2025-07-24",
-"updated": "2026-07-28",
+"updated": "2026-09-26",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715861169
+"fetched": 1793092577804
 },
 "de.truckscout24.app": {
 "id": "de.truckscout24.app",
@@ -290543,17 +291623,17 @@
 "dev": "Webtoweb",
 "genre": "WEATHER",
 "installs": 100000,
-"real": 168373,
-"score": 4.31,
-"ratings": 5470,
-"reviews": 44,
+"real": 186488,
+"score": 4.26,
+"ratings": 5929,
+"reviews": 45,
 "released": "2024-11-25",
-"updated": "2026-10-02",
+"updated": "2026-10-05",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1791197258825
+"fetched": 1793092685362
 },
 "easy.killer.sudoku.puzzle.solver.free": {
 "id": "easy.killer.sudoku.puzzle.solver.free",
@@ -291443,17 +292523,17 @@
 "dev": "GOWOD",
 "genre": "SPORTS",
 "installs": 500000,
-"real": 753890,
-"score": 4.69,
-"ratings": 6559,
-"reviews": 8,
+"real": 763249,
+"score": 4.59,
+"ratings": 6580,
+"reviews": 9,
 "released": "2018-03-04",
 "updated": "2026-09-23",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1791108218872
+"fetched": 1793092727421
 },
 "eu.inlogic.footballcup2018.gplay": {
 "id": "eu.inlogic.footballcup2018.gplay",
@@ -291995,6 +293075,24 @@
 "price": 0,
 "fetched": 1790153308772
 },
+"farmerkit.tractor.harvester": {
+"id": "farmerkit.tractor.harvester",
+"title": "FarmerKit: Tractor & Harvester",
+"dev": "Go Prachi Labs",
+"genre": "TOOLS",
+"installs": 10000,
+"real": 11073,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-10-06",
+"updated": "2026-10-12",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092701503
+},
 "fashion.avatar.vlinder.princess.shining.anime.star.dressupgames": {
 "id": "fashion.avatar.vlinder.princess.shining.anime.star.dressupgames",
 "title": "Anime Giydirme Oyunları: bebek",
@@ -292109,7 +293207,7 @@
 "dev": "Dsec Apps Brasil",
 "genre": "TOOLS",
 "installs": 100000,
-"real": 218777,
+"real": 240240,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -292119,7 +293217,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589796445
+"fetched": 1793092595449
 },
 "fc.admin.fcexpressadmin": {
 "id": "fc.admin.fcexpressadmin",
@@ -292163,17 +293261,17 @@
 "dev": "Fun Finny Games",
 "genre": "GAME_SIMULATION",
 "installs": 1000000,
-"real": 1429925,
-"score": 3.38,
-"ratings": 1209,
-"reviews": 22,
+"real": 1452720,
+"score": 3.35,
+"ratings": 1222,
+"reviews": 21,
 "released": "2021-06-23",
 "updated": "2026-04-28",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589798173
+"fetched": 1793092596912
 },
 "fi.Pepperbox.DiceOfKalma": {
 "id": "fi.Pepperbox.DiceOfKalma",
@@ -298031,17 +299129,17 @@
 "dev": "Gulooloo Tech Co., Ltd.",
 "genre": "BUSINESS",
 "installs": 1000000,
-"real": 4731949,
-"score": 4.84,
-"ratings": 61475,
+"real": 4869214,
+"score": 4.85,
+"ratings": 64715,
 "reviews": 7,
 "released": "2021-01-29",
-"updated": "2026-09-11",
+"updated": "2026-10-16",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715905646
+"fetched": 1793092740070
 },
 "invoice.maker.simple.generator": {
 "id": "invoice.maker.simple.generator",
@@ -298049,17 +299147,17 @@
 "dev": "ZARNIKS AIO",
 "genre": "BUSINESS",
 "installs": 50000,
-"real": 58063,
-"score": 4.82,
-"ratings": 3027,
+"real": 90056,
+"score": 4.72,
+"ratings": 4254,
 "reviews": 1,
 "released": "2026-04-10",
-"updated": "2026-08-23",
+"updated": "2026-10-21",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589936025
+"fetched": 1793092740075
 },
 "io.analog.sports.ana": {
 "id": "io.analog.sports.ana",
@@ -299111,17 +300209,17 @@
 "dev": "Alarm Clock for Heavy Sleepers by Team SuperAlarm",
 "genre": "PRODUCTIVITY",
 "installs": 100000,
-"real": 262905,
-"score": 4.11,
-"ratings": 1844,
-"reviews": 8,
+"real": 323051,
+"score": 4.4,
+"ratings": 2244,
+"reviews": 12,
 "released": "2024-05-01",
-"updated": "2026-09-03",
+"updated": "2026-10-23",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789714129221
+"fetched": 1793092559935
 },
 "io.pixelteam.imsolochat": {
 "id": "io.pixelteam.imsolochat",
@@ -300245,17 +301343,17 @@
 "dev": "RORTOS",
 "genre": "GAME_SIMULATION",
 "installs": 10000000,
-"real": 14526669,
-"score": 3.84,
-"ratings": 139497,
-"reviews": 2893,
+"real": 14563799,
+"score": 3.87,
+"ratings": 139363,
+"reviews": 2880,
 "released": "2015-11-07",
-"updated": "2026-02-23",
+"updated": "2026-10-19",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590059951
+"fetched": 1793092882321
 },
 "it.rortos.extremelandings": {
 "id": "it.rortos.extremelandings",
@@ -300281,9 +301379,9 @@
 "dev": "RORTOS",
 "genre": "GAME_SIMULATION",
 "installs": 500000,
-"real": 584699,
-"score": 4.48,
-"ratings": 10364,
+"real": 593804,
+"score": 4.46,
+"ratings": 10388,
 "reviews": 110,
 "released": "2014-08-21",
 "updated": "2026-08-18",
@@ -300291,7 +301389,25 @@
 "iap": false,
 "free": false,
 "price": 329.99,
-"fetched": 1790676203337
+"fetched": 1793092923342
+},
+"it.rortos.f18carrierlandingii": {
+"id": "it.rortos.f18carrierlandingii",
+"title": "Carrier Landings",
+"dev": "RORTOS",
+"genre": "GAME_SIMULATION",
+"installs": 5000000,
+"real": 6492020,
+"score": 3.64,
+"ratings": 132430,
+"reviews": 1837,
+"released": "2014-07-11",
+"updated": "2026-08-06",
+"ads": true,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092995845
 },
 "it.rortos.rcs": {
 "id": "it.rortos.rcs",
@@ -300299,17 +301415,17 @@
 "dev": "RORTOS",
 "genre": "GAME_SIMULATION",
 "installs": 100000,
-"real": 166451,
-"score": 3.58,
-"ratings": 1270,
-"reviews": 60,
+"real": 168366,
+"score": 3.61,
+"ratings": 1303,
+"reviews": 62,
 "released": "2025-10-07",
 "updated": "2026-09-28",
 "ads": false,
 "iap": true,
 "free": false,
 "price": 2.99,
-"fetched": 1790676139284
+"fetched": 1793092957776
 },
 "it.rortos.realflight": {
 "id": "it.rortos.realflight",
@@ -300353,17 +301469,17 @@
 "dev": "HCILabUdine",
 "genre": "GAME_SIMULATION",
 "installs": 10000000,
-"real": 15606938,
-"score": 4.29,
-"ratings": 83380,
-"reviews": 727,
+"real": 15644496,
+"score": 4.24,
+"ratings": 83348,
+"reviews": 725,
 "released": "2016-03-16",
 "updated": "2026-01-27",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790676140670
+"fetched": 1793092924555
 },
 "it.xeniasoft.clubmanagerpro": {
 "id": "it.xeniasoft.clubmanagerpro",
@@ -300695,17 +301811,17 @@
 "dev": "Starnest JSC",
 "genre": "PRODUCTIVITY",
 "installs": 10000000,
-"real": 14197653,
-"score": 4.6,
-"ratings": 222380,
-"reviews": 784,
+"real": 14642671,
+"score": 4.64,
+"ratings": 229894,
+"reviews": 812,
 "released": "2024-01-23",
-"updated": "2026-09-26",
+"updated": "2026-10-27",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589962903
+"fetched": 1793092771463
 },
 "jp.Appsys.PanecalSTPlus": {
 "id": "jp.Appsys.PanecalSTPlus",
@@ -302567,17 +303683,17 @@
 "dev": "Smart Tools co.",
 "genre": "TOOLS",
 "installs": 50000,
-"real": 74893,
-"score": 4.6,
-"ratings": 2771,
-"reviews": 5,
+"real": 75380,
+"score": 4.64,
+"ratings": 2783,
+"reviews": 6,
 "released": "2013-12-23",
-"updated": "2026-05-07",
+"updated": "2026-10-12",
 "ads": false,
 "iap": false,
 "free": false,
 "price": 135,
-"fetched": 1789715923238
+"fetched": 1793092615561
 },
 "kr.co.alohacorp.BlasttheGiant": {
 "id": "kr.co.alohacorp.BlasttheGiant",
@@ -302891,17 +304007,17 @@
 "dev": "Smart Tools co.",
 "genre": "TOOLS",
 "installs": 10000000,
-"real": 17872334,
+"real": 17902698,
 "score": 4.37,
-"ratings": 222068,
-"reviews": 503,
+"ratings": 222070,
+"reviews": 504,
 "released": "2013-11-18",
-"updated": "2026-07-24",
+"updated": "2026-10-01",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1789715925756
+"fetched": 1793092615082
 },
 "krd.icode.zuzu.users": {
 "id": "krd.icode.zuzu.users",
@@ -305177,17 +306293,17 @@
 "dev": "Medito for Mindfulness, Meditation and Sleep",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 1000000,
-"real": 2790888,
-"score": 4.84,
-"ratings": 40945,
+"real": 2821907,
+"score": 4.86,
+"ratings": 41127,
 "reviews": 177,
 "released": "2020-04-14",
-"updated": "2026-08-27",
+"updated": "2026-10-20",
 "ads": false,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1789715933556
+"fetched": 1793092928444
 },
 "mega.easy.obby": {
 "id": "mega.easy.obby",
@@ -306563,17 +307679,17 @@
 "dev": "CareClinic Tracker & Reminder",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 5000,
-"real": 6348,
+"real": 6449,
 "score": null,
 "ratings": 0,
 "reviews": 0,
 "released": "2023-04-21",
-"updated": "2026-09-12",
+"updated": "2026-09-24",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715940025
+"fetched": 1793092999615
 },
 "moodtracker.selfcare.habittracker.mentalhealth": {
 "id": "moodtracker.selfcare.habittracker.mentalhealth",
@@ -307319,9 +308435,9 @@
 "dev": "My Town Games Ltd",
 "genre": "GAME_EDUCATIONAL",
 "installs": 10000000,
-"real": 21085537,
-"score": 4.21,
-"ratings": 74074,
+"real": 21107371,
+"score": 4.2,
+"ratings": 74092,
 "reviews": 1021,
 "released": "2021-05-18",
 "updated": "2026-08-18",
@@ -307329,7 +308445,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790590029030
+"fetched": 1793092851871
 },
 "mytown.daycare": {
 "id": "mytown.daycare",
@@ -308453,9 +309569,9 @@
 "dev": "Futasaji LLC",
 "genre": "MEDICAL",
 "installs": 100000,
-"real": 428931,
-"score": 4.72,
-"ratings": 4563,
+"real": 442363,
+"score": 4.71,
+"ratings": 4722,
 "reviews": 26,
 "released": "2021-02-04",
 "updated": "2025-10-28",
@@ -308463,7 +309579,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715950741
+"fetched": 1793092792469
 },
 "net.gamerhook.games.pisti": {
 "id": "net.gamerhook.games.pisti",
@@ -308956,8 +310072,8 @@
 "title": "İnternetsiz Diyet Tarifleri",
 "dev": "İlkharf Apps Games",
 "genre": "FOOD_AND_DRINK",
-"installs": 50,
-"real": 57,
+"installs": 500,
+"real": 805,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -308967,7 +310083,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790589866152
+"fetched": 1793092691384
 },
 "net.ilkharf.easypastryrecipes": {
 "id": "net.ilkharf.easypastryrecipes",
@@ -309101,9 +310217,9 @@
 "dev": "İlkharf Apps Games",
 "genre": "FOOD_AND_DRINK",
 "installs": 100000,
-"real": 126278,
+"real": 126539,
 "score": 4.47,
-"ratings": 111,
+"ratings": 112,
 "reviews": 25,
 "released": "2017-06-15",
 "updated": "2026-09-02",
@@ -309111,7 +310227,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1789715955330
+"fetched": 1793092669346
 },
 "net.ilkharf.pastatarifleri": {
 "id": "net.ilkharf.pastatarifleri",
@@ -309238,6 +310354,24 @@
 "free": true,
 "price": 0,
 "fetched": 1791456973381
+},
+"net.islami.sohbetler.islami_sohbetler": {
+"id": "net.islami.sohbetler.islami_sohbetler",
+"title": "İslami Sohbetler: Tilavetler",
+"dev": "Nur Yolu Platformu",
+"genre": "LIFESTYLE",
+"installs": 100,
+"real": 426,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-04-13",
+"updated": "2026-06-12",
+"ads": false,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793092817762
 },
 "net.kairosoft.android.basket": {
 "id": "net.kairosoft.android.basket",
@@ -309622,18 +310756,18 @@
 "title": "Masal Perisi: Masal Oku/Dinle",
 "dev": "Masalokur.net",
 "genre": "EDUCATION",
-"installs": 100,
-"real": 224,
-"score": null,
-"ratings": 0,
-"reviews": 0,
+"installs": 500,
+"real": 694,
+"score": 4.2,
+"ratings": 5,
+"reviews": 4,
 "released": "2026-08-27",
 "updated": "2026-08-27",
 "ads": true,
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790676129611
+"fetched": 1793092914705
 },
 "net.meddeb.kaaabacompass": {
 "id": "net.meddeb.kaaabacompass",
@@ -310433,17 +311567,17 @@
 "dev": "Maple Media",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 5000000,
-"real": 8425848,
+"real": 8484843,
 "score": 4.13,
-"ratings": 48637,
-"reviews": 411,
+"ratings": 48664,
+"reviews": 410,
 "released": "2016-09-09",
 "updated": "2026-03-26",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789715959819
+"fetched": 1793092608407
 },
 "net.relaxio.sleepo": {
 "id": "net.relaxio.sleepo",
@@ -313523,6 +314657,24 @@
 "price": 0,
 "fetched": 1792311879903
 },
+"org.howwefeel.moodmeter": {
+"id": "org.howwefeel.moodmeter",
+"title": "How We Feel",
+"dev": "The How We Feel Project, Inc.",
+"genre": "HEALTH_AND_FITNESS",
+"installs": 500000,
+"real": 841516,
+"score": 4.74,
+"ratings": 4332,
+"reviews": 23,
+"released": "2023-05-01",
+"updated": "2026-10-20",
+"ads": false,
+"iap": false,
+"free": true,
+"price": 0,
+"fetched": 1793093000111
+},
 "org.hritik.miniplayer": {
 "id": "org.hritik.miniplayer",
 "title": "Mini Player: HD Video Player",
@@ -315365,17 +316517,17 @@
 "dev": "Timo Partl",
 "genre": "LIFESTYLE",
 "installs": 500000,
-"real": 789828,
-"score": 4.65,
-"ratings": 22401,
-"reviews": 55,
+"real": 808718,
+"score": 4.66,
+"ratings": 22767,
+"reviews": 54,
 "released": "2017-09-04",
-"updated": "2026-09-25",
+"updated": "2026-10-11",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589961149
+"fetched": 1793092771125
 },
 "partl.atomicclock": {
 "id": "partl.atomicclock",
@@ -316222,6 +317374,24 @@
 "free": true,
 "price": 0,
 "fetched": 1792573006674
+},
+"photo.video.gif.maker.creator": {
+"id": "photo.video.gif.maker.creator",
+"title": "GIF Yapma: Video to GIF Editor",
+"dev": "HyperMind Ltd.",
+"genre": "VIDEO_PLAYERS",
+"installs": 50,
+"real": 50,
+"score": null,
+"ratings": 0,
+"reviews": 0,
+"released": "2026-10-20",
+"updated": "2026-10-20",
+"ads": false,
+"iap": true,
+"free": true,
+"price": 0,
+"fetched": 1793092766587
 },
 "photocollage.photoeditor.collagemaker": {
 "id": "photocollage.photoeditor.collagemaker",
@@ -317363,7 +318533,7 @@
 "dev": "Mystic Mage Studios",
 "genre": "GAME_PUZZLE",
 "installs": 5000,
-"real": 8051,
+"real": 8332,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -317373,7 +318543,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790590015930
+"fetched": 1793092831936
 },
 "planner.task.todolist.habit": {
 "id": "planner.task.todolist.habit",
@@ -318767,7 +319937,7 @@
 "dev": "Riafy Technologies",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 10000,
-"real": 25191,
+"real": 25472,
 "score": null,
 "ratings": 0,
 "reviews": 0,
@@ -318777,7 +319947,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789713201689
+"fetched": 1793092691397
 },
 "recorder.screenrecorder.videoeditor": {
 "id": "recorder.screenrecorder.videoeditor",
@@ -321575,17 +322745,17 @@
 "dev": "Webtoweb",
 "genre": "SHOPPING",
 "installs": 10000,
-"real": 24548,
+"real": 29220,
 "score": 4.85,
-"ratings": 640,
+"ratings": 726,
 "reviews": 2,
 "released": "2025-11-19",
-"updated": "2026-08-24",
+"updated": "2026-10-26",
 "ads": true,
-"iap": false,
+"iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789716024116
+"fetched": 1793092577346
 },
 "shortvideo.vertical.video.player": {
 "id": "shortvideo.vertical.video.player",
@@ -322439,9 +323609,9 @@
 "dev": "Guru Puzzle Game",
 "genre": "GAME_CARD",
 "installs": 1000000,
-"real": 3787773,
-"score": 4.88,
-"ratings": 90004,
+"real": 3918901,
+"score": 4.89,
+"ratings": 92397,
 "reviews": 18,
 "released": "2023-01-13",
 "updated": "2026-08-13",
@@ -322449,7 +323619,7 @@
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1790589987484
+"fetched": 1793092804658
 },
 "solitaire.game.math.number": {
 "id": "solitaire.game.math.number",
@@ -322835,17 +324005,17 @@
 "dev": "Battery Stats Saver",
 "genre": "TOOLS",
 "installs": 1000000,
-"real": 4848338,
-"score": 4.53,
-"ratings": 62730,
-"reviews": 112,
+"real": 4953228,
+"score": 4.5,
+"ratings": 63660,
+"reviews": 114,
 "released": "2022-03-29",
 "updated": "2025-12-23",
 "ads": true,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1791197312266
+"fetched": 1793092797255
 },
 "spin.wheel.random.name.picker": {
 "id": "spin.wheel.random.name.picker",
@@ -325733,9 +326903,9 @@
 "dev": "Atlas Yazılım & Bilişim",
 "genre": "TRAVEL_AND_LOCAL",
 "installs": 1000000,
-"real": 1239575,
-"score": 4.45,
-"ratings": 9475,
+"real": 1243602,
+"score": 4.42,
+"ratings": 9502,
 "reviews": 1789,
 "released": "2013-07-19",
 "updated": "2026-09-24",
@@ -325743,7 +326913,7 @@
 "iap": false,
 "free": true,
 "price": 0,
-"fetched": 1790676153539
+"fetched": 1793092941806
 },
 "tr.com.milleni.app": {
 "id": "tr.com.milleni.app",
@@ -328289,17 +329459,17 @@
 "dev": "Olson Meditation and Mindfulness Apps",
 "genre": "HEALTH_AND_FITNESS",
 "installs": 1000000,
-"real": 2503028,
+"real": 2512255,
 "score": 4.77,
-"ratings": 54870,
+"ratings": 54925,
 "reviews": 33,
 "released": "2018-08-30",
-"updated": "2026-07-24",
+"updated": "2026-10-05",
 "ads": false,
 "iap": true,
 "free": true,
 "price": 0,
-"fetched": 1789716052358
+"fetched": 1793092929057
 },
 "uk.co.twowaymedia.lingo": {
 "id": "uk.co.twowaymedia.lingo",
