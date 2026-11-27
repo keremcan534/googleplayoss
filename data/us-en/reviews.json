@@ -99,10 +99,10 @@
 "content": 0
 },
 "ai.photo.enhancer.photoclear": {
-"t": 1793180975334,
+"t": 1795783192937,
 "n": 100,
-"neg": 0.16,
-"any": 0.05,
+"neg": 0.2,
+"any": 0.06,
 "ads": 0.05,
 "pay": 0.01,
 "content": 0
@@ -144,9 +144,9 @@
 "content": 0
 },
 "air.cbn.superbook.bible.app.android": {
-"t": 1793181028967,
+"t": 1795783205767,
 "n": 100,
-"neg": 0.16,
+"neg": 0.11,
 "any": 0,
 "ads": 0,
 "pay": 0,
@@ -459,12 +459,12 @@
 "content": 0
 },
 "app.SubscriptionStopper": {
-"t": 1793180956964,
+"t": 1795783208889,
 "n": 100,
 "neg": 0.43,
 "any": 0.12,
-"ads": 0,
-"pay": 0.12,
+"ads": 0.01,
+"pay": 0.11,
 "content": 0
 },
 "app.artworkout.learn.how.to.draw": {
@@ -765,12 +765,12 @@
 "content": 0
 },
 "br.com.ctncardoso.ctncar": {
-"t": 1793180936363,
+"t": 1795783181871,
 "n": 100,
-"neg": 0.49,
-"any": 0.3,
-"ads": 0.15,
-"pay": 0.24,
+"neg": 0.47,
+"any": 0.26,
+"ads": 0.14,
+"pay": 0.22,
 "content": 0
 },
 "br.com.rodrigokolb.realguitar": {
@@ -810,11 +810,11 @@
 "content": 0
 },
 "ca.hyperhippo.adventureages": {
-"t": 1793180949559,
+"t": 1795783198961,
 "n": 100,
-"neg": 0.73,
-"any": 0.39,
-"ads": 0.32,
+"neg": 0.72,
+"any": 0.38,
+"ads": 0.31,
 "pay": 0.06,
 "content": 0.04
 },
@@ -846,7 +846,7 @@
 "content": 0
 },
 "ch.appilis.brain.android": {
-"t": 1793180944040,
+"t": 1795783188635,
 "n": 100,
 "neg": 0.08,
 "any": 0,
@@ -972,12 +972,12 @@
 "content": 0
 },
 "coloring.color.number.happy.paint.art.drawing.puzzle": {
-"t": 1793181000102,
+"t": 1795783212251,
 "n": 100,
 "neg": 0.54,
-"any": 0.37,
-"ads": 0.36,
-"pay": 0.04,
+"any": 0.29,
+"ads": 0.28,
+"pay": 0.03,
 "content": 0
 },
 "colorwidgets.ios.widget.topwidgets": {
@@ -1794,9 +1794,9 @@
 "content": 0.02
 },
 "com.Seriously.BestFiends": {
-"t": 1793180996523,
+"t": 1795783193961,
 "n": 100,
-"neg": 0.23,
+"neg": 0.22,
 "any": 0.05,
 "ads": 0.05,
 "pay": 0,
@@ -1956,9 +1956,9 @@
 "content": 0
 },
 "com.ThreeBoots": {
-"t": 1793180951146,
+"t": 1795783199537,
 "n": 100,
-"neg": 0.29,
+"neg": 0.28,
 "any": 0.05,
 "ads": 0,
 "pay": 0.05,
@@ -2163,12 +2163,12 @@
 "content": 0
 },
 "com.adobe.psmobile": {
-"t": 1793180965467,
+"t": 1795783191320,
 "n": 100,
-"neg": 0.27,
-"any": 0.04,
-"ads": 0.01,
-"pay": 0.04,
+"neg": 0.28,
+"any": 0.07,
+"ads": 0,
+"pay": 0.07,
 "content": 0
 },
 "com.adobe.reader": {
@@ -2271,13 +2271,13 @@
 "content": 0
 },
 "com.aidungeon": {
-"t": 1793180939314,
+"t": 1795783197944,
 "n": 100,
-"neg": 0.19,
+"neg": 0.24,
 "any": 0.05,
 "ads": 0.01,
 "pay": 0.04,
-"content": 0
+"content": 0.01
 },
 "com.aigrind.warspear": {
 "t": 1793876782992,
@@ -2586,7 +2586,7 @@
 "content": 0
 },
 "com.and.games505.puzzlequest3": {
-"t": 1793180955717,
+"t": 1795783189803,
 "n": 100,
 "neg": 0.32,
 "any": 0.05,
@@ -3166,9 +3166,9 @@
 "content": 0.03
 },
 "com.bandainamcoent.dblegends_ww": {
-"t": 1793180993323,
+"t": 1795783204697,
 "n": 100,
-"neg": 0.33,
+"neg": 0.53,
 "any": 0.08,
 "ads": 0.01,
 "pay": 0.07,
@@ -3463,12 +3463,12 @@
 "content": 0
 },
 "com.bimiboo.kids.cooking.games": {
-"t": 1793180945971,
+"t": 1795783182464,
 "n": 100,
-"neg": 0.41,
-"any": 0.2,
+"neg": 0.38,
+"any": 0.19,
 "ads": 0.04,
-"pay": 0.19,
+"pay": 0.18,
 "content": 0
 },
 "com.bimiboo.kids.drawing": {
@@ -3544,12 +3544,12 @@
 "content": 0
 },
 "com.bk.videotogif": {
-"t": 1793180934965,
+"t": 1795783181253,
 "n": 100,
-"neg": 0.25,
-"any": 0.09,
-"ads": 0.07,
-"pay": 0.02,
+"neg": 0.24,
+"any": 0.12,
+"ads": 0.09,
+"pay": 0.04,
 "content": 0
 },
 "com.blackout.bubble": {
@@ -3823,13 +3823,13 @@
 "content": 0
 },
 "com.budgestudios.BarbieMagicalFashion": {
-"t": 1793180986220,
+"t": 1795783203086,
 "n": 100,
-"neg": 0.36,
-"any": 0.11,
+"neg": 0.34,
+"any": 0.09,
 "ads": 0.02,
-"pay": 0.07,
-"content": 0.03
+"pay": 0.06,
+"content": 0.02
 },
 "com.budgestudios.HelloKittyLunchBox": {
 "t": 1794916831427,
@@ -3985,7 +3985,7 @@
 "content": 0
 },
 "com.camerasideas.trimmer": {
-"t": 1793180968439,
+"t": 1795783183991,
 "n": 100,
 "neg": 0.04,
 "any": 0,
@@ -4012,13 +4012,13 @@
 "content": 0
 },
 "com.candywriter.bitlife": {
-"t": 1793181006329,
+"t": 1795783179650,
 "n": 100,
-"neg": 0.48,
-"any": 0.23,
-"ads": 0.17,
+"neg": 0.4,
+"any": 0.24,
+"ads": 0.18,
 "pay": 0.1,
-"content": 0
+"content": 0.02
 },
 "com.canva.editor": {
 "t": 1795528417847,
@@ -4195,12 +4195,12 @@
 "content": 0.01
 },
 "com.cetinkaya.time_balance": {
-"t": 1793180955079,
+"t": 1795783208215,
 "n": 100,
-"neg": 0.15,
-"any": 0.02,
+"neg": 0.16,
+"any": 0.01,
 "ads": 0,
-"pay": 0.02,
+"pay": 0.01,
 "content": 0
 },
 "com.cg.football": {
@@ -4483,12 +4483,12 @@
 "content": 0.01
 },
 "com.coffeebeanventures.easyvoicerecorder": {
-"t": 1793180988074,
+"t": 1795783203606,
 "n": 100,
-"neg": 0.06,
-"any": 0,
-"ads": 0,
-"pay": 0,
+"neg": 0.14,
+"any": 0.04,
+"ads": 0.03,
+"pay": 0.01,
 "content": 0
 },
 "com.coin.merge.fuse": {
@@ -4855,13 +4855,13 @@
 "content": 0
 },
 "com.crowdstar.covetHome": {
-"t": 1793180994554,
+"t": 1795783185082,
 "n": 100,
-"neg": 0.36,
-"any": 0.12,
-"ads": 0,
-"pay": 0.12,
-"content": 0
+"neg": 0.28,
+"any": 0.07,
+"ads": 0.01,
+"pay": 0.04,
+"content": 0.02
 },
 "com.crowdstar.covetfashion": {
 "t": 1793790303654,
@@ -4936,9 +4936,9 @@
 "content": 0
 },
 "com.cxinventor.file.explorer": {
-"t": 1793181020828,
+"t": 1795783205262,
 "n": 100,
-"neg": 0.12,
+"neg": 0.06,
 "any": 0,
 "ads": 0,
 "pay": 0,
@@ -5188,9 +5188,9 @@
 "content": 0
 },
 "com.deviloper.dungeon.adventure.card.battle.survival": {
-"t": 1793180961632,
-"n": 68,
-"neg": 0.57,
+"t": 1795783190308,
+"n": 71,
+"neg": 0.58,
 "any": 0.41,
 "ads": 0.32,
 "pay": 0.1,
@@ -5332,12 +5332,12 @@
 "content": 0.02
 },
 "com.dogbytegames.offtheroad": {
-"t": 1793180979563,
+"t": 1795783211152,
 "n": 100,
-"neg": 0.15,
+"neg": 0.13,
 "any": 0.01,
-"ads": 0,
-"pay": 0.01,
+"ads": 0.01,
+"pay": 0,
 "content": 0
 },
 "com.dogbytegames.zombiesafari": {
@@ -5755,12 +5755,12 @@
 "content": 0
 },
 "com.ea.gp.pvzheroes": {
-"t": 1793181010850,
+"t": 1795783212786,
 "n": 100,
-"neg": 0.73,
-"any": 0.15,
-"ads": 0.05,
-"pay": 0.09,
+"neg": 0.71,
+"any": 0.18,
+"ads": 0.1,
+"pay": 0.07,
 "content": 0.01
 },
 "com.eapublishing.dhsw.free": {
@@ -6110,12 +6110,12 @@
 "n": 0
 },
 "com.enflick.android.TextNow": {
-"t": 1793180977133,
+"t": 1795783193449,
 "n": 100,
-"neg": 0.38,
-"any": 0.11,
-"ads": 0.07,
-"pay": 0.07,
+"neg": 0.43,
+"any": 0.14,
+"ads": 0.11,
+"pay": 0.05,
 "content": 0
 },
 "com.englishto.spanish.translator": {
@@ -6128,9 +6128,9 @@
 "content": 0
 },
 "com.epicgames.fortnite": {
-"t": 1793181029483,
+"t": 1795783180182,
 "n": 100,
-"neg": 0.32,
+"neg": 0.16,
 "any": 0,
 "ads": 0,
 "pay": 0,
@@ -6659,13 +6659,13 @@
 "content": 0
 },
 "com.fitnow.loseit": {
-"t": 1793180892586,
+"t": 1795783175844,
 "n": 100,
-"neg": 0.33,
-"any": 0.14,
-"ads": 0.05,
-"pay": 0.11,
-"content": 0.01
+"neg": 0.44,
+"any": 0.2,
+"ads": 0.08,
+"pay": 0.16,
+"content": 0
 },
 "com.flaregames.nonstop.action.rpg": {
 "t": 1794482782000,
@@ -6731,12 +6731,12 @@
 "content": 0
 },
 "com.foodient.whisk": {
-"t": 1793180942222,
+"t": 1795783198427,
 "n": 100,
-"neg": 0.34,
+"neg": 0.38,
 "any": 0.04,
-"ads": 0.02,
-"pay": 0.01,
+"ads": 0.01,
+"pay": 0.02,
 "content": 0.01
 },
 "com.football.quiz.trivia": {
@@ -6758,12 +6758,12 @@
 "content": 0.01
 },
 "com.fortune.apps.countereasy": {
-"t": 1793180953053,
+"t": 1795783200670,
 "n": 100,
-"neg": 0.03,
-"any": 0.02,
+"neg": 0.05,
+"any": 0.03,
 "ads": 0.02,
-"pay": 0,
+"pay": 0.01,
 "content": 0
 },
 "com.fourtechnologies.mynetdiary.ad": {
@@ -7099,6 +7099,15 @@
 "pay": 0,
 "content": 0.01
 },
+"com.game.missioncrit": {
+"t": 1795783218753,
+"n": 100,
+"neg": 0.25,
+"any": 0.06,
+"ads": 0.05,
+"pay": 0.01,
+"content": 0
+},
 "com.game.space.shooter2": {
 "t": 1793354969071,
 "n": 100,
@@ -7199,9 +7208,9 @@
 "content": 0.03
 },
 "com.gamee.kingdoms.survivor.io": {
-"t": 1793180951907,
+"t": 1795783200116,
 "n": 100,
-"neg": 0.32,
+"neg": 0.33,
 "any": 0.1,
 "ads": 0.1,
 "pay": 0.01,
@@ -7280,9 +7289,9 @@
 "content": 0
 },
 "com.gameloft.android.ANMP.Gloft5DHM": {
-"t": 1793180887544,
+"t": 1795783206365,
 "n": 100,
-"neg": 0.38,
+"neg": 0.39,
 "any": 0.06,
 "ads": 0.02,
 "pay": 0.04,
@@ -7442,11 +7451,11 @@
 "content": 0
 },
 "com.gamovation.tileclub": {
-"t": 1793180972153,
+"t": 1795783216771,
 "n": 100,
-"neg": 0.14,
-"any": 0.04,
-"ads": 0.04,
+"neg": 0.12,
+"any": 0.01,
+"ads": 0.01,
 "pay": 0,
 "content": 0
 },
@@ -7865,13 +7874,13 @@
 "content": 0
 },
 "com.google.android.apps.fitness": {
-"t": 1793180963611,
+"t": 1795783190841,
 "n": 100,
-"neg": 0.43,
-"any": 0.01,
+"neg": 0.48,
+"any": 0.02,
 "ads": 0.01,
-"pay": 0,
-"content": 0
+"pay": 0.01,
+"content": 0.01
 },
 "com.google.android.apps.googleassistant": {
 "t": 1793703555881,
@@ -7919,9 +7928,9 @@
 "content": 0
 },
 "com.google.android.apps.nbu.files": {
-"t": 1793180962484,
+"t": 1795783178578,
 "n": 100,
-"neg": 0.13,
+"neg": 0.24,
 "any": 0,
 "ads": 0,
 "pay": 0,
@@ -9116,13 +9125,22 @@
 "content": 0.01
 },
 "com.igg.android.lordsmobile": {
-"t": 1793180876004,
+"t": 1795783174534,
 "n": 100,
-"neg": 0.17,
-"any": 0.03,
+"neg": 0.18,
+"any": 0.04,
 "ads": 0,
-"pay": 0.01,
-"content": 0.02
+"pay": 0.03,
+"content": 0.01
+},
+"com.igg.android.mythicheroes": {
+"t": 1795783219387,
+"n": 100,
+"neg": 0.23,
+"any": 0.06,
+"ads": 0,
+"pay": 0.02,
+"content": 0.04
 },
 "com.igg.android.vikingriseglobal": {
 "t": 1794224670582,
@@ -9692,12 +9710,12 @@
 "content": 0
 },
 "com.justplay.app": {
-"t": 1793181026546,
+"t": 1795783217281,
 "n": 100,
-"neg": 0.46,
-"any": 0.22,
-"ads": 0.21,
-"pay": 0.03,
+"neg": 0.59,
+"any": 0.24,
+"ads": 0.23,
+"pay": 0.01,
 "content": 0
 },
 "com.kajda.fuelio": {
@@ -10020,12 +10038,12 @@
 "n": 0
 },
 "com.komorebi.roulette": {
-"t": 1793180904734,
+"t": 1795783187514,
 "n": 100,
-"neg": 0.19,
-"any": 0.04,
+"neg": 0.18,
+"any": 0.03,
 "ads": 0.03,
-"pay": 0.02,
+"pay": 0.01,
 "content": 0
 },
 "com.komorebi.shoppinglist": {
@@ -10424,13 +10442,13 @@
 "content": 0.01
 },
 "com.ludia.jw2": {
-"t": 1793181031170,
+"t": 1795783213897,
 "n": 100,
-"neg": 0.35,
-"any": 0.07,
+"neg": 0.34,
+"any": 0.05,
 "ads": 0,
-"pay": 0.06,
-"content": 0.01
+"pay": 0.05,
+"content": 0
 },
 "com.ludo.king": {
 "t": 1795612042469,
@@ -10721,13 +10739,13 @@
 "content": 0.02
 },
 "com.matryoshka.royal.cooking.kitchen.madness": {
-"t": 1793181014899,
+"t": 1795783175213,
 "n": 100,
 "neg": 0.28,
-"any": 0.18,
-"ads": 0.17,
-"pay": 0.03,
-"content": 0
+"any": 0.16,
+"ads": 0.16,
+"pay": 0.02,
+"content": 0.01
 },
 "com.mattel.jurassicworld2": {
 "t": 1793876787861,
@@ -10775,11 +10793,11 @@
 "content": 0
 },
 "com.maxgames.stickwarlegacy": {
-"t": 1793180964122,
+"t": 1795783209994,
 "n": 100,
-"neg": 0.07,
-"any": 0.03,
-"ads": 0.03,
+"neg": 0.02,
+"any": 0.01,
+"ads": 0,
 "pay": 0.01,
 "content": 0
 },
@@ -11135,9 +11153,9 @@
 "content": 0
 },
 "com.microsoft.translator": {
-"t": 1793180983421,
+"t": 1795783202422,
 "n": 100,
-"neg": 0.52,
+"neg": 0.53,
 "any": 0.01,
 "ads": 0.01,
 "pay": 0,
@@ -11243,9 +11261,9 @@
 "content": 0
 },
 "com.miniclip.grau1": {
-"t": 1793180922880,
+"t": 1795783196666,
 "n": 100,
-"neg": 0.2,
+"neg": 0.18,
 "any": 0.03,
 "ads": 0.03,
 "pay": 0,
@@ -11468,12 +11486,12 @@
 "content": 0
 },
 "com.mobilityware.freecell": {
-"t": 1793180890986,
+"t": 1795783176977,
 "n": 100,
-"neg": 0.33,
-"any": 0.18,
-"ads": 0.18,
-"pay": 0.02,
+"neg": 0.3,
+"any": 0.16,
+"ads": 0.16,
+"pay": 0.01,
 "content": 0
 },
 "com.mobilityware.solitaire": {
@@ -12259,6 +12277,15 @@
 "pay": 0.02,
 "content": 0.01
 },
+"com.nlabsoft.zombiecrusher.s": {
+"t": 1795783216257,
+"n": 100,
+"neg": 0.64,
+"any": 0.42,
+"ads": 0.4,
+"pay": 0.05,
+"content": 0.02
+},
 "com.no.color": {
 "t": 1795347400489,
 "n": 100,
@@ -12287,13 +12314,13 @@
 "content": 0
 },
 "com.nordcurrent.fashion": {
-"t": 1793180894411,
+"t": 1795783206908,
 "n": 100,
-"neg": 0.43,
-"any": 0.12,
-"ads": 0.04,
+"neg": 0.45,
+"any": 0.16,
+"ads": 0.07,
 "pay": 0.09,
-"content": 0.01
+"content": 0.02
 },
 "com.northcube.sleepcycle": {
 "t": 1795697235446,
@@ -12611,13 +12638,13 @@
 "content": 0
 },
 "com.outfit7.mytalkingtomfree": {
-"t": 1793180963085,
+"t": 1795783201780,
 "n": 100,
-"neg": 0.22,
-"any": 0.05,
-"ads": 0.05,
-"pay": 0,
-"content": 0
+"neg": 0.21,
+"any": 0.11,
+"ads": 0.07,
+"pay": 0.03,
+"content": 0.01
 },
 "com.outfit7.mytalkingtomfriends": {
 "t": 1793268495205,
@@ -12818,13 +12845,13 @@
 "content": 0
 },
 "com.paradyme.solarsmash": {
-"t": 1793180970866,
+"t": 1795783184531,
 "n": 100,
-"neg": 0.3,
-"any": 0.16,
-"ads": 0.16,
-"pay": 0,
-"content": 0
+"neg": 0.34,
+"any": 0.14,
+"ads": 0.14,
+"pay": 0.02,
+"content": 0.01
 },
 "com.pastry.paradise.cooking.restaurant": {
 "t": 1794652607395,
@@ -13637,11 +13664,11 @@
 "content": 0
 },
 "com.potatojam.classic.solitaire.klondike": {
-"t": 1793180944580,
+"t": 1795783178030,
 "n": 100,
-"neg": 0.03,
-"any": 0,
-"ads": 0,
+"neg": 0.04,
+"any": 0.01,
+"ads": 0.01,
 "pay": 0,
 "content": 0
 },
@@ -13700,7 +13727,7 @@
 "content": 0
 },
 "com.progrunning.boardgamescompanion": {
-"t": 1793180960799,
+"t": 1795783201248,
 "n": 71,
 "neg": 0.21,
 "any": 0,
@@ -13862,9 +13889,9 @@
 "content": 0
 },
 "com.quran.labs.androidquran": {
-"t": 1793181002100,
+"t": 1795783176457,
 "n": 100,
-"neg": 0.07,
+"neg": 0.13,
 "any": 0,
 "ads": 0,
 "pay": 0,
@@ -13898,9 +13925,9 @@
 "content": 0.01
 },
 "com.raha.app.mymoney.free": {
-"t": 1793180948166,
+"t": 1795783189198,
 "n": 100,
-"neg": 0.03,
+"neg": 0.05,
 "any": 0,
 "ads": 0,
 "pay": 0,
@@ -15098,11 +15125,11 @@
 "content": 0
 },
 "com.smartwho.SmartAllCurrencyConverter": {
-"t": 1793180916523,
+"t": 1795783196048,
 "n": 100,
 "neg": 0.12,
-"any": 0.01,
-"ads": 0.01,
+"any": 0,
+"ads": 0,
 "pay": 0,
 "content": 0
 },
@@ -15143,11 +15170,11 @@
 "content": 0
 },
 "com.sngict.rummy.gin": {
-"t": 1793180919685,
+"t": 1795783188098,
 "n": 100,
-"neg": 0.38,
-"any": 0.24,
-"ads": 0.24,
+"neg": 0.37,
+"any": 0.25,
+"ads": 0.25,
 "pay": 0.01,
 "content": 0
 },
@@ -15170,9 +15197,9 @@
 "content": 0
 },
 "com.socialnmobile.dictapps.notepad.color.note": {
-"t": 1793180973293,
+"t": 1795783210544,
 "n": 100,
-"neg": 0.05,
+"neg": 0.04,
 "any": 0,
 "ads": 0,
 "pay": 0,
@@ -15915,8 +15942,8 @@
 "content": 0.01
 },
 "com.tallycounter.tallycounter": {
-"t": 1793180959839,
-"n": 41,
+"t": 1795783183483,
+"n": 42,
 "neg": 0.05,
 "any": 0,
 "ads": 0,
@@ -15996,12 +16023,12 @@
 "content": 0
 },
 "com.tasks.android": {
-"t": 1793180924986,
+"t": 1795783215038,
 "n": 100,
-"neg": 0.08,
-"any": 0.01,
+"neg": 0.09,
+"any": 0,
 "ads": 0,
-"pay": 0.01,
+"pay": 0,
 "content": 0
 },
 "com.tawakalstudio.bussidnew": {
@@ -16383,12 +16410,12 @@
 "content": 0
 },
 "com.todoist": {
-"t": 1793181019553,
+"t": 1795783194502,
 "n": 100,
-"neg": 0.25,
-"any": 0.05,
-"ads": 0.01,
-"pay": 0.04,
+"neg": 0.38,
+"any": 0.04,
+"ads": 0.02,
+"pay": 0.02,
 "content": 0
 },
 "com.toleio.us": {
@@ -17400,12 +17427,12 @@
 "content": 0
 },
 "com.waymarkedtrails.hiiker": {
-"t": 1793180958210,
+"t": 1795783209426,
 "n": 100,
-"neg": 0.18,
-"any": 0.03,
+"neg": 0.2,
+"any": 0.04,
 "ads": 0.01,
-"pay": 0.02,
+"pay": 0.03,
 "content": 0
 },
 "com.waze": {
@@ -17503,11 +17530,11 @@
 "content": 0
 },
 "com.weplay.motogp": {
-"t": 1793181023957,
+"t": 1795783195004,
 "n": 100,
-"neg": 0.58,
-"any": 0.07,
-"ads": 0.03,
+"neg": 0.56,
+"any": 0.06,
+"ads": 0.02,
 "pay": 0.03,
 "content": 0.01
 },
@@ -17638,13 +17665,13 @@
 "content": 0.01
 },
 "com.wireless.defenseland": {
-"t": 1793180913427,
+"t": 1795783180741,
 "n": 100,
-"neg": 0.76,
-"any": 0.48,
-"ads": 0.45,
-"pay": 0.07,
-"content": 0.02
+"neg": 0.74,
+"any": 0.53,
+"ads": 0.47,
+"pay": 0.09,
+"content": 0.03
 },
 "com.wishabi.flipp": {
 "t": 1794224690656,
@@ -17998,12 +18025,12 @@
 "content": 0
 },
 "com.zitga.ninja.stickman.legends": {
-"t": 1793180878679,
+"t": 1795783185672,
 "n": 100,
-"neg": 0.11,
-"any": 0.01,
-"ads": 0.01,
-"pay": 0,
+"neg": 0.08,
+"any": 0.02,
+"ads": 0.02,
+"pay": 0.01,
 "content": 0
 },
 "com.zitga.ninja.stickman.legends.shadow.wars": {
@@ -18124,13 +18151,13 @@
 "content": 0
 },
 "com.zynga.farmville3": {
-"t": 1793180901880,
+"t": 1795783195516,
 "n": 100,
-"neg": 0.46,
-"any": 0.15,
-"ads": 0.11,
-"pay": 0.05,
-"content": 0
+"neg": 0.54,
+"any": 0.25,
+"ads": 0.19,
+"pay": 0.06,
+"content": 0.03
 },
 "com.zynga.livepoker": {
 "t": 1793790290581,
@@ -18628,12 +18655,12 @@
 "content": 0.01
 },
 "game.revani.racemaxpro": {
-"t": 1793180882591,
+"t": 1795783213332,
 "n": 100,
-"neg": 0.04,
-"any": 0.03,
-"ads": 0.02,
-"pay": 0.01,
+"neg": 0.07,
+"any": 0.01,
+"ads": 0.01,
+"pay": 0,
 "content": 0
 },
 "games.alternativa.projectv.test": {
@@ -18979,9 +19006,9 @@
 "content": 0
 },
 "idle.farming.game": {
-"t": 1793180931523,
+"t": 1795783197354,
 "n": 100,
-"neg": 0.38,
+"neg": 0.39,
 "any": 0.1,
 "ads": 0.03,
 "pay": 0.01,
@@ -19015,13 +19042,13 @@
 "content": 0
 },
 "in.crossy.daily_crossword": {
-"t": 1793180899315,
+"t": 1795783214507,
 "n": 100,
-"neg": 0.42,
-"any": 0.29,
-"ads": 0.27,
+"neg": 0.45,
+"any": 0.31,
+"ads": 0.28,
 "pay": 0.04,
-"content": 0.04
+"content": 0.01
 },
 "in.krosbits.musicolet": {
 "t": 1795088983648,
@@ -19087,9 +19114,9 @@
 "content": 0
 },
 "info.androidz.horoscope": {
-"t": 1793180896395,
+"t": 1795783186823,
 "n": 100,
-"neg": 0.22,
+"neg": 0.23,
 "any": 0.01,
 "ads": 0.01,
 "pay": 0,
@@ -19212,6 +19239,15 @@
 "pay": 0.04,
 "content": 0
 },
+"io.supercent.bulldozermasters": {
+"t": 1795783217810,
+"n": 100,
+"neg": 0.39,
+"any": 0.21,
+"ads": 0.18,
+"pay": 0.06,
+"content": 0.01
+},
 "io.supercent.linkedcubic": {
 "t": 1794047006420,
 "n": 100,
@@ -19285,12 +19321,12 @@
 "content": 0.01
 },
 "it.rortos.realflightsimulator": {
-"t": 1793180910486,
+"t": 1795783207520,
 "n": 100,
-"neg": 0.21,
-"any": 0.08,
+"neg": 0.12,
+"any": 0.04,
 "ads": 0,
-"pay": 0.08,
+"pay": 0.04,
 "content": 0.01
 },
 "it.sharklab.rogueadventure": {
@@ -19348,12 +19384,12 @@
 "content": 0.03
 },
 "jp.co.ofcr.cm00": {
-"t": 1793180990467,
+"t": 1795783204180,
 "n": 100,
-"neg": 0.34,
+"neg": 0.35,
 "any": 0.16,
-"ads": 0.15,
-"pay": 0.01,
+"ads": 0.14,
+"pay": 0.02,
 "content": 0.01
 },
 "jp.co.ofcr.cm00.cooktime": {
@@ -19708,9 +19744,9 @@
 "content": 0.01
 },
 "me.funkin.fnf": {
-"t": 1793180885493,
+"t": 1795783186158,
 "n": 100,
-"neg": 0.08,
+"neg": 0.07,
 "any": 0,
 "ads": 0,
 "pay": 0,
@@ -19744,13 +19780,13 @@
 "content": 0
 },
 "me.zepeto.main": {
-"t": 1793180969462,
+"t": 1795783192414,
 "n": 100,
-"neg": 0.32,
-"any": 0.01,
-"ads": 0,
-"pay": 0.01,
-"content": 0
+"neg": 0.25,
+"any": 0.07,
+"ads": 0.02,
+"pay": 0.04,
+"content": 0.01
 },
 "meditofoundation.medito": {
 "t": 1794482784010,
@@ -19883,12 +19919,12 @@
 "content": 0
 },
 "musicplayer.musicapps.music.mp3player": {
-"t": 1793180967019,
+"t": 1795783191860,
 "n": 100,
-"neg": 0.06,
-"any": 0.02,
-"ads": 0.02,
-"pay": 0,
+"neg": 0.12,
+"any": 0.09,
+"ads": 0.09,
+"pay": 0.01,
 "content": 0
 },
 "mydiary.journal.diary.diarywithlock.diaryjournal.secretdiary": {
@@ -20216,13 +20252,13 @@
 "content": 0
 },
 "ocean.nomad.survival.simulator": {
-"t": 1793180974766,
+"t": 1795783179142,
 "n": 100,
-"neg": 0.34,
-"any": 0.12,
-"ads": 0.06,
-"pay": 0.07,
-"content": 0
+"neg": 0.37,
+"any": 0.17,
+"ads": 0.09,
+"pay": 0.11,
+"content": 0.01
 },
 "offroad.racing.game": {
 "t": 1793529359118,
@@ -20337,13 +20373,13 @@
 "content": 0
 },
 "org.khankids.android": {
-"t": 1793180906846,
+"t": 1795783177506,
 "n": 100,
-"neg": 0.16,
-"any": 0.01,
+"neg": 0.12,
+"any": 0,
 "ads": 0,
 "pay": 0,
-"content": 0.01
+"content": 0
 },
 "org.malwarebytes.antimalware": {
 "t": 1794916829015,
@@ -20710,12 +20746,12 @@
 "content": 0
 },
 "qrcodereader.barcodescanner.scan.qrscanner": {
-"t": 1793180981678,
+"t": 1795783211684,
 "n": 100,
-"neg": 0.05,
-"any": 0.02,
-"ads": 0.01,
-"pay": 0.01,
+"neg": 0.1,
+"any": 0.03,
+"ads": 0.03,
+"pay": 0,
 "content": 0
 },
 "raft.survival.ocean.adventure": {
@@ -21105,6 +21141,15 @@
 "pay": 0,
 "content": 0
 },
+"sudoku.puzzle.brain.games.number.puzzles.free": {
+"t": 1795783215588,
+"n": 100,
+"neg": 0.41,
+"any": 0.33,
+"ads": 0.33,
+"pay": 0.02,
+"content": 0
+},
 "sudoku.puzzle.free.game.brain": {
 "t": 1795347384673,
 "n": 100,
@@ -21457,12 +21502,12 @@
 "content": 0
 },
 "xyz.rtrvr.pillo": {
-"t": 1793180954354,
+"t": 1795783183011,
 "n": 100,
-"neg": 0.2,
-"any": 0.09,
-"ads": 0.09,
-"pay": 0.02,
+"neg": 0.13,
+"any": 0.05,
+"ads": 0.04,
+"pay": 0.01,
 "content": 0
 },
 "yogaworkout.dailyyoga.go.weightloss.loseweight": {
